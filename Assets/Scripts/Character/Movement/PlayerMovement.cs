@@ -59,8 +59,8 @@ namespace Character.Movement {
         private float jumpInterval = 0.5f;
 
         [Header("Animation Params")]
-        [SerializeField] private string paramIsWalking;
-        [SerializeField] private string paramIsGrounded;
+        [SerializeField] private string m_animRunning;
+        [SerializeField] private string m_animOnGround;
         [SerializeField] private string paramIsWallSliding;
 
         private DateTimeOffset _lastJumped;
@@ -79,10 +79,10 @@ namespace Character.Movement {
 
         private void InitObservers()
         {
-            //this.FixedUpdateAsObservable()
-            //    .Where(_ => (m_modelInput.m_run == 0f))
-            //    .Subscribe(_ => AnimateIdleMovement())
-            //    .AddTo(this);
+            this.FixedUpdateAsObservable()
+                .Where(_ => (m_modelInput.m_run == 0f))
+                .Subscribe(_ => AnimateIdleMovement())
+                .AddTo(this);
 
             this.FixedUpdateAsObservable()
                 .Select(_ => m_modelInput.m_run)
@@ -106,9 +106,9 @@ namespace Character.Movement {
             //    })
             //    .AddTo(this);
 
-            //m_modelGround.IsOnGround()
-            //    .Subscribe(isOnGround => AnimateChangeGround(paramIsGrounded, isOnGround))
-            //    .AddTo(this);
+            m_modelGround.IsOnGround()
+                .Subscribe(isOnGround => AnimateChangeGround(m_animOnGround, isOnGround))
+                .AddTo(this);
 
             //m_modelGround.IsWallSliding()
             //    .Subscribe(isSliding => {
@@ -127,9 +127,9 @@ namespace Character.Movement {
 
         private void AnimateIdleMovement()
         {
-            if (m_compAnimator.GetBool(paramIsWalking))
+            if (m_compAnimator.GetBool(m_animRunning))
             {
-                m_compAnimator.SetBool(paramIsWalking, false);
+                m_compAnimator.SetBool(m_animRunning, false);
             }
         }
 
@@ -137,9 +137,9 @@ namespace Character.Movement {
         {
             bool isSliding = (horizontalMovement != 0f);
 
-            if (isSliding != m_compAnimator.GetBool(paramIsWalking))
+            if (isSliding != m_compAnimator.GetBool(m_animRunning))
             { //to prevent jitter
-                m_compAnimator.SetBool(paramIsWalking, isSliding);
+                m_compAnimator.SetBool(m_animRunning, isSliding);
             }
         }
 
@@ -168,6 +168,30 @@ namespace Character.Movement {
                 (movement * m_runSpeed * Time.fixedDeltaTime));
         }
 
+        private void AnimateChangeGround(string paramGround, bool isActive)
+        {
+            if (m_compAnimator.GetBool(paramGround) != isActive)
+            {
+                m_compAnimator.SetBool(paramGround, isActive);
+            }
+
+            //if (isActive)
+            //{
+            //    if ((paramIsGrounded.Equals(paramGround)))
+            //    {
+            //        //_audioSource.Stop();
+            //    }
+            //    else if (paramIsWallSliding.Equals(paramGround) && (!groundObserver.IsGrounded().Value))
+            //    {
+            //        AudioUtil.PlaySingleClip(GetType(), wallSlideClip, _audioSource);
+            //    }
+            //}
+
+            //reset jumps
+            if (isActive) { jumpsLeft = jumpTimesMax; }
+        }
+
     }
+
 
 }

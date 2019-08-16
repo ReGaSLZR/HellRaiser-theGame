@@ -1088,11 +1088,11 @@ MonoBehaviour:
   clipsJump: []
   prefabJumpFX: {fileID: 0}
   originJumpFX: {fileID: 0}
-  jumpTimesMax: 1
+  jumpTimesMax: 2
   jumpsLeft: 1
   jumpInterval: 0.5
-  paramIsWalking: 
-  paramIsGrounded: 
+  m_animRunning: isRunning
+  m_animOnGround: isOnGround
   paramIsWallSliding: 
 --- !u!50 &600916003
 Rigidbody2D:
@@ -1125,7 +1125,7 @@ Animator:
   m_GameObject: {fileID: 600915998}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: daacf12e71a7b9b4784c498f08330de5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2887,7 +2887,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 0.3}
+  m_Size: {x: 1.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!1 &1874664218
 GameObject:
