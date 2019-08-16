@@ -1084,13 +1084,10 @@ MonoBehaviour:
   wallSlideFriction: 10
   wallSlideClip: {fileID: 0}
   jumpSpeed: 1.2
-  jumpHeight: 250
-  clipsJump: []
-  prefabJumpFX: {fileID: 0}
-  originJumpFX: {fileID: 0}
-  jumpTimesMax: 2
-  jumpsLeft: 1
-  jumpInterval: 0.5
+  jumpHeight: 6
+  m_jumpTimesMax: 2
+  m_jumpsLeft: 1
+  m_jumpsInterval: 0.5
   m_animRunning: isRunning
   m_animOnGround: isOnGround
   paramIsWallSliding: 
@@ -2876,7 +2873,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -2.6}
+  m_Offset: {x: 0, y: -3}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2887,7 +2884,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 0.5}
+  m_Size: {x: 1.5, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1874664218
 GameObject:

@@ -35,28 +35,20 @@ namespace Character.Movement {
         private float normalFrictionDrag = 1f;
         [SerializeField]
         private float wallSlideFriction = 10f;
-        [SerializeField]
-        private AudioClip wallSlideClip;
 
         [Header("Jump")]
         [SerializeField]
-        private float jumpSpeed = 1.2f;
+        private float m_jumpSpeed = 1.2f;
         [SerializeField]
-        private float jumpHeight = 250f;
-        [SerializeField]
-        private AudioClip[] clipsJump;
-        [SerializeField]
-        private GameObject prefabJumpFX;
-        [SerializeField]
-        private GameObject originJumpFX;
+        private float m_jumpHeight = 5f;
 
         [Space]
         [SerializeField]
-        private int jumpTimesMax = 1;
+        private int m_jumpTimesMax = 1;
         [SerializeField]
-        private int jumpsLeft = 1;
+        private int m_jumpsLeft = 1;
         [SerializeField]
-        private float jumpInterval = 0.5f;
+        private float m_jumpsInterval = 0.5f;
 
         [Header("Animation Params")]
         [SerializeField] private string m_animRunning;
@@ -95,16 +87,17 @@ namespace Character.Movement {
                 })
                 .AddTo(this);
 
-            //this.FixedUpdateAsObservable()
-            //    .Select(_ => m_modelInput.m_jump)
-            //    .Where(hasJumped => (hasJumped && (jumpsLeft > 0)))
-            //    .Timestamp()
-            //    .Where(x => x.Timestamp > _lastJumped.AddSeconds(jumpInterval))
-            //    .Subscribe(x => {
-            //        Jump();
-            //        _lastJumped = x.Timestamp;
-            //    })
-            //    .AddTo(this);
+            this.FixedUpdateAsObservable()
+                .Select(_ => m_modelInput.m_jump)
+                .Where(hasJumped => (hasJumped && (m_jumpsLeft > 0)))
+                .Timestamp()
+                .Where(x => x.Timestamp > _lastJumped.AddSeconds(m_jumpsInterval))
+                .Subscribe(x =>
+                {
+                    Jump();
+                    _lastJumped = x.Timestamp;
+                })
+                .AddTo(this);
 
             m_modelGround.IsOnGround()
                 .Subscribe(isOnGround => AnimateChangeGround(m_animOnGround, isOnGround))
@@ -168,27 +161,21 @@ namespace Character.Movement {
                 (movement * m_runSpeed * Time.fixedDeltaTime));
         }
 
-        private void AnimateChangeGround(string paramGround, bool isActive)
+        private void Jump()
         {
-            if (m_compAnimator.GetBool(paramGround) != isActive)
+            m_compRigidBody2D.AddForce(Vector2.up * (m_jumpHeight * m_jumpSpeed), ForceMode2D.Impulse);
+            m_jumpsLeft--;
+        }
+
+        private void AnimateChangeGround(string paramGround, bool isOnGround)
+        {
+            if (m_compAnimator.GetBool(paramGround) != isOnGround)
             {
-                m_compAnimator.SetBool(paramGround, isActive);
+                m_compAnimator.SetBool(paramGround, isOnGround);
             }
 
-            //if (isActive)
-            //{
-            //    if ((paramIsGrounded.Equals(paramGround)))
-            //    {
-            //        //_audioSource.Stop();
-            //    }
-            //    else if (paramIsWallSliding.Equals(paramGround) && (!groundObserver.IsGrounded().Value))
-            //    {
-            //        AudioUtil.PlaySingleClip(GetType(), wallSlideClip, _audioSource);
-            //    }
-            //}
-
             //reset jumps
-            if (isActive) { jumpsLeft = jumpTimesMax; }
+            if (isOnGround) { m_jumpsLeft = m_jumpTimesMax; }
         }
 
     }
