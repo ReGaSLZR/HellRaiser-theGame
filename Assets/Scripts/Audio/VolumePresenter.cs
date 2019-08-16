@@ -6,7 +6,7 @@ using Zenject;
 
 namespace Audio {
 
-    public class VolumeSetter : MonoBehaviour
+    public class VolumePresenter : MonoBehaviour
     {
 
         [Inject]

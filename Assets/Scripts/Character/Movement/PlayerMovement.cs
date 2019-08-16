@@ -1,5 +1,6 @@
 ﻿using Character.Ground;
 using GamePlayInput;
+using NaughtyAttributes;
 using System;
 using UniRx;
 using UniRx.Triggers;
@@ -21,9 +22,13 @@ namespace Character.Movement {
 
         //INJECTIBLES
         [Inject]
-        private PlayerGroundModel.Getter m_modelGround;
-        [Inject]
         private BaseInputModel m_modelInput;
+
+        [SerializeField]
+        [Required]
+        private GroundManager m_ground;
+
+        [Space]
 
         //MOVEMENT STATS
         [Header("Horizontal Movement")]
@@ -104,12 +109,12 @@ namespace Character.Movement {
                 .AddTo(this);
 
             //on ground
-            m_modelGround.IsOnGround()
+            m_ground.IsOnGround()
                 .Subscribe(isOnGround => AnimateChangeGround(m_animOnGround, isOnGround))
                 .AddTo(this);
 
             //wall sliding
-            m_modelGround.IsOnWall()
+            m_ground.IsWallHit()
                 .Subscribe(isSliding =>
                 {
                     AnimateChangeGround(m_animOnWall, isSliding);
@@ -146,8 +151,8 @@ namespace Character.Movement {
         private void CheckFlipHorizontal(float horizontalMovement)
         {
             //flip based on wall side, else flip based on movement direction
-            bool shouldFlip = (m_modelGround.IsOnWall().Value) ?
-                          ((m_modelGround.GetWallSide() == PlayerGround.Wall_Right) ? true : false)
+            bool shouldFlip = (m_ground.IsWallHit().Value) ?
+                          ((m_ground.GetWallSide() == GroundType.Wall_Right) ? true : false)
                           : (horizontalMovement < 0f);
 
             //condition is to prevent jittering

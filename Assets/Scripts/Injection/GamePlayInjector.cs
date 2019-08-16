@@ -1,5 +1,4 @@
 ﻿using Audio;
-using Character.Ground;
 using GamePlayInput;
 using NaughtyAttributes;
 using UnityEngine;
@@ -15,10 +14,6 @@ namespace Injection {
         [Required]
         private AudioModel m_modelAudio;
 
-
-        [SerializeField]
-        [Required]
-        private PlayerGroundModel m_modelPlayerGround;
         [SerializeField]
         [Required]
         private GamePlayInputController m_gamePlayInputController;
@@ -38,10 +33,6 @@ namespace Injection {
 
         private void BindModelPlayer()
         {
-            //Player Ground
-            Container.Bind<PlayerGroundModel.Getter>().FromInstance(m_modelPlayerGround);
-            Container.Bind<PlayerGroundModel.Setter>().FromInstance(m_modelPlayerGround);
-
             //Player Input
             BaseInputModel baseInputModel = m_gamePlayInputController.GetBaseInput();
             LogUtil.PrintInfo(gameObject, GetType(), "base input is: " + baseInputModel.GetType());

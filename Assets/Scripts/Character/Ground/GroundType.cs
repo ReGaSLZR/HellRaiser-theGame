@@ -1,5 +1,5 @@
 ﻿namespace Character.Ground {
-    public enum PlayerGround
+    public enum GroundType
     {
         Ground,
         Wall_Left,

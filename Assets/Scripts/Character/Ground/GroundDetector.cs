@@ -2,19 +2,19 @@
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
-using Zenject;
 
 namespace Character.Ground {
 
     [RequireComponent(typeof(Collider2D))]
-    public class PlayerGroundDetector : MonoBehaviour
+    public class GroundDetector : MonoBehaviour
     {
-
-        [Inject]
-        private PlayerGroundModel.Setter m_modelGround;
+       
+        [SerializeField]
+        [Required]
+        private GroundManager m_modelGround;
 
         [SerializeField]
-        private PlayerGround m_groundType;
+        private GroundType m_groundType;
 
         [SerializeField]
         [BoxGroup("TAGS")]
@@ -38,12 +38,12 @@ namespace Character.Ground {
         {
             this.OnTriggerEnter2DAsObservable()
                 .Where(otherCollider2D => IsGroundTagMet(otherCollider2D))
-                .Subscribe(_ => m_modelGround.SetGround(m_groundType, true))
+                .Subscribe(_ => m_modelGround.SetGround(this, m_groundType, true))
                 .AddTo(this);
 
             this.OnTriggerExit2DAsObservable()
                 .Where(otherCollider2D => IsGroundTagMet(otherCollider2D))
-                .Subscribe(_ => m_modelGround.SetGround(m_groundType, false))
+                .Subscribe(_ => m_modelGround.SetGround(this, m_groundType, false))
                 .AddTo(this);
         }
 
