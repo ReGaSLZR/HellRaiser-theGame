@@ -41,7 +41,7 @@ namespace Character.Ground {
             switch (groundType)
             {
                 default:
-                case (GroundType.Ground):
+                case (GroundType.Ground_Center):
                     {
                         m_reactiveIsOnGround.Value = isGroundDetected;
                         break;

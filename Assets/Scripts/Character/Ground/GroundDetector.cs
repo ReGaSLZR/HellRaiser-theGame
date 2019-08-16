@@ -11,19 +11,22 @@ namespace Character.Ground {
        
         [SerializeField]
         [Required]
-        private GroundManager m_modelGround;
+        private GroundManager m_groundManager;
 
         [SerializeField]
         private GroundType m_groundType;
 
         [SerializeField]
-        [BoxGroup("TAGS")]
+        private bool m_bypassTagChecking;
+
+        [SerializeField]
         [Tag]
+        [DisableIf("m_bypassTagChecking")]
         private string m_groundTag1;
 
         [SerializeField]
-        [BoxGroup("TAGS")]
         [Tag]
+        [DisableIf("m_bypassTagChecking")]
         private string m_groundTag2;
 
         private void Awake()
@@ -38,18 +41,19 @@ namespace Character.Ground {
         {
             this.OnTriggerEnter2DAsObservable()
                 .Where(otherCollider2D => IsGroundTagMet(otherCollider2D))
-                .Subscribe(_ => m_modelGround.SetGround(this, m_groundType, true))
+                .Subscribe(_ => m_groundManager.SetGround(this, m_groundType, true))
                 .AddTo(this);
 
             this.OnTriggerExit2DAsObservable()
                 .Where(otherCollider2D => IsGroundTagMet(otherCollider2D))
-                .Subscribe(_ => m_modelGround.SetGround(this, m_groundType, false))
+                .Subscribe(_ => m_groundManager.SetGround(this, m_groundType, false))
                 .AddTo(this);
         }
 
         private bool IsGroundTagMet(Collider2D otherCollider2D)
         {
-            return (m_groundTag1.Equals(otherCollider2D.tag) || m_groundTag2.Equals(otherCollider2D.tag));
+            return m_bypassTagChecking ? true 
+                : (m_groundTag1.Equals(otherCollider2D.tag) || m_groundTag2.Equals(otherCollider2D.tag));
         }
 
     }
