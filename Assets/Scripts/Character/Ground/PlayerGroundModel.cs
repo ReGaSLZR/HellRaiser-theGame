@@ -11,8 +11,8 @@ namespace Character.Ground {
         public interface Getter
         {
             ReactiveProperty<bool> IsOnGround();
-            ReactiveProperty<bool> IsOnWallLeft();
-            ReactiveProperty<bool> IsOnWallRight();
+            ReactiveProperty<bool> IsOnWall();
+            PlayerGround GetWallSide();
         }
 
         public interface Setter
@@ -23,22 +23,20 @@ namespace Character.Ground {
         #endregion
 
         private ReactiveProperty<bool> m_reactiveIsOnGround;
-        private ReactiveProperty<bool> m_reactiveIsOnWallLeft;
-        private ReactiveProperty<bool> m_reactiveIsOnWallRight;
+        private ReactiveProperty<bool> m_reactiveIsOnWall;
+        private PlayerGround m_wallSide;
 
         private void Awake()
         {
             m_reactiveIsOnGround = new ReactiveProperty<bool>(false);
-            m_reactiveIsOnWallLeft = new ReactiveProperty<bool>(false);
-            m_reactiveIsOnWallRight = new ReactiveProperty<bool>(false);
+            m_reactiveIsOnWall = new ReactiveProperty<bool>(false);
 
         }
 
         private void DisableAllReactives()
         {
             m_reactiveIsOnGround.Value = false;
-            m_reactiveIsOnWallLeft.Value = false;
-            m_reactiveIsOnWallRight.Value = false;
+            m_reactiveIsOnWall.Value = false;
         }
 
         public ReactiveProperty<bool> IsOnGround()
@@ -46,19 +44,17 @@ namespace Character.Ground {
             return m_reactiveIsOnGround;
         }
 
-        public ReactiveProperty<bool> IsOnWallLeft()
+        public ReactiveProperty<bool> IsOnWall()
         {
-            return m_reactiveIsOnWallLeft;
+            return m_reactiveIsOnWall;
         }
 
-        public ReactiveProperty<bool> IsOnWallRight()
-        {
-            return m_reactiveIsOnWallRight;
+        public PlayerGround GetWallSide() {
+            return m_wallSide;
         }
 
         public void SetGround(PlayerGround groundType, bool isGroundDetected)
         {
-            DisableAllReactives();
 
             switch (groundType)
             {
@@ -68,14 +64,12 @@ namespace Character.Ground {
                         m_reactiveIsOnGround.Value = isGroundDetected;
                         break;
                     }
+
                 case (PlayerGround.Wall_Left):
-                    {
-                        m_reactiveIsOnWallLeft.Value = isGroundDetected;
-                        break;
-                    }
                 case (PlayerGround.Wall_Right):
                     {
-                        m_reactiveIsOnWallRight.Value = isGroundDetected;
+                        m_wallSide = groundType;
+                        m_reactiveIsOnWall.Value = isGroundDetected;
                         break;
                     }
             }

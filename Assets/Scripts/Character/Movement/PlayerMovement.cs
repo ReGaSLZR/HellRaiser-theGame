@@ -32,9 +32,9 @@ namespace Character.Movement {
 
         [Header("Wall Slide")]
         [SerializeField]
-        private float normalFrictionDrag = 1f;
+        private float m_wallSlideNormalFrictionDrag = 1f;
         [SerializeField]
-        private float wallSlideFriction = 10f;
+        private float m_wallSlideFriction = 10f;
 
         [Header("Jump")]
         [SerializeField]
@@ -43,6 +43,7 @@ namespace Character.Movement {
         private float m_jumpHeight = 5f;
 
         [Space]
+
         [SerializeField]
         private int m_jumpTimesMax = 1;
         [SerializeField]
@@ -53,9 +54,9 @@ namespace Character.Movement {
         [Header("Animation Params")]
         [SerializeField] private string m_animRunning;
         [SerializeField] private string m_animOnGround;
-        [SerializeField] private string paramIsWallSliding;
+        [SerializeField] private string m_animOnWall;
 
-        private DateTimeOffset _lastJumped;
+        private DateTimeOffset m_jumpLastTimeStamp;
 
         private void Awake()
         {
@@ -71,11 +72,13 @@ namespace Character.Movement {
 
         private void InitObservers()
         {
+            //idle
             this.FixedUpdateAsObservable()
                 .Where(_ => (m_modelInput.m_run == 0f))
                 .Subscribe(_ => AnimateIdleMovement())
                 .AddTo(this);
 
+            //run
             this.FixedUpdateAsObservable()
                 .Select(_ => m_modelInput.m_run)
                 .Where(horizontalMovement => (horizontalMovement != 0))
@@ -87,34 +90,38 @@ namespace Character.Movement {
                 })
                 .AddTo(this);
 
+            //jump
             this.FixedUpdateAsObservable()
                 .Select(_ => m_modelInput.m_jump)
                 .Where(hasJumped => (hasJumped && (m_jumpsLeft > 0)))
                 .Timestamp()
-                .Where(x => x.Timestamp > _lastJumped.AddSeconds(m_jumpsInterval))
+                .Where(x => x.Timestamp > m_jumpLastTimeStamp.AddSeconds(m_jumpsInterval))
                 .Subscribe(x =>
                 {
                     Jump();
-                    _lastJumped = x.Timestamp;
+                    m_jumpLastTimeStamp = x.Timestamp;
                 })
                 .AddTo(this);
 
+            //on ground
             m_modelGround.IsOnGround()
                 .Subscribe(isOnGround => AnimateChangeGround(m_animOnGround, isOnGround))
                 .AddTo(this);
 
-            //m_modelGround.IsWallSliding()
-            //    .Subscribe(isSliding => {
-            //        AnimateChangeGround(paramIsWallSliding, isSliding);
+            //wall sliding
+            m_modelGround.IsOnWall()
+                .Subscribe(isSliding =>
+                {
+                    AnimateChangeGround(m_animOnWall, isSliding);
 
-            //        if (isSliding && (m_modelInput.m_run == 0))
-            //        {
-            //            CheckFlipHorizontal(m_modelInput.m_run);
-            //        }
+                    if (isSliding && (m_modelInput.m_run == 0))
+                    {
+                        CheckFlipHorizontal(m_modelInput.m_run);
+                    }
 
-            //        ApplyWallSlide(isSliding);
-            //    })
-            //    .AddTo(this);
+                    ApplyWallSlide(isSliding);
+                })
+                .AddTo(this);
 
         }
 
@@ -138,11 +145,10 @@ namespace Character.Movement {
 
         private void CheckFlipHorizontal(float horizontalMovement)
         {
-            bool shouldFlip = (horizontalMovement < 0f);
-
-            //NOTE: this extra statement may negate the value of 'shouldFlip' if Player is WallSliding
-            shouldFlip = (m_modelGround.IsOnWallRight().Value) ?
-                          true : shouldFlip;
+            //flip based on wall side, else flip based on movement direction
+            bool shouldFlip = (m_modelGround.IsOnWall().Value) ?
+                          ((m_modelGround.GetWallSide() == PlayerGround.Wall_Right) ? true : false)
+                          : (horizontalMovement < 0f);
 
             //condition is to prevent jittering
             //do NOT flip if the previous value is the same as the new one
@@ -176,6 +182,11 @@ namespace Character.Movement {
 
             //reset jumps
             if (isOnGround) { m_jumpsLeft = m_jumpTimesMax; }
+        }
+
+        private void ApplyWallSlide(bool isActive)
+        {
+            m_compRigidBody2D.drag = (isActive) ? m_wallSlideFriction : m_wallSlideNormalFrictionDrag;
         }
 
     }
