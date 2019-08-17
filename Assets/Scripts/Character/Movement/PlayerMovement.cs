@@ -23,7 +23,10 @@ namespace Character.Movement {
 
         [Header("Jump")]
         [SerializeField]
-        private float m_jumpSpeed = 1.2f;
+        private float m_jumpVelocity = 1.2f;
+        [SerializeField]
+        [Range(1.1f, 5f)]
+        private float m_jumpFallMultiplier = 1.5f;
         [SerializeField]
         private float m_jumpHeight = 5f;
 
@@ -82,6 +85,17 @@ namespace Character.Movement {
                 })
                 .AddTo(this);
 
+            //jump fall
+            this.FixedUpdateAsObservable()
+                .Select(_ => m_compRigidBody2D.velocity)
+                .Where(velocity => (velocity.y < 0))
+                .Subscribe(_ => {
+                    //reference: "Better Jumping in Unity >> https://www.youtube.com/watch?v=7KiK0Aqtmzc
+                    m_compRigidBody2D.velocity += (Vector2.up * Physics2D.gravity.y * 
+                        (m_jumpFallMultiplier - 1f) * Time.fixedDeltaTime);
+                })
+                .AddTo(this);
+
             //on ground
             m_ground.IsOnGround()
                 .Subscribe(isOnGround => AnimateChangeGround(m_animOnGround, isOnGround))
@@ -121,7 +135,9 @@ namespace Character.Movement {
 
         private void Jump()
         {
-            m_compRigidBody2D.AddForce(Vector2.up * (m_jumpHeight * m_jumpSpeed), ForceMode2D.Impulse);
+            //m_compRigidBody2D.AddForce(Vector2.up * (m_jumpHeight * m_jumpVelocity) 
+            //    * Time.fixedDeltaTime, ForceMode2D.Impulse);
+            m_compRigidBody2D.velocity = (Vector2.up * m_jumpVelocity);
             m_jumpsLeft--;
         }
 
