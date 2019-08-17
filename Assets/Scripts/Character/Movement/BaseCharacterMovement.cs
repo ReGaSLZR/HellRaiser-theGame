@@ -24,6 +24,8 @@ namespace Character.Movement {
 
         [SerializeField]
         protected string m_animMove;
+        [SerializeField]
+        private string m_animStunned;
 
         private float m_movementSpeed = 0.1f;
 
@@ -39,7 +41,7 @@ namespace Character.Movement {
         }
 
         protected void StartMovement(Vector2 movementDirection) {
-            if(!m_reactiveIsMovEnabled.Value)
+            if (!m_reactiveIsMovEnabled.Value)
             {
                 LogUtil.PrintInfo(gameObject, GetType(), "StartMovement(): Movement is stopped for the moment.");
                 return;
@@ -68,9 +70,18 @@ namespace Character.Movement {
         public void SetMovementEnabled(bool isEnabled) {
             m_reactiveIsMovEnabled.Value = isEnabled;
 
-            if (!isEnabled) {
+            if (!isEnabled)
+            {
                 m_compAnimator.SetBool(m_animMove, false);
             }
+            else if(isEnabled && m_compAnimator.GetBool(m_animStunned)) {
+                m_compAnimator.SetBool(m_animStunned, false);
+            }
+        }
+
+        public void StunMovement() {
+            SetMovementEnabled(false);
+            m_compAnimator.SetBool(m_animStunned, true);
         }
 
     }

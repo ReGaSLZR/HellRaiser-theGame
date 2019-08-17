@@ -6,7 +6,8 @@ using UniRx.Triggers;
 using UnityEngine;
 using Zenject;
 
-namespace Character.Movement {
+namespace Character.Movement
+{
 
     public class PlayerMovement : BaseCharacterMovement
     {
@@ -35,9 +36,10 @@ namespace Character.Movement {
         [SerializeField]
         private int m_jumpTimesMax = 1;
         [SerializeField]
-        private int m_jumpsLeft = 1;
-        [SerializeField]
         private float m_jumpsInterval = 0.5f;
+        [SerializeField]
+        private bool m_canJumpInMidair;
+        private int m_jumpsLeft = 1;
 
         [Header("Animation Params")]
         [SerializeField] private string m_animOnGround;
@@ -64,7 +66,7 @@ namespace Character.Movement {
                 .Where(horizontalMovement => (horizontalMovement != 0))
                 .Subscribe(horizontalMovement =>
                 {
-                    CheckFlipHorizontal(horizontalMovement);
+                    CheckFlipHorizontal();
 
                     Vector2 movement = Vector2.zero;
                     movement.x = horizontalMovement;
@@ -80,8 +82,12 @@ namespace Character.Movement {
                 .Where(x => x.Timestamp > m_jumpLastTimeStamp.AddSeconds(m_jumpsInterval))
                 .Subscribe(x =>
                 {
-                    Jump();
-                    m_jumpLastTimeStamp = x.Timestamp;
+                    if(((m_ground.IsOnGround().Value || m_ground.IsWallHit().Value) && !m_canJumpInMidair) 
+                        || m_canJumpInMidair)
+                    {
+                        Jump();
+                        m_jumpLastTimeStamp = x.Timestamp;
+                    }
                 })
                 .AddTo(this);
 
@@ -91,14 +97,21 @@ namespace Character.Movement {
                 .Where(velocity => (velocity.y < 0))
                 .Subscribe(_ => {
                     //reference: "Better Jumping in Unity >> https://www.youtube.com/watch?v=7KiK0Aqtmzc
-                    m_compRigidBody2D.velocity += (Vector2.up * Physics2D.gravity.y * 
+                    m_compRigidBody2D.velocity += (Vector2.up * Physics2D.gravity.y *
                         (m_jumpFallMultiplier - 1f) * Time.fixedDeltaTime);
                 })
                 .AddTo(this);
 
             //on ground
             m_ground.IsOnGround()
-                .Subscribe(isOnGround => AnimateChangeGround(m_animOnGround, isOnGround))
+                .Subscribe(isOnGround => {
+                    AnimateChangeGround(m_animOnGround, isOnGround);
+
+                    if (m_ground.IsWallHit().Value)
+                    { //to allow flipping due to wall sliding
+                        CheckFlipHorizontal();
+                    }
+                })
                 .AddTo(this);
 
             //wall sliding
@@ -109,7 +122,7 @@ namespace Character.Movement {
 
                     if (isSliding && (m_modelInput.m_run == 0))
                     {
-                        CheckFlipHorizontal(m_modelInput.m_run);
+                        CheckFlipHorizontal();
                     }
 
                     ApplyWallSlide(isSliding);
@@ -118,12 +131,12 @@ namespace Character.Movement {
 
         }
 
-        private void CheckFlipHorizontal(float horizontalMovement)
+        private void CheckFlipHorizontal()
         {
             //flip based on wall side, else flip based on movement direction
             bool shouldFlip = (m_ground.IsWallHit().Value && (!m_ground.IsOnGround().Value)) ?
-                          ((m_ground.GetWallSide() == GroundType.Wall_Plus) ? true : false)
-                          : (horizontalMovement < 0f);
+                          ((m_ground.GetWallSide() == GroundType.Wall_Plus) ? true : false) :
+                          (m_modelInput.m_run == 0f) ? m_compSpriteRenderer.flipX : (m_modelInput.m_run < 0f);
 
             //condition is to prevent jittering
             //do NOT flip if the previous value is the same as the new one
