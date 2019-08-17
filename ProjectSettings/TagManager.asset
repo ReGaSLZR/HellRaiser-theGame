@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Terrain
   - Crate
+  - Projectile
   layers:
   - Default
   - TransparentFX
