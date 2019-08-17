@@ -6,8 +6,7 @@ using Zenject;
 
 namespace Injection {
 
-
-    public class GamePlayInjector : MonoInstaller<GamePlayInjector>
+    public class GamePlayInjector : MonoInstaller<GamePlayInjector>, Instantiator
     {
 
         [SerializeField]
@@ -18,8 +17,22 @@ namespace Injection {
         [Required]
         private GamePlayInputManager m_gamePlayInputManager;
 
+        public void InjectPrefab(GameObject prefab)
+        {
+            Container.InjectGameObject(prefab);
+        }
+
+        public GameObject InstantiateInjectPrefab(GameObject prefab, Transform parent)
+        {
+            GameObject instantiatedObject = Instantiate(prefab, parent.position, parent.rotation);
+            InjectPrefab(instantiatedObject);
+            return instantiatedObject;
+        }
+
         public override void InstallBindings()
         {
+            Container.Bind<Instantiator>().FromInstance(this);
+
             BindModelAudio();
 
             BindModelPlayer();
