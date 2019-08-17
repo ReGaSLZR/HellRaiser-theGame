@@ -10,7 +10,7 @@ namespace Character.Stats {
         }
 
         public static int GetDamageReceived(int damageDealt, int defenseStat) {
-            return Mathf.RoundToInt(damageDealt / (defenseStat * 0.01f));
+            return Mathf.Clamp(Mathf.RoundToInt(damageDealt / (defenseStat * 0.01f)), 1, 9999);
         }
         
     }

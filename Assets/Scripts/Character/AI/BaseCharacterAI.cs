@@ -23,22 +23,26 @@ namespace Character.AI {
         }
 
         protected virtual void Start() {
-            m_characterStats.GetHealth()
-                .Where(health => (health <= 0))
-                .Subscribe(_ => {
-                    OnDeath();
-                })
-                .AddTo(this);
-
             m_characterStats.IsHurt()
                 .Subscribe(isHurt => {
-                    m_movement.SetMovementEnabled(!isHurt);
+                    if (isHurt)
+                    {
+                        m_movement.StunMovement();
+
+                        if (m_characterStats.GetHealth().Value <= 0) {
+                            OnDeath();
+                        }
+                    }
+                    else
+                    {
+                        m_movement.SetMovementEnabled(true);
+                    }
                 })
                 .AddTo(this);
         }
 
         protected virtual void OnDeath() {
-            Destroy(gameObject);
+            Destroy(gameObject, m_characterStats.GetStunLength() + 0.1f);
         }
 
     }

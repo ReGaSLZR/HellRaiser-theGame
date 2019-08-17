@@ -231,14 +231,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ground: {fileID: 1336468798}
   m_animMove: isRunning
+  m_animStunned: isStunned
   m_wallSlideNormalFrictionDrag: 1
   m_wallSlideFriction: 10
   m_jumpVelocity: 9
   m_jumpFallMultiplier: 2.5
   m_jumpHeight: 7
   m_jumpTimesMax: 2
-  m_jumpsLeft: 1
   m_jumpsInterval: 0.25
+  m_canJumpInMidair: 1
   m_animOnGround: isOnGround
   m_animOnWall: isOnWall
 --- !u!114 &2040706425

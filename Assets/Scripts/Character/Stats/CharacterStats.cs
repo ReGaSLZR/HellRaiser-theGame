@@ -30,7 +30,7 @@ namespace Character.Stats {
         [Range(1, 150)]
         public int m_defense;
 
-        [Range(1f, 10f)]
+        [Range(0.25f, 10f)]
         public float m_stunLength;
 
         [Space]

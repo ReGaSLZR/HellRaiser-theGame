@@ -23,6 +23,10 @@ namespace Character.Stats {
             return m_stats.m_movementSpeed;
         }
 
+        public float GetStunLength() {
+            return m_stats.m_stunLength;
+        }
+
         public ReactiveProperty<int> GetHealth() {
             return m_reactiveHealth;
         }
@@ -46,10 +50,12 @@ namespace Character.Stats {
             int damageReceived = StatsUtil.GetDamageReceived(damage, m_stats.m_defense);
 
             //TODO: show damage received as FX
+            //TODO: show critical FX
 
             m_reactiveHealth.Value = Mathf.Clamp(
                 (m_reactiveHealth.Value - damageReceived), 0, m_reactiveHealth.Value);
-            MainThreadDispatcher.StartUpdateMicroCoroutine(CorStun());
+            StopAllCoroutines();
+            StartCoroutine(CorStun());
         }
 
         private IEnumerator CorStun() {

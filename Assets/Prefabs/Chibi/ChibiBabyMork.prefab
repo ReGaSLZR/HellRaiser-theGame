@@ -503,6 +503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ground: {fileID: 3010638456290562441}
   m_animMove: isPatrolling
+  m_animStunned: isHurt
   m_patrolDirection: Horizontal
   m_shouldFlipOnHorizontalDirectionChange: 1
 --- !u!114 &1161097270828826751
