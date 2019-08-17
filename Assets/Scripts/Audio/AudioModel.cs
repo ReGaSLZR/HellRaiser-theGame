@@ -17,8 +17,8 @@ namespace Audio {
 
         public interface Getter
         {
-            ReactiveProperty<float> GetReactiveVolumeBGM();
-            ReactiveProperty<float> GetReactiveVolumeSFX();
+            ReactiveProperty<float> GetVolumeBGM();
+            ReactiveProperty<float> GetVolumeSFX();
         }
 
         #endregion
@@ -73,12 +73,12 @@ namespace Audio {
             m_reactiveVolumeSFX.Value = ClampVolume(volume);
         }
 
-        public ReactiveProperty<float> GetReactiveVolumeBGM()
+        public ReactiveProperty<float> GetVolumeBGM()
         {
             return m_reactiveVolumeBGM;
         }
 
-        public ReactiveProperty<float> GetReactiveVolumeSFX()
+        public ReactiveProperty<float> GetVolumeSFX()
         {
             return m_reactiveVolumeSFX;
         }

@@ -1,6 +1,5 @@
 ﻿using Character.Ground;
 using GamePlayInput;
-using NaughtyAttributes;
 using System;
 using UniRx;
 using UniRx.Triggers;
@@ -9,31 +8,12 @@ using Zenject;
 
 namespace Character.Movement {
 
-    [RequireComponent(typeof(Animator))]
-    [RequireComponent(typeof(Rigidbody2D))]
-    [RequireComponent(typeof(SpriteRenderer))]
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerMovement : BaseCharacterMovement
     {
-
-        //COMPONENTS
-        private Animator m_compAnimator;
-        private Rigidbody2D m_compRigidBody2D;
-        private SpriteRenderer m_compSpriteRenderer;
 
         //INJECTIBLES
         [Inject]
         private BaseInputModel m_modelInput;
-
-        [SerializeField]
-        [Required]
-        private GroundManager m_ground;
-
-        [Space]
-
-        //MOVEMENT STATS
-        [Header("Horizontal Movement")]
-        [SerializeField]
-        private float m_runSpeed = 0.1f;
 
         [Header("Wall Slide")]
         [SerializeField]
@@ -63,13 +43,6 @@ namespace Character.Movement {
 
         private DateTimeOffset m_jumpLastTimeStamp;
 
-        private void Awake()
-        {
-            m_compAnimator = GetComponent<Animator>();
-            m_compSpriteRenderer = GetComponent<SpriteRenderer>();
-            m_compRigidBody2D = GetComponent<Rigidbody2D>();
-        }
-
         private void Start()
         {
             InitObservers();
@@ -91,7 +64,10 @@ namespace Character.Movement {
                 {
                     AnimateHorizontalMovement(horizontalMovement);
                     CheckFlipHorizontal(horizontalMovement);
-                    MoveHorizontally(horizontalMovement);
+
+                    Vector2 movement = Vector2.zero;
+                    movement.x = horizontalMovement;
+                    StartMovement(movement);
                 })
                 .AddTo(this);
 
@@ -152,7 +128,7 @@ namespace Character.Movement {
         {
             //flip based on wall side, else flip based on movement direction
             bool shouldFlip = (m_ground.IsWallHit().Value) ?
-                          ((m_ground.GetWallSide() == GroundType.Wall_Right) ? true : false)
+                          ((m_ground.GetWallSide() == GroundType.Wall_Plus) ? true : false)
                           : (horizontalMovement < 0f);
 
             //condition is to prevent jittering
@@ -161,15 +137,6 @@ namespace Character.Movement {
             {
                 m_compSpriteRenderer.flipX = shouldFlip;
             }
-        }
-
-        private void MoveHorizontally(float horizontalMovement)
-        {
-            Vector2 movement = Vector2.zero;
-            movement.x = horizontalMovement;
-
-            m_compRigidBody2D.position = (m_compRigidBody2D.position +
-                (movement * m_runSpeed * Time.fixedDeltaTime));
         }
 
         private void Jump()

@@ -41,12 +41,12 @@ namespace Character.Ground {
         {
             this.OnTriggerEnter2DAsObservable()
                 .Where(otherCollider2D => IsGroundTagMet(otherCollider2D))
-                .Subscribe(_ => m_groundManager.SetGround(this, m_groundType, true))
+                .Subscribe(_ => m_groundManager.SetDetectedGround(this, m_groundType, true))
                 .AddTo(this);
 
             this.OnTriggerExit2DAsObservable()
                 .Where(otherCollider2D => IsGroundTagMet(otherCollider2D))
-                .Subscribe(_ => m_groundManager.SetGround(this, m_groundType, false))
+                .Subscribe(_ => m_groundManager.SetDetectedGround(this, m_groundType, false))
                 .AddTo(this);
         }
 

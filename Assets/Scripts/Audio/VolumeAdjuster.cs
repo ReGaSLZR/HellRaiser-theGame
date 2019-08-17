@@ -37,7 +37,7 @@ namespace Audio {
         {
             if (m_audioType) //if BGM
             {
-                m_modelAudio.GetReactiveVolumeBGM()
+                m_modelAudio.GetVolumeBGM()
                .Subscribe(volumeBGM => {
                    m_compAudioSource.volume = volumeBGM;
                })
@@ -46,7 +46,7 @@ namespace Audio {
 
             else //if SFX
             {
-                m_modelAudio.GetReactiveVolumeSFX()
+                m_modelAudio.GetVolumeSFX()
                 .Subscribe(volumeSFX => {
                     m_compAudioSource.volume = volumeSFX;
                 })

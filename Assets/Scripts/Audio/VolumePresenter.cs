@@ -28,8 +28,8 @@ namespace Audio {
 
         private void SetStartingVolumes()
         {
-            m_sliderVolumeBGM.value = m_modelAudioModelGetter.GetReactiveVolumeBGM().Value;
-            m_sliderVolumeSFX.value = m_modelAudioModelGetter.GetReactiveVolumeSFX().Value;
+            m_sliderVolumeBGM.value = m_modelAudioModelGetter.GetVolumeBGM().Value;
+            m_sliderVolumeSFX.value = m_modelAudioModelGetter.GetVolumeSFX().Value;
         }
 
         private void SetVolumeInputListener()

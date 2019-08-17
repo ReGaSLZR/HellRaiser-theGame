@@ -16,7 +16,7 @@ namespace Injection {
 
         [SerializeField]
         [Required]
-        private GamePlayInputController m_gamePlayInputController;
+        private GamePlayInputManager m_gamePlayInputManager;
 
         public override void InstallBindings()
         {
@@ -34,7 +34,7 @@ namespace Injection {
         private void BindModelPlayer()
         {
             //Player Input
-            BaseInputModel baseInputModel = m_gamePlayInputController.GetBaseInput();
+            BaseInputModel baseInputModel = m_gamePlayInputManager.GetBaseInput();
             LogUtil.PrintInfo(gameObject, GetType(), "base input is: " + baseInputModel.GetType());
             Container.Bind<BaseInputModel>().FromInstance(baseInputModel);
 
