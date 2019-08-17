@@ -89,6 +89,8 @@ GameObject:
   - component: {fileID: 2590343526880155035}
   - component: {fileID: 2590343526880155033}
   - component: {fileID: 2590343526880155032}
+  - component: {fileID: 2040706425}
+  - component: {fileID: 2040706426}
   m_Layer: 0
   m_Name: ChibiPsyche
   m_TagString: Player
@@ -228,7 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ground: {fileID: 1336468798}
-  m_movementSpeed: 55
+  m_animMove: isRunning
   m_wallSlideNormalFrictionDrag: 1
   m_wallSlideFriction: 10
   m_jumpSpeed: 1.2
@@ -236,9 +238,35 @@ MonoBehaviour:
   m_jumpTimesMax: 2
   m_jumpsLeft: 1
   m_jumpsInterval: 0.25
-  m_animRunning: isRunning
   m_animOnGround: isOnGround
   m_animOnWall: isOnWall
+--- !u!114 &2040706425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2590343526880155044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4f2c3a5d9b00ae4b9364ce0115f2001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_movement: {fileID: 2590343526880155032}
+  m_characterStats: {fileID: 2040706426}
+--- !u!114 &2040706426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2590343526880155044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed7f40e28ca7f64a9fd9682e9a8e1d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_stats: {fileID: 11400000, guid: be06b1a92c65c7f4e8f0feb14889fb85, type: 2}
 --- !u!1 &2590343526900374104
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +444,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &2590343528042536543
 MonoBehaviour:

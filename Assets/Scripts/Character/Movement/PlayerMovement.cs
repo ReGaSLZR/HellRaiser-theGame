@@ -37,7 +37,6 @@ namespace Character.Movement {
         private float m_jumpsInterval = 0.5f;
 
         [Header("Animation Params")]
-        [SerializeField] private string m_animRunning;
         [SerializeField] private string m_animOnGround;
         [SerializeField] private string m_animOnWall;
 
@@ -53,7 +52,7 @@ namespace Character.Movement {
             //idle
             this.FixedUpdateAsObservable()
                 .Where(_ => (m_modelInput.m_run == 0f))
-                .Subscribe(_ => AnimateIdleMovement())
+                .Subscribe(_ => m_compAnimator.SetBool(m_animMove, false))
                 .AddTo(this);
 
             //run
@@ -62,7 +61,6 @@ namespace Character.Movement {
                 .Where(horizontalMovement => (horizontalMovement != 0))
                 .Subscribe(horizontalMovement =>
                 {
-                    AnimateHorizontalMovement(horizontalMovement);
                     CheckFlipHorizontal(horizontalMovement);
 
                     Vector2 movement = Vector2.zero;
@@ -104,24 +102,6 @@ namespace Character.Movement {
                 })
                 .AddTo(this);
 
-        }
-
-        private void AnimateIdleMovement()
-        {
-            if (m_compAnimator.GetBool(m_animRunning))
-            {
-                m_compAnimator.SetBool(m_animRunning, false);
-            }
-        }
-
-        private void AnimateHorizontalMovement(float horizontalMovement)
-        {
-            bool isSliding = (horizontalMovement != 0f);
-
-            if (isSliding != m_compAnimator.GetBool(m_animRunning))
-            { //to prevent jitter
-                m_compAnimator.SetBool(m_animRunning, isSliding);
-            }
         }
 
         private void CheckFlipHorizontal(float horizontalMovement)

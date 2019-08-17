@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "New PlaySettings", menuName = "Play Settings/Create Settings")]
+[CreateAssetMenu(fileName = "New PlaySettings", menuName = "HellRaiser/Create Settings")]
 public class PlaySettings : ScriptableObject
 {
 

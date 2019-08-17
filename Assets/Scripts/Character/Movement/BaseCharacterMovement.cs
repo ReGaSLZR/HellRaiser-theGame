@@ -23,7 +23,9 @@ namespace Character.Movement {
         [Space]
 
         [SerializeField]
-        protected float m_movementSpeed = 0.1f;
+        protected string m_animMove;
+
+        private float m_movementSpeed = 0.1f;
 
         protected ReactiveProperty<bool> m_reactiveIsMovEnabled { private set; get; }
 
@@ -43,6 +45,11 @@ namespace Character.Movement {
                 return;
             }
 
+            if (!m_compAnimator.GetBool(m_animMove))
+            { //to prevent jitters
+                m_compAnimator.SetBool(m_animMove, true);
+            }
+
             if (RigidbodyType2D.Dynamic == m_compRigidBody2D.bodyType)
             {
                 m_compRigidBody2D.position = (m_compRigidBody2D.position +
@@ -54,8 +61,16 @@ namespace Character.Movement {
             }
         }
 
+        public void SetMovementSpeed(float movementSpeed) {
+            m_movementSpeed = movementSpeed;
+        }
+
         public void SetMovementEnabled(bool isEnabled) {
             m_reactiveIsMovEnabled.Value = isEnabled;
+
+            if (!isEnabled) {
+                m_compAnimator.SetBool(m_animMove, false);
+            }
         }
 
     }

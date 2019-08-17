@@ -16,9 +16,6 @@ namespace Character.Movement {
         };
 
         [SerializeField]
-        private string m_animPatrol;
-
-        [SerializeField]
         [Dropdown("m_dropdownOptions")]
         private string m_patrolDirection;
 
@@ -44,12 +41,6 @@ namespace Character.Movement {
                 {
                     m_patrolMovementWithDirection = (m_ground.GetWallSide() == Ground.GroundType.Wall_Minus) ?
                                     1f : -1f;
-                })
-                .AddTo(this);
-
-            m_reactiveIsMovEnabled
-                .Subscribe(isMovEnabled => {
-                    m_compAnimator.SetBool(m_animPatrol, isMovEnabled);
                 })
                 .AddTo(this);
 
