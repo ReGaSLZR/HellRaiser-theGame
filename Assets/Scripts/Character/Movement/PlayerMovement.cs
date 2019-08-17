@@ -127,7 +127,7 @@ namespace Character.Movement {
         private void CheckFlipHorizontal(float horizontalMovement)
         {
             //flip based on wall side, else flip based on movement direction
-            bool shouldFlip = (m_ground.IsWallHit().Value) ?
+            bool shouldFlip = (m_ground.IsWallHit().Value && (!m_ground.IsOnGround().Value)) ?
                           ((m_ground.GetWallSide() == GroundType.Wall_Plus) ? true : false)
                           : (horizontalMovement < 0f);
 
