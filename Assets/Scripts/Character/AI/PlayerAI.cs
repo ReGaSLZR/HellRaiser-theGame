@@ -1,6 +1,6 @@
 ﻿namespace Character.AI {
 
-    public class PlayerAI : BaseCharacterAI
+    public class PlayerAI : BaseAI
     {
 
         

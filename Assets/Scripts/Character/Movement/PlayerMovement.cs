@@ -9,7 +9,7 @@ using Zenject;
 namespace Character.Movement
 {
 
-    public class PlayerMovement : BaseCharacterMovement
+    public class PlayerMovement : BaseMovement
     {
 
         //INJECTIBLES

@@ -1,6 +1,6 @@
 ﻿namespace Character.Stats {
 
-    public class NPCStats : BaseCharacterStats
+    public class NPCStats : BaseStats
     {
 
         

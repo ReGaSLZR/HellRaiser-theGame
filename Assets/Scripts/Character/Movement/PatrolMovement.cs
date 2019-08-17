@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Character.Movement {
 
-    public class PatrolMovement : BaseCharacterMovement
+    public class PatrolMovement : BaseMovement
     {
 
         private const string DIRECTION_HORIZONTAL = "Horizontal";

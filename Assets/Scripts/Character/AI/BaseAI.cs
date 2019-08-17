@@ -6,16 +6,16 @@ using UnityEngine;
 
 namespace Character.AI {
 
-    public abstract class BaseCharacterAI : MonoBehaviour
+    public abstract class BaseAI : MonoBehaviour
     {
 
         [SerializeField]
         [Required]
-        private BaseCharacterMovement m_movement;
+        private BaseMovement m_movement;
 
         [SerializeField]
         [Required]
-        private BaseCharacterStats m_characterStats;
+        private BaseStats m_characterStats;
         
         private void Awake()
         {

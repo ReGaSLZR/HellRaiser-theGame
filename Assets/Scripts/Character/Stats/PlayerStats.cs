@@ -1,7 +1,7 @@
 ﻿namespace Character.Stats
 {
 
-    public class PlayerStats : BaseCharacterStats
+    public class PlayerStats : BaseStats
     {
 
         // Use this for initialization

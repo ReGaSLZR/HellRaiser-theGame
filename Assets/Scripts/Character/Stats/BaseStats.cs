@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Character.Stats {
 
-    public abstract class BaseCharacterStats : MonoBehaviour
+    public abstract class BaseStats : MonoBehaviour
     {
 
         private ReactiveProperty<int> m_reactiveHealth;

@@ -2,7 +2,7 @@
 
 namespace Character.AI {
 
-    public class HostileAI : BaseCharacterAI
+    public class HostileAI : BaseAI
     {
         
 

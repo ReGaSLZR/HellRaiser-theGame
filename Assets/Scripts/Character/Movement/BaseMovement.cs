@@ -8,7 +8,7 @@ namespace Character.Movement {
     [RequireComponent(typeof(Animator))]
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(SpriteRenderer))]
-    public abstract class BaseCharacterMovement : MonoBehaviour
+    public abstract class BaseMovement : MonoBehaviour
     {
 
         //COMPONENTS
