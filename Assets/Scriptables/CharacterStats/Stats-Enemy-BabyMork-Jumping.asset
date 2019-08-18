@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_level: 1
   m_health: 3
-  m_movementSpeed: 5.5
-  m_attack: 6
+  m_statMovement:
+    m_movSpeed: 5.5
+    m_stunLength: 2
+  m_statOffense:
+    m_attack: 6
+    m_critChance: 1
+    m_critDamage: 1
   m_defense: 20
-  m_stunLength: 2
-  m_critChance: 1
-  m_critDamage: 1
   m_deflectChance: 0

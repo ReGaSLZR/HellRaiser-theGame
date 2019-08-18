@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Character.Stats;
+using System.Collections;
 using UnityEngine;
 
 namespace Character.Skill {
@@ -21,13 +22,13 @@ namespace Character.Skill {
 
         [SerializeField]
         [Range(0f, 5f)]
-        protected float m_delay = 0f;
+        protected float m_skillDelay = 0f;
         [SerializeField]
         [Range(0.25f, 5f)]
-        protected float m_duration = 0.25f;
+        protected float m_skillDuration = 0.25f;
         [SerializeField]
         [Range(0.25f, 10f)]
-        protected float m_cooldown = 0.25f;
+        protected float m_skillCooldown = 0.25f;
 
         [Space]
 
@@ -37,10 +38,17 @@ namespace Character.Skill {
         private bool m_tempStopRepeatingSkill;
         private bool m_isInCooldown;
 
+        protected StatOffense m_statOffense;
+
         protected abstract void ExecuteUseSkill();
 
         protected virtual void Awake() {
             m_compAnimator = GetComponent<Animator>();
+        }
+
+        public void SetStatOffense(StatOffense statOffense)
+        {
+            m_statOffense = statOffense;
         }
 
         public void UseSkill() {
@@ -71,16 +79,16 @@ namespace Character.Skill {
         private IEnumerator CorChargeSkill() {
             m_isInCooldown = true;
 
-            yield return new WaitForSeconds(m_delay);
+            yield return new WaitForSeconds(m_skillDelay);
 
             ExecuteUseSkill();
             AnimateSkill(true);
 
-            yield return new WaitForSeconds(m_duration);
+            yield return new WaitForSeconds(m_skillDuration);
 
             AnimateSkill(false);
 
-            yield return new WaitForSeconds(m_cooldown);
+            yield return new WaitForSeconds(m_skillCooldown);
             m_isInCooldown = false;
 
             if (m_isRepeating && !m_tempStopRepeatingSkill) {

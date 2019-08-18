@@ -1,4 +1,5 @@
 ﻿using Character.Ground;
+using Character.Stats;
 using NaughtyAttributes;
 using UniRx;
 using UnityEngine;
@@ -36,7 +37,7 @@ namespace Character.Movement {
         [SerializeField]
         private string m_animStunned;
 
-        private float m_movementSpeed = 0.1f;
+        protected StatMovement m_statMovement;
 
         protected ReactiveProperty<bool> m_reactiveIsMovEnabled { private set; get; }
 
@@ -54,7 +55,7 @@ namespace Character.Movement {
         /// </summary>
         /// <param name="movementDirection">The direction of movement that's ready to be multiplied by speed and framerate.</param>
         protected void StartMovement(Vector2 movementDirection) {
-            if (m_movementSpeed == 0f) {
+            if (m_statMovement.m_movSpeed == 0f) {
                 return;
             }
 
@@ -66,11 +67,11 @@ namespace Character.Movement {
             if (RigidbodyType2D.Dynamic == m_compRigidBody2D.bodyType)
             {
                 m_compRigidBody2D.position = (m_compRigidBody2D.position +
-                    (movementDirection * m_movementSpeed * Time.fixedDeltaTime));
+                    (movementDirection * m_statMovement.m_movSpeed * Time.fixedDeltaTime));
             }
             else {
                 m_compRigidBody2D.MovePosition(m_compRigidBody2D.position +
-                    (movementDirection * m_movementSpeed * Time.fixedDeltaTime));
+                    (movementDirection * m_statMovement.m_movSpeed * Time.fixedDeltaTime));
             }
         }
 
@@ -104,8 +105,8 @@ namespace Character.Movement {
             }
         }
 
-        public void SetMovementSpeed(float movementSpeed) {
-            m_movementSpeed = movementSpeed;
+        public void SetStatMovement(StatMovement statMovement) {
+            m_statMovement = statMovement;
         }
 
         public void SetMovementEnabled(bool isEnabled) {

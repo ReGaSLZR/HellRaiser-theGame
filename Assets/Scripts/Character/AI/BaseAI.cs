@@ -25,9 +25,10 @@ namespace Character.AI {
         [Required]
         protected BaseSkill m_skillMain;
 
-        protected virtual void Awake()
+        protected virtual void OnEnable()
         {
-            m_movement.SetMovementSpeed(m_characterStats.GetMovementSpeed());
+            m_movement.SetStatMovement(m_characterStats.GetStatMovement());
+            m_skillMain.SetStatOffense(m_characterStats.GetStatOffense());
         }
 
         protected virtual void Start() {
@@ -64,7 +65,7 @@ namespace Character.AI {
         }
 
         protected virtual void OnDeath() {
-            Destroy(gameObject, m_characterStats.GetStunLength() + 0.1f);
+            Destroy(gameObject, m_characterStats.GetStatMovement().m_stunLength + 0.1f);
         }
 
         protected virtual void OnTargetDetection(bool isDetected) {

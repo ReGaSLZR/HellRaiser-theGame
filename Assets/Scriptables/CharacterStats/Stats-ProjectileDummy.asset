@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e08700947ff67b04db2edf774974c690, type: 3}
-  m_Name: Stats-Enemy-BabyMork
+  m_Name: Stats-ProjectileDummy
   m_EditorClassIdentifier: 
   m_level: 1
-  m_health: 5
+  m_health: 1
   m_statMovement:
-    m_movSpeed: 1.5
-    m_stunLength: 1.5
+    m_movSpeed: 0
+    m_stunLength: 1
   m_statOffense:
-    m_attack: 5
+    m_attack: 1
     m_critChance: 1
     m_critDamage: 1
-  m_defense: 20
-  m_deflectChance: 0
+  m_defense: 1
+  m_deflectChance: 1

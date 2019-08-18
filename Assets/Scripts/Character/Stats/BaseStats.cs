@@ -19,12 +19,12 @@ namespace Character.Stats {
             m_reactiveIsHurt = new ReactiveProperty<bool>(false);
         }
 
-        public float GetMovementSpeed() {
-            return m_stats.m_movementSpeed;
+        public StatMovement GetStatMovement() {
+            return m_stats.m_statMovement;
         }
 
-        public float GetStunLength() {
-            return m_stats.m_stunLength;
+        public StatOffense GetStatOffense() {
+            return m_stats.m_statOffense;
         }
 
         public ReactiveProperty<int> GetHealth() {
@@ -47,6 +47,8 @@ namespace Character.Stats {
         }
 
         public void DealDamage(int damage, bool isCritical) {
+            //TODO: code deflection (chance + application)
+
             int damageReceived = StatsUtil.GetDamageReceived(damage, m_stats.m_defense);
 
             //TODO: show damage received as FX
@@ -60,7 +62,7 @@ namespace Character.Stats {
 
         private IEnumerator CorStun() {
             m_reactiveIsHurt.Value = true;
-            yield return new WaitForSeconds(m_stats.m_stunLength);
+            yield return new WaitForSeconds(m_stats.m_statMovement.m_stunLength);
             m_reactiveIsHurt.Value = false;
         }
 

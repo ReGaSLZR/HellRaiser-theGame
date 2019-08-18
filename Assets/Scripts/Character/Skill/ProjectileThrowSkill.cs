@@ -48,10 +48,9 @@ namespace Character.Skill {
             SpawnerDirection spawner = GetProjectileSpawner();
             GameObject projectile = m_instantiator.InstantiateInjectPrefab(m_prefabProjectile, 
                 spawner.gameObject.transform);
-            Rigidbody2D rigidBody2DProjectile = projectile.GetComponent<Rigidbody2D>();
 
-            rigidBody2DProjectile.AddForce(spawner.m_direction * m_throwForce);
-            rigidBody2DProjectile.AddTorque(m_throwTorque, ForceMode2D.Force);
+            PassStatOffenseToProjectile(projectile);
+            ApplyForceToProjectile(projectile, spawner);
         }
 
         private SpawnerDirection GetProjectileSpawner()
@@ -62,6 +61,29 @@ namespace Character.Skill {
 
             return (m_compSpriteRenderer.flipX) ? 
                 m_spawnPointMinus : m_spawnPointPlus;
+        }
+
+        private void ApplyForceToProjectile(GameObject projectile, SpawnerDirection spawner)
+        {
+            Rigidbody2D rigidBody2DProjectile = projectile.GetComponent<Rigidbody2D>();
+
+            if (rigidBody2DProjectile == null)
+            {
+                LogUtil.PrintWarning(gameObject, GetType(), "ExecuteUseSkill(): Prefab projectile is missing a Rigidbody2D component.");
+                return;
+            }
+
+            rigidBody2DProjectile.AddForce(spawner.m_direction * m_throwForce);
+            rigidBody2DProjectile.AddTorque(m_throwTorque, ForceMode2D.Force);
+        }
+
+        private void PassStatOffenseToProjectile(GameObject projectile)
+        {
+            BaseSkill projectileSkill = projectile.GetComponent<BaseSkill>();
+
+            if (projectileSkill != null) {
+                projectileSkill.SetStatOffense(m_statOffense);
+            }
         }
 
     }
