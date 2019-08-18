@@ -49,10 +49,12 @@ namespace Character.Movement {
             m_compRigidBody2D = GetComponent<Rigidbody2D>();
         }
 
+        /// <summary>
+        /// Force the rigidbody2D to start moving. TIP: check m_reactiveIsMoveEnabled.Value before calling.
+        /// </summary>
+        /// <param name="movementDirection">The direction of movement that's ready to be multiplied by speed and framerate.</param>
         protected void StartMovement(Vector2 movementDirection) {
-            if (!m_reactiveIsMovEnabled.Value)
-            {
-                LogUtil.PrintInfo(gameObject, GetType(), "StartMovement(): Movement is stopped for the moment.");
+            if (m_movementSpeed == 0f) {
                 return;
             }
 

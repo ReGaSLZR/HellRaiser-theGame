@@ -63,7 +63,7 @@ namespace Character.Movement
             //run
             this.FixedUpdateAsObservable()
                 .Select(_ => m_modelInput.m_run)
-                .Where(horizontalMovement => (horizontalMovement != 0))
+                .Where(horizontalMovement => (horizontalMovement != 0) && m_reactiveIsMovEnabled.Value)
                 .Subscribe(horizontalMovement =>
                 {
                     CheckFlipHorizontal();
