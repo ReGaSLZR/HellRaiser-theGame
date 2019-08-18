@@ -72,8 +72,8 @@ namespace Character.AI {
             
             if (isDetected)
             {
-                m_skillMain.UseSkill();
                 m_movement.Face(m_targetDetector.m_targets[0].gameObject.transform);
+                m_skillMain.UseSkill();
             }
             else {
                 m_skillMain.StopSkill(false);
