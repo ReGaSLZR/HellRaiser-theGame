@@ -2,6 +2,7 @@
 using NaughtyAttributes;
 using UniRx;
 using UnityEngine;
+using static UnityEngine.RectTransform;
 
 namespace Character.Movement {
 
@@ -26,6 +27,14 @@ namespace Character.Movement {
         protected string m_animMove;
         [SerializeField]
         private string m_animStunned;
+
+        [Space]
+
+        [SerializeField]
+        protected Axis m_movementDirection;
+
+        [SerializeField]
+        protected bool m_shouldFlipSprite;
 
         private float m_movementSpeed = 0.1f;
 
@@ -63,25 +72,53 @@ namespace Character.Movement {
             }
         }
 
+        protected bool ShouldFlip(Transform transformToFace) {
+            if (!m_shouldFlipSprite) { //quickly return if condition is satisfied; else, perform direction calculation
+                return false;
+            }
+
+            float direction = ((Axis.Horizontal == m_movementDirection) ? 
+                gameObject.transform.position.x : gameObject.transform.position.y) 
+                - ((Axis.Horizontal == m_movementDirection) ? 
+                transformToFace.position.x : transform.position.y);
+
+            return (direction >= 0f);
+        }
+
+        protected bool ShouldFlip(float movement) {
+            return m_shouldFlipSprite ? (movement < 0f) : false;
+        }
+
+        public void Face(Transform transformToFace) {
+            bool shouldFlip = ShouldFlip(transformToFace);
+
+            if (Axis.Horizontal == m_movementDirection)
+            {
+                m_compSpriteRenderer.flipX = shouldFlip;
+            }
+            else
+            {
+                m_compSpriteRenderer.flipY = shouldFlip;
+            }
+        }
+
         public void SetMovementSpeed(float movementSpeed) {
             m_movementSpeed = movementSpeed;
         }
 
         public void SetMovementEnabled(bool isEnabled) {
             m_reactiveIsMovEnabled.Value = isEnabled;
-
-            if (!isEnabled)
-            {
-                m_compAnimator.SetBool(m_animMove, false);
-            }
-            else if(isEnabled && m_compAnimator.GetBool(m_animStunned)) {
-                m_compAnimator.SetBool(m_animStunned, false);
-            }
         }
 
         public void StunMovement() {
             SetMovementEnabled(false);
+            m_compAnimator.SetBool(m_animMove, false);
             m_compAnimator.SetBool(m_animStunned, true);
+        }
+
+        public void UnStunMovement() {
+            SetMovementEnabled(true);
+            m_compAnimator.SetBool(m_animStunned, false);
         }
 
     }

@@ -1,26 +1,12 @@
-﻿using NaughtyAttributes;
-using UniRx;
+﻿using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
+using static UnityEngine.RectTransform;
 
 namespace Character.Movement {
 
     public class PatrolMovement : BaseMovement
     {
-
-        private const string DIRECTION_HORIZONTAL = "Horizontal";
-        private const string DIRECTION_VERTICAL = "Vertical";
-        private string[] m_dropdownOptions = new string[] {
-            DIRECTION_HORIZONTAL,
-            DIRECTION_VERTICAL
-        };
-
-        [SerializeField]
-        [Dropdown("m_dropdownOptions")]
-        private string m_patrolDirection;
-
-        [SerializeField]
-        private bool m_shouldFlipOnHorizontalDirectionChange;
 
         private float m_patrolMovementWithDirection = 1f;
 
@@ -49,16 +35,17 @@ namespace Character.Movement {
                 .Where(isMovEnabled => isMovEnabled)
                 .Subscribe(_ => {
                     Vector2 movement = Vector2.zero;
+                    bool shouldFlip = ShouldFlip(m_patrolMovementWithDirection);
 
-                    if (m_patrolDirection.Equals(DIRECTION_HORIZONTAL))
+                    if (Axis.Horizontal == m_movementDirection)
                     {
                         movement.x = m_patrolMovementWithDirection;
-                        m_compSpriteRenderer.flipX = m_shouldFlipOnHorizontalDirectionChange 
-                            ? (m_patrolMovementWithDirection < 0f) : false;
+                        m_compSpriteRenderer.flipX = shouldFlip;
                     }
                     else
                     {
                         movement.y = m_patrolMovementWithDirection;
+                        m_compSpriteRenderer.flipY = shouldFlip;
                     }
 
                     StartMovement(movement);
