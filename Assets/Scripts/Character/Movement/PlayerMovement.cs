@@ -16,6 +16,11 @@ namespace Character.Movement
         [Inject]
         private BaseInputModel m_modelInput;
 
+        [SerializeField]
+        private string m_animOnGround;
+        [SerializeField]
+        private string m_animOnWall;
+
         [Header("Wall Slide")]
         [SerializeField]
         private float m_wallSlideNormalFrictionDrag = 1f;
@@ -40,10 +45,6 @@ namespace Character.Movement
         [SerializeField]
         private bool m_canJumpInMidair;
         private int m_jumpsLeft = 1;
-
-        [Header("Animation Params")]
-        [SerializeField] private string m_animOnGround;
-        [SerializeField] private string m_animOnWall;
 
         private DateTimeOffset m_jumpLastTimeStamp;
 

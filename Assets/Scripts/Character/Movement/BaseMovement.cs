@@ -24,17 +24,17 @@ namespace Character.Movement {
         [Space]
 
         [SerializeField]
-        protected string m_animMove;
-        [SerializeField]
-        private string m_animStunned;
-
-        [Space]
-
-        [SerializeField]
         protected Axis m_movementDirection;
 
         [SerializeField]
         protected bool m_shouldFlipSprite;
+
+        [Space]
+
+        [SerializeField]
+        protected string m_animMove;
+        [SerializeField]
+        private string m_animStunned;
 
         private float m_movementSpeed = 0.1f;
 
