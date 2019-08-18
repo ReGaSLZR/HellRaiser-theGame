@@ -1,4 +1,5 @@
 ﻿using NaughtyAttributes;
+using System.Collections.Generic;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
@@ -20,22 +21,9 @@ namespace Character.Ground {
         private bool m_bypassTagChecking;
 
         [SerializeField]
-        [Tag]
+        [TagSelector]
         [DisableIf("m_bypassTagChecking")]
-        private string m_groundTag1;
-
-        [SerializeField]
-        [Tag]
-        [DisableIf("m_bypassTagChecking")]
-        private string m_groundTag2;
-
-        private void Awake()
-        {
-            if (m_groundTag2 == null || m_groundTag2.Equals(""))
-            {
-                m_groundTag2 = "UNSET";
-            }
-        }
+        private List<string> m_groundTags;
 
         private void Start()
         {
@@ -52,8 +40,7 @@ namespace Character.Ground {
 
         private bool IsGroundTagMet(Collider2D otherCollider2D)
         {
-            return m_bypassTagChecking ? true 
-                : (m_groundTag1.Equals(otherCollider2D.tag) || m_groundTag2.Equals(otherCollider2D.tag));
+            return m_bypassTagChecking ? true : m_groundTags.Contains(otherCollider2D.tag);
         }
 
     }
