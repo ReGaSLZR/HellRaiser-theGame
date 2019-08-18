@@ -2931,7 +2931,7 @@ PrefabInstance:
     - target: {fileID: 3955931305676901389, guid: d673f99e9d9c6214abfb98d2a3248012,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.79
+      value: 3.7
       objectReference: {fileID: 0}
     - target: {fileID: 3955931305676901389, guid: d673f99e9d9c6214abfb98d2a3248012,
         type: 3}
@@ -2996,6 +2996,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ChibiBabyMork
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513235532363598782, guid: e48bdc180356ab44ab84043f6274fbbd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}

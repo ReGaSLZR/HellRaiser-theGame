@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.79
+      value: 7.43
       objectReference: {fileID: 0}
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
@@ -67,12 +67,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1161097270828826751, guid: e48bdc180356ab44ab84043f6274fbbd,
+        type: 3}
+      propertyPath: m_stats
+      value: 
+      objectReference: {fileID: 11400000, guid: 1d99372db30250247bbe3c571add0652,
+        type: 2}
     - target: {fileID: 709821325, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
-      propertyPath: m_patrolDirection
-      value: Vertical
+      propertyPath: m_movementDirection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 709821325, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
-      propertyPath: m_shouldFlipOnHorizontalDirectionChange
+      propertyPath: m_shouldFlipSprite
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3513235532363598780, guid: e48bdc180356ab44ab84043f6274fbbd,
@@ -126,14 +132,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4855588922642143526, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
-      propertyPath: m_groundTag1
-      value: Terrain
+      propertyPath: m_groundTags.Array.size
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1161097270828826751, guid: e48bdc180356ab44ab84043f6274fbbd,
+    - target: {fileID: 3513235531357516001, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
-      propertyPath: m_stats
+      propertyPath: m_hasSingleSpawnPoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513235531357516001, guid: e48bdc180356ab44ab84043f6274fbbd,
+        type: 3}
+      propertyPath: m_spawnPointPlus
       value: 
-      objectReference: {fileID: 11400000, guid: 1d99372db30250247bbe3c571add0652,
-        type: 2}
+      objectReference: {fileID: 1277603250849280180}
+    - target: {fileID: 334938438, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 334938438, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 167478968, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
+--- !u!114 &1277603250849280180 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1217247975, guid: e48bdc180356ab44ab84043f6274fbbd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1277603251781159507}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09d3301705dd242499b02ac95e0444ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
