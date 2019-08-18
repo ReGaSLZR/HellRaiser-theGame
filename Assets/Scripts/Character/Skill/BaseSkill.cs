@@ -16,12 +16,21 @@ namespace Character.Skill {
         [SerializeField]
         [Range(1, 999)]
         protected int m_useCount = 999;
+
+        [Space]
+
+        [SerializeField]
+        [Range(0f, 5f)]
+        protected float m_delay = 0f;
         [SerializeField]
         [Range(0.25f, 5f)]
-        protected float m_useInterval = 0.25f;
+        protected float m_duration = 0.25f;
         [SerializeField]
         [Range(0.25f, 10f)]
         protected float m_cooldown = 0.25f;
+
+        [Space]
+
         [SerializeField]
         protected bool m_isRepeating;
 
@@ -40,7 +49,6 @@ namespace Character.Skill {
             if (!m_isInCooldown && (m_useCount > 0))
             {
                 m_useCount--;
-                ExecuteUseSkill();
                 StopAllCoroutines();
                 StartCoroutine(CorChargeSkill());
             }
@@ -63,8 +71,13 @@ namespace Character.Skill {
         private IEnumerator CorChargeSkill() {
             m_isInCooldown = true;
 
+            yield return new WaitForSeconds(m_delay);
+
+            ExecuteUseSkill();
             AnimateSkill(true);
-            yield return new WaitForSeconds(m_useInterval);
+
+            yield return new WaitForSeconds(m_duration);
+
             AnimateSkill(false);
 
             yield return new WaitForSeconds(m_cooldown);

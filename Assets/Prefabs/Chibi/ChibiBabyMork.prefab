@@ -706,10 +706,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ground: {fileID: 3010638456290562441}
-  m_animMove: isPatrolling
-  m_animStunned: isHurt
   m_movementDirection: 0
   m_shouldFlipSprite: 1
+  m_animMove: isPatrolling
+  m_animStunned: isHurt
 --- !u!114 &1161097270828826751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -753,7 +753,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_animSkill: isAttacking
   m_useCount: 999
-  m_useInterval: 0.5
+  m_delay: 0.3
+  m_duration: 0.25
   m_cooldown: 0.5
   m_isRepeating: 1
   m_prefabProjectile: {fileID: 7868619509480113042, guid: 01d2ad7c01b733b4a8a9cba4b73340c1,
