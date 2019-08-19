@@ -36,41 +36,12 @@ namespace Character.Skill {
         [EnableIf("m_isDestroyedOnUse")]
         private float m_delayBeforeDestruction = 0f;
 
-        [Space]
-
-        [SerializeField]
-        private bool m_hasChildFX;
-
-        [SerializeField]
-        [EnableIf("m_hasChildFX")]
-        private Transform m_childMain;
-
-        [SerializeField]
-        [EnableIf("m_hasChildFX")]
-        private Transform m_childDealDamageFX;
-
-        protected override void Awake()
-        {
-            base.Awake();
-
-            if (m_hasChildFX)
-            {
-                m_childMain.gameObject.SetActive(true);
-                m_childDealDamageFX.gameObject.SetActive(false);
-            }
-        }
-
         protected override void ExecuteUseSkill()
         {
             ExecuteSkill();
 
             if (m_isDestroyedOnUse)
             {
-                if (m_hasChildFX) {
-                    m_childDealDamageFX.gameObject.SetActive(true);
-                    m_childMain.gameObject.SetActive(false);
-                }
-
                 Destroy(this.gameObject, m_delayBeforeDestruction);
             }
         }

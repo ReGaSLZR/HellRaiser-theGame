@@ -13,11 +13,7 @@ namespace Character.Skill {
 
         [SerializeField]
         protected string m_animSkill;
-
-        [SerializeField]
-        [Range(1, 999)]
-        protected int m_useCount = 999;
-
+        
         [Space]
 
         [SerializeField]
@@ -35,6 +31,11 @@ namespace Character.Skill {
         [SerializeField]
         protected bool m_isRepeating;
 
+        [Space]
+
+        [SerializeField]
+        protected Transform m_childFX;
+
         private bool m_tempStopRepeatingSkill;
         private bool m_isInCooldown;
 
@@ -44,6 +45,7 @@ namespace Character.Skill {
 
         protected virtual void Awake() {
             m_compAnimator = GetComponent<Animator>();
+            SetChildFXActive(false);
         }
 
         public void SetStatOffense(StatOffense statOffense)
@@ -54,9 +56,8 @@ namespace Character.Skill {
         public void UseSkill() {
             m_tempStopRepeatingSkill = false;
 
-            if (!m_isInCooldown && (m_useCount > 0))
+            if (!m_isInCooldown)
             {
-                m_useCount--;
                 StopAllCoroutines();
                 StartCoroutine(CorChargeSkill());
             }
@@ -82,10 +83,12 @@ namespace Character.Skill {
             yield return new WaitForSeconds(m_skillDelay);
 
             ExecuteUseSkill();
+            SetChildFXActive(true);
             AnimateSkill(true);
 
             yield return new WaitForSeconds(m_skillDuration);
 
+            SetChildFXActive(false);
             AnimateSkill(false);
 
             yield return new WaitForSeconds(m_skillCooldown);
@@ -102,6 +105,12 @@ namespace Character.Skill {
             }
 
             m_compAnimator.SetBool(m_animSkill, shouldAnimate);
+        }
+
+        private void SetChildFXActive(bool isActive) {
+            if (m_childFX != null) {
+                m_childFX.gameObject.SetActive(isActive);
+            }
         }
         
     }
