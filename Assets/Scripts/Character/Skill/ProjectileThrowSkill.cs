@@ -49,7 +49,7 @@ namespace Character.Skill {
             GameObject projectile = m_instantiator.InstantiateInjectPrefab(m_prefabProjectile, 
                 spawner.gameObject.transform);
 
-            PassStatOffenseToProjectile(projectile);
+            PassStatOffenseTo(projectile);
             ApplyForceToProjectile(projectile, spawner);
         }
 
@@ -75,15 +75,6 @@ namespace Character.Skill {
 
             rigidBody2DProjectile.AddForce(spawner.m_direction * m_throwForce);
             rigidBody2DProjectile.AddTorque(m_throwTorque, ForceMode2D.Force);
-        }
-
-        private void PassStatOffenseToProjectile(GameObject projectile)
-        {
-            BaseSkill projectileSkill = projectile.GetComponent<BaseSkill>();
-
-            if (projectileSkill != null) {
-                projectileSkill.SetStatOffense(m_statOffense);
-            }
         }
 
     }

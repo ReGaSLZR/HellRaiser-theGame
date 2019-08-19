@@ -46,6 +46,10 @@ namespace Character.Skill {
         protected virtual void Awake() {
             m_compAnimator = GetComponent<Animator>();
             SetChildFXActive(false);
+
+            if (m_childFX != null) {
+                PassStatOffenseTo(m_childFX.gameObject);
+            }
         }
 
         public void SetStatOffense(StatOffense statOffense)
@@ -110,6 +114,17 @@ namespace Character.Skill {
         private void SetChildFXActive(bool isActive) {
             if (m_childFX != null) {
                 m_childFX.gameObject.SetActive(isActive);
+            }
+        }
+
+        protected void PassStatOffenseTo(GameObject statReceiver) {
+            if (statReceiver != null)
+            {
+                BaseSkill childSkill = statReceiver.GetComponent<BaseSkill>();
+                if (childSkill != null)
+                {
+                    childSkill.SetStatOffense(m_statOffense);
+                }
             }
         }
         
