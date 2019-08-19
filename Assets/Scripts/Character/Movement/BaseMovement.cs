@@ -61,7 +61,7 @@ namespace Character.Movement {
 
             if (!m_compAnimator.GetBool(m_animMove))
             { //to prevent jitters
-                m_compAnimator.SetBool(m_animMove, true);
+                AnimateMovement(m_animMove, true);
             }
 
             if (RigidbodyType2D.Dynamic == m_compRigidBody2D.bodyType)
@@ -92,6 +92,14 @@ namespace Character.Movement {
             return m_shouldFlipSprite ? (movement < 0f) : false;
         }
 
+        private void AnimateMovement(string animParam, bool shouldAnimate) {
+            if (m_compAnimator.runtimeAnimatorController == null) {
+                return;
+            }
+
+            m_compAnimator.SetBool(animParam, shouldAnimate);
+        }
+
         public void Face(Transform transformToFace) {
             bool shouldFlip = ShouldFlip(transformToFace);
 
@@ -115,13 +123,13 @@ namespace Character.Movement {
 
         public void StunMovement() {
             SetMovementEnabled(false);
-            m_compAnimator.SetBool(m_animMove, false);
-            m_compAnimator.SetBool(m_animStunned, true);
+            AnimateMovement(m_animMove, false);
+            AnimateMovement(m_animStunned, true);
         }
 
         public void UnStunMovement() {
             SetMovementEnabled(true);
-            m_compAnimator.SetBool(m_animStunned, false);
+            AnimateMovement(m_animStunned, false);
         }
 
     }

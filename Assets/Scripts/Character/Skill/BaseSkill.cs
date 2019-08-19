@@ -97,6 +97,10 @@ namespace Character.Skill {
         }
 
         private void AnimateSkill(bool shouldAnimate) {
+            if (m_compAnimator.runtimeAnimatorController == null) {
+                return;
+            }
+
             m_compAnimator.SetBool(m_animSkill, shouldAnimate);
         }
         

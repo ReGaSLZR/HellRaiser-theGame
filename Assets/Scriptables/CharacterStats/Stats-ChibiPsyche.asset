@@ -16,7 +16,7 @@ MonoBehaviour:
   m_health: 20
   m_statMovement:
     m_movSpeed: 55
-    m_stunLength: 0.5
+    m_stunLength: 0.25
   m_statOffense:
     m_attack: 7
     m_critChance: 0

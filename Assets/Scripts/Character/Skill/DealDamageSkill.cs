@@ -39,16 +39,25 @@ namespace Character.Skill {
         [Space]
 
         [SerializeField]
-        private Transform m_childMain;
+        private bool m_hasChildFX;
+
         [SerializeField]
+        [EnableIf("m_hasChildFX")]
+        private Transform m_childMain;
+
+        [SerializeField]
+        [EnableIf("m_hasChildFX")]
         private Transform m_childDealDamageFX;
 
         protected override void Awake()
         {
             base.Awake();
 
-            m_childMain.gameObject.SetActive(true);
-            m_childDealDamageFX.gameObject.SetActive(false);
+            if (m_hasChildFX)
+            {
+                m_childMain.gameObject.SetActive(true);
+                m_childDealDamageFX.gameObject.SetActive(false);
+            }
         }
 
         protected override void ExecuteUseSkill()
@@ -57,8 +66,10 @@ namespace Character.Skill {
 
             if (m_isDestroyedOnUse)
             {
-                m_childDealDamageFX.gameObject.SetActive(true);
-                m_childMain.gameObject.SetActive(false);
+                if (m_hasChildFX) {
+                    m_childDealDamageFX.gameObject.SetActive(true);
+                    m_childMain.gameObject.SetActive(false);
+                }
 
                 Destroy(this.gameObject, m_delayBeforeDestruction);
             }
@@ -102,8 +113,6 @@ namespace Character.Skill {
         {
             return Mathf.RoundToInt(Random.Range(m_skillDamageRange.x, m_skillDamageRange.y));
         }
-
-        
 
     }
 
