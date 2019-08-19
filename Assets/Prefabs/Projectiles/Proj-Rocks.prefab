@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3c5ba8e22987545a5a630d29cf7199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_lifetime: 3
+  m_lifetime: 2
 --- !u!50 &6134886149628499533
 Rigidbody2D:
   serializedVersion: 4
@@ -445,8 +445,9 @@ MonoBehaviour:
   m_isRepeating: 0
   m_targetDetector: {fileID: 673631443}
   m_skillDamageRange: {x: 1, y: 10}
-  m_isDestroyedOnUse: 0
+  m_isDestroyedOnUse: 1
   m_delayBeforeDestruction: 0.1
+  m_hasChildFX: 0
   m_childMain: {fileID: 36978001142234084}
   m_childDealDamageFX: {fileID: 430051997916432450}
 --- !u!114 &1514774805

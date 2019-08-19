@@ -10,7 +10,7 @@ namespace Character.Skill {
     /// <summary>
     /// Ren's Note: This class was derived from SpotHitSkill (projects: LittleHellRaiser and ArcadeShooter)
     /// </summary>
-    public class DealDamageSkill : BaseSkill
+    public class DamageDealSkill : BaseSkill
     {
 
         [Inject]

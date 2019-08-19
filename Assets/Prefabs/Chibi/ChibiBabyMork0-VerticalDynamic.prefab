@@ -86,6 +86,32 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3513235531357516001, guid: e48bdc180356ab44ab84043f6274fbbd,
+        type: 3}
+      propertyPath: m_hasSingleSpawnPoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513235531357516001, guid: e48bdc180356ab44ab84043f6274fbbd,
+        type: 3}
+      propertyPath: m_spawnPointPlus
+      value: 
+      objectReference: {fileID: 1277603250849280180}
+    - target: {fileID: 1217247977, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 334938438, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 334938438, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 167478968, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1710033824, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
       propertyPath: m_Name
       value: '-'
@@ -134,28 +160,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_groundTags.Array.size
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3513235531357516001, guid: e48bdc180356ab44ab84043f6274fbbd,
-        type: 3}
-      propertyPath: m_hasSingleSpawnPoint
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3513235531357516001, guid: e48bdc180356ab44ab84043f6274fbbd,
-        type: 3}
-      propertyPath: m_spawnPointPlus
-      value: 
-      objectReference: {fileID: 1277603250849280180}
-    - target: {fileID: 334938438, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8
-      objectReference: {fileID: 0}
-    - target: {fileID: 334938438, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 167478968, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
