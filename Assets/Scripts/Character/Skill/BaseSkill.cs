@@ -1,5 +1,6 @@
 ﻿using Character.Stats;
 using System.Collections;
+using UniRx;
 using UnityEngine;
 
 namespace Character.Skill {
@@ -36,15 +37,17 @@ namespace Character.Skill {
         [SerializeField]
         protected Transform m_childFX;
 
-        private bool m_tempStopRepeatingSkill;
-        private bool m_isInCooldown;
-
         protected StatOffense m_statOffense;
+
+        public ReactiveProperty<bool> m_isExecutionFinished { private set; get; }
+
+        private bool m_tempStopRepeatingSkill;
 
         protected abstract void ExecuteUseSkill();
 
         protected virtual void Awake() {
             m_compAnimator = GetComponent<Animator>();
+            m_isExecutionFinished = new ReactiveProperty<bool>(true);
             SetChildFXActive(false);
 
             if (m_childFX != null) {
@@ -60,7 +63,7 @@ namespace Character.Skill {
         public void UseSkill() {
             m_tempStopRepeatingSkill = false;
 
-            if (!m_isInCooldown)
+            if (m_isExecutionFinished.Value)
             {
                 StopAllCoroutines();
                 StartCoroutine(CorChargeSkill());
@@ -71,7 +74,7 @@ namespace Character.Skill {
             if (shouldResetCooldown)
             {
                 StopAllCoroutines();
-                m_isInCooldown = false;
+                m_isExecutionFinished.Value = true;
             }
             else
             {
@@ -82,7 +85,7 @@ namespace Character.Skill {
         }
 
         private IEnumerator CorChargeSkill() {
-            m_isInCooldown = true;
+            m_isExecutionFinished.Value = false;
 
             yield return new WaitForSeconds(m_skillDelay);
 
@@ -96,7 +99,7 @@ namespace Character.Skill {
             AnimateSkill(false);
 
             yield return new WaitForSeconds(m_skillCooldown);
-            m_isInCooldown = false;
+            m_isExecutionFinished.Value = true;
 
             if (m_isRepeating && !m_tempStopRepeatingSkill) {
                 UseSkill();

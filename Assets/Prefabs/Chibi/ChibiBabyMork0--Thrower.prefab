@@ -565,7 +565,7 @@ GameObject:
   - component: {fileID: 6324747076975674038}
   - component: {fileID: 3513235531357516001}
   m_Layer: 0
-  m_Name: ChibiBabyMork
+  m_Name: ChibiBabyMork0--Thrower
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -752,11 +752,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_animSkill: isAttacking
-  m_useCount: 999
-  m_delay: 0.3
-  m_duration: 0.25
-  m_cooldown: 0.5
+  m_skillDelay: 0
+  m_skillDuration: 0.25
+  m_skillCooldown: 0.25
   m_isRepeating: 1
+  m_childFX: {fileID: 0}
   m_prefabProjectile: {fileID: 7868619509480113042, guid: 01d2ad7c01b733b4a8a9cba4b73340c1,
     type: 3}
   m_throwForce: 150

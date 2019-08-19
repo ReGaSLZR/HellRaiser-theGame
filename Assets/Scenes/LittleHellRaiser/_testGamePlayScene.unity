@@ -945,6 +945,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChibiBabyMork-VerticalDynamic
       objectReference: {fileID: 0}
+    - target: {fileID: 2412645691397292525, guid: 4d66881afb893f04baf625df162efe68,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2412645691397292520, guid: 4d66881afb893f04baf625df162efe68,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2833,7 +2838,7 @@ PrefabInstance:
     - target: {fileID: 4641134515178148427, guid: 5514190d572c2b54caa20764e115834d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.79
+      value: 7.35
       objectReference: {fileID: 0}
     - target: {fileID: 4641134515178148427, guid: 5514190d572c2b54caa20764e115834d,
         type: 3}
@@ -2903,7 +2908,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &2011281569
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2938,24 +2943,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2011281568}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.34, y: 2.7842777, z: -1.4667954}
+  m_LocalPosition: {x: 9.34, y: 18.1, z: -1.4667954}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2040706424 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2040706424, guid: 742fb78875b4eef4ab00c290de119362,
-    type: 3}
-  m_PrefabInstance: {fileID: 2590343526348608954}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a554aad1044b55f4488f9dff98f63d39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2110037864
 GameObject:
   m_ObjectHideFlags: 0
@@ -3003,6 +2996,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ChibiPsyche
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040706424, guid: 742fb78875b4eef4ab00c290de119362, type: 3}
+      propertyPath: m_throwForce
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2590343526880155034, guid: 742fb78875b4eef4ab00c290de119362,
         type: 3}
@@ -3059,10 +3056,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2040706425, guid: 742fb78875b4eef4ab00c290de119362, type: 3}
-      propertyPath: m_skillMain
-      value: 
-      objectReference: {fileID: 2040706424}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 742fb78875b4eef4ab00c290de119362, type: 3}
 --- !u!1001 &3115429581444950600
@@ -3151,15 +3144,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChibiBabyMork
       objectReference: {fileID: 0}
-    - target: {fileID: 3513235532363598782, guid: e48bdc180356ab44ab84043f6274fbbd,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.79
+      value: 5.97
       objectReference: {fileID: 0}
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
@@ -3228,12 +3216,12 @@ PrefabInstance:
     - target: {fileID: 7868619509480113042, guid: 01d2ad7c01b733b4a8a9cba4b73340c1,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7868619509480113053, guid: 01d2ad7c01b733b4a8a9cba4b73340c1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 2.32
       objectReference: {fileID: 0}
     - target: {fileID: 7868619509480113053, guid: 01d2ad7c01b733b4a8a9cba4b73340c1,
         type: 3}

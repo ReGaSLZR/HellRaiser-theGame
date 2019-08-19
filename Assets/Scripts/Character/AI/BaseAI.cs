@@ -36,15 +36,34 @@ namespace Character.AI {
         }
 
         private void InitObservers() {
-            //target detection
             if (m_targetDetector != null)
             {
+                //upon target detection
                 m_targetDetector.m_isTargetDetected
-                    .Subscribe(isDetected => OnTargetDetection(isDetected))
+                    .Subscribe(isDetected => {
+                        if (!m_characterStats.IsHurt().Value && m_skillMain.m_isExecutionFinished.Value) { 
+                            OnTargetDetection(isDetected);
+                        }
+                    })
+                    .AddTo(this);
+
+                //on skill finish execution
+                m_skillMain.m_isExecutionFinished
+                    .Where(isFinished => isFinished && m_targetDetector.m_targets.Count == 0)
+                    .Subscribe(_ =>
+                    {
+                        m_skillMain.StopSkill(false);
+
+                        if (!m_characterStats.IsHurt().Value)
+                        {
+                            m_movement.SetMovementEnabled(true);
+                        }
+
+                    })
                     .AddTo(this);
             }
 
-            //is hurt
+            //upon getting hurt
             m_characterStats.IsHurt()
                 .Subscribe(isHurt => {
                     if (isHurt)
@@ -59,27 +78,33 @@ namespace Character.AI {
                     else
                     {
                         m_movement.UnStunMovement();
+
+                        if (m_targetDetector != null && m_targetDetector.m_isTargetDetected.Value)
+                        {
+                            OnTargetDetection(true);
+                        }
+                        
                     }
                 })
                 .AddTo(this);
         }
 
         protected virtual void OnDeath() {
-            Destroy(gameObject, m_characterStats.GetStatMovement().m_stunLength + 0.1f);
+            Destroy(gameObject, m_characterStats.GetStatMovement().m_stunLength + 0.01f);
         }
 
         protected virtual void OnTargetDetection(bool isDetected) {
             m_movement.SetMovementEnabled(!isDetected);
-            
+
             if (isDetected)
             {
                 m_movement.Face(m_targetDetector.m_targets[0].gameObject.transform);
                 m_skillMain.UseSkill();
             }
-            else {
+            else
+            {
                 m_skillMain.StopSkill(false);
             }
-            
         }
 
     }

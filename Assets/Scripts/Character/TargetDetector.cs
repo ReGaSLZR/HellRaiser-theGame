@@ -48,11 +48,8 @@ namespace Character {
             this.OnTriggerExit2DAsObservable()
                 .Where(otherCollider2D => IsMatchingTag(otherCollider2D.tag))
                 .Subscribe(otherCollider2D => {
-                    if (m_isTargetDetected.Value == true)
-                    {
-                        RefreshTargets(otherCollider2D);
                         m_isTargetDetected.Value = false;
-                    }
+                        m_targets.Clear();
                 })
                 .AddTo(this);
 
@@ -70,28 +67,25 @@ namespace Character {
             this.OnCollisionExit2DAsObservable()
                 .Where(otherCollision2D => IsMatchingTag(otherCollision2D.gameObject.tag))
                 .Subscribe(otherCollision2D => {
-                    if (m_isTargetDetected.Value == true)
-                    {
-                        RefreshTargets(otherCollision2D.collider);
                         m_isTargetDetected.Value = false;
-                    }
+                        m_targets.Clear();
                 })
                 .AddTo(this);
         }
 
         private void RefreshTargets(Collider2D detectedCollider)
         {
+            m_targets.Clear();
+
             if (m_isLockedToFirstSingleTarget && IsMatchingTag(detectedCollider.tag))
             {
-                m_targets.Clear();
                 m_targets.Add(detectedCollider);
             }
             else
             {
                 Collider2D[] tempTargets = Physics2D.OverlapCircleAll(transform.position, m_detectionRange);
-                m_targets.Clear();
-                //filter targets by tags
 
+                //filter targets by tags
                 foreach (Collider2D collider2D in tempTargets)
                 {
                     if (IsMatchingTag(collider2D.tag))
