@@ -17,27 +17,22 @@ namespace GamePlayInput {
         [Space]
 
         [SerializeField]
-        private KeyCode m_keyAttack = KeyCode.J;
+        private KeyCode m_keySkillMain = KeyCode.J;
         [SerializeField]
-        private KeyCode m_keySkill1 = KeyCode.K;
+        private KeyCode m_keySkill2 = KeyCode.K;
         [SerializeField]
-        private KeyCode m_keySkill2 = KeyCode.L;
+        private KeyCode m_keySkill3 = KeyCode.L;
 
         private void Start()
         {
             SetUpHorizontalMovementControls();
             SetUpSkillControls();
 
+            //jump control
             this.FixedUpdateAsObservable()
                 .Where(_ => m_isEnabled)
                 .Select(_ => Input.GetKeyDown(m_keyJump))
                 .Subscribe(isPressed => m_jump = isPressed)
-                .AddTo(this);
-
-            this.FixedUpdateAsObservable()
-                .Where(_ => m_isEnabled)
-                .Select(_ => Input.GetKeyDown(m_keyAttack))
-                .Subscribe(isPressed => m_attack = isPressed)
                 .AddTo(this);
 
         }
@@ -46,14 +41,20 @@ namespace GamePlayInput {
         {
             this.FixedUpdateAsObservable()
                 .Where(_ => m_isEnabled)
-                .Select(_ => Input.GetKeyDown(m_keySkill1))
-                .Subscribe(isPressed => m_skill1 = isPressed)
+                .Select(_ => Input.GetKeyDown(m_keySkillMain))
+                .Subscribe(isPressed => m_skillMain = isPressed)
                 .AddTo(this);
 
             this.FixedUpdateAsObservable()
                 .Where(_ => m_isEnabled)
                 .Select(_ => Input.GetKeyDown(m_keySkill2))
                 .Subscribe(isPressed => m_skill2 = isPressed)
+                .AddTo(this);
+
+            this.FixedUpdateAsObservable()
+                .Where(_ => m_isEnabled)
+                .Select(_ => Input.GetKeyDown(m_keySkill3))
+                .Subscribe(isPressed => m_skill3 = isPressed)
                 .AddTo(this);
         }
 

@@ -945,11 +945,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChibiBabyMork-VerticalDynamic
       objectReference: {fileID: 0}
-    - target: {fileID: 2412645691397292525, guid: 4d66881afb893f04baf625df162efe68,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2412645691397292520, guid: 4d66881afb893f04baf625df162efe68,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2701,9 +2696,9 @@ MonoBehaviour:
   m_keyJump: 105
   m_keyMoveRight: 100
   m_keyMoveLeft: 97
-  m_keyAttack: 106
-  m_keySkill1: 107
+  m_keySkillMain: 106
   m_keySkill2: 108
+  m_keySkill3: 108
 --- !u!1 &1740609098
 GameObject:
   m_ObjectHideFlags: 0
@@ -3230,6 +3225,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Proj-Rocks
       objectReference: {fileID: 0}
+    - target: {fileID: 7868619509480113042, guid: 01d2ad7c01b733b4a8a9cba4b73340c1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7868619509480113053, guid: 01d2ad7c01b733b4a8a9cba4b73340c1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3284,10 +3284,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1514774806, guid: 01d2ad7c01b733b4a8a9cba4b73340c1, type: 3}
-      propertyPath: m_isDestroyedOnUse
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01d2ad7c01b733b4a8a9cba4b73340c1, type: 3}
