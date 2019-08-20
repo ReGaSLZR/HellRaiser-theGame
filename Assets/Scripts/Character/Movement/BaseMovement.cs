@@ -1,6 +1,6 @@
 ﻿using Character.Ground;
-using Character.Stats;
 using NaughtyAttributes;
+using Scriptables;
 using UniRx;
 using UnityEngine;
 using static UnityEngine.RectTransform;

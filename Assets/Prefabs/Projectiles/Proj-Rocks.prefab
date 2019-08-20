@@ -94,11 +94,11 @@ GameObject:
   - component: {fileID: 7868619509480113054}
   - component: {fileID: 1869659936862058627}
   - component: {fileID: 6134886149628499533}
-  - component: {fileID: 1514774804}
   - component: {fileID: 1514774807}
   - component: {fileID: 1514774806}
   - component: {fileID: 1514774805}
-  - component: {fileID: 1514774808}
+  - component: {fileID: 8131400460273162365}
+  - component: {fileID: 6974150630645299421}
   m_Layer: 0
   m_Name: Proj-Rocks
   m_TagString: Projectile
@@ -328,22 +328,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1514774804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7868619509480113042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be22eefc157506d4cb8fa58ee0323183, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_movement: {fileID: 1514774805}
-  m_characterStats: {fileID: 1514774808}
-  m_targetDetector: {fileID: 673631443}
-  m_skillMain: {fileID: 1514774806}
 --- !u!95 &1514774807
 Animator:
   serializedVersion: 3
@@ -382,7 +366,7 @@ MonoBehaviour:
   m_isRepeating: 0
   m_childFX: {fileID: 0}
   m_targetDetector: {fileID: 673631443}
-  m_skillDamageRange: {x: 1, y: 10}
+  m_skillDamageRange: {x: 90, y: 100}
   m_isDestroyedOnUse: 1
   m_delayBeforeDestruction: 0.1
 --- !u!114 &1514774805
@@ -403,7 +387,7 @@ MonoBehaviour:
   m_animMove: 
   m_animStunned: 
   m_stunLength: 0.25
---- !u!114 &1514774808
+--- !u!114 &8131400460273162365
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -412,7 +396,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 7868619509480113042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15dc3f9915ae9904da50c8346ebd076a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ad075f55284a49428f9d6daa4630fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_stats: {fileID: 11400000, guid: c0d569a32a3001f48b26791a711981cd, type: 2}
+--- !u!114 &6974150630645299421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7868619509480113042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b8feaac249ce242a4b080daab3bcd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_movement: {fileID: 1514774805}
+  m_characterStats: {fileID: 8131400460273162365}
+  m_targetDetector: {fileID: 673631443}
+  m_skillMain: {fileID: 1514774806}

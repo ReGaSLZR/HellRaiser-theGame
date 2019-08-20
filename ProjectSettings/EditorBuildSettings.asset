@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/LittleHellRaiser/_testSplashScene.unity
+    guid: 39ca89fb650e91741acf9aa33aaf87ca
+  - enabled: 1
+    path: Assets/Scenes/LittleHellRaiser/_testLoadingScene.unity
+    guid: b8fc7f5b33a38ea4998f205081ab4c10
+  - enabled: 1
+    path: Assets/Scenes/LittleHellRaiser/_testMainMenuScene.unity
+    guid: 840ab5ec2e468294bb1b50dc4ab883a8
+  - enabled: 1
+    path: Assets/Scenes/LittleHellRaiser/_testGamePlayScene.unity
+    guid: 8d8932da3e5a6d54797097a8665b9d03
   m_configObjects: {}

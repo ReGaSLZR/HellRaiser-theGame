@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e08700947ff67b04db2edf774974c690, type: 3}
   m_Name: Stats-ProjectileDummy
   m_EditorClassIdentifier: 
+  m_name: Projectile
+  m_avatar: {fileID: 2800000, guid: daceb53a6e855a348a9e96fe8d631967, type: 3}
   m_level: 1
-  m_health: 1
+  m_health: 100
+  m_stamina: 0
   m_statMovement:
     m_movSpeed: 0
     m_stunLength: 1

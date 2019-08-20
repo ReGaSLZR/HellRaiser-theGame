@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Scriptables;
+using UnityEngine;
 
 namespace Character.Stats {
 

@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Character.AI {
 
-    public abstract class BaseAI : MonoBehaviour
+    public class BaseAI : MonoBehaviour
     {
 
         [SerializeField]

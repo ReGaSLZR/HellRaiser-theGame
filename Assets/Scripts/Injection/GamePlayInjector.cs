@@ -1,5 +1,7 @@
 ﻿using Audio;
-using GamePlayInput;
+using GamePlay.Input;
+using GamePlay.Stats;
+using GamePlay.Timer;
 using NaughtyAttributes;
 using UnityEngine;
 using Zenject;
@@ -16,6 +18,14 @@ namespace Injection {
         [SerializeField]
         [Required]
         private GamePlayInputManager m_gamePlayInputManager;
+
+        [SerializeField]
+        [Required]
+        private GamePlayStatsModel m_gamePlayStats;
+
+        [SerializeField]
+        [Required]
+        private GamePlayTimerModel m_gamePlayTimer;
 
         public void InjectPrefab(GameObject prefab)
         {
@@ -35,7 +45,7 @@ namespace Injection {
 
             BindModelAudio();
 
-            BindModelPlayer();
+            BindModelGamePlay();
         }
 
         private void BindModelAudio()
@@ -44,12 +54,18 @@ namespace Injection {
             Container.Bind<AudioModel.Setter>().FromInstance(m_modelAudio);
         }
 
-        private void BindModelPlayer()
+        private void BindModelGamePlay()
         {
             //Player Input
             BaseInputModel baseInputModel = m_gamePlayInputManager.GetBaseInput();
             LogUtil.PrintInfo(gameObject, GetType(), "base input is: " + baseInputModel.GetType());
             Container.Bind<BaseInputModel>().FromInstance(baseInputModel);
+
+            Container.Bind<GamePlayStatsModel.Getter>().FromInstance(m_gamePlayStats);
+            Container.Bind<GamePlayStatsModel.Setter>().FromInstance(m_gamePlayStats);
+
+            Container.Bind<GamePlayTimerModel.Getter>().FromInstance(m_gamePlayTimer);
+            Container.Bind<GamePlayTimerModel.Setter>().FromInstance(m_gamePlayTimer);
 
         }
 

@@ -561,9 +561,9 @@ GameObject:
   - component: {fileID: 1544059747}
   - component: {fileID: 1544059746}
   - component: {fileID: 709821325}
-  - component: {fileID: 1161097270828826751}
-  - component: {fileID: 6324747076975674038}
   - component: {fileID: 3513235531357516001}
+  - component: {fileID: 4189654125729516945}
+  - component: {fileID: 3888517535082131005}
   m_Layer: 0
   m_Name: ChibiBabyMork0--Thrower
   m_TagString: Enemy
@@ -710,35 +710,6 @@ MonoBehaviour:
   m_shouldFlipSprite: 1
   m_animMove: isPatrolling
   m_animStunned: isHurt
---- !u!114 &1161097270828826751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3513235532363598782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15dc3f9915ae9904da50c8346ebd076a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_stats: {fileID: 11400000, guid: 09f49f3e43039e248b9a1745380cc566, type: 2}
---- !u!114 &6324747076975674038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3513235532363598782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be22eefc157506d4cb8fa58ee0323183, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_movement: {fileID: 709821325}
-  m_characterStats: {fileID: 1161097270828826751}
-  m_targetDetector: {fileID: 334938436}
-  m_skillMain: {fileID: 3513235531357516001}
 --- !u!114 &3513235531357516001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -764,3 +735,32 @@ MonoBehaviour:
   m_hasSingleSpawnPoint: 0
   m_spawnPointMinus: {fileID: 1217247975}
   m_spawnPointPlus: {fileID: 167478969}
+--- !u!114 &4189654125729516945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3513235532363598782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad075f55284a49428f9d6daa4630fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_stats: {fileID: 11400000, guid: 09f49f3e43039e248b9a1745380cc566, type: 2}
+--- !u!114 &3888517535082131005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3513235532363598782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b8feaac249ce242a4b080daab3bcd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_movement: {fileID: 709821325}
+  m_characterStats: {fileID: 4189654125729516945}
+  m_targetDetector: {fileID: 334938436}
+  m_skillMain: {fileID: 3513235531357516001}

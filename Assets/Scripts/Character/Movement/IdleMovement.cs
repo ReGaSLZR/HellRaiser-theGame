@@ -12,7 +12,7 @@ namespace Character.Movement {
 
         private void Start()
         {
-            SetStatMovement(new Stats.StatMovement(0f, m_stunLength)); //supercedes any other call to SetStatMovement.
+            SetStatMovement(new Scriptables.StatMovement(0f, m_stunLength)); //supercedes any other call to SetStatMovement.
         }
 
     }

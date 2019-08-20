@@ -1,19 +1,20 @@
-﻿using System.Collections;
+﻿using Scriptables;
+using System.Collections;
 using UniRx;
 using UnityEngine;
 
 namespace Character.Stats {
 
-    public abstract class BaseStats : MonoBehaviour
+    public class BaseStats : MonoBehaviour
     {
 
-        private ReactiveProperty<int> m_reactiveHealth;
-        private ReactiveProperty<bool> m_reactiveIsHurt;
+        protected ReactiveProperty<int> m_reactiveHealth;
+        protected ReactiveProperty<bool> m_reactiveIsHurt;
 
         [SerializeField]
-        protected CharacterStats m_stats;
+        protected Scriptables.CharacterInfo m_stats;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             m_reactiveHealth = new ReactiveProperty<int>(m_stats.m_health);
             m_reactiveIsHurt = new ReactiveProperty<bool>(false);
@@ -35,7 +36,7 @@ namespace Character.Stats {
             return m_reactiveIsHurt;
         }
 
-        public void AddHealth(int health) {
+        public virtual void RecoverHealth(int health) {
             if (health <= 0) {
                 LogUtil.PrintWarning(gameObject, GetType(), "AddHealth(): Invalid value of " + health);
                 return;
@@ -43,10 +44,10 @@ namespace Character.Stats {
 
             //TODO: show added health as FX
 
-            m_reactiveHealth.Value += health;
+            m_reactiveHealth.Value = Mathf.Clamp(m_reactiveHealth.Value + health, 0, Scriptables.CharacterInfo.HEALTH_MAX);
         }
 
-        public void DealDamage(int damage, bool isCritical) {
+        public virtual void DealDamage(int damage, bool isCritical) {
             //TODO: code deflection (chance + application)
 
             int damageReceived = StatsUtil.GetDamageReceived(damage, m_stats.m_defense);

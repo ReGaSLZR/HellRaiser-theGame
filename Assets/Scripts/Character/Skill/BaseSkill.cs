@@ -1,4 +1,4 @@
-﻿using Character.Stats;
+﻿using Scriptables;
 using System.Collections;
 using UniRx;
 using UnityEngine;

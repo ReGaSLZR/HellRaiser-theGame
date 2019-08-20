@@ -13,18 +13,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_animSkill: isAttacking
-  m_useCount: 999
   m_skillDelay: 0
   m_skillDuration: 0.25
   m_skillCooldown: 0.25
   m_isRepeating: 1
+  m_childFX: {fileID: 0}
   m_targetDetector: {fileID: 9212551855058176530}
-  m_skillDamageRange: {x: 1, y: 10}
+  m_skillDamageRange: {x: 70, y: 90}
   m_isDestroyedOnUse: 0
   m_delayBeforeDestruction: 0
-  m_hasChildFX: 0
-  m_childMain: {fileID: 0}
-  m_childDealDamageFX: {fileID: 0}
 --- !u!1001 &9212551854736345942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40,7 +37,7 @@ PrefabInstance:
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.79
+      value: -2.29
       objectReference: {fileID: 0}
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
@@ -92,17 +89,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6324747076975674038, guid: e48bdc180356ab44ab84043f6274fbbd,
-        type: 3}
-      propertyPath: m_skillMain
-      value: 
-      objectReference: {fileID: 1121703348}
     - target: {fileID: 334938438, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
       propertyPath: m_LocalScale.x
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3513235531357516001, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
+    - target: {fileID: 3888517535082131005, guid: e48bdc180356ab44ab84043f6274fbbd,
+        type: 3}
+      propertyPath: m_skillMain
+      value: 
+      objectReference: {fileID: 1121703348}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
 --- !u!1 &5699316324740432104 stripped
 GameObject:
