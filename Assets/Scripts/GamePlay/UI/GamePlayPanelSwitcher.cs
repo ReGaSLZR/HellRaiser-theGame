@@ -1,4 +1,5 @@
 ﻿using Data.Storage;
+using GamePlay.Dialogue;
 using GamePlay.Input;
 using GamePlay.Mission;
 using GamePlay.Stats;
@@ -20,6 +21,8 @@ namespace GamePlay.UI {
         private readonly GamePlayTimerModel.Getter m_modelTimer;
         [Inject]
         private readonly GamePlayStatsModel.Getter m_modelStats;
+        [Inject]
+        private readonly GamePlayDialogueModel.Getter m_modelDialogue;
 
         [Header("Buttons")]
 
@@ -51,6 +54,9 @@ namespace GamePlay.UI {
 
         [SerializeField]
         private Image m_panelHUD;
+
+        [SerializeField]
+        private Image m_panelDialogue;
 
         [Space]
 
@@ -100,6 +106,12 @@ namespace GamePlay.UI {
 
         private void Start()
         {
+            m_modelDialogue.IsInPlay()
+                .Subscribe(isInPlay => {
+                    OnlyActivatePanel(isInPlay ? m_panelDialogue : m_panelHUD);
+                })
+                .AddTo(this);
+
             InitObserverPauseButtons();
 
             InitObserverButtons(m_buttonResume, m_panelHUD, null, 1, 0, true);
@@ -203,6 +215,7 @@ namespace GamePlay.UI {
 
         private void DeactivateAllPanels() {
             m_panelHUD.gameObject.SetActive(false);
+            m_panelDialogue.gameObject.SetActive(false);
 
             if (InputType.OnScreenButtons == m_modelInput.m_inputType) {
                 m_panelOnScreenInput.gameObject.SetActive(false);

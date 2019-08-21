@@ -1,4 +1,5 @@
 ﻿using Audio;
+using GamePlay.Dialogue;
 using GamePlay.Input;
 using GamePlay.Stats;
 using GamePlay.Timer;
@@ -22,6 +23,10 @@ namespace Injection {
         [SerializeField]
         [Required]
         private GamePlayStatsModel m_gamePlayStats;
+
+        [SerializeField]
+        [Required]
+        private GamePlayDialogueModel m_gamePlayDialogue;
 
         [SerializeField]
         [Required]
@@ -60,6 +65,9 @@ namespace Injection {
             BaseInputModel baseInputModel = m_gamePlayInputManager.GetBaseInput();
             LogUtil.PrintInfo(gameObject, GetType(), "base input is: " + baseInputModel.GetType());
             Container.Bind<BaseInputModel>().FromInstance(baseInputModel);
+
+            Container.Bind<GamePlayDialogueModel.Getter>().FromInstance(m_gamePlayDialogue);
+            Container.Bind<GamePlayDialogueModel.Setter>().FromInstance(m_gamePlayDialogue);
 
             Container.Bind<GamePlayStatsModel.Getter>().FromInstance(m_gamePlayStats);
             Container.Bind<GamePlayStatsModel.Setter>().FromInstance(m_gamePlayStats);

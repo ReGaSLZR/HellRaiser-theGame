@@ -12,8 +12,7 @@ namespace Scriptables {
 
         public const int STAMINA_MAX = 100;
 
-        public string m_name;
-        public Texture2D m_avatar;
+        public CharacterInfoUI m_infoUI;
 
         [ResizableTextArea]
         public string m_bio;
