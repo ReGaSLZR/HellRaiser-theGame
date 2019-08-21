@@ -415,6 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_animSkill: isUsingSkill1
+  m_animStopper: 
   m_skillDelay: 0
   m_skillDuration: 0.25
   m_skillCooldown: 0.25
@@ -440,6 +441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_animSkill: isUsingSkill2
+  m_animStopper: 
   m_skillDelay: 0
   m_skillDuration: 0.5
   m_skillCooldown: 0.25
@@ -459,7 +461,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_animSkill: isUsingSkill3
-  m_skillDelay: 0.5
+  m_animStopper: isUsingSkill3Trigger
+  m_skillDelay: 0
   m_skillDuration: 5
   m_skillCooldown: 0.5
   m_isRepeating: 0

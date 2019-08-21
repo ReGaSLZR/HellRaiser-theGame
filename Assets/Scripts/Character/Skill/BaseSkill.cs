@@ -14,6 +14,9 @@ namespace Character.Skill {
 
         [SerializeField]
         protected string m_animSkill;
+        [SerializeField]
+        [Tooltip("Necessary for skills with 'scratch' animations. Leave BLANK if unused.")]
+        protected string m_animTriggerStopper;
         
         [Space]
 
@@ -116,6 +119,10 @@ namespace Character.Skill {
             }
 
             m_compAnimator.SetBool(m_animSkill, shouldAnimate);
+
+            if (!m_animTriggerStopper.Equals("")) {
+                m_compAnimator.SetTrigger(m_animTriggerStopper);
+            }
         }
 
         private void SetChildFXActive(bool isActive) {
