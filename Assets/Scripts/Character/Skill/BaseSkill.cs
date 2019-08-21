@@ -95,8 +95,7 @@ namespace Character.Skill {
 
             yield return new WaitForSeconds(m_skillDuration);
 
-            SetChildFXActive(false);
-            AnimateSkill(false);
+            OnSkillFinish();
 
             yield return new WaitForSeconds(m_skillCooldown);
             m_isExecutionFinished.Value = true;
@@ -104,6 +103,11 @@ namespace Character.Skill {
             if (m_isRepeating && !m_tempStopRepeatingSkill) {
                 UseSkill();
             }
+        }
+
+        protected virtual void OnSkillFinish() {
+            SetChildFXActive(false);
+            AnimateSkill(false);
         }
 
         private void AnimateSkill(bool shouldAnimate) {

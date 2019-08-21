@@ -17,6 +17,12 @@ namespace Scriptables {
         [ResizableTextArea]
         public string m_bio;
 
+        public bool m_isPlayable;
+
+        [EnableIf("m_isPlayable")]
+        [Range(0, STAMINA_MAX)]
+        public int[] m_skillCosts = new int[3];
+
         [Header("Stats")]
 
         [HideInInspector]

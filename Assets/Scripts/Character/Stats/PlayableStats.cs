@@ -20,13 +20,14 @@ namespace Character.Stats
 
         private void OnEnable()
         {
-            m_modelStatsSetter.ConfigStatsForCharacter(m_stats.m_infoUI.m_name, m_stats.m_infoUI.m_avatarMain);
+            m_modelStatsSetter.ConfigStatsForCharacter(m_info);
         }
 
         private void Start()
         {
             m_modelStatsGetter.GetCharacterHealth()
-                .Where(health => m_stats.m_infoUI.m_name.Equals(m_modelStatsGetter.GetCharacterName()))
+                .Where(health => m_info.m_infoUI.m_name.Equals(
+                    m_modelStatsGetter.GetCharacter().Value.m_infoUI.m_name))
                 .Subscribe(modelHealth => {
                     m_reactiveHealth.Value = modelHealth;
                 })

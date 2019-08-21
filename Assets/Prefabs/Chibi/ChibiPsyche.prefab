@@ -214,6 +214,8 @@ GameObject:
   - component: {fileID: 2040706425}
   - component: {fileID: 2040706426}
   - component: {fileID: 2040706424}
+  - component: {fileID: 1905334431}
+  - component: {fileID: 1905334432}
   m_Layer: 0
   m_Name: ChibiPsyche
   m_TagString: Player
@@ -385,6 +387,8 @@ MonoBehaviour:
   m_characterStats: {fileID: 2040706426}
   m_targetDetector: {fileID: 0}
   m_skillMain: {fileID: 2040706424}
+  m_skillSecondary: {fileID: 1905334431}
+  m_skillTertiary: {fileID: 1905334432}
 --- !u!114 &2040706426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,9 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed7f40e28ca7f64a9fd9682e9a8e1d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_stats: {fileID: 11400000, guid: be06b1a92c65c7f4e8f0feb14889fb85, type: 2}
-  m_characterName: Psyche
-  m_characterAvatar: {fileID: 2800000, guid: b1d9114edeebd47eab6e33ebf5b5524e, type: 3}
+  m_info: {fileID: 11400000, guid: be06b1a92c65c7f4e8f0feb14889fb85, type: 2}
 --- !u!114 &2040706424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a554aad1044b55f4488f9dff98f63d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_animSkill: isAttackingBasic
+  m_animSkill: isUsingSkill1
   m_skillDelay: 0
   m_skillDuration: 0.25
   m_skillCooldown: 0.25
@@ -425,6 +427,45 @@ MonoBehaviour:
   m_hasSingleSpawnPoint: 0
   m_spawnPointMinus: {fileID: 4964498934501419682}
   m_spawnPointPlus: {fileID: 4151560745405859013}
+--- !u!114 &1905334431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2590343526880155044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c0660cc71706644ab056c8461d08d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_animSkill: isUsingSkill2
+  m_skillDelay: 0
+  m_skillDuration: 0.5
+  m_skillCooldown: 0.25
+  m_isRepeating: 0
+  m_childFX: {fileID: 0}
+  m_dashForce: 1200
+--- !u!114 &1905334432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2590343526880155044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7dc738137680194d97ec19004510128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_animSkill: isUsingSkill3
+  m_skillDelay: 0.5
+  m_skillDuration: 5
+  m_skillCooldown: 0.5
+  m_isRepeating: 0
+  m_childFX: {fileID: 0}
+  m_tagOnCamouflage: Player-Camouflaged
+  m_colliderOnCamouflage: {fileID: 0}
 --- !u!1 &2590343526900374104
 GameObject:
   m_ObjectHideFlags: 0

@@ -53,14 +53,11 @@ namespace GamePlay.UI {
                 })
                 .AddTo(this);
 
-            m_modelStats.GetCharacterLevel()
-                .Subscribe(level => {
-                    m_textCharacterLevel.text = PREFIX_CHARACTER_LEVEL + level.ToString();
+            m_modelStats.GetCharacter()
+                .Subscribe(characterInfo => {
+                    m_textCharacterLevel.text = PREFIX_CHARACTER_LEVEL + characterInfo.m_level;
+                    m_characterAvatar.texture = characterInfo.m_infoUI.m_avatarMain;
                 })
-                .AddTo(this);
-
-            m_modelStats.GetCharacterAvatar()
-                .Subscribe(avatar => m_characterAvatar.texture = avatar)
                 .AddTo(this);
 
             m_modelStats.GetCharacterHealth()

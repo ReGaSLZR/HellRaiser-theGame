@@ -12,20 +12,24 @@ namespace Character.Stats {
         protected ReactiveProperty<bool> m_reactiveIsHurt;
 
         [SerializeField]
-        protected Scriptables.CharacterInfo m_stats;
+        protected Scriptables.CharacterInfo m_info;
 
         protected virtual void Awake()
         {
-            m_reactiveHealth = new ReactiveProperty<int>(m_stats.m_health);
+            m_reactiveHealth = new ReactiveProperty<int>(m_info.m_health);
             m_reactiveIsHurt = new ReactiveProperty<bool>(false);
         }
 
+        public int[] GetSkillCosts() {
+            return m_info.m_skillCosts;
+        }
+
         public StatMovement GetStatMovement() {
-            return m_stats.m_statMovement;
+            return m_info.m_statMovement;
         }
 
         public StatOffense GetStatOffense() {
-            return m_stats.m_statOffense;
+            return m_info.m_statOffense;
         }
 
         public ReactiveProperty<int> GetHealth() {
@@ -50,7 +54,7 @@ namespace Character.Stats {
         public virtual void DealDamage(int damage, bool isCritical) {
             //TODO: code deflection (chance + application)
 
-            int damageReceived = StatsUtil.GetDamageReceived(damage, m_stats.m_defense);
+            int damageReceived = StatsUtil.GetDamageReceived(damage, m_info.m_defense);
 
             //TODO: show damage received as FX
             //TODO: show critical FX
@@ -63,7 +67,7 @@ namespace Character.Stats {
 
         private IEnumerator CorStun() {
             m_reactiveIsHurt.Value = true;
-            yield return new WaitForSeconds(m_stats.m_statMovement.m_stunLength);
+            yield return new WaitForSeconds(m_info.m_statMovement.m_stunLength);
             m_reactiveIsHurt.Value = false;
         }
 

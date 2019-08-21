@@ -32,7 +32,7 @@ namespace GamePlay.Dialogue {
         private void Start()
         {
             this.OnTriggerEnter2DAsObservable()
-               .Where(otherCollider2D => (otherCollider2D.tag.Equals("Player")))
+               .Where(otherCollider2D => (otherCollider2D.tag.Contains("Player")))
                .Subscribe(otherCollider2D => {
                    m_isTriggered = true;
 

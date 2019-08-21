@@ -95,11 +95,11 @@ namespace GamePlay.Input {
         private void SetUpSkill3()
         {
             m_buttonSkillTertiary.OnPointerDownAsObservable()
-                .Where(_ => m_isEnabled)
-                .Subscribe(_ => {
-                    m_skill3 = true;
-                })
-                .AddTo(this);
+              .Where(_ => m_isEnabled)
+              .Subscribe(_ => {
+                  m_skill3 = true;
+              })
+              .AddTo(this);
 
             m_buttonSkillTertiary.OnPointerUpAsObservable()
                 .Where(_ => m_isEnabled)

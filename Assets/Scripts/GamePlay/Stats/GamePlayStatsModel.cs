@@ -15,9 +15,7 @@ namespace GamePlay.Stats
         {
             ReactiveProperty<MissionStatus> GetMissionStatus();
 
-            ReactiveProperty<Texture2D> GetCharacterAvatar();
-            ReactiveProperty<string> GetCharacterName();
-            ReactiveProperty<int> GetCharacterLevel();
+            ReactiveProperty<Scriptables.CharacterInfo> GetCharacter();
             ReactiveProperty<int> GetCharacterHealth();
             ReactiveProperty<int> GetCharacterStamina();
 
@@ -30,7 +28,7 @@ namespace GamePlay.Stats
 
         public interface Setter
         {
-            void ConfigStatsForCharacter(string name, Texture2D avatar);
+            void ConfigStatsForCharacter(Scriptables.CharacterInfo characterInfo);
             void UpdateCharacterHealth(int newHealth);
             void UpdateCharacterStamina(int newStamina);
 
@@ -45,11 +43,11 @@ namespace GamePlay.Stats
 
         private ReactiveProperty<MissionStatus> m_missionStatus = new ReactiveProperty<MissionStatus>();
 
-        private ReactiveProperty<string> m_charName = new ReactiveProperty<string>();
-        private ReactiveProperty<Texture2D> m_charAvatar = new ReactiveProperty<Texture2D>();
-        private ReactiveProperty<int> m_charLevel = new ReactiveProperty<int>();
+        private ReactiveProperty<Scriptables.CharacterInfo> m_charInfo = new ReactiveProperty<Scriptables.CharacterInfo>();
         private ReactiveProperty<int> m_charHealth = new ReactiveProperty<int>();
         private ReactiveProperty<int> m_charStamina = new ReactiveProperty<int>();
+        private int m_skill2Cost = 0;
+        private int m_skill3Cost = 0;
 
         private ReactiveProperty<int> m_allianceLevel = new ReactiveProperty<int>();
         private ReactiveProperty<int> m_experience = new ReactiveProperty<int>();
@@ -76,7 +74,6 @@ namespace GamePlay.Stats
         }
 
         private void SetCharacterValues() {
-            m_charLevel.Value = CharacterData.GetCharacterLevel();
             m_charHealth.Value = CharacterData.GetCharacterHealth();
             m_charStamina.Value = CharacterData.GetCharacterStamina();
         }
@@ -100,19 +97,8 @@ namespace GamePlay.Stats
             return m_missionStatus;
         }
 
-        public ReactiveProperty<Texture2D> GetCharacterAvatar()
-        {
-            return m_charAvatar;
-        }
-
-        public ReactiveProperty<string> GetCharacterName()
-        {
-            return m_charName;
-        }
-
-        public ReactiveProperty<int> GetCharacterLevel()
-        {
-            return m_charLevel;
+        public ReactiveProperty<Scriptables.CharacterInfo> GetCharacter() {
+            return m_charInfo;
         }
 
         public ReactiveProperty<int> GetCharacterHealth()
@@ -145,8 +131,8 @@ namespace GamePlay.Stats
             return m_inventoryFood;
         }
 
-        public void ConfigStatsForCharacter(string name, Texture2D avatar) {
-            m_charAvatar.Value = avatar;
+        public void ConfigStatsForCharacter(Scriptables.CharacterInfo characterInfo) {
+            m_charInfo.Value = characterInfo;
             CharacterData.SetCharacterName(name);
             SetCharacterValues();
         }

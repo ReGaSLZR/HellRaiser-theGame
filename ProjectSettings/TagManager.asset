@@ -8,6 +8,7 @@ TagManager:
   - Terrain
   - Crate
   - Projectile
+  - Player-Camouflaged
   layers:
   - Default
   - TransparentFX

@@ -15,8 +15,8 @@ namespace GamePlay.Input {
         public float m_run { protected set; get; }
 
         public bool m_skillMain { protected set; get; }
-        public bool m_skill2 { protected set; get; }
-        public bool m_skill3 { protected set; get; }
+        public bool m_skill2 { protected set; get; } 
+        public bool m_skill3 { protected set; get; } 
 
         public bool m_isEnabled { protected set; get; }
 

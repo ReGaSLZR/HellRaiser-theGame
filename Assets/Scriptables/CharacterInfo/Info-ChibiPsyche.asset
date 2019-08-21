@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_infoUI: {fileID: 11400000, guid: b2e17f15d7b94d1409243dbcf60f851d, type: 2}
   m_bio: 
+  m_isPlayable: 1
+  m_skillCosts: 000000001400000023000000
   m_level: 1
   m_health: 100
   m_stamina: 0
