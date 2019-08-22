@@ -17,7 +17,7 @@ namespace GamePlay.UI {
         private readonly GamePlayStatsModel.Getter m_modelStats;
 
         [Inject]
-        private readonly GamePlayTimerModel.Getter m_modelTimer;
+        private readonly MissionModel.TimerGetter m_modelTimer;
 
         [SerializeField]
         private RawImage m_characterAvatar;
@@ -47,11 +47,19 @@ namespace GamePlay.UI {
 
         private void Start()
         {
-            m_modelTimer.GetTimer()
-                .Subscribe(currentTime => {
-                    m_textTimer.text = currentTime.ToString();
-                })
-                .AddTo(this);
+            if (m_modelTimer.IsTimed())
+            {
+                m_textTimer.gameObject.SetActive(true);
+                m_modelTimer.GetTimer()
+                    .Subscribe(currentTime =>
+                    {
+                        m_textTimer.text = currentTime.ToString();
+                    })
+                    .AddTo(this);
+            }
+            else {
+                m_textTimer.gameObject.SetActive(false);
+            }
 
             m_modelStats.GetCharacter()
                 .Subscribe(characterInfo => {

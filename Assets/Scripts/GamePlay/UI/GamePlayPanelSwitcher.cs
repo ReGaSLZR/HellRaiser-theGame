@@ -18,7 +18,9 @@ namespace GamePlay.UI {
         [Inject]
         private readonly BaseInputModel m_modelInput;
         [Inject]
-        private readonly GamePlayTimerModel.Getter m_modelTimer;
+        private readonly MissionModel.TimerGetter m_modelTimer;
+        [Inject]
+        private readonly MissionModel.MissionGetter m_modelMission;
         [Inject]
         private readonly GamePlayStatsModel.Getter m_modelStats;
         [Inject]
@@ -54,6 +56,9 @@ namespace GamePlay.UI {
 
         [SerializeField]
         private Image m_panelHUD;
+
+        [SerializeField]
+        private Image m_panelMissionObjective;
 
         [SerializeField]
         private Image m_panelDialogue;
@@ -94,17 +99,14 @@ namespace GamePlay.UI {
         [SerializeField]
         private Image m_panelLoading;
 
-        //TODO panel for input (on-screen buttons)
         //TODO vignette changing
-        //TODO mission objectives
-        //TODO dialogue
 
         private void Awake()
         {
             DeactivateAllPanels();
         }
 
-        private void Start()
+        private void OnEnable()
         {
             m_modelDialogue.IsInPlay()
                 .Subscribe(isInPlay => {
@@ -125,27 +127,42 @@ namespace GamePlay.UI {
 
         private void ShowDefaultPanels() {
             OnlyActivatePanel(m_panelHUD);
+            m_panelMissionObjective.gameObject.SetActive(false);
             m_panelOnScreenInput.gameObject.SetActive((InputType.OnScreenButtons == m_modelInput.m_inputType));
         }
 
         private void InitGameOverObservers() {
-            m_modelTimer.GetTimer()
-                .Where(countdown => (countdown <= 0))
-                .Subscribe(_ => {
-                    SetGameOverPanel(false, m_spielGameOverFailTime);
+            m_modelMission.GetMissionStatus()
+                .Subscribe(status => {
+                    switch (status) {
+                        default:
+                        case MissionStatus.ONGOING:
+                        case MissionStatus.SHOWN: {
+                                m_panelMissionObjective.gameObject.SetActive((MissionStatus.SHOWN == status));
+                                break;
+                            }
+                        case MissionStatus.CLEARED:
+                        case MissionStatus.FAILED: {
+                                m_panelMissionObjective.gameObject.SetActive(false);
+                                SetGameOverPanel((MissionStatus.CLEARED == status),
+                                    (MissionStatus.CLEARED == status) ? m_spielGameOverClear : 
+                                    ((m_modelTimer.GetTimer().Value == 0) ? m_spielGameOverFailTime : m_spielGameOverFailNormal));
+                                break;
+                            }
+                    }
                 })
                 .AddTo(this);
 
-            m_modelStats.GetMissionStatus()
-               .Where(status => (status != MissionStatus.IS_STARTED))
+            //TODO change this when the character switching is applied
+            m_modelStats.GetCharacterHealth()
+               .Where(health => (health == 0))
                .Subscribe(status => {
-                   SetGameOverPanel((MissionStatus.IS_CLEARED == status), 
-                       (MissionStatus.IS_CLEARED == status) ? m_spielGameOverClear : m_spielGameOverFailNormal);
+                   SetGameOverPanel(false, m_spielGameOverFailNormal);
                })
                .AddTo(this);
         }
 
-        private void SetGameOverPanel(bool isCleared, string failSpiel) {
+        private void SetGameOverPanel(bool isCleared, string title) {
             OnlyActivatePanel(m_panelGameOver);
             Time.timeScale = 0;
 
@@ -158,7 +175,7 @@ namespace GamePlay.UI {
                 m_panelGameOverContentFail.gameObject.SetActive(true);
             }
 
-            m_textGameOverTitle.text = failSpiel;
+            m_textGameOverTitle.text = title;
         }
 
         private void InitObserverButtons(Button[] buttons, Image panelMain, Image panelContent, 

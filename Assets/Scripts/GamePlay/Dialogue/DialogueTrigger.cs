@@ -1,19 +1,18 @@
-﻿using GamePlay.Input;
+﻿using GamePlay.Base;
+using GamePlay.Input;
 using GamePlay.Timer;
 using Scriptables;
 using UniRx;
-using UniRx.Triggers;
 using UnityEngine;
 using Zenject;
 
 namespace GamePlay.Dialogue {
 
-    [RequireComponent(typeof(Collider2D))]
-    public class DialogueTrigger : MonoBehaviour
+    public class DialogueTrigger : BaseTrigger
     {
 
         [Inject]
-        private readonly GamePlayTimerModel.Setter m_modelTimer;
+        private readonly MissionModel.TimerSetter m_modelTimer;
 
         [Inject]
         private readonly GamePlayDialogueModel.Setter m_modelDialogueSetter;
@@ -27,20 +26,12 @@ namespace GamePlay.Dialogue {
         [SerializeField]
         private DialogueLine[] m_lines;
 
-        private bool m_isTriggered;
+        [SerializeField]
+        private BaseTrigger m_chainedTriggerAfterDialogue;
 
-        private void Start()
+        protected override void Start()
         {
-            this.OnTriggerEnter2DAsObservable()
-               .Where(otherCollider2D => (otherCollider2D.tag.Contains("Player")))
-               .Subscribe(otherCollider2D => {
-                   m_isTriggered = true;
-
-                   m_modelTimer.PauseTimer();
-                   m_modelInput.DisableControls();
-                   m_modelDialogueSetter.StartDialogue(m_lines);
-               })
-               .AddTo(this);
+            base.Start();
 
             m_modelDialogueGetter.IsInPlay()
                 .Where(isInPlay => !isInPlay && m_isTriggered)
@@ -48,9 +39,22 @@ namespace GamePlay.Dialogue {
                     m_modelTimer.StartTimer();
                     m_modelInput.EnableControls();
 
+                    if (m_chainedTriggerAfterDialogue != null) {
+                        m_chainedTriggerAfterDialogue.Execute();
+                    }
+
                     Destroy(gameObject);
                 })
                 .AddTo(this);
+        }
+
+        public override void Execute()
+        {
+            m_isTriggered = true;
+
+            m_modelTimer.PauseTimer();
+            m_modelInput.DisableControls();
+            m_modelDialogueSetter.StartDialogue(m_lines);
         }
 
     }

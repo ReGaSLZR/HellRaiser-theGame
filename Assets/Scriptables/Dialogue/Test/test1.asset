@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: test1
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 11400000, guid: b2e17f15d7b94d1409243dbcf60f851d, type: 2}
-  m_line: This is a test line 1.
+  m_line: This is a test line 1. This is a test line 1. This is a test line 1. This
+    is a test line 1. This is a test line 1.

@@ -1,5 +1,4 @@
 ﻿using Data.Storage;
-using GamePlay.Mission;
 using UniRx;
 using UnityEngine;
 
@@ -13,8 +12,6 @@ namespace GamePlay.Stats
 
         public interface Getter
         {
-            ReactiveProperty<MissionStatus> GetMissionStatus();
-
             ReactiveProperty<Scriptables.CharacterInfo> GetCharacter();
             ReactiveProperty<int> GetCharacterHealth();
             ReactiveProperty<int> GetCharacterStamina();
@@ -35,13 +32,9 @@ namespace GamePlay.Stats
             void AddExperience(int experience);
             void AddInventoryMoney(int inventoryMoney);
             void AddInventoryFood(int inventoryFood);
-
-            void SetMissionStatus(MissionStatus missionStatus);
         }
 
         #endregion
-
-        private ReactiveProperty<MissionStatus> m_missionStatus = new ReactiveProperty<MissionStatus>();
 
         private ReactiveProperty<Scriptables.CharacterInfo> m_charInfo = new ReactiveProperty<Scriptables.CharacterInfo>();
         private ReactiveProperty<int> m_charHealth = new ReactiveProperty<int>();
@@ -56,7 +49,6 @@ namespace GamePlay.Stats
 
         private void Awake()
         {
-            m_missionStatus.Value = MissionStatus.IS_STARTED;
             SetCharacterValues();
             SetPlayerValues();
         }
@@ -68,9 +60,16 @@ namespace GamePlay.Stats
                 .Subscribe(health => {
                     //TODO code logic for switching to next vignette
 
-                    SetMissionStatus(MissionStatus.IS_FAILED); //TODO for now, auto-fail mission upon character death
                 })
                 .AddTo(this);
+        }
+
+        private void OnDestroy()
+        {
+            //TODO clear character data to refresh the health and stamina
+
+            PlayerData.SaveExperience(m_experience.Value);
+            PlayerData.SaveInventory(m_inventoryMoney.Value, m_inventoryFood.Value);
         }
 
         private void SetCharacterValues() {
@@ -90,11 +89,6 @@ namespace GamePlay.Stats
 
             PlayerData.SaveExperience(m_experience.Value);
             PlayerData.SaveInventory(m_inventoryMoney.Value, m_inventoryFood.Value);
-        }
-
-        public ReactiveProperty<MissionStatus> GetMissionStatus()
-        {
-            return m_missionStatus;
         }
 
         public ReactiveProperty<Scriptables.CharacterInfo> GetCharacter() {
@@ -163,10 +157,6 @@ namespace GamePlay.Stats
             m_inventoryFood.Value += inventoryFood;
         }
 
-        public void SetMissionStatus(MissionStatus missionStatus)
-        {
-            m_missionStatus.Value = missionStatus;
-        }
     }
 
 }

@@ -18,7 +18,7 @@ namespace Injection {
 
         [SerializeField]
         [Required]
-        private GamePlayInputManager m_gamePlayInputManager;
+        private GamePlayInputManager m_inputManager;
 
         [SerializeField]
         [Required]
@@ -26,11 +26,11 @@ namespace Injection {
 
         [SerializeField]
         [Required]
-        private GamePlayDialogueModel m_gamePlayDialogue;
+        private GamePlayDialogueModel m_dialogue;
 
         [SerializeField]
         [Required]
-        private GamePlayTimerModel m_gamePlayTimer;
+        private MissionModel m_missionModel;
 
         public void InjectPrefab(GameObject prefab)
         {
@@ -62,18 +62,20 @@ namespace Injection {
         private void BindModelGamePlay()
         {
             //Player Input
-            BaseInputModel baseInputModel = m_gamePlayInputManager.GetBaseInput();
+            BaseInputModel baseInputModel = m_inputManager.GetBaseInput();
             LogUtil.PrintInfo(gameObject, GetType(), "base input is: " + baseInputModel.GetType());
             Container.Bind<BaseInputModel>().FromInstance(baseInputModel);
 
-            Container.Bind<GamePlayDialogueModel.Getter>().FromInstance(m_gamePlayDialogue);
-            Container.Bind<GamePlayDialogueModel.Setter>().FromInstance(m_gamePlayDialogue);
+            Container.Bind<GamePlayDialogueModel.Getter>().FromInstance(m_dialogue);
+            Container.Bind<GamePlayDialogueModel.Setter>().FromInstance(m_dialogue);
 
             Container.Bind<GamePlayStatsModel.Getter>().FromInstance(m_gamePlayStats);
             Container.Bind<GamePlayStatsModel.Setter>().FromInstance(m_gamePlayStats);
 
-            Container.Bind<GamePlayTimerModel.Getter>().FromInstance(m_gamePlayTimer);
-            Container.Bind<GamePlayTimerModel.Setter>().FromInstance(m_gamePlayTimer);
+            Container.Bind<MissionModel.TimerGetter>().FromInstance(m_missionModel);
+            Container.Bind<MissionModel.TimerSetter>().FromInstance(m_missionModel);
+            Container.Bind<MissionModel.MissionGetter>().FromInstance(m_missionModel);
+            Container.Bind<MissionModel.MissionSetter>().FromInstance(m_missionModel);
 
         }
 

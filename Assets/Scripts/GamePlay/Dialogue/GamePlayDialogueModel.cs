@@ -54,8 +54,8 @@ namespace GamePlay.Dialogue {
         [Header("Configuration")]
 
         [SerializeField]
-        [Range(0.01f, 3f)]
-        private float m_lineLetterRevealDuration = 0.01f;
+        //[Range(0.001f, 1f)]
+        private float m_lineLetterRevealDuration;
 
         private ReactiveProperty<bool> m_isInPlay = new ReactiveProperty<bool>(false);
         private DialogueLine[] m_dialogueLines;

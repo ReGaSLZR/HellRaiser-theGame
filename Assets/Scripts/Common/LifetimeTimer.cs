@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GamePlay.Timer
+namespace Common
 {
 
     public class LifetimeTimer : MonoBehaviour
