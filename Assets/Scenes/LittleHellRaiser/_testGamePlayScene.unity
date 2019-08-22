@@ -1721,7 +1721,7 @@ RectTransform:
   m_Children:
   - {fileID: 1168008430}
   m_Father: {fileID: 1797123421}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -3960,7 +3960,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713035818}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -6413,7 +6413,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bd3adfe0e05a47c4aa47b76c4bc4d07a, type: 2}
   - {fileID: 11400000, guid: cb8c200e7baee9c4b94bfe4f19f96875, type: 2}
   - {fileID: 11400000, guid: 56d9d246ed3fbb54a8c6b52ceec7e509, type: 2}
-  m_chainedTriggerAfterDialogue: {fileID: 1126002874}
+  m_chainedTriggerAfterDialogue: {fileID: 0}
 --- !u!61 &1104589519
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6448,7 +6448,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104589517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.96, y: -0.56, z: 0}
+  m_LocalPosition: {x: 2.54, y: -0.56, z: 0}
   m_LocalScale: {x: 1, y: 4.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6633,7 +6633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isTriggeredOnGamePlayStart: 0
-  m_triggerType: 4
+  m_triggerType: 0
   m_additionalTimer: 0
 --- !u!61 &1126002875
 BoxCollider2D:
@@ -6669,7 +6669,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126002873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.97, y: 0.6, z: -4.5703125}
+  m_LocalPosition: {x: 6.97, y: -0.52, z: -4.5703125}
   m_LocalScale: {x: 1, y: 3.79, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7533,6 +7533,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1284863455}
   m_CullTransparentMesh: 0
+--- !u!1 &1289139864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1289139865}
+  - component: {fileID: 1289139867}
+  - component: {fileID: 1289139866}
+  m_Layer: 5
+  m_Name: RawImage-DialogueBackground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1289139865
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289139864}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1797123421}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1289139866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289139864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1289139867
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289139864}
+  m_CullTransparentMesh: 0
 --- !u!1 &1309111751
 GameObject:
   m_ObjectHideFlags: 0
@@ -7736,7 +7808,7 @@ RectTransform:
   - {fileID: 1487211605}
   - {fileID: 919163004}
   m_Father: {fileID: 1797123421}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -7976,6 +8048,7 @@ MonoBehaviour:
   m_textName: {fileID: 1897821672}
   m_rawImageAvatar: {fileID: 95747713}
   m_textLine: {fileID: 1357445737}
+  m_dialogueBackground: {fileID: 1289139866}
   m_buttonSkipAll: {fileID: 265369759}
   m_buttonNext: {fileID: 1487211606}
   m_textButtonNext: {fileID: 847853246}
@@ -10072,6 +10145,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1289139865}
   - {fileID: 265369758}
   - {fileID: 1334529757}
   m_Father: {fileID: 601219499}

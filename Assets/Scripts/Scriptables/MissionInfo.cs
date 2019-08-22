@@ -18,6 +18,7 @@ namespace Scriptables {
 
         public bool m_isTimed;
 
+        //TODO change lower time limit range (for now, 1 is for debug)
         [EnableIf("m_isTimed")]
         [Range(1, 1000)]
         public int m_timeLimit = 180;

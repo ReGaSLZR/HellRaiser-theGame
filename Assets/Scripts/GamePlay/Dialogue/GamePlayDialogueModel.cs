@@ -35,6 +35,11 @@ namespace GamePlay.Dialogue {
         private TextMeshProUGUI m_textLine;
 
         [SerializeField]
+        private RawImage m_dialogueBackground;
+
+        [Space]
+
+        [SerializeField]
         private Button m_buttonSkipAll;
 
         [SerializeField]
@@ -102,6 +107,8 @@ namespace GamePlay.Dialogue {
             m_dialogueLines = lines;
             m_isInPlay.Value = true;
             m_currentLineIndex = 0;
+            m_dialogueBackground.gameObject.SetActive(false);
+
             ChangeButtonNextText();
 
             StopAllCoroutines();
@@ -119,6 +126,8 @@ namespace GamePlay.Dialogue {
             m_textName.text = line.m_speaker.m_name;
             m_rawImageAvatar.texture = line.GetSpeakerAvatar();
 
+            UpdateDialogueBackground(line.m_backgroundOption, line.m_background);
+
             //display the line letter by letter
             char[] charArray = line.m_line.ToCharArray();
             string displayText = "";
@@ -128,6 +137,24 @@ namespace GamePlay.Dialogue {
                 displayText += charArray[x];
                 m_textLine.SetText(displayText);
                 yield return new WaitForSeconds(m_lineLetterRevealDuration);
+            }
+        }
+
+        private void UpdateDialogueBackground(int backgroundOption, Texture2D background) {
+            switch (backgroundOption) {
+                case DialogueLine.BG_OFF: {
+                        m_dialogueBackground.gameObject.SetActive(false);
+                        break;
+                    }
+                case DialogueLine.BG_SHOW_NEW: {
+                        m_dialogueBackground.gameObject.SetActive(true);
+                        m_dialogueBackground.texture = background;
+                        break;
+                    }
+                //case DialogueLine.BG_RETAIN: {
+                        ////purposely do nothing
+                        //break;
+                    //}
             }
         }
 
