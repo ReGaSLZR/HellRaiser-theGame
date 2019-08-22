@@ -7,11 +7,21 @@ namespace Scriptables {
     public class CharacterInfoUI : ScriptableObject {
 
         public string m_name;
+
         [ShowAssetPreview]
         public Texture2D m_avatarMain;
 
-        //TODO add more avatars specific for other expressions
-        //TODO create a method for getting specific expression
+        [ShowAssetPreview]
+        public Texture2D m_avatarHappy;
+
+        [ShowAssetPreview]
+        public Texture2D m_avatarSad;
+
+        [ShowAssetPreview]
+        public Texture2D m_avatarAngry;
+
+        [ShowAssetPreview]
+        public Texture2D m_avatarSurprised;
 
     }
 
