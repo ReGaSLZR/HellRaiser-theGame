@@ -8243,7 +8243,7 @@ MonoBehaviour:
   m_objectiveShowLength: 3
   m_textObjective:
   - {fileID: 454612565}
-  - {fileID: 623563145}
+  - {fileID: 997058599}
 --- !u!114 &1352088944
 MonoBehaviour:
   m_ObjectHideFlags: 0

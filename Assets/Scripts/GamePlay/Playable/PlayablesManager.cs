@@ -39,6 +39,9 @@ namespace GamePlay.Playable {
             m_modelStats.GetCharacterHealth()
                 .Where(health => health <= 0)
                 .Subscribe(_ => {
+                    
+                    //force setting to null value to let the "death" be recognized in this class,
+                    //in case there is a destruction delay on other behaviours
                     m_playableChars[m_index] = null;
 
                     if (AreAllCharactersDead())
