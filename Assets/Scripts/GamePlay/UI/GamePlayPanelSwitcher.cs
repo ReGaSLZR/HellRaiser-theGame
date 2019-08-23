@@ -3,7 +3,6 @@ using GamePlay.Dialogue;
 using GamePlay.Input;
 using GamePlay.Mission;
 using GamePlay.Stats;
-using GamePlay.Timer;
 using TMPro;
 using UniRx;
 using UnityEngine;
@@ -99,8 +98,6 @@ namespace GamePlay.UI {
         [SerializeField]
         private Image m_panelLoading;
 
-        //TODO vignette changing
-
         private void Awake()
         {
             DeactivateAllPanels();
@@ -152,14 +149,6 @@ namespace GamePlay.UI {
                     }
                 })
                 .AddTo(this);
-
-            //TODO change this when the character switching is applied
-            m_modelStats.GetCharacterHealth()
-               .Where(health => (health == 0))
-               .Subscribe(status => {
-                   SetGameOverPanel(false, m_spielGameOverFailNormal);
-               })
-               .AddTo(this);
         }
 
         private void SetGameOverPanel(bool isCleared, string title) {

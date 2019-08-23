@@ -723,6 +723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_animSkill: isAttacking
+  m_animTriggerStopper: 
   m_skillDelay: 0
   m_skillDuration: 0.25
   m_skillCooldown: 0.25
@@ -761,6 +762,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_movement: {fileID: 709821325}
-  m_characterStats: {fileID: 4189654125729516945}
+  m_stats: {fileID: 4189654125729516945}
   m_targetDetector: {fileID: 334938436}
   m_skillMain: {fileID: 3513235531357516001}

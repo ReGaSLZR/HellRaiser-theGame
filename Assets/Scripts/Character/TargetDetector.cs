@@ -26,51 +26,62 @@ namespace Character {
         public ReactiveProperty<bool> m_isTargetDetected { get; private set; }
         public List<Collider2D> m_targets { get; private set; }
 
+        private CompositeDisposable m_disposables = new CompositeDisposable();
+
         private void Awake()
         {
             m_isTargetDetected = new ReactiveProperty<bool>(false);
             m_targets = new List<Collider2D>();
         }
 
-        private void Start()
+        private void OnDisable()
+        {
+            m_disposables.Clear();
+        }
+
+        private void OnEnable()
         {
             this.OnTriggerEnter2DAsObservable()
                 .Where(otherCollider2D => IsMatchingTag(otherCollider2D.tag))
-                .Subscribe(otherCollider2D => {
+                .Subscribe(otherCollider2D =>
+                {
                     if (m_isTargetDetected.Value == false)
                     {
                         RefreshTargets(otherCollider2D);
                         m_isTargetDetected.Value = true;
                     }
                 })
-                .AddTo(this);
+                .AddTo(m_disposables);
 
             this.OnTriggerExit2DAsObservable()
                 .Where(otherCollider2D => IsMatchingTag(otherCollider2D.tag))
-                .Subscribe(otherCollider2D => {
-                        m_isTargetDetected.Value = false;
-                        m_targets.Clear();
+                .Subscribe(otherCollider2D =>
+                {
+                    m_isTargetDetected.Value = false;
+                    m_targets.Clear();
                 })
-                .AddTo(this);
+                .AddTo(m_disposables);
 
             this.OnCollisionEnter2DAsObservable()
                 .Where(otherCollision2D => IsMatchingTag(otherCollision2D.gameObject.tag))
-                .Subscribe(otherCollision2D => {
+                .Subscribe(otherCollision2D =>
+                {
                     if (m_isTargetDetected.Value == false)
                     {
                         RefreshTargets(otherCollision2D.collider);
                         m_isTargetDetected.Value = true;
                     }
                 })
-                .AddTo(this);
+                .AddTo(m_disposables);
 
             this.OnCollisionExit2DAsObservable()
                 .Where(otherCollision2D => IsMatchingTag(otherCollision2D.gameObject.tag))
-                .Subscribe(otherCollision2D => {
-                        m_isTargetDetected.Value = false;
-                        m_targets.Clear();
+                .Subscribe(otherCollision2D =>
+                {
+                    m_isTargetDetected.Value = false;
+                    m_targets.Clear();
                 })
-                .AddTo(this);
+                .AddTo(m_disposables);
         }
 
         private void RefreshTargets(Collider2D detectedCollider)

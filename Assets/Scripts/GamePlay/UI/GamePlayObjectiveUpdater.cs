@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using UniRx;
 using Zenject;
-using GamePlay.Timer;
-using TMPro;
 using GamePlay.Mission;
+using TMPro;
 
 namespace GamePlay.UI {
 

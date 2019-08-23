@@ -7,10 +7,9 @@ namespace Character.Movement {
 
     public class PatrolMovement : BaseMovement
     {
-
         private float m_patrolMovementWithDirection = 1f;
 
-        private void Start()
+        private void OnEnable()
         {
             m_ground.IsOnEdge()
                 .Where(isOnEdge => isOnEdge)
@@ -19,7 +18,7 @@ namespace Character.Movement {
                     m_patrolMovementWithDirection = (m_ground.GetEdgeSide() == Ground.GroundType.Ground_Left) ?
                         1f : -1f;
                 })
-                .AddTo(this);
+                .AddTo(m_disposables);
 
             m_ground.IsWallHit()
                 .Where(isWallHit => isWallHit)
@@ -28,12 +27,13 @@ namespace Character.Movement {
                     m_patrolMovementWithDirection = (m_ground.GetWallSide() == Ground.GroundType.Wall_Minus) ?
                                     1f : -1f;
                 })
-                .AddTo(this);
+                .AddTo(m_disposables);
 
             this.FixedUpdateAsObservable()
                 .Select(_ => m_reactiveIsMovEnabled.Value)
                 .Where(isMovEnabled => isMovEnabled)
-                .Subscribe(_ => {
+                .Subscribe(_ =>
+                {
                     Vector2 movement = Vector2.zero;
                     bool shouldFlip = ShouldFlip(m_patrolMovementWithDirection);
 
@@ -49,9 +49,9 @@ namespace Character.Movement {
                     }
 
                     StartMovement(movement);
-                                        
+
                 })
-                .AddTo(this);
+                .AddTo(m_disposables);
 
         }
 

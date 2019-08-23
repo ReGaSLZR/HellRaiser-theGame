@@ -360,6 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_animSkill: 
+  m_animTriggerStopper: 
   m_skillDelay: 0
   m_skillDuration: 0.25
   m_skillCooldown: 0.25
@@ -413,6 +414,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_movement: {fileID: 1514774805}
-  m_characterStats: {fileID: 8131400460273162365}
+  m_stats: {fileID: 8131400460273162365}
   m_targetDetector: {fileID: 673631443}
   m_skillMain: {fileID: 1514774806}

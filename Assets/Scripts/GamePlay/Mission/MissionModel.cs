@@ -1,10 +1,9 @@
-﻿using GamePlay.Mission;
-using Scriptables;
+﻿using Scriptables;
 using System.Collections;
 using UniRx;
 using UnityEngine;
 
-namespace GamePlay.Timer {
+namespace GamePlay.Mission {
 
 
     public class MissionModel : MonoBehaviour, MissionModel.TimerGetter, MissionModel.TimerSetter, 

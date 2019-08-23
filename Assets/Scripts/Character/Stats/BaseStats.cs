@@ -14,10 +14,17 @@ namespace Character.Stats {
         [SerializeField]
         protected Scriptables.CharacterInfo m_info;
 
+        protected CompositeDisposable m_disposables = new CompositeDisposable();
+
         protected virtual void Awake()
         {
             m_reactiveHealth = new ReactiveProperty<int>(m_info.m_health);
             m_reactiveIsHurt = new ReactiveProperty<bool>(false);
+        }
+
+        private void OnDisable()
+        {
+            m_disposables.Clear();
         }
 
         public int[] GetSkillCosts() {

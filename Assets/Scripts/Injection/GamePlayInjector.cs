@@ -2,7 +2,7 @@
 using GamePlay.Dialogue;
 using GamePlay.Input;
 using GamePlay.Stats;
-using GamePlay.Timer;
+using GamePlay.Mission;
 using NaughtyAttributes;
 using UnityEngine;
 using Zenject;

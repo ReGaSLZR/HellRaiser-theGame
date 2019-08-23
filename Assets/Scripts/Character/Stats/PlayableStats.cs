@@ -21,17 +21,19 @@ namespace Character.Stats
         private void OnEnable()
         {
             m_modelStatsSetter.ConfigStatsForCharacter(m_info);
+            InitObservers();
         }
 
-        private void Start()
+        private void InitObservers()
         {
             m_modelStatsGetter.GetCharacterHealth()
                 .Where(health => m_info.m_infoUI.m_name.Equals(
                     m_modelStatsGetter.GetCharacter().Value.m_infoUI.m_name))
-                .Subscribe(modelHealth => {
+                .Subscribe(modelHealth =>
+                {
                     m_reactiveHealth.Value = modelHealth;
                 })
-                .AddTo(this);
+                .AddTo(m_disposables);
         }
 
         public override void DealDamage(int damage, bool isCritical)

@@ -40,6 +40,7 @@ namespace Character.Movement {
         protected StatMovement m_statMovement;
 
         protected ReactiveProperty<bool> m_reactiveIsMovEnabled { private set; get; }
+        protected CompositeDisposable m_disposables = new CompositeDisposable();
 
         protected virtual void Awake()
         {
@@ -48,6 +49,11 @@ namespace Character.Movement {
             m_compAnimator = GetComponent<Animator>();
             m_compSpriteRenderer = GetComponent<SpriteRenderer>();
             m_compRigidBody2D = GetComponent<Rigidbody2D>();
+        }
+
+        private void OnDisable()
+        {
+            m_disposables.Clear();
         }
 
         /// <summary>

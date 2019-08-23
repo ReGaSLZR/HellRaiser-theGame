@@ -6,19 +6,12 @@ namespace Character.Ground {
     public class GroundManager : MonoBehaviour
     {
 
-        private ReactiveProperty<bool> m_reactiveIsOnGround;
-        private ReactiveProperty<bool> m_reactiveIsWallHit;
-        private ReactiveProperty<bool> m_reactiveIsOnEdge;
+        private ReactiveProperty<bool> m_reactiveIsOnGround = new ReactiveProperty<bool>(false);
+        private ReactiveProperty<bool> m_reactiveIsWallHit = new ReactiveProperty<bool>(false);
+        private ReactiveProperty<bool> m_reactiveIsOnEdge = new ReactiveProperty<bool>(false);
 
         private GroundType m_wallSide;
         private GroundType m_edgeSide;
-
-        private void Awake()
-        {
-            m_reactiveIsOnGround = new ReactiveProperty<bool>(false);
-            m_reactiveIsWallHit = new ReactiveProperty<bool>(false);
-            m_reactiveIsOnEdge = new ReactiveProperty<bool>(false);
-        }
 
         public ReactiveProperty<bool> IsOnGround()
         {

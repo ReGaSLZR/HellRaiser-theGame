@@ -16,7 +16,7 @@ namespace Character.AI {
 
         [SerializeField]
         [Required]
-        protected BaseStats m_characterStats;
+        protected BaseStats m_stats;
 
         [SerializeField]
         protected TargetDetector m_targetDetector;
@@ -25,10 +25,25 @@ namespace Character.AI {
         [Required]
         protected BaseSkill m_skillMain;
 
+        protected CompositeDisposable m_disposables = new CompositeDisposable();
+
+        protected virtual void Awake()
+        {
+            m_movement.SetStatMovement(m_stats.GetStatMovement());
+            m_skillMain.SetStatOffense(m_stats.GetStatOffense());
+        }
+
         protected virtual void OnEnable()
         {
-            m_movement.SetStatMovement(m_characterStats.GetStatMovement());
-            m_skillMain.SetStatOffense(m_characterStats.GetStatOffense());
+            m_movement.enabled = true;
+            m_stats.enabled = true;
+        }
+
+        protected virtual void OnDisable() {
+            m_movement.enabled = false;
+            m_stats.enabled = false;
+
+            m_disposables.Clear();
         }
 
         protected virtual void Start() {
@@ -40,12 +55,13 @@ namespace Character.AI {
             {
                 //upon target detection
                 m_targetDetector.m_isTargetDetected
-                    .Subscribe(isDetected => {
-                        if (!m_characterStats.IsHurt().Value && m_skillMain.m_isExecutionFinished.Value) { 
-                            OnTargetDetection(isDetected);
-                        }
+                    .Where(isDetected => (!m_stats.IsHurt().Value
+                            && m_skillMain.m_isExecutionFinished.Value))
+                    .Subscribe(isDetected =>
+                    {
+                        OnTargetDetection(isDetected);
                     })
-                    .AddTo(this);
+                    .AddTo(m_disposables);
 
                 //on skill finish execution
                 m_skillMain.m_isExecutionFinished
@@ -54,23 +70,24 @@ namespace Character.AI {
                     {
                         m_skillMain.StopSkill(false);
 
-                        if (!m_characterStats.IsHurt().Value)
+                        if (!m_stats.IsHurt().Value)
                         {
                             m_movement.SetMovementEnabled(true);
                         }
 
                     })
-                    .AddTo(this);
+                    .AddTo(m_disposables);
             }
 
             //upon getting hurt
-            m_characterStats.IsHurt()
-                .Subscribe(isHurt => {
+            m_stats.IsHurt()
+                .Subscribe(isHurt =>
+                {
                     if (isHurt)
                     {
                         m_movement.StunMovement();
 
-                        if (m_characterStats.GetHealth().Value <= 0)
+                        if (m_stats.GetHealth().Value <= 0)
                         {
                             OnDeath();
                         }
@@ -83,14 +100,14 @@ namespace Character.AI {
                         {
                             OnTargetDetection(true);
                         }
-                        
+
                     }
                 })
-                .AddTo(this);
+                .AddTo(m_disposables);
         }
 
         protected virtual void OnDeath() {
-            Destroy(gameObject, m_characterStats.GetStatMovement().m_stunLength + 0.01f);
+            Destroy(gameObject, m_stats.GetStatMovement().m_stunLength);
         }
 
         protected virtual void OnTargetDetection(bool isDetected) {

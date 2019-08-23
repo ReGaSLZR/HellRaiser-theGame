@@ -27,17 +27,19 @@ namespace Character.AI {
         [Required]
         private BaseSkill m_skillTertiary;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+
             if(m_targetDetector != null) {
                 LogUtil.PrintWarning(gameObject, GetType(), "Awake(): TargetDetector is not needed in PlayerAI.");
                 m_targetDetector = null;
             }
         }
 
-        protected override void Start()
+        protected override void OnEnable()
         {
-            base.Start();
+            base.OnEnable();
             InitInputObservers();
         }
 
@@ -45,34 +47,35 @@ namespace Character.AI {
             //skill MAIN
             this.FixedUpdateAsObservable()
                 .Select(_ => m_modelInput.m_skillMain)
-                .Where(isUsingSkill => isUsingSkill && IsStaminaValueEnough(m_characterStats.GetSkillCosts()[0]))
-                .Subscribe(_ => {
+                .Where(isUsingSkill => isUsingSkill && IsStaminaValueEnough(m_stats.GetSkillCosts()[0]))
+                .Subscribe(_ =>
+                {
                     m_skillMain.UseSkill();
-                    UpdateStamina(m_characterStats.GetSkillCosts()[0]);
+                    UpdateStamina(m_stats.GetSkillCosts()[0]);
                 })
-                .AddTo(this);
+                .AddTo(m_disposables);
 
             //skill 2
             this.FixedUpdateAsObservable()
                .Select(_ => m_modelInput.m_skill2)
-               .Where(isUsingSkill => isUsingSkill && IsStaminaValueEnough(m_characterStats.GetSkillCosts()[1]))
+               .Where(isUsingSkill => isUsingSkill && IsStaminaValueEnough(m_stats.GetSkillCosts()[1]))
                .Subscribe(_ =>
                {
                    m_skillSecondary.UseSkill();
-                   UpdateStamina(m_characterStats.GetSkillCosts()[1]);
+                   UpdateStamina(m_stats.GetSkillCosts()[1]);
                })
-               .AddTo(this);
+               .AddTo(m_disposables);
 
             //skill 3
             this.FixedUpdateAsObservable()
                .Select(_ => m_modelInput.m_skill3)
-               .Where(isUsingSkill => isUsingSkill && IsStaminaValueEnough(m_characterStats.GetSkillCosts()[2]))
+               .Where(isUsingSkill => isUsingSkill && IsStaminaValueEnough(m_stats.GetSkillCosts()[2]))
                .Subscribe(isUsingSkill =>
-                { 
-                       m_skillTertiary.UseSkill();
-                       UpdateStamina(m_characterStats.GetSkillCosts()[2]);
-               })
-               .AddTo(this);
+                {
+                    m_skillTertiary.UseSkill();
+                    UpdateStamina(m_stats.GetSkillCosts()[2]);
+                })
+                .AddTo(m_disposables);
         }
 
         private bool IsStaminaValueEnough(int decrement) {

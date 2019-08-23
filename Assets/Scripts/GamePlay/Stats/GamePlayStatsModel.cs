@@ -53,17 +53,6 @@ namespace GamePlay.Stats
             SetPlayerValues();
         }
 
-        private void Start()
-        {
-            m_charHealth
-                .Where(health => (health <= 0))
-                .Subscribe(health => {
-                    //TODO code logic for switching to next vignette
-
-                })
-                .AddTo(this);
-        }
-
         private void OnDestroy()
         {
             //TODO clear character data to refresh the health and stamina

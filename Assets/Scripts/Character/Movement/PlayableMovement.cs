@@ -48,18 +48,23 @@ namespace Character.Movement
 
         private DateTimeOffset m_jumpLastTimeStamp;
 
-        private void Start()
+        protected override void Awake()
         {
-            InitObservers();
+            base.Awake();
+            InitUncontrolledObservers();
         }
 
-        private void InitObservers()
+        private void OnEnable()
         {
+            InitControlledObservers();
+        }
+
+        private void InitControlledObservers() {
             //idle
             this.FixedUpdateAsObservable()
                 .Where(_ => (m_modelInput.m_run == 0f))
                 .Subscribe(_ => m_compAnimator.SetBool(m_animMove, false))
-                .AddTo(this);
+                .AddTo(m_disposables);
 
             //run
             this.FixedUpdateAsObservable()
@@ -73,7 +78,7 @@ namespace Character.Movement
                     movement.x = horizontalMovement;
                     StartMovement(movement);
                 })
-                .AddTo(this);
+                .AddTo(m_disposables);
 
             //jump
             this.FixedUpdateAsObservable()
@@ -83,20 +88,24 @@ namespace Character.Movement
                 .Where(x => x.Timestamp > m_jumpLastTimeStamp.AddSeconds(m_jumpsInterval))
                 .Subscribe(x =>
                 {
-                    if(((m_ground.IsOnGround().Value || m_ground.IsWallHit().Value) && !m_canJumpInMidair) 
+                    if (((m_ground.IsOnGround().Value || m_ground.IsWallHit().Value) && !m_canJumpInMidair)
                         || m_canJumpInMidair)
                     {
                         Jump();
                         m_jumpLastTimeStamp = x.Timestamp;
                     }
                 })
-                .AddTo(this);
+                .AddTo(m_disposables);
+        }
 
+        private void InitUncontrolledObservers()
+        {
             //jump fall
             this.FixedUpdateAsObservable()
                 .Select(_ => m_compRigidBody2D.velocity)
                 .Where(velocity => (velocity.y < 0))
-                .Subscribe(_ => {
+                .Subscribe(_ =>
+                {
                     //reference: "Better Jumping in Unity >> https://www.youtube.com/watch?v=7KiK0Aqtmzc
                     m_compRigidBody2D.velocity += (Vector2.up * Physics2D.gravity.y *
                         (m_jumpFallMultiplier - 1f) * Time.fixedDeltaTime);
@@ -105,7 +114,8 @@ namespace Character.Movement
 
             //on ground
             m_ground.IsOnGround()
-                .Subscribe(isOnGround => {
+                .Subscribe(isOnGround =>
+                {
                     AnimateChangeGround(m_animOnGround, isOnGround);
 
                     if (m_ground.IsWallHit().Value)

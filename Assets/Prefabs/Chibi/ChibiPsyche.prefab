@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_movement: {fileID: 2590343526880155032}
-  m_characterStats: {fileID: 2040706426}
+  m_stats: {fileID: 2040706426}
   m_targetDetector: {fileID: 0}
   m_skillMain: {fileID: 2040706424}
   m_skillSecondary: {fileID: 1905334431}
