@@ -85,22 +85,17 @@ namespace Character.AI {
             {
                 //upon target detection
                 m_targetDetector.IsTargetDetected()
-                    .Where(isDetected => (!m_stats.IsHurt().Value
-                            && m_skillMain.IsExecutionFinished().Value))
-                    .Subscribe(isDetected =>
-                    {
+                    .Where(isDetected => (!m_stats.IsHurt().Value && m_skillMain.IsExecutionFinished().Value))
+                    .Subscribe(isDetected => {
                         OnTargetDetection(isDetected);
                     })
                     .AddTo(m_disposables);
 
                 //on skill finish execution
                 m_skillMain.IsExecutionFinished()
-                    .Where(isFinished => isFinished
-                    && m_targetDetector.GetTargets().Count == 0
-                    )
+                    .Where(isFinished => isFinished && m_targetDetector.GetTargets().Count == 0)
                     .Subscribe(_ =>
                     {
-                        //m_targetDetector.CheckTargetsListForDestruction();
                         m_skillMain.StopSkill(false);
 
                         if (!m_stats.IsHurt().Value)

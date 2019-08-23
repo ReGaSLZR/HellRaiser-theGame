@@ -35,6 +35,10 @@ namespace Character {
 
         private void OnEnable()
         {
+            InitControlledObservers();
+        }
+
+        private void InitControlledObservers() {
             this.OnTriggerEnter2DAsObservable()
                 .Where(otherCollider2D => IsMatchingTag(otherCollider2D.tag))
                 .Subscribe(otherCollider2D => CaptureTargets(otherCollider2D))
@@ -54,6 +58,12 @@ namespace Character {
                 .Where(otherCollision2D => IsMatchingTag(otherCollision2D.gameObject.tag))
                 .Subscribe(otherCollider2D => ClearTargets())
                 .AddTo(m_disposables);
+
+            //self-check list of targets for null items, then reset m_isTargetDetected.Value
+            Observable.Interval(System.TimeSpan.FromSeconds(1))
+                .Where(_ => m_isTargetDetected.Value)
+                .Subscribe(_ => CheckTargetsListForDestruction())
+                .AddTo(m_disposables);
         }
 
         public ReactiveProperty<bool> IsTargetDetected() {
@@ -65,16 +75,11 @@ namespace Character {
         }
 
         public void CheckTargetsListForDestruction() {
-            List<Collider2D> newTargets = new List<Collider2D>();
-
-            foreach(Collider2D collider2D in m_targets) {
-                if (collider2D != null) {
-                    newTargets.Add(collider2D);
+            for(int x=(m_targets.Count - 1); x>=0; x--) {
+                if (m_targets[x] == null) {
+                    m_targets.RemoveAt(x);
                 }
             }
-
-            m_targets.Clear();
-            m_targets.AddRange(newTargets);
 
             if (m_targets.Count == 0) {
                 m_isTargetDetected.Value = false;
