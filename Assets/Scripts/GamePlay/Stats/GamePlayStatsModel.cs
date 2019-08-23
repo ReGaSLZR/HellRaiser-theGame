@@ -19,7 +19,6 @@ namespace GamePlay.Stats
 
             ReactiveProperty<int> GetInventoryMoney();
             ReactiveProperty<int> GetInventoryScroll();
-
         }
 
         public interface Setter
@@ -50,7 +49,7 @@ namespace GamePlay.Stats
 
         private void OnDestroy()
         {
-            SaveProgress();
+            PlayerData.SaveInventory(m_inventoryMoney.Value, m_inventoryScroll.Value);
         }
 
         private void SetActiveCharacter(Scriptables.CharacterInfo charInfo) {
@@ -63,14 +62,6 @@ namespace GamePlay.Stats
         private void SetPlayerValues() {
             m_inventoryMoney.Value = PlayerData.GetInventoryMoney();
             m_inventoryScroll.Value = PlayerData.GetInventoryScroll();
-        }
-
-        //TODO call this upon mission end (whether cleared or not) 
-        private void SaveProgress() {
-            PlayerPrefs.DeleteAll();
-            PlayerPrefs.Save();
-
-            PlayerData.SaveInventory(m_inventoryMoney.Value, m_inventoryScroll.Value);
         }
 
         public ReactiveProperty<Scriptables.CharacterInfo> GetActiveCharacter() {
