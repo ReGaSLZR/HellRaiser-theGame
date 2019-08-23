@@ -42,7 +42,7 @@ namespace Character.Skill {
 
         protected StatOffense m_statOffense;
 
-        public ReactiveProperty<bool> m_isExecutionFinished { private set; get; }
+        protected ReactiveProperty<bool> m_isExecutionFinished = new ReactiveProperty<bool>(true);
 
         private bool m_tempStopRepeatingSkill;
 
@@ -50,12 +50,15 @@ namespace Character.Skill {
 
         protected virtual void Awake() {
             m_compAnimator = GetComponent<Animator>();
-            m_isExecutionFinished = new ReactiveProperty<bool>(true);
             SetChildFXActive(false);
 
             if (m_childFX != null) {
                 PassStatOffenseTo(m_childFX.gameObject);
             }
+        }
+
+        public ReactiveProperty<bool> IsExecutionFinished() {
+            return m_isExecutionFinished;
         }
 
         public void SetStatOffense(StatOffense statOffense)
@@ -114,7 +117,7 @@ namespace Character.Skill {
         }
 
         private void AnimateSkill(bool shouldAnimate) {
-            if (m_compAnimator.runtimeAnimatorController == null) {
+            if (m_compAnimator == null || m_compAnimator.runtimeAnimatorController == null) {
                 return;
             }
 

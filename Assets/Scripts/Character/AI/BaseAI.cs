@@ -37,6 +37,8 @@ namespace Character.AI {
         {
             m_movement.enabled = true;
             m_stats.enabled = true;
+
+            InitControlledObservers();
         }
 
         protected virtual void OnDisable() {
@@ -47,38 +49,10 @@ namespace Character.AI {
         }
 
         protected virtual void Start() {
-            InitObservers();
+            InitUncontrolledObservers();
         }
 
-        private void InitObservers() {
-            if (m_targetDetector != null)
-            {
-                //upon target detection
-                m_targetDetector.m_isTargetDetected
-                    .Where(isDetected => (!m_stats.IsHurt().Value
-                            && m_skillMain.m_isExecutionFinished.Value))
-                    .Subscribe(isDetected =>
-                    {
-                        OnTargetDetection(isDetected);
-                    })
-                    .AddTo(m_disposables);
-
-                //on skill finish execution
-                m_skillMain.m_isExecutionFinished
-                    .Where(isFinished => isFinished && m_targetDetector.m_targets.Count == 0)
-                    .Subscribe(_ =>
-                    {
-                        m_skillMain.StopSkill(false);
-
-                        if (!m_stats.IsHurt().Value)
-                        {
-                            m_movement.SetMovementEnabled(true);
-                        }
-
-                    })
-                    .AddTo(m_disposables);
-            }
-
+        private void InitUncontrolledObservers() {
             //upon getting hurt
             m_stats.IsHurt()
                 .Subscribe(isHurt =>
@@ -96,14 +70,47 @@ namespace Character.AI {
                     {
                         m_movement.UnStunMovement();
 
-                        if (m_targetDetector != null && m_targetDetector.m_isTargetDetected.Value)
+                        if (m_targetDetector != null && m_targetDetector.IsTargetDetected().Value)
                         {
                             OnTargetDetection(true);
                         }
 
                     }
                 })
-                .AddTo(m_disposables);
+                .AddTo(this);
+        }
+
+        private void InitControlledObservers() {
+            if (m_targetDetector != null)
+            {
+                //upon target detection
+                m_targetDetector.IsTargetDetected()
+                    .Where(isDetected => (!m_stats.IsHurt().Value
+                            && m_skillMain.IsExecutionFinished().Value))
+                    .Subscribe(isDetected =>
+                    {
+                        OnTargetDetection(isDetected);
+                    })
+                    .AddTo(m_disposables);
+
+                //on skill finish execution
+                m_skillMain.IsExecutionFinished()
+                    .Where(isFinished => isFinished
+                    && m_targetDetector.GetTargets().Count == 0
+                    )
+                    .Subscribe(_ =>
+                    {
+                        //m_targetDetector.CheckTargetsListForDestruction();
+                        m_skillMain.StopSkill(false);
+
+                        if (!m_stats.IsHurt().Value)
+                        {
+                            m_movement.SetMovementEnabled(true);
+                        }
+
+                    })
+                    .AddTo(m_disposables);
+            }
         }
 
         protected virtual void OnDeath() {
@@ -115,7 +122,7 @@ namespace Character.AI {
 
             if (isDetected)
             {
-                m_movement.Face(m_targetDetector.m_targets[0].gameObject.transform);
+                m_movement.Face(m_targetDetector.GetTargets()[0].gameObject.transform);
                 m_skillMain.UseSkill();
             }
             else

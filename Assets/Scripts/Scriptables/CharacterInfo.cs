@@ -28,11 +28,11 @@ namespace Scriptables {
         [HideInInspector]
         public int m_level;
 
-        [Range(1, HEALTH_MAX)]
-        public int m_health;
+        [HideInInspector]
+        public int m_health = HEALTH_MAX;
 
         [HideInInspector]
-        public int m_stamina;
+        public int m_stamina = STAMINA_MAX;
 
         public StatMovement m_statMovement;
         public StatOffense m_statOffense;
@@ -44,6 +44,11 @@ namespace Scriptables {
 
         [Range(0f, 100f)]
         public float m_deflectChance;
+
+        public void ResetHealthStamina() {
+            m_health = HEALTH_MAX;
+            m_stamina = STAMINA_MAX;
+        }
 
     }
 

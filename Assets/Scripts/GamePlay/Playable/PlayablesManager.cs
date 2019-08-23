@@ -15,43 +15,42 @@ namespace GamePlay.Playable {
 
         [Inject]
         private readonly BaseInputModel m_modelInput;
-
         [Inject]
         private readonly GamePlayStatsModel.Getter m_modelStats;
-
         [Inject]
         private readonly MissionModel.MissionSetter m_modelMission;
 
         [SerializeField]
         private CinemachineVirtualCamera m_playerCamera;
 
+        [Space]
+
         [SerializeField]
         private PlayableAI[] m_playableChars;
 
         private int m_index;
-        private int m_deadCharactersCount;
 
-        private void OnEnable()
+        private void Start()
         {
+            InitObservers();
+
             SetAllCharactersEnabled(false);
 
             m_index = 0;
             m_playableChars[m_index].enabled = true;
         }
 
-        private void Start()
-        {
+        private void InitObservers() {
             //on current playable character death...
-            m_modelStats.GetCharacterHealth()
+            m_modelStats.GetActiveCharacterHealth()
                 .Where(health => health <= 0)
                 .Subscribe(_ => {
-                    
                     //force setting to null value to let the "death" be recognized in this class,
                     //in case there is a destruction delay on other behaviours
                     m_playableChars[m_index] = null;
 
                     if (AreAllCharactersDead())
-                    {   
+                    {
                         m_modelMission.EndMission(false);
                     }
                     else
@@ -68,7 +67,6 @@ namespace GamePlay.Playable {
                     EnableNextCharacter();
                 })
                 .AddTo(this);
-            
         }
 
         private bool AreAllCharactersDead() {
@@ -81,11 +79,15 @@ namespace GamePlay.Playable {
             return true;
         }
 
+        private void SetCharacterEnabled(int index, bool isEnabled) {
+            m_playableChars[index].enabled = isEnabled;
+        }
+
         private void SetAllCharactersEnabled(bool isEnabled) {
             for (int x = 0; x < m_playableChars.Length; x++)
             {
                 if (m_playableChars[x] != null) {
-                    m_playableChars[x].enabled = isEnabled;
+                    SetCharacterEnabled(x, isEnabled);
                 }
             }
         }
@@ -96,7 +98,7 @@ namespace GamePlay.Playable {
             } while (m_playableChars[m_index] == null);
 
             SetAllCharactersEnabled(false);
-            m_playableChars[m_index].enabled = true;
+            SetCharacterEnabled(m_index, true);
             m_playerCamera.m_Follow = m_playableChars[m_index].gameObject.transform;
         }
 

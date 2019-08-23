@@ -8,8 +8,8 @@ namespace Character.Stats {
     public class BaseStats : MonoBehaviour
     {
 
-        protected ReactiveProperty<int> m_reactiveHealth;
-        protected ReactiveProperty<bool> m_reactiveIsHurt;
+        protected ReactiveProperty<int> m_reactiveHealth = new ReactiveProperty<int>();
+        protected ReactiveProperty<bool> m_reactiveIsHurt = new ReactiveProperty<bool>(false);
 
         [SerializeField]
         protected Scriptables.CharacterInfo m_info;
@@ -18,13 +18,17 @@ namespace Character.Stats {
 
         protected virtual void Awake()
         {
-            m_reactiveHealth = new ReactiveProperty<int>(m_info.m_health);
-            m_reactiveIsHurt = new ReactiveProperty<bool>(false);
+            m_info.ResetHealthStamina();
+            m_reactiveHealth.Value = m_info.m_health;
         }
 
         private void OnDisable()
         {
             m_disposables.Clear();
+        }
+
+        public string GetCharacterName() {
+            return m_info.m_infoUI.m_name;
         }
 
         public int[] GetSkillCosts() {

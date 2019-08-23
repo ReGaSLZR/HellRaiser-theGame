@@ -79,12 +79,12 @@ namespace Character.AI {
         }
 
         private bool IsStaminaValueEnough(int decrement) {
-            return (m_modelStatsGetter.GetCharacterStamina().Value >= decrement);
+            return (m_modelStatsGetter.GetActiveCharacterStamina().Value >= decrement);
         }
 
         private void UpdateStamina(int decrement) {
-            m_modelStatsSetter.UpdateCharacterStamina(
-                            m_modelStatsGetter.GetCharacterStamina().Value - decrement);
+            m_modelStatsSetter.UpdateCharacterStamina(m_stats.GetCharacterName(),
+                            m_modelStatsGetter.GetActiveCharacterStamina().Value - decrement);
         }
 
         protected override void OnDeath() {

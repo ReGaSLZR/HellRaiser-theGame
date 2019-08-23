@@ -60,10 +60,11 @@ namespace Character.Skill {
         private List<BaseStats> GetKillables()
         {
             List<BaseStats> killables = new List<BaseStats>();
+            List<Collider2D> targetsDetected = m_targetDetector.GetTargets();
 
-            for (int x = 0; x < m_targetDetector.m_targets.Count; x++)
+            for (int x = 0; x < targetsDetected.Count; x++)
             {
-                Collider2D targetDetected = m_targetDetector.m_targets[x];
+                Collider2D targetDetected = targetsDetected[x];
 
                 //safe check for when the target was destroyed by something else before this method fired
                 if (targetDetected != null)

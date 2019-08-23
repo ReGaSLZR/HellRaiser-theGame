@@ -41,11 +41,11 @@ namespace GamePlay.UI {
                 })
                 .AddTo(this);
 
-            m_modelGamePlayStats.GetCharacterStamina()
+            m_modelGamePlayStats.GetActiveCharacterStamina()
                 .Subscribe(stamina => {
                     for (int x=0; x<m_buttonsSkillInOrder.Length; x++) {
                         m_buttonsSkillInOrder[x].interactable = 
-                            (stamina >= m_modelGamePlayStats.GetCharacter().Value.m_skillCosts[x]);
+                            (stamina >= m_modelGamePlayStats.GetActiveCharacter().Value.m_skillCosts[x]);
                     }
                 })
                 .AddTo(this);

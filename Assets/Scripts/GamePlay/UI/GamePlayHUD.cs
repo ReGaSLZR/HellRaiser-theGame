@@ -61,14 +61,14 @@ namespace GamePlay.UI {
                 m_textTimer.gameObject.SetActive(false);
             }
 
-            m_modelStats.GetCharacter()
+            m_modelStats.GetActiveCharacter()
                 .Subscribe(characterInfo => {
                     m_textCharacterLevel.text = PREFIX_CHARACTER_LEVEL + characterInfo.m_level;
                     m_characterAvatar.texture = characterInfo.m_infoUI.m_avatarMain;
                 })
                 .AddTo(this);
 
-            m_modelStats.GetCharacterHealth()
+            m_modelStats.GetActiveCharacterHealth()
                 .Subscribe(health => {
                     m_sliderHealth.value = health;
                     m_sliderHealthFill.color = (health <= Scriptables.CharacterInfo.HEALTH_CRITICAL) ?
@@ -76,7 +76,7 @@ namespace GamePlay.UI {
                 })
                 .AddTo(this);
 
-            m_modelStats.GetCharacterStamina()
+            m_modelStats.GetActiveCharacterStamina()
                 .Subscribe(stamina => m_sliderStamina.value = stamina)
                 .AddTo(this);
 

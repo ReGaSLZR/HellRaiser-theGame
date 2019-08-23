@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 namespace Data.Storage {
 
-    public class SceneData : MonoBehaviour
+    public class SceneData
     {
 
         private const string KEY_LEVEL_TO_LOAD = "KEY_LEVEL_TO_LOAD";

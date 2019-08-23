@@ -1,4 +1,5 @@
 ﻿using Data.Storage;
+using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
 
@@ -12,12 +13,10 @@ namespace GamePlay.Stats
 
         public interface Getter
         {
-            ReactiveProperty<Scriptables.CharacterInfo> GetCharacter();
-            ReactiveProperty<int> GetCharacterHealth();
-            ReactiveProperty<int> GetCharacterStamina();
+            ReactiveProperty<Scriptables.CharacterInfo> GetActiveCharacter();
+            ReactiveProperty<int> GetActiveCharacterHealth();
+            ReactiveProperty<int> GetActiveCharacterStamina();
 
-            ReactiveProperty<int> GetAllianceLevel();
-            ReactiveProperty<int> GetExperience();
             ReactiveProperty<int> GetInventoryMoney();
             ReactiveProperty<int> GetInventoryFood();
 
@@ -26,82 +25,66 @@ namespace GamePlay.Stats
         public interface Setter
         {
             void ConfigStatsForCharacter(Scriptables.CharacterInfo characterInfo);
-            void UpdateCharacterHealth(int newHealth);
-            void UpdateCharacterStamina(int newStamina);
+            void UpdateCharacterHealth(string charName, int newHealth);
+            void UpdateCharacterStamina(string charName, int newStamina);
 
-            void AddExperience(int experience);
             void AddInventoryMoney(int inventoryMoney);
             void AddInventoryFood(int inventoryFood);
         }
 
         #endregion
 
-        private ReactiveProperty<Scriptables.CharacterInfo> m_charInfo = new ReactiveProperty<Scriptables.CharacterInfo>();
+        private ReactiveProperty<Scriptables.CharacterInfo> m_activeCharInfo = new ReactiveProperty<Scriptables.CharacterInfo>();
+        private List<Scriptables.CharacterInfo> m_listCharacterInfo = new List<Scriptables.CharacterInfo>();
+
         private ReactiveProperty<int> m_charHealth = new ReactiveProperty<int>();
         private ReactiveProperty<int> m_charStamina = new ReactiveProperty<int>();
-        private int m_skill2Cost = 0;
-        private int m_skill3Cost = 0;
 
-        private ReactiveProperty<int> m_allianceLevel = new ReactiveProperty<int>();
-        private ReactiveProperty<int> m_experience = new ReactiveProperty<int>();
         private ReactiveProperty<int> m_inventoryMoney = new ReactiveProperty<int>();
         private ReactiveProperty<int> m_inventoryFood = new ReactiveProperty<int>();
 
         private void Awake()
         {
-            SetCharacterValues();
             SetPlayerValues();
         }
 
-        private void OnDestroy()
-        {
-            //TODO clear character data to refresh the health and stamina
+        //private void OnDestroy()
+        //{
+        //    SaveProgress();
+        //}
 
-            PlayerData.SaveExperience(m_experience.Value);
-            PlayerData.SaveInventory(m_inventoryMoney.Value, m_inventoryFood.Value);
-        }
+        private void SetActiveCharacter(Scriptables.CharacterInfo charInfo) {
+            m_activeCharInfo.Value = charInfo;
 
-        private void SetCharacterValues() {
-            m_charHealth.Value = CharacterData.GetCharacterHealth();
-            m_charStamina.Value = CharacterData.GetCharacterStamina();
+            m_charHealth.Value = charInfo.m_health;
+            m_charStamina.Value = charInfo.m_stamina;
         }
 
         private void SetPlayerValues() {
-            m_allianceLevel.Value = PlayerData.GetAllianceLevel();
-            m_experience.Value = PlayerData.GetExperience();
             m_inventoryMoney.Value = PlayerData.GetInventoryMoney();
             m_inventoryFood.Value = PlayerData.GetInventoryFood();
         }
 
-        public void SaveProgress() {
-            CharacterData.SaveCharacterStats(Scriptables.CharacterInfo.HEALTH_MAX, Scriptables.CharacterInfo.STAMINA_MAX);
+        //TODO call this upon mission end (whether cleared or not) 
+        private void SaveProgress() {
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.Save();
 
-            PlayerData.SaveExperience(m_experience.Value);
             PlayerData.SaveInventory(m_inventoryMoney.Value, m_inventoryFood.Value);
         }
 
-        public ReactiveProperty<Scriptables.CharacterInfo> GetCharacter() {
-            return m_charInfo;
+        public ReactiveProperty<Scriptables.CharacterInfo> GetActiveCharacter() {
+            return m_activeCharInfo;
         }
 
-        public ReactiveProperty<int> GetCharacterHealth()
+        public ReactiveProperty<int> GetActiveCharacterHealth()
         {
             return m_charHealth;
         }
 
-        public ReactiveProperty<int> GetCharacterStamina()
+        public ReactiveProperty<int> GetActiveCharacterStamina()
         {
             return m_charStamina;
-        }
-
-        public ReactiveProperty<int> GetAllianceLevel()
-        {
-            return m_allianceLevel;
-        }
-
-        public ReactiveProperty<int> GetExperience()
-        {
-            return m_experience;
         }
 
         public ReactiveProperty<int> GetInventoryMoney()
@@ -115,25 +98,79 @@ namespace GamePlay.Stats
         }
 
         public void ConfigStatsForCharacter(Scriptables.CharacterInfo characterInfo) {
-            m_charInfo.Value = characterInfo;
-            CharacterData.SetCharacterName(name);
-            SetCharacterValues();
+            Scriptables.CharacterInfo charInfoFromCache = GetCharacterInfoFromCache(characterInfo.m_infoUI.m_name, false);
+
+            if (charInfoFromCache == null)
+            {
+                m_listCharacterInfo.Add(characterInfo);
+                SetActiveCharacter(characterInfo);
+            }
+            else
+            {
+                Scriptables.CharacterInfo previousCharacter = GetCharacterInfoFromCache(m_activeCharInfo.Value.m_infoUI.m_name, true);
+                previousCharacter.m_health = m_charHealth.Value;
+                previousCharacter.m_stamina = m_charStamina.Value;
+                m_listCharacterInfo.Add(previousCharacter);
+
+                SetActiveCharacter(charInfoFromCache);
+            }
         }
 
-        public void UpdateCharacterHealth(int newHealth)
-        {
-            m_charHealth.Value = Mathf.Clamp(newHealth, 0, Scriptables.CharacterInfo.HEALTH_MAX);
+        private Scriptables.CharacterInfo GetCharacterInfoFromCache(string charName, bool shouldRemoveIfExists) {
+            for (int x = 0; x < m_listCharacterInfo.Count; x++)
+            {
+                if (charName.Equals(m_listCharacterInfo[x].m_infoUI.m_name))
+                {
+                    Scriptables.CharacterInfo info = m_listCharacterInfo[x];
+                    if (shouldRemoveIfExists) {
+                        m_listCharacterInfo.RemoveAt(x);
+                    }
+                    return info;
+                }
+            }
+
+            return null;
         }
 
-        public void UpdateCharacterStamina(int newStamina)
+        public void UpdateCharacterHealth(string charName, int newHealth)
         {
-            m_charStamina.Value = Mathf.Clamp(newStamina, 0, Scriptables.CharacterInfo.STAMINA_MAX);
+            UpdateCharacterHealthOrStamina(true, charName, newHealth, 0, Scriptables.CharacterInfo.HEALTH_MAX);
         }
 
-        public void AddExperience(int experience)
+        public void UpdateCharacterStamina(string charName, int newStamina)
         {
-            m_experience.Value += experience;
-            //TODO: code logic for leveling up
+            UpdateCharacterHealthOrStamina(false, charName, newStamina, 0, Scriptables.CharacterInfo.STAMINA_MAX);
+        }
+
+        private void UpdateCharacterHealthOrStamina(bool isHealth, string charName, int barValue, int minValue, int maxValue) {
+            int clampedValue = Mathf.Clamp(barValue, minValue, maxValue);
+
+            if (charName.Equals(m_activeCharInfo.Value.m_infoUI.m_name))
+            {
+                if (isHealth)
+                {
+                    m_charHealth.Value = clampedValue;
+                }
+                else {
+                    m_charStamina.Value = clampedValue;
+                }
+            }
+            else
+            {
+                foreach (Scriptables.CharacterInfo charInfo in m_listCharacterInfo)
+                {
+                    if (charName.Equals(charInfo.m_infoUI.m_name))
+                    {
+                        if (isHealth)
+                        {
+                            charInfo.m_health = clampedValue;
+                        }
+                        else {
+                            charInfo.m_stamina = clampedValue;
+                        }
+                    }
+                }
+            }
         }
 
         public void AddInventoryMoney(int inventoryMoney)

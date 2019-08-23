@@ -39,13 +39,11 @@ namespace Character.Movement {
 
         protected StatMovement m_statMovement;
 
-        protected ReactiveProperty<bool> m_reactiveIsMovEnabled { private set; get; }
+        protected ReactiveProperty<bool> m_reactiveIsMovEnabled = new ReactiveProperty<bool>(true);
         protected CompositeDisposable m_disposables = new CompositeDisposable();
 
         protected virtual void Awake()
         {
-            m_reactiveIsMovEnabled = new ReactiveProperty<bool>(true);
-
             m_compAnimator = GetComponent<Animator>();
             m_compSpriteRenderer = GetComponent<SpriteRenderer>();
             m_compRigidBody2D = GetComponent<Rigidbody2D>();
@@ -99,7 +97,7 @@ namespace Character.Movement {
         }
 
         private void AnimateMovement(string animParam, bool shouldAnimate) {
-            if (m_compAnimator.runtimeAnimatorController == null) {
+            if (m_compAnimator == null || m_compAnimator.runtimeAnimatorController == null) {
                 return;
             }
 

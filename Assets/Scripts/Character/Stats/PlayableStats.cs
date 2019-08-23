@@ -26,9 +26,9 @@ namespace Character.Stats
 
         private void InitObservers()
         {
-            m_modelStatsGetter.GetCharacterHealth()
+            m_modelStatsGetter.GetActiveCharacterHealth()
                 .Where(health => m_info.m_infoUI.m_name.Equals(
-                    m_modelStatsGetter.GetCharacter().Value.m_infoUI.m_name))
+                    m_modelStatsGetter.GetActiveCharacter().Value.m_infoUI.m_name))
                 .Subscribe(modelHealth =>
                 {
                     m_reactiveHealth.Value = modelHealth;
@@ -39,13 +39,13 @@ namespace Character.Stats
         public override void DealDamage(int damage, bool isCritical)
         {
             base.DealDamage(damage, isCritical);
-            m_modelStatsSetter.UpdateCharacterHealth(m_reactiveHealth.Value);
+            m_modelStatsSetter.UpdateCharacterHealth(m_info.m_infoUI.m_name, m_reactiveHealth.Value);
         }
 
         public override void RecoverHealth(int health)
         {
             base.RecoverHealth(health);
-            m_modelStatsSetter.UpdateCharacterHealth(m_reactiveHealth.Value);
+            m_modelStatsSetter.UpdateCharacterHealth(m_info.m_infoUI.m_name, m_reactiveHealth.Value);
         }
 
     }
