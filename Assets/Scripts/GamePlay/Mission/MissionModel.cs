@@ -1,5 +1,6 @@
 ﻿using Scriptables;
 using System.Collections;
+using TMPro;
 using UniRx;
 using UnityEngine;
 
@@ -25,7 +26,6 @@ namespace GamePlay.Mission {
 
         public interface MissionGetter {
             ReactiveProperty<MissionStatus> GetMissionStatus();
-            string GetMissionObjective();
         }
 
         public interface MissionSetter {
@@ -43,6 +43,9 @@ namespace GamePlay.Mission {
         [Range(1f, 10f)]
         private float m_objectiveShowLength = 1f;
 
+        [SerializeField]
+        private TextMeshProUGUI[] m_textObjective;
+
         private const float TIMER_TICK = 1f;
 
         private ReactiveProperty<int> m_reactiveTimer = new ReactiveProperty<int>();
@@ -53,6 +56,18 @@ namespace GamePlay.Mission {
         {
             m_reactiveTimer.Value = m_missionInfo.m_timeLimit;
             m_missionStatus.Value = MissionStatus.ONGOING;
+        }
+
+        private void Start()
+        {
+            m_missionStatus
+                .Where(status => (MissionStatus.CLEARED != status))
+                .Subscribe(status => {
+                    UpdateObjectiveTexts();
+                })
+                .AddTo(this);
+
+            UpdateObjectiveTexts();
         }
 
         private IEnumerator CorStartTimer() {
@@ -70,6 +85,16 @@ namespace GamePlay.Mission {
             m_missionStatus.Value = MissionStatus.SHOWN;
             yield return new WaitForSeconds(m_objectiveShowLength);
             m_missionStatus.Value = MissionStatus.ONGOING;
+        }
+
+        private void UpdateObjectiveTexts()
+        {
+            string objective = GetMissionObjective();
+
+            for (int x = 0; x < m_textObjective.Length; x++)
+            {
+                m_textObjective[x].text = objective;
+            }
         }
 
         public ReactiveProperty<MissionStatus> GetMissionStatus() {
