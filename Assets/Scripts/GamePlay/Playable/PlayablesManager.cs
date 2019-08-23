@@ -28,6 +28,9 @@ namespace GamePlay.Playable {
         [SerializeField]
         private PlayableAI[] m_playableChars;
 
+        [SerializeField]
+        private float m_distanceXMassTeleport = 5f;
+
         private int m_index;
 
         private void Start()
@@ -38,6 +41,20 @@ namespace GamePlay.Playable {
 
             m_index = 0;
             m_playableChars[m_index].enabled = true;
+        }
+
+        public void MassTeleportPlayables(Transform location) {
+            for (int x=0; x<m_playableChars.Length; x++) {
+                if (m_playableChars[x] != null) {
+                    m_playableChars[x].gameObject.SetActive(false);
+
+                    Vector3 teleportedLocation = location.position;
+                    teleportedLocation.x += (m_distanceXMassTeleport * x);
+                    m_playableChars[x].gameObject.transform.position = teleportedLocation;
+
+                    m_playableChars[x].gameObject.SetActive(true);
+                }
+            }
         }
 
         private void InitObservers() {
