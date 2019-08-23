@@ -18,18 +18,18 @@ namespace GamePlay.Stats
             ReactiveProperty<int> GetActiveCharacterStamina();
 
             ReactiveProperty<int> GetInventoryMoney();
-            ReactiveProperty<int> GetInventoryFood();
+            ReactiveProperty<int> GetInventoryScroll();
 
         }
 
         public interface Setter
         {
-            void ConfigStatsForCharacter(Scriptables.CharacterInfo characterInfo);
+            void RegisterCharacterForStats(Scriptables.CharacterInfo characterInfo);
             void UpdateCharacterHealth(string charName, int newHealth);
             void UpdateCharacterStamina(string charName, int newStamina);
 
             void AddInventoryMoney(int inventoryMoney);
-            void AddInventoryFood(int inventoryFood);
+            void AddInventoryScroll(int inventoryScroll);
         }
 
         #endregion
@@ -41,17 +41,17 @@ namespace GamePlay.Stats
         private ReactiveProperty<int> m_charStamina = new ReactiveProperty<int>();
 
         private ReactiveProperty<int> m_inventoryMoney = new ReactiveProperty<int>();
-        private ReactiveProperty<int> m_inventoryFood = new ReactiveProperty<int>();
+        private ReactiveProperty<int> m_inventoryScroll = new ReactiveProperty<int>();
 
         private void Awake()
         {
             SetPlayerValues();
         }
 
-        //private void OnDestroy()
-        //{
-        //    SaveProgress();
-        //}
+        private void OnDestroy()
+        {
+            SaveProgress();
+        }
 
         private void SetActiveCharacter(Scriptables.CharacterInfo charInfo) {
             m_activeCharInfo.Value = charInfo;
@@ -62,7 +62,7 @@ namespace GamePlay.Stats
 
         private void SetPlayerValues() {
             m_inventoryMoney.Value = PlayerData.GetInventoryMoney();
-            m_inventoryFood.Value = PlayerData.GetInventoryFood();
+            m_inventoryScroll.Value = PlayerData.GetInventoryScroll();
         }
 
         //TODO call this upon mission end (whether cleared or not) 
@@ -70,7 +70,7 @@ namespace GamePlay.Stats
             PlayerPrefs.DeleteAll();
             PlayerPrefs.Save();
 
-            PlayerData.SaveInventory(m_inventoryMoney.Value, m_inventoryFood.Value);
+            PlayerData.SaveInventory(m_inventoryMoney.Value, m_inventoryScroll.Value);
         }
 
         public ReactiveProperty<Scriptables.CharacterInfo> GetActiveCharacter() {
@@ -92,12 +92,12 @@ namespace GamePlay.Stats
             return m_inventoryMoney;
         }
 
-        public ReactiveProperty<int> GetInventoryFood()
+        public ReactiveProperty<int> GetInventoryScroll()
         {
-            return m_inventoryFood;
+            return m_inventoryScroll;
         }
 
-        public void ConfigStatsForCharacter(Scriptables.CharacterInfo characterInfo) {
+        public void RegisterCharacterForStats(Scriptables.CharacterInfo characterInfo) {
             Scriptables.CharacterInfo charInfoFromCache = GetCharacterInfoFromCache(characterInfo.m_infoUI.m_name, false);
 
             if (charInfoFromCache == null)
@@ -178,9 +178,9 @@ namespace GamePlay.Stats
             m_inventoryMoney.Value += inventoryMoney;
         }
 
-        public void AddInventoryFood(int inventoryFood)
+        public void AddInventoryScroll(int inventoryScroll)
         {
-            m_inventoryFood.Value += inventoryFood;
+            m_inventoryScroll.Value += inventoryScroll;
         }
 
     }

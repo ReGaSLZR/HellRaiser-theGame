@@ -20,7 +20,7 @@ namespace Character.Stats
 
         private void OnEnable()
         {
-            m_modelStatsSetter.ConfigStatsForCharacter(m_info);
+            m_modelStatsSetter.RegisterCharacterForStats(m_info);
             InitObservers();
         }
 
