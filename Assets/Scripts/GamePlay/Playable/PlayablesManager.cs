@@ -1,8 +1,10 @@
 ﻿using Character.AI;
 using Cinemachine;
+using GamePlay.Input;
 using GamePlay.Mission;
 using GamePlay.Stats;
 using UniRx;
+using UniRx.Triggers;
 using UnityEngine;
 using Zenject;
 
@@ -12,10 +14,13 @@ namespace GamePlay.Playable {
     {
 
         [Inject]
-        private GamePlayStatsModel.Getter m_modelStats;
+        private readonly BaseInputModel m_modelInput;
 
         [Inject]
-        private MissionModel.MissionSetter m_modelMission;
+        private readonly GamePlayStatsModel.Getter m_modelStats;
+
+        [Inject]
+        private readonly MissionModel.MissionSetter m_modelMission;
 
         [SerializeField]
         private CinemachineVirtualCamera m_playerCamera;
@@ -36,6 +41,7 @@ namespace GamePlay.Playable {
 
         private void Start()
         {
+            //on current playable character death...
             m_modelStats.GetCharacterHealth()
                 .Where(health => health <= 0)
                 .Subscribe(_ => {
@@ -55,6 +61,13 @@ namespace GamePlay.Playable {
                 })
                 .AddTo(this);
 
+            //on playable character switch
+            this.FixedUpdateAsObservable()
+                .Where(_ => m_modelInput.m_charChange)
+                .Subscribe(_ => {
+                    EnableNextCharacter();
+                })
+                .AddTo(this);
             
         }
 

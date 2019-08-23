@@ -23,6 +23,11 @@ namespace GamePlay.Input {
         [SerializeField]
         private KeyCode m_keySkill3 = KeyCode.L;
 
+        [Space]
+
+        [SerializeField]
+        private KeyCode m_keyChangeChar = KeyCode.O;
+
         private void Start()
         {
             SetUpHorizontalMovementControls();
@@ -35,6 +40,12 @@ namespace GamePlay.Input {
                 .Subscribe(isPressed => m_jump = isPressed)
                 .AddTo(this);
 
+            //change playable character control
+            this.FixedUpdateAsObservable()
+                .Where(_ => m_isEnabled)
+                .Select(_ => UnityEngine.Input.GetKeyDown(m_keyChangeChar))
+                .Subscribe(isPressed => m_charChange = isPressed)
+                .AddTo(this);
         }
 
         private void SetUpSkillControls()

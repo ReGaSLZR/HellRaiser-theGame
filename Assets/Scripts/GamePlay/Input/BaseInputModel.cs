@@ -18,6 +18,11 @@ namespace GamePlay.Input {
         public bool m_skill2 { protected set; get; } 
         public bool m_skill3 { protected set; get; } 
 
+        /// <summary>
+        /// Variable for handling Playable Character switching.
+        /// </summary>
+        public bool m_charChange { protected set; get; }
+
         public bool m_isEnabled { protected set; get; }
 
         protected abstract void SetInputType();

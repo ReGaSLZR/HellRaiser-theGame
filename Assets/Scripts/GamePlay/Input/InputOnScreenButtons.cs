@@ -24,6 +24,11 @@ namespace GamePlay.Input {
         [SerializeField]
         private Button m_buttonSkillTertiary;
 
+        [Space]
+
+        [SerializeField]
+        private Button m_buttonChangeChar;
+
         private void Start()
         {
             SetUpSkillMain();
@@ -33,6 +38,23 @@ namespace GamePlay.Input {
 
             SetUpMovement();
 
+            SetUpChangeCharControl();
+        }
+
+        private void SetUpChangeCharControl() {
+            m_buttonChangeChar.OnPointerDownAsObservable()
+                .Where(_ => m_isEnabled)
+                .Subscribe(_ => {
+                    m_charChange = true;
+                })
+                .AddTo(this);
+
+            m_buttonChangeChar.OnPointerUpAsObservable()
+                .Where(_ => m_isEnabled)
+                .Subscribe(_ => {
+                    m_charChange = false;
+                })
+                .AddTo(this);
         }
 
         private void SetUpMovement()
