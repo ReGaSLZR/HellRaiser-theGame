@@ -117,7 +117,7 @@ namespace Character.Skill {
         }
 
         private void AnimateSkill(bool shouldAnimate) {
-            if (m_compAnimator == null || m_compAnimator.runtimeAnimatorController == null) {
+            if (m_compAnimator == null || m_compAnimator.runtimeAnimatorController == null || m_animSkill.Equals("")) {
                 return;
             }
 

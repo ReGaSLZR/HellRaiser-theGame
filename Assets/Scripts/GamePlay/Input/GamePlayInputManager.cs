@@ -1,6 +1,7 @@
 ﻿using NaughtyAttributes;
 using Scriptables;
 using UnityEngine;
+using Utils;
 
 namespace GamePlay.Input {
 

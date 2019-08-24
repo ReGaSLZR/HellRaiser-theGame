@@ -3,6 +3,7 @@ using NaughtyAttributes;
 using Injection;
 using Zenject;
 using Common;
+using Utils;
 
 namespace Character.Skill {
 
@@ -32,10 +33,10 @@ namespace Character.Skill {
 
         [SerializeField]
         [DisableIf("m_hasSingleSpawnPoint")]
-        private SpawnerDirection m_spawnPointMinus;
+        private SpawnPoint m_spawnPointMinus;
         [SerializeField]
         [Required]
-        private SpawnerDirection m_spawnPointPlus;
+        private SpawnPoint m_spawnPointPlus;
 
         protected override void Awake()
         {
@@ -45,7 +46,7 @@ namespace Character.Skill {
 
         protected override void ExecuteUseSkill()
         {
-            SpawnerDirection spawner = GetProjectileSpawner();
+            SpawnPoint spawner = GetProjectileSpawner();
             GameObject projectile = m_instantiator.InstantiateInjectPrefab(m_prefabProjectile, 
                 spawner.gameObject.transform);
 
@@ -53,7 +54,7 @@ namespace Character.Skill {
             ApplyForceToProjectile(projectile, spawner);
         }
 
-        private SpawnerDirection GetProjectileSpawner()
+        private SpawnPoint GetProjectileSpawner()
         {
             if (m_hasSingleSpawnPoint) {
                 return m_spawnPointPlus;
@@ -63,7 +64,7 @@ namespace Character.Skill {
                 m_spawnPointMinus : m_spawnPointPlus;
         }
 
-        private void ApplyForceToProjectile(GameObject projectile, SpawnerDirection spawner)
+        private void ApplyForceToProjectile(GameObject projectile, SpawnPoint spawnPoint)
         {
             Rigidbody2D rigidBody2DProjectile = projectile.GetComponent<Rigidbody2D>();
 
@@ -73,7 +74,7 @@ namespace Character.Skill {
                 return;
             }
 
-            rigidBody2DProjectile.AddForce(spawner.m_direction * m_throwForce);
+            rigidBody2DProjectile.AddForce(spawnPoint.m_direction * m_throwForce);
             rigidBody2DProjectile.AddTorque(m_throwTorque, ForceMode2D.Force);
         }
 

@@ -6,10 +6,18 @@ using GamePlay.Stats;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
+using Utils;
 using Zenject;
 
 namespace GamePlay.Playable {
 
+    /// <summary>
+    /// The holder of all PlayableAI instances (Playable Characters) in the scene.
+    /// Works as a switcher of characters when [1] the active character dies, and [2] the Player switches out the active one.
+    /// Works as an automatic mission end trigger (Failed scenario) when all PlayableAIs are null / all PCs are "dead".
+    /// 
+    /// Also works as a mass teleporter of Playables to a location.
+    /// </summary>
     public class PlayablesManager : MonoBehaviour
     {
 

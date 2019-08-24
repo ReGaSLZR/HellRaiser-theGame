@@ -3,6 +3,7 @@ using System.Collections;
 using TMPro;
 using UniRx;
 using UnityEngine;
+using Utils;
 
 namespace GamePlay.Mission {
 

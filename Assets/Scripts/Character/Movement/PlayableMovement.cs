@@ -4,6 +4,7 @@ using System;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
+using Utils;
 using Zenject;
 
 namespace Character.Movement
@@ -100,15 +101,14 @@ namespace Character.Movement
 
         private void InitUncontrolledObservers()
         {
-            //jump fall
+            //jump fall - hasten with fall multiplier to prevent that "floaty" default effect
+            //concept reference: "Better Jumping in Unity >> https://www.youtube.com/watch?v=7KiK0Aqtmzc
             this.FixedUpdateAsObservable()
                 .Select(_ => m_compRigidBody2D.velocity)
                 .Where(velocity => (velocity.y < 0))
                 .Subscribe(_ =>
                 {
-                    //reference: "Better Jumping in Unity >> https://www.youtube.com/watch?v=7KiK0Aqtmzc
-                    m_compRigidBody2D.velocity += (Vector2.up * Physics2D.gravity.y *
-                        (m_jumpFallMultiplier - 1f) * Time.fixedDeltaTime);
+                    m_compRigidBody2D.velocity += PhysicsUtil.GetFallVectorWithMultiplier(m_jumpFallMultiplier);
                 })
                 .AddTo(this);
 

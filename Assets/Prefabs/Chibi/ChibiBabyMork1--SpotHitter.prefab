@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_animSkill: isAttacking
+  m_animTriggerStopper: 
   m_skillDelay: 0
   m_skillDuration: 0.25
   m_skillCooldown: 0.25
@@ -52,17 +53,17 @@ PrefabInstance:
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
@@ -98,7 +99,8 @@ PrefabInstance:
       propertyPath: m_skillMain
       value: 
       objectReference: {fileID: 1121703348}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3513235531357516001, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
 --- !u!1 &5699316324740432104 stripped
 GameObject:

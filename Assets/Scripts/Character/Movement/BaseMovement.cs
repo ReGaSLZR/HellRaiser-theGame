@@ -1,5 +1,4 @@
 ﻿using Character.Ground;
-using NaughtyAttributes;
 using Scriptables;
 using UniRx;
 using UnityEngine;
@@ -19,7 +18,6 @@ namespace Character.Movement {
         protected SpriteRenderer m_compSpriteRenderer;
 
         [SerializeField]
-        [Required]
         protected GroundManager m_ground;
 
         [Space]
