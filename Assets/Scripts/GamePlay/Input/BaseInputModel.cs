@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using GamePlay.Camera;
+using UniRx;
+using UnityEngine;
 using Utils;
 
 namespace GamePlay.Input {
@@ -24,12 +26,18 @@ namespace GamePlay.Input {
 
         public bool m_isEnabled { protected set; get; }
 
+        public ReactiveProperty<CameraPanDirection> m_cameraPanDirection { protected set; get; }
+
         protected abstract void SetInputType();
+
+        public BaseInputModel() {
+            SetInputType();
+        }
 
         private void Awake()
         {
+            m_cameraPanDirection = new ReactiveProperty<CameraPanDirection>(CameraPanDirection.NO_PAN);
             m_isEnabled = true;
-            SetInputType();
         }
 
         public void DisableControls()

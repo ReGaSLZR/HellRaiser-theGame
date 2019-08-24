@@ -1,4 +1,5 @@
-﻿using UniRx;
+﻿using GamePlay.Camera;
+using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,8 @@ namespace GamePlay.Input {
     public class InputOnScreenButtons : BaseInputModel
     {
 
+        [Header("Movement Buttons")]
+
         [SerializeField]
         private Button m_buttonJump;
         [SerializeField]
@@ -15,7 +18,7 @@ namespace GamePlay.Input {
         [SerializeField]
         private Button m_buttonMoveLeft;
 
-        [Space]
+        [Header("Skill Buttons")]
 
         [SerializeField]
         private Button m_buttonSkillMain;
@@ -24,21 +27,60 @@ namespace GamePlay.Input {
         [SerializeField]
         private Button m_buttonSkillTertiary;
 
-        [Space]
+        [Header("Character Change Button")]
 
         [SerializeField]
         private Button m_buttonChangeChar;
+
+        [Header("Camera Pan Buttons")]
+
+        [SerializeField]
+        private Button m_buttonCameraUp;
+
+        [SerializeField]
+        private Button m_buttonCameraDown;
+
+        [SerializeField]
+        private Button m_buttonCameraLeft;
+
+        [SerializeField]
+        private Button m_buttonCameraRight;
 
         private void Start()
         {
             SetUpSkillMain();
             SetUpSkill2();
             SetUpSkill3();
-            SetUpJump();
 
+            SetUpJump();
             SetUpMovement();
 
             SetUpChangeCharControl();
+
+            SetUpCameraPanControls();
+        }
+
+        private void SetUpCameraPanControls() {
+            SetUpCameraPanControl(m_buttonCameraUp, CameraPanDirection.PAN_UP);
+            SetUpCameraPanControl(m_buttonCameraDown, CameraPanDirection.PAN_DOWN);
+            SetUpCameraPanControl(m_buttonCameraLeft, CameraPanDirection.PAN_LEFT);
+            SetUpCameraPanControl(m_buttonCameraRight, CameraPanDirection.PAN_RIGHT);
+        }
+
+        private void SetUpCameraPanControl(Button button, CameraPanDirection direction) {
+            button.OnPointerDownAsObservable()
+                .Where(_ => m_isEnabled && (m_cameraPanDirection.Value == CameraPanDirection.NO_PAN))
+                .Subscribe(_ => {
+                    m_cameraPanDirection.Value = direction;
+                })
+                .AddTo(this);
+
+            button.OnPointerUpAsObservable()
+               .Where(_ => m_isEnabled)
+               .Subscribe(_ => {
+                   m_cameraPanDirection.Value = CameraPanDirection.NO_PAN;
+               })
+               .AddTo(this);
         }
 
         private void SetUpChangeCharControl() {

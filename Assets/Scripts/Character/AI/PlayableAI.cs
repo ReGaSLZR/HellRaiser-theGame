@@ -32,8 +32,9 @@ namespace Character.AI {
         [Space]
 
         [SerializeField]
+        [Tooltip("Must be unique. Each PlayableAI must have their OWN virtual camera.")]
         [Required]
-        private CinemachineVirtualCamera m_ownCamera;
+        private CinemachineVirtualCamera m_uniqueCamera;
 
         protected override void Awake()
         {
@@ -44,20 +45,25 @@ namespace Character.AI {
                 m_targetDetector = null;
             }
 
-            m_ownCamera.m_Follow = gameObject.transform;
+            m_uniqueCamera.m_Follow = gameObject.transform;
         }
 
         protected override void OnEnable()
         {
             base.OnEnable();
             InitInputObservers();
-            m_ownCamera.gameObject.SetActive(true);
+            m_uniqueCamera.gameObject.SetActive(true);
         }
 
         protected override void OnDisable()
         {
-            m_ownCamera.gameObject.SetActive(false);
             base.OnDisable();
+
+            //safe check; for some reason, Unity loses the reference to the camera and prooduces a null exception
+            //TODO investigate this bug/error log deeper
+            if (m_uniqueCamera != null) { 
+                m_uniqueCamera.gameObject.SetActive(false);
+            }
         }
 
         private void InitInputObservers() {

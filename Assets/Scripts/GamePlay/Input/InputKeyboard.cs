@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
+using GamePlay.Camera;
+using Utils;
 
 namespace GamePlay.Input {
 
     public class InputKeyboard : BaseInputModel
     {
+
+        [Header("Movement Keys")]
 
         [SerializeField]
         private KeyCode m_keyJump = KeyCode.I;
@@ -14,7 +18,7 @@ namespace GamePlay.Input {
         [SerializeField]
         private KeyCode m_keyMoveLeft = KeyCode.A;
 
-        [Space]
+        [Header("Skill Keys")]
 
         [SerializeField]
         private KeyCode m_keySkillMain = KeyCode.J;
@@ -23,15 +27,30 @@ namespace GamePlay.Input {
         [SerializeField]
         private KeyCode m_keySkill3 = KeyCode.L;
 
-        [Space]
+        [Header("Change Playable Character Key")]
 
         [SerializeField]
         private KeyCode m_keyChangeChar = KeyCode.O;
+
+        [Header("Camera Pan Keys")]
+
+        [SerializeField]
+        private KeyCode m_keyCameraUp = KeyCode.UpArrow;
+
+        [SerializeField]
+        private KeyCode m_keyCameraDown = KeyCode.DownArrow;
+
+        [SerializeField]
+        private KeyCode m_keyCameraLeft = KeyCode.LeftArrow;
+
+        [SerializeField]
+        private KeyCode m_keyCameraRight = KeyCode.RightArrow;
 
         private void Start()
         {
             SetUpHorizontalMovementControls();
             SetUpSkillControls();
+            SetUpCameraPanControls();
 
             //jump control
             this.FixedUpdateAsObservable()
@@ -46,6 +65,31 @@ namespace GamePlay.Input {
                 .Select(_ => UnityEngine.Input.GetKeyDown(m_keyChangeChar))
                 .Subscribe(isPressed => m_charChange = isPressed)
                 .AddTo(this);
+        }
+
+        private void SetUpCameraPanControls() {
+            SetUpCameraPanControl(m_keyCameraUp, CameraPanDirection.PAN_UP);
+            SetUpCameraPanControl(m_keyCameraDown, CameraPanDirection.PAN_DOWN);
+            SetUpCameraPanControl(m_keyCameraLeft, CameraPanDirection.PAN_LEFT);
+            SetUpCameraPanControl(m_keyCameraRight, CameraPanDirection.PAN_RIGHT);
+        }
+
+        private void SetUpCameraPanControl(KeyCode key, CameraPanDirection value) {
+            this.FixedUpdateAsObservable()
+                .Where(_ => m_isEnabled && UnityEngine.Input.GetKey(key))
+                .Subscribe(_ => {
+                    m_cameraPanDirection.Value = value;
+
+                })
+                .AddTo(this);
+
+            this.FixedUpdateAsObservable()
+               .Where(_ => m_isEnabled && UnityEngine.Input.GetKeyUp(key))
+               .Subscribe(_ => {
+                   m_cameraPanDirection.Value = CameraPanDirection.NO_PAN;
+
+               })
+               .AddTo(this);
         }
 
         private void SetUpSkillControls()
