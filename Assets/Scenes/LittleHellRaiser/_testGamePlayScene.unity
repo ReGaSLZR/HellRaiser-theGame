@@ -4052,7 +4052,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &634283318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10248,7 +10248,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee039a313df0c84ca4397b30f13d8c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_playerCamera: {fileID: 1126575198}
   m_distanceXMassTeleport: 1.5
 --- !u!1 &1567084998
 GameObject:

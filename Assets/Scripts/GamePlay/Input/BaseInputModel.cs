@@ -6,11 +6,9 @@ namespace GamePlay.Input {
     public abstract class BaseInputModel : MonoBehaviour
     {
 
-        [SerializeField]
         public InputType m_inputType { protected set; get; }
 
-        [SerializeField]
-        protected float m_movementBaseSpeed = 0.1f;
+        protected float m_movementBaseSpeed = 1f;
 
         public bool m_jump { protected set; get; }
         public float m_run { protected set; get; }

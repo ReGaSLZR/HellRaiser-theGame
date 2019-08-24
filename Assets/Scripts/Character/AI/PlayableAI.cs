@@ -1,10 +1,12 @@
 ﻿using Character.Skill;
+using Cinemachine;
 using GamePlay.Input;
 using GamePlay.Stats;
 using NaughtyAttributes;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
+using Utils;
 using Zenject;
 
 namespace Character.AI {
@@ -27,6 +29,12 @@ namespace Character.AI {
         [Required]
         private BaseSkill m_skillTertiary;
 
+        [Space]
+
+        [SerializeField]
+        [Required]
+        private CinemachineVirtualCamera m_ownCamera;
+
         protected override void Awake()
         {
             base.Awake();
@@ -35,12 +43,21 @@ namespace Character.AI {
                 LogUtil.PrintWarning(gameObject, GetType(), "Awake(): TargetDetector is not needed in PlayerAI.");
                 m_targetDetector = null;
             }
+
+            m_ownCamera.m_Follow = gameObject.transform;
         }
 
         protected override void OnEnable()
         {
             base.OnEnable();
             InitInputObservers();
+            m_ownCamera.gameObject.SetActive(true);
+        }
+
+        protected override void OnDisable()
+        {
+            m_ownCamera.gameObject.SetActive(false);
+            base.OnDisable();
         }
 
         private void InitInputObservers() {

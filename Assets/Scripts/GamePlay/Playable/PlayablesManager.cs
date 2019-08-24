@@ -28,9 +28,6 @@ namespace GamePlay.Playable {
         [Inject]
         private readonly MissionModel.MissionSetter m_modelMission;
 
-        [SerializeField]
-        private CinemachineVirtualCamera m_playerCamera;
-
         [Space]
 
         private PlayableAI[] m_playableChars;
@@ -135,7 +132,6 @@ namespace GamePlay.Playable {
 
             SetAllCharactersEnabled(false);
             SetCharacterEnabled(m_index, true);
-            m_playerCamera.m_Follow = m_playableChars[m_index].gameObject.transform;
         }
 
         private void MoveToNextIndex() {
