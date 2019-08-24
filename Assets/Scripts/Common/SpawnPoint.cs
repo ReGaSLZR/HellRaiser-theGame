@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Common {
 
-    public class SpawnerDirection : MonoBehaviour
+    public class SpawnPoint : MonoBehaviour
     {
 
         private readonly DropdownList<Vector2> m_dropdownListDirection = new DropdownList<Vector2>() {
