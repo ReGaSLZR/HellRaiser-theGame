@@ -25,13 +25,24 @@ namespace GamePlay.Playable {
 
         [Space]
 
-        [SerializeField]
         private PlayableAI[] m_playableChars;
 
         [SerializeField]
-        private float m_distanceXMassTeleport = 5f;
+        private float m_distanceXMassTeleport = 1.5f;
+
+        //TODO code FX for teleportation
 
         private int m_index;
+
+        private void Awake()
+        {
+            if (GameObject.FindObjectsOfType<PlayablesManager>().Length > 1) {
+                LogUtil.PrintError(gameObject, GetType(), "Cannot have more than 1 PlayablesManager. Destroying...");
+                Destroy(this);
+            }
+
+            m_playableChars = GameObject.FindObjectsOfType<PlayableAI>();            
+        }
 
         private void Start()
         {
