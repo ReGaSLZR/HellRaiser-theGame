@@ -1,5 +1,4 @@
-﻿using Character.Ground;
-using Scriptables;
+﻿using Scriptables;
 using UniRx;
 using UnityEngine;
 using static UnityEngine.RectTransform;
