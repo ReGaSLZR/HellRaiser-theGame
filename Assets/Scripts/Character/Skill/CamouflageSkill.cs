@@ -32,6 +32,7 @@ namespace Character.Skill
 
         protected override void OnSkillStart()
         {
+            base.OnSkillStart();
             gameObject.tag = m_tagOnCamouflage;
 
             if(m_colliderOnCamouflage != null) {

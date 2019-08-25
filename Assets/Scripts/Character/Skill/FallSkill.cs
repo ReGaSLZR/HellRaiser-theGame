@@ -25,6 +25,7 @@ namespace Character.Skill {
 
         protected override void OnSkillStart()
         {
+            base.OnSkillStart();
             m_compRigidbody2D.bodyType = RigidbodyType2D.Dynamic;
             m_compRigidbody2D.gravityScale = m_gravityScale;
         }

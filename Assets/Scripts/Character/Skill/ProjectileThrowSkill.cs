@@ -46,6 +46,8 @@ namespace Character.Skill {
 
         protected override void OnSkillStart()
         {
+            base.OnSkillStart();
+
             SpawnPoint spawner = GetProjectileSpawner();
             GameObject projectile = m_instantiator.InstantiateInjectPrefab(m_prefabProjectile, 
                 spawner.gameObject.transform);

@@ -26,6 +26,8 @@ namespace Character.Skill {
 
         protected override void OnSkillStart()
         {
+            base.OnSkillStart();
+
             List<Rigidbody2D> pushableTargets = GetPushableTargets();
 
             for (int x=0; x<pushableTargets.Count; x++) {

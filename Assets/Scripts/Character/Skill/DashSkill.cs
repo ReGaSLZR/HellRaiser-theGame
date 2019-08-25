@@ -31,6 +31,7 @@ namespace Character.Skill {
 
         protected override void OnSkillStart()
         {
+            base.OnSkillStart();
             m_compRigidbody2D.AddForce(GetDirection() * m_dashForce);
             m_compRigidbody2D.constraints = m_constraintsDash;
         }

@@ -38,6 +38,7 @@ namespace Character.Skill {
 
         protected override void OnSkillStart()
         {
+            base.OnSkillStart();
             ExecuteSkill();
 
             if (m_isDestroyedOnUse)
