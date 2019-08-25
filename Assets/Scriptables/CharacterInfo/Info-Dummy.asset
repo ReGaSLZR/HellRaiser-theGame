@@ -14,14 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_infoUI: {fileID: 11400000, guid: 901726a999764134a8bc33d896f1d85a, type: 2}
   m_bio: 
+  m_isPlayable: 0
+  m_skillCosts: 000000000000000000000000
   m_level: 1
   m_health: 100
-  m_stamina: 0
+  m_stamina: 100
   m_statMovement:
     m_movSpeed: 0
     m_stunLength: 1
   m_statOffense:
-    m_attack: 1
+    m_attack: 119
     m_critChance: 1
     m_critDamage: 1
   m_defense: 1

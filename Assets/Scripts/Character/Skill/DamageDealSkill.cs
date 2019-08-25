@@ -36,7 +36,7 @@ namespace Character.Skill {
         [EnableIf("m_isDestroyedOnUse")]
         private float m_delayBeforeDestruction = 0f;
 
-        protected override void ExecuteUseSkill()
+        protected override void OnSkillStart()
         {
             ExecuteSkill();
 

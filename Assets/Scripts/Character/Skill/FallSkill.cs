@@ -23,7 +23,7 @@ namespace Character.Skill {
             m_compRigidbody2D.bodyType = RigidbodyType2D.Static;
         }
 
-        protected override void ExecuteUseSkill()
+        protected override void OnSkillStart()
         {
             m_compRigidbody2D.bodyType = RigidbodyType2D.Dynamic;
             m_compRigidbody2D.gravityScale = m_gravityScale;

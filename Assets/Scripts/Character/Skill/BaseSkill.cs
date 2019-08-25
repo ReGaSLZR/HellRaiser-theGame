@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Character.Skill {
 
     [RequireComponent(typeof(Animator))]
-    public abstract class BaseSkill : MonoBehaviour
+    public class BaseSkill : MonoBehaviour
     {
 
         //COMPONENTS
@@ -45,8 +45,6 @@ namespace Character.Skill {
         protected ReactiveProperty<bool> m_isExecutionFinished = new ReactiveProperty<bool>(true);
 
         private bool m_tempStopRepeatingSkill;
-
-        protected abstract void ExecuteUseSkill();
 
         protected virtual void Awake() {
             m_compAnimator = GetComponent<Animator>();
@@ -95,9 +93,7 @@ namespace Character.Skill {
 
             yield return new WaitForSeconds(m_skillDelay);
 
-            ExecuteUseSkill();
-            SetChildFXActive(true);
-            AnimateSkill(true);
+            OnSkillStart();
 
             yield return new WaitForSeconds(m_skillDuration);
 
@@ -109,6 +105,12 @@ namespace Character.Skill {
             if (m_isRepeating && !m_tempStopRepeatingSkill) {
                 UseSkill();
             }
+        }
+
+        protected virtual void OnSkillStart()
+        {
+            SetChildFXActive(true);
+            AnimateSkill(true);
         }
 
         protected virtual void OnSkillFinish() {

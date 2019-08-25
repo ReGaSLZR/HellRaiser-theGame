@@ -117,7 +117,10 @@ namespace Character.AI {
 
             if (isDetected)
             {
-                m_movement.Face(m_targetDetector.GetTargets()[0].gameObject.transform);
+                Collider2D firstTarget = m_targetDetector.GetTargets()[0];
+                if (firstTarget != null) {
+                    m_movement.Face(firstTarget.gameObject.transform);
+                }
                 m_skillMain.UseSkill();
             }
             else

@@ -30,7 +30,7 @@ namespace Character.Skill
             m_tagOriginal = gameObject.tag;
         }
 
-        protected override void ExecuteUseSkill()
+        protected override void OnSkillStart()
         {
             gameObject.tag = m_tagOnCamouflage;
 

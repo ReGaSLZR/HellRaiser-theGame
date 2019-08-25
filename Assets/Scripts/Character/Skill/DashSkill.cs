@@ -29,7 +29,7 @@ namespace Character.Skill {
             m_constraintsDash = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
         }
 
-        protected override void ExecuteUseSkill()
+        protected override void OnSkillStart()
         {
             m_compRigidbody2D.AddForce(GetDirection() * m_dashForce);
             m_compRigidbody2D.constraints = m_constraintsDash;

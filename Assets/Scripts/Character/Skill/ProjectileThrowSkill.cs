@@ -44,7 +44,7 @@ namespace Character.Skill {
             m_compSpriteRenderer = GetComponent<SpriteRenderer>();
         }
 
-        protected override void ExecuteUseSkill()
+        protected override void OnSkillStart()
         {
             SpawnPoint spawner = GetProjectileSpawner();
             GameObject projectile = m_instantiator.InstantiateInjectPrefab(m_prefabProjectile, 

@@ -24,7 +24,7 @@ namespace Character.Skill {
         [Range(0f, 100f)]
         private float m_pushTorque;
 
-        protected override void ExecuteUseSkill()
+        protected override void OnSkillStart()
         {
             List<Rigidbody2D> pushableTargets = GetPushableTargets();
 
