@@ -32,6 +32,7 @@ namespace GamePlay.Camera {
         private float m_panVertical;
 
         private CinemachineVirtualCamera[] m_cameras;
+        private CinemachineFramingTransposer[] m_cameraTransposers;
 
         private void Awake()
         {
@@ -41,6 +42,8 @@ namespace GamePlay.Camera {
                 LogUtil.PrintError(gameObject, GetType(), "No Virtual Cameras found. Scene must at least have one. Destroying...");
                 Destroy(this);
             }
+
+            m_cameraTransposers = GetAllCameraTransposers();
         }
 
         private void Start()
@@ -51,8 +54,12 @@ namespace GamePlay.Camera {
         }
 
         private void Pan(CameraPanDirection direction) {
-            CinemachineVirtualCamera activeCam = GetActiveCamera();
-            CinemachineFramingTransposer transposer = activeCam.GetCinemachineComponent<CinemachineFramingTransposer>();
+            CinemachineFramingTransposer transposer = m_cameraTransposers[GetActiveCameraIndex()];
+
+            if (transposer == null) {
+                LogUtil.PrintError(gameObject, GetType(), "Pan(): Could not pan. FramingTransposer from active vCam is NULL.");
+                return;
+            }
 
             switch (direction) {
                 case CameraPanDirection.PAN_UP: {
@@ -81,14 +88,25 @@ namespace GamePlay.Camera {
             }
         }
 
-        private CinemachineVirtualCamera GetActiveCamera() {
+        private CinemachineFramingTransposer[] GetAllCameraTransposers() {
+            CinemachineFramingTransposer[] transposers = new CinemachineFramingTransposer[m_cameras.Length];
+
+            for (int x=0; x<m_cameras.Length; x++) {
+                transposers[x] = m_cameras[x].GetCinemachineComponent<CinemachineFramingTransposer>();
+            }
+
+            return transposers;
+        }
+
+        private int GetActiveCameraIndex() {
             for (int x=0; x<m_cameras.Length; x++) {
                 if (m_cameras[x].isActiveAndEnabled) {
-                    return m_cameras[x];
+                    return x;
                 }
             }
 
-            return null;
+            LogUtil.PrintError(gameObject, GetType(), "GetActiveCamera(): Could not get an active vCam. Returning null...");
+            return 0;
         }
 
     }
