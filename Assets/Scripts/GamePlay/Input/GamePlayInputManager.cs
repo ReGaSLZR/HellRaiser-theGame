@@ -17,11 +17,11 @@ namespace GamePlay.Input {
 
         public BaseInputModel GetBaseInput()
         {
-            LogUtil.PrintInfo(gameObject, GetType(), "Input types length: " + m_inputTypes.Length);
+            //LogUtil.PrintInfo(gameObject, GetType(), "Input types length: " + m_inputTypes.Length);
 
             for (int x = 0; x < m_inputTypes.Length; x++)
             {
-                LogUtil.PrintInfo(gameObject, GetType(), "Checking input type: " + m_inputTypes[x].m_inputType.ToString());
+                //LogUtil.PrintInfo(gameObject, GetType(), "Checking input type: " + m_inputTypes[x].m_inputType.ToString());
                 if (m_playSettings.m_gamePlayInput == m_inputTypes[x].m_inputType)
                 {
                     LogUtil.PrintInfo(gameObject, GetType(), "GetBaseInput() type got: " + m_inputTypes[x].m_inputType.ToString());
