@@ -9,6 +9,10 @@ namespace Character.AI {
 
     public class BaseAI : MonoBehaviour
     {
+        [SerializeField]
+        protected TargetDetector m_targetDetector;
+
+        [Space]
 
         [SerializeField]
         [Required]
@@ -17,9 +21,6 @@ namespace Character.AI {
         [SerializeField]
         [Required]
         protected BaseStats m_stats;
-
-        [SerializeField]
-        protected TargetDetector m_targetDetector;
 
         [SerializeField]
         [Required]

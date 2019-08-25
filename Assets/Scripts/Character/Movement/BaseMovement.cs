@@ -18,11 +18,6 @@ namespace Character.Movement {
         protected SpriteRenderer m_compSpriteRenderer;
 
         [SerializeField]
-        protected GroundManager m_ground;
-
-        [Space]
-
-        [SerializeField]
         protected Axis m_movementDirection;
 
         [SerializeField]
@@ -61,10 +56,10 @@ namespace Character.Movement {
                 return;
             }
 
-            if (!m_compAnimator.GetBool(m_animMove))
-            { //to prevent jitters
+            //if (!m_compAnimator.GetBool(m_animMove))
+            //{ //to prevent jitters
                 AnimateMovement(m_animMove, true);
-            }
+            //}
 
             if (RigidbodyType2D.Dynamic == m_compRigidBody2D.bodyType)
             {
@@ -95,11 +90,13 @@ namespace Character.Movement {
         }
 
         private void AnimateMovement(string animParam, bool shouldAnimate) {
-            if (m_compAnimator == null || m_compAnimator.runtimeAnimatorController == null) {
+            if (animParam.Equals("") || m_compAnimator == null || m_compAnimator.runtimeAnimatorController == null) {
                 return;
             }
 
-            m_compAnimator.SetBool(animParam, shouldAnimate);
+            if (m_compAnimator.GetBool(animParam) != shouldAnimate) { //to prevent jitters
+                m_compAnimator.SetBool(animParam, shouldAnimate);
+            }
         }
 
         public void Face(Transform transformToFace) {

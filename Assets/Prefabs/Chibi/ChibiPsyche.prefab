@@ -356,7 +356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ef2a4f02c98d040b4d72c486474781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ground: {fileID: 1336468798}
   m_movementDirection: 0
   m_shouldFlipSprite: 0
   m_animMove: isRunning
@@ -365,6 +364,7 @@ MonoBehaviour:
   m_animOnWall: isOnWall
   m_wallSlideNormalFrictionDrag: 1
   m_wallSlideFriction: 10
+  m_ground: {fileID: 1336468798}
   m_jumpVelocity: 9
   m_jumpFallMultiplier: 2.5
   m_jumpHeight: 7
@@ -383,12 +383,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f2c3a5d9b00ae4b9364ce0115f2001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_targetDetector: {fileID: 0}
   m_movement: {fileID: 2590343526880155032}
   m_stats: {fileID: 2040706426}
-  m_targetDetector: {fileID: 0}
   m_skillMain: {fileID: 2040706424}
   m_skillSecondary: {fileID: 1905334431}
   m_skillTertiary: {fileID: 1905334432}
+  m_uniqueCamera: {fileID: 0}
 --- !u!114 &2040706426
 MonoBehaviour:
   m_ObjectHideFlags: 0

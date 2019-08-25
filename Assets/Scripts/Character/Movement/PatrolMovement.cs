@@ -1,4 +1,5 @@
-﻿using UniRx;
+﻿using Character.Ground;
+using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
 using static UnityEngine.RectTransform;
@@ -7,6 +8,10 @@ namespace Character.Movement {
 
     public class PatrolMovement : BaseMovement
     {
+
+        [SerializeField]
+        protected GroundManager m_ground;
+
         private float m_patrolMovementWithDirection = 1f;
 
         private void OnEnable()

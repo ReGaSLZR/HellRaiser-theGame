@@ -30,6 +30,9 @@ namespace Character.Movement
 
         [Header("Jump")]
         [SerializeField]
+        protected GroundManager m_ground;
+
+        [SerializeField]
         private float m_jumpVelocity = 1.2f;
         [SerializeField]
         [Range(1.1f, 5f)]
