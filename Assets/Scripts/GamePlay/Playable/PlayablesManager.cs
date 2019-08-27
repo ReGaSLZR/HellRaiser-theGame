@@ -94,9 +94,10 @@ namespace GamePlay.Playable {
                 .AddTo(this);
 
             //on playable character switch
-            this.FixedUpdateAsObservable()
+            this.UpdateAsObservable()
                 .Where(_ => m_modelInput.m_charChange)
                 .Subscribe(_ => {
+                    LogUtil.PrintInfo(gameObject, GetType(), "Change Playable Char.");
                     EnableNextCharacter();
                 })
                 .AddTo(this);
@@ -130,6 +131,7 @@ namespace GamePlay.Playable {
                 MoveToNextIndex();
             } while (m_playableChars[m_index] == null);
 
+            LogUtil.PrintInfo(gameObject, GetType(), "Playable Char index: " + m_index);
             SetAllCharactersEnabled(false);
             SetCharacterEnabled(m_index, true);
         }
