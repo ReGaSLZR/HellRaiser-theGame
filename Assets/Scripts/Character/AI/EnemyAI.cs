@@ -1,9 +1,8 @@
-﻿using Character.AI;
-using GamePlay.Base;
+﻿using GamePlay.Base;
 using NaughtyAttributes;
 using UnityEngine;
 
-namespace GamePlay.Stats {
+namespace Character.AI {
 
     public class EnemyAI : BaseAI
     {
