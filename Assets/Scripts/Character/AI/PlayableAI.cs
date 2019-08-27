@@ -46,6 +46,10 @@ namespace Character.AI {
             }
 
             m_uniqueCamera.m_Follow = gameObject.transform;
+
+            m_skillMain.SetSkillDuration(m_stats.GetCharacterSkills()[0].m_duration);
+            m_skillSecondary.SetSkillDuration(m_stats.GetCharacterSkills()[1].m_duration);
+            m_skillTertiary.SetSkillDuration(m_stats.GetCharacterSkills()[2].m_duration);
         }
 
         protected override void OnEnable()
@@ -70,33 +74,33 @@ namespace Character.AI {
             //skill MAIN
             this.FixedUpdateAsObservable()
                 .Select(_ => m_modelInput.m_skillMain)
-                .Where(isUsingSkill => isUsingSkill && IsStaminaValueEnough(m_stats.GetSkillCosts()[0]))
+                .Where(isUsingSkill => isUsingSkill && IsStaminaValueEnough(m_stats.GetCharacterSkills()[0].m_cost))
                 .Subscribe(_ =>
                 {
                     m_skillMain.UseSkill();
-                    UpdateStamina(m_stats.GetSkillCosts()[0]);
+                    UpdateStamina(m_stats.GetCharacterSkills()[0].m_cost);
                 })
                 .AddTo(m_disposables);
 
             //skill 2
             this.FixedUpdateAsObservable()
                .Select(_ => m_modelInput.m_skill2)
-               .Where(isUsingSkill => isUsingSkill && IsStaminaValueEnough(m_stats.GetSkillCosts()[1]))
+               .Where(isUsingSkill => isUsingSkill && IsStaminaValueEnough(m_stats.GetCharacterSkills()[1].m_cost))
                .Subscribe(_ =>
                {
                    m_skillSecondary.UseSkill();
-                   UpdateStamina(m_stats.GetSkillCosts()[1]);
+                   UpdateStamina(m_stats.GetCharacterSkills()[1].m_cost);
                })
                .AddTo(m_disposables);
 
             //skill 3
             this.FixedUpdateAsObservable()
                .Select(_ => m_modelInput.m_skill3)
-               .Where(isUsingSkill => isUsingSkill && IsStaminaValueEnough(m_stats.GetSkillCosts()[2]))
+               .Where(isUsingSkill => isUsingSkill && IsStaminaValueEnough(m_stats.GetCharacterSkills()[2].m_cost))
                .Subscribe(isUsingSkill =>
                 {
                     m_skillTertiary.UseSkill();
-                    UpdateStamina(m_stats.GetSkillCosts()[2]);
+                    UpdateStamina(m_stats.GetCharacterSkills()[2].m_cost);
                 })
                 .AddTo(m_disposables);
         }

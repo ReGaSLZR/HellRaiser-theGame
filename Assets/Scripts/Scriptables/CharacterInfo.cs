@@ -20,8 +20,7 @@ namespace Scriptables {
         public bool m_isPlayable;
 
         [EnableIf("m_isPlayable")]
-        [Range(0, STAMINA_MAX)]
-        public int[] m_skillCosts = new int[3];
+        public CharacterInfoSkill[] m_skillsInOrder = new CharacterInfoSkill[3];
 
         [Header("Stats")]
 

@@ -8,7 +8,11 @@ using GamePlay.Stats;
 
 namespace GamePlay.UI {
 
-    public class GamePlayInputOnScreenButtonsEnabler : MonoBehaviour
+    /// <summary>
+    /// Acts as [1] the enabler/disabler of OnScreen buttons when active Playable Character stamina is not sufficient for skill execution,
+    /// and [2] the updater of skill buttons' icons.
+    /// </summary>
+    public class GamePlayInputOnScreenButtonsModifier : MonoBehaviour
     {
 
         [Inject]
@@ -23,15 +27,19 @@ namespace GamePlay.UI {
         [SerializeField]
         private Button[] m_buttonsSkillInOrder;
 
+        [SerializeField]
+        private RawImage[] m_rawImagesSkillInOrder;
+
         private bool m_tempInputEnabled;
 
         private void Start()
         {
             if (m_modelInput.m_inputType != InputType.OnScreenButtons)
             {
-                Destroy(gameObject);
+                Destroy(this);
             }
 
+            //enable/disable all buttons when input is enabled or not
             this.FixedUpdateAsObservable()
                 .Select(_ => m_modelInput.m_isEnabled)
                 .Where(isEnabled => (isEnabled != m_tempInputEnabled))
@@ -41,12 +49,22 @@ namespace GamePlay.UI {
                 })
                 .AddTo(this);
 
+            //enable/disable SKILL buttons depending on stamina bar and skill cost
             m_modelGamePlayStats.GetActiveCharacterStamina()
                 .Subscribe(stamina => {
                     for (int x=0; x<m_buttonsSkillInOrder.Length; x++) {
                         m_buttonsSkillInOrder[x].interactable = 
-                            (stamina >= m_modelGamePlayStats.GetActiveCharacter().Value.m_skillCosts[x]);
+                            (stamina >= m_modelGamePlayStats.GetActiveCharacter().Value.m_skillsInOrder[x].m_cost);
                     }
+                })
+                .AddTo(this);
+
+            //update skill icons when active playable character is changed
+            m_modelGamePlayStats.GetActiveCharacter()
+                .Subscribe(activeChar => {
+                    for (int x=0; x<activeChar.m_skillsInOrder.Length; x++) {
+                        m_rawImagesSkillInOrder[x].texture = activeChar.m_skillsInOrder[x].m_icon;
+                    }           
                 })
                 .AddTo(this);
 

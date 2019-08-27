@@ -64,6 +64,10 @@ namespace Character.Skill {
             m_statOffense = statOffense;
         }
 
+        public void SetSkillDuration(float duration) {
+            m_skillDuration = duration;
+        }
+
         public void UseSkill() {
             m_tempStopRepeatingSkill = false;
 

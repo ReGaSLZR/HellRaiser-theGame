@@ -1,6 +1,7 @@
 ﻿using UniRx;
 using Zenject;
 using GamePlay.Stats;
+using Utils;
 
 namespace Character.Stats
 {
@@ -16,6 +17,11 @@ namespace Character.Stats
         protected override void Awake()
         {
             base.Awake();
+
+            if (!m_info.m_isPlayable) {
+                LogUtil.PrintError(gameObject, GetType(), "Awake(): PlayableStats.m_info has non-playable stats. Destroying...");
+                Destroy(this);
+            }
         }
 
         private void OnEnable()

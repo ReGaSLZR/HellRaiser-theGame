@@ -15,7 +15,10 @@ MonoBehaviour:
   m_infoUI: {fileID: 11400000, guid: b2e17f15d7b94d1409243dbcf60f851d, type: 2}
   m_bio: 
   m_isPlayable: 1
-  m_skillCosts: 000000002300000040000000
+  m_skillsInOrder:
+  - {fileID: 11400000, guid: 1d9394d362620a940903f7289463d734, type: 2}
+  - {fileID: 11400000, guid: 9f2a1ac320e69b140a67f4da40688142, type: 2}
+  - {fileID: 11400000, guid: 18b375b3b5eeda546a3dae86aada6cdf, type: 2}
   m_level: 1
   m_health: 0
   m_stamina: 100

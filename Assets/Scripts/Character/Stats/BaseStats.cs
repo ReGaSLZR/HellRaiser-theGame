@@ -32,8 +32,8 @@ namespace Character.Stats {
             return m_info.m_infoUI.m_name;
         }
 
-        public int[] GetSkillCosts() {
-            return m_info.m_skillCosts;
+        public CharacterInfoSkill[] GetCharacterSkills() {
+            return m_info.m_skillsInOrder;
         }
 
         public StatMovement GetStatMovement() {
