@@ -1,8 +1,8 @@
 ﻿using Character.AI;
-using Cinemachine;
 using GamePlay.Input;
 using GamePlay.Mission;
 using GamePlay.Stats;
+using System.Collections;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
@@ -33,10 +33,14 @@ namespace GamePlay.Playable {
         private PlayableAI[] m_playableChars;
 
         [SerializeField]
+        private float m_playableCharSwitchDuration = 0.5f;
+
+        [SerializeField]
         private float m_distanceXMassTeleport = 1.5f;
 
         //TODO code FX for teleportation
 
+        private bool m_isCharacterSwitchingReady;
         private int m_index;
 
         private void Awake()
@@ -55,6 +59,7 @@ namespace GamePlay.Playable {
 
             SetAllCharactersEnabled(false);
 
+            m_isCharacterSwitchingReady = true;
             m_index = 0;
             m_playableChars[m_index].enabled = true;
         }
@@ -95,12 +100,21 @@ namespace GamePlay.Playable {
 
             //on playable character switch
             this.UpdateAsObservable()
-                .Where(_ => m_modelInput.m_charChange)
+                .Where(_ => m_modelInput.m_charChange && m_isCharacterSwitchingReady)
                 .Subscribe(_ => {
                     LogUtil.PrintInfo(gameObject, GetType(), "Change Playable Char.");
                     EnableNextCharacter();
+
+                    StopAllCoroutines();
+                    StartCoroutine(CorStartSwitchTick());
                 })
                 .AddTo(this);
+        }
+
+        private IEnumerator CorStartSwitchTick() {
+            m_isCharacterSwitchingReady = false;
+            yield return new WaitForSeconds(m_playableCharSwitchDuration);
+            m_isCharacterSwitchingReady = true;
         }
 
         private bool AreAllCharactersDead() {

@@ -10264,6 +10264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee039a313df0c84ca4397b30f13d8c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_playableCharSwitchDuration: 0.5
   m_distanceXMassTeleport: 1.5
 --- !u!1 &1567084998
 GameObject:
