@@ -24,7 +24,7 @@ namespace GamePlay.Input {
                 //LogUtil.PrintInfo(gameObject, GetType(), "Checking input type: " + m_inputTypes[x].m_inputType.ToString());
                 if (m_playSettings.m_gamePlayInput == m_inputTypes[x].m_inputType)
                 {
-                    LogUtil.PrintInfo(gameObject, GetType(), "GetBaseInput() type got: " + m_inputTypes[x].m_inputType.ToString());
+                    //LogUtil.PrintInfo(gameObject, GetType(), "GetBaseInput() type got: " + m_inputTypes[x].m_inputType.ToString());
                     DestroyUnusedInputTypes(x);
                     return m_inputTypes[x];
                 }

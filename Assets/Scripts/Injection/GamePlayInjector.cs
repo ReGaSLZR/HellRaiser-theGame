@@ -64,7 +64,7 @@ namespace Injection {
         {
             //Player Input
             BaseInputModel baseInputModel = m_inputManager.GetBaseInput();
-            LogUtil.PrintInfo(gameObject, GetType(), "base input is: " + baseInputModel.GetType());
+            //LogUtil.PrintInfo(gameObject, GetType(), "base input is: " + baseInputModel.GetType());
             Container.Bind<BaseInputModel>().FromInstance(baseInputModel);
 
             Container.Bind<GamePlayDialogueModel.Getter>().FromInstance(m_dialogue);
