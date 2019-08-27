@@ -74,7 +74,9 @@ namespace Character.AI {
             //skill MAIN
             this.FixedUpdateAsObservable()
                 .Select(_ => m_modelInput.m_skillMain)
-                .Where(isUsingSkill => isUsingSkill && IsStaminaValueEnough(m_stats.GetCharacterSkills()[0].m_cost))
+                .Where(isUsingSkill => isUsingSkill && 
+                    IsStaminaValueEnough(m_stats.GetCharacterSkills()[0].m_cost) &&
+                    m_skillMain.IsExecutionFinished().Value)
                 .Subscribe(_ =>
                 {
                     m_skillMain.UseSkill();
@@ -85,7 +87,9 @@ namespace Character.AI {
             //skill 2
             this.FixedUpdateAsObservable()
                .Select(_ => m_modelInput.m_skill2)
-               .Where(isUsingSkill => isUsingSkill && IsStaminaValueEnough(m_stats.GetCharacterSkills()[1].m_cost))
+               .Where(isUsingSkill => isUsingSkill && 
+                    IsStaminaValueEnough(m_stats.GetCharacterSkills()[1].m_cost) &&
+                    m_skillSecondary.IsExecutionFinished().Value)
                .Subscribe(_ =>
                {
                    m_skillSecondary.UseSkill();
@@ -96,7 +100,9 @@ namespace Character.AI {
             //skill 3
             this.FixedUpdateAsObservable()
                .Select(_ => m_modelInput.m_skill3)
-               .Where(isUsingSkill => isUsingSkill && IsStaminaValueEnough(m_stats.GetCharacterSkills()[2].m_cost))
+               .Where(isUsingSkill => isUsingSkill && 
+                    IsStaminaValueEnough(m_stats.GetCharacterSkills()[2].m_cost) &&
+                    m_skillTertiary.IsExecutionFinished().Value)
                .Subscribe(isUsingSkill =>
                 {
                     m_skillTertiary.UseSkill();
