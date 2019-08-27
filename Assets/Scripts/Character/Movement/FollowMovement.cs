@@ -19,8 +19,10 @@ namespace Character.Movement {
 
         private Transform m_followTarget;
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
+
             this.FixedUpdateAsObservable()
                 .Where(_ => m_reactiveIsMovEnabled.Value && (m_followTarget != null))
                 .Select(_ => Vector2.Distance(m_followTarget.position, gameObject.transform.position))

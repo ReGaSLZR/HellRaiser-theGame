@@ -58,9 +58,16 @@ namespace Character.Movement
             InitUncontrolledObservers();
         }
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
             InitControlledObservers();
+        }
+
+        protected override void OnDisable() {
+            base.OnDisable();
+
+            m_compAnimator.SetBool(m_animMove, false);
         }
 
         private void InitControlledObservers() {

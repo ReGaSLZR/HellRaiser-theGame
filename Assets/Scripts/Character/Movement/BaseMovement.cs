@@ -41,8 +41,14 @@ namespace Character.Movement {
             m_compRigidBody2D = GetComponent<Rigidbody2D>();
         }
 
-        private void OnDisable()
+        protected virtual void OnEnable()
         {
+            SetMovementEnabled(true);
+        }
+
+        protected virtual void OnDisable()
+        {
+            SetMovementEnabled(false);
             m_disposables.Clear();
         }
 

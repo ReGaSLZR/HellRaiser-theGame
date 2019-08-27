@@ -14,8 +14,10 @@ namespace Character.Movement {
 
         private float m_patrolMovementWithDirection = 1f;
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
+
             m_ground.IsOnEdge()
                 .Where(isOnEdge => isOnEdge)
                 .Subscribe(isOnEdge =>
