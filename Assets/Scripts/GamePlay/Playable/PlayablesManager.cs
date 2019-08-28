@@ -81,7 +81,7 @@ namespace GamePlay.Playable {
         }
 
         private void InitObservers() {
-            //on current playable character death...
+            //on ACTIVE playable character death...
             m_modelStats.GetActiveCharacterHealth()
                 .Where(health => health <= 0)
                 .Subscribe(_ => {
@@ -89,7 +89,7 @@ namespace GamePlay.Playable {
                     //in case there is a destruction delay on other behaviours
                     m_playableChars[m_index] = null;
 
-                    if (m_modelMissionGetter.ShouldAllCharactersSurvive() || AreAllCharactersDead())
+                    if (AreAllCharactersDead())
                     {
                         m_modelMissionSetter.EndMission(false);
                     }
@@ -99,6 +99,12 @@ namespace GamePlay.Playable {
                     }
                     
                 })
+                .AddTo(this);
+
+            //on ANY playable character death... (regardless of being active or not)
+            m_modelStats.HasACharacterDied()
+                .Where(hasDied => hasDied && m_modelMissionGetter.ShouldAllCharactersSurvive())
+                .Subscribe(_ => m_modelMissionSetter.EndMission(false))
                 .AddTo(this);
 
             //on playable character switch

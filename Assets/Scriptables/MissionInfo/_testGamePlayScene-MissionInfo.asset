@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a15c6ac52ccc1499f4841ee7bfbdcf, type: 3}
   m_Name: _testGamePlayScene-MissionInfo
   m_EditorClassIdentifier: 
-  m_buildIndex: 0
+  m_buildIndex: 3
   m_preview: {fileID: 0}
   m_title: 
   m_objective: This is a test objective.
@@ -24,4 +24,4 @@ MonoBehaviour:
   m_keyCount: 2
   m_isTimed: 1
   m_timeLimit: 150
-  m_allCharactersMustSurvive: 0
+  m_allCharactersMustSurvive: 1

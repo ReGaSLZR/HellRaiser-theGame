@@ -17,6 +17,7 @@ namespace GamePlay.Stats
             ReactiveProperty<Scriptables.CharacterInfo> GetActiveCharacter();
             ReactiveProperty<int> GetActiveCharacterHealth();
             ReactiveProperty<int> GetActiveCharacterStamina();
+            ReactiveProperty<bool> HasACharacterDied();
 
             ReactiveProperty<int> GetInventoryMoney();
         }
@@ -35,6 +36,12 @@ namespace GamePlay.Stats
         #endregion
 
         private ReactiveProperty<Scriptables.CharacterInfo> m_activeCharInfo = new ReactiveProperty<Scriptables.CharacterInfo>();
+
+        /// <summary>
+        /// Determines if one of the Playable Characters (regardless of being active or not) has died. 
+        /// </summary>
+        private ReactiveProperty<bool> m_charHasDied = new ReactiveProperty<bool>(false);
+
         private List<Scriptables.CharacterInfo> m_listCharacterInfo = new List<Scriptables.CharacterInfo>();
 
         private ReactiveProperty<int> m_charHealth = new ReactiveProperty<int>();
@@ -76,6 +83,10 @@ namespace GamePlay.Stats
         public ReactiveProperty<int> GetActiveCharacterStamina()
         {
             return m_charStamina;
+        }
+
+        public ReactiveProperty<bool> HasACharacterDied() {
+            return m_charHasDied;
         }
 
         public ReactiveProperty<int> GetInventoryMoney()
@@ -138,14 +149,15 @@ namespace GamePlay.Stats
             UpdateCharacterHealthOrStamina(false, charName, newStamina, 0, Scriptables.CharacterInfo.STAMINA_MAX);
         }
 
-        private void UpdateCharacterHealthOrStamina(bool isHealth, string charName, int barValue, int minValue, int maxValue) {
-            int clampedValue = Mathf.Clamp(barValue, minValue, maxValue);
+        private void UpdateCharacterHealthOrStamina(bool isHealth, string charName, int value, int minValue, int maxValue) {
+            int clampedValue = Mathf.Clamp(value, minValue, maxValue);
 
             if (charName.Equals(m_activeCharInfo.Value.m_infoUI.m_name))
             {
                 if (isHealth)
                 {
                     m_charHealth.Value = clampedValue;
+                    m_charHasDied.Value = (clampedValue <= 0);
                 }
                 else {
                     m_charStamina.Value = clampedValue;
@@ -160,6 +172,7 @@ namespace GamePlay.Stats
                         if (isHealth)
                         {
                             charInfo.m_health = clampedValue;
+                            m_charHasDied.Value = (clampedValue <= 0);
                         }
                         else {
                             charInfo.m_stamina = clampedValue;
