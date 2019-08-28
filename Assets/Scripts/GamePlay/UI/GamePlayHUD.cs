@@ -39,7 +39,12 @@ namespace GamePlay.UI {
 
         [SerializeField]
         private Slider m_sliderStamina;
-        
+
+        [Space]
+
+        [SerializeField]
+        private TextMeshProUGUI m_textMoneyCount;
+
         [Space]
 
         [SerializeField]
@@ -65,6 +70,12 @@ namespace GamePlay.UI {
                 .Subscribe(characterInfo => {
                     m_textCharacterLevel.text = PREFIX_CHARACTER_LEVEL + characterInfo.m_level;
                     m_characterAvatar.texture = characterInfo.m_infoUI.m_avatarMain;
+                })
+                .AddTo(this);
+
+            m_modelStats.GetInventoryMoney()
+                .Subscribe(money => {
+                    m_textMoneyCount.text = money.ToString();
                 })
                 .AddTo(this);
 

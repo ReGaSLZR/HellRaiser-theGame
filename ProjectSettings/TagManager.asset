@@ -9,6 +9,7 @@ TagManager:
   - Crate
   - Projectile
   - Player-Camouflaged
+  - Item
   layers:
   - Default
   - TransparentFX

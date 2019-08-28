@@ -1,29 +1,104 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine;
+using Utils;
 
 namespace Data.Storage {
 
-    //TODO: move saving repository from PlayerPrefs to RemoteSettings..?
-    public class PlayerData
+    public static class PlayerData
     {
 
-        private const string KEY_INVENTORY_MONEY = "KEY_INVENTORY_MONEY";
-        private const string KEY_INVENTORY_SCROLL = "KEY_INVENTORY_SCROLL";
+        #region Serializable Classes
 
-        public static int GetInventoryMoney() {
-            return PlayerPrefs.GetInt(KEY_INVENTORY_MONEY, 0);
+        [System.Serializable]
+        public class Inventory {
+            public static readonly string SAVE_PATH = Application.persistentDataPath + "/hellraiser-inventory.hellishfun";
+
+            public int m_money;
+
+            public Inventory(int money) {
+                m_money = money;
+            }
         }
 
-        public static int GetInventoryScroll() {
-            return PlayerPrefs.GetInt(KEY_INVENTORY_SCROLL, 0);
+        [System.Serializable]
+        public class MissionProgression {
+            public static readonly string SAVE_PATH = Application.persistentDataPath + "/hellraiser-missions.hellishfun";
+
+            public int m_mainCleared;
+            public int m_sideCleared;
+
+            public MissionProgression(int mainCleared, int sideCleared) {
+                m_mainCleared = mainCleared;
+                m_sideCleared = sideCleared;
+            }
+
         }
 
-        public static void SaveInventory(int money, int scroll) {
-            PlayerPrefs.SetInt(KEY_INVENTORY_MONEY, money);
-            PlayerPrefs.SetInt(KEY_INVENTORY_SCROLL, scroll);
-            PlayerPrefs.Save();
+        #endregion
+
+        private static void ExecuteSave(string path, object data) {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Create);
+
+            formatter.Serialize(stream, data);
+            stream.Close();
+        }
+
+        private static object ExecuteLoad(string path) {
+            if (File.Exists(Inventory.SAVE_PATH))
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                FileStream stream = new FileStream(Inventory.SAVE_PATH, FileMode.Open);
+                object data = formatter.Deserialize(stream);
+
+                stream.Close();
+                LogUtil.PrintInfo("PlayerData.ExecuteLoad(): Save file from " + path + " successfully loaded.");
+                return data;
+            }
+            else
+            {
+                LogUtil.PrintError("PlayerData.ExecuteLoad(): Could not load " + path + " save file.");
+                return null;
+            }
+        }
+
+        public static void Save(Inventory data)
+        {
+            ExecuteSave(Inventory.SAVE_PATH, data);
+        }
+
+        public static void Save(MissionProgression data)
+        {
+            ExecuteSave(MissionProgression.SAVE_PATH, data);
+        }
+
+        public static Inventory LoadInventory() {
+            object loadedData = ExecuteLoad(Inventory.SAVE_PATH);
+
+            if (loadedData == null)
+            {
+                LogUtil.PrintError("PlayerData.LoadInventory(): returning blank data instead.");
+                return new Inventory(0);
+            }
+            else
+            {
+                return loadedData as Inventory;
+            }
+            
+        }
+
+        public static MissionProgression LoadMissionProgression() {
+            object loadedData = ExecuteLoad(MissionProgression.SAVE_PATH);
+
+            if (loadedData == null) {
+                LogUtil.PrintError("PlayerData.LoadMissionProgression(): returning blank data instead.");
+                return new MissionProgression(0, 0);
+            }
+
+            return loadedData as MissionProgression;
         }
 
     }
-
 
 }

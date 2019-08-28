@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
+using static Data.Storage.PlayerData;
 
 namespace GamePlay.Stats
 {
@@ -18,17 +19,17 @@ namespace GamePlay.Stats
             ReactiveProperty<int> GetActiveCharacterStamina();
 
             ReactiveProperty<int> GetInventoryMoney();
-            ReactiveProperty<int> GetInventoryScroll();
         }
 
         public interface Setter
         {
             void RegisterCharacterForStats(Scriptables.CharacterInfo characterInfo);
+            void AddActiveCharacterHealth(int additionalHealth);
+            void AddActiveCharacterStamina(int additionalStamina);
             void UpdateCharacterHealth(string charName, int newHealth);
             void UpdateCharacterStamina(string charName, int newStamina);
 
             void AddInventoryMoney(int inventoryMoney);
-            void AddInventoryScroll(int inventoryScroll);
         }
 
         #endregion
@@ -40,7 +41,6 @@ namespace GamePlay.Stats
         private ReactiveProperty<int> m_charStamina = new ReactiveProperty<int>();
 
         private ReactiveProperty<int> m_inventoryMoney = new ReactiveProperty<int>();
-        private ReactiveProperty<int> m_inventoryScroll = new ReactiveProperty<int>();
 
         private void Awake()
         {
@@ -49,7 +49,7 @@ namespace GamePlay.Stats
 
         private void OnDestroy()
         {
-            PlayerData.SaveInventory(m_inventoryMoney.Value, m_inventoryScroll.Value);
+            PlayerData.Save(new Inventory(m_inventoryMoney.Value));
         }
 
         private void SetActiveCharacter(Scriptables.CharacterInfo charInfo) {
@@ -60,8 +60,8 @@ namespace GamePlay.Stats
         }
 
         private void SetPlayerValues() {
-            m_inventoryMoney.Value = PlayerData.GetInventoryMoney();
-            m_inventoryScroll.Value = PlayerData.GetInventoryScroll();
+            Inventory inventory = PlayerData.LoadInventory();
+            m_inventoryMoney.Value = inventory.m_money;
         }
 
         public ReactiveProperty<Scriptables.CharacterInfo> GetActiveCharacter() {
@@ -81,11 +81,6 @@ namespace GamePlay.Stats
         public ReactiveProperty<int> GetInventoryMoney()
         {
             return m_inventoryMoney;
-        }
-
-        public ReactiveProperty<int> GetInventoryScroll()
-        {
-            return m_inventoryScroll;
         }
 
         public void RegisterCharacterForStats(Scriptables.CharacterInfo characterInfo) {
@@ -121,6 +116,16 @@ namespace GamePlay.Stats
             }
 
             return null;
+        }
+
+        public void AddActiveCharacterHealth(int additionalHealth) {
+            m_charHealth.Value = Mathf.Clamp(m_charHealth.Value + additionalHealth, 
+                0, Scriptables.CharacterInfo.HEALTH_MAX);
+        }
+
+        public void AddActiveCharacterStamina(int additionalStamina) {
+            m_charStamina.Value = Mathf.Clamp(m_charStamina.Value + additionalStamina, 
+                0, Scriptables.CharacterInfo.STAMINA_MAX);
         }
 
         public void UpdateCharacterHealth(string charName, int newHealth)
@@ -167,11 +172,6 @@ namespace GamePlay.Stats
         public void AddInventoryMoney(int inventoryMoney)
         {
             m_inventoryMoney.Value += inventoryMoney;
-        }
-
-        public void AddInventoryScroll(int inventoryScroll)
-        {
-            m_inventoryScroll.Value += inventoryScroll;
         }
 
     }
