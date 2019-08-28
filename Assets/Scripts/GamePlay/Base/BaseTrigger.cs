@@ -34,6 +34,14 @@ namespace GamePlay.Base {
                         Execute();
                     })
                     .AddTo(this);
+
+                this.OnCollisionEnter2DAsObservable()
+                    .Where(otherCollision => (otherCollision.gameObject.tag.Contains("Player")) && !m_isTriggered)
+                    .Subscribe(otherCollider2D =>
+                    {
+                        Execute();
+                    })
+                    .AddTo(this);
             }
 
         }

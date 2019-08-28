@@ -26,7 +26,9 @@ namespace GamePlay.Playable {
         [Inject]
         private readonly GamePlayStatsModel.Getter m_modelStats;
         [Inject]
-        private readonly MissionModel.MissionSetter m_modelMission;
+        private readonly MissionModel.MissionGetter m_modelMissionGetter;
+        [Inject]
+        private readonly MissionModel.MissionSetter m_modelMissionSetter;
 
         [Space]
 
@@ -87,14 +89,15 @@ namespace GamePlay.Playable {
                     //in case there is a destruction delay on other behaviours
                     m_playableChars[m_index] = null;
 
-                    if (AreAllCharactersDead())
+                    if (m_modelMissionGetter.ShouldAllCharactersSurvive() || AreAllCharactersDead())
                     {
-                        m_modelMission.EndMission(false);
+                        m_modelMissionSetter.EndMission(false);
                     }
                     else
                     {
                         EnableNextCharacter();
                     }
+                    
                 })
                 .AddTo(this);
 

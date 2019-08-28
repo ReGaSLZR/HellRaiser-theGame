@@ -1,9 +1,11 @@
-﻿using Scriptables;
+﻿using Data.Storage;
+using Scriptables;
 using System.Collections;
 using TMPro;
 using UniRx;
 using UnityEngine;
 using Utils;
+using static Data.Storage.PlayerData;
 
 namespace GamePlay.Mission {
 
@@ -27,6 +29,7 @@ namespace GamePlay.Mission {
 
         public interface MissionGetter {
             ReactiveProperty<MissionStatus> GetMissionStatus();
+            bool ShouldAllCharactersSurvive();
         }
 
         public interface MissionSetter {
@@ -53,10 +56,14 @@ namespace GamePlay.Mission {
         private ReactiveProperty<MissionStatus> m_missionStatus = new ReactiveProperty<MissionStatus>();
         private int m_missionKeysCollected;
 
+        private MissionProgression m_missionProgression;
+
         private void Awake()
         {
             m_reactiveTimer.Value = m_missionInfo.m_timeLimit;
             m_missionStatus.Value = MissionStatus.ONGOING;
+
+            m_missionProgression = PlayerData.LoadMissionProgression();
         }
 
         private void Start()
@@ -69,6 +76,26 @@ namespace GamePlay.Mission {
                 .AddTo(this);
 
             UpdateObjectiveTexts();
+            StartTimer();
+        }
+
+        private void OnDestroy()
+        {
+            if (MissionStatus.CLEARED == m_missionStatus.Value) {
+                LogUtil.PrintInfo(gameObject, GetType(), "OnDestroy(): Saving mission progression...");
+                if (m_missionInfo.IsMainMission() &&
+                                        (m_missionInfo.m_buildIndex > m_missionProgression.m_mainCleared))
+                {
+                    LogUtil.PrintInfo(gameObject, GetType(), "OnDestroy(): Saving MAIN mission progression...");
+                    PlayerData.Save(new MissionProgression(m_missionInfo.m_buildIndex, m_missionProgression.m_sideCleared));
+                }
+                else if (!m_missionInfo.IsMainMission() &&
+                    (m_missionInfo.m_buildIndex > m_missionProgression.m_sideCleared))
+                {
+                    LogUtil.PrintInfo(gameObject, GetType(), "OnDestroy(): Saving SIDE mission progression...");
+                    PlayerData.Save(new MissionProgression(m_missionProgression.m_mainCleared, m_missionInfo.m_buildIndex));
+                }
+            }
         }
 
         private IEnumerator CorStartTimer() {
@@ -100,6 +127,10 @@ namespace GamePlay.Mission {
 
         public ReactiveProperty<MissionStatus> GetMissionStatus() {
             return m_missionStatus;
+        }
+
+        public bool ShouldAllCharactersSurvive() {
+            return m_missionInfo.m_allCharactersMustSurvive;
         }
 
         public string GetMissionObjective()
