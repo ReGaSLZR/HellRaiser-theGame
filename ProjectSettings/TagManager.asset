@@ -10,6 +10,7 @@ TagManager:
   - Projectile
   - Player-Camouflaged
   - Item
+  - Merchant
   layers:
   - Default
   - TransparentFX

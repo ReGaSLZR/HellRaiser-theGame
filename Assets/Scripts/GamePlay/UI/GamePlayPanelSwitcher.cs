@@ -24,6 +24,8 @@ namespace GamePlay.UI {
         private readonly GamePlayStatsModel.Getter m_modelStats;
         [Inject]
         private readonly GamePlayDialogueModel.Getter m_modelDialogue;
+        [Inject]
+        private readonly MerchantModel.Getter m_modelMerchant;
 
         [Header("Buttons")]
 
@@ -52,6 +54,9 @@ namespace GamePlay.UI {
 
         [SerializeField]
         private Image m_panelOnScreenInput;
+
+        [SerializeField]
+        private Image m_panelMerchantGoods;
 
         [SerializeField]
         private Image m_panelHUD;
@@ -103,7 +108,7 @@ namespace GamePlay.UI {
             DeactivateAllPanels();
         }
 
-        private void OnEnable()
+        private void Start()
         {
             m_modelDialogue.IsInPlay()
                 .Subscribe(isInPlay => {
@@ -118,6 +123,7 @@ namespace GamePlay.UI {
             InitObserverButtons(m_buttonMainMenu, m_panelLoading, null, 1, SceneData.SCENE_MAIN_MENU, false);
 
             InitGameOverObservers();
+            InitMerchantObserver();
 
             ShowDefaultPanels();
         }
@@ -125,7 +131,39 @@ namespace GamePlay.UI {
         private void ShowDefaultPanels() {
             OnlyActivatePanel(m_panelHUD);
             m_panelMissionObjective.gameObject.SetActive(false);
+            m_panelMerchantGoods.gameObject.SetActive(false);
+
             m_panelOnScreenInput.gameObject.SetActive((InputType.OnScreenButtons == m_modelInput.m_inputType));
+        }
+
+        private void InitMerchantObserver() {
+            m_modelMerchant.IsViewingMerchantGoods()
+                .Subscribe(isViewing => {
+                    m_panelMerchantGoods.gameObject.SetActive(isViewing);
+                    Time.timeScale = isViewing ? 0 : 1;
+
+                    //disable/enable all pause buttons when merchant goods are shown/hidden
+                    for (int x = 0; x < m_buttonPause.Length; x++)
+                    {
+                        m_buttonPause[x].gameObject.SetActive(!isViewing);
+                    }
+
+                    if ((InputType.OnScreenButtons == m_modelInput.m_inputType))
+                    {
+                        m_panelOnScreenInput.gameObject.SetActive(!isViewing);
+                    }
+
+                    if (isViewing)
+                    {
+                        m_modelInput.DisableControls();
+                    }
+                    else
+                    {
+                        m_modelInput.EnableControls();
+                    }
+
+                })
+                .AddTo(this);
         }
 
         private void InitGameOverObservers() {

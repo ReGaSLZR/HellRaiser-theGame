@@ -33,6 +33,10 @@ namespace Injection {
         [Required]
         private MissionModel m_missionModel;
 
+        [SerializeField]
+        [Required]
+        private MerchantModel m_merchantModel;
+
         public void InjectPrefab(GameObject prefab)
         {
             Container.InjectGameObject(prefab);
@@ -77,6 +81,9 @@ namespace Injection {
             Container.Bind<MissionModel.TimerSetter>().FromInstance(m_missionModel);
             Container.Bind<MissionModel.MissionGetter>().FromInstance(m_missionModel);
             Container.Bind<MissionModel.MissionSetter>().FromInstance(m_missionModel);
+
+            Container.Bind<MerchantModel.Getter>().FromInstance(m_merchantModel);
+            Container.Bind<MerchantModel.Setter>().FromInstance(m_merchantModel);
 
         }
 

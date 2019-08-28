@@ -184,7 +184,7 @@ namespace GamePlay.Stats
 
         public void AddInventoryMoney(int inventoryMoney)
         {
-            m_inventoryMoney.Value += inventoryMoney;
+            m_inventoryMoney.Value = Mathf.Clamp(inventoryMoney + m_inventoryMoney.Value, 0, 99999);
         }
 
     }

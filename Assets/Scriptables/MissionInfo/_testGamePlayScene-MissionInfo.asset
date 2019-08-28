@@ -24,4 +24,4 @@ MonoBehaviour:
   m_keyCount: 2
   m_isTimed: 1
   m_timeLimit: 150
-  m_allCharactersMustSurvive: 1
+  m_allCharactersMustSurvive: 0

@@ -7,7 +7,7 @@ using Zenject;
 
 namespace GamePlay.Item {
 
-    public class ItemTrigger : BaseTrigger
+    public class PickableItemTrigger : BaseTrigger
     {
 
         //INJECTABLES

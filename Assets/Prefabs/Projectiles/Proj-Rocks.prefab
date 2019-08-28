@@ -64,6 +64,7 @@ MonoBehaviour:
   - Enemy
   - Player
   - Crate
+  - Merchant
   m_isLockedToFirstSingleTarget: 1
   m_detectionRange: 5
 --- !u!1 &7868619509480113042
@@ -399,7 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b8feaac249ce242a4b080daab3bcd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_targetDetector: {fileID: 673631443}
   m_movement: {fileID: 1514774805}
   m_stats: {fileID: 8131400460273162365}
-  m_targetDetector: {fileID: 673631443}
   m_skillMain: {fileID: 1514774806}
