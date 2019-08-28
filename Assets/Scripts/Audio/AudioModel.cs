@@ -1,4 +1,5 @@
-﻿using NaughtyAttributes;
+﻿using Data.Storage;
+using NaughtyAttributes;
 using UniRx;
 using UnityEngine;
 
@@ -27,10 +28,10 @@ namespace Audio {
         private ReactiveProperty<float> m_reactiveVolumeSFX = new ReactiveProperty<float>();
 
         [SerializeField]
-        [Slider(0f, 100f)]
+        [Slider(0f, 1)]
         private float m_startingVolBGM = 0.75f;
         [SerializeField]
-        [Slider(0f, 100f)]
+        [Slider(0f, 1f)]
         private float m_startingVolSFX = 0.75f;
 
         #region Inspector-only
@@ -54,13 +55,18 @@ namespace Audio {
 
         private void Awake()
         {
-            m_reactiveVolumeBGM.Value = m_startingVolBGM;
-            m_reactiveVolumeSFX.Value = m_startingVolSFX;
+            m_reactiveVolumeBGM.Value = AudioData.GetVolumeBGM(m_startingVolBGM);
+            m_reactiveVolumeSFX.Value = AudioData.GetVolumeSFX(m_startingVolSFX);
+        }
+
+        private void OnDestroy()
+        {
+            AudioData.SaveVolume(m_reactiveVolumeBGM.Value, m_reactiveVolumeSFX.Value);
         }
 
         private float ClampVolume(float volume)
         {
-            return Mathf.Clamp(volume, 0f, 100f);
+            return Mathf.Clamp(volume, 0f, 1f);
         }
 
         public void SetVolumeBGM(float volume)
