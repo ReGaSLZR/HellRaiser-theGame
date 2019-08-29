@@ -1,8 +1,10 @@
-﻿using GamePlay.Base;
+﻿using Character.Stats;
+using GamePlay.Base;
 using GamePlay.Mission;
 using GamePlay.Stats;
 using NaughtyAttributes;
 using UnityEngine;
+using Utils;
 using Zenject;
 
 namespace GamePlay.Item {
@@ -21,6 +23,7 @@ namespace GamePlay.Item {
         private const string TIMER = "TIMER";
         private const string INVENTORY_MONEY = "INVENTORY_MONEY";
         private readonly string[] m_dropdownItemOptions = new string[] {
+            "<Unset>",
             STAT_HEALTH,
             STAT_STAMINA,
             TIMER,
@@ -37,22 +40,43 @@ namespace GamePlay.Item {
 
         public override void Execute()
         {
+            int valueFromRange = ValuesUtil.GetValueFromVector2Range(m_valueRange);
+
             switch (m_itemType) {
-                case STAT_HEALTH: {
-                        m_modelStats.AddActiveCharacterHealth(GetValueFromRange());
-                        break;
-                    }
-                case STAT_STAMINA: {
-                        m_modelStats.AddActiveCharacterStamina(GetValueFromRange());
+                case STAT_HEALTH:
+                case STAT_STAMINA:
+                    {
+                        BaseStats triggererStats = GetBaseStatFromTriggerer();
+
+                        if (triggererStats != null)
+                        {
+                            if (STAT_HEALTH.Equals(m_itemType))
+                            {
+                                /*
+                                 * the commented statement below is not any good if the Playable Character that picks up the item
+                                 * tends to be an inactive character (e.g. the active character pushes the inactive one to pick up)
+                                */
+                                //m_modelStats.AddActiveCharacterHealth(valueFromRange); 
+                                triggererStats.RecoverHealth(valueFromRange); //apply the recovery to the character that picks up the item
+                            }
+                            else
+                            {
+                                /*
+                                 * same explanation as the comment above
+                                 */
+                                //m_modelStats.AddActiveCharacterStamina(valueFromRange);
+                                triggererStats.RecoverStamina(valueFromRange);
+                            }
+                        }
                         break;
                     }
                 case TIMER: {
-                        m_modelTimer.AddToTimer(GetValueFromRange());
+                        m_modelTimer.AddToTimer(valueFromRange);
                         break;
                     }
                 default:
                 case INVENTORY_MONEY: {
-                        m_modelStats.AddInventoryMoney(GetValueFromRange());
+                        m_modelStats.AddInventoryMoney(valueFromRange);
                         break;
                     }
             }
@@ -60,8 +84,8 @@ namespace GamePlay.Item {
             Destroy(gameObject);
         }
 
-        private int GetValueFromRange() {
-            return Mathf.RoundToInt(Random.Range(m_valueRange.x, m_valueRange.y));
+        private BaseStats GetBaseStatFromTriggerer() {
+            return m_triggerer.gameObject.GetComponent<BaseStats>();
         }
 
     }

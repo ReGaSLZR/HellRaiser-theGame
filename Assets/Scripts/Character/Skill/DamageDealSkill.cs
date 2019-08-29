@@ -3,6 +3,7 @@ using Injection;
 using NaughtyAttributes;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 using Zenject;
 
 namespace Character.Skill {
@@ -51,10 +52,10 @@ namespace Character.Skill {
             List<BaseStats> killables = GetKillables();
 
             foreach (BaseStats killable in killables) {
-                int rawDamage = StatsUtil.GetRawDamageDealt(GetSkillDamageFromRange(), m_statOffense);
+                int rawDamage = StatsUtil.GetRawDamageDealt(ValuesUtil.GetValueFromVector2Range(m_skillDamageRange), m_statOffense);
                 int critDamage = StatsUtil.GetCritDamage(rawDamage, m_statOffense);
 
-                killable.DealDamage((rawDamage + critDamage), (critDamage > 0));
+                killable.DealHealthDamage((rawDamage + critDamage), (critDamage > 0));
             }
         }
 
@@ -80,11 +81,6 @@ namespace Character.Skill {
             }
 
             return killables;
-        }
-
-        private int GetSkillDamageFromRange()
-        {
-            return Mathf.RoundToInt(Random.Range(m_skillDamageRange.x, m_skillDamageRange.y));
         }
 
     }

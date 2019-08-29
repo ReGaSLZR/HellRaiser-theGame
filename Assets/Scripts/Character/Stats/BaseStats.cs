@@ -1,5 +1,7 @@
-﻿using Scriptables;
+﻿using NaughtyAttributes;
+using Scriptables;
 using System.Collections;
+using TMPro;
 using UniRx;
 using UnityEngine;
 using Utils;
@@ -9,11 +11,34 @@ namespace Character.Stats {
     public class BaseStats : MonoBehaviour
     {
 
-        protected ReactiveProperty<int> m_reactiveHealth = new ReactiveProperty<int>();
-        protected ReactiveProperty<bool> m_reactiveIsHurt = new ReactiveProperty<bool>(false);
+        [SerializeField]
+        [Required]
+        protected Scriptables.CharacterInfo m_info;
+
+        [Space]
 
         [SerializeField]
-        protected Scriptables.CharacterInfo m_info;
+        protected TextMeshPro m_textStatChange;
+
+        [Space]
+
+        [SerializeField]
+        protected Color m_colorHealthDamage = Color.red;
+
+        [SerializeField]
+        protected Color m_colorHealthRecover = Color.green;
+
+        [Space]
+
+        [SerializeField]
+        protected Color m_colorStaminaDamage = Color.magenta;
+
+        [SerializeField]
+        protected Color m_colorStaminaRecover = Color.blue;
+
+        protected ReactiveProperty<int> m_reactiveHealth = new ReactiveProperty<int>();
+        protected ReactiveProperty<int> m_reactiveStamina = new ReactiveProperty<int>();
+        protected ReactiveProperty<bool> m_reactiveIsHurt = new ReactiveProperty<bool>(false);
 
         protected CompositeDisposable m_disposables = new CompositeDisposable();
 
@@ -21,6 +46,7 @@ namespace Character.Stats {
         {
             m_info.ResetHealthStamina();
             m_reactiveHealth.Value = m_info.m_health;
+            m_reactiveStamina.Value = m_info.m_stamina;
         }
 
         private void OnDisable()
@@ -52,29 +78,72 @@ namespace Character.Stats {
             return m_reactiveIsHurt;
         }
 
-        public virtual void RecoverHealth(int health) {
-            if (health <= 0) {
-                LogUtil.PrintWarning(gameObject, GetType(), "AddHealth(): Invalid value of " + health);
+        private void DealDamage(int damage, bool isCritical, ReactiveProperty<int> valueHolder, Color color)
+        {
+            if (damage <= 0)
+            {
+                LogUtil.PrintWarning(gameObject, GetType(), "DealDamage(): Invalid value of " + damage);
                 return;
             }
 
-            //TODO: show added health as FX
-
-            m_reactiveHealth.Value = Mathf.Clamp(m_reactiveHealth.Value + health, 0, Scriptables.CharacterInfo.HEALTH_MAX);
-        }
-
-        public virtual void DealDamage(int damage, bool isCritical) {
-            //TODO: code deflection (chance + application)
-
             int damageReceived = StatsUtil.GetDamageReceived(damage, m_info.m_defense);
 
-            //TODO: show damage received as FX
-            //TODO: show critical FX
+            string damageAppend = (isCritical) ? " CRIT!" : "";
+            UpdateStatChangeText("-" + damageReceived.ToString() + damageAppend, color);
+            ForceShowStatChangeText();
 
-            m_reactiveHealth.Value = Mathf.Clamp(
-                (m_reactiveHealth.Value - damageReceived), 0, m_reactiveHealth.Value);
+            valueHolder.Value = Mathf.Clamp(
+                (valueHolder.Value - damageReceived), 0, valueHolder.Value);
+
             StopAllCoroutines();
             StartCoroutine(CorStun());
+
+        }
+
+        private void Recover(int value, int maxValue, ReactiveProperty<int> valueHolder, Color color) {
+            if (value <= 0)
+            {
+                LogUtil.PrintWarning(gameObject, GetType(), "Recover(): Invalid value of " + value);
+                return;
+            }
+
+            UpdateStatChangeText("+" + value.ToString(), color);
+            ForceShowStatChangeText();
+
+            valueHolder.Value = Mathf.Clamp(valueHolder.Value + value, 0, maxValue);
+        }
+
+        public virtual void RecoverHealth(int health) {
+            Recover(health, Scriptables.CharacterInfo.HEALTH_MAX, m_reactiveHealth, m_colorHealthRecover);
+        }
+
+        public virtual void DealHealthDamage(int damage, bool isCritical) {
+            DealDamage(damage, isCritical, m_reactiveHealth, m_colorHealthDamage);
+        }
+
+        public virtual void RecoverStamina(int stamina) {
+            Recover(stamina, Scriptables.CharacterInfo.STAMINA_MAX, m_reactiveStamina, m_colorStaminaRecover);
+        }
+
+        public virtual void DealStaminaDamage(int damage, bool isCritical) {
+            DealDamage(damage, isCritical, m_reactiveStamina, m_colorStaminaDamage);
+        }
+
+        protected void UpdateStatChangeText(string text, Color color) {
+            m_textStatChange.text = text;
+            m_textStatChange.color = color;
+        }
+
+        /// <summary>
+        /// Make sure variable m_textStatChange has an animation that plays 
+        /// upon gameObject.SetActive(true) and hides itself after;
+        /// </summary>
+        protected void ForceShowStatChangeText() {
+            if (m_textStatChange.gameObject.activeSelf) {
+                m_textStatChange.gameObject.SetActive(false);
+            }
+
+            m_textStatChange.gameObject.SetActive(true);
         }
 
         private IEnumerator CorStun() {

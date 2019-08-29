@@ -2,7 +2,7 @@
 
 namespace Utils {
 
-    public class LogUtil
+    public static class LogUtil
     {
 
         private const string CONCATENATOR = ": ";
