@@ -75,7 +75,7 @@ namespace GamePlay.UI {
 
             m_modelStats.GetInventoryMoney()
                 .Subscribe(money => {
-                    m_textMoneyCount.text = money.ToString();
+                    m_textMoneyCount.text = money.ToString("N0");
                 })
                 .AddTo(this);
 

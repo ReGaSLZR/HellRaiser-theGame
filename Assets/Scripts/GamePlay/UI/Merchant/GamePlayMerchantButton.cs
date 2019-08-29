@@ -38,13 +38,24 @@ namespace GamePlay.UI.Merchant {
 
         [SerializeField]
         [Required]
+        private TextMeshProUGUI m_textStock;
+
+        [SerializeField]
+        [Required]
+        private RawImage m_rawImageIcon;
+
+        [SerializeField]
+        [Required]
         private TextMeshProUGUI m_textPrice;
 
         private MerchantItem m_merchantItem;
 
+        private bool m_hasBoughtItem;
+
         public void SetMerchantItem(MerchantItem item)
         {
             m_merchantItem = item;
+            m_hasBoughtItem = false;
 
             SetDefaults();
         }
@@ -57,13 +68,10 @@ namespace GamePlay.UI.Merchant {
         private void InitObservers() {
             //update button (enabled/disabled state) and button text on Inventory Money change
             m_modelStatsGetter.GetInventoryMoney()
+                .Where(money => m_merchantItem != null)
                 .Subscribe(money => {
-                    m_button.interactable = (money >= m_merchantItem.m_price);
-
-                    if (!m_button.interactable)
-                    {
-                        m_textButton.text = m_merchantItem.m_spielButtonDisabled;
-                    }
+                    UpdateButtonInteractable();
+                    UpdateButtonText();
                 })
                 .AddTo(this);
 
@@ -71,10 +79,13 @@ namespace GamePlay.UI.Merchant {
             m_button.OnClickAsObservable()
                 .Subscribe(_ => {
                     LogUtil.PrintInfo(gameObject, GetType(), "Bought merchant item: " + m_merchantItem.m_spielTitle);
+
+                    m_hasBoughtItem = true;
                     m_textButton.text = m_merchantItem.m_spielButtonBuyAgain;
 
-                    //subtract the money value from inventory
-                    m_modelStatsSetter.AddInventoryMoney(m_merchantItem.m_price * -1);
+                    //update stocks
+                    m_merchantItem.m_stocks--;
+                    m_textStock.text = m_merchantItem.m_stocks.ToString();
 
                     //apply the stat change
                     switch (m_merchantItem.m_stat)
@@ -91,18 +102,34 @@ namespace GamePlay.UI.Merchant {
                                 break;
                             }
                     }
+
+                    //subtract the money value from inventory
+                    m_modelStatsSetter.AddInventoryMoney(m_merchantItem.m_price * -1);
                 })
                 .AddTo(this);
         }
 
+        private void UpdateButtonInteractable() {
+            m_button.interactable = (m_merchantItem.m_stocks > 0)
+                    && (m_modelStatsGetter.GetInventoryMoney().Value >= m_merchantItem.m_price);
+        }
+
+        private void UpdateButtonText() {
+            m_textButton.text = (m_merchantItem.m_stocks <= 0) ? m_merchantItem.m_spielButtonOutOfStock :
+                        (m_modelStatsGetter.GetInventoryMoney().Value < m_merchantItem.m_price) ? m_merchantItem.m_spielButtonDisabled :
+                        m_hasBoughtItem ? m_merchantItem.m_spielButtonBuyAgain : m_merchantItem.m_spielButtonNormal;
+        }
+
         private void SetDefaults() {
-            //configure the text content
-            m_textButton.text =
-                (m_modelStatsGetter.GetInventoryMoney().Value >= m_merchantItem.m_price) ?
-                m_merchantItem.m_spielButtonNormal : m_merchantItem.m_spielButtonDisabled;
+            m_rawImageIcon.texture = m_merchantItem.m_itemIcon;
+            UpdateButtonText();
+            UpdateButtonInteractable();
+
             m_textTitle.text = m_merchantItem.m_spielTitle;
             m_textDescription.text = m_merchantItem.m_spielDescription;
-            m_textPrice.text = m_merchantItem.m_price.ToString();
+
+            m_textStock.text = m_merchantItem.m_stocks.ToString("N0");
+            m_textPrice.text = m_merchantItem.m_price.ToString("N0");
         }
 
     }

@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1932595f9856b478bfb2c11f1fbd6d, type: 3}
   m_Name: MerchantItem-Health-Full
   m_EditorClassIdentifier: 
-  m_spielButtonNormal: Buy
+  m_spielButtonNormal: Buy then use
   m_spielButtonBuyAgain: Buy Again
   m_spielButtonDisabled: Not enough funds.
+  m_spielButtonOutOfStock: Out of Stock
+  m_itemIcon: {fileID: 2800000, guid: 19820cb19a12cdc4eb91b62e9fa36a20, type: 3}
   m_spielTitle: Large Health Potion
   m_spielDescription: A potion made of rare herbs that hasten the healing of an individual's
     cells. The dose is enough to bring back your health to 100%.
   m_stat: 
   m_value: 100
-  m_price: 20
+  m_price: 1000
+  m_stocks: 1

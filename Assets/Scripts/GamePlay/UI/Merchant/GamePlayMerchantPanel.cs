@@ -54,7 +54,7 @@ namespace GamePlay.UI.Merchant {
                             m_buttonsInOrder[x].gameObject.SetActive(true);
                         }
                         else {
-                            LogUtil.PrintError(gameObject, GetType(), "Cannot display NULL MerchantItem.");
+                            LogUtil.PrintError(gameObject, GetType(), "Cannot display NULL MerchantItem.");   
                         }
                     }
                 })

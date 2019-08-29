@@ -14,11 +14,15 @@ namespace Scriptables {
             STAT_STAMINA
         };
 
-        public string m_spielButtonNormal = "Buy";
+        public string m_spielButtonNormal = "Buy then use";
         public string m_spielButtonBuyAgain = "Buy Again";
         public string m_spielButtonDisabled = "Not enough funds.";
+        public string m_spielButtonOutOfStock = "Out of Stock";
 
         [Space]
+
+        [ShowAssetPreview]
+        public Texture2D m_itemIcon;
 
         public string m_spielTitle;
 
@@ -38,7 +42,9 @@ namespace Scriptables {
         [Range(1, 9999)]
         public int m_price;
 
-    }
+        [Range(1, 5)]
+        public int m_stocks;
 
+    }
 
 }
