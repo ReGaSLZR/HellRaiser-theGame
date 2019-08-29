@@ -119,6 +119,11 @@ namespace Character.Stats {
         }
 
         protected void UpdateStatChangeText(string text, Color color) {
+            if (m_textStatChange == null) {
+                LogUtil.PrintWarning(gameObject, GetType(), "UpdateStatChangeText(): NULL stat change text.");
+                return;
+            }
+
             m_textStatChange.text = text;
             m_textStatChange.color = color;
         }
@@ -128,6 +133,11 @@ namespace Character.Stats {
         /// upon gameObject.SetActive(true) and hides itself after;
         /// </summary>
         protected void ForceShowStatChangeText() {
+            if (m_textStatChange == null) {
+                LogUtil.PrintInfo(gameObject, GetType(), "ForceShowStatChangeText(): NULL stat change text.");
+                return;
+            }
+
             if (m_textStatChange.gameObject.activeSelf) {
                 m_textStatChange.gameObject.SetActive(false);
             }
