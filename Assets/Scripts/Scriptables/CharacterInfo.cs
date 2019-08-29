@@ -41,9 +41,6 @@ namespace Scriptables {
         [Range(1, 150)]
         public int m_defense = 1;
 
-        [Range(0f, 100f)]
-        public float m_deflectChance;
-
         public void ResetHealthStamina() {
             m_health = HEALTH_MAX;
             m_stamina = STAMINA_MAX;
