@@ -11,7 +11,9 @@ namespace Common {
         private const string MAIN_MENU = "MAIN_MENU";
         private const string STORED_LEVEL = "STORED_LEVEL";
         private readonly string[] m_dropdownOptionns = new string[] {
-            MAIN_MENU, STORED_LEVEL
+            "<Unset>",
+            MAIN_MENU,
+            STORED_LEVEL
         };
 
         [SerializeField]

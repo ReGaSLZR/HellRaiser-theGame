@@ -22,5 +22,5 @@ MonoBehaviour:
     of max stamina.
   m_stat: STAT_STAMINA
   m_value: 50
-  m_price: 500
-  m_stocks: 2
+  m_price: 150
+  m_stocks: 3

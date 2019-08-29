@@ -22,5 +22,5 @@ MonoBehaviour:
     cells. The dose is enough to heal 50% of max health.
   m_stat: 
   m_value: 50
-  m_price: 500
+  m_price: 250
   m_stocks: 3

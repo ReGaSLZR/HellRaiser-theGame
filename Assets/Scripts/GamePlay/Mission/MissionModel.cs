@@ -75,7 +75,6 @@ namespace GamePlay.Mission {
                 })
                 .AddTo(this);
 
-            UpdateObjectiveTexts();
             StartTimer();
         }
 

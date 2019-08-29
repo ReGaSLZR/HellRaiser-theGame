@@ -15,6 +15,14 @@ namespace Character.Stats
         [Inject]
         private readonly GamePlayStatsModel.Getter m_modelStatsGetter;
 
+        [SerializeField]
+        private Color m_colorMoneyGain = Color.yellow;
+
+        [SerializeField]
+        private Color m_colorMoneyLoss = Color.black;
+
+        private ReactiveProperty<int> m_reactiveMoney = new ReactiveProperty<int>(); 
+
         protected override void Awake()
         {
             base.Awake();
@@ -28,6 +36,8 @@ namespace Character.Stats
         private void OnEnable()
         {
             m_modelStatsSetter.RegisterCharacterForStats(m_info);
+            m_reactiveMoney.Value = m_modelStatsGetter.GetInventoryMoney().Value;
+
             InitObservers();
         }
 
@@ -50,6 +60,15 @@ namespace Character.Stats
                 .Subscribe(newStamina =>
                 {
                     ApplyStatChangeFXFromNonBaseStatCall(m_reactiveStamina, newStamina, m_colorStaminaRecover, m_colorStaminaDamage);
+                })
+                .AddTo(m_disposables);
+
+            m_modelStatsGetter.GetInventoryMoney()
+                //SPECIAL CASE: the first condition (Time check) is to not allow model.money initialization delay (probably due to save file deserialization)
+                //to show on game start the previous earnings of the Player as a text change FX
+                .Where(money => (Time.timeSinceLevelLoad > 0) && (m_reactiveMoney.Value != money))
+                .Subscribe(newMoneyValue => {
+                    ApplyStatChangeFXFromNonBaseStatCall(m_reactiveMoney, newMoneyValue, m_colorMoneyGain, m_colorMoneyLoss);
                 })
                 .AddTo(m_disposables);
         }

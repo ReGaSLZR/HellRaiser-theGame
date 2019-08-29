@@ -10,6 +10,7 @@ namespace Scriptables {
         private const string MISSION_TYPE_MAIN = "MISSION_TYPE_MAIN";
         private const string MISSION_TYPE_SIDE = "MISSION_TYPE_SIDE";
         private readonly string[] m_dropdownOptionsMissionType = new string[] {
+            "<Unset>",
             MISSION_TYPE_MAIN,
             MISSION_TYPE_SIDE
         };

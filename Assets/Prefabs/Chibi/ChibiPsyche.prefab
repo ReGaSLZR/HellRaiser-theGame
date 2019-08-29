@@ -405,8 +405,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_info: {fileID: 11400000, guid: be06b1a92c65c7f4e8f0feb14889fb85, type: 2}
   m_textStatChange: {fileID: 8296422119397349117}
-  m_colorDamage: {r: 1, g: 0, b: 0, a: 1}
-  m_colorRecover: {r: 0, g: 1, b: 0, a: 1}
+  m_colorHealthDamage: {r: 1, g: 0, b: 0, a: 1}
+  m_colorHealthRecover: {r: 0, g: 1, b: 0, a: 1}
+  m_colorStaminaDamage: {r: 1, g: 0, b: 1, a: 1}
+  m_colorStaminaRecover: {r: 0, g: 0, b: 1, a: 1}
+  m_colorMoneyGain: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  m_colorMoneyLoss: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &2040706424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,11 +741,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8115173290345660747, guid: fb1e8904b40210b4f89b11970cd9fde9,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8115173290345660745, guid: fb1e8904b40210b4f89b11970cd9fde9,
         type: 3}

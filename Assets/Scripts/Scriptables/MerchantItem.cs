@@ -10,6 +10,7 @@ namespace Scriptables {
         public const string STAT_HEALTH = "STAT_HEALTH";
         public const string STAT_STAMINA = "STAT_STAMINA";
         private readonly string[] m_dropdownStatOptions = new string[] {
+            "<Unset>",
             STAT_HEALTH,
             STAT_STAMINA
         };
