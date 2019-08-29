@@ -5,11 +5,16 @@ using TMPro;
 using UniRx;
 using UnityEngine;
 using Utils;
+using Zenject;
+using static Scriptables.PlaySettings;
 
 namespace Character.Stats {
 
     public class BaseStats : MonoBehaviour
     {
+
+        [Inject]
+        protected readonly ColorScheme m_colorScheme;
 
         [SerializeField]
         [Required]
@@ -19,22 +24,6 @@ namespace Character.Stats {
 
         [SerializeField]
         protected TextMeshPro m_textStatChange;
-
-        [Space]
-
-        [SerializeField]
-        protected Color m_colorHealthDamage = Color.red;
-
-        [SerializeField]
-        protected Color m_colorHealthRecover = Color.green;
-
-        [Space]
-
-        [SerializeField]
-        protected Color m_colorStaminaDamage = Color.magenta;
-
-        [SerializeField]
-        protected Color m_colorStaminaRecover = Color.blue;
 
         protected ReactiveProperty<int> m_reactiveHealth = new ReactiveProperty<int>();
         protected ReactiveProperty<int> m_reactiveStamina = new ReactiveProperty<int>();
@@ -114,19 +103,19 @@ namespace Character.Stats {
         }
 
         public virtual void RecoverHealth(int health) {
-            Recover(health, Scriptables.CharacterInfo.HEALTH_MAX, m_reactiveHealth, m_colorHealthRecover);
+            Recover(health, Scriptables.CharacterInfo.HEALTH_MAX, m_reactiveHealth, m_colorScheme.m_healthGain);
         }
 
         public virtual void DealHealthDamage(int damage, bool isCritical) {
-            DealDamage(damage, isCritical, m_reactiveHealth, m_colorHealthDamage);
+            DealDamage(damage, isCritical, m_reactiveHealth, m_colorScheme.m_healthLoss);
         }
 
         public virtual void RecoverStamina(int stamina) {
-            Recover(stamina, Scriptables.CharacterInfo.STAMINA_MAX, m_reactiveStamina, m_colorStaminaRecover);
+            Recover(stamina, Scriptables.CharacterInfo.STAMINA_MAX, m_reactiveStamina, m_colorScheme.m_staminaGain);
         }
 
         public virtual void DealStaminaDamage(int damage, bool isCritical) {
-            DealDamage(damage, isCritical, m_reactiveStamina, m_colorStaminaDamage);
+            DealDamage(damage, isCritical, m_reactiveStamina, m_colorScheme.m_staminaLoss);
         }
 
         protected void UpdateStatChangeText(string text, Color color) {

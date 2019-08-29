@@ -3889,6 +3889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba23e2da8c1882748acc86c26a295a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_playSettings: {fileID: 11400000, guid: 2ca4b7ddb1b84aa4ca1d81619cc44be7, type: 2}
   m_modelAudio: {fileID: 1874664219}
   m_inputManager: {fileID: 1182622490}
   m_gamePlayStats: {fileID: 1352088944}
@@ -11064,7 +11065,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecefe6a62471ba5418d7f1d0d26e2d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_playSettings: {fileID: 11400000, guid: 2ca4b7ddb1b84aa4ca1d81619cc44be7, type: 2}
   m_inputTypes:
   - {fileID: 1711874229}
   - {fileID: 1711848075}

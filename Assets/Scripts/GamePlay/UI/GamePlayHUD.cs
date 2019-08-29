@@ -5,6 +5,7 @@ using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
+using static Scriptables.PlaySettings;
 
 namespace GamePlay.UI {
 
@@ -15,9 +16,10 @@ namespace GamePlay.UI {
 
         [Inject]
         private readonly GamePlayStatsModel.Getter m_modelStats;
-
         [Inject]
         private readonly MissionModel.TimerGetter m_modelTimer;
+        [Inject]
+        private readonly ColorScheme m_colorScheme;
 
         [SerializeField]
         private RawImage m_characterAvatar;
@@ -30,10 +32,6 @@ namespace GamePlay.UI {
         private Slider m_sliderHealth;
         [SerializeField]
         private Image m_sliderHealthFill;
-        [SerializeField]
-        private Color m_colorHealthNormal = Color.green;
-        [SerializeField]
-        private Color m_colorHealthCritical = Color.red;
 
         [Space]
 
@@ -52,6 +50,13 @@ namespace GamePlay.UI {
 
         private void Start()
         {
+            m_textTimer.color = m_colorScheme.m_time;
+            m_textMoneyCount.color = m_colorScheme.m_moneyGain;
+
+            InitObservers();
+        }
+
+        private void InitObservers() {
             if (m_modelTimer.IsTimed())
             {
                 m_textTimer.gameObject.SetActive(true);
@@ -62,7 +67,8 @@ namespace GamePlay.UI {
                     })
                     .AddTo(this);
             }
-            else {
+            else
+            {
                 m_textTimer.gameObject.SetActive(false);
             }
 
@@ -83,14 +89,13 @@ namespace GamePlay.UI {
                 .Subscribe(health => {
                     m_sliderHealth.value = health;
                     m_sliderHealthFill.color = (health <= Scriptables.CharacterInfo.HEALTH_CRITICAL) ?
-                        m_colorHealthCritical : m_colorHealthNormal;
+                        m_colorScheme.m_healthLoss : m_colorScheme.m_healthGain;
                 })
                 .AddTo(this);
 
             m_modelStats.GetActiveCharacterStamina()
                 .Subscribe(stamina => m_sliderStamina.value = stamina)
                 .AddTo(this);
-
         }
 
     }

@@ -7,6 +7,7 @@ using TMPro;
 using Scriptables;
 using NaughtyAttributes;
 using Utils;
+using static Scriptables.PlaySettings;
 
 namespace GamePlay.UI.Merchant {
 
@@ -17,6 +18,8 @@ namespace GamePlay.UI.Merchant {
         private readonly GamePlayStatsModel.Getter m_modelStatsGetter;
         [Inject]
         private readonly GamePlayStatsModel.Setter m_modelStatsSetter;
+        [Inject]
+        private readonly ColorScheme m_colorScheme;
 
         [SerializeField]
         [Required]
@@ -62,6 +65,8 @@ namespace GamePlay.UI.Merchant {
 
         private void Start()
         {
+            m_textPrice.color = m_colorScheme.m_moneyGain;
+
             InitObservers();
         }
 

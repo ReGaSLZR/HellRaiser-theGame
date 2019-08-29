@@ -6,12 +6,16 @@ using GamePlay.Mission;
 using NaughtyAttributes;
 using UnityEngine;
 using Zenject;
-using Utils;
+using Scriptables;
 
 namespace Injection {
 
     public class GamePlayInjector : MonoInstaller<GamePlayInjector>, Instantiator
     {
+
+        [SerializeField]
+        [Required]
+        private PlaySettings m_playSettings;
 
         [SerializeField]
         [Required]
@@ -53,6 +57,8 @@ namespace Injection {
         {
             Container.Bind<Instantiator>().FromInstance(this);
 
+            Container.Bind<PlaySettings.ColorScheme>().FromInstance(m_playSettings.m_colorScheme);
+
             BindModelAudio();
 
             BindModelGamePlay();
@@ -67,8 +73,7 @@ namespace Injection {
         private void BindModelGamePlay()
         {
             //Player Input
-            BaseInputModel baseInputModel = m_inputManager.GetBaseInput();
-            //LogUtil.PrintInfo(gameObject, GetType(), "base input is: " + baseInputModel.GetType());
+            BaseInputModel baseInputModel = m_inputManager.GetBaseInput(m_playSettings.m_gamePlayInput);
             Container.Bind<BaseInputModel>().FromInstance(baseInputModel);
 
             Container.Bind<GamePlayDialogueModel.Getter>().FromInstance(m_dialogue);

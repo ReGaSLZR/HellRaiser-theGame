@@ -1,6 +1,4 @@
-﻿using NaughtyAttributes;
-using Scriptables;
-using UnityEngine;
+﻿using UnityEngine;
 using Utils;
 
 namespace GamePlay.Input {
@@ -9,20 +7,16 @@ namespace GamePlay.Input {
     {
 
         [SerializeField]
-        [Required]
-        private PlaySettings m_playSettings;
-
-        [SerializeField]
         private BaseInputModel[] m_inputTypes;
 
-        public BaseInputModel GetBaseInput()
+        public BaseInputModel GetBaseInput(InputType desiredInputType)
         {
             //LogUtil.PrintInfo(gameObject, GetType(), "Input types length: " + m_inputTypes.Length);
 
             for (int x = 0; x < m_inputTypes.Length; x++)
             {
                 //LogUtil.PrintInfo(gameObject, GetType(), "Checking input type: " + m_inputTypes[x].m_inputType.ToString());
-                if (m_playSettings.m_gamePlayInput == m_inputTypes[x].m_inputType)
+                if (desiredInputType == m_inputTypes[x].m_inputType)
                 {
                     //LogUtil.PrintInfo(gameObject, GetType(), "GetBaseInput() type got: " + m_inputTypes[x].m_inputType.ToString());
                     DestroyUnusedInputTypes(x);
@@ -31,7 +25,7 @@ namespace GamePlay.Input {
             }
 
             LogUtil.PrintWarning(gameObject, GetType(), "GetBaseInput(): Cannot find input type "
-                + m_playSettings.m_gamePlayInput.ToString() + " from PlaySettings.");
+                + desiredInputType.ToString() + " from PlaySettings.");
             return null;
         }
 
