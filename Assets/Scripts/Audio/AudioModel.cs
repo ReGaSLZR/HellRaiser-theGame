@@ -14,11 +14,12 @@ namespace Audio {
         public interface BGMSetter {
             void PlayTemporaryBGM(AudioClip clip);
             void PlayOriginalBGM();
+            void ReplaceOriginalBGM(AudioClip clip);
             void StopBGM();
         }
 
         /// <summary>
-        /// For controlled SFX's like those from a dialogue
+        /// For controlled SFXs like those from a dialogue
         /// </summary>
         public interface SFXSetter {
             void PlaySFX(AudioClip clip);
@@ -138,6 +139,12 @@ namespace Audio {
 
             m_audioSourceBGM.clip = m_tempAudioClipBGM;
             m_audioSourceBGM.Play();
+        }
+
+        public void ReplaceOriginalBGM(AudioClip clip) {
+            if (clip != null) {
+                m_tempAudioClipBGM = clip;
+            }
         }
 
         public void StopBGM() {

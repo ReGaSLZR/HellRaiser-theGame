@@ -13,6 +13,17 @@ namespace GamePlay.Dialogue {
     public class DialogueTrigger : BaseTrigger
     {
 
+        private const string BGM_TEMP_STOP = "BGM_TEMP_STOP";
+        private const string BGM_TEMP_PLAY_NEW = "BGM_TEMP_PLAY_NEW";
+        private const string BGM_REPLACE_WITH_NEW_AND_PLAY = "BGM_REPLACE_WITH_NEW";
+
+        private readonly string[] m_dropdownOptionsBGM = new string[] {
+            "<Unset>",
+            BGM_TEMP_STOP,
+            BGM_TEMP_PLAY_NEW,
+            BGM_REPLACE_WITH_NEW_AND_PLAY
+        };
+
         [Inject]
         private readonly MissionModel.TimerSetter m_modelTimer;
         [Inject]
@@ -25,19 +36,24 @@ namespace GamePlay.Dialogue {
         private readonly AudioModel.BGMSetter m_modelBGM;
 
         [SerializeField]
-        private DialogueLine[] m_lines;
-
-        [SerializeField]
-        private bool m_shouldStopBGM = true;
-
-        [SerializeField]
-        [DisableIf("m_shouldStopBGM")]
-        private AudioClip m_clipDialogueBGM;
+        private BaseTrigger m_chainedTriggerAfterDialogue;
 
         [Space]
 
         [SerializeField]
-        private BaseTrigger m_chainedTriggerAfterDialogue;
+        private DialogueLine[] m_lines;
+
+        [SerializeField]
+        [Dropdown("m_dropdownOptionsBGM")]
+        private string m_bgmType;
+
+        [SerializeField]
+        [EnableIf("IsBGMRequired")]
+        private AudioClip m_clipDialogueBGM;
+
+        private bool IsBGMRequired() {
+            return (m_bgmType.Equals(BGM_TEMP_PLAY_NEW) || m_bgmType.Equals(BGM_REPLACE_WITH_NEW_AND_PLAY));
+        }
 
         protected override void Start()
         {
@@ -66,14 +82,29 @@ namespace GamePlay.Dialogue {
             m_modelTimer.PauseTimer();
             m_modelInput.DisableControls();
 
-            if (m_shouldStopBGM) {
-                m_modelBGM.StopBGM();
-            }
-            else if (!m_shouldStopBGM && (m_clipDialogueBGM != null)) {
-                m_modelBGM.PlayTemporaryBGM(m_clipDialogueBGM);
-            }
+            PlayBGM();
 
             m_modelDialogueSetter.StartDialogue(m_lines);
+        }
+
+        private void PlayBGM() {
+            switch (m_bgmType) {
+                default:
+                case BGM_TEMP_STOP: {
+                        m_modelBGM.StopBGM();
+                        break;
+                    }
+                case BGM_TEMP_PLAY_NEW:
+                    {
+                       m_modelBGM.PlayTemporaryBGM(m_clipDialogueBGM);
+                        break;
+                    }
+                case BGM_REPLACE_WITH_NEW_AND_PLAY: {
+                        m_modelBGM.ReplaceOriginalBGM(m_clipDialogueBGM);
+                        m_modelBGM.PlayOriginalBGM();
+                        break;
+                    }
+            }
         }
 
     }

@@ -6397,7 +6397,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f9d7935e0c3000147b0c7ccfd7f514fb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7ed7f78972a511041ba4ad1bd9750490, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -10474,13 +10474,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isTriggeredOnGamePlayStart: 0
+  m_chainedTriggerAfterDialogue: {fileID: 0}
   m_lines:
   - {fileID: 11400000, guid: bd3adfe0e05a47c4aa47b76c4bc4d07a, type: 2}
   - {fileID: 11400000, guid: cb8c200e7baee9c4b94bfe4f19f96875, type: 2}
   - {fileID: 11400000, guid: 56d9d246ed3fbb54a8c6b52ceec7e509, type: 2}
-  m_shouldStopBGM: 0
+  m_bgmType: BGM_TEMP_STOP
   m_clipDialogueBGM: {fileID: 0}
-  m_chainedTriggerAfterDialogue: {fileID: 0}
 --- !u!61 &1104589519
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17782,12 +17782,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isTriggeredOnGamePlayStart: 0
+  m_chainedTriggerAfterDialogue: {fileID: 0}
   m_lines:
   - {fileID: 11400000, guid: bd3adfe0e05a47c4aa47b76c4bc4d07a, type: 2}
   - {fileID: 11400000, guid: 56d9d246ed3fbb54a8c6b52ceec7e509, type: 2}
-  m_shouldStopBGM: 0
-  m_clipDialogueBGM: {fileID: 8300000, guid: 672e4da0d3b037b4da6efc85973e821e, type: 3}
-  m_chainedTriggerAfterDialogue: {fileID: 0}
+  m_bgmType: BGM_REPLACE_WITH_NEW
+  m_clipDialogueBGM: {fileID: 8300000, guid: 76931ef7da4f0d742bd2c4e569e472ab, type: 3}
 --- !u!61 &1948097669
 BoxCollider2D:
   m_ObjectHideFlags: 0
