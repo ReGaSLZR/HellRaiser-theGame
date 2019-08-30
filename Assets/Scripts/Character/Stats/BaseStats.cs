@@ -79,13 +79,13 @@ namespace Character.Stats {
                 return;
             }
 
-            int damageReceived = StatsUtil.GetDamageReceived(damage, m_info.m_defense);
+            int damageReceivedReducedByDefense = StatsUtil.GetDamageReceived(damage, m_info.m_defense);
 
-            UpdateStatChangeText("-" + damageReceived.ToString() + GetCriticalAppend(isCritical), color);
+            UpdateStatChangeText("-" + damageReceivedReducedByDefense.ToString() + GetCriticalAppend(isCritical), color);
             ForceShowStatChangeText();
 
             valueHolder.Value = Mathf.Clamp(
-                (valueHolder.Value - damageReceived), 0, valueHolder.Value);
+                (valueHolder.Value - damageReceivedReducedByDefense), 0, valueHolder.Value);
 
             StopAllCoroutines();
             StartCoroutine(CorStun());
