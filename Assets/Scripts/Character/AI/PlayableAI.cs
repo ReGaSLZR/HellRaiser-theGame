@@ -36,6 +36,8 @@ namespace Character.AI {
         [Required]
         private CinemachineVirtualCamera m_uniqueCamera;
 
+        public bool m_isNotOnCycle = false; //determines if the PlayableAI is to be ignored in Character switching
+
         protected override void Awake()
         {
             base.Awake();

@@ -62,8 +62,8 @@ namespace GamePlay.Playable {
             SetAllCharactersEnabled(false);
 
             m_isCharacterSwitchingReady = true;
-            m_index = 0;
-            m_playableChars[m_index].enabled = true;
+            m_index = m_playableChars.Length;
+            EnableNextCharacter();
         }
 
         public void MassTeleportPlayables(Transform location) {
@@ -127,7 +127,7 @@ namespace GamePlay.Playable {
 
         private bool AreAllCharactersDead() {
             for (int x=0; x<m_playableChars.Length; x++) {
-                if (m_playableChars[x] != null) {
+                if ((m_playableChars[x] != null) && !m_playableChars[x].m_isNotOnCycle) {
                     return false;
                 }
             }
@@ -151,7 +151,7 @@ namespace GamePlay.Playable {
         private void EnableNextCharacter() {
             do {
                 MoveToNextIndex();
-            } while (m_playableChars[m_index] == null);
+            } while ((m_playableChars[m_index] == null) || m_playableChars[m_index].m_isNotOnCycle);
 
             SetAllCharactersEnabled(false);
             SetCharacterEnabled(m_index, true);

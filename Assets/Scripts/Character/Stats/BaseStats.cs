@@ -38,7 +38,7 @@ namespace Character.Stats {
             m_reactiveStamina.Value = m_info.m_stamina;
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             m_disposables.Clear();
         }

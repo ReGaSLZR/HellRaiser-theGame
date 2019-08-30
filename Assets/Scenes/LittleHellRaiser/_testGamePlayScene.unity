@@ -1168,10 +1168,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_info: {fileID: 11400000, guid: c0d569a32a3001f48b26791a711981cd, type: 2}
   m_textStatChange: {fileID: 0}
-  m_colorHealthDamage: {r: 1, g: 0, b: 0, a: 1}
-  m_colorHealthRecover: {r: 0, g: 1, b: 0, a: 1}
-  m_colorStaminaDamage: {r: 1, g: 0, b: 1, a: 1}
-  m_colorStaminaRecover: {r: 0, g: 0, b: 1, a: 1}
 --- !u!114 &105987864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6968,6 +6964,10 @@ PrefabInstance:
       propertyPath: m_uniqueCamera
       value: 
       objectReference: {fileID: 825545551}
+    - target: {fileID: 2040706425, guid: 742fb78875b4eef4ab00c290de119362, type: 3}
+      propertyPath: m_isNotOnCycle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2590343526880155045, guid: 742fb78875b4eef4ab00c290de119362,
         type: 3}
       propertyPath: m_Color.r
@@ -7035,7 +7035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &789635351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10905,7 +10905,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1182112183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10981,7 +10981,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.03141593
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -13669,8 +13669,6 @@ MonoBehaviour:
   m_textCharacterLevel: {fileID: 642447540}
   m_sliderHealth: {fileID: 1309111753}
   m_sliderHealthFill: {fileID: 1611740770}
-  m_colorHealthNormal: {r: 0, g: 1, b: 0, a: 1}
-  m_colorHealthCritical: {r: 1, g: 0, b: 0, a: 1}
   m_sliderStamina: {fileID: 2069354617}
   m_textMoneyCount: {fileID: 1325095614}
   m_textTimer: {fileID: 1440891758}
@@ -13963,10 +13961,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_info: {fileID: 11400000, guid: c0d569a32a3001f48b26791a711981cd, type: 2}
   m_textStatChange: {fileID: 0}
-  m_colorHealthDamage: {r: 1, g: 0, b: 0, a: 1}
-  m_colorHealthRecover: {r: 0, g: 1, b: 0, a: 1}
-  m_colorStaminaDamage: {r: 1, g: 0, b: 1, a: 1}
-  m_colorStaminaRecover: {r: 0, g: 0, b: 1, a: 1}
 --- !u!95 &1567085002
 Animator:
   serializedVersion: 3
@@ -14498,7 +14492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1617891393
 Rigidbody2D:
   serializedVersion: 4
@@ -16454,7 +16448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1825874576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16530,7 +16524,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.03141593
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -19526,6 +19520,10 @@ PrefabInstance:
       propertyPath: m_uniqueCamera
       value: 
       objectReference: {fileID: 900217718}
+    - target: {fileID: 2040706425, guid: 742fb78875b4eef4ab00c290de119362, type: 3}
+      propertyPath: m_isNotOnCycle
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 742fb78875b4eef4ab00c290de119362, type: 3}
 --- !u!1001 &3115429581444950600
@@ -19834,6 +19832,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ChibiStephen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8241063537023895925, guid: 8c361b6b5ba4a6f459b8788017d34dda,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8241063537023895920, guid: 8c361b6b5ba4a6f459b8788017d34dda,
         type: 3}
