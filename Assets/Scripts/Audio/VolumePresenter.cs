@@ -10,9 +10,9 @@ namespace Audio {
     {
 
         [Inject]
-        private AudioModel.Getter m_modelAudioModelGetter;
+        private AudioModel.VolumeGetter m_modelAudioModelGetter;
         [Inject]
-        private AudioModel.Setter m_modelAudioModelSetter;
+        private AudioModel.VolumeSetter m_modelAudioModelSetter;
 
         [SerializeField]
         private Slider m_sliderVolumeBGM;

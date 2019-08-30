@@ -1,6 +1,8 @@
-﻿using GamePlay.Base;
+﻿using Audio;
+using GamePlay.Base;
 using GamePlay.Input;
 using GamePlay.Mission;
+using NaughtyAttributes;
 using Scriptables;
 using UniRx;
 using UnityEngine;
@@ -13,18 +15,26 @@ namespace GamePlay.Dialogue {
 
         [Inject]
         private readonly MissionModel.TimerSetter m_modelTimer;
-
         [Inject]
-        private readonly GamePlayDialogueModel.Setter m_modelDialogueSetter;
-
+        private readonly DialogueModel.Setter m_modelDialogueSetter;
         [Inject]
-        private readonly GamePlayDialogueModel.Getter m_modelDialogueGetter;
-
+        private readonly DialogueModel.Getter m_modelDialogueGetter;
         [Inject]
         private readonly BaseInputModel m_modelInput;
+        [Inject]
+        private readonly AudioModel.BGMSetter m_modelBGM;
 
         [SerializeField]
         private DialogueLine[] m_lines;
+
+        [SerializeField]
+        private bool m_shouldStopBGM = true;
+
+        [SerializeField]
+        [DisableIf("m_shouldStopBGM")]
+        private AudioClip m_clipDialogueBGM;
+
+        [Space]
 
         [SerializeField]
         private BaseTrigger m_chainedTriggerAfterDialogue;
@@ -43,6 +53,7 @@ namespace GamePlay.Dialogue {
                         m_chainedTriggerAfterDialogue.Execute();
                     }
 
+                    m_modelBGM.PlayOriginal();
                     Destroy(gameObject);
                 })
                 .AddTo(this);
@@ -54,6 +65,14 @@ namespace GamePlay.Dialogue {
 
             m_modelTimer.PauseTimer();
             m_modelInput.DisableControls();
+
+            if (m_shouldStopBGM) {
+                m_modelBGM.StopBGM();
+            }
+            else if (!m_shouldStopBGM && (m_clipDialogueBGM != null)) {
+                m_modelBGM.PlayTemporary(m_clipDialogueBGM);
+            }
+
             m_modelDialogueSetter.StartDialogue(m_lines);
         }
 

@@ -2,21 +2,28 @@
 using NaughtyAttributes;
 using UniRx;
 using UnityEngine;
+using Utils;
 
 namespace Audio {
 
-    public class AudioModel : MonoBehaviour, AudioModel.Setter, AudioModel.Getter
+    public class AudioModel : MonoBehaviour, AudioModel.VolumeSetter, AudioModel.VolumeGetter, AudioModel.BGMSetter
     {
 
         #region Interfaces
 
-        public interface Setter
+        public interface BGMSetter {
+            void PlayTemporary(AudioClip clip);
+            void PlayOriginal();
+            void StopBGM();
+        }
+
+        public interface VolumeSetter
         {
             void SetVolumeBGM(float volume);
             void SetVolumeSFX(float volume);
         }
 
-        public interface Getter
+        public interface VolumeGetter
         {
             ReactiveProperty<float> GetVolumeBGM();
             ReactiveProperty<float> GetVolumeSFX();
@@ -24,8 +31,7 @@ namespace Audio {
 
         #endregion
 
-        private ReactiveProperty<float> m_reactiveVolumeBGM = new ReactiveProperty<float>();
-        private ReactiveProperty<float> m_reactiveVolumeSFX = new ReactiveProperty<float>();
+        [Header("Volumes")]
 
         [SerializeField]
         [Slider(0f, 1)]
@@ -33,6 +39,12 @@ namespace Audio {
         [SerializeField]
         [Slider(0f, 1f)]
         private float m_startingVolSFX = 0.75f;
+
+        [Space]
+
+        [SerializeField]
+        [Required]
+        private AudioSource m_audioSourceBGM;
 
         #region Inspector-only
         [ShowNativeProperty]
@@ -53,10 +65,21 @@ namespace Audio {
         }
         #endregion
 
+        private ReactiveProperty<float> m_reactiveVolumeBGM = new ReactiveProperty<float>();
+        private ReactiveProperty<float> m_reactiveVolumeSFX = new ReactiveProperty<float>();
+
+        private AudioClip m_tempAudioClipBGM;
+
         private void Awake()
         {
             m_reactiveVolumeBGM.Value = AudioData.GetVolumeBGM(m_startingVolBGM);
             m_reactiveVolumeSFX.Value = AudioData.GetVolumeSFX(m_startingVolSFX);
+
+            m_tempAudioClipBGM = m_audioSourceBGM.clip;
+
+            if (m_tempAudioClipBGM == null) {
+                LogUtil.PrintWarning(gameObject, GetType(), "Awake(): No BGM clip applied.");
+            }
         }
 
         private void OnDestroy()
@@ -87,6 +110,25 @@ namespace Audio {
         public ReactiveProperty<float> GetVolumeSFX()
         {
             return m_reactiveVolumeSFX;
+        }
+
+        public void PlayTemporary(AudioClip clip)
+        {
+            m_audioSourceBGM.clip = clip;
+            m_audioSourceBGM.Play();
+        }
+
+        public void PlayOriginal() {
+            if ((m_audioSourceBGM.clip == m_tempAudioClipBGM) && m_audioSourceBGM.isPlaying) {
+                return; //no need to play the BGM as it is already playing
+            }
+
+            m_audioSourceBGM.clip = m_tempAudioClipBGM;
+            m_audioSourceBGM.Play();
+        }
+
+        public void StopBGM() {
+            m_audioSourceBGM.Stop();
         }
 
     }

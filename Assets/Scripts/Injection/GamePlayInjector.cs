@@ -19,7 +19,7 @@ namespace Injection {
 
         [SerializeField]
         [Required]
-        private AudioModel m_modelAudio;
+        private AudioModel m_audio;
 
         [SerializeField]
         [Required]
@@ -31,15 +31,15 @@ namespace Injection {
 
         [SerializeField]
         [Required]
-        private GamePlayDialogueModel m_dialogue;
+        private DialogueModel m_dialogue;
 
         [SerializeField]
         [Required]
-        private MissionModel m_missionModel;
+        private MissionModel m_mission;
 
         [SerializeField]
         [Required]
-        private MerchantModel m_merchantModel;
+        private MerchantModel m_merchant;
 
         public void InjectPrefab(GameObject prefab)
         {
@@ -66,8 +66,10 @@ namespace Injection {
 
         private void BindModelAudio()
         {
-            Container.Bind<AudioModel.Getter>().FromInstance(m_modelAudio);
-            Container.Bind<AudioModel.Setter>().FromInstance(m_modelAudio);
+            Container.Bind<AudioModel.VolumeGetter>().FromInstance(m_audio);
+            Container.Bind<AudioModel.VolumeSetter>().FromInstance(m_audio);
+
+            Container.Bind<AudioModel.BGMSetter>().FromInstance(m_audio);
         }
 
         private void BindModelGamePlay()
@@ -76,19 +78,19 @@ namespace Injection {
             BaseInputModel baseInputModel = m_inputManager.GetBaseInput(m_playSettings.m_gamePlayInput);
             Container.Bind<BaseInputModel>().FromInstance(baseInputModel);
 
-            Container.Bind<GamePlayDialogueModel.Getter>().FromInstance(m_dialogue);
-            Container.Bind<GamePlayDialogueModel.Setter>().FromInstance(m_dialogue);
+            Container.Bind<DialogueModel.Getter>().FromInstance(m_dialogue);
+            Container.Bind<DialogueModel.Setter>().FromInstance(m_dialogue);
 
             Container.Bind<GamePlayStatsModel.Getter>().FromInstance(m_gamePlayStats);
             Container.Bind<GamePlayStatsModel.Setter>().FromInstance(m_gamePlayStats);
 
-            Container.Bind<MissionModel.TimerGetter>().FromInstance(m_missionModel);
-            Container.Bind<MissionModel.TimerSetter>().FromInstance(m_missionModel);
-            Container.Bind<MissionModel.MissionGetter>().FromInstance(m_missionModel);
-            Container.Bind<MissionModel.MissionSetter>().FromInstance(m_missionModel);
+            Container.Bind<MissionModel.TimerGetter>().FromInstance(m_mission);
+            Container.Bind<MissionModel.TimerSetter>().FromInstance(m_mission);
+            Container.Bind<MissionModel.MissionGetter>().FromInstance(m_mission);
+            Container.Bind<MissionModel.MissionSetter>().FromInstance(m_mission);
 
-            Container.Bind<MerchantModel.Getter>().FromInstance(m_merchantModel);
-            Container.Bind<MerchantModel.Setter>().FromInstance(m_merchantModel);
+            Container.Bind<MerchantModel.Getter>().FromInstance(m_merchant);
+            Container.Bind<MerchantModel.Setter>().FromInstance(m_merchant);
 
         }
 

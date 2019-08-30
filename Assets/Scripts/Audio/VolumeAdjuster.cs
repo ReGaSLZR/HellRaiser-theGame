@@ -10,7 +10,7 @@ namespace Audio {
     {
 
         [Inject]
-        private AudioModel.Getter m_modelAudio;
+        private AudioModel.VolumeGetter m_modelAudio;
 
         private AudioSource m_compAudioSource;
         private readonly DropdownList<bool> m_dropdownListAudioType = new DropdownList<bool>(){

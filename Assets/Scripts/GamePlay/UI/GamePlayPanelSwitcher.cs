@@ -23,7 +23,7 @@ namespace GamePlay.UI {
         [Inject]
         private readonly GamePlayStatsModel.Getter m_modelStats;
         [Inject]
-        private readonly GamePlayDialogueModel.Getter m_modelDialogue;
+        private readonly DialogueModel.Getter m_modelDialogue;
         [Inject]
         private readonly MerchantModel.Getter m_modelMerchant;
 
