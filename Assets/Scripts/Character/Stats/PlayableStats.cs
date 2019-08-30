@@ -17,8 +17,6 @@ namespace Character.Stats
 
         private ReactiveProperty<int> m_reactiveMoney = new ReactiveProperty<int>();
 
-        private bool m_isAfterOnEnable;
-
         protected override void Awake()
         {
             base.Awake();
@@ -31,9 +29,7 @@ namespace Character.Stats
 
         private void OnEnable()
         {
-            m_isAfterOnEnable = false;
             m_modelStatsSetter.RegisterCharacterForStats(m_info);
-
             m_reactiveMoney.Value = m_modelStatsGetter.GetInventoryMoney().Value;
             
             InitObservers();
@@ -42,8 +38,7 @@ namespace Character.Stats
         private void InitObservers()
         {
             m_modelStatsGetter.GetActiveCharacterHealth()
-                .Where(health => m_isAfterOnEnable && 
-                    m_info.m_infoUI.m_name.Equals(
+                .Where(health => m_info.m_infoUI.m_name.Equals(
                     m_modelStatsGetter.GetActiveCharacter().Value.m_infoUI.m_name) &&
                     (health != m_reactiveHealth.Value)) //last condition is to check if the change was already applied on BaseStat.Recover()/DealDamage()
                 .Subscribe(newHealth =>
@@ -53,8 +48,7 @@ namespace Character.Stats
                 .AddTo(m_disposables);
 
             m_modelStatsGetter.GetActiveCharacterStamina()
-                .Where(stamina => m_isAfterOnEnable && 
-                    m_info.m_infoUI.m_name.Equals(
+                .Where(stamina => m_info.m_infoUI.m_name.Equals(
                     m_modelStatsGetter.GetActiveCharacter().Value.m_infoUI.m_name) &&
                     (stamina != m_reactiveStamina.Value)) //last condition is to check if the change was already applied on BaseStat.Recover()/DealDamage()
                 .Subscribe(newStamina =>
@@ -67,14 +61,11 @@ namespace Character.Stats
                 //SPECIAL CASE: the first condition (Time check) is to not allow model.money initialization delay
                 //(probably due to save file deserialization)
                 //to show on game start the previous earnings of the Player as a text change FX
-                .Where(money => m_isAfterOnEnable && 
-                    (Time.timeSinceLevelLoad > 0) && (m_reactiveMoney.Value != money))
+                .Where(money => (Time.timeSinceLevelLoad > 0) && (m_reactiveMoney.Value != money))
                 .Subscribe(newMoneyValue => {
                     ApplyStatChangeFXFromNonBaseStatCall(m_reactiveMoney, newMoneyValue, m_colorScheme.m_moneyGain, m_colorScheme.m_moneyLoss);
                 })
                 .AddTo(m_disposables);
-
-            m_isAfterOnEnable = true;
         }
 
         private void ApplyStatChangeFXFromNonBaseStatCall(ReactiveProperty<int> valueHolder, int newValue, 

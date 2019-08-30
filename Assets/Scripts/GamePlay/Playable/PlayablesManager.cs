@@ -9,7 +9,8 @@ using UnityEngine;
 using Utils;
 using Zenject;
 
-namespace GamePlay.Playable {
+namespace GamePlay.Playable
+{
 
     /// <summary>
     /// The holder of all PlayableAI instances (Playable Characters) in the scene.
@@ -30,8 +31,6 @@ namespace GamePlay.Playable {
         [Inject]
         private readonly MissionModel.MissionSetter m_modelMissionSetter;
 
-        [Space]
-
         private PlayableAI[] m_playableChars;
 
         [SerializeField]
@@ -47,12 +46,13 @@ namespace GamePlay.Playable {
 
         private void Awake()
         {
-            if (GameObject.FindObjectsOfType<PlayablesManager>().Length > 1) {
+            if (GameObject.FindObjectsOfType<PlayablesManager>().Length > 1)
+            {
                 LogUtil.PrintError(gameObject, GetType(), "Cannot have more than 1 PlayablesManager. Destroying...");
                 Destroy(this);
             }
 
-            m_playableChars = GameObject.FindObjectsOfType<PlayableAI>();            
+            m_playableChars = GameObject.FindObjectsOfType<PlayableAI>();
         }
 
         private void Start()
@@ -63,12 +63,17 @@ namespace GamePlay.Playable {
 
             m_isCharacterSwitchingReady = true;
             m_index = m_playableChars.Length;
-            EnableNextCharacter();
+
+            StopAllCoroutines();
+            StartCoroutine(CorEnableNextCharacter());
         }
 
-        public void MassTeleportPlayables(Transform location) {
-            for (int x=0; x<m_playableChars.Length; x++) {
-                if (m_playableChars[x] != null) {
+        public void MassTeleportPlayables(Transform location)
+        {
+            for (int x = 0; x < m_playableChars.Length; x++)
+            {
+                if (m_playableChars[x] != null)
+                {
                     m_playableChars[x].gameObject.SetActive(false);
 
                     Vector3 teleportedLocation = location.position;
@@ -80,7 +85,8 @@ namespace GamePlay.Playable {
             }
         }
 
-        private void InitObservers() {
+        private void InitObservers()
+        {
             //on ACTIVE playable character death...
             m_modelStats.GetActiveCharacterHealth()
                 .Where(health => health <= 0)
@@ -95,9 +101,9 @@ namespace GamePlay.Playable {
                     }
                     else
                     {
-                        EnableNextCharacter();
+                        StartCoroutine(CorEnableNextCharacter());
                     }
-                    
+
                 })
                 .AddTo(this);
 
@@ -111,23 +117,27 @@ namespace GamePlay.Playable {
             this.UpdateAsObservable()
                 .Where(_ => m_modelInput.m_charChange && m_isCharacterSwitchingReady)
                 .Subscribe(_ => {
-                    EnableNextCharacter();
-
                     StopAllCoroutines();
+
+                    StartCoroutine(CorEnableNextCharacter());
                     StartCoroutine(CorStartSwitchTick());
                 })
                 .AddTo(this);
         }
 
-        private IEnumerator CorStartSwitchTick() {
+        private IEnumerator CorStartSwitchTick()
+        {
             m_isCharacterSwitchingReady = false;
             yield return new WaitForSeconds(m_playableCharSwitchDuration);
             m_isCharacterSwitchingReady = true;
         }
 
-        private bool AreAllCharactersDead() {
-            for (int x=0; x<m_playableChars.Length; x++) {
-                if ((m_playableChars[x] != null) && !m_playableChars[x].m_isNotOnCycle) {
+        private bool AreAllCharactersDead()
+        {
+            for (int x = 0; x < m_playableChars.Length; x++)
+            {
+                if ((m_playableChars[x] != null) && !m_playableChars[x].m_isNotOnCycle)
+                {
                     return false;
                 }
             }
@@ -135,21 +145,31 @@ namespace GamePlay.Playable {
             return true;
         }
 
-        private void SetCharacterEnabled(int index, bool isEnabled) {
+        private void SetCharacterEnabled(int index, bool isEnabled)
+        {
             m_playableChars[index].enabled = isEnabled;
         }
 
-        private void SetAllCharactersEnabled(bool isEnabled) {
+        private void SetAllCharactersEnabled(bool isEnabled)
+        {
             for (int x = 0; x < m_playableChars.Length; x++)
             {
-                if (m_playableChars[x] != null) {
+                if (m_playableChars[x] != null)
+                {
                     SetCharacterEnabled(x, isEnabled);
                 }
             }
         }
 
-        private void EnableNextCharacter() {
-            do {
+        private IEnumerator CorEnableNextCharacter()
+        {
+            //yield statement is to prevent a race condition caused by active character's death and the immediate switching to another character
+            //in the race condition, the next active character receives the last damage taken by the previously killed one
+            //(brought by the immediate switching to another character and registering of the next character's info to the model)
+            yield return null; 
+
+            do
+            {
                 MoveToNextIndex();
             } while ((m_playableChars[m_index] == null) || m_playableChars[m_index].m_isNotOnCycle);
 
@@ -157,7 +177,8 @@ namespace GamePlay.Playable {
             SetCharacterEnabled(m_index, true);
         }
 
-        private void MoveToNextIndex() {
+        private void MoveToNextIndex()
+        {
             m_index = ((m_index + 1) >= m_playableChars.Length) ? 0 : (m_index + 1);
         }
 
