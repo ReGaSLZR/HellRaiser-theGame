@@ -85,9 +85,9 @@ namespace Character.Stats
             m_modelStatsSetter.UpdateCharacterHealth(m_info.m_infoUI.m_name, m_reactiveHealth.Value);
         }
 
-        public override void RecoverHealth(int health)
+        public override void RecoverHealth(int health, bool isCritical)
         {
-            base.RecoverHealth(health);
+            base.RecoverHealth(health, isCritical);
             m_modelStatsSetter.UpdateCharacterHealth(m_info.m_infoUI.m_name, m_reactiveHealth.Value);
         }
 
@@ -97,9 +97,9 @@ namespace Character.Stats
             m_modelStatsSetter.UpdateCharacterStamina(m_info.m_infoUI.m_name, m_reactiveStamina.Value);
         }
 
-        public override void RecoverStamina(int stamina)
+        public override void RecoverStamina(int stamina, bool isCritical)
         {
-            base.RecoverStamina(stamina);
+            base.RecoverStamina(stamina, isCritical);
             m_modelStatsSetter.UpdateCharacterStamina(m_info.m_infoUI.m_name, m_reactiveStamina.Value);
         }
 

@@ -751,8 +751,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_info: {fileID: 11400000, guid: 09f49f3e43039e248b9a1745380cc566, type: 2}
   m_textStatChange: {fileID: 877957717}
-  m_colorDamage: {r: 1, g: 0, b: 0, a: 1}
-  m_colorRecover: {r: 0, g: 1, b: 0, a: 1}
 --- !u!114 &3888517535082131005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -836,11 +834,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8115173290345660740, guid: fb1e8904b40210b4f89b11970cd9fde9,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
     - target: {fileID: 8115173290345660745, guid: fb1e8904b40210b4f89b11970cd9fde9,
         type: 3}
       propertyPath: m_text
@@ -886,6 +879,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8115173290345660740, guid: fb1e8904b40210b4f89b11970cd9fde9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb1e8904b40210b4f89b11970cd9fde9, type: 3}
 --- !u!4 &1993079860 stripped

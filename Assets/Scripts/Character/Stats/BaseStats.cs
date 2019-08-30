@@ -67,6 +67,10 @@ namespace Character.Stats {
             return m_reactiveIsHurt;
         }
 
+        private string GetCriticalAppend(bool isCritical) {
+            return (isCritical) ? " CRIT!" : "";
+        }
+
         private void DealDamage(int damage, bool isCritical, ReactiveProperty<int> valueHolder, Color color)
         {
             if (damage <= 0)
@@ -77,8 +81,7 @@ namespace Character.Stats {
 
             int damageReceived = StatsUtil.GetDamageReceived(damage, m_info.m_defense);
 
-            string damageAppend = (isCritical) ? " CRIT!" : "";
-            UpdateStatChangeText("-" + damageReceived.ToString() + damageAppend, color);
+            UpdateStatChangeText("-" + damageReceived.ToString() + GetCriticalAppend(isCritical), color);
             ForceShowStatChangeText();
 
             valueHolder.Value = Mathf.Clamp(
@@ -89,29 +92,29 @@ namespace Character.Stats {
 
         }
 
-        private void Recover(int value, int maxValue, ReactiveProperty<int> valueHolder, Color color) {
+        private void Recover(int value, int maxValue, bool isCritical, ReactiveProperty<int> valueHolder, Color color) {
             if (value <= 0)
             {
                 LogUtil.PrintWarning(gameObject, GetType(), "Recover(): Invalid value of " + value);
                 return;
             }
 
-            UpdateStatChangeText("+" + value.ToString(), color);
+            UpdateStatChangeText("+" + value.ToString() + GetCriticalAppend(isCritical), color);
             ForceShowStatChangeText();
 
             valueHolder.Value = Mathf.Clamp(valueHolder.Value + value, 0, maxValue);
         }
 
-        public virtual void RecoverHealth(int health) {
-            Recover(health, Scriptables.CharacterInfo.HEALTH_MAX, m_reactiveHealth, m_colorScheme.m_healthGain);
+        public virtual void RecoverHealth(int health, bool isCritical) {
+            Recover(health, Scriptables.CharacterInfo.HEALTH_MAX, isCritical, m_reactiveHealth, m_colorScheme.m_healthGain);
         }
 
         public virtual void DealHealthDamage(int damage, bool isCritical) {
             DealDamage(damage, isCritical, m_reactiveHealth, m_colorScheme.m_healthLoss);
         }
 
-        public virtual void RecoverStamina(int stamina) {
-            Recover(stamina, Scriptables.CharacterInfo.STAMINA_MAX, m_reactiveStamina, m_colorScheme.m_staminaGain);
+        public virtual void RecoverStamina(int stamina, bool isCritical) {
+            Recover(stamina, Scriptables.CharacterInfo.STAMINA_MAX, isCritical, m_reactiveStamina, m_colorScheme.m_staminaGain);
         }
 
         public virtual void DealStaminaDamage(int damage, bool isCritical) {
