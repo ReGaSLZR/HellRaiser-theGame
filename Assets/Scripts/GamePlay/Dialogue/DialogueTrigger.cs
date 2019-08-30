@@ -24,6 +24,7 @@ namespace GamePlay.Dialogue {
             BGM_REPLACE_WITH_NEW_AND_PLAY
         };
 
+        //INJECTABLES
         [Inject]
         private readonly MissionModel.TimerSetter m_modelTimer;
         [Inject]
@@ -34,6 +35,9 @@ namespace GamePlay.Dialogue {
         private readonly BaseInputModel m_modelInput;
         [Inject]
         private readonly AudioModel.BGMSetter m_modelBGM;
+
+        [SerializeField]
+        private Transform m_focusedObject;
 
         [SerializeField]
         private BaseTrigger m_chainedTriggerAfterDialogue;
@@ -84,7 +88,7 @@ namespace GamePlay.Dialogue {
 
             PlayBGM();
 
-            m_modelDialogueSetter.StartDialogue(m_lines);
+            m_modelDialogueSetter.StartDialogue(m_lines, m_focusedObject);
         }
 
         private void PlayBGM() {

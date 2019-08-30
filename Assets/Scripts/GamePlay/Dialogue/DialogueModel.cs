@@ -3,6 +3,7 @@ using UniRx;
 using Scriptables;
 using UnityEngine.UI;
 using NaughtyAttributes;
+using Cinemachine;
 
 namespace GamePlay.Dialogue {
 
@@ -16,7 +17,7 @@ namespace GamePlay.Dialogue {
         }
 
         public interface Setter {
-            void StartDialogue(DialogueLine[] lines);
+            void StartDialogue(DialogueLine[] lines, Transform focusedObject);
             void EndDialogue();
         }
 
@@ -25,6 +26,11 @@ namespace GamePlay.Dialogue {
         [SerializeField]
         [Required]
         private DialogueLineDisplay m_display;
+
+        [SerializeField]
+        [Tooltip("A virtual camera with much higher priority than that of any Playable Character's unique vCam.")]
+        [Required]
+        private CinemachineVirtualCamera m_focusCamera;
 
         [Space]
 
@@ -60,12 +66,24 @@ namespace GamePlay.Dialogue {
             m_buttonSkipAll.OnClickAsObservable()
                 .Subscribe(_ => EndDialogue())
                 .AddTo(this);
+
+            m_focusCamera.gameObject.SetActive(false);
         }
 
-        private void ConfigForNewLines()
+        private void ConfigForNewLines(Transform focusedObject)
         {
             m_isInPlay.Value = true;
             m_currentLineIndex = 0;
+
+            if (focusedObject != null)
+            {
+                m_focusCamera.m_Follow = focusedObject;
+                m_focusCamera.gameObject.SetActive(true);
+            }
+            else
+            {
+                m_focusCamera.gameObject.SetActive(false);
+            }
 
             m_display.ConfigDisplay();
         }
@@ -81,15 +99,17 @@ namespace GamePlay.Dialogue {
             return m_isInPlay;
         }
 
-        public void StartDialogue(DialogueLine[] lines)
+        public void StartDialogue(DialogueLine[] lines, Transform focusedObject)
         {
             m_dialogueLines = lines;
+            ConfigForNewLines(focusedObject);
 
-            ConfigForNewLines();
             DisplayNextLine();
         }
 
         public void EndDialogue() {
+            m_focusCamera.gameObject.SetActive(false);
+
             m_display.End();
             m_isInPlay.Value = false;
         }
