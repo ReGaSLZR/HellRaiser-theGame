@@ -2,7 +2,6 @@
 using UniRx;
 using Scriptables;
 using UnityEngine.UI;
-using GamePlay.UI;
 using NaughtyAttributes;
 
 namespace GamePlay.Dialogue {
@@ -25,7 +24,7 @@ namespace GamePlay.Dialogue {
 
         [SerializeField]
         [Required]
-        private GamePlayDialogueLineDisplay m_display;
+        private DialogueLineDisplay m_display;
 
         [Space]
 
@@ -63,6 +62,14 @@ namespace GamePlay.Dialogue {
                 .AddTo(this);
         }
 
+        private void ConfigForNewLines()
+        {
+            m_isInPlay.Value = true;
+            m_currentLineIndex = 0;
+
+            m_display.ConfigDisplay();
+        }
+
         private void DisplayNextLine()
         {
             m_display.DisplayLine(m_dialogueLines[m_currentLineIndex],
@@ -77,10 +84,8 @@ namespace GamePlay.Dialogue {
         public void StartDialogue(DialogueLine[] lines)
         {
             m_dialogueLines = lines;
-            m_isInPlay.Value = true;
-            m_currentLineIndex = 0;
-            m_display.ConfigDisplay();
 
+            ConfigForNewLines();
             DisplayNextLine();
         }
 

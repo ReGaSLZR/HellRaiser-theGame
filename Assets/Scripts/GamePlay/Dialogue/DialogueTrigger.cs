@@ -53,7 +53,7 @@ namespace GamePlay.Dialogue {
                         m_chainedTriggerAfterDialogue.Execute();
                     }
 
-                    m_modelBGM.PlayOriginal();
+                    m_modelBGM.PlayOriginalBGM();
                     Destroy(gameObject);
                 })
                 .AddTo(this);
@@ -70,7 +70,7 @@ namespace GamePlay.Dialogue {
                 m_modelBGM.StopBGM();
             }
             else if (!m_shouldStopBGM && (m_clipDialogueBGM != null)) {
-                m_modelBGM.PlayTemporary(m_clipDialogueBGM);
+                m_modelBGM.PlayTemporaryBGM(m_clipDialogueBGM);
             }
 
             m_modelDialogueSetter.StartDialogue(m_lines);

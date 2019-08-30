@@ -6,15 +6,22 @@ using Utils;
 
 namespace Audio {
 
-    public class AudioModel : MonoBehaviour, AudioModel.VolumeSetter, AudioModel.VolumeGetter, AudioModel.BGMSetter
+    public class AudioModel : MonoBehaviour, AudioModel.VolumeSetter, AudioModel.VolumeGetter, AudioModel.BGMSetter, AudioModel.SFXSetter
     {
 
         #region Interfaces
 
         public interface BGMSetter {
-            void PlayTemporary(AudioClip clip);
-            void PlayOriginal();
+            void PlayTemporaryBGM(AudioClip clip);
+            void PlayOriginalBGM();
             void StopBGM();
+        }
+
+        /// <summary>
+        /// For controlled SFX's like those from a dialogue
+        /// </summary>
+        public interface SFXSetter {
+            void PlaySFX(AudioClip clip);
         }
 
         public interface VolumeSetter
@@ -45,6 +52,10 @@ namespace Audio {
         [SerializeField]
         [Required]
         private AudioSource m_audioSourceBGM;
+
+        [SerializeField]
+        [Required]
+        private AudioSource m_audioSourceSFX;
 
         #region Inspector-only
         [ShowNativeProperty]
@@ -112,13 +123,15 @@ namespace Audio {
             return m_reactiveVolumeSFX;
         }
 
-        public void PlayTemporary(AudioClip clip)
+        public void PlayTemporaryBGM(AudioClip clip)
         {
-            m_audioSourceBGM.clip = clip;
-            m_audioSourceBGM.Play();
+            if(clip != null) {
+                m_audioSourceBGM.clip = clip;
+                m_audioSourceBGM.Play();
+            }
         }
 
-        public void PlayOriginal() {
+        public void PlayOriginalBGM() {
             if ((m_audioSourceBGM.clip == m_tempAudioClipBGM) && m_audioSourceBGM.isPlaying) {
                 return; //no need to play the BGM as it is already playing
             }
@@ -131,7 +144,12 @@ namespace Audio {
             m_audioSourceBGM.Stop();
         }
 
-    }
+        public void PlaySFX(AudioClip clip) {
+            if(clip != null) {
+                m_audioSourceSFX.PlayOneShot(clip);
+            }
+        }
 
+    }
 
 }

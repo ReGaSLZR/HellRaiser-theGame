@@ -70,6 +70,7 @@ namespace Injection {
             Container.Bind<AudioModel.VolumeSetter>().FromInstance(m_audio);
 
             Container.Bind<AudioModel.BGMSetter>().FromInstance(m_audio);
+            Container.Bind<AudioModel.SFXSetter>().FromInstance(m_audio);
         }
 
         private void BindModelGamePlay()

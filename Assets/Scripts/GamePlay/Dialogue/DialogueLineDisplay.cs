@@ -1,13 +1,19 @@
-﻿using Scriptables;
+﻿using Audio;
+using Scriptables;
 using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
-namespace GamePlay.UI {
+namespace GamePlay.Dialogue {
 
-    public class GamePlayDialogueLineDisplay : MonoBehaviour
+    public class DialogueLineDisplay : MonoBehaviour
     {
+
+        [Inject]
+        private readonly AudioModel.SFXSetter m_modelSFX;
+
         [Header("UI")]
 
         [SerializeField]
@@ -51,6 +57,7 @@ namespace GamePlay.UI {
         public void DisplayLine(DialogueLine line, bool isLastLine)
         {
             ChangeButtonNextText(isLastLine);
+            m_modelSFX.PlaySFX(line.m_lineSFX);
 
             StopAllCoroutines();
             StartCoroutine(CorDisplayLine(line));
@@ -91,8 +98,12 @@ namespace GamePlay.UI {
                     }
                 case DialogueLine.BG_SHOW_NEW:
                     {
-                        m_dialogueBackground.gameObject.SetActive(true);
+                        //turn it off first to activate any animations attached to the gameObject
+                        m_dialogueBackground.gameObject.SetActive(false); 
+
                         m_dialogueBackground.texture = background;
+                        m_dialogueBackground.gameObject.SetActive(true);
+                        
                         break;
                     }
                     //case DialogueLine.BG_RETAIN: {

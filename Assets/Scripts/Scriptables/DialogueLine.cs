@@ -42,6 +42,8 @@ namespace Scriptables {
         [TextArea]
         public string m_line;
 
+        public AudioClip m_lineSFX;
+
         [Dropdown("m_dropdownOptionsBackground")]
         public int m_backgroundOption;
 

@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: test3
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 11400000, guid: b2e17f15d7b94d1409243dbcf60f851d, type: 2}
+  m_expression: 0
   m_line: nyahaha this is the last test dialogue line
+  m_lineSFX: {fileID: 8300000, guid: 292b68e76d29f1740bc3e85b8557cc84, type: 3}
+  m_backgroundOption: 0
+  m_background: {fileID: 0}
