@@ -22,6 +22,12 @@ namespace Character.Stats {
         }
 
         public static int GetDamageReceived(int damageDealt, StatDefense statDefense, StatInflictionType type) {
+            if (statDefense.m_isMagusBane && (type == StatInflictionType.MAGICK)) {
+                //TODO: code special formula when the damage receiver is a magusbane and the inflictionType is MAGICK
+                //For now, default to zero for any magick attack dealt to a magusbane/spellbreaker
+                return 0; 
+            }
+
             int defenseStat = (type == StatInflictionType.PHYSICAL) ? statDefense.m_physicalDefense : statDefense.m_magickDefense;
             return Mathf.Clamp(Mathf.RoundToInt(damageDealt / (defenseStat * 0.01f)), 1, 9999);
         }

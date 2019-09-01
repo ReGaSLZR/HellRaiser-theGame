@@ -68,7 +68,7 @@ namespace Character.Stats {
         }
 
         private string GetCriticalAppend(bool isCritical) {
-            return (isCritical) ? " CRIT!" : "";
+            return (isCritical) ? "\n CRIT!" : "";
         }
 
         private void DealDamage(int damage, bool isCritical, StatInflictionType type, ReactiveProperty<int> valueHolder, Color color)
@@ -81,7 +81,14 @@ namespace Character.Stats {
 
             int damageReceivedReducedByDefense = StatsUtil.GetDamageReceived(damage, m_info.m_statDefense, type);
 
-            UpdateStatChangeText("-" + damageReceivedReducedByDefense.ToString() + GetCriticalAppend(isCritical), color);
+            //TODO: 
+            //For now, any magick attack dealt to a magusbane/spellbreaker is set to 0 and the stat change text is "No Damage"
+            string statChangeText = (damageReceivedReducedByDefense == 0) ? "NO DAMAGE" : 
+                ("-" + damageReceivedReducedByDefense.ToString() + GetCriticalAppend(isCritical));
+
+            Color textColor = (damageReceivedReducedByDefense == 0) ? m_colorScheme.m_damageNull : color;
+
+            UpdateStatChangeText(statChangeText, textColor);
             ForceShowStatChangeText();
 
             valueHolder.Value = Mathf.Clamp(

@@ -12,6 +12,7 @@ namespace Scriptables {
 
             public Color m_healthGain;
             public Color m_healthLoss;
+            public Color m_damageNull;
 
             [Space]
 
