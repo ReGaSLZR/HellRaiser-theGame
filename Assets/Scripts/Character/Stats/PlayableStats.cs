@@ -79,9 +79,9 @@ namespace Character.Stats
             ForceShowStatChangeText();
         }
 
-        public override void DealHealthDamage(int damage, bool isCritical)
+        public override void DealHealthDamage(int damage, bool isCritical, StatInflictionType type)
         {
-            base.DealHealthDamage(damage, isCritical);
+            base.DealHealthDamage(damage, isCritical, type);
             m_modelStatsSetter.UpdateCharacterHealth(m_info.m_infoUI.m_name, m_reactiveHealth.Value);
         }
 
@@ -91,9 +91,9 @@ namespace Character.Stats
             m_modelStatsSetter.UpdateCharacterHealth(m_info.m_infoUI.m_name, m_reactiveHealth.Value);
         }
 
-        public override void DealStaminaDamage(int damage, bool isCritical)
+        public override void DealStaminaDamage(int damage, bool isCritical, StatInflictionType type)
         {
-            base.DealStaminaDamage(damage, isCritical);
+            base.DealStaminaDamage(damage, isCritical, type);
             m_modelStatsSetter.UpdateCharacterStamina(m_info.m_infoUI.m_name, m_reactiveStamina.Value);
         }
 

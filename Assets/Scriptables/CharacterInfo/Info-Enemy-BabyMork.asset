@@ -14,15 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_infoUI: {fileID: 11400000, guid: f728e7420a6e0864191bec220c012974, type: 2}
   m_bio: 
+  m_isPlayable: 0
+  m_skillsInOrder:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_level: 1
   m_health: 100
-  m_stamina: 0
+  m_stamina: 100
   m_statMovement:
     m_movSpeed: 1.5
     m_stunLength: 1.5
   m_statOffense:
-    m_attack: 25
+    m_physicalAttack: 10
+    m_magickAttack: 10
     m_critChance: 1
     m_critDamage: 1
-  m_defense: 20
-  m_deflectChance: 0
+  m_statDefense:
+    m_physicalDefense: 12
+    m_magickDefense: 1
+    m_isMagusBane: 0

@@ -42,7 +42,10 @@ namespace Character.AI {
         {
             base.Awake();
 
-            if(m_targetDetector != null) {
+            m_skillSecondary.SetStatOffense(m_stats.GetStatOffense());
+            m_skillTertiary.SetStatOffense(m_stats.GetStatOffense());
+
+            if (m_targetDetector != null) {
                 LogUtil.PrintWarning(gameObject, GetType(), "Awake(): TargetDetector is not needed in PlayerAI.");
                 m_targetDetector = null;
             }

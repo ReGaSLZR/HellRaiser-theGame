@@ -35,11 +35,7 @@ namespace Scriptables {
 
         public StatMovement m_statMovement;
         public StatOffense m_statOffense;
-        
-        [Space]
-
-        [Range(1, 150)]
-        public int m_defense = 1;
+        public StatDefense m_statDefense;
 
         public void ResetHealthStamina() {
             m_health = HEALTH_MAX;
@@ -69,8 +65,11 @@ namespace Scriptables {
 
         public const int MAX_CRIT_CHANCE = 100;
 
-        [Range(1, 150)]
-        public int m_attack = 1;
+        [Range(0, 150)]
+        public int m_physicalAttack = 0;
+
+        [Range(0, 150)]
+        public int m_magickAttack = 0;
 
         [Range(0, MAX_CRIT_CHANCE)]
         public int m_critChance = 0;
@@ -79,9 +78,29 @@ namespace Scriptables {
         public float m_critDamage = 0f;
 
         public StatOffense(int attack = 1, int critChance = 0, float critDamage = 0f) {
-            m_attack = attack;
+            m_physicalAttack = attack;
             m_critChance = critChance;
             m_critDamage = critDamage;
+        }
+
+    }
+
+    [System.Serializable]
+    public class StatDefense {
+
+        [Range(0, 150)]
+        public int m_physicalDefense = 0;
+
+        [Range(0, 150)]
+        [DisableIf("m_isMagusBane")]
+        public int m_magickDefense = 0;
+
+        public bool m_isMagusBane;
+
+        public StatDefense(int pDef, int mDef, bool isMagusBane) {
+            m_physicalDefense = pDef;
+            m_magickDefense = mDef;
+            m_isMagusBane = isMagusBane;
         }
 
     }

@@ -26,8 +26,11 @@ MonoBehaviour:
     m_movSpeed: 0
     m_stunLength: 0.5
   m_statOffense:
-    m_attack: 1
+    m_physicalAttack: 0
+    m_magickAttack: 0
     m_critChance: 0
     m_critDamage: 0
-  m_defense: 1
-  m_deflectChance: 0
+  m_statDefense:
+    m_physicalDefense: 8
+    m_magickDefense: 0
+    m_isMagusBane: 0

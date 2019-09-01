@@ -71,7 +71,7 @@ namespace Character.Stats {
             return (isCritical) ? " CRIT!" : "";
         }
 
-        private void DealDamage(int damage, bool isCritical, ReactiveProperty<int> valueHolder, Color color)
+        private void DealDamage(int damage, bool isCritical, StatInflictionType type, ReactiveProperty<int> valueHolder, Color color)
         {
             if (damage <= 0)
             {
@@ -79,7 +79,7 @@ namespace Character.Stats {
                 return;
             }
 
-            int damageReceivedReducedByDefense = StatsUtil.GetDamageReceived(damage, m_info.m_defense);
+            int damageReceivedReducedByDefense = StatsUtil.GetDamageReceived(damage, m_info.m_statDefense, type);
 
             UpdateStatChangeText("-" + damageReceivedReducedByDefense.ToString() + GetCriticalAppend(isCritical), color);
             ForceShowStatChangeText();
@@ -109,16 +109,16 @@ namespace Character.Stats {
             Recover(health, Scriptables.CharacterInfo.HEALTH_MAX, isCritical, m_reactiveHealth, m_colorScheme.m_healthGain);
         }
 
-        public virtual void DealHealthDamage(int damage, bool isCritical) {
-            DealDamage(damage, isCritical, m_reactiveHealth, m_colorScheme.m_healthLoss);
+        public virtual void DealHealthDamage(int damage, bool isCritical, StatInflictionType type) {
+            DealDamage(damage, isCritical, type, m_reactiveHealth, m_colorScheme.m_healthLoss);
         }
 
         public virtual void RecoverStamina(int stamina, bool isCritical) {
             Recover(stamina, Scriptables.CharacterInfo.STAMINA_MAX, isCritical, m_reactiveStamina, m_colorScheme.m_staminaGain);
         }
 
-        public virtual void DealStaminaDamage(int damage, bool isCritical) {
-            DealDamage(damage, isCritical, m_reactiveStamina, m_colorScheme.m_staminaLoss);
+        public virtual void DealStaminaDamage(int damage, bool isCritical, StatInflictionType type) {
+            DealDamage(damage, isCritical, type, m_reactiveStamina, m_colorScheme.m_staminaLoss);
         }
 
         protected void UpdateStatChangeText(string text, Color color) {

@@ -95,6 +95,8 @@ namespace Character.Skill {
         private IEnumerator CorChargeSkill() {
             m_isExecutionFinished.Value = false;
 
+            AnimateSkill(true); //this is to alllow scratch animations to play first uninterrupted (esp. with the use of triggers)
+
             yield return new WaitForSeconds(m_skillDelay);
 
             OnSkillStart();
@@ -114,7 +116,6 @@ namespace Character.Skill {
         protected virtual void OnSkillStart()
         {
             SetChildFXActive(true);
-            AnimateSkill(true);
         }
 
         protected virtual void OnSkillFinish() {

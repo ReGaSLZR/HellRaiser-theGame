@@ -35,11 +35,16 @@ namespace Character.Skill {
         [Inject]
         private readonly Instantiator m_instantiator;
 
+        [Space]
+
         [SerializeField]
         [Required]
         private TargetDetector m_targetDetector;
 
         [Space]
+
+        [SerializeField]
+        private StatInflictionType m_inflictType;
 
         [SerializeField]
         [Dropdown("m_dropdownVariation")]
@@ -78,7 +83,7 @@ namespace Character.Skill {
             List<BaseStats> receivers = GetReceivers();
 
             for (int x=0; x<receivers.Count; x++) {
-                int rawValue = StatsUtil.GetRawDamageDealt(ValuesUtil.GetValueFromVector2Range(m_skillValueRange), m_statOffense);
+                int rawValue = StatsUtil.GetRawDamageDealt(ValuesUtil.GetValueFromVector2Range(m_skillValueRange), m_statOffense, m_inflictType);
                 int critValue = StatsUtil.GetCritDamage(rawValue, m_statOffense);
 
                 DealDamageOrHeal(receivers[x], (rawValue + critValue), (critValue > 0));
@@ -112,11 +117,11 @@ namespace Character.Skill {
         private void DealDamageOrHeal(BaseStats receiver, int value, bool isCritical) {
             if ((SKILL_VARIATION_DAMAGE == m_variation) && (STAT_AFFECTED_HEALTH == m_statAffected))
             {
-                receiver.DealHealthDamage(value, isCritical);
+                receiver.DealHealthDamage(value, isCritical, m_inflictType);
             }
             else if ((SKILL_VARIATION_DAMAGE == m_variation) && (STAT_AFFECTED_STAMINA == m_statAffected))
             {
-                receiver.DealStaminaDamage(value, isCritical);
+                receiver.DealStaminaDamage(value, isCritical, m_inflictType);
             }
             else if ((SKILL_VARIATION_HEAL == m_variation) && (STAT_AFFECTED_HEALTH == m_statAffected))
             {
