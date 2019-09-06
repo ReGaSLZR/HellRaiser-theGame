@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8241063537023895933}
   - component: {fileID: 8241063537023895932}
   - component: {fileID: 8241063537023895935}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ChibiStephen
   m_TagString: Merchant
   m_Icon: {fileID: 0}
@@ -214,8 +214,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_info: {fileID: 11400000, guid: 48e06e2ceca4b984b8a8c49da7860475, type: 2}
   m_textStatChange: {fileID: 198370052909997877}
-  m_colorDamage: {r: 1, g: 0, b: 0, a: 1}
-  m_colorRecover: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &8241063537674714411
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,6 +301,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: StatsNumberHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 8115173291445317423, guid: fb1e8904b40210b4f89b11970cd9fde9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8115173291445317416, guid: fb1e8904b40210b4f89b11970cd9fde9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -356,6 +359,31 @@ PrefabInstance:
     - target: {fileID: 8115173291445317416, guid: fb1e8904b40210b4f89b11970cd9fde9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8115173290345660751, guid: fb1e8904b40210b4f89b11970cd9fde9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8115173290345660745, guid: fb1e8904b40210b4f89b11970cd9fde9,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8115173290345660745, guid: fb1e8904b40210b4f89b11970cd9fde9,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8115173290345660745, guid: fb1e8904b40210b4f89b11970cd9fde9,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8115173290345660745, guid: fb1e8904b40210b4f89b11970cd9fde9,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

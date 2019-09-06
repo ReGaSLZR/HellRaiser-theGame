@@ -19756,35 +19756,6 @@ PrefabInstance:
       propertyPath: m_uniqueCamera
       value: 
       objectReference: {fileID: 900217718}
-    - target: {fileID: 2040706425, guid: 742fb78875b4eef4ab00c290de119362, type: 3}
-      propertyPath: m_isNotOnCycle
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8296422119397349119, guid: 742fb78875b4eef4ab00c290de119362,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8296422119397349117, guid: 742fb78875b4eef4ab00c290de119362,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8296422119397349117, guid: 742fb78875b4eef4ab00c290de119362,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8296422119397349117, guid: 742fb78875b4eef4ab00c290de119362,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8296422119397349117, guid: 742fb78875b4eef4ab00c290de119362,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 742fb78875b4eef4ab00c290de119362, type: 3}
 --- !u!1001 &3115429581444950600
@@ -19927,30 +19898,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 877957717, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 877957717, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 877957717, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 877957717, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 877957717, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 877957719, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
@@ -20114,11 +20061,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChibiStephen
       objectReference: {fileID: 0}
-    - target: {fileID: 8241063537023895925, guid: 8c361b6b5ba4a6f459b8788017d34dda,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8241063537023895920, guid: 8c361b6b5ba4a6f459b8788017d34dda,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20173,31 +20115,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198370052909997877, guid: 8c361b6b5ba4a6f459b8788017d34dda,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198370052909997877, guid: 8c361b6b5ba4a6f459b8788017d34dda,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198370052909997877, guid: 8c361b6b5ba4a6f459b8788017d34dda,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198370052909997877, guid: 8c361b6b5ba4a6f459b8788017d34dda,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198370052909997879, guid: 8c361b6b5ba4a6f459b8788017d34dda,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c361b6b5ba4a6f459b8788017d34dda, type: 3}

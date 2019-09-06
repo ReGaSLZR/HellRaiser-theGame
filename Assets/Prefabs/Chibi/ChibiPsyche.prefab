@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1155213620}
   - component: {fileID: 1155213621}
   - component: {fileID: 4151560745405859013}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ThrowSpawnPoint-Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 1301653309}
   - component: {fileID: 1301653310}
   - component: {fileID: 4964498934501419682}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ThrowSpawnPoint-Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 2590343526791209216}
   - component: {fileID: 2590343526791209222}
   - component: {fileID: 2590343526791209217}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WallLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 2040706424}
   - component: {fileID: 1905334431}
   - component: {fileID: 1905334432}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ChibiPsyche
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 2590343526900374105}
   - component: {fileID: 2590343526900374111}
   - component: {fileID: 2590343526900374110}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WallRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -558,7 +558,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2590343527478407300}
   - component: {fileID: 1336468798}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -605,7 +605,7 @@ GameObject:
   - component: {fileID: 2590343528042536542}
   - component: {fileID: 2590343528042536540}
   - component: {fileID: 2590343528042536543}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -682,6 +682,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: StatsNumberHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 8115173291445317423, guid: fb1e8904b40210b4f89b11970cd9fde9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8115173291445317416, guid: fb1e8904b40210b4f89b11970cd9fde9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -737,25 +742,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8115173290345660751, guid: fb1e8904b40210b4f89b11970cd9fde9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8115173290345660745, guid: fb1e8904b40210b4f89b11970cd9fde9,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8115173290345660745, guid: fb1e8904b40210b4f89b11970cd9fde9,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8115173290345660745, guid: fb1e8904b40210b4f89b11970cd9fde9,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8115173290345660745, guid: fb1e8904b40210b4f89b11970cd9fde9,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb1e8904b40210b4f89b11970cd9fde9, type: 3}

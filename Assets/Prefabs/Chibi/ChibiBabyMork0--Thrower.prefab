@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 16990780}
   - component: {fileID: 3010638456290562441}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GroundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 167478971}
   - component: {fileID: 167478970}
   - component: {fileID: 167478969}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ProjectileSpawnPoint-Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 334938438}
   - component: {fileID: 334938437}
   - component: {fileID: 334938436}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TargetDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 422361719}
   - component: {fileID: 422361720}
   - component: {fileID: 4855588922642143526}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WallLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 618854950}
   - component: {fileID: 618854951}
   - component: {fileID: 1453944661937879165}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GroundLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 1114970173}
   - component: {fileID: 1114970174}
   - component: {fileID: 8678359874350971779}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GroundRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 1217247977}
   - component: {fileID: 1217247976}
   - component: {fileID: 1217247975}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ProjectileSpawnPoint-Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 1710033825}
   - component: {fileID: 1710033826}
   - component: {fileID: 8006769362515758914}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WallRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,7 +564,7 @@ GameObject:
   - component: {fileID: 3513235531357516001}
   - component: {fileID: 4189654125729516945}
   - component: {fileID: 3888517535082131005}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ChibiBabyMork0--Thrower
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -701,7 +701,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3513235532363598782}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19bb7f39ffc02214c8d2bc78316dd175, type: 3}
   m_Name: 
@@ -779,6 +779,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: StatsNumberHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 8115173291445317423, guid: fb1e8904b40210b4f89b11970cd9fde9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8115173291445317416, guid: fb1e8904b40210b4f89b11970cd9fde9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -834,6 +839,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8115173290345660751, guid: fb1e8904b40210b4f89b11970cd9fde9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8115173290345660745, guid: fb1e8904b40210b4f89b11970cd9fde9,
         type: 3}
       propertyPath: m_text
@@ -857,27 +867,22 @@ PrefabInstance:
     - target: {fileID: 8115173290345660745, guid: fb1e8904b40210b4f89b11970cd9fde9,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8115173290345660745, guid: fb1e8904b40210b4f89b11970cd9fde9,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8115173290345660745, guid: fb1e8904b40210b4f89b11970cd9fde9,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8115173290345660745, guid: fb1e8904b40210b4f89b11970cd9fde9,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8115173290345660745, guid: fb1e8904b40210b4f89b11970cd9fde9,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8115173290345660740, guid: fb1e8904b40210b4f89b11970cd9fde9,
         type: 3}
