@@ -10,11 +10,14 @@ using static Scriptables.PlaySettings;
 
 namespace Character.Stats {
 
+    [RequireComponent(typeof(Collider2D))]
     public class BaseStats : MonoBehaviour
     {
 
         [Inject]
         protected readonly ColorScheme m_colorScheme;
+
+        protected Collider2D m_compCollider2D;
 
         [SerializeField]
         [Required]
@@ -33,13 +36,20 @@ namespace Character.Stats {
 
         protected virtual void Awake()
         {
-            m_info.ResetHealthStamina();
+            m_compCollider2D = GetComponent<Collider2D>();
+
             m_reactiveHealth.Value = m_info.m_health;
             m_reactiveStamina.Value = m_info.m_stamina;
         }
 
+        protected virtual void OnEnable()
+        {
+            m_compCollider2D.enabled = true;
+        }
+
         protected virtual void OnDisable()
         {
+            m_compCollider2D.enabled = false;
             m_disposables.Clear();
         }
 

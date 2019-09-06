@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   m_level: 1
-  m_health: 100
+  m_health: 30
   m_stamina: 100
   m_statMovement:
     m_movSpeed: 1.5

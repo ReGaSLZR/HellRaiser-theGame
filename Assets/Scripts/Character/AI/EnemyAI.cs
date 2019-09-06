@@ -7,6 +7,8 @@ namespace Character.AI {
     public class EnemyAI : BaseAI
     {
 
+        [Space]
+
         [SerializeField]
         [Required]
         private BaseTrigger m_chainedTriggerOnDeath;

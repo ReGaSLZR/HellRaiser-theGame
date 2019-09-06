@@ -31,6 +31,6 @@ MonoBehaviour:
     m_critChance: 100
     m_critDamage: 58
   m_statDefense:
-    m_physicalDefense: 5
+    m_physicalDefense: 62
     m_magickDefense: 0
     m_isMagusBane: 0

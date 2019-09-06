@@ -27,17 +27,20 @@ namespace Scriptables {
         [HideInInspector]
         public int m_level;
 
-        [HideInInspector]
+        [DisableIf("m_isPlayable")]
+        [Range(0, HEALTH_MAX)]
         public int m_health = HEALTH_MAX;
 
-        [HideInInspector]
+        [DisableIf("m_isPlayable")]
+        [Range(0, STAMINA_MAX)]
         public int m_stamina = STAMINA_MAX;
 
         public StatMovement m_statMovement;
         public StatOffense m_statOffense;
         public StatDefense m_statDefense;
 
-        public void ResetHealthStamina() {
+        public void SetToFullHealthStamina()
+        {
             m_health = HEALTH_MAX;
             m_stamina = STAMINA_MAX;
         }

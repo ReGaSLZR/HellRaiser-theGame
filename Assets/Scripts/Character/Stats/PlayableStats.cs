@@ -19,20 +19,32 @@ namespace Character.Stats
 
         protected override void Awake()
         {
-            base.Awake();
-
-            if (!m_info.m_isPlayable) {
+            if (!m_info.m_isPlayable)
+            {
                 LogUtil.PrintError(gameObject, GetType(), "Awake(): PlayableStats.m_info has non-playable stats. Destroying...");
                 Destroy(this);
             }
+            else {
+                m_info.SetToFullHealthStamina(); //this is to ignore the changes to the SO's values due to the previous play mode
+            }
+
+            base.Awake();
         }
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
+
             m_modelStatsSetter.RegisterCharacterForStats(m_info);
             m_reactiveMoney.Value = m_modelStatsGetter.GetInventoryMoney().Value;
             
             InitObservers();
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+            m_compCollider2D.enabled = true;
         }
 
         private void InitObservers()

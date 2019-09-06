@@ -30,8 +30,7 @@ namespace Character.AI {
 
         protected virtual void Awake()
         {
-            m_movement.SetStatMovement(m_stats.GetStatMovement());
-            m_skillMain.SetStatOffense(m_stats.GetStatOffense());
+            DistributeStats();
         }
 
         protected virtual void OnEnable()
@@ -53,7 +52,12 @@ namespace Character.AI {
             InitUncontrolledObservers();
         }
 
-        private void InitUncontrolledObservers() {
+        protected void DistributeStats() {
+            m_movement.SetStatMovement(m_stats.GetStatMovement());
+            m_skillMain.SetStatOffense(m_stats.GetStatOffense());
+        }
+
+        protected void InitUncontrolledObservers() {
             //upon getting hurt
             m_stats.IsHurt()
                 .Subscribe(isHurt =>
@@ -81,7 +85,7 @@ namespace Character.AI {
                 .AddTo(this);
         }
 
-        private void InitControlledObservers() {
+        protected void InitControlledObservers() {
             if (m_targetDetector != null)
             {
                 //upon target detection
