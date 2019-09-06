@@ -9,6 +9,9 @@ namespace Character.AI {
 
     public class BaseAI : MonoBehaviour
     {
+
+        [Header("----- Base variables -----")]
+
         [SerializeField]
         protected TargetDetector m_targetDetector;
 

@@ -172,6 +172,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13bca28e6e642894981a2798dfc8904d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_compAnimator: {fileID: 8241063537023895922}
+  m_compRigidBody2D: {fileID: 8241063537023895921}
+  m_compSpriteRenderer: {fileID: 8241063537023895923}
   m_movementDirection: 0
   m_shouldFlipSprite: 1
   m_animMove: 
@@ -189,6 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b7fe7f91c15ed40b46a58074eedbcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_compAnimator: {fileID: 8241063537023895922}
   m_animSkill: 
   m_animTriggerStopper: 
   m_skillDelay: 0
@@ -212,6 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad075f55284a49428f9d6daa4630fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_compCollider2D: {fileID: 8241063537023895934}
   m_info: {fileID: 11400000, guid: 48e06e2ceca4b984b8a8c49da7860475, type: 2}
   m_textStatChange: {fileID: 198370052909997877}
 --- !u!1 &8241063537674714411

@@ -4,11 +4,14 @@ using NaughtyAttributes;
 namespace Character.Skill
 {
 
-    [RequireComponent(typeof(Collider2D))]
     public class CamouflageSkill : BaseSkill
     {
 
+        [Header("----- Child variables -----")]
+
         //COMPONENTS
+        [SerializeField]
+        [Required]
         private Collider2D m_compCollider2D;
 
         [SerializeField]
@@ -25,7 +28,6 @@ namespace Character.Skill
         {
             base.Awake();
 
-            m_compCollider2D = GetComponent<Collider2D>();
             m_colliderOriginal = m_compCollider2D;
             m_tagOriginal = gameObject.tag;
         }

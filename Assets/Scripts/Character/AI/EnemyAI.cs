@@ -7,7 +7,7 @@ namespace Character.AI {
     public class EnemyAI : BaseAI
     {
 
-        [Space]
+        [Header("----- Child variables -----")]
 
         [SerializeField]
         [Required]

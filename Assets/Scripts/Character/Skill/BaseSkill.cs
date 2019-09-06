@@ -1,15 +1,19 @@
-﻿using Scriptables;
+﻿using NaughtyAttributes;
+using Scriptables;
 using System.Collections;
 using UniRx;
 using UnityEngine;
 
 namespace Character.Skill {
 
-    [RequireComponent(typeof(Animator))]
     public class BaseSkill : MonoBehaviour
     {
 
+        [Header("----- Base variables -----")]
+
         //COMPONENTS
+        [SerializeField]
+        [Required]
         protected Animator m_compAnimator;
 
         [SerializeField]
@@ -47,7 +51,6 @@ namespace Character.Skill {
         private bool m_tempStopRepeatingSkill;
 
         protected virtual void Awake() {
-            m_compAnimator = GetComponent<Animator>();
             SetChildFXActive(false);
 
             if (m_childFX != null) {

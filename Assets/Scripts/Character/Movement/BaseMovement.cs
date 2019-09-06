@@ -1,19 +1,25 @@
-﻿using Scriptables;
+﻿using NaughtyAttributes;
+using Scriptables;
 using UniRx;
 using UnityEngine;
 using static UnityEngine.RectTransform;
 
 namespace Character.Movement {
 
-    [RequireComponent(typeof(Animator))]
-    [RequireComponent(typeof(Rigidbody2D))]
-    [RequireComponent(typeof(SpriteRenderer))]
     public abstract class BaseMovement : MonoBehaviour
     {
 
+        [Header("----- Base variables -----")]
+
         //COMPONENTS
+        [SerializeField]
+        [Required]
         protected Animator m_compAnimator;
+        [SerializeField]
+        [Required]
         protected Rigidbody2D m_compRigidBody2D;
+        [SerializeField]
+        [Required]
         protected SpriteRenderer m_compSpriteRenderer;
 
         [SerializeField]
@@ -33,13 +39,6 @@ namespace Character.Movement {
 
         protected ReactiveProperty<bool> m_reactiveIsMovEnabled = new ReactiveProperty<bool>(true);
         protected CompositeDisposable m_disposables = new CompositeDisposable();
-
-        protected virtual void Awake()
-        {
-            m_compAnimator = GetComponent<Animator>();
-            m_compSpriteRenderer = GetComponent<SpriteRenderer>();
-            m_compRigidBody2D = GetComponent<Rigidbody2D>();
-        }
 
         protected virtual void OnEnable()
         {

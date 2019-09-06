@@ -11,6 +11,8 @@ namespace Character.Skill {
         [Inject]
         private readonly MerchantModel.Setter m_modelMerchant;
 
+        [Header("----- Child variables -----")]
+
         [SerializeField]
         private MerchantItem[] m_goodies = new MerchantItem[3];
 

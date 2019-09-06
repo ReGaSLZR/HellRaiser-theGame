@@ -7,6 +7,8 @@ namespace Character.Skill {
     public class SeekTargetToFollowSkill : BaseSkill
     {
 
+        [Header("----- Child variables -----")]
+
         [SerializeField]
         [Required]
         private TargetDetector m_targetDetector;

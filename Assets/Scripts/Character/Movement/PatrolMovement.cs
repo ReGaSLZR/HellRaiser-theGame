@@ -9,6 +9,8 @@ namespace Character.Movement {
     public class PatrolMovement : BaseMovement
     {
 
+        [Header("----- Child variables -----")]
+
         [SerializeField]
         protected GroundManager m_ground;
 

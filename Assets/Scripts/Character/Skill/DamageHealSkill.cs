@@ -35,7 +35,7 @@ namespace Character.Skill {
         [Inject]
         private readonly Instantiator m_instantiator;
 
-        [Space]
+        [Header("----- Child variables -----")]
 
         [SerializeField]
         [Required]

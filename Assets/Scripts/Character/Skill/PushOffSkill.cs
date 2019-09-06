@@ -8,6 +8,8 @@ namespace Character.Skill {
     public class PushOffSkill : BaseSkill
     {
 
+        [Header("----- Child variables -----")]
+
         [SerializeField]
         [Required]
         private TargetDetector m_targetDetector;

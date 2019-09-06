@@ -21,6 +21,8 @@ namespace Character.AI {
         [Inject]
         private readonly GamePlayStatsModel.Getter m_modelStatsGetter;
 
+        [Header("----- Child variables -----")]
+
         [SerializeField]
         [Required]
         private BaseSkill m_skillSecondary;

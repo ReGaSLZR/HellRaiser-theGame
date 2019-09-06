@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13bca28e6e642894981a2798dfc8904d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ground: {fileID: 6444358474997155961}
-  m_animMove: '-'
-  m_animStunned: isHurt
+  m_compAnimator: {fileID: 4641134515178148429}
+  m_compRigidBody2D: {fileID: 8118048778791412370}
+  m_compSpriteRenderer: {fileID: 4641134515178148428}
   m_movementDirection: 0
   m_shouldFlipSprite: 1
+  m_animMove: '-'
+  m_animStunned: isHurt
+  m_stunLength: 0.25
 --- !u!1001 &8118048778187938288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27,12 +30,12 @@ PrefabInstance:
     - target: {fileID: 3513235532363598782, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
       propertyPath: m_Name
-      value: ChibiBabyMork-Idle
+      value: ChibiBabyMork0-Idle
       objectReference: {fileID: 0}
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.79
+      value: 7.35
       objectReference: {fileID: 0}
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
@@ -47,17 +50,17 @@ PrefabInstance:
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
@@ -84,7 +87,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6324747076975674038, guid: e48bdc180356ab44ab84043f6274fbbd,
+    - target: {fileID: 3888517535082131005, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
       propertyPath: m_movement
       value: 
@@ -98,15 +101,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8118048778187938288}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6444358474997155961 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3010638456290562441, guid: e48bdc180356ab44ab84043f6274fbbd,
+--- !u!212 &4641134515178148428 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3513235532363598780, guid: e48bdc180356ab44ab84043f6274fbbd,
     type: 3}
   m_PrefabInstance: {fileID: 8118048778187938288}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 204903831152b174cb44db96161374a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+--- !u!95 &4641134515178148429 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3513235532363598781, guid: e48bdc180356ab44ab84043f6274fbbd,
+    type: 3}
+  m_PrefabInstance: {fileID: 8118048778187938288}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &8118048778791412370 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 1544059746, guid: e48bdc180356ab44ab84043f6274fbbd,
+    type: 3}
+  m_PrefabInstance: {fileID: 8118048778187938288}
+  m_PrefabAsset: {fileID: 0}

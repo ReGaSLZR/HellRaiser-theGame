@@ -219,6 +219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13bca28e6e642894981a2798dfc8904d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_compAnimator: {fileID: 6123591465342254214}
+  m_compRigidBody2D: {fileID: 6123591465342254212}
+  m_compSpriteRenderer: {fileID: 6123591465342254235}
   m_movementDirection: 0
   m_shouldFlipSprite: 0
   m_animMove: 
@@ -270,7 +273,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad075f55284a49428f9d6daa4630fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_compCollider2D: {fileID: 6123591465342254234}
   m_info: {fileID: 11400000, guid: c0d569a32a3001f48b26791a711981cd, type: 2}
+  m_textStatChange: {fileID: 0}
 --- !u!114 &6123591464771384597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe14ea0c98ca4646b221da7be51bec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_compAnimator: {fileID: 6123591465342254214}
   m_animSkill: 
   m_animTriggerStopper: 
   m_skillDelay: 0
@@ -464,6 +470,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006899c27c18e5a40866a7b36c234c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_compAnimator: {fileID: 6123591465342254214}
+  m_compRigidBody2D: {fileID: 6123591465342254212}
+  m_compSpriteRenderer: {fileID: 6123591465342254235}
   m_movementDirection: 0
   m_shouldFlipSprite: 1
   m_animMove: 
@@ -482,7 +491,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad075f55284a49428f9d6daa4630fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_compCollider2D: {fileID: 6123591465342254234}
   m_info: {fileID: 11400000, guid: 1d99372db30250247bbe3c571add0652, type: 2}
+  m_textStatChange: {fileID: 0}
 --- !u!114 &6123591465342254210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,6 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31e4266bca74cf04aac37c63569b343c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_compAnimator: {fileID: 6123591465342254214}
   m_animSkill: 
   m_animTriggerStopper: 
   m_skillDelay: 0
@@ -503,6 +515,9 @@ MonoBehaviour:
   m_isRepeating: 0
   m_childFX: {fileID: 0}
   m_targetDetector: {fileID: 6123591464246597936}
-  m_skillDamageRange: {x: 70, y: 80}
+  m_inflictType: 0
+  m_variation: 0
+  m_statAffected: 0
+  m_skillValueRange: {x: 1, y: 10}
   m_isDestroyedOnUse: 1
   m_delayBeforeDestruction: 0

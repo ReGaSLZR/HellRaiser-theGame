@@ -1,14 +1,20 @@
-﻿using UnityEngine;
+﻿using NaughtyAttributes;
+using UnityEngine;
 
 namespace Character.Skill {
 
-    [RequireComponent(typeof(Rigidbody2D))]
-    [RequireComponent(typeof(SpriteRenderer))]
     public class DashSkill : BaseSkill
     {
 
+        [Header("----- Child variables -----")]
+
         //COMPONENTS
+        [SerializeField]
+        [Required]
         private Rigidbody2D m_compRigidbody2D;
+
+        [SerializeField]
+        [Required]
         private SpriteRenderer m_compSpriteRenderer;
 
         [SerializeField]
@@ -21,9 +27,6 @@ namespace Character.Skill {
         protected override void Awake()
         {
             base.Awake();
-
-            m_compRigidbody2D = GetComponent<Rigidbody2D>();
-            m_compSpriteRenderer = GetComponent<SpriteRenderer>();
 
             m_constraintsOriginal = m_compRigidbody2D.constraints;
             m_constraintsDash = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;

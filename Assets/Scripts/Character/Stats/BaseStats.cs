@@ -10,13 +10,16 @@ using static Scriptables.PlaySettings;
 
 namespace Character.Stats {
 
-    [RequireComponent(typeof(Collider2D))]
     public class BaseStats : MonoBehaviour
     {
 
         [Inject]
         protected readonly ColorScheme m_colorScheme;
 
+        [Header("----- Base variables -----")]
+
+        [SerializeField]
+        [Required]
         protected Collider2D m_compCollider2D;
 
         [SerializeField]
@@ -36,8 +39,6 @@ namespace Character.Stats {
 
         protected virtual void Awake()
         {
-            m_compCollider2D = GetComponent<Collider2D>();
-
             m_reactiveHealth.Value = m_info.m_health;
             m_reactiveStamina.Value = m_info.m_stamina;
         }

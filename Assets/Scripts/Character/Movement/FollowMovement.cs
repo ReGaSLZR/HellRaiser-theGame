@@ -8,7 +8,7 @@ namespace Character.Movement {
     public class FollowMovement : BaseMovement
     {
 
-        [Space]
+        [Header("----- Child variables -----")]
 
         [SerializeField]
         [Range(0.1f, 10f)]

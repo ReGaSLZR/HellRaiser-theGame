@@ -17,6 +17,8 @@ namespace Character.Movement
         [Inject]
         private BaseInputModel m_modelInput;
 
+        [Header("----- Child variables -----")]
+
         [SerializeField]
         private string m_animOnGround;
         [SerializeField]
@@ -52,9 +54,8 @@ namespace Character.Movement
 
         private DateTimeOffset m_jumpLastTimeStamp;
 
-        protected override void Awake()
+        private void Start()
         {
-            base.Awake();
             InitUncontrolledObservers();
         }
 

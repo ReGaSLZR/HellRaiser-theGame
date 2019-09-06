@@ -1,7 +1,6 @@
 ﻿using Character.Movement;
 using Character.Skill;
 using Character.Stats;
-using Scriptables;
 using System.Collections.Generic;
 using UnityEngine;
 using Utils;
@@ -32,7 +31,7 @@ namespace Character.AI {
 
         }
 
-        [Space]
+        [Header("----- Child variables -----")]
 
         [SerializeField]
         [Tooltip("Do NOT include in this list the entries for MAIN Movement and Skill. They will be put as index 0 in runtime.")]

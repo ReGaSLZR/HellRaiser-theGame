@@ -357,6 +357,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ef2a4f02c98d040b4d72c486474781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_compAnimator: {fileID: 2590343526880155038}
+  m_compRigidBody2D: {fileID: 2590343526880155033}
+  m_compSpriteRenderer: {fileID: 2590343526880155045}
   m_movementDirection: 0
   m_shouldFlipSprite: 0
   m_animMove: isRunning
@@ -404,6 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed7f40e28ca7f64a9fd9682e9a8e1d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_compCollider2D: {fileID: 2590343526880155035}
   m_info: {fileID: 11400000, guid: be06b1a92c65c7f4e8f0feb14889fb85, type: 2}
   m_textStatChange: {fileID: 8296422119397349117}
 --- !u!114 &2040706424
@@ -418,6 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a554aad1044b55f4488f9dff98f63d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_compAnimator: {fileID: 2590343526880155038}
   m_animSkill: isUsingSkill1
   m_animTriggerStopper: 
   m_skillDelay: 0
@@ -425,6 +430,7 @@ MonoBehaviour:
   m_skillCooldown: 0.25
   m_isRepeating: 0
   m_childFX: {fileID: 0}
+  m_compSpriteRenderer: {fileID: 2590343526880155045}
   m_prefabProjectile: {fileID: 7868619509480113042, guid: 01d2ad7c01b733b4a8a9cba4b73340c1,
     type: 3}
   m_throwForce: 150
@@ -444,6 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c0660cc71706644ab056c8461d08d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_compAnimator: {fileID: 2590343526880155038}
   m_animSkill: isUsingSkill2
   m_animTriggerStopper: 
   m_skillDelay: 0
@@ -451,6 +458,8 @@ MonoBehaviour:
   m_skillCooldown: 0.25
   m_isRepeating: 0
   m_childFX: {fileID: 0}
+  m_compRigidbody2D: {fileID: 2590343526880155033}
+  m_compSpriteRenderer: {fileID: 2590343526880155045}
   m_dashForce: 1200
 --- !u!114 &1905334432
 MonoBehaviour:
@@ -464,6 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7dc738137680194d97ec19004510128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_compAnimator: {fileID: 2590343526880155038}
   m_animSkill: isUsingSkill3
   m_animTriggerStopper: isUsingSkill3Trigger
   m_skillDelay: 0
@@ -471,6 +481,7 @@ MonoBehaviour:
   m_skillCooldown: 0.5
   m_isRepeating: 0
   m_childFX: {fileID: 0}
+  m_compCollider2D: {fileID: 2590343526880155035}
   m_tagOnCamouflage: Player-Camouflaged
   m_colliderOnCamouflage: {fileID: 0}
 --- !u!1 &2590343526900374104

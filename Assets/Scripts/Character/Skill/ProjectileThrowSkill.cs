@@ -7,11 +7,14 @@ using Utils;
 
 namespace Character.Skill {
 
-    [RequireComponent(typeof(SpriteRenderer))]
     public class ProjectileThrowSkill : BaseSkill
     {
 
+        [Header("----- Child variables -----")]
+
         //COMPONENTS
+        [SerializeField]
+        [Required]
         private SpriteRenderer m_compSpriteRenderer;
 
         //INJECTIBLES
@@ -37,12 +40,6 @@ namespace Character.Skill {
         [SerializeField]
         [Required]
         private SpawnPoint m_spawnPointPlus;
-
-        protected override void Awake()
-        {
-            base.Awake();
-            m_compSpriteRenderer = GetComponent<SpriteRenderer>();
-        }
 
         protected override void OnSkillStart()
         {

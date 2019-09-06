@@ -1,12 +1,16 @@
-﻿using UnityEngine;
+﻿using NaughtyAttributes;
+using UnityEngine;
 
 namespace Character.Skill {
 
-    [RequireComponent(typeof(Rigidbody2D))]
     public class FallSkill : BaseSkill
     {
 
+        [Header("----- Child variables -----")]
+
         //COMPONENTS
+        [SerializeField]
+        [Required]
         private Rigidbody2D m_compRigidbody2D;
 
         [Space]
@@ -19,7 +23,6 @@ namespace Character.Skill {
         {
             base.Awake();
 
-            m_compRigidbody2D = GetComponent<Rigidbody2D>();
             m_compRigidbody2D.bodyType = RigidbodyType2D.Static;
         }
 

@@ -706,6 +706,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19bb7f39ffc02214c8d2bc78316dd175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_compAnimator: {fileID: 3513235532363598781}
+  m_compRigidBody2D: {fileID: 1544059746}
+  m_compSpriteRenderer: {fileID: 3513235532363598780}
   m_movementDirection: 0
   m_shouldFlipSprite: 1
   m_animMove: isPatrolling
@@ -723,6 +726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a554aad1044b55f4488f9dff98f63d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_compAnimator: {fileID: 3513235532363598781}
   m_animSkill: isAttacking
   m_animTriggerStopper: 
   m_skillDelay: 0
@@ -730,6 +734,7 @@ MonoBehaviour:
   m_skillCooldown: 0.25
   m_isRepeating: 1
   m_childFX: {fileID: 0}
+  m_compSpriteRenderer: {fileID: 3513235532363598780}
   m_prefabProjectile: {fileID: 7868619509480113042, guid: 01d2ad7c01b733b4a8a9cba4b73340c1,
     type: 3}
   m_throwForce: 150
@@ -749,6 +754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad075f55284a49428f9d6daa4630fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_compCollider2D: {fileID: 1544059747}
   m_info: {fileID: 11400000, guid: 09f49f3e43039e248b9a1745380cc566, type: 2}
   m_textStatChange: {fileID: 877957717}
 --- !u!114 &3888517535082131005
