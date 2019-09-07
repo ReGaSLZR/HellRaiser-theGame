@@ -1,4 +1,5 @@
 ﻿using Character.Ground;
+using NaughtyAttributes;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace Character.Movement {
         [Header("----- Child variables -----")]
 
         [SerializeField]
+        [Required]
         protected GroundManager m_ground;
 
         private float m_patrolMovementWithDirection = 1f;

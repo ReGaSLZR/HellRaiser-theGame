@@ -35,7 +35,7 @@ namespace Character.Movement {
         [SerializeField]
         private string m_animStunned;
 
-        protected StatMovement m_statMovement;
+        protected StatMovement m_statMovement = new StatMovement(0f, 0f);
 
         protected ReactiveProperty<bool> m_reactiveIsMovEnabled = new ReactiveProperty<bool>(true);
         protected CompositeDisposable m_disposables = new CompositeDisposable();

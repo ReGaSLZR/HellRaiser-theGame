@@ -114,7 +114,7 @@ namespace Character {
                 //filter targets by tags
                 foreach (Collider2D collider2D in tempTargets)
                 {
-                    if (IsMatchingTag(collider2D.tag))
+                    if (collider2D.isActiveAndEnabled && IsMatchingTag(collider2D.tag))
                     {
                         m_targets.Add(collider2D);
                     }

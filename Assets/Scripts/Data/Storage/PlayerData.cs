@@ -39,17 +39,17 @@ namespace Data.Storage {
 
         private static void ExecuteSave(string path, object data) {
             BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Create);
+            FileStream stream = new FileStream(path, FileMode.OpenOrCreate);
 
             formatter.Serialize(stream, data);
             stream.Close();
         }
 
         private static object ExecuteLoad(string path) {
-            if (File.Exists(Inventory.SAVE_PATH))
+            if (File.Exists(path))
             {
                 BinaryFormatter formatter = new BinaryFormatter();
-                FileStream stream = new FileStream(Inventory.SAVE_PATH, FileMode.Open);
+                FileStream stream = new FileStream(path, FileMode.Open);
                 object data = formatter.Deserialize(stream);
 
                 stream.Close();
@@ -91,12 +91,15 @@ namespace Data.Storage {
         public static MissionProgression LoadMissionProgression() {
             object loadedData = ExecuteLoad(MissionProgression.SAVE_PATH);
 
-            if (loadedData == null) {
+            if (loadedData == null)
+            {
                 LogUtil.PrintError("PlayerData.LoadMissionProgression(): returning blank data instead.");
                 return new MissionProgression(0, 0);
             }
-
-            return loadedData as MissionProgression;
+            else
+            {
+                return loadedData as MissionProgression;
+            }
         }
 
     }

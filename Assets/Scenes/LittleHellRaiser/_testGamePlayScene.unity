@@ -1156,7 +1156,7 @@ MonoBehaviour:
   m_shouldFlipSprite: 0
   m_animMove: 
   m_animStunned: 
-  m_stunLength: 0.25
+  m_customStunLength: 0.25
 --- !u!114 &105987863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1229,6 +1229,7 @@ MonoBehaviour:
   m_movement: {fileID: 105987862}
   m_stats: {fileID: 105987863}
   m_skillMain: {fileID: 105987864}
+  m_triggerOnDeath: {fileID: 0}
 --- !u!212 &105987867
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3989,7 +3990,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &416521690
 Transform:
   m_ObjectHideFlags: 0
@@ -4775,7 +4776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &478453974
 Transform:
   m_ObjectHideFlags: 0
@@ -5372,7 +5373,7 @@ PrefabInstance:
     - target: {fileID: 2412645691397292525, guid: 4d66881afb893f04baf625df162efe68,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2412645691397292520, guid: 4d66881afb893f04baf625df162efe68,
         type: 3}
@@ -10466,7 +10467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1104589518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10654,7 +10655,7 @@ PrefabInstance:
     - target: {fileID: 5699316324740432104, guid: 8ad227d5ff5dc61428eaa6b26178243b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5699316324740432109, guid: 8ad227d5ff5dc61428eaa6b26178243b,
         type: 3}
@@ -13749,11 +13750,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChibiBabyMork0--ThrowerBOSS
       objectReference: {fileID: 0}
-    - target: {fileID: 6721680967852633828, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6721680967852633825, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13809,45 +13805,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6721680967852633825, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.709599
-      objectReference: {fileID: 0}
-    - target: {fileID: 6721680967852633825, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.709599
-      objectReference: {fileID: 0}
-    - target: {fileID: 6721680967852633825, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.709599
-      objectReference: {fileID: 0}
-    - target: {fileID: 6721680967852633830, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6721680967852633830, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6721680967852633830, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7893033474444254776, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c,
+    - target: {fileID: 161955458, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c, type: 3}
+      propertyPath: m_chainedTriggerOnDeath
+      value: 
+      objectReference: {fileID: 1904451755}
+    - target: {fileID: 161955458, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c, type: 3}
+      propertyPath: m_triggerOnDeath
+      value: 
+      objectReference: {fileID: 1104589518}
+    - target: {fileID: 2752365012594213510, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c,
         type: 3}
       propertyPath: m_Mass
-      value: 3.6473782
-      objectReference: {fileID: 0}
-    - target: {fileID: 7893033475366380572, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 7
+      value: 10.942135
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c, type: 3}
@@ -14306,7 +14275,7 @@ MonoBehaviour:
   m_shouldFlipSprite: 0
   m_animMove: 
   m_animStunned: 
-  m_stunLength: 0.25
+  m_customStunLength: 0.25
 --- !u!114 &1567085001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14357,6 +14326,7 @@ MonoBehaviour:
   m_movement: {fileID: 1567085000}
   m_stats: {fileID: 1567085001}
   m_skillMain: {fileID: 1567084999}
+  m_triggerOnDeath: {fileID: 0}
 --- !u!212 &1567085004
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17739,7 +17709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1904451755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17753,7 +17723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isTriggeredOnGamePlayStart: 0
-  m_triggerType: 1
+  m_triggerType: 3
 --- !u!61 &1904451756
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17817,7 +17787,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1948097668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18406,6 +18376,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ChibiBabyMork-Idle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641134515178148430, guid: 5514190d572c2b54caa20764e115834d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4641134515178148427, guid: 5514190d572c2b54caa20764e115834d,
         type: 3}
@@ -19900,7 +19875,7 @@ PrefabInstance:
     - target: {fileID: 3955931305676901384, guid: d673f99e9d9c6214abfb98d2a3248012,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3955931305676901389, guid: d673f99e9d9c6214abfb98d2a3248012,
         type: 3}
@@ -20026,6 +20001,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3888517535082131005, guid: e48bdc180356ab44ab84043f6274fbbd,
+        type: 3}
+      propertyPath: m_triggerOnDeath
+      value: 
+      objectReference: {fileID: 1104589518}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
 --- !u!1001 &6123591464595896214
@@ -20187,6 +20167,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ChibiStephen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8241063537023895925, guid: 8c361b6b5ba4a6f459b8788017d34dda,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8241063537023895920, guid: 8c361b6b5ba4a6f459b8788017d34dda,
         type: 3}

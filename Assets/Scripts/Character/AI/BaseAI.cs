@@ -1,6 +1,7 @@
 ﻿using Character.Movement;
 using Character.Skill;
 using Character.Stats;
+using GamePlay.Base;
 using NaughtyAttributes;
 using UniRx;
 using UnityEngine;
@@ -28,6 +29,11 @@ namespace Character.AI {
         [SerializeField]
         [Required]
         protected BaseSkill m_skillMain;
+
+        [Space]
+
+        [SerializeField]
+        private BaseTrigger m_triggerOnDeath;
 
         protected CompositeDisposable m_disposables = new CompositeDisposable();
 
@@ -117,6 +123,11 @@ namespace Character.AI {
         }
 
         protected virtual void OnDeath() {
+            if(m_triggerOnDeath != null)
+            {
+                m_triggerOnDeath.Execute();
+            }
+
             Destroy(gameObject, m_stats.GetStatMovement().m_stunLength);
         }
 

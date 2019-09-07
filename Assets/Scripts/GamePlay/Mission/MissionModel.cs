@@ -1,4 +1,5 @@
 ﻿using Data.Storage;
+using NaughtyAttributes;
 using Scriptables;
 using System.Collections;
 using TMPro;
@@ -41,6 +42,7 @@ namespace GamePlay.Mission {
         #endregion
 
         [SerializeField]
+        [Required]
         private MissionInfo m_missionInfo;
 
         [SerializeField]
@@ -74,25 +76,26 @@ namespace GamePlay.Mission {
                     UpdateObjectiveTexts();
                 })
                 .AddTo(this);
-
-            StartTimer();
         }
 
         private void OnDestroy()
         {
-            if (MissionStatus.CLEARED == m_missionStatus.Value) {
-                LogUtil.PrintInfo(gameObject, GetType(), "OnDestroy(): Saving mission progression...");
-                if (m_missionInfo.IsMainMission() &&
-                                        (m_missionInfo.m_buildIndex > m_missionProgression.m_mainCleared))
+            if (MissionStatus.CLEARED == m_missionStatus.Value)
+            {
+                if ((m_missionInfo.m_buildIndex > m_missionProgression.m_mainCleared)
+                    && m_missionInfo.IsMainMission())
                 {
-                    LogUtil.PrintInfo(gameObject, GetType(), "OnDestroy(): Saving MAIN mission progression...");
+                    LogUtil.PrintInfo(gameObject, GetType(), "Saving MAIN mission progression...");
                     PlayerData.Save(new MissionProgression(m_missionInfo.m_buildIndex, m_missionProgression.m_sideCleared));
                 }
-                else if (!m_missionInfo.IsMainMission() &&
-                    (m_missionInfo.m_buildIndex > m_missionProgression.m_sideCleared))
+                else if ((m_missionInfo.m_buildIndex > m_missionProgression.m_sideCleared)
+                    && !m_missionInfo.IsMainMission())
                 {
-                    LogUtil.PrintInfo(gameObject, GetType(), "OnDestroy(): Saving SIDE mission progression...");
+                    LogUtil.PrintInfo(gameObject, GetType(), "Saving SIDE mission progression...");
                     PlayerData.Save(new MissionProgression(m_missionProgression.m_mainCleared, m_missionInfo.m_buildIndex));
+                }
+                else {
+                    LogUtil.PrintInfo(gameObject, GetType(), "Not saving mission progression. This mission was cleared by the player before.");
                 }
             }
         }

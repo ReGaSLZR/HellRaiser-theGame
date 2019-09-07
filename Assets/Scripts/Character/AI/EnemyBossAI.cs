@@ -7,7 +7,7 @@ using Utils;
 
 namespace Character.AI {
 
-    public class EnemyBossAI : EnemyAI
+    public class EnemyBossAI : BaseAI
     {
 
         [System.Serializable]
@@ -34,7 +34,7 @@ namespace Character.AI {
         [Header("----- Child variables -----")]
 
         [SerializeField]
-        [Tooltip("Do NOT include in this list the entries for MAIN Movement and Skill. They will be put as index 0 in runtime.")]
+        [Tooltip("Do NOT include in this list the entries for MAIN Movement, Stats and Skill. They will be put as index 0 in runtime.")]
         private List<BossPhase> m_phases;
 
         protected override void Awake()
@@ -50,17 +50,26 @@ namespace Character.AI {
                 m_phases.Insert(0, new BossPhase(m_movement, m_skillMain, m_stats));
             }
 
+
+            DisableAllPhases();
+            m_phases[0].SetPhaseEnabled(true);
         }
 
         protected override void OnDeath()
         {
-            if (m_phases.Count > 0) {
+            if (m_phases.Count > 1) {
                 DeleteOldPhase();
                 MoveToNewPhase();
             }
             else
             {
                 base.OnDeath();
+            }
+        }
+
+        private void DisableAllPhases() {
+            for (int x=0; x<m_phases.Count; x++) {
+                m_phases[x].SetPhaseEnabled(false);
             }
         }
 
