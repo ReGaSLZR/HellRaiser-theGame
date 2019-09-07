@@ -10720,7 +10720,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1121703348, guid: 8ad227d5ff5dc61428eaa6b26178243b, type: 3}
       propertyPath: m_skillValueRange.x
-      value: 20
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121703348, guid: 8ad227d5ff5dc61428eaa6b26178243b, type: 3}
+      propertyPath: m_skillValueRange.y
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ad227d5ff5dc61428eaa6b26178243b, type: 3}

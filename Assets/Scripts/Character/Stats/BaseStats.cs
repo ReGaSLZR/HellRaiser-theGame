@@ -90,23 +90,25 @@ namespace Character.Stats {
                 return;
             }
 
-            int damageReceivedReducedByDefense = StatsUtil.GetDamageReducedByDefense(damage, m_info.m_statDefense, type, m_info.m_rank);
+            int damageReceivedReducedByDefenseOrBane = StatsUtil.GetDamageReducedByDefense(damage, m_info.m_statDefense, type, m_info.m_rank);
 
-            string statChangeText = (damageReceivedReducedByDefense == 0) ? "NO DAMAGE" : 
-                "-" + damageReceivedReducedByDefense.ToString() + GetCriticalAppend(isCritical) +  //sample: -99\nCRIT!
+            string statChangeText = (damageReceivedReducedByDefenseOrBane == 0) ? "NO DAMAGE" : 
+                "-" + damageReceivedReducedByDefenseOrBane.ToString() + GetCriticalAppend(isCritical) +  //sample: -99\nCRIT!
                     ((m_info.m_statDefense.m_isMagusBane) ? //sample: (if bane) \nDAMAGE REDUCED! (else) *blank*
-                    ("\n" + StatsUtil.GetMagickDamageFeedbackOnMagusBane(m_info.m_rank, damageReceivedReducedByDefense)) : ""); 
+                    ("\n" + StatsUtil.GetMagickDamageFeedbackOnMagusBane(m_info.m_rank, damageReceivedReducedByDefenseOrBane)) : ""); 
 
-            Color textColor = (damageReceivedReducedByDefense == 0) ? m_colorScheme.m_damageNull : color;
+            Color textColor = (damageReceivedReducedByDefenseOrBane == 0) ? m_colorScheme.m_damageNull : color;
 
             UpdateStatChangeText(statChangeText, textColor);
             ForceShowStatChangeText();
 
             valueHolder.Value = Mathf.Clamp(
-                (valueHolder.Value - damageReceivedReducedByDefense), 0, valueHolder.Value);
+                (valueHolder.Value - damageReceivedReducedByDefenseOrBane), 0, valueHolder.Value);
 
-            StopAllCoroutines();
-            StartCoroutine(CorStun());
+            if (damageReceivedReducedByDefenseOrBane > 0) {
+                StopAllCoroutines();
+                StartCoroutine(CorStun());
+            }
 
         }
 
