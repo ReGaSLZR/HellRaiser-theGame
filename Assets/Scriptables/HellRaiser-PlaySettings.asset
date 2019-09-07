@@ -15,10 +15,10 @@ MonoBehaviour:
   m_gamePlayInput: 0
   m_colorScheme:
     m_healthGain: {r: 0, g: 1, b: 0.021962404, a: 1}
-    m_healthLoss: {r: 1, g: 0, b: 0, a: 1}
+    m_healthLoss: {r: 1, g: 0.3066038, b: 0.3066038, a: 1}
     m_damageNull: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}
     m_staminaGain: {r: 0, g: 0.5249777, b: 1, a: 1}
     m_staminaLoss: {r: 0.9987321, g: 0, b: 1, a: 1}
     m_moneyGain: {r: 1, g: 0.8535939, b: 0, a: 1}
-    m_moneyLoss: {r: 1, g: 0.38735008, b: 0, a: 1}
+    m_moneyLoss: {r: 0.6415094, g: 0.24905662, b: 0, a: 1}
     m_time: {r: 1, g: 1, b: 1, a: 1}

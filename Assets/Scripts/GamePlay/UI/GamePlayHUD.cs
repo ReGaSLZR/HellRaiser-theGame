@@ -12,7 +12,7 @@ namespace GamePlay.UI {
     public class GamePlayHUD : MonoBehaviour
     {
 
-        private const string PREFIX_CHARACTER_LEVEL = "Lv. ";
+        private const string PREFIX_CHARACTER_RANK = "Rank ";
 
         [Inject]
         private readonly GamePlayStatsModel.Getter m_modelStats;
@@ -24,7 +24,7 @@ namespace GamePlay.UI {
         [SerializeField]
         private RawImage m_characterAvatar;
         [SerializeField]
-        private TextMeshProUGUI m_textCharacterLevel;
+        private TextMeshProUGUI m_textCharacterRank;
 
         [Space]
 
@@ -74,7 +74,15 @@ namespace GamePlay.UI {
 
             m_modelStats.GetActiveCharacter()
                 .Subscribe(characterInfo => {
-                    m_textCharacterLevel.text = PREFIX_CHARACTER_LEVEL + characterInfo.m_level;
+                    if (characterInfo.m_rank == Scriptables.CharacterRank.F)
+                    {
+                        m_textCharacterRank.gameObject.SetActive(false);
+                    }
+                    else {
+                        m_textCharacterRank.gameObject.SetActive(true);
+                        m_textCharacterRank.text = PREFIX_CHARACTER_RANK + characterInfo.m_rank.ToString();
+                    }
+
                     m_characterAvatar.texture = characterInfo.m_infoUI.m_avatarMain;
                 })
                 .AddTo(this);

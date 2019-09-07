@@ -5784,7 +5784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &612107278
 Transform:
   m_ObjectHideFlags: 0
@@ -6206,7 +6206,7 @@ GameObject:
   - component: {fileID: 642447541}
   - component: {fileID: 642447540}
   m_Layer: 5
-  m_Name: Text-Level
+  m_Name: Text-Rank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6229,7 +6229,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 20}
+  m_SizeDelta: {x: 0, y: 30}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &642447540
 MonoBehaviour:
@@ -6251,7 +6251,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Lv. 1
+  m_text: Rank ?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6279,13 +6279,13 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -6296,7 +6296,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -6320,10 +6320,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 642447540}
-    characterCount: 5
+    characterCount: 6
     spriteCount: 0
     spaceCount: 1
-    wordCount: 2
+    wordCount: 1
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -10657,17 +10657,17 @@ PrefabInstance:
     - target: {fileID: 5699316324740432104, guid: 8ad227d5ff5dc61428eaa6b26178243b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5699316324740432109, guid: 8ad227d5ff5dc61428eaa6b26178243b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.29
+      value: 4.23
       objectReference: {fileID: 0}
     - target: {fileID: 5699316324740432109, guid: 8ad227d5ff5dc61428eaa6b26178243b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.071
+      value: 5.11
       objectReference: {fileID: 0}
     - target: {fileID: 5699316324740432109, guid: 8ad227d5ff5dc61428eaa6b26178243b,
         type: 3}
@@ -10713,6 +10713,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121703348, guid: 8ad227d5ff5dc61428eaa6b26178243b, type: 3}
+      propertyPath: m_inflictType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121703348, guid: 8ad227d5ff5dc61428eaa6b26178243b, type: 3}
+      propertyPath: m_skillValueRange.x
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ad227d5ff5dc61428eaa6b26178243b, type: 3}
@@ -13752,6 +13760,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChibiBabyMork0--ThrowerBOSS
       objectReference: {fileID: 0}
+    - target: {fileID: 6721680967852633828, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6721680967852633825, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14020,7 +14033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_characterAvatar: {fileID: 1670369271}
-  m_textCharacterLevel: {fileID: 642447540}
+  m_textCharacterRank: {fileID: 642447540}
   m_sliderHealth: {fileID: 1309111753}
   m_sliderHealthFill: {fileID: 1611740770}
   m_sliderStamina: {fileID: 2069354617}
@@ -19976,6 +19989,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ChibiBabyMork
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513235532363598782, guid: e48bdc180356ab44ab84043f6274fbbd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}

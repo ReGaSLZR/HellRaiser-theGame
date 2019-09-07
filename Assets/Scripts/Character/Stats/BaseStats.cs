@@ -90,12 +90,12 @@ namespace Character.Stats {
                 return;
             }
 
-            int damageReceivedReducedByDefense = StatsUtil.GetDamageReceived(damage, m_info.m_statDefense, type);
+            int damageReceivedReducedByDefense = StatsUtil.GetDamageReducedByDefense(damage, m_info.m_statDefense, type, m_info.m_rank);
 
-            //TODO: 
-            //For now, any magick attack dealt to a magusbane/spellbreaker is set to 0 and the stat change text is "No Damage"
             string statChangeText = (damageReceivedReducedByDefense == 0) ? "NO DAMAGE" : 
-                ("-" + damageReceivedReducedByDefense.ToString() + GetCriticalAppend(isCritical));
+                "-" + damageReceivedReducedByDefense.ToString() + GetCriticalAppend(isCritical) +  //sample: -99\nCRIT!
+                    ((m_info.m_statDefense.m_isMagusBane) ? //sample: (if bane) \nDAMAGE REDUCED! (else) *blank*
+                    ("\n" + StatsUtil.GetMagickDamageFeedbackOnMagusBane(m_info.m_rank, damageReceivedReducedByDefense)) : ""); 
 
             Color textColor = (damageReceivedReducedByDefense == 0) ? m_colorScheme.m_damageNull : color;
 

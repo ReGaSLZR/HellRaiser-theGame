@@ -24,8 +24,7 @@ namespace Scriptables {
 
         [Header("Stats")]
 
-        [HideInInspector]
-        public int m_level;
+        public CharacterRank m_rank;
 
         [DisableIf("m_isPlayable")]
         [Range(0, HEALTH_MAX)]
@@ -110,6 +109,17 @@ namespace Scriptables {
             m_isMagusBane = isMagusBane;
         }
 
+    }
+
+    public enum CharacterRank {
+        F,
+        E,
+        D,
+        C,
+        B,
+        A,
+        S,
+        SS
     }
 
 }
