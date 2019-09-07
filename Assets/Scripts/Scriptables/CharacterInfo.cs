@@ -56,9 +56,13 @@ namespace Scriptables {
         [Range(0.25f, 10f)]
         public float m_stunLength = 0.25f;
 
-        public StatMovement(float speed = 1f, float stunLength = 0.25f) {
+        [Range(0.25f, 10f)]
+        public float m_deathLength = 0.25f;
+
+        public StatMovement(float speed = 1f, float stunLength = 0.25f, float deathLength = 0.25f) {
             m_movSpeed = speed;
             m_stunLength = stunLength;
+            m_deathLength = deathLength;
         }
 
     }

@@ -1156,7 +1156,9 @@ MonoBehaviour:
   m_shouldFlipSprite: 0
   m_animMove: 
   m_animStunned: 
+  m_animDead: 
   m_customStunLength: 0.25
+  m_customDeathLength: 0.25
 --- !u!114 &105987863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13812,11 +13814,38 @@ PrefabInstance:
     - target: {fileID: 161955458, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c, type: 3}
       propertyPath: m_triggerOnDeath
       value: 
-      objectReference: {fileID: 1104589518}
+      objectReference: {fileID: 1126002874}
     - target: {fileID: 2752365012594213510, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c,
         type: 3}
       propertyPath: m_Mass
       value: 10.942135
+      objectReference: {fileID: 0}
+    - target: {fileID: 6721680967852633830, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6721680967852633830, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6721680967852633830, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 72654183, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c, type: 3}
+      propertyPath: m_animDead
+      value: isDead
+      objectReference: {fileID: 0}
+    - target: {fileID: 718104879, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c, type: 3}
+      propertyPath: m_animDead
+      value: isDead
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202470664, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c, type: 3}
+      propertyPath: m_animDead
+      value: isDead
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c3adb4929ba7ae46bd679f5c0ceb30c, type: 3}
@@ -14275,7 +14304,9 @@ MonoBehaviour:
   m_shouldFlipSprite: 0
   m_animMove: 
   m_animStunned: 
+  m_animDead: 
   m_customStunLength: 0.25
+  m_customDeathLength: 0.25
 --- !u!114 &1567085001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20171,7 +20202,7 @@ PrefabInstance:
     - target: {fileID: 8241063537023895925, guid: 8c361b6b5ba4a6f459b8788017d34dda,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8241063537023895920, guid: 8c361b6b5ba4a6f459b8788017d34dda,
         type: 3}

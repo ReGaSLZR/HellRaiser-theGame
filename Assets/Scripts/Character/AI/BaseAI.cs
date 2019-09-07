@@ -128,7 +128,8 @@ namespace Character.AI {
                 m_triggerOnDeath.Execute();
             }
 
-            Destroy(gameObject, m_stats.GetStatMovement().m_stunLength);
+            m_movement.Terminate();
+            Destroy(gameObject, m_stats.GetStatMovement().m_deathLength);
         }
 
         protected virtual void OnTargetDetection(bool isDetected) {

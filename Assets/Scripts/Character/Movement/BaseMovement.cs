@@ -34,11 +34,21 @@ namespace Character.Movement {
         protected string m_animMove;
         [SerializeField]
         private string m_animStunned;
+        [SerializeField]
+        private string m_animDead;
 
-        protected StatMovement m_statMovement = new StatMovement(0f, 0f);
+        protected StatMovement m_statMovement = new StatMovement(0f);
 
         protected ReactiveProperty<bool> m_reactiveIsMovEnabled = new ReactiveProperty<bool>(true);
         protected CompositeDisposable m_disposables = new CompositeDisposable();
+
+        protected virtual void Awake()
+        {
+            if(m_animDead.Equals(""))
+            {
+                m_animDead = m_animStunned;
+            }
+        }
 
         protected virtual void OnEnable()
         {
@@ -133,6 +143,16 @@ namespace Character.Movement {
         public void UnStunMovement() {
             SetMovementEnabled(true);
             AnimateMovement(m_animStunned, false);
+        }
+
+        /// <summary>
+        /// In other words, end the life / kill the moving body by restricting movement forever.
+        /// </summary>
+        public void Terminate() {
+            SetMovementEnabled(false);
+            AnimateMovement(m_animMove, false);
+            AnimateMovement(m_animStunned, false);
+            AnimateMovement(m_animDead, true);
         }
 
     }

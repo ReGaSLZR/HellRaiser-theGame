@@ -25,6 +25,7 @@ MonoBehaviour:
   m_statMovement:
     m_movSpeed: 5.5
     m_stunLength: 0.25
+    m_deathLength: 1.5
   m_statOffense:
     m_physicalAttack: 20
     m_magickAttack: 20

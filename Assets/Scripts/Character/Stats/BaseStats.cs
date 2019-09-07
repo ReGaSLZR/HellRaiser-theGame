@@ -168,7 +168,8 @@ namespace Character.Stats {
 
         private IEnumerator CorStun() {
             m_reactiveIsHurt.Value = true;
-            yield return new WaitForSeconds(m_info.m_statMovement.m_stunLength);
+            yield return new WaitForSeconds((m_reactiveHealth.Value <= 0) ? 
+                m_info.m_statMovement.m_deathLength : m_info.m_statMovement.m_stunLength);
             m_reactiveIsHurt.Value = false;
         }
 
