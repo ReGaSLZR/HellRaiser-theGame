@@ -24,8 +24,12 @@ namespace Character.Stats {
             return 0;
         }
 
+        public static bool IsInflictionReduceableByBane(bool isMagusBane, StatInflictionType type) {
+            return (isMagusBane && (type == StatInflictionType.MAGICK));
+        }
+
         public static int GetDamageReducedByDefense(int damageValue, StatDefense statDefense, StatInflictionType type, CharacterRank rank) {
-            if (statDefense.m_isMagusBane && (type == StatInflictionType.MAGICK)) {
+            if (IsInflictionReduceableByBane(statDefense.m_isMagusBane, type)) {
                 //special computation for MagusBanes hit with Magick-based attacks (M. Defense is ignored here)
                 return GetMagickDamageReducedByMagusBane(rank, damageValue); 
             }
@@ -33,6 +37,16 @@ namespace Character.Stats {
             //normal computation of damage reduced by defense stat
             int defenseStat = (type == StatInflictionType.PHYSICAL) ? statDefense.m_physicalDefense : statDefense.m_magickDefense;
             return Mathf.Clamp(Mathf.RoundToInt(damageValue / (defenseStat * 0.01f)), MIN_DAMAGE, MAX_DAMAGE);
+        }
+
+        public static int GetRecoveryValue(int value, StatInflictionType recoveryType, bool isMagusBane, CharacterRank rank) {
+            if (IsInflictionReduceableByBane(isMagusBane, recoveryType))
+            {
+                return GetMagickDamageReducedByMagusBane(rank, value);
+            }
+
+            //Unlike GetDamageReducedByDefense(), in this method there's no recovery reduction by defense stat at all
+            return value;
         }
 
         private static int GetMagickDamageReducedByMagusBane(CharacterRank rank, int rawDamageValue) {

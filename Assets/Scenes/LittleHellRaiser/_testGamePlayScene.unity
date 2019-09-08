@@ -10654,11 +10654,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChibiBabyMork1--SpotHitter
       objectReference: {fileID: 0}
-    - target: {fileID: 5699316324740432104, guid: 8ad227d5ff5dc61428eaa6b26178243b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5699316324740432109, guid: 8ad227d5ff5dc61428eaa6b26178243b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10713,18 +10708,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1121703348, guid: 8ad227d5ff5dc61428eaa6b26178243b, type: 3}
-      propertyPath: m_inflictType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1121703348, guid: 8ad227d5ff5dc61428eaa6b26178243b, type: 3}
-      propertyPath: m_skillValueRange.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1121703348, guid: 8ad227d5ff5dc61428eaa6b26178243b, type: 3}
-      propertyPath: m_skillValueRange.y
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ad227d5ff5dc61428eaa6b26178243b, type: 3}
@@ -19989,16 +19972,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 612107278}
     m_Modifications:
-    - target: {fileID: 3513235532363598782, guid: e48bdc180356ab44ab84043f6274fbbd,
-        type: 3}
-      propertyPath: m_Name
-      value: ChibiBabyMork
-      objectReference: {fileID: 0}
-    - target: {fileID: 3513235532363598782, guid: e48bdc180356ab44ab84043f6274fbbd,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20052,6 +20025,16 @@ PrefabInstance:
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513235532363598782, guid: e48bdc180356ab44ab84043f6274fbbd,
+        type: 3}
+      propertyPath: m_Name
+      value: ChibiBabyMork
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513235532363598782, guid: e48bdc180356ab44ab84043f6274fbbd,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3888517535082131005, guid: e48bdc180356ab44ab84043f6274fbbd,

@@ -82,6 +82,19 @@ namespace Character.Stats {
             return (isCritical) ? "\n CRIT!" : "";
         }
 
+        private Color GetFeedbackTextColor(int finalInflictionValue, Color customColor) {
+            return (finalInflictionValue == 0) ? m_colorScheme.m_damageNull : customColor;
+        }
+
+        private string GetStatChangeText(int changeValue, bool isDamage, bool isCritical, StatInflictionType type) {
+            string sign = (isDamage) ? "-" : "+";
+
+            return (changeValue == 0) ? "NO DAMAGE" :
+                sign + changeValue.ToString() + GetCriticalAppend(isCritical) +  //sample: -99\nCRIT!
+                    ((StatsUtil.IsInflictionReduceableByBane(m_info.m_statDefense.m_isMagusBane, type)) ? //sample: (if bane) \nREDUCED! (else) *blank*
+                    ("\n" + StatsUtil.GetMagickDamageFeedbackOnMagusBane(m_info.m_rank, changeValue)) : "");
+        }
+
         private void DealDamage(int damage, bool isCritical, StatInflictionType type, ReactiveProperty<int> valueHolder, Color color)
         {
             if (damage <= 0)
@@ -92,14 +105,8 @@ namespace Character.Stats {
 
             int damageReceivedReducedByDefenseOrBane = StatsUtil.GetDamageReducedByDefense(damage, m_info.m_statDefense, type, m_info.m_rank);
 
-            string statChangeText = (damageReceivedReducedByDefenseOrBane == 0) ? "NO DAMAGE" : 
-                "-" + damageReceivedReducedByDefenseOrBane.ToString() + GetCriticalAppend(isCritical) +  //sample: -99\nCRIT!
-                    ((m_info.m_statDefense.m_isMagusBane) ? //sample: (if bane) \nDAMAGE REDUCED! (else) *blank*
-                    ("\n" + StatsUtil.GetMagickDamageFeedbackOnMagusBane(m_info.m_rank, damageReceivedReducedByDefenseOrBane)) : ""); 
-
-            Color textColor = (damageReceivedReducedByDefenseOrBane == 0) ? m_colorScheme.m_damageNull : color;
-
-            UpdateStatChangeText(statChangeText, textColor);
+            UpdateStatChangeText(GetStatChangeText(damageReceivedReducedByDefenseOrBane, true, isCritical, type), 
+                GetFeedbackTextColor(damageReceivedReducedByDefenseOrBane, color));
             ForceShowStatChangeText();
 
             valueHolder.Value = Mathf.Clamp(
@@ -112,29 +119,36 @@ namespace Character.Stats {
 
         }
 
-        private void Recover(int value, int maxValue, bool isCritical, ReactiveProperty<int> valueHolder, Color color) {
+        private void Recover(int value, int maxValue, bool isCritical, StatInflictionType type, ReactiveProperty<int> valueHolder, Color color) {
             if (value <= 0)
             {
                 LogUtil.PrintWarning(gameObject, GetType(), "Recover(): Invalid value of " + value);
                 return;
             }
 
-            UpdateStatChangeText("+" + value.ToString() + GetCriticalAppend(isCritical), color);
+            int recoveryValue = StatsUtil.GetRecoveryValue(value, type, m_info.m_statDefense.m_isMagusBane, m_info.m_rank);
+            string statChangeText = (recoveryValue == 0) ? "NO EFFECT" : 
+                ("+" + recoveryValue.ToString() + GetCriticalAppend(isCritical) + //sample: +99\nCRIT!
+                (StatsUtil.IsInflictionReduceableByBane(m_info.m_statDefense.m_isMagusBane, type) ? //sample: (if bane) \nREDUCED! (else) *blank*
+                    ("\n" + StatsUtil.GetMagickDamageFeedbackOnMagusBane(m_info.m_rank, recoveryValue)) : ""));
+
+            UpdateStatChangeText(GetStatChangeText(recoveryValue, false, isCritical, type), 
+                GetFeedbackTextColor(recoveryValue, color));
             ForceShowStatChangeText();
 
-            valueHolder.Value = Mathf.Clamp(valueHolder.Value + value, 0, maxValue);
+            valueHolder.Value = Mathf.Clamp(valueHolder.Value + recoveryValue, 0, maxValue);
         }
 
-        public virtual void RecoverHealth(int health, bool isCritical) {
-            Recover(health, Scriptables.CharacterInfo.HEALTH_MAX, isCritical, m_reactiveHealth, m_colorScheme.m_healthGain);
+        public virtual void RecoverHealth(int health, bool isCritical, StatInflictionType type) {
+            Recover(health, Scriptables.CharacterInfo.HEALTH_MAX, isCritical, type, m_reactiveHealth, m_colorScheme.m_healthGain);
         }
 
         public virtual void DealHealthDamage(int damage, bool isCritical, StatInflictionType type) {
             DealDamage(damage, isCritical, type, m_reactiveHealth, m_colorScheme.m_healthLoss);
         }
 
-        public virtual void RecoverStamina(int stamina, bool isCritical) {
-            Recover(stamina, Scriptables.CharacterInfo.STAMINA_MAX, isCritical, m_reactiveStamina, m_colorScheme.m_staminaGain);
+        public virtual void RecoverStamina(int stamina, bool isCritical, StatInflictionType type) {
+            Recover(stamina, Scriptables.CharacterInfo.STAMINA_MAX, isCritical, type, m_reactiveStamina, m_colorScheme.m_staminaGain);
         }
 
         public virtual void DealStaminaDamage(int damage, bool isCritical, StatInflictionType type) {

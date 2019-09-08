@@ -34,4 +34,4 @@ MonoBehaviour:
   m_statDefense:
     m_physicalDefense: 62
     m_magickDefense: 0
-    m_isMagusBane: 1
+    m_isMagusBane: 0

@@ -125,11 +125,11 @@ namespace Character.Skill {
             }
             else if ((SKILL_VARIATION_HEAL == m_variation) && (STAT_AFFECTED_HEALTH == m_statAffected))
             {
-                receiver.RecoverHealth(value, isCritical);
+                receiver.RecoverHealth(value, isCritical, m_inflictType);
             }
             else if ((SKILL_VARIATION_HEAL == m_variation) && (STAT_AFFECTED_STAMINA == m_statAffected))
             {
-                receiver.RecoverStamina(value, isCritical);
+                receiver.RecoverStamina(value, isCritical, m_inflictType);
             }
             else {
                 LogUtil.PrintInfo(gameObject, GetType(), "DealDamageOrHeal(): Cannot find the Variation " +

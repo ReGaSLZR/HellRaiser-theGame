@@ -57,7 +57,8 @@ namespace GamePlay.Item {
                                  * tends to be an inactive character (e.g. the active character pushes the inactive one to pick up)
                                 */
                                 //m_modelStats.AddActiveCharacterHealth(valueFromRange); 
-                                triggererStats.RecoverHealth(valueFromRange, false); //apply the recovery to the character that picks up the item
+                                triggererStats.RecoverHealth(valueFromRange, false, 
+                                    StatInflictionType.PHYSICAL); //apply the recovery to the character that picks up the item
                             }
                             else
                             {
@@ -65,7 +66,8 @@ namespace GamePlay.Item {
                                  * same explanation as the comment above
                                  */
                                 //m_modelStats.AddActiveCharacterStamina(valueFromRange);
-                                triggererStats.RecoverStamina(valueFromRange, false);
+                                triggererStats.RecoverStamina(valueFromRange, false, 
+                                    StatInflictionType.PHYSICAL);
                             }
                         }
                         break;

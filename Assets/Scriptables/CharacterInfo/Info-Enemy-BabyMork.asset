@@ -28,7 +28,7 @@ MonoBehaviour:
     m_deathLength: 1
   m_statOffense:
     m_physicalAttack: 20
-    m_magickAttack: 50
+    m_magickAttack: 30
     m_critChance: 1
     m_critDamage: 1
   m_statDefense:
