@@ -10469,7 +10469,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1104589518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10653,6 +10653,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ChibiBabyMork1--SpotHitter
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699316324740432104, guid: 8ad227d5ff5dc61428eaa6b26178243b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5699316324740432109, guid: 8ad227d5ff5dc61428eaa6b26178243b,
         type: 3}
@@ -17818,7 +17823,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1948097668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19980,7 +19985,7 @@ PrefabInstance:
     - target: {fileID: 3513235532363598782, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
@@ -20041,7 +20046,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_triggerOnDeath
       value: 
-      objectReference: {fileID: 1104589518}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
 --- !u!1001 &6123591464595896214

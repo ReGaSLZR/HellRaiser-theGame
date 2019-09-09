@@ -713,6 +713,7 @@ MonoBehaviour:
   m_shouldFlipSprite: 1
   m_animMove: isPatrolling
   m_animStunned: isHurt
+  m_animDead: isDead
   m_ground: {fileID: 3010638456290562441}
 --- !u!114 &3513235531357516001
 MonoBehaviour:
@@ -773,6 +774,7 @@ MonoBehaviour:
   m_movement: {fileID: 709821325}
   m_stats: {fileID: 4189654125729516945}
   m_skillMain: {fileID: 3513235531357516001}
+  m_triggerOnDeath: {fileID: 0}
 --- !u!1001 &8115173291080946460
 PrefabInstance:
   m_ObjectHideFlags: 0
