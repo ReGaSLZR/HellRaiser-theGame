@@ -30,9 +30,38 @@ namespace Scriptables {
 
         } //end of ColorScheme class
 
+        [System.Serializable]
+        public class AudioTheme {
+
+            [Header("Sound FXs")]
+
+            public AudioClip m_sfxButtonClick;
+
+            [Space]
+
+            public AudioClip m_sfxMissionUpdate;
+
+            [Space]
+
+            public AudioClip m_sfxMerchantItemBought;
+
+            [Header("Background Music")]
+
+            public AudioClip m_bgmMissionAccomplished;
+            public AudioClip m_bgmMissionFailure;
+
+            [Space]
+
+            public AudioClip m_bgmLoading;
+            public AudioClip m_bgmMainMenu;
+
+        }//end of AudioTheme class
+
         public InputType m_gamePlayInput;
 
         public ColorScheme m_colorScheme;
+
+        public AudioTheme m_audioTheme;
 
         //TODO code more play settings variables and usage
 

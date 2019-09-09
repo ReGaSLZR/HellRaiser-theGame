@@ -18,9 +18,6 @@ namespace Audio {
             void StopBGM();
         }
 
-        /// <summary>
-        /// For controlled SFXs like those from a dialogue
-        /// </summary>
         public interface SFXSetter {
             void PlaySFX(AudioClip clip);
         }

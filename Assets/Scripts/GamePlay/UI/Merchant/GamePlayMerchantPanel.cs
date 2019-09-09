@@ -5,6 +5,8 @@ using GamePlay.Stats;
 using UnityEngine.UI;
 using Utils;
 using GamePlay.Mission;
+using static Scriptables.PlaySettings;
+using Audio;
 
 namespace GamePlay.UI.Merchant {
 
@@ -17,6 +19,10 @@ namespace GamePlay.UI.Merchant {
         private readonly MerchantModel.Setter m_modelMerchantSetter;
         [Inject]
         private readonly MissionModel.TimerSetter m_modelTimer;
+        [Inject]
+        private readonly AudioModel.SFXSetter m_modelSFX;
+        [Inject]
+        private readonly AudioTheme m_audioTheme;
 
         [SerializeField]
         private GamePlayMerchantButton[] m_buttonsInOrder;
@@ -40,7 +46,11 @@ namespace GamePlay.UI.Merchant {
 
             //ping Merchant Model to close this panel upon "close" button click
             m_buttonClose.OnClickAsObservable()
-                .Subscribe(_ => m_modelMerchantSetter.SetIsViewingMerchantGoods(false))
+                .Subscribe(_ =>
+                {
+                    m_modelSFX.PlaySFX(m_audioTheme.m_sfxButtonClick);
+                    m_modelMerchantSetter.SetIsViewingMerchantGoods(false);
+                })
                 .AddTo(this);
 
             //update content of Merchant buttons

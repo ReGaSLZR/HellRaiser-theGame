@@ -8,6 +8,7 @@ using Scriptables;
 using NaughtyAttributes;
 using Utils;
 using static Scriptables.PlaySettings;
+using Audio;
 
 namespace GamePlay.UI.Merchant {
 
@@ -19,7 +20,11 @@ namespace GamePlay.UI.Merchant {
         [Inject]
         private readonly GamePlayStatsModel.Setter m_modelStatsSetter;
         [Inject]
+        private readonly AudioModel.SFXSetter m_modelSFX;
+        [Inject]
         private readonly ColorScheme m_colorScheme;
+        [Inject]
+        private readonly AudioTheme m_audioTheme;
 
         [SerializeField]
         [Required]
@@ -84,6 +89,8 @@ namespace GamePlay.UI.Merchant {
             m_button.OnClickAsObservable()
                 .Subscribe(_ => {
                     LogUtil.PrintInfo(gameObject, GetType(), "Bought merchant item: " + m_merchantItem.m_spielTitle);
+
+                    m_modelSFX.PlaySFX(m_audioTheme.m_sfxMerchantItemBought);
 
                     m_hasBoughtItem = true;
                     m_textButton.text = m_merchantItem.m_spielButtonBuyAgain;

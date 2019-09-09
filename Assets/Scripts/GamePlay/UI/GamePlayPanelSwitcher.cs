@@ -1,4 +1,5 @@
-﻿using Data.Storage;
+﻿using Audio;
+using Data.Storage;
 using GamePlay.Dialogue;
 using GamePlay.Input;
 using GamePlay.Mission;
@@ -8,6 +9,7 @@ using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
+using static Scriptables.PlaySettings;
 
 namespace GamePlay.UI {
 
@@ -26,6 +28,12 @@ namespace GamePlay.UI {
         private readonly DialogueModel.Getter m_modelDialogue;
         [Inject]
         private readonly MerchantModel.Getter m_modelMerchant;
+        [Inject]
+        private readonly AudioModel.BGMSetter m_modelBGM;
+        [Inject]
+        private readonly AudioModel.SFXSetter m_modelSFX;
+        [Inject]
+        private readonly AudioTheme m_audioTheme;
 
         [Header("Buttons")]
 
@@ -178,7 +186,12 @@ namespace GamePlay.UI {
                             }
                         case MissionStatus.CLEARED:
                         case MissionStatus.FAILED: {
+                                m_modelBGM.ReplaceOriginalBGM((status == MissionStatus.CLEARED) ? 
+                                    m_audioTheme.m_bgmMissionAccomplished : m_audioTheme.m_bgmMissionFailure);
+                                m_modelBGM.PlayOriginalBGM();
+
                                 m_panelMissionObjective.gameObject.SetActive(false);
+
                                 SetGameOverPanel((MissionStatus.CLEARED == status),
                                     (MissionStatus.CLEARED == status) ? m_spielGameOverClear : 
                                     ((m_modelTimer.GetTimer().Value == 0) ? m_spielGameOverFailTime : m_spielGameOverFailNormal));
@@ -212,6 +225,8 @@ namespace GamePlay.UI {
                 button.OnClickAsObservable()
                     .Subscribe(_ =>
                     {
+                        m_modelSFX.PlaySFX(m_audioTheme.m_sfxButtonClick);
+
                         if (panelMain != null) { 
                             OnlyActivatePanel(panelMain);
                         }

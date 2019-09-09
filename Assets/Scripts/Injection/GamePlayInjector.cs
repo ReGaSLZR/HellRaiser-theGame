@@ -58,6 +58,7 @@ namespace Injection {
             Container.Bind<Instantiator>().FromInstance(this);
 
             Container.Bind<PlaySettings.ColorScheme>().FromInstance(m_playSettings.m_colorScheme);
+            Container.Bind<PlaySettings.AudioTheme>().FromInstance(m_playSettings.m_audioTheme);
 
             BindModelAudio();
 

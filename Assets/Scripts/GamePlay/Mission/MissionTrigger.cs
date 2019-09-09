@@ -1,7 +1,9 @@
-﻿using GamePlay.Base;
+﻿using Audio;
+using GamePlay.Base;
 using NaughtyAttributes;
 using UnityEngine;
 using Zenject;
+using static Scriptables.PlaySettings;
 
 namespace GamePlay.Mission {
 
@@ -10,6 +12,10 @@ namespace GamePlay.Mission {
 
         [Inject]
         private MissionModel.MissionSetter m_modelMission;
+        [Inject]
+        private readonly AudioModel.SFXSetter m_modelSFX;
+        [Inject]
+        private readonly AudioTheme m_audioTheme;
 
         private const int TRIGGER_DISPLAY_OBJECTIVE = 0;
         private const int TRIGGER_COLLECT_KEY = 1;
@@ -29,6 +35,7 @@ namespace GamePlay.Mission {
         public override void Execute()
         {
             m_isTriggered = true;
+            m_modelSFX.PlaySFX(m_audioTheme.m_sfxMissionUpdate);
 
             switch (m_triggerType) {
                 default:

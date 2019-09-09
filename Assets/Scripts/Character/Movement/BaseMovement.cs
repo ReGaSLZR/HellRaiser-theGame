@@ -150,6 +150,8 @@ namespace Character.Movement {
         /// </summary>
         public void Terminate() {
             SetMovementEnabled(false);
+            m_compRigidBody2D.bodyType = RigidbodyType2D.Static;
+
             AnimateMovement(m_animMove, false);
             AnimateMovement(m_animStunned, false);
             AnimateMovement(m_animDead, true);
