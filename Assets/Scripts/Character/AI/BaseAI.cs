@@ -128,7 +128,7 @@ namespace Character.AI {
                 m_triggerOnDeath.Execute();
             }
 
-            m_movement.Terminate();
+            m_movement.TerminateMovement();
             Destroy(gameObject, m_stats.GetStatMovement().m_deathLength);
         }
 

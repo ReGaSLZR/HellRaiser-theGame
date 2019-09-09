@@ -19,13 +19,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  m_level: 1
+  m_rank: 0
   m_health: 30
   m_stamina: 0
   m_statMovement:
     m_movSpeed: 5.5
     m_stunLength: 2
-    m_deathLength: 0
+    m_deathLength: 0.25
   m_statOffense:
     m_physicalAttack: 10
     m_magickAttack: 10

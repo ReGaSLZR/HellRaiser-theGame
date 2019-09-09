@@ -362,8 +362,11 @@ MonoBehaviour:
   m_compSpriteRenderer: {fileID: 2590343526880155045}
   m_movementDirection: 0
   m_shouldFlipSprite: 0
+  m_clipStunned: {fileID: 8300000, guid: e66604a35103bfc4c8757d8e271c9156, type: 3}
+  m_clipDeath: {fileID: 8300000, guid: a3c5691dda433154bab089a055c08484, type: 3}
   m_animMove: isRunning
   m_animStunned: isStunned
+  m_animDead: 
   m_animOnGround: isOnGround
   m_animOnWall: isOnWall
   m_wallSlideNormalFrictionDrag: 1
@@ -391,6 +394,7 @@ MonoBehaviour:
   m_movement: {fileID: 2590343526880155032}
   m_stats: {fileID: 2040706426}
   m_skillMain: {fileID: 2040706424}
+  m_triggerOnDeath: {fileID: 0}
   m_skillSecondary: {fileID: 1905334431}
   m_skillTertiary: {fileID: 1905334432}
   m_uniqueCamera: {fileID: 0}
@@ -429,6 +433,7 @@ MonoBehaviour:
   m_skillDuration: 0.25
   m_skillCooldown: 0.25
   m_isRepeating: 0
+  m_clipSkillUse: {fileID: 8300000, guid: 63d352e76859a5a4091688d514d1195e, type: 3}
   m_childFX: {fileID: 0}
   m_compSpriteRenderer: {fileID: 2590343526880155045}
   m_prefabProjectile: {fileID: 7868619509480113042, guid: 01d2ad7c01b733b4a8a9cba4b73340c1,
@@ -457,6 +462,7 @@ MonoBehaviour:
   m_skillDuration: 0.5
   m_skillCooldown: 0.25
   m_isRepeating: 0
+  m_clipSkillUse: {fileID: 8300000, guid: 17f4977144bd7a04397a9b0e47ca8940, type: 3}
   m_childFX: {fileID: 0}
   m_compRigidbody2D: {fileID: 2590343526880155033}
   m_compSpriteRenderer: {fileID: 2590343526880155045}
@@ -480,6 +486,7 @@ MonoBehaviour:
   m_skillDuration: 5
   m_skillCooldown: 0.5
   m_isRepeating: 0
+  m_clipSkillUse: {fileID: 8300000, guid: 07adea211b986b04b80fa624ef29d2ff, type: 3}
   m_childFX: {fileID: 0}
   m_compCollider2D: {fileID: 2590343526880155035}
   m_tagOnCamouflage: Player-Camouflaged

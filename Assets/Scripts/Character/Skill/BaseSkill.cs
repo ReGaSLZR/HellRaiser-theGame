@@ -1,13 +1,18 @@
-﻿using NaughtyAttributes;
+﻿using Audio;
+using NaughtyAttributes;
 using Scriptables;
 using System.Collections;
 using UniRx;
 using UnityEngine;
+using Zenject;
 
 namespace Character.Skill {
 
     public class BaseSkill : MonoBehaviour
     {
+
+        [Inject]
+        private readonly AudioModel.SFXSetter m_modelSFX;
 
         [Header("----- Base variables -----")]
 
@@ -42,10 +47,14 @@ namespace Character.Skill {
         [Space]
 
         [SerializeField]
+        protected AudioClip m_clipSkillUse;
+
+        [Space]
+
+        [SerializeField]
         protected Transform m_childFX;
 
         protected StatOffense m_statOffense;
-
         protected ReactiveProperty<bool> m_isExecutionFinished = new ReactiveProperty<bool>(true);
 
         private bool m_tempStopRepeatingSkill;
@@ -99,6 +108,7 @@ namespace Character.Skill {
             m_isExecutionFinished.Value = false;
 
             AnimateSkill(true); //this is to alllow scratch animations to play first uninterrupted (esp. with the use of triggers)
+            m_modelSFX.PlaySFX(m_clipSkillUse);
 
             yield return new WaitForSeconds(m_skillDelay);
 

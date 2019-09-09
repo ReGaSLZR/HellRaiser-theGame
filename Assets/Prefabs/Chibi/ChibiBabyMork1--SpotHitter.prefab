@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_compAnimator: {fileID: 5699316324740432107}
+  m_compAudioSource: {fileID: 0}
   m_animSkill: isAttacking
   m_animTriggerStopper: 
   m_skillDelay: 0
   m_skillDuration: 0.25
   m_skillCooldown: 0.25
   m_isRepeating: 1
+  m_clipSkillUse: {fileID: 0}
   m_childFX: {fileID: 0}
   m_targetDetector: {fileID: 9212551855058176530}
   m_inflictType: 0
@@ -34,6 +36,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3513235532363598782, guid: e48bdc180356ab44ab84043f6274fbbd,
+        type: 3}
+      propertyPath: m_Name
+      value: ChibiBabyMork1--SpotHitter
+      objectReference: {fileID: 0}
     - target: {fileID: 3513235532363598779, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -89,21 +96,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3513235532363598782, guid: e48bdc180356ab44ab84043f6274fbbd,
-        type: 3}
-      propertyPath: m_Name
-      value: ChibiBabyMork1--SpotHitter
-      objectReference: {fileID: 0}
-    - target: {fileID: 334938438, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3888517535082131005, guid: e48bdc180356ab44ab84043f6274fbbd,
         type: 3}
       propertyPath: m_skillMain
       value: 
       objectReference: {fileID: 1121703348}
-    m_RemovedComponents: []
+    - target: {fileID: 334938438, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3513235531357516001, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
 --- !u!1 &5699316324740432104 stripped
 GameObject:

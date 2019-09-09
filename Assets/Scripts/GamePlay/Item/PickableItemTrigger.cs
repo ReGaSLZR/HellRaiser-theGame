@@ -1,4 +1,5 @@
-﻿using Character.Stats;
+﻿using Audio;
+using Character.Stats;
 using GamePlay.Base;
 using GamePlay.Mission;
 using GamePlay.Stats;
@@ -17,6 +18,8 @@ namespace GamePlay.Item {
         private readonly MissionModel.TimerSetter m_modelTimer;
         [Inject]
         private readonly GamePlayStatsModel.Setter m_modelStats;
+        [Inject]
+        private readonly AudioModel.SFXSetter m_modelSFX;
 
         private const string STAT_HEALTH = "STAT_HEALTH";
         private const string STAT_STAMINA = "STAT_STAMINA";
@@ -38,9 +41,15 @@ namespace GamePlay.Item {
         [MinMaxSlider(1, 100)]
         private Vector2 m_valueRange;
 
+        [Space]
+
+        [SerializeField]
+        private AudioClip m_clipPickedUp;
+
         public override void Execute()
         {
             int valueFromRange = ValuesUtil.GetValueFromVector2Range(m_valueRange);
+            m_modelSFX.PlaySFX(m_clipPickedUp);
 
             switch (m_itemType) {
                 case STAT_HEALTH:

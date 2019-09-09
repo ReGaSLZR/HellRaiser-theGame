@@ -711,6 +711,8 @@ MonoBehaviour:
   m_compSpriteRenderer: {fileID: 3513235532363598780}
   m_movementDirection: 0
   m_shouldFlipSprite: 1
+  m_clipStunned: {fileID: 8300000, guid: 06b3ea8ce6f0e1445874f6b197fee90e, type: 3}
+  m_clipDeath: {fileID: 8300000, guid: a028c70ec120ab247a69fba7346fe293, type: 3}
   m_animMove: isPatrolling
   m_animStunned: isHurt
   m_animDead: isDead
@@ -734,6 +736,7 @@ MonoBehaviour:
   m_skillDuration: 0.25
   m_skillCooldown: 0.25
   m_isRepeating: 1
+  m_clipSkillUse: {fileID: 8300000, guid: 46e5d0e83149fed4a8061fd74edaac1f, type: 3}
   m_childFX: {fileID: 0}
   m_compSpriteRenderer: {fileID: 3513235532363598780}
   m_prefabProjectile: {fileID: 7868619509480113042, guid: 01d2ad7c01b733b4a8a9cba4b73340c1,

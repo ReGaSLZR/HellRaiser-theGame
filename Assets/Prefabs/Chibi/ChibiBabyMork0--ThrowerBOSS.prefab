@@ -62,12 +62,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_compAnimator: {fileID: 6721680967852633831}
+  m_compAudioSource: {fileID: 7893033473517416260}
   m_animSkill: isAttacking
   m_animTriggerStopper: 
   m_skillDelay: 0
   m_skillDuration: 0.25
   m_skillCooldown: 0.25
   m_isRepeating: 1
+  m_clipSkillUse: {fileID: 8300000, guid: 46e5d0e83149fed4a8061fd74edaac1f, type: 3}
   m_childFX: {fileID: 0}
   m_compSpriteRenderer: {fileID: 6721680967852633830}
   m_prefabProjectile: {fileID: 7868619509480113042, guid: 01d2ad7c01b733b4a8a9cba4b73340c1,
@@ -90,12 +92,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_compAnimator: {fileID: 6721680967852633831}
+  m_compAudioSource: {fileID: 7893033473517416260}
   m_compRigidBody2D: {fileID: 2752365012594213510}
   m_compSpriteRenderer: {fileID: 6721680967852633830}
   m_movementDirection: 0
   m_shouldFlipSprite: 1
+  m_clipStunned: {fileID: 8300000, guid: 06b3ea8ce6f0e1445874f6b197fee90e, type: 3}
+  m_clipDeath: {fileID: 8300000, guid: a028c70ec120ab247a69fba7346fe293, type: 3}
   m_animMove: isPatrolling
   m_animStunned: isHurt
+  m_animDead: 
   m_ground: {fileID: 4921976557638546643}
 --- !u!70 &1144640909772282948
 CapsuleCollider2D:
@@ -175,13 +181,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_compAnimator: {fileID: 6721680967852633831}
+  m_compAudioSource: {fileID: 7893033473517416260}
   m_compRigidBody2D: {fileID: 2752365012594213510}
   m_compSpriteRenderer: {fileID: 6721680967852633830}
   m_movementDirection: 0
   m_shouldFlipSprite: 1
+  m_clipStunned: {fileID: 8300000, guid: a028c70ec120ab247a69fba7346fe293, type: 3}
+  m_clipDeath: {fileID: 8300000, guid: ad2859cad7c53af41a0fb3b07491eb31, type: 3}
   m_animMove: 
   m_animStunned: isHurt
+  m_animDead: isHurt
   m_customStunLength: 1.5
+  m_customDeathLength: 0.25
 --- !u!114 &718104878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,12 +206,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_compAnimator: {fileID: 6721680967852633831}
+  m_compAudioSource: {fileID: 0}
   m_animSkill: 
   m_animTriggerStopper: 
   m_skillDelay: 0
   m_skillDuration: 0.25
   m_skillCooldown: 0.25
   m_isRepeating: 1
+  m_clipSkillUse: {fileID: 0}
   m_childFX: {fileID: 0}
   m_targetDetector: {fileID: 7893033475366380574}
   m_inflictType: 0
@@ -287,12 +300,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_compAnimator: {fileID: 6721680967852633831}
+  m_compAudioSource: {fileID: 7893033473517416260}
   m_animSkill: isAttacking
   m_animTriggerStopper: 
   m_skillDelay: 0
   m_skillDuration: 0.25
   m_skillCooldown: 0.25
   m_isRepeating: 1
+  m_clipSkillUse: {fileID: 8300000, guid: 46e5d0e83149fed4a8061fd74edaac1f, type: 3}
   m_childFX: {fileID: 0}
   m_compSpriteRenderer: {fileID: 6721680967852633830}
   m_prefabProjectile: {fileID: 7868619509480113042, guid: 01d2ad7c01b733b4a8a9cba4b73340c1,
@@ -315,12 +330,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_compAnimator: {fileID: 6721680967852633831}
+  m_compAudioSource: {fileID: 7893033473517416260}
   m_compRigidBody2D: {fileID: 2752365012594213510}
   m_compSpriteRenderer: {fileID: 6721680967852633830}
   m_movementDirection: 1
   m_shouldFlipSprite: 0
+  m_clipStunned: {fileID: 8300000, guid: 06b3ea8ce6f0e1445874f6b197fee90e, type: 3}
+  m_clipDeath: {fileID: 8300000, guid: a028c70ec120ab247a69fba7346fe293, type: 3}
   m_animMove: isPatrolling
   m_animStunned: isHurt
+  m_animDead: 
   m_ground: {fileID: 8943838303296709147}
 --- !u!70 &6282453508438918525
 CapsuleCollider2D:
@@ -576,7 +595,7 @@ MonoBehaviour:
   m_movement: {fileID: 72654183}
   m_stats: {fileID: 72654182}
   m_skillMain: {fileID: 72654180}
-  m_chainedTriggerOnDeath: {fileID: 0}
+  m_triggerOnDeath: {fileID: 0}
   m_phases:
   - m_movement: {fileID: 718104879}
     m_skill: {fileID: 718104878}
@@ -820,6 +839,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1707723292, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1544059747, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
     - {fileID: 709821325, guid: e48bdc180356ab44ab84043f6274fbbd, type: 3}
@@ -911,3 +934,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c1a825b95f194488ba63d5aaec006d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &7893033473517416260 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1707723294, guid: e48bdc180356ab44ab84043f6274fbbd,
+    type: 3}
+  m_PrefabInstance: {fileID: 7893033475048744282}
+  m_PrefabAsset: {fileID: 0}

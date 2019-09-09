@@ -160,6 +160,7 @@ MonoBehaviour:
   m_movement: {fileID: 8241063537023895933}
   m_stats: {fileID: 8241063537023895935}
   m_skillMain: {fileID: 8241063537023895932}
+  m_triggerOnDeath: {fileID: 0}
 --- !u!114 &8241063537023895933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,9 +178,13 @@ MonoBehaviour:
   m_compSpriteRenderer: {fileID: 8241063537023895923}
   m_movementDirection: 0
   m_shouldFlipSprite: 1
+  m_clipStunned: {fileID: 8300000, guid: b565f7c9b3be403469f3de9d9777ee23, type: 3}
+  m_clipDeath: {fileID: 8300000, guid: b565f7c9b3be403469f3de9d9777ee23, type: 3}
   m_animMove: 
   m_animStunned: isHurt
-  m_stunLength: 0.5
+  m_animDead: 
+  m_customStunLength: 0.25
+  m_customDeathLength: 0.25
 --- !u!114 &8241063537023895932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,6 +204,7 @@ MonoBehaviour:
   m_skillDuration: 0.25
   m_skillCooldown: 0.25
   m_isRepeating: 0
+  m_clipSkillUse: {fileID: 8300000, guid: 3734e445938621144a75c946282805a1, type: 3}
   m_childFX: {fileID: 0}
   m_goodies:
   - {fileID: 11400000, guid: 15b6418f9be484b449ffcb197bbb16a6, type: 2}

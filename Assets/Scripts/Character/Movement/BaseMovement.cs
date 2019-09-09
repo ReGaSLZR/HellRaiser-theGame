@@ -1,13 +1,18 @@
-﻿using NaughtyAttributes;
+﻿using Audio;
+using NaughtyAttributes;
 using Scriptables;
 using UniRx;
 using UnityEngine;
+using Zenject;
 using static UnityEngine.RectTransform;
 
 namespace Character.Movement {
 
     public abstract class BaseMovement : MonoBehaviour
     {
+
+        [Inject]
+        private readonly AudioModel.SFXSetter m_modelSFX;
 
         [Header("----- Base variables -----")]
 
@@ -27,6 +32,13 @@ namespace Character.Movement {
 
         [SerializeField]
         protected bool m_shouldFlipSprite;
+
+        [Space]
+
+        [SerializeField]
+        protected AudioClip m_clipStunned;
+        [SerializeField]
+        protected AudioClip m_clipDeath;
 
         [Space]
 
@@ -136,8 +148,11 @@ namespace Character.Movement {
 
         public void StunMovement() {
             SetMovementEnabled(false);
+
             AnimateMovement(m_animMove, false);
             AnimateMovement(m_animStunned, true);
+
+            m_modelSFX.PlaySFX(m_clipStunned);
         }
 
         public void UnStunMovement() {
@@ -145,16 +160,15 @@ namespace Character.Movement {
             AnimateMovement(m_animStunned, false);
         }
 
-        /// <summary>
-        /// In other words, end the life / kill the moving body by restricting movement forever.
-        /// </summary>
-        public void Terminate() {
+        public void TerminateMovement() {
             SetMovementEnabled(false);
             m_compRigidBody2D.bodyType = RigidbodyType2D.Static;
 
             AnimateMovement(m_animMove, false);
             AnimateMovement(m_animStunned, false);
             AnimateMovement(m_animDead, true);
+
+            m_modelSFX.PlaySFX(m_clipDeath);
         }
 
     }
