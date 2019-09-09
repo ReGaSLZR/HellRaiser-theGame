@@ -31,8 +31,12 @@ namespace Character.Movement
         private float m_wallSlideFriction = 10f;
 
         [Header("Jump")]
+
         [SerializeField]
-        protected GroundManager m_ground;
+        private AudioClip m_clipJump;
+
+        [SerializeField]
+        private GroundManager m_ground;
 
         [SerializeField]
         private float m_jumpVelocity = 1.2f;
@@ -170,6 +174,8 @@ namespace Character.Movement
 
         private void Jump()
         {
+            m_modelSFX.PlaySFX(m_clipJump);
+
             //m_compRigidBody2D.AddForce(Vector2.up * (m_jumpHeight * m_jumpVelocity) 
             //    * Time.fixedDeltaTime, ForceMode2D.Impulse);
             m_compRigidBody2D.velocity = (Vector2.up * m_jumpVelocity);

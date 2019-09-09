@@ -371,6 +371,7 @@ MonoBehaviour:
   m_animOnWall: isOnWall
   m_wallSlideNormalFrictionDrag: 1
   m_wallSlideFriction: 10
+  m_clipJump: {fileID: 8300000, guid: 07adea211b986b04b80fa624ef29d2ff, type: 3}
   m_ground: {fileID: 1336468798}
   m_jumpVelocity: 9
   m_jumpFallMultiplier: 2.5

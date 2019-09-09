@@ -12,7 +12,7 @@ namespace Character.Movement {
     {
 
         [Inject]
-        private readonly AudioModel.SFXSetter m_modelSFX;
+        protected readonly AudioModel.SFXSetter m_modelSFX;
 
         [Header("----- Base variables -----")]
 

@@ -14,7 +14,7 @@ namespace Character.Movement {
 
         [SerializeField]
         [Required]
-        protected GroundManager m_ground;
+        private GroundManager m_ground;
 
         private float m_patrolMovementWithDirection = 1f;
 
