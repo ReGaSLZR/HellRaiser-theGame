@@ -3,9 +3,9 @@ using Data.Storage;
 using NaughtyAttributes;
 using Utils;
 
-namespace Common {
+namespace Loading {
 
-    public class SceneSwitcher : MonoBehaviour
+    public class LoadingSceneSwitcher : MonoBehaviour
     {
 
         private const string MAIN_MENU = "MAIN_MENU";
