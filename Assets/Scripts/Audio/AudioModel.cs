@@ -13,7 +13,7 @@ namespace Audio {
 
         public interface BGMSetter {
             void PlayTemporaryBGM(AudioClip clip);
-            void PlayOriginalBGM();
+            void PlayOriginalBGM(bool shouldUseTransition);
             void ReplaceOriginalBGM(AudioClip clip);
             void StopBGM();
         }
@@ -131,15 +131,19 @@ namespace Audio {
             //}
         }
 
-        public void PlayOriginalBGM() {
+        public void PlayOriginalBGM(bool shouldUseTransition) {
             if ((m_audioSourceBGM.clip == m_tempAudioClipBGM) && m_audioSourceBGM.isPlaying) {
                 return; //no need to play the BGM as it is already playing
             }
 
-            //m_audioSourceBGM.clip = m_tempAudioClipBGM;
-            //m_audioSourceBGM.Play();
-
-            AudioUtil.SafelyTransitionToClip(this, m_audioSourceBGM, m_tempAudioClipBGM);
+            if (shouldUseTransition)
+            {
+                AudioUtil.SafelyTransitionToClip(this, m_audioSourceBGM, m_tempAudioClipBGM);
+            }
+            else {
+                m_audioSourceBGM.clip = m_tempAudioClipBGM;
+                m_audioSourceBGM.Play();
+            }
         }
 
         public void ReplaceOriginalBGM(AudioClip clip) {

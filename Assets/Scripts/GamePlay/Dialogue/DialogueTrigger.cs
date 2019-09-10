@@ -73,7 +73,7 @@ namespace GamePlay.Dialogue {
                         m_chainedTriggerAfterDialogue.Execute();
                     }
 
-                    m_modelBGM.PlayOriginalBGM();
+                    m_modelBGM.PlayOriginalBGM(true);
                     Destroy(gameObject);
                 })
                 .AddTo(this);
@@ -105,7 +105,7 @@ namespace GamePlay.Dialogue {
                     }
                 case BGM_REPLACE_WITH_NEW_AND_PLAY: {
                         m_modelBGM.ReplaceOriginalBGM(m_clipDialogueBGM);
-                        m_modelBGM.PlayOriginalBGM();
+                        m_modelBGM.PlayOriginalBGM(true);
                         break;
                     }
             }

@@ -188,7 +188,7 @@ namespace GamePlay.UI {
                         case MissionStatus.FAILED: {
                                 m_modelBGM.ReplaceOriginalBGM((status == MissionStatus.CLEARED) ? 
                                     m_audioTheme.m_bgmMissionAccomplished : m_audioTheme.m_bgmMissionFailure);
-                                m_modelBGM.PlayOriginalBGM();
+                                m_modelBGM.PlayOriginalBGM(false);
 
                                 m_panelMissionObjective.gameObject.SetActive(false);
 
