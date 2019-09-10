@@ -15,7 +15,7 @@ namespace Character.Stats
         [Inject]
         private readonly GamePlayStatsModel.Getter m_modelStatsGetter;
 
-        private ReactiveProperty<int> m_reactiveMoney = new ReactiveProperty<int>();
+        private ReactiveProperty<int> m_reactiveMoney = new ReactiveProperty<int>(0);
 
         protected override void Awake()
         {
@@ -36,15 +36,19 @@ namespace Character.Stats
             base.OnEnable();
 
             m_modelStatsSetter.RegisterCharacterForStats(m_info);
-            m_reactiveMoney.Value = m_modelStatsGetter.GetInventoryMoney().Value;
-            
             InitObservers();
+
+            //only setting the initial money value AFTER the observer initialization to not trigger an immediate
+            //textStatChange (displaying of the value of Inventory Money outright)
+            m_reactiveMoney.Value = m_modelStatsGetter.GetInventoryMoney().Value;
         }
 
         protected override void OnDisable()
         {
             base.OnDisable();
             m_compCollider2D.enabled = true;
+            //resetting money back to 0 to not allow the textStatChange to trigger (and display +0) when the character is re-enabled
+            m_reactiveMoney.Value = 0; 
         }
 
         private void InitObservers()
@@ -70,10 +74,7 @@ namespace Character.Stats
                 .AddTo(m_disposables);
 
             m_modelStatsGetter.GetInventoryMoney()
-                //SPECIAL CASE: the first condition (Time check) is to not allow model.money initialization delay
-                //(probably due to save file deserialization)
-                //to show on game start the previous earnings of the Player as a text change FX
-                .Where(money => (Time.timeSinceLevelLoad > 0) && (m_reactiveMoney.Value != money))
+                .Where(money => (m_reactiveMoney.Value != 0))
                 .Subscribe(newMoneyValue => {
                     ApplyStatChangeFXFromNonBaseStatCall(m_reactiveMoney, newMoneyValue, m_colorScheme.m_moneyGain, m_colorScheme.m_moneyLoss);
                 })
