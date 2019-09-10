@@ -28,6 +28,11 @@ namespace Scriptables {
 
             public Color m_time;
 
+            [Space]
+
+            public Color m_missionMainPanel;
+            public Color m_missionSidePanel;
+
         } //end of ColorScheme class
 
         [System.Serializable]
@@ -49,11 +54,6 @@ namespace Scriptables {
 
             public AudioClip m_bgmMissionAccomplished;
             public AudioClip m_bgmMissionFailure;
-
-            [Space]
-
-            public AudioClip m_bgmLoading;
-            public AudioClip m_bgmMainMenu;
 
         }//end of AudioTheme class
 

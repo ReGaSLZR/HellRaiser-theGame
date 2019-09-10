@@ -175,11 +175,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7ed7f78972a511041ba4ad1bd9750490, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -611,6 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6caff194700118444aa6b723fd45dbd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_playSettings: {fileID: 11400000, guid: 2ca4b7ddb1b84aa4ca1d81619cc44be7, type: 2}
   m_audio: {fileID: 1639425241}
 --- !u!114 &766858038
 MonoBehaviour:
@@ -776,7 +777,6 @@ GameObject:
   - component: {fileID: 1050679361}
   - component: {fileID: 1050679363}
   - component: {fileID: 1050679362}
-  - component: {fileID: 1050679366}
   m_Layer: 0
   m_Name: LoadingManager
   m_TagString: Untagged
@@ -824,25 +824,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050679360}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73d886ae1e30d114685a9848fac56580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_loadOptions: STORED_LEVEL
---- !u!114 &1050679366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050679360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 636d927279243394294ea89b398e9fb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_playSettings: {fileID: 11400000, guid: 2ca4b7ddb1b84aa4ca1d81619cc44be7, type: 2}
 --- !u!224 &1179275241 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5448505210392784389, guid: 65f9a7e10277f404893dbd128ab2ada4,

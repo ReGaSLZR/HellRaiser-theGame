@@ -7,7 +7,7 @@ namespace Audio
     public static class AudioUtil
     {
 
-        private const float AUDIO_TRANSITION_TICK = 0.01f;
+        private const float AUDIO_TRANSITION_TICK = 0.03f;
 
         public static void SafelyPlayOneshot(AudioSource audioSource, AudioClip clip)
         {

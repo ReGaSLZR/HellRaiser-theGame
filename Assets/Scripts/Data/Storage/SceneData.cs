@@ -11,7 +11,6 @@ namespace Data.Storage {
         public const int SCENE_SPLASH = 0;
         public const int SCENE_LOADING = 1;
         public const int SCENE_MAIN_MENU = 2;
-        public const int SCENE_SELF = 3;
 
         public static void LoadLevel(int levelIndex) {
             SceneManager.LoadSceneAsync(levelIndex);
@@ -23,14 +22,14 @@ namespace Data.Storage {
 
         public static void StoreLevelThenLoad(int levelIndex) {
             if (levelIndex > SCENE_LOADING) {
-                PlayerPrefs.SetInt(KEY_LEVEL_TO_LOAD, (levelIndex == SCENE_SELF) ? GetCurrentSceneIndex() : levelIndex);
+                PlayerPrefs.SetInt(KEY_LEVEL_TO_LOAD, levelIndex);
                 PlayerPrefs.Save();
 
                 SceneManager.LoadSceneAsync(SCENE_LOADING);
             }
         }
 
-        private static int GetCurrentSceneIndex()
+        public static int GetCurrentSceneIndex()
         {
             return SceneManager.GetActiveScene().buildIndex;
         }

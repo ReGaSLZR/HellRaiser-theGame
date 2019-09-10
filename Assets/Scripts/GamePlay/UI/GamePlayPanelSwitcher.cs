@@ -127,7 +127,7 @@ namespace GamePlay.UI {
             InitObserverPauseButtons();
 
             InitObserverButtons(m_buttonResume, m_panelHUD, null, 1, 0, true);
-            InitObserverButtons(m_buttonReloadLevel, m_panelLoading, null, 1, SceneData.SCENE_SELF, false);
+            InitObserverButtons(m_buttonReloadLevel, m_panelLoading, null, 1, SceneData.GetCurrentSceneIndex(), false);
             InitObserverButtons(m_buttonMainMenu, m_panelLoading, null, 1, SceneData.SCENE_MAIN_MENU, false);
 
             InitGameOverObservers();

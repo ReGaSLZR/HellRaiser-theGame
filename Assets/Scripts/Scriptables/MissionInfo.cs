@@ -7,8 +7,8 @@ namespace Scriptables {
     public class MissionInfo : ScriptableObject
     {
 
-        private const string MISSION_TYPE_MAIN = "MISSION_TYPE_MAIN";
-        private const string MISSION_TYPE_SIDE = "MISSION_TYPE_SIDE";
+        private const string MISSION_TYPE_MAIN = "MAIN mission";
+        private const string MISSION_TYPE_SIDE = "SIDE mission";
         private readonly string[] m_dropdownOptionsMissionType = new string[] {
             "<Unset>",
             MISSION_TYPE_MAIN,
@@ -18,6 +18,8 @@ namespace Scriptables {
         public int m_buildIndex;
 
         public Texture2D m_preview;
+
+        public Texture2D m_map;
 
         [Space]
 
