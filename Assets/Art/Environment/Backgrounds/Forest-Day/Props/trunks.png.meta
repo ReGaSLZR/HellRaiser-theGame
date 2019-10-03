@@ -1,7 +1,37 @@
 fileFormatVersion: 2
 guid: f4b3fc6d98890f8458913607dca2fe6b
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 6189606471496407223
+    second: trunks_0
+  - first:
+      213: -6613110224840712069
+    second: trunks_1
+  - first:
+      213: -3144224037550029206
+    second: trunks_2
+  - first:
+      213: -8044378571693499475
+    second: trunks_3
+  - first:
+      213: 1943602873183761189
+    second: trunks_4
+  - first:
+      213: 4545232096274213050
+    second: trunks_5
+  - first:
+      213: 1395501738064049528
+    second: trunks_6
+  - first:
+      213: 8173226838720576352
+    second: trunks_7
+  - first:
+      213: -6623246536555215861
+    second: trunks_8
+  - first:
+      213: -1313507767931908812
+    second: trunks_9
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +70,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -93,11 +123,221 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: trunks_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 264
+        width: 67
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aca98895338a10f488b54bcb96c55230
+      internalID: 6189606471496407223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trunks_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 263
+        width: 63
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af1962042114f0c45bdac7ee517ead12
+      internalID: -6613110224840712069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trunks_2
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 265
+        width: 82
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a28f89621807707409da91bff33fb9bd
+      internalID: -3144224037550029206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trunks_3
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 265
+        width: 70
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ceb27a49d1ce943856081635fbb379
+      internalID: -8044378571693499475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trunks_4
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 266
+        width: 159
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb1f9f4011c5cd741a9b747e225aebed
+      internalID: 1943602873183761189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trunks_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f18bee3bd919054498e8b55b3303e131
+      internalID: 4545232096274213050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trunks_6
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 0
+        width: 80
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e4a1877b5b9abd43a2cba14121b7ee5
+      internalID: 1395501738064049528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trunks_7
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 0
+        width: 67
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea139dabbcfcaa44ca05b0197208d4cc
+      internalID: 8173226838720576352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trunks_8
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 0
+        width: 76
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94905d8dd5728cd44ac0c9b127cd5481
+      internalID: -6623246536555215861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trunks_9
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 0
+        width: 143
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f5b89521e8bb8419e60fc241aabc93
+      internalID: -1313507767931908812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: cad1e8a756ad5a946b5286d1d355c2f9
     internalID: 0
     vertices: []
     indices: 
