@@ -20,6 +20,9 @@ namespace Character.Movement
         [Header("----- Child variables -----")]
 
         [SerializeField]
+        [Tooltip("Pertains to the Y velocity of the Rigidbody.\nGood for switching animations for jump up and down scenario.")]
+        private string m_animIsJumpingUp;
+        [SerializeField]
         private string m_animOnGround;
         [SerializeField]
         private string m_animOnWall;
@@ -123,6 +126,7 @@ namespace Character.Movement
                 .Where(velocity => (velocity.y < 0))
                 .Subscribe(_ =>
                 {
+                    AnimateChange(m_animIsJumpingUp, false);
                     m_compRigidBody2D.velocity += PhysicsUtil.GetFallVectorWithMultiplier(m_jumpFallMultiplier);
                 })
                 .AddTo(this);
@@ -131,6 +135,7 @@ namespace Character.Movement
             m_ground.IsOnGround()
                 .Subscribe(isOnGround =>
                 {
+                    AnimateChange(m_animIsJumpingUp, false);
                     AnimateChangeGround(m_animOnGround, isOnGround);
 
                     if (m_ground.IsWallHit().Value)
@@ -144,6 +149,7 @@ namespace Character.Movement
             m_ground.IsWallHit()
                 .Subscribe(isSliding =>
                 {
+                    AnimateChange(m_animIsJumpingUp, false);
                     AnimateChangeGround(m_animOnWall, isSliding);
 
                     if (isSliding && (m_modelInput.m_run == 0))
@@ -174,6 +180,7 @@ namespace Character.Movement
 
         private void Jump()
         {
+            AnimateChange(m_animIsJumpingUp, true);
             m_modelSFX.PlaySFX(m_clipJump);
 
             //m_compRigidBody2D.AddForce(Vector2.up * (m_jumpHeight * m_jumpVelocity) 
@@ -184,13 +191,16 @@ namespace Character.Movement
 
         private void AnimateChangeGround(string paramGround, bool isOnGround)
         {
-            if (m_compAnimator.GetBool(paramGround) != isOnGround)
-            {
-                m_compAnimator.SetBool(paramGround, isOnGround);
-            }
+            AnimateChange(paramGround, isOnGround);
 
             //reset jumps
             if (isOnGround) { m_jumpsLeft = m_jumpTimesMax; }
+        }
+
+        private void AnimateChange(string animParam, bool paramValue) {
+            if (m_compAnimator.GetBool(animParam) != paramValue) { //this if block is to prevent animation jittering
+                m_compAnimator.SetBool(animParam, paramValue);
+            }
         }
 
         private void ApplyWallSlide(bool isActive)
