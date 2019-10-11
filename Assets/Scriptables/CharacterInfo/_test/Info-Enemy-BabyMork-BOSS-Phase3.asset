@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e08700947ff67b04db2edf774974c690, type: 3}
-  m_Name: Info-Dummy
+  m_Name: Info-Enemy-BabyMork-BOSS-Phase3
   m_EditorClassIdentifier: 
-  m_infoUI: {fileID: 11400000, guid: 901726a999764134a8bc33d896f1d85a, type: 2}
+  m_infoUI: {fileID: 11400000, guid: f728e7420a6e0864191bec220c012974, type: 2}
   m_bio: 
   m_isPlayable: 0
   m_skillsInOrder:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  m_level: 1
+  m_rank: 0
   m_health: 100
   m_stamina: 100
   m_statMovement:
-    m_movSpeed: 0
-    m_stunLength: 1
-    m_deathLength: 1
+    m_movSpeed: 5.5
+    m_stunLength: 1.5
+    m_deathLength: 3
   m_statOffense:
-    m_physicalAttack: 0
-    m_magickAttack: 0
+    m_physicalAttack: 1
+    m_magickAttack: 1
     m_critChance: 1
     m_critDamage: 1
   m_statDefense:
-    m_physicalDefense: 0
+    m_physicalDefense: 1
     m_magickDefense: 1
     m_isMagusBane: 0

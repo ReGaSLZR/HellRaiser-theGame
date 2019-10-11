@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e08700947ff67b04db2edf774974c690, type: 3}
-  m_Name: Info-Enemy-BabyMork-BOSS-Phase1
+  m_Name: SignorFloof
   m_EditorClassIdentifier: 
   m_infoUI: {fileID: 11400000, guid: f728e7420a6e0864191bec220c012974, type: 2}
   m_bio: 
-  m_isPlayable: 0
+  m_isPlayable: 1
   m_skillsInOrder:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  m_level: 1
-  m_health: 10
+  - {fileID: 11400000, guid: 1d9394d362620a940903f7289463d734, type: 2}
+  - {fileID: 11400000, guid: 9f2a1ac320e69b140a67f4da40688142, type: 2}
+  - {fileID: 11400000, guid: 18b375b3b5eeda546a3dae86aada6cdf, type: 2}
+  m_rank: 1
+  m_health: 0
   m_stamina: 100
   m_statMovement:
-    m_movSpeed: 1.5
-    m_stunLength: 1.5
-    m_deathLength: 3
+    m_movSpeed: 4.5
+    m_stunLength: 0.25
+    m_deathLength: 0.25
   m_statOffense:
-    m_physicalAttack: 1
-    m_magickAttack: 1
-    m_critChance: 1
-    m_critDamage: 1
+    m_physicalAttack: 80
+    m_magickAttack: 0
+    m_critChance: 75
+    m_critDamage: 150
   m_statDefense:
-    m_physicalDefense: 1
-    m_magickDefense: 1
-    m_isMagusBane: 0
+    m_physicalDefense: 50
+    m_magickDefense: 0
+    m_isMagusBane: 1

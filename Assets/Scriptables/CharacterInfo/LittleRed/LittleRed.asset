@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e08700947ff67b04db2edf774974c690, type: 3}
-  m_Name: Info-ChibiPsyche3
+  m_Name: LittleRed
   m_EditorClassIdentifier: 
-  m_infoUI: {fileID: 11400000, guid: 901726a999764134a8bc33d896f1d85a, type: 2}
+  m_infoUI: {fileID: 11400000, guid: b2e17f15d7b94d1409243dbcf60f851d, type: 2}
   m_bio: 
   m_isPlayable: 1
   m_skillsInOrder:
   - {fileID: 11400000, guid: 1d9394d362620a940903f7289463d734, type: 2}
   - {fileID: 11400000, guid: 9f2a1ac320e69b140a67f4da40688142, type: 2}
-  - {fileID: 11400000, guid: 5466f4922eea7c440aa52b58d9d0ced0, type: 2}
-  m_rank: 2
+  - {fileID: 11400000, guid: 18b375b3b5eeda546a3dae86aada6cdf, type: 2}
+  m_rank: 1
   m_health: 100
   m_stamina: 100
   m_statMovement:
-    m_movSpeed: 5.5
+    m_movSpeed: 6.5
     m_stunLength: 0.25
     m_deathLength: 0.25
   m_statOffense:
     m_physicalAttack: 20
     m_magickAttack: 20
-    m_critChance: 100
-    m_critDamage: 58
+    m_critChance: 25
+    m_critDamage: 100
   m_statDefense:
-    m_physicalDefense: 62
+    m_physicalDefense: 5
     m_magickDefense: 0
-    m_isMagusBane: 0
+    m_isMagusBane: 1
