@@ -122,6 +122,116 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_direction: {x: 1, y: 0}
+--- !u!1 &7148909486365832221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6666403147355866527}
+  - component: {fileID: 5044118436245570390}
+  m_Layer: 8
+  m_Name: Skill-Dash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6666403147355866527
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7148909486365832221}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8442513984881137977}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5044118436245570390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7148909486365832221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c0660cc71706644ab056c8461d08d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_compAnimator: {fileID: 8442513984881137981}
+  m_animSkill: isUsingSkill2
+  m_animTriggerStopper: 
+  m_skillDelay: 0
+  m_skillDuration: 0.5
+  m_skillCooldown: 0.25
+  m_isRepeating: 0
+  m_clipSkillUse: {fileID: 8300000, guid: 17f4977144bd7a04397a9b0e47ca8940, type: 3}
+  m_childFX: {fileID: 0}
+  m_compRigidbody2D: {fileID: 8442513984881137978}
+  m_compSpriteRenderer: {fileID: 8442513984881137926}
+  m_dashForce: 1200
+--- !u!1 &7555109851128817139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8890851788653611471}
+  - component: {fileID: 1031654962482008338}
+  m_Layer: 8
+  m_Name: Skill-Camouflage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8890851788653611471
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7555109851128817139}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8442513984881137977}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1031654962482008338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7555109851128817139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7dc738137680194d97ec19004510128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_compAnimator: {fileID: 8442513984881137981}
+  m_animSkill: isUsingSkill3
+  m_animTriggerStopper: isUsingSkill3Trigger
+  m_skillDelay: 0
+  m_skillDuration: 5
+  m_skillCooldown: 0.5
+  m_isRepeating: 0
+  m_clipSkillUse: {fileID: 8300000, guid: 07adea211b986b04b80fa624ef29d2ff, type: 3}
+  m_childFX: {fileID: 0}
+  m_camouflageParent: {fileID: 8442513984881137977}
+  m_compCollider2D: {fileID: 8442513984881137976}
+  m_layerOnCamouflage: Camouflage
 --- !u!1 &8442513984881137927
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,8 +249,6 @@ GameObject:
   - component: {fileID: 6258712706737879514}
   - component: {fileID: 6258712706737879513}
   - component: {fileID: 6258712706737879515}
-  - component: {fileID: 6258712706873168956}
-  - component: {fileID: 6258712706873168899}
   m_Layer: 8
   m_Name: LittleRed
   m_TagString: Player
@@ -163,6 +271,8 @@ Transform:
   - {fileID: 6258712706013734295}
   - {fileID: 6258712705866312606}
   - {fileID: 2736400758310646847}
+  - {fileID: 6666403147355866527}
+  - {fileID: 8890851788653611471}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -322,8 +432,8 @@ MonoBehaviour:
   m_stats: {fileID: 6258712706737879513}
   m_skillMain: {fileID: 6258712706737879515}
   m_triggerOnDeath: {fileID: 0}
-  m_skillSecondary: {fileID: 6258712706873168956}
-  m_skillTertiary: {fileID: 6258712706873168899}
+  m_skillSecondary: {fileID: 5044118436245570390}
+  m_skillTertiary: {fileID: 1031654962482008338}
   m_uniqueCamera: {fileID: 0}
   m_isNotOnCycle: 0
 --- !u!114 &6258712706737879513
@@ -370,53 +480,6 @@ MonoBehaviour:
   m_hasSingleSpawnPoint: 0
   m_spawnPointMinus: {fileID: 1314518317061645825}
   m_spawnPointPlus: {fileID: 8018136366144047206}
---- !u!114 &6258712706873168956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8442513984881137927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51c0660cc71706644ab056c8461d08d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_compAnimator: {fileID: 8442513984881137981}
-  m_animSkill: isUsingSkill2
-  m_animTriggerStopper: 
-  m_skillDelay: 0
-  m_skillDuration: 0.5
-  m_skillCooldown: 0.25
-  m_isRepeating: 0
-  m_clipSkillUse: {fileID: 8300000, guid: 17f4977144bd7a04397a9b0e47ca8940, type: 3}
-  m_childFX: {fileID: 0}
-  m_compRigidbody2D: {fileID: 8442513984881137978}
-  m_compSpriteRenderer: {fileID: 8442513984881137926}
-  m_dashForce: 1200
---- !u!114 &6258712706873168899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8442513984881137927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7dc738137680194d97ec19004510128, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_compAnimator: {fileID: 8442513984881137981}
-  m_animSkill: isUsingSkill3
-  m_animTriggerStopper: isUsingSkill3Trigger
-  m_skillDelay: 0
-  m_skillDuration: 5
-  m_skillCooldown: 0.5
-  m_isRepeating: 0
-  m_clipSkillUse: {fileID: 8300000, guid: 07adea211b986b04b80fa624ef29d2ff, type: 3}
-  m_childFX: {fileID: 0}
-  m_compCollider2D: {fileID: 8442513984881137976}
-  m_layerOnCamouflage: Camouflage
 --- !u!1 &8442513984926914299
 GameObject:
   m_ObjectHideFlags: 0

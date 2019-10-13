@@ -12,6 +12,10 @@ namespace Character.Skill
         //COMPONENTS
         [SerializeField]
         [Required]
+        private Transform m_camouflageParent;
+
+        [SerializeField]
+        [Required]
         private Collider2D m_compCollider2D;
 
         [SerializeField]
@@ -22,19 +26,19 @@ namespace Character.Skill
         {
             base.Awake();
 
-            m_layerOriginal = gameObject.layer;
+            m_layerOriginal = m_camouflageParent.gameObject.layer;
         }
 
         protected override void OnSkillStart()
         {
             base.OnSkillStart();
-            gameObject.layer = LayerMask.NameToLayer(m_layerOnCamouflage);
+            m_camouflageParent.gameObject.layer = LayerMask.NameToLayer(m_layerOnCamouflage);
         }
 
         protected override void OnSkillFinish()
         {
             base.OnSkillFinish();
-            gameObject.layer = m_layerOriginal;
+            m_camouflageParent.gameObject.layer = m_layerOriginal;
         }
 
     }
