@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2507914531641349008}
   - component: {fileID: 7588752149878368299}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 760277031770982734}
   - component: {fileID: 3438703258668249288}
   - component: {fileID: 7986738946289970988}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skill-fx-pow-LEFT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1642603387
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3bdb4a3e54e8cc4428fc79f764f2c51e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 4759112362771314588}
   - component: {fileID: 6984543802458687338}
   - component: {fileID: 4057523283018076184}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: FX-Howl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,7 +433,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 2.5}
+  m_Offset: {x: 0, y: 1.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -534,7 +534,7 @@ GameObject:
   - component: {fileID: 1626051150664950899}
   - component: {fileID: 8158843527909724617}
   - component: {fileID: 3471226326446246672}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barrier-RIGHT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -590,7 +590,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1642603387
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: f003f5310f6af5640b9c87c19b774410, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -707,7 +707,7 @@ GameObject:
   - component: {fileID: 710016190290590177}
   - component: {fileID: 7987479508817917991}
   - component: {fileID: 6013124967863162677}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: skill-fx-wolfDefense
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -812,7 +812,7 @@ GameObject:
   - component: {fileID: 6196631089927801013}
   - component: {fileID: 3205666637114484203}
   - component: {fileID: 2159885047826918699}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: skill-fx-pow-RIGHT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -870,7 +870,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1642603387
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3bdb4a3e54e8cc4428fc79f764f2c51e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
@@ -1246,9 +1246,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -626985081
-  m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingLayerID: 30635297
+  m_SortingLayer: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2f33f9b3e47ef2b4f89a1345e22f773f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1407,7 +1407,7 @@ GameObject:
   - component: {fileID: 8438394861045490717}
   - component: {fileID: 294388732013585414}
   - component: {fileID: 8291074591693629296}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TargetDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1484,7 +1484,7 @@ GameObject:
   - component: {fileID: 8330624852631887137}
   - component: {fileID: 1618231840441792749}
   - component: {fileID: 4953040454393637119}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barrier-LEFT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1540,7 +1540,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1642603387
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: f003f5310f6af5640b9c87c19b774410, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1582,7 +1582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 176291799613117016}
   - component: {fileID: 7446196796804143762}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1627,7 +1627,7 @@ GameObject:
   - component: {fileID: 1953312927558888249}
   - component: {fileID: 240832172399388718}
   - component: {fileID: 8177134737895502605}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TargetDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}

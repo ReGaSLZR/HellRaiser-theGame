@@ -15,38 +15,26 @@ namespace Character.Skill
         private Collider2D m_compCollider2D;
 
         [SerializeField]
-        [TagSelector]
-        private string m_tagOnCamouflage;
-
-        [SerializeField]
-        private Collider2D m_colliderOnCamouflage;
-
-        private string m_tagOriginal;
-        private Collider2D m_colliderOriginal;
+        private string m_layerOnCamouflage = "Default";
+        private int m_layerOriginal;
 
         protected override void Awake()
         {
             base.Awake();
 
-            m_colliderOriginal = m_compCollider2D;
-            m_tagOriginal = gameObject.tag;
+            m_layerOriginal = gameObject.layer;
         }
 
         protected override void OnSkillStart()
         {
             base.OnSkillStart();
-            gameObject.tag = m_tagOnCamouflage;
-
-            if(m_colliderOnCamouflage != null) {
-                m_compCollider2D = m_colliderOnCamouflage;
-            }
+            gameObject.layer = LayerMask.NameToLayer(m_layerOnCamouflage);
         }
 
         protected override void OnSkillFinish()
         {
             base.OnSkillFinish();
-            gameObject.tag = m_tagOriginal;
-            m_compCollider2D = m_colliderOriginal;
+            gameObject.layer = m_layerOriginal;
         }
 
     }

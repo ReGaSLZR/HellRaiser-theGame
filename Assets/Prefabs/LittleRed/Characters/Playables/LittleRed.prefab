@@ -219,8 +219,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -626985081
-  m_SortingLayer: 1
+  m_SortingLayerID: 30635297
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f50320fa710e03b4f9dbd82af7755e8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -246,7 +246,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.1}
+  m_Offset: {x: 0, y: 0.15}
   m_Size: {x: 1, y: 2.5}
   m_Direction: 0
 --- !u!50 &8442513984881137978
@@ -363,10 +363,10 @@ MonoBehaviour:
   m_clipSkillUse: {fileID: 8300000, guid: 63d352e76859a5a4091688d514d1195e, type: 3}
   m_childFX: {fileID: 0}
   m_compSpriteRenderer: {fileID: 8442513984881137926}
-  m_prefabProjectile: {fileID: 7868619509480113042, guid: 01d2ad7c01b733b4a8a9cba4b73340c1,
+  m_prefabProjectile: {fileID: 7783906816781713068, guid: 677bbd37354b0f14dbf918dd8bc5f31d,
     type: 3}
   m_throwForce: 150
-  m_throwTorque: 1
+  m_throwTorque: 7
   m_hasSingleSpawnPoint: 0
   m_spawnPointMinus: {fileID: 1314518317061645825}
   m_spawnPointPlus: {fileID: 8018136366144047206}
@@ -416,8 +416,7 @@ MonoBehaviour:
   m_clipSkillUse: {fileID: 8300000, guid: 07adea211b986b04b80fa624ef29d2ff, type: 3}
   m_childFX: {fileID: 0}
   m_compCollider2D: {fileID: 8442513984881137976}
-  m_tagOnCamouflage: Player-Camouflaged
-  m_colliderOnCamouflage: {fileID: 0}
+  m_layerOnCamouflage: Camouflage
 --- !u!1 &8442513984926914299
 GameObject:
   m_ObjectHideFlags: 0
