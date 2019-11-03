@@ -16,11 +16,11 @@ MonoBehaviour:
   m_spielButtonBuyAgain: Buy Again
   m_spielButtonDisabled: Not enough funds.
   m_spielButtonOutOfStock: Out of Stock
-  m_itemIcon: {fileID: 2800000, guid: 19820cb19a12cdc4eb91b62e9fa36a20, type: 3}
+  m_itemIcon: {fileID: 2800000, guid: 179a21ba02cca7b469b8d50f3ada1516, type: 3}
   m_spielTitle: Large Health Potion
   m_spielDescription: A potion made of rare herbs that hasten the healing of an individual's
-    cells. The dose is enough to bring back your health to 100%.
-  m_stat: 
+    cells. The dose is enough to bring back to full health.
+  m_stat: STAT_HEALTH
   m_value: 100
   m_price: 1000
   m_stocks: 1

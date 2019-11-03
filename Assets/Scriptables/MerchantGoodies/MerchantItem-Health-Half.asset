@@ -16,11 +16,11 @@ MonoBehaviour:
   m_spielButtonBuyAgain: Buy Again
   m_spielButtonDisabled: Not enough funds.
   m_spielButtonOutOfStock: Out of Stock
-  m_itemIcon: {fileID: 2800000, guid: c7b271862dfe7994abcfeec274ae691c, type: 3}
+  m_itemIcon: {fileID: 2800000, guid: f42aa2870f6c25242b66ccb29fe181b1, type: 3}
   m_spielTitle: Small Health Potion
   m_spielDescription: A potion made of rare herbs that hasten the healing of an individual's
     cells. The dose is enough to heal 50% of max health.
-  m_stat: 
+  m_stat: STAT_HEALTH
   m_value: 50
   m_price: 250
   m_stocks: 3
