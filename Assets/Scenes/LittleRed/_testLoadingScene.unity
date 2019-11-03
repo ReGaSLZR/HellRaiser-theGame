@@ -722,6 +722,56 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3863805084093261699, guid: c62da25674bfd3e4f82ded29da972d8e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863805084093261699, guid: c62da25674bfd3e4f82ded29da972d8e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863805084093261699, guid: c62da25674bfd3e4f82ded29da972d8e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -150
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863805084093261699, guid: c62da25674bfd3e4f82ded29da972d8e,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863805084093261696, guid: c62da25674bfd3e4f82ded29da972d8e,
+        type: 3}
+      propertyPath: m_Name
+      value: Text-Loading
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863805084093261698, guid: c62da25674bfd3e4f82ded29da972d8e,
+        type: 3}
+      propertyPath: m_textAlignment
+      value: 513
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863805084093261698, guid: c62da25674bfd3e4f82ded29da972d8e,
+        type: 3}
+      propertyPath: m_text
+      value: Loading...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863805084093261698, guid: c62da25674bfd3e4f82ded29da972d8e,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863805084093261698, guid: c62da25674bfd3e4f82ded29da972d8e,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863805084093261698, guid: c62da25674bfd3e4f82ded29da972d8e,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c62da25674bfd3e4f82ded29da972d8e, type: 3}
 --- !u!114 &786951453 stripped
@@ -865,11 +915,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_textLoading: {fileID: 786951453}
   m_textContentToLoop:
+  - L
+  - Lo
+  - Loa
+  - Load
+  - Loadi
+  - Loadin
   - Loading
   - Loading.
   - Loading..
   - Loading...
-  m_loopDelay: 0.5
+  - 
+  m_loopDelay: 0.15
 --- !u!114 &1050679363
 MonoBehaviour:
   m_ObjectHideFlags: 0
