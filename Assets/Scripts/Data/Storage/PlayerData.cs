@@ -58,7 +58,7 @@ namespace Data.Storage {
             }
             else
             {
-                LogUtil.PrintError("PlayerData.ExecuteLoad(): Could not load " + path + " save file.");
+                LogUtil.PrintWarning("PlayerData.ExecuteLoad(): Could not load " + path + " save file.");
                 return null;
             }
         }
@@ -78,7 +78,7 @@ namespace Data.Storage {
 
             if (loadedData == null)
             {
-                LogUtil.PrintError("PlayerData.LoadInventory(): returning blank data instead.");
+                LogUtil.PrintWarning("PlayerData.LoadInventory(): returning blank data instead.");
                 return new Inventory(0);
             }
             else
@@ -93,7 +93,7 @@ namespace Data.Storage {
 
             if (loadedData == null)
             {
-                LogUtil.PrintError("PlayerData.LoadMissionProgression(): returning blank data instead.");
+                LogUtil.PrintWarning("PlayerData.LoadMissionProgression(): returning blank data instead.");
                 return new MissionProgression(0, 0);
             }
             else
