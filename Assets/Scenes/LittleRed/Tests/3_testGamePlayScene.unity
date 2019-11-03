@@ -1772,6 +1772,9 @@ MonoBehaviour:
   - Player
   m_isLockedToFirstSingleTarget: 1
   m_detectionRange: 5
+  m_isAdjustingHorizontally: 0
+  m_compSpriteRenderer: {fileID: 0}
+  m_offsetHorizontal: 0
 --- !u!1 &172057057
 GameObject:
   m_ObjectHideFlags: 0
@@ -17186,6 +17189,9 @@ MonoBehaviour:
   - Player
   m_isLockedToFirstSingleTarget: 1
   m_detectionRange: 5
+  m_isAdjustingHorizontally: 0
+  m_compSpriteRenderer: {fileID: 0}
+  m_offsetHorizontal: 0
 --- !u!61 &1810080853
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20586,7 +20592,7 @@ PrefabInstance:
     - target: {fileID: 4819952851368301412, guid: c4ba0d864dbed3a4e9980053bb72acd4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.26
+      value: 12.69
       objectReference: {fileID: 0}
     - target: {fileID: 4819952851368301412, guid: c4ba0d864dbed3a4e9980053bb72acd4,
         type: 3}
@@ -20658,8 +20664,39 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2789116618336933592, guid: c4ba0d864dbed3a4e9980053bb72acd4,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789116618336933592, guid: c4ba0d864dbed3a4e9980053bb72acd4,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226156747254863536, guid: c4ba0d864dbed3a4e9980053bb72acd4,
+        type: 3}
+      propertyPath: m_isAdjustingHorizontally
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226156747254863536, guid: c4ba0d864dbed3a4e9980053bb72acd4,
+        type: 3}
+      propertyPath: m_offsetHorizontal
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226156747254863536, guid: c4ba0d864dbed3a4e9980053bb72acd4,
+        type: 3}
+      propertyPath: m_compSpriteRenderer
+      value: 
+      objectReference: {fileID: 6994466401535552444}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4ba0d864dbed3a4e9980053bb72acd4, type: 3}
+--- !u!212 &6994466401535552444 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4819952851368301403, guid: c4ba0d864dbed3a4e9980053bb72acd4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6994466401535552443}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7868619510012825796
 PrefabInstance:
   m_ObjectHideFlags: 0

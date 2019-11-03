@@ -4,7 +4,8 @@ using UniRx;
 using System.Collections.Generic;
 using NaughtyAttributes;
 
-namespace Character {
+namespace Character
+{
 
     [RequireComponent(typeof(Collider2D))]
     public class TargetDetector : MonoBehaviour
@@ -23,10 +24,33 @@ namespace Character {
         [DisableIf("m_isLockedToFirstSingleTarget")]
         private float m_detectionRange = 5f;
 
+        [Space]
+
+        [SerializeField]
+        private bool m_isAdjustingHorizontally;
+
+        [SerializeField]
+        [ShowIf("m_isAdjustingHorizontally")]
+        private SpriteRenderer m_compSpriteRenderer;
+
+        [SerializeField]
+        [ShowIf("m_isAdjustingHorizontally")]
+        [Range(0f, 20f)]
+        private float m_offsetHorizontal = 1f;
+
         private ReactiveProperty<bool> m_isTargetDetected = new ReactiveProperty<bool>(false);
         private List<Collider2D> m_targets = new List<Collider2D>();
 
         private CompositeDisposable m_disposables = new CompositeDisposable();
+
+        private Collider2D m_compCollider2D;
+        private bool m_currentFlipX;
+
+        private void Awake()
+        {
+            m_compCollider2D = GetComponent<Collider2D>();
+            m_currentFlipX = m_compSpriteRenderer.flipX;
+        }
 
         private void OnDisable()
         {
@@ -36,9 +60,11 @@ namespace Character {
         private void OnEnable()
         {
             InitControlledObservers();
+            InitUnControlledObservers();
         }
 
-        private void InitControlledObservers() {
+        private void InitControlledObservers()
+        {
             this.OnTriggerEnter2DAsObservable()
                 .Where(otherCollider2D => IsMatchingTag(otherCollider2D.tag))
                 .Subscribe(otherCollider2D => CaptureTargets(otherCollider2D))
@@ -66,27 +92,52 @@ namespace Character {
                 .AddTo(m_disposables);
         }
 
-        public ReactiveProperty<bool> IsTargetDetected() {
+        private void InitUnControlledObservers()
+        {
+            if (m_isAdjustingHorizontally)
+            {
+                this.FixedUpdateAsObservable()
+                .Select(_ => m_compSpriteRenderer.flipX)
+                .Where(hasFlipped => (hasFlipped != m_currentFlipX))
+                .Subscribe(_ => {
+                    m_currentFlipX = m_compSpriteRenderer.flipX;
+                    m_compCollider2D.offset = new Vector2(
+                        (m_offsetHorizontal * (m_currentFlipX ? -1 : 1)),
+                        m_compCollider2D.offset.y);
+
+                })
+                .AddTo(m_disposables);
+            }
+        }
+
+        public ReactiveProperty<bool> IsTargetDetected()
+        {
             return m_isTargetDetected;
         }
 
-        public List<Collider2D> GetTargets() {
+        public List<Collider2D> GetTargets()
+        {
             return m_targets;
         }
 
-        public void CheckTargetsListForDestruction() {
-            for(int x=(m_targets.Count - 1); x>=0; x--) {
-                if (m_targets[x] == null) {
+        public void CheckTargetsListForDestruction()
+        {
+            for (int x = (m_targets.Count - 1); x >= 0; x--)
+            {
+                if (m_targets[x] == null)
+                {
                     m_targets.RemoveAt(x);
                 }
             }
 
-            if (m_targets.Count == 0) {
+            if (m_targets.Count == 0)
+            {
                 m_isTargetDetected.Value = false;
             }
         }
 
-        private void CaptureTargets(Collider2D targetCollider) {
+        private void CaptureTargets(Collider2D targetCollider)
+        {
             if (m_isTargetDetected.Value == false)
             {
                 RefreshTargets(targetCollider);
@@ -94,7 +145,8 @@ namespace Character {
             }
         }
 
-        private void ClearTargets() {
+        private void ClearTargets()
+        {
             m_isTargetDetected.Value = false;
             m_targets.Clear();
         }
