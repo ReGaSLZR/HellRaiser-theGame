@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 namespace Data.Storage {
 
+    /// <summary>
+    /// NOTE: All constant integer values here should reflect what's on the build settings.
+    /// </summary>
     public class SceneData
     {
 
@@ -11,6 +14,7 @@ namespace Data.Storage {
         public const int SCENE_SPLASH = 0;
         public const int SCENE_LOADING = 1;
         public const int SCENE_MAIN_MENU = 2;
+        public const int SCENE_MISSION_FIRST = 3;
 
         public static void LoadLevel(int levelIndex) {
             SceneManager.LoadSceneAsync(levelIndex);

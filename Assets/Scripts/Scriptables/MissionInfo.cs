@@ -1,5 +1,6 @@
 ﻿using NaughtyAttributes;
 using UnityEngine;
+using Data.Storage;
 
 namespace Scriptables {
 
@@ -15,6 +16,7 @@ namespace Scriptables {
             MISSION_TYPE_SIDE
         };
 
+        [Range(SceneData.SCENE_MISSION_FIRST, 50)]
         public int m_buildIndex;
 
         public Texture2D m_preview;
