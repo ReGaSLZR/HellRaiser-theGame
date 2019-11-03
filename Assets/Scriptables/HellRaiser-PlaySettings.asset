@@ -23,7 +23,7 @@ MonoBehaviour:
     m_moneyLoss: {r: 0.6415094, g: 0.24905662, b: 0, a: 1}
     m_time: {r: 1, g: 1, b: 1, a: 1}
     m_missionMainPanel: {r: 1, g: 1, b: 1, a: 1}
-    m_missionSidePanel: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
+    m_missionSidePanel: {r: 0.759434, g: 0.8170511, b: 1, a: 1}
   m_audioTheme:
     m_sfxButtonClick: {fileID: 8300000, guid: 26619cbefb97d4747b7220925b182b96, type: 3}
     m_sfxMissionUpdate: {fileID: 8300000, guid: 292b68e76d29f1740bc3e85b8557cc84,
