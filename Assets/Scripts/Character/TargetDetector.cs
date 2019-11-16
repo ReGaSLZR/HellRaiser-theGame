@@ -49,7 +49,10 @@ namespace Character
         private void Awake()
         {
             m_compCollider2D = GetComponent<Collider2D>();
-            m_currentFlipX = m_compSpriteRenderer.flipX;
+            if (m_isAdjustingHorizontally)
+            {
+                m_currentFlipX = m_compSpriteRenderer.flipX;
+            }
         }
 
         private void OnDisable()
