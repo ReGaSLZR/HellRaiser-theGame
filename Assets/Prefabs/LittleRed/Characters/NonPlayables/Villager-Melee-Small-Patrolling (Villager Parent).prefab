@@ -722,7 +722,7 @@ GameObject:
   - component: {fileID: 3203147469880554652}
   - component: {fileID: 8451705480808193472}
   m_Layer: 9
-  m_Name: Villager-Melee-Small
+  m_Name: Villager-Melee-Small-Patrolling (Villager Parent)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -870,7 +870,7 @@ MonoBehaviour:
   m_clipDeath: {fileID: 0}
   m_animMove: isPatrolling
   m_animStunned: isHurt
-  m_animDead: isDead
+  m_animDead: isHurt
   m_ground: {fileID: 3477614567915064104}
 --- !u!114 &2567530648197846832
 MonoBehaviour:

@@ -21,7 +21,7 @@ MonoBehaviour:
   m_clipDeath: {fileID: 0}
   m_animMove: 
   m_animStunned: isHurt
-  m_animDead: isDead
+  m_animDead: isHurt
   m_customStunLength: 0.4
   m_customDeathLength: 0.4
 --- !u!1001 &2955374298507372999
