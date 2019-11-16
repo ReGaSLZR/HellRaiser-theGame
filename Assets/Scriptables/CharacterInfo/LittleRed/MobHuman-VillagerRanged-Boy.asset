@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e08700947ff67b04db2edf774974c690, type: 3}
-  m_Name: MobHuman-VillagerMelee-Small
+  m_Name: MobHuman-VillagerRanged-Boy
   m_EditorClassIdentifier: 
   m_infoUI: {fileID: 0}
   m_bio: 
@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   m_rank: 0
-  m_health: 15
+  m_health: 5
   m_stamina: 100
   m_statMovement:
     m_movSpeed: 1
@@ -32,6 +32,6 @@ MonoBehaviour:
     m_critChance: 25
     m_critDamage: 50
   m_statDefense:
-    m_physicalDefense: 20
+    m_physicalDefense: 5
     m_magickDefense: 0
     m_isMagusBane: 0
