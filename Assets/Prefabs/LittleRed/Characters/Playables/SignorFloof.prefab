@@ -1331,7 +1331,7 @@ MonoBehaviour:
   m_ground: {fileID: 6994466401011639232}
   m_jumpVelocity: 9
   m_jumpFallMultiplier: 2.5
-  m_jumpHeight: 9
+  m_jumpHeight: 12
   m_jumpTimesMax: 1
   m_jumpsInterval: 0.25
   m_canJumpInMidair: 0

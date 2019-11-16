@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 280188651650938822}
   - component: {fileID: 280188651650938877}
   - component: {fileID: 5196944965950173779}
-  m_Layer: 15
+  m_Layer: 13
   m_Name: StoneBlade
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 280188651834144261}
   - component: {fileID: 280188651834144259}
   - component: {fileID: 1839711008615165004}
-  m_Layer: 15
+  m_Layer: 13
   m_Name: TargetDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,6 +288,7 @@ MonoBehaviour:
   m_targetTags:
   - Crate
   - Player
+  - Enemy
   - Merchant
   m_isLockedToFirstSingleTarget: 1
   m_detectionRange: 5

@@ -1,30 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &736179268418250561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2090771720381383793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13bca28e6e642894981a2798dfc8904d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_compAnimator: {fileID: 2090771720381383794}
-  m_compRigidBody2D: {fileID: 3297317549760033965}
-  m_compSpriteRenderer: {fileID: 2090771720381383795}
-  m_movementDirection: 0
-  m_shouldFlipSprite: 1
-  m_clipStunned: {fileID: 0}
-  m_clipDeath: {fileID: 0}
-  m_animMove: 
-  m_animStunned: isHurt
-  m_animDead: isHurt
-  m_customStunLength: 0.5
-  m_customDeathLength: 0.5
---- !u!1001 &3021160948264700196
+--- !u!1001 &3233010371429987370
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -34,17 +10,17 @@ PrefabInstance:
     - target: {fileID: 3814188439073082709, guid: a105ccca677954f4f9640d0e4746c86c,
         type: 3}
       propertyPath: m_Name
-      value: Villager-Melee-Big-IDLE
+      value: Soldier-Melee-Big-Patrolling
       objectReference: {fileID: 0}
     - target: {fileID: 3814188439073082704, guid: a105ccca677954f4f9640d0e4746c86c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.06075883
+      value: 1.0114901
       objectReference: {fileID: 0}
     - target: {fileID: 3814188439073082704, guid: a105ccca677954f4f9640d0e4746c86c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8041618
+      value: -2.5055196
       objectReference: {fileID: 0}
     - target: {fileID: 3814188439073082704, guid: a105ccca677954f4f9640d0e4746c86c,
         type: 3}
@@ -94,37 +70,59 @@ PrefabInstance:
     - target: {fileID: 3814188439073082711, guid: a105ccca677954f4f9640d0e4746c86c,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 4
+      value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 3592173961371773142, guid: a105ccca677954f4f9640d0e4746c86c,
+    - target: {fileID: 3814188439073082711, guid: a105ccca677954f4f9640d0e4746c86c,
         type: 3}
-      propertyPath: m_movement
+      propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 736179268418250561}
-    m_RemovedComponents:
-    - {fileID: 3261713332854223541, guid: a105ccca677954f4f9640d0e4746c86c, type: 3}
+      objectReference: {fileID: 21300000, guid: f5642d9be7251c64d87b83379a16b571,
+        type: 3}
+    - target: {fileID: 3814188439073082710, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8f4f5ede7219442b3a259eb20f9ad16a, type: 2}
+    - target: {fileID: 4470835339435559802, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_info
+      value: 
+      objectReference: {fileID: 11400000, guid: 8fba10042822a4977b21d5da23bf9a64,
+        type: 2}
+    - target: {fileID: 7557136741603754378, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_skillDelay
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557136741603754378, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_skillValueRange.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557136741603754378, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_skillValueRange.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 301527006833313710, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 301527006833313710, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 301527006833313711, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_offsetHorizontal
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 301527006833313711, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_isAdjustingHorizontally
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a105ccca677954f4f9640d0e4746c86c, type: 3}
---- !u!1 &2090771720381383793 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3814188439073082709, guid: a105ccca677954f4f9640d0e4746c86c,
-    type: 3}
-  m_PrefabInstance: {fileID: 3021160948264700196}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &2090771720381383795 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 3814188439073082711, guid: a105ccca677954f4f9640d0e4746c86c,
-    type: 3}
-  m_PrefabInstance: {fileID: 3021160948264700196}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &2090771720381383794 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3814188439073082710, guid: a105ccca677954f4f9640d0e4746c86c,
-    type: 3}
-  m_PrefabInstance: {fileID: 3021160948264700196}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &3297317549760033965 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 301527008024870281, guid: a105ccca677954f4f9640d0e4746c86c,
-    type: 3}
-  m_PrefabInstance: {fileID: 3021160948264700196}
-  m_PrefabAsset: {fileID: 0}

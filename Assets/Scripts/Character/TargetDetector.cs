@@ -49,10 +49,6 @@ namespace Character
         private void Awake()
         {
             m_compCollider2D = GetComponent<Collider2D>();
-            if (m_isAdjustingHorizontally)
-            {
-                m_currentFlipX = m_compSpriteRenderer.flipX;
-            }
         }
 
         private void OnDisable()
@@ -99,17 +95,17 @@ namespace Character
         {
             if (m_isAdjustingHorizontally)
             {
+                m_currentFlipX = m_compSpriteRenderer.flipX;
+
                 this.FixedUpdateAsObservable()
                 .Select(_ => m_compSpriteRenderer.flipX)
                 .Where(hasFlipped => (hasFlipped != m_currentFlipX))
                 .Subscribe(_ => {
-                    m_currentFlipX = m_compSpriteRenderer.flipX;
-                    m_compCollider2D.offset = new Vector2(
-                        (m_offsetHorizontal * (m_currentFlipX ? -1 : 1)),
-                        m_compCollider2D.offset.y);
-
+                    OffsetCollider();
                 })
                 .AddTo(m_disposables);
+
+                OffsetCollider();
             }
         }
 
@@ -137,6 +133,14 @@ namespace Character
             {
                 m_isTargetDetected.Value = false;
             }
+        }
+
+        private void OffsetCollider()
+        {
+            m_currentFlipX = m_compSpriteRenderer.flipX;
+            m_compCollider2D.offset = new Vector2(
+                (m_offsetHorizontal * (m_currentFlipX ? -1 : 1)),
+                m_compCollider2D.offset.y);
         }
 
         private void CaptureTargets(Collider2D targetCollider)

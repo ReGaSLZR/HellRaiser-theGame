@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e08700947ff67b04db2edf774974c690, type: 3}
-  m_Name: LittleRed
+  m_Name: Playable-LittleRed
   m_EditorClassIdentifier: 
   m_infoUI: {fileID: 11400000, guid: b2e17f15d7b94d1409243dbcf60f851d, type: 2}
   m_bio: 
@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9f2a1ac320e69b140a67f4da40688142, type: 2}
   - {fileID: 11400000, guid: 18b375b3b5eeda546a3dae86aada6cdf, type: 2}
   m_rank: 1
-  m_health: 0
+  m_health: 100
   m_stamina: 100
   m_statMovement:
     m_movSpeed: 6.5
@@ -29,8 +29,8 @@ MonoBehaviour:
   m_statOffense:
     m_physicalAttack: 20
     m_magickAttack: 20
-    m_critChance: 25
-    m_critDamage: 100
+    m_critChance: 75
+    m_critDamage: 140
   m_statDefense:
     m_physicalDefense: 10
     m_magickDefense: 0
