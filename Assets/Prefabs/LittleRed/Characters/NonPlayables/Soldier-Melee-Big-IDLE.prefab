@@ -36,6 +36,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soldier-Melee-Big-IDLE
       objectReference: {fileID: 0}
+    - target: {fileID: 2090799297544330492, guid: 87cabb8f360ee40f38a7610783dac7f1,
+        type: 3}
+      propertyPath: m_movement
+      value: 
+      objectReference: {fileID: 5760357821248540080}
+    - target: {fileID: 1743823109240568189, guid: 87cabb8f360ee40f38a7610783dac7f1,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -91,16 +101,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1743823109240568189, guid: 87cabb8f360ee40f38a7610783dac7f1,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2090799297544330492, guid: 87cabb8f360ee40f38a7610783dac7f1,
-        type: 3}
-      propertyPath: m_movement
-      value: 
-      objectReference: {fileID: 5760357821248540080}
     m_RemovedComponents:
     - {fileID: 116560546413840031, guid: 87cabb8f360ee40f38a7610783dac7f1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 87cabb8f360ee40f38a7610783dac7f1, type: 3}

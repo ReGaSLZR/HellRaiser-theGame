@@ -36,6 +36,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villager-Melee-Big-IDLE
       objectReference: {fileID: 0}
+    - target: {fileID: 3592173961371773142, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_movement
+      value: 
+      objectReference: {fileID: 736179268418250561}
+    - target: {fileID: 3814188439073082711, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3814188439073082704, guid: a105ccca677954f4f9640d0e4746c86c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -91,16 +101,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3814188439073082711, guid: a105ccca677954f4f9640d0e4746c86c,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3592173961371773142, guid: a105ccca677954f4f9640d0e4746c86c,
-        type: 3}
-      propertyPath: m_movement
-      value: 
-      objectReference: {fileID: 736179268418250561}
     m_RemovedComponents:
     - {fileID: 3261713332854223541, guid: a105ccca677954f4f9640d0e4746c86c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a105ccca677954f4f9640d0e4746c86c, type: 3}

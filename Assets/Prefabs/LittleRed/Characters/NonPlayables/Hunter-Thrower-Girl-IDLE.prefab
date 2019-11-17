@@ -34,7 +34,7 @@ PrefabInstance:
     - target: {fileID: 2471463042328326868, guid: 86ccde3ff17674507b6021f16356f243,
         type: 3}
       propertyPath: m_Name
-      value: Hunter-Ranged-Girl-IDLE
+      value: Hunter-Thrower-Girl-IDLE
       objectReference: {fileID: 0}
     - target: {fileID: 2471463042328326865, guid: 86ccde3ff17674507b6021f16356f243,
         type: 3}
@@ -94,7 +94,7 @@ PrefabInstance:
     - target: {fileID: 2471463042328326870, guid: 86ccde3ff17674507b6021f16356f243,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 16
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2844913254426138455, guid: 86ccde3ff17674507b6021f16356f243,
         type: 3}

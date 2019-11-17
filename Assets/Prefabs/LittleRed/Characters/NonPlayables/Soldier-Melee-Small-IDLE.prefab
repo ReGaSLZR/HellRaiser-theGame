@@ -34,7 +34,7 @@ PrefabInstance:
     - target: {fileID: 5685731678313739557, guid: 9ebc5eb5af72a4df19da6b28fe115777,
         type: 3}
       propertyPath: m_Name
-      value: Soldier-Melee-Small-Patrolling
+      value: Soldier-Melee-Small-IDLE
       objectReference: {fileID: 0}
     - target: {fileID: 5685731678313739552, guid: 9ebc5eb5af72a4df19da6b28fe115777,
         type: 3}
@@ -94,7 +94,7 @@ PrefabInstance:
     - target: {fileID: 5685731678313739559, guid: 9ebc5eb5af72a4df19da6b28fe115777,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 12
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5463017894003724454, guid: 9ebc5eb5af72a4df19da6b28fe115777,
         type: 3}

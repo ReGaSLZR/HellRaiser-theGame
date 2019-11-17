@@ -97,7 +97,7 @@ PrefabInstance:
     - target: {fileID: 3520286002569669873, guid: ae2ba5dfcbfc149d49a5432e4ae94c61,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 24
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3520286002569669873, guid: ae2ba5dfcbfc149d49a5432e4ae94c61,
         type: 3}
@@ -174,7 +174,8 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5773304002947013517, guid: ae2ba5dfcbfc149d49a5432e4ae94c61, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ae2ba5dfcbfc149d49a5432e4ae94c61, type: 3}
 --- !u!1 &1196416914536857930 stripped
 GameObject:

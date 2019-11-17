@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 7893706943379342751, guid: d72b2a73aee0748b783f37b608e33e7b,
         type: 3}
       propertyPath: m_Name
-      value: Hunter-Ranged-Girl-Patrolling
+      value: Hunter-Thrower-Girl-Patrolling
       objectReference: {fileID: 0}
     - target: {fileID: 7451545903676162992, guid: d72b2a73aee0748b783f37b608e33e7b,
         type: 3}
@@ -21,7 +21,7 @@ PrefabInstance:
     - target: {fileID: 7893706943379342749, guid: d72b2a73aee0748b783f37b608e33e7b,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 15
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 7893706943379342749, guid: d72b2a73aee0748b783f37b608e33e7b,
         type: 3}

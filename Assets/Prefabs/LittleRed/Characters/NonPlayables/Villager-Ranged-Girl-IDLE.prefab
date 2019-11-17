@@ -36,6 +36,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villager-Ranged-Girl-IDLE
       objectReference: {fileID: 0}
+    - target: {fileID: 908726912919871316, guid: 6e596348544014aa382f89e15a30a4ae,
+        type: 3}
+      propertyPath: m_movement
+      value: 
+      objectReference: {fileID: 8025904830932433364}
     - target: {fileID: 696717993141320402, guid: 6e596348544014aa382f89e15a30a4ae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -94,13 +99,8 @@ PrefabInstance:
     - target: {fileID: 696717993141320405, guid: 6e596348544014aa382f89e15a30a4ae,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 8
+      value: 18
       objectReference: {fileID: 0}
-    - target: {fileID: 908726912919871316, guid: 6e596348544014aa382f89e15a30a4ae,
-        type: 3}
-      propertyPath: m_movement
-      value: 
-      objectReference: {fileID: 8025904830932433364}
     m_RemovedComponents:
     - {fileID: 1154728557125797175, guid: 6e596348544014aa382f89e15a30a4ae, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6e596348544014aa382f89e15a30a4ae, type: 3}

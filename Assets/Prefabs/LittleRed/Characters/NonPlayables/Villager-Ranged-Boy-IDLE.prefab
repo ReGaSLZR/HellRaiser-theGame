@@ -91,16 +91,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 833268769828433073, guid: b5271b97a61af48c98b4e3b3330d5c11,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 1055833024906545456, guid: b5271b97a61af48c98b4e3b3330d5c11,
         type: 3}
       propertyPath: m_movement
       value: 
       objectReference: {fileID: 5734160837108160433}
+    - target: {fileID: 833268769828433073, guid: b5271b97a61af48c98b4e3b3330d5c11,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 4274435644424070728, guid: b5271b97a61af48c98b4e3b3330d5c11,
         type: 3}
       propertyPath: m_Offset.x

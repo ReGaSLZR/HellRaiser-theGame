@@ -82,6 +82,17 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 2567530648197846832, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_info
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d8868cbd9f124f02986dcd9ffad24d7,
+        type: 2}
+    - target: {fileID: 2973662895143473436, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b0211eca1987a4d79836186046d12f0c, type: 2}
     - target: {fileID: 2973662895143473437, guid: 42fcfab5ab0954c328627699c8d471a7,
         type: 3}
       propertyPath: m_SortingOrder
@@ -93,11 +104,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 5101995065bf1724c81e1bd650e609e9,
         type: 3}
-    - target: {fileID: 2973662895143473436, guid: 42fcfab5ab0954c328627699c8d471a7,
+    - target: {fileID: 3524564194890182399, guid: 42fcfab5ab0954c328627699c8d471a7,
         type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: b0211eca1987a4d79836186046d12f0c, type: 2}
+      propertyPath: m_animDead
+      value: isHurt
+      objectReference: {fileID: 0}
     - target: {fileID: 1838902135984562626, guid: 42fcfab5ab0954c328627699c8d471a7,
         type: 3}
       propertyPath: m_Offset.y
@@ -113,17 +124,6 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 2.683298
       objectReference: {fileID: 0}
-    - target: {fileID: 3524564194890182399, guid: 42fcfab5ab0954c328627699c8d471a7,
-        type: 3}
-      propertyPath: m_animDead
-      value: isHurt
-      objectReference: {fileID: 0}
-    - target: {fileID: 2567530648197846832, guid: 42fcfab5ab0954c328627699c8d471a7,
-        type: 3}
-      propertyPath: m_info
-      value: 
-      objectReference: {fileID: 11400000, guid: 3d8868cbd9f124f02986dcd9ffad24d7,
-        type: 2}
     - target: {fileID: 8451705480808193472, guid: 42fcfab5ab0954c328627699c8d471a7,
         type: 3}
       propertyPath: m_skillDelay

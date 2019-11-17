@@ -34,8 +34,23 @@ PrefabInstance:
     - target: {fileID: 7893706943379342751, guid: d72b2a73aee0748b783f37b608e33e7b,
         type: 3}
       propertyPath: m_Name
-      value: Hunter-Ranged-Boy-IDLE
+      value: Hunter-Thrower-Boy-IDLE
       objectReference: {fileID: 0}
+    - target: {fileID: 7546726372107591708, guid: d72b2a73aee0748b783f37b608e33e7b,
+        type: 3}
+      propertyPath: m_movement
+      value: 
+      objectReference: {fileID: 2493803783439539643}
+    - target: {fileID: 7893706943379342749, guid: d72b2a73aee0748b783f37b608e33e7b,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893706943379342748, guid: d72b2a73aee0748b783f37b608e33e7b,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a46e049a8bb334c6da1d6c6e346c9fa5, type: 2}
     - target: {fileID: 7893706943379342746, guid: d72b2a73aee0748b783f37b608e33e7b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -91,21 +106,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7893706943379342749, guid: d72b2a73aee0748b783f37b608e33e7b,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 7893706943379342748, guid: d72b2a73aee0748b783f37b608e33e7b,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: a46e049a8bb334c6da1d6c6e346c9fa5, type: 2}
-    - target: {fileID: 7546726372107591708, guid: d72b2a73aee0748b783f37b608e33e7b,
-        type: 3}
-      propertyPath: m_movement
-      value: 
-      objectReference: {fileID: 2493803783439539643}
     m_RemovedComponents:
     - {fileID: 8368042663841970815, guid: d72b2a73aee0748b783f37b608e33e7b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d72b2a73aee0748b783f37b608e33e7b, type: 3}
