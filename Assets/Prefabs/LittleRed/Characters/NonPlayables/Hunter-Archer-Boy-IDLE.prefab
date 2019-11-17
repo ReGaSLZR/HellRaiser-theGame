@@ -12,6 +12,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hunter-Archer-Boy-IDLE
       objectReference: {fileID: 0}
+    - target: {fileID: 2076234426708290299, guid: 488ea13c9a7064ba58f91aa6a0329e92,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: be26ebc0792d44f1689f7ae0aef05519, type: 2}
+    - target: {fileID: 2076234426708290298, guid: 488ea13c9a7064ba58f91aa6a0329e92,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076234426708290298, guid: 488ea13c9a7064ba58f91aa6a0329e92,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 22cc72d558d9c6541afd90cf6a972d74,
+        type: 3}
+    - target: {fileID: 2076234426708290298, guid: 488ea13c9a7064ba58f91aa6a0329e92,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2076234426708290301, guid: 488ea13c9a7064ba58f91aa6a0329e92,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,27 +88,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2076234426708290298, guid: 488ea13c9a7064ba58f91aa6a0329e92,
+    - target: {fileID: 1600296385539337431, guid: 488ea13c9a7064ba58f91aa6a0329e92,
         type: 3}
-      propertyPath: m_SortingOrder
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 2076234426708290298, guid: 488ea13c9a7064ba58f91aa6a0329e92,
-        type: 3}
-      propertyPath: m_Sprite
+      propertyPath: m_info
       value: 
-      objectReference: {fileID: 21300000, guid: 22cc72d558d9c6541afd90cf6a972d74,
-        type: 3}
-    - target: {fileID: 2076234426708290298, guid: 488ea13c9a7064ba58f91aa6a0329e92,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2076234426708290299, guid: 488ea13c9a7064ba58f91aa6a0329e92,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: be26ebc0792d44f1689f7ae0aef05519, type: 2}
+      objectReference: {fileID: 11400000, guid: aefbaa54765e743e5ab5a42d91a10c42,
+        type: 2}
     - target: {fileID: 3175531623650826789, guid: 488ea13c9a7064ba58f91aa6a0329e92,
         type: 3}
       propertyPath: m_Size.x
@@ -103,12 +109,6 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 1.2853982
       objectReference: {fileID: 0}
-    - target: {fileID: 1600296385539337431, guid: 488ea13c9a7064ba58f91aa6a0329e92,
-        type: 3}
-      propertyPath: m_info
-      value: 
-      objectReference: {fileID: 11400000, guid: aefbaa54765e743e5ab5a42d91a10c42,
-        type: 2}
     - target: {fileID: 2833145491720716525, guid: 488ea13c9a7064ba58f91aa6a0329e92,
         type: 3}
       propertyPath: m_prefabProjectile
@@ -130,14 +130,9 @@ PrefabInstance:
       propertyPath: m_throwForce
       value: 160
       objectReference: {fileID: 0}
-    - target: {fileID: 3175531622821044226, guid: 488ea13c9a7064ba58f91aa6a0329e92,
+    - target: {fileID: 2833145491720716525, guid: 488ea13c9a7064ba58f91aa6a0329e92,
         type: 3}
-      propertyPath: m_offsetHorizontal
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3175531622821044226, guid: 488ea13c9a7064ba58f91aa6a0329e92,
-        type: 3}
-      propertyPath: m_isAdjustingHorizontally
+      propertyPath: m_shouldInfluenceProjectileFlipX
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1425849683050568393, guid: 488ea13c9a7064ba58f91aa6a0329e92,
@@ -149,6 +144,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3175531622821044226, guid: 488ea13c9a7064ba58f91aa6a0329e92,
+        type: 3}
+      propertyPath: m_offsetHorizontal
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3175531622821044226, guid: 488ea13c9a7064ba58f91aa6a0329e92,
+        type: 3}
+      propertyPath: m_isAdjustingHorizontally
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4382732767411735372, guid: 488ea13c9a7064ba58f91aa6a0329e92,
         type: 3}
