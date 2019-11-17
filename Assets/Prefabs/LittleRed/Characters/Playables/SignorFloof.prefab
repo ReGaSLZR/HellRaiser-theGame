@@ -969,7 +969,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4219944330690879405}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -1410,7 +1410,7 @@ GameObject:
   - component: {fileID: 8438394861045490717}
   - component: {fileID: 294388732013585414}
   - component: {fileID: 8291074591693629296}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: TargetDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1633,7 +1633,7 @@ GameObject:
   - component: {fileID: 1953312927558888249}
   - component: {fileID: 240832172399388718}
   - component: {fileID: 8177134737895502605}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: TargetDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}

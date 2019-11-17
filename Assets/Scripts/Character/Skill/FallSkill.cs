@@ -16,7 +16,7 @@ namespace Character.Skill {
         [Space]
 
         [SerializeField]
-        [Range(1.1f, 5f)]
+        [Range(1.1f, 15f)]
         private float m_gravityScale;
 
         protected override void Awake()
