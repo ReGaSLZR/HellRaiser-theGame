@@ -1,18 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &8319143065768378174
+--- !u!114 &5995310511263830663
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4796676949060195723}
+  m_GameObject: {fileID: 1196416914536857930}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e6a429d1a99145d09f08cb7a994df4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_compAnimator: {fileID: 4796676949060195720}
+  m_compAnimator: {fileID: 1196416914536857929}
   m_animSkill: isAttacking
   m_animTriggerStopper: 
   m_skillDelay: 0.2
@@ -22,7 +22,7 @@ MonoBehaviour:
   m_clipSkillUse: {fileID: 0}
   m_childFX: {fileID: 0}
   m_objectToReveal: {fileID: 0}
---- !u!1001 &8235862378507958648
+--- !u!1001 &2323883450673458617
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -32,7 +32,7 @@ PrefabInstance:
     - target: {fileID: 3520286002569669875, guid: ae2ba5dfcbfc149d49a5432e4ae94c61,
         type: 3}
       propertyPath: m_Name
-      value: Beggar-Front-Boy-IDLE
+      value: Beggar-Front-Girl-IDLE
       objectReference: {fileID: 0}
     - target: {fileID: 3520286002569669875, guid: ae2ba5dfcbfc149d49a5432e4ae94c61,
         type: 3}
@@ -42,12 +42,12 @@ PrefabInstance:
     - target: {fileID: 3520286002569669878, guid: ae2ba5dfcbfc149d49a5432e4ae94c61,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.6661305
+      value: 1.4648566
       objectReference: {fileID: 0}
     - target: {fileID: 3520286002569669878, guid: ae2ba5dfcbfc149d49a5432e4ae94c61,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3193836
+      value: -2.122298
       objectReference: {fileID: 0}
     - target: {fileID: 3520286002569669878, guid: ae2ba5dfcbfc149d49a5432e4ae94c61,
         type: 3}
@@ -97,19 +97,19 @@ PrefabInstance:
     - target: {fileID: 3520286002569669873, guid: ae2ba5dfcbfc149d49a5432e4ae94c61,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 22
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 3520286002569669873, guid: ae2ba5dfcbfc149d49a5432e4ae94c61,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 01dea348c2d8cf2408edd106cd609f5b,
+      objectReference: {fileID: 21300000, guid: 35dbab8677d3d4846b04cf77ed6456c9,
         type: 3}
     - target: {fileID: 3520286002569669872, guid: ae2ba5dfcbfc149d49a5432e4ae94c61,
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 7686e219943074810afa706be3008014, type: 2}
+      objectReference: {fileID: 9100000, guid: 24fc24eac0c52454e8305850a2e13d09, type: 2}
     - target: {fileID: 7622285979130926, guid: ae2ba5dfcbfc149d49a5432e4ae94c61, type: 3}
       propertyPath: m_Offset.y
       value: 0.12
@@ -128,7 +128,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_skillMain
       value: 
-      objectReference: {fileID: 8319143065768378174}
+      objectReference: {fileID: 5995310511263830663}
     - target: {fileID: 1049637875565714352, guid: ae2ba5dfcbfc149d49a5432e4ae94c61,
         type: 3}
       propertyPath: m_shouldFlipSprite
@@ -176,15 +176,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae2ba5dfcbfc149d49a5432e4ae94c61, type: 3}
---- !u!1 &4796676949060195723 stripped
+--- !u!1 &1196416914536857930 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3520286002569669875, guid: ae2ba5dfcbfc149d49a5432e4ae94c61,
     type: 3}
-  m_PrefabInstance: {fileID: 8235862378507958648}
+  m_PrefabInstance: {fileID: 2323883450673458617}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &4796676949060195720 stripped
+--- !u!95 &1196416914536857929 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3520286002569669872, guid: ae2ba5dfcbfc149d49a5432e4ae94c61,
     type: 3}
-  m_PrefabInstance: {fileID: 8235862378507958648}
+  m_PrefabInstance: {fileID: 2323883450673458617}
   m_PrefabAsset: {fileID: 0}
