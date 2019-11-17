@@ -29,6 +29,9 @@ namespace Character.Skill {
         [SerializeField]
         private float m_throwTorque = 1f;
 
+        [SerializeField]
+        private bool m_shouldInfluenceProjecileFlipX;
+
         [Space]
 
         [SerializeField]
@@ -50,6 +53,7 @@ namespace Character.Skill {
                 spawner.gameObject.transform);
 
             PassStatOffenseTo(projectile);
+            InFluenceProjectileFlipX(projectile);
             ApplyForceToProjectile(projectile, spawner);
         }
 
@@ -75,6 +79,18 @@ namespace Character.Skill {
 
             rigidBody2DProjectile.AddForce(spawnPoint.m_direction * m_throwForce);
             rigidBody2DProjectile.AddTorque(m_throwTorque, ForceMode2D.Force);
+        }
+
+        private void InFluenceProjectileFlipX(GameObject projectile)
+        {
+            if (m_shouldInfluenceProjecileFlipX)
+            {
+                SpriteRenderer spriteRenderer = projectile.GetComponent<SpriteRenderer>();
+                if (spriteRenderer != null)
+                {
+                    spriteRenderer.flipX = m_compSpriteRenderer.flipX;
+                }
+            }
         }
 
     }
