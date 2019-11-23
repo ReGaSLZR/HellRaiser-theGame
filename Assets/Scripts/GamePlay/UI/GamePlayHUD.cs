@@ -83,7 +83,7 @@ namespace GamePlay.UI {
                         m_textCharacterRank.text = PREFIX_CHARACTER_RANK + characterInfo.m_rank.ToString();
                     }
 
-                    m_characterAvatar.texture = characterInfo.m_infoUI.m_avatarMain;
+                    m_characterAvatar.texture = characterInfo.m_avatar.m_avatarMain;
                 })
                 .AddTo(this);
 

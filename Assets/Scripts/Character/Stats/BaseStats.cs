@@ -8,7 +8,8 @@ using Utils;
 using Zenject;
 using static Scriptables.PlaySettings;
 
-namespace Character.Stats {
+namespace Character.Stats
+{
 
     public class BaseStats : MonoBehaviour
     {
@@ -54,39 +55,48 @@ namespace Character.Stats {
             m_disposables.Clear();
         }
 
-        public string GetCharacterName() {
-            return m_info.m_infoUI.m_name;
+        public string GetCharacterName()
+        {
+            return m_info.m_avatar.m_name;
         }
 
-        public CharacterInfoSkill[] GetCharacterSkills() {
+        public CharacterSkill[] GetCharacterSkills()
+        {
             return m_info.m_skillsInOrder;
         }
 
-        public StatMovement GetStatMovement() {
+        public StatMovement GetStatMovement()
+        {
             return m_info.m_statMovement;
         }
 
-        public StatOffense GetStatOffense() {
+        public StatOffense GetStatOffense()
+        {
             return m_info.m_statOffense;
         }
 
-        public ReactiveProperty<int> GetHealth() {
+        public ReactiveProperty<int> GetHealth()
+        {
             return m_reactiveHealth;
         }
 
-        public ReactiveProperty<bool> IsHurt() {
+        public ReactiveProperty<bool> IsHurt()
+        {
             return m_reactiveIsHurt;
         }
 
-        private string GetCriticalAppend(bool isCritical) {
+        private string GetCriticalAppend(bool isCritical)
+        {
             return (isCritical) ? "\n CRIT!" : "";
         }
 
-        private Color GetFeedbackTextColor(int finalInflictionValue, Color customColor) {
+        private Color GetFeedbackTextColor(int finalInflictionValue, Color customColor)
+        {
             return (finalInflictionValue == 0) ? m_colorScheme.m_damageNull : customColor;
         }
 
-        private string GetStatChangeText(int changeValue, bool isDamage, bool isCritical, StatInflictionType type) {
+        private string GetStatChangeText(int changeValue, bool isDamage, bool isCritical, StatInflictionType type)
+        {
             string sign = (isDamage) ? "-" : "+";
 
             return (changeValue == 0) ? "NO DAMAGE" :
@@ -105,21 +115,23 @@ namespace Character.Stats {
 
             int damageReceivedReducedByDefenseOrBane = StatsUtil.GetDamageReducedByDefense(damage, m_info.m_statDefense, type, m_info.m_rank);
 
-            UpdateStatChangeText(GetStatChangeText(damageReceivedReducedByDefenseOrBane, true, isCritical, type), 
+            UpdateStatChangeText(GetStatChangeText(damageReceivedReducedByDefenseOrBane, true, isCritical, type),
                 GetFeedbackTextColor(damageReceivedReducedByDefenseOrBane, color));
             ForceShowStatChangeText();
 
             valueHolder.Value = Mathf.Clamp(
                 (valueHolder.Value - damageReceivedReducedByDefenseOrBane), 0, valueHolder.Value);
 
-            if (damageReceivedReducedByDefenseOrBane > 0) {
+            if (damageReceivedReducedByDefenseOrBane > 0)
+            {
                 StopAllCoroutines();
                 StartCoroutine(CorStun());
             }
 
         }
 
-        private void Recover(int value, int maxValue, bool isCritical, StatInflictionType type, ReactiveProperty<int> valueHolder, Color color) {
+        private void Recover(int value, int maxValue, bool isCritical, StatInflictionType type, ReactiveProperty<int> valueHolder, Color color)
+        {
             if (value <= 0)
             {
                 LogUtil.PrintWarning(gameObject, GetType(), "Recover(): Invalid value of " + value);
@@ -127,36 +139,42 @@ namespace Character.Stats {
             }
 
             int recoveryValue = StatsUtil.GetRecoveryValue(value, type, m_info.m_statDefense.m_isMagusBane, m_info.m_rank);
-            string statChangeText = (recoveryValue == 0) ? "NO EFFECT" : 
+            string statChangeText = (recoveryValue == 0) ? "NO EFFECT" :
                 ("+" + recoveryValue.ToString() + GetCriticalAppend(isCritical) + //sample: +99\nCRIT!
                 (StatsUtil.IsInflictionReduceableByBane(m_info.m_statDefense.m_isMagusBane, type) ? //sample: (if bane) \nREDUCED! (else) *blank*
                     ("\n" + StatsUtil.GetMagickDamageFeedbackOnMagusBane(m_info.m_rank, recoveryValue)) : ""));
 
-            UpdateStatChangeText(GetStatChangeText(recoveryValue, false, isCritical, type), 
+            UpdateStatChangeText(statChangeText,
                 GetFeedbackTextColor(recoveryValue, color));
             ForceShowStatChangeText();
 
             valueHolder.Value = Mathf.Clamp(valueHolder.Value + recoveryValue, 0, maxValue);
         }
 
-        public virtual void RecoverHealth(int health, bool isCritical, StatInflictionType type) {
+        public virtual void RecoverHealth(int health, bool isCritical, StatInflictionType type)
+        {
             Recover(health, Scriptables.CharacterInfo.HEALTH_MAX, isCritical, type, m_reactiveHealth, m_colorScheme.m_healthGain);
         }
 
-        public virtual void DealHealthDamage(int damage, bool isCritical, StatInflictionType type) {
+        public virtual void DealHealthDamage(int damage, bool isCritical, StatInflictionType type)
+        {
             DealDamage(damage, isCritical, type, m_reactiveHealth, m_colorScheme.m_healthLoss);
         }
 
-        public virtual void RecoverStamina(int stamina, bool isCritical, StatInflictionType type) {
+        public virtual void RecoverStamina(int stamina, bool isCritical, StatInflictionType type)
+        {
             Recover(stamina, Scriptables.CharacterInfo.STAMINA_MAX, isCritical, type, m_reactiveStamina, m_colorScheme.m_staminaGain);
         }
 
-        public virtual void DealStaminaDamage(int damage, bool isCritical, StatInflictionType type) {
+        public virtual void DealStaminaDamage(int damage, bool isCritical, StatInflictionType type)
+        {
             DealDamage(damage, isCritical, type, m_reactiveStamina, m_colorScheme.m_staminaLoss);
         }
 
-        protected void UpdateStatChangeText(string text, Color color) {
-            if (m_textStatChange == null) {
+        protected void UpdateStatChangeText(string text, Color color)
+        {
+            if (m_textStatChange == null)
+            {
                 LogUtil.PrintWarning(gameObject, GetType(), "UpdateStatChangeText(): NULL stat change text.");
                 return;
             }
@@ -169,22 +187,26 @@ namespace Character.Stats {
         /// Make sure variable m_textStatChange has an animation that plays 
         /// upon gameObject.SetActive(true) and hides itself after;
         /// </summary>
-        protected void ForceShowStatChangeText() {
-            if (m_textStatChange == null) {
+        protected void ForceShowStatChangeText()
+        {
+            if (m_textStatChange == null)
+            {
                 LogUtil.PrintInfo(gameObject, GetType(), "ForceShowStatChangeText(): NULL stat change text.");
                 return;
             }
 
-            if (m_textStatChange.gameObject.activeSelf) {
+            if (m_textStatChange.gameObject.activeSelf)
+            {
                 m_textStatChange.gameObject.SetActive(false);
             }
 
             m_textStatChange.gameObject.SetActive(true);
         }
 
-        private IEnumerator CorStun() {
+        private IEnumerator CorStun()
+        {
             m_reactiveIsHurt.Value = true;
-            yield return new WaitForSeconds((m_reactiveHealth.Value <= 0) ? 
+            yield return new WaitForSeconds((m_reactiveHealth.Value <= 0) ?
                 m_info.m_statMovement.m_deathLength : m_info.m_statMovement.m_stunLength);
             m_reactiveIsHurt.Value = false;
         }

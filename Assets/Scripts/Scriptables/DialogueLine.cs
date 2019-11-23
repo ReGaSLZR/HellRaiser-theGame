@@ -35,7 +35,7 @@ namespace Scriptables {
 
         #endregion
 
-        public CharacterInfoUI m_speaker;
+        public CharacterAvatar  m_speaker;
         [Dropdown("m_dropdownOptionsExpressions")]
         public int m_expression;
 

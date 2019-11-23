@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e08700947ff67b04db2edf774974c690, type: 3}
   m_Name: MobHuman-Shielder-Girl
   m_EditorClassIdentifier: 
-  m_infoUI: {fileID: 0}
+  m_isMob: 1
+  m_avatar: {fileID: 0}
   m_bio: 
   m_isPlayable: 0
   m_skillsInOrder:

@@ -4,8 +4,8 @@ using UnityEngine;
 namespace Scriptables
 {
 
-    [CreateAssetMenu(fileName = "New Character Info Skill", menuName = "HellRaiser/Create Character Info Skill")]
-    public class CharacterInfoSkill : ScriptableObject
+    [CreateAssetMenu(fileName = "Skill-", menuName = "HellRaiser/Create Character Skill")]
+    public class CharacterSkill : ScriptableObject
     {
 
         public string m_name;

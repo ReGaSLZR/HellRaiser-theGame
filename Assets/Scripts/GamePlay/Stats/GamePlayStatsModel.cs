@@ -59,19 +59,22 @@ namespace GamePlay.Stats
             PlayerData.Save(new Inventory(m_inventoryMoney.Value));
         }
 
-        private void SetActiveCharacter(Scriptables.CharacterInfo charInfo) {
+        private void SetActiveCharacter(Scriptables.CharacterInfo charInfo)
+        {
             m_activeCharInfo.Value = charInfo;
 
             m_charHealth.Value = charInfo.m_health;
             m_charStamina.Value = charInfo.m_stamina;
         }
 
-        private void SetPlayerValues() {
+        private void SetPlayerValues()
+        {
             Inventory inventory = PlayerData.LoadInventory();
             m_inventoryMoney.Value = inventory.m_money;
         }
 
-        public ReactiveProperty<Scriptables.CharacterInfo> GetActiveCharacter() {
+        public ReactiveProperty<Scriptables.CharacterInfo> GetActiveCharacter()
+        {
             return m_activeCharInfo;
         }
 
@@ -85,7 +88,8 @@ namespace GamePlay.Stats
             return m_charStamina;
         }
 
-        public ReactiveProperty<bool> HasACharacterDied() {
+        public ReactiveProperty<bool> HasACharacterDied()
+        {
             return m_charHasDied;
         }
 
@@ -94,8 +98,9 @@ namespace GamePlay.Stats
             return m_inventoryMoney;
         }
 
-        public void RegisterCharacterForStats(Scriptables.CharacterInfo characterInfo) {
-            Scriptables.CharacterInfo charInfoFromCache = GetCharacterInfoFromCache(characterInfo.m_infoUI.m_name, false);
+        public void RegisterCharacterForStats(Scriptables.CharacterInfo characterInfo)
+        {
+            Scriptables.CharacterInfo charInfoFromCache = GetCharacterInfoFromCache(characterInfo.m_avatar.m_name, false);
 
             if (charInfoFromCache == null)
             {
@@ -104,7 +109,7 @@ namespace GamePlay.Stats
             }
             else
             {
-                Scriptables.CharacterInfo previousCharacter = GetCharacterInfoFromCache(m_activeCharInfo.Value.m_infoUI.m_name, true);
+                Scriptables.CharacterInfo previousCharacter = GetCharacterInfoFromCache(m_activeCharInfo.Value.m_avatar.m_name, true);
                 previousCharacter.m_health = m_charHealth.Value;
                 previousCharacter.m_stamina = m_charStamina.Value;
                 m_listCharacterInfo.Add(previousCharacter);
@@ -113,13 +118,15 @@ namespace GamePlay.Stats
             }
         }
 
-        private Scriptables.CharacterInfo GetCharacterInfoFromCache(string charName, bool shouldRemoveIfExists) {
+        private Scriptables.CharacterInfo GetCharacterInfoFromCache(string charName, bool shouldRemoveIfExists)
+        {
             for (int x = 0; x < m_listCharacterInfo.Count; x++)
             {
-                if (charName.Equals(m_listCharacterInfo[x].m_infoUI.m_name))
+                if (charName.Equals(m_listCharacterInfo[x].m_avatar.m_name))
                 {
                     Scriptables.CharacterInfo info = m_listCharacterInfo[x];
-                    if (shouldRemoveIfExists) {
+                    if (shouldRemoveIfExists)
+                    {
                         m_listCharacterInfo.RemoveAt(x);
                     }
                     return info;
@@ -129,13 +136,15 @@ namespace GamePlay.Stats
             return null;
         }
 
-        public void AddActiveCharacterHealth(int additionalHealth) {
-            m_charHealth.Value = Mathf.Clamp(m_charHealth.Value + additionalHealth, 
+        public void AddActiveCharacterHealth(int additionalHealth)
+        {
+            m_charHealth.Value = Mathf.Clamp(m_charHealth.Value + additionalHealth,
                 0, Scriptables.CharacterInfo.HEALTH_MAX);
         }
 
-        public void AddActiveCharacterStamina(int additionalStamina) {
-            m_charStamina.Value = Mathf.Clamp(m_charStamina.Value + additionalStamina, 
+        public void AddActiveCharacterStamina(int additionalStamina)
+        {
+            m_charStamina.Value = Mathf.Clamp(m_charStamina.Value + additionalStamina,
                 0, Scriptables.CharacterInfo.STAMINA_MAX);
         }
 
@@ -149,17 +158,19 @@ namespace GamePlay.Stats
             UpdateCharacterHealthOrStamina(false, charName, newStamina, 0, Scriptables.CharacterInfo.STAMINA_MAX);
         }
 
-        private void UpdateCharacterHealthOrStamina(bool isHealth, string charName, int value, int minValue, int maxValue) {
+        private void UpdateCharacterHealthOrStamina(bool isHealth, string charName, int value, int minValue, int maxValue)
+        {
             int clampedValue = Mathf.Clamp(value, minValue, maxValue);
 
-            if (charName.Equals(m_activeCharInfo.Value.m_infoUI.m_name))
+            if (charName.Equals(m_activeCharInfo.Value.m_avatar.m_name))
             {
                 if (isHealth)
                 {
                     m_charHealth.Value = clampedValue;
                     m_charHasDied.Value = (clampedValue <= 0);
                 }
-                else {
+                else
+                {
                     m_charStamina.Value = clampedValue;
                 }
             }
@@ -167,14 +178,15 @@ namespace GamePlay.Stats
             {
                 foreach (Scriptables.CharacterInfo charInfo in m_listCharacterInfo)
                 {
-                    if (charName.Equals(charInfo.m_infoUI.m_name))
+                    if (charName.Equals(charInfo.m_avatar.m_name))
                     {
                         if (isHealth)
                         {
                             charInfo.m_health = clampedValue;
                             m_charHasDied.Value = (clampedValue <= 0);
                         }
-                        else {
+                        else
+                        {
                             charInfo.m_stamina = clampedValue;
                         }
                     }

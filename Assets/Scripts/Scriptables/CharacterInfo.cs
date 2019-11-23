@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Scriptables {
 
-    [CreateAssetMenu(fileName = "New Character Info", menuName = "HellRaiser/Create Character Info")]
+    [CreateAssetMenu(fileName = "Info-", menuName = "HellRaiser/Create Character Info")]
     public class CharacterInfo : ScriptableObject
     {
 
@@ -12,25 +12,30 @@ namespace Scriptables {
 
         public const int STAMINA_MAX = 100;
 
-        public CharacterInfoUI m_infoUI;
+        [SerializeField] private bool m_isMob;
 
+        [HideIf("m_isMob")]
+        public CharacterAvatar m_avatar;
+
+        [HideIf("m_isMob")]
         [ResizableTextArea]
         public string m_bio;
 
+        [HideIf("m_isMob")]
         public bool m_isPlayable;
 
-        [EnableIf("m_isPlayable")]
-        public CharacterInfoSkill[] m_skillsInOrder = new CharacterInfoSkill[3];
+        [ShowIf("m_isPlayable")]
+        public CharacterSkill[] m_skillsInOrder = new CharacterSkill[3];
 
         [Header("Stats")]
 
         public CharacterRank m_rank;
 
-        [DisableIf("m_isPlayable")]
+        [HideIf("m_isPlayable")]
         [Range(0, HEALTH_MAX)]
         public int m_health = HEALTH_MAX;
 
-        [DisableIf("m_isPlayable")]
+        [HideIf("m_isPlayable")]
         [Range(0, STAMINA_MAX)]
         public int m_stamina = STAMINA_MAX;
 
@@ -49,7 +54,7 @@ namespace Scriptables {
     [System.Serializable]
     public class StatMovement {
 
-        [Range(1f, 100f)]
+        [Range(0.75f, 100f)]
         public float m_movSpeed = 1f;
 
         [Range(0.25f, 10f)]
@@ -97,11 +102,11 @@ namespace Scriptables {
         [Range(0, 150)]
         public int m_physicalDefense = 0;
 
-        [Range(0, 150)]
-        [DisableIf("m_isMagusBane")]
-        public int m_magickDefense = 0;
-
         public bool m_isMagusBane;
+
+        [Range(0, 150)]
+        [HideIf("m_isMagusBane")]
+        public int m_magickDefense = 0;
 
         public StatDefense(int pDef, int mDef, bool isMagusBane) {
             m_physicalDefense = pDef;

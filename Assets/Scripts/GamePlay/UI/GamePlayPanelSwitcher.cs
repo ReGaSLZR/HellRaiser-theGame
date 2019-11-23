@@ -35,12 +35,12 @@ namespace GamePlay.UI {
         [Inject]
         private readonly AudioTheme m_audioTheme;
 
-        [Header("Buttons")]
+        [Header("--- Buttons ---")]
 
         [SerializeField]
         private Button[] m_buttonResume;
 
-        [Space]
+        [Header("Pause Buttons")]
 
         [SerializeField]
         private Button[] m_buttonPause;
@@ -51,14 +51,14 @@ namespace GamePlay.UI {
         [SerializeField]
         private Button[] m_buttonPauseBackToMainContent;
 
-        [Space]
+        [Header("Scene Change Buttons")]
 
         [SerializeField]
         private Button[] m_buttonReloadLevel;
         [SerializeField]
         private Button[] m_buttonMainMenu;
 
-        [Header("Panels")]
+        [Header("--- Panels ---")]
 
         [SerializeField]
         private Image m_panelOnScreenInput;
@@ -75,7 +75,7 @@ namespace GamePlay.UI {
         [SerializeField]
         private Image m_panelDialogue;
 
-        [Space]
+        [Header("Pause Panel and Contents")]
 
         [SerializeField]
         private Image m_panelPause;
@@ -86,7 +86,7 @@ namespace GamePlay.UI {
         [SerializeField]
         private Image m_panelPauseContentConfirmQuit;
 
-        [Space]
+        [Header("Game Over Contents")]
 
         [SerializeField]
         private Image m_panelGameOver;
@@ -95,7 +95,7 @@ namespace GamePlay.UI {
         [SerializeField]
         private Image m_panelGameOverContentFail;
 
-        [Space]
+        [Header("Game Over Spiels")]
 
         [SerializeField]
         private TextMeshProUGUI m_textGameOverTitle;

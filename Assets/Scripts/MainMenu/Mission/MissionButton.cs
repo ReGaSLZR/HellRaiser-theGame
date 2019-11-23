@@ -62,9 +62,11 @@ namespace MainMenu.Mission {
             Color buttonColor = m_mission.IsMainMission() ?
                 m_colorScheme.m_missionMainPanel : m_colorScheme.m_missionSidePanel;
 
-            buttonColor.a = m_modelMissionGetter.IsMissionUnlocked(m_mission) ? 1f : 0.5f;
-
+            bool isMissionUnlocked = m_modelMissionGetter.IsMissionUnlocked(m_mission);
+            buttonColor.a = isMissionUnlocked ? 1f : 0.75f;
+            
             m_button.image.color = buttonColor;
+            m_button.interactable = isMissionUnlocked;
         }
 
         private void SetUpTitle() {

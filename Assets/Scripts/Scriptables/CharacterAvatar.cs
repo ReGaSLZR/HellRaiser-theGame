@@ -3,13 +3,15 @@ using NaughtyAttributes;
 
 namespace Scriptables {
 
-    [CreateAssetMenu(fileName = "New Character Info UI", menuName = "HellRaiser/Create Character Info UI")]
-    public class CharacterInfoUI : ScriptableObject {
+    [CreateAssetMenu(fileName = "Avatar-", menuName = "HellRaiser/Create Character Avatar")]
+    public class CharacterAvatar : ScriptableObject {
 
         public string m_name;
 
         [ShowAssetPreview]
         public Texture2D m_avatarMain;
+
+        [Header("For Dialogue Cutscenes:")]
 
         [ShowAssetPreview]
         public Texture2D m_avatarHappy;

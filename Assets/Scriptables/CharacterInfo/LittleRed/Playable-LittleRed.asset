@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e08700947ff67b04db2edf774974c690, type: 3}
   m_Name: Playable-LittleRed
   m_EditorClassIdentifier: 
-  m_infoUI: {fileID: 11400000, guid: b2e17f15d7b94d1409243dbcf60f851d, type: 2}
+  m_isMob: 0
+  m_avatar: {fileID: 11400000, guid: bd17d523547b246da9e417db92851d82, type: 2}
   m_bio: 
   m_isPlayable: 1
   m_skillsInOrder:
-  - {fileID: 11400000, guid: 1d9394d362620a940903f7289463d734, type: 2}
-  - {fileID: 11400000, guid: 9f2a1ac320e69b140a67f4da40688142, type: 2}
-  - {fileID: 11400000, guid: 18b375b3b5eeda546a3dae86aada6cdf, type: 2}
-  m_rank: 1
+  - {fileID: 11400000, guid: 2b0cf58c10ea94fd7b4997c05704c48e, type: 2}
+  - {fileID: 11400000, guid: 8a53ac789619b4a5fa732e3fd2001ddd, type: 2}
+  - {fileID: 11400000, guid: 076836073f2534c99b6f578589f41fd7, type: 2}
+  m_rank: 0
   m_health: 100
   m_stamina: 65
   m_statMovement:
@@ -33,5 +34,5 @@ MonoBehaviour:
     m_critDamage: 140
   m_statDefense:
     m_physicalDefense: 10
-    m_magickDefense: 0
     m_isMagusBane: 1
+    m_magickDefense: 0

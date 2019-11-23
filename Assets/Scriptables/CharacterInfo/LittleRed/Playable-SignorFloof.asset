@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e08700947ff67b04db2edf774974c690, type: 3}
   m_Name: Playable-SignorFloof
   m_EditorClassIdentifier: 
-  m_infoUI: {fileID: 11400000, guid: f728e7420a6e0864191bec220c012974, type: 2}
+  m_isMob: 0
+  m_avatar: {fileID: 11400000, guid: 831a80484d2ec48a8a1b5ebc2047de14, type: 2}
   m_bio: 
   m_isPlayable: 1
   m_skillsInOrder:
-  - {fileID: 11400000, guid: 1d9394d362620a940903f7289463d734, type: 2}
-  - {fileID: 11400000, guid: 9f2a1ac320e69b140a67f4da40688142, type: 2}
-  - {fileID: 11400000, guid: 18b375b3b5eeda546a3dae86aada6cdf, type: 2}
-  m_rank: 1
+  - {fileID: 11400000, guid: d95e3a5942ce041498e5ee7e2cf08ab8, type: 2}
+  - {fileID: 11400000, guid: 26be57c0750634de783e7811dcba98b9, type: 2}
+  - {fileID: 11400000, guid: 572ca3c28bb33435aae939a81640c041, type: 2}
+  m_rank: 6
   m_health: 44
   m_stamina: 100
   m_statMovement:
@@ -33,5 +34,5 @@ MonoBehaviour:
     m_critDamage: 150
   m_statDefense:
     m_physicalDefense: 50
-    m_magickDefense: 0
     m_isMagusBane: 1
+    m_magickDefense: 0

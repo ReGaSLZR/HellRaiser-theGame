@@ -24,7 +24,8 @@ namespace Character.Stats
                 LogUtil.PrintError(gameObject, GetType(), "Awake(): PlayableStats.m_info has non-playable stats. Destroying...");
                 Destroy(this);
             }
-            else {
+            else
+            {
                 m_info.SetToFullHealthStamina(); //this is to ignore the changes to the SO's values due to the previous play mode
             }
 
@@ -48,14 +49,14 @@ namespace Character.Stats
             base.OnDisable();
             m_compCollider2D.enabled = true;
             //resetting money back to 0 to not allow the textStatChange to trigger (and display +0) when the character is re-enabled
-            m_reactiveMoney.Value = 0; 
+            m_reactiveMoney.Value = 0;
         }
 
         private void InitObservers()
         {
             m_modelStatsGetter.GetActiveCharacterHealth()
-                .Where(health => m_info.m_infoUI.m_name.Equals(
-                    m_modelStatsGetter.GetActiveCharacter().Value.m_infoUI.m_name) &&
+                .Where(health => m_info.m_avatar.m_name.Equals(
+                    m_modelStatsGetter.GetActiveCharacter().Value.m_avatar.m_name) &&
                     (health != m_reactiveHealth.Value)) //last condition is to check if the change was already applied on BaseStat.Recover()/DealDamage()
                 .Subscribe(newHealth =>
                 {
@@ -64,8 +65,8 @@ namespace Character.Stats
                 .AddTo(m_disposables);
 
             m_modelStatsGetter.GetActiveCharacterStamina()
-                .Where(stamina => m_info.m_infoUI.m_name.Equals(
-                    m_modelStatsGetter.GetActiveCharacter().Value.m_infoUI.m_name) &&
+                .Where(stamina => m_info.m_avatar.m_name.Equals(
+                    m_modelStatsGetter.GetActiveCharacter().Value.m_avatar.m_name) &&
                     (stamina != m_reactiveStamina.Value)) //last condition is to check if the change was already applied on BaseStat.Recover()/DealDamage()
                 .Subscribe(newStamina =>
                 {
@@ -75,13 +76,14 @@ namespace Character.Stats
 
             m_modelStatsGetter.GetInventoryMoney()
                 .Where(money => (m_reactiveMoney.Value != 0))
-                .Subscribe(newMoneyValue => {
+                .Subscribe(newMoneyValue =>
+                {
                     ApplyStatChangeFXFromNonBaseStatCall(m_reactiveMoney, newMoneyValue, m_colorScheme.m_moneyGain, m_colorScheme.m_moneyLoss);
                 })
                 .AddTo(m_disposables);
         }
 
-        private void ApplyStatChangeFXFromNonBaseStatCall(ReactiveProperty<int> valueHolder, int newValue, 
+        private void ApplyStatChangeFXFromNonBaseStatCall(ReactiveProperty<int> valueHolder, int newValue,
             Color colorPositive, Color colorNegative)
         {
             int previousValue = valueHolder.Value;
@@ -95,25 +97,25 @@ namespace Character.Stats
         public override void DealHealthDamage(int damage, bool isCritical, StatInflictionType type)
         {
             base.DealHealthDamage(damage, isCritical, type);
-            m_modelStatsSetter.UpdateCharacterHealth(m_info.m_infoUI.m_name, m_reactiveHealth.Value);
+            m_modelStatsSetter.UpdateCharacterHealth(m_info.m_avatar.m_name, m_reactiveHealth.Value);
         }
 
         public override void RecoverHealth(int health, bool isCritical, StatInflictionType type)
         {
             base.RecoverHealth(health, isCritical, type);
-            m_modelStatsSetter.UpdateCharacterHealth(m_info.m_infoUI.m_name, m_reactiveHealth.Value);
+            m_modelStatsSetter.UpdateCharacterHealth(m_info.m_avatar.m_name, m_reactiveHealth.Value);
         }
 
         public override void DealStaminaDamage(int damage, bool isCritical, StatInflictionType type)
         {
             base.DealStaminaDamage(damage, isCritical, type);
-            m_modelStatsSetter.UpdateCharacterStamina(m_info.m_infoUI.m_name, m_reactiveStamina.Value);
+            m_modelStatsSetter.UpdateCharacterStamina(m_info.m_avatar.m_name, m_reactiveStamina.Value);
         }
 
         public override void RecoverStamina(int stamina, bool isCritical, StatInflictionType type)
         {
             base.RecoverStamina(stamina, isCritical, type);
-            m_modelStatsSetter.UpdateCharacterStamina(m_info.m_infoUI.m_name, m_reactiveStamina.Value);
+            m_modelStatsSetter.UpdateCharacterStamina(m_info.m_avatar.m_name, m_reactiveStamina.Value);
         }
 
     }
