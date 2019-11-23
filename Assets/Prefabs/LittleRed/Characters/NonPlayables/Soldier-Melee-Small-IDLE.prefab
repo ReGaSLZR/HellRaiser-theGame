@@ -101,6 +101,16 @@ PrefabInstance:
       propertyPath: m_movement
       value: 
       objectReference: {fileID: 8994915254095133855}
+    - target: {fileID: 3806309265530093746, guid: 9ebc5eb5af72a4df19da6b28fe115777,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806309265530093750, guid: 9ebc5eb5af72a4df19da6b28fe115777,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6289998183756417733, guid: 9ebc5eb5af72a4df19da6b28fe115777, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9ebc5eb5af72a4df19da6b28fe115777, type: 3}
