@@ -8,8 +8,8 @@ namespace Scriptables {
     public class MissionInfo : ScriptableObject
     {
 
-        private const string MISSION_TYPE_MAIN = "MAIN mission";
-        private const string MISSION_TYPE_SIDE = "SIDE mission";
+        private const string MISSION_TYPE_MAIN = "MAIN";
+        private const string MISSION_TYPE_SIDE = "SIDE";
         private readonly string[] m_dropdownOptionsMissionType = new string[] {
             "<Unset>",
             MISSION_TYPE_MAIN,

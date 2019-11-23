@@ -39,7 +39,7 @@ namespace MainMenu.Mission {
         [Required]
         private RawImage m_rawImagePreview;
 
-        [Space]
+        [Header("Mission Details - Text Components")]
 
         [SerializeField]
         [Required]
@@ -67,6 +67,11 @@ namespace MainMenu.Mission {
         [Required]
         private TextMeshProUGUI m_textSideLevelsRequired;
 
+        [Header("Mission Type colors-dependent")]
+
+        [SerializeField]
+        private MaskableGraphic[] m_missionTypeColorDependents;
+
         private void Start()
         {
             m_buttonCloseDetails.OnClickAsObservable()
@@ -80,8 +85,9 @@ namespace MainMenu.Mission {
         }
 
         public void Display(MissionInfo mission, bool isUnlocked) {
-            m_panelMissionDetails.color = (mission.IsMainMission()) ?
-                m_colorScheme.m_missionMainPanel : m_colorScheme.m_missionSidePanel;
+            ColorizeMissionTypeDependents(
+                (mission.IsMainMission()) ? m_colorScheme.m_missionMainPanel
+                    : m_colorScheme.m_missionSidePanel);
 
             //set texts
             m_textTitle.text = mission.m_title;
@@ -102,6 +108,18 @@ namespace MainMenu.Mission {
                 m_panelMissionDetails.gameObject.SetActive(true);
             }
 
+        }
+
+        private void ColorizeMissionTypeDependents(Color missionColor)
+        {
+            for (int x = 0; x < m_missionTypeColorDependents.Length; x++)
+            {
+                MaskableGraphic maskableGraphic = m_missionTypeColorDependents[x];
+                if (maskableGraphic != null)
+                {
+                    maskableGraphic.color = missionColor;
+                }
+            }
         }
 
     }

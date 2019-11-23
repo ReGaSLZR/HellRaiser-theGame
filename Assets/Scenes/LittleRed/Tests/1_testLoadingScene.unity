@@ -722,55 +722,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3863805084093261699, guid: c62da25674bfd3e4f82ded29da972d8e,
+    - target: {fileID: 3863805084361551624, guid: c62da25674bfd3e4f82ded29da972d8e,
         type: 3}
-      propertyPath: m_AnchoredPosition.x
+      propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863805084093261699, guid: c62da25674bfd3e4f82ded29da972d8e,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863805084093261699, guid: c62da25674bfd3e4f82ded29da972d8e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -150
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863805084093261699, guid: c62da25674bfd3e4f82ded29da972d8e,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863805084093261696, guid: c62da25674bfd3e4f82ded29da972d8e,
-        type: 3}
-      propertyPath: m_Name
-      value: Text-Loading
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863805084093261698, guid: c62da25674bfd3e4f82ded29da972d8e,
-        type: 3}
-      propertyPath: m_textAlignment
-      value: 513
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863805084093261698, guid: c62da25674bfd3e4f82ded29da972d8e,
-        type: 3}
-      propertyPath: m_text
-      value: Loading...
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863805084093261698, guid: c62da25674bfd3e4f82ded29da972d8e,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863805084093261698, guid: c62da25674bfd3e4f82ded29da972d8e,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863805084093261698, guid: c62da25674bfd3e4f82ded29da972d8e,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c62da25674bfd3e4f82ded29da972d8e, type: 3}
