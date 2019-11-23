@@ -23,7 +23,7 @@ MonoBehaviour:
   m_health: 20
   m_stamina: 100
   m_statMovement:
-    m_movSpeed: 1.3
+    m_movSpeed: 1
     m_stunLength: 0.4
     m_deathLength: 0.4
   m_statOffense:
