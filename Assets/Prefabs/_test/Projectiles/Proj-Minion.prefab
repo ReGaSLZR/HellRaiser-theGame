@@ -47,7 +47,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 12
 --- !u!114 &6123591464246597936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,6 +64,9 @@ MonoBehaviour:
   - Enemy
   m_isLockedToFirstSingleTarget: 1
   m_detectionRange: 5
+  m_isAdjustingHorizontally: 0
+  m_compSpriteRenderer: {fileID: 0}
+  m_offsetHorizontal: 1
 --- !u!1 &6123591464771384599
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,9 +227,13 @@ MonoBehaviour:
   m_compSpriteRenderer: {fileID: 6123591465342254235}
   m_movementDirection: 0
   m_shouldFlipSprite: 0
+  m_clipStunned: {fileID: 0}
+  m_clipDeath: {fileID: 0}
   m_animMove: 
   m_animStunned: 
-  m_stunLength: 0.25
+  m_animDead: 
+  m_customStunLength: 0.25
+  m_customDeathLength: 0.25
 --- !u!114 &6123591464771384592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,6 +250,7 @@ MonoBehaviour:
   m_movement: {fileID: 6123591464771384593}
   m_stats: {fileID: 6123591464771384594}
   m_skillMain: {fileID: 6123591464771384597}
+  m_triggerOnDeath: {fileID: 0}
 --- !u!114 &6123591464771384595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,10 +265,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_targetTags:
   - Player
-  - Player-Camouflaged
-  - Enemy
   m_isLockedToFirstSingleTarget: 1
   m_detectionRange: 5
+  m_isAdjustingHorizontally: 0
+  m_compSpriteRenderer: {fileID: 0}
+  m_offsetHorizontal: 1
 --- !u!114 &6123591464771384594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +304,7 @@ MonoBehaviour:
   m_skillDuration: 0.25
   m_skillCooldown: 0.25
   m_isRepeating: 0
+  m_clipSkillUse: {fileID: 0}
   m_childFX: {fileID: 0}
   m_targetDetector: {fileID: 6123591464771384595}
   m_followMovement: {fileID: 6123591465342254233}
@@ -372,9 +382,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 914237527
+  m_SortingLayer: 3
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: eb86b8b7a16e66249af291c959994e60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -439,6 +449,7 @@ MonoBehaviour:
   m_movement: {fileID: 6123591465342254233}
   m_stats: {fileID: 6123591465342254213}
   m_skillMain: {fileID: 6123591465342254210}
+  m_triggerOnDeath: {fileID: 0}
 --- !u!95 &6123591465342254214
 Animator:
   serializedVersion: 3
@@ -475,8 +486,11 @@ MonoBehaviour:
   m_compSpriteRenderer: {fileID: 6123591465342254235}
   m_movementDirection: 0
   m_shouldFlipSprite: 1
+  m_clipStunned: {fileID: 0}
+  m_clipDeath: {fileID: 0}
   m_animMove: 
   m_animStunned: 
+  m_animDead: 
   m_followDistance: 1
   m_shouldFollowUntilDeath: 0
 --- !u!114 &6123591465342254213
@@ -509,10 +523,11 @@ MonoBehaviour:
   m_compAnimator: {fileID: 6123591465342254214}
   m_animSkill: 
   m_animTriggerStopper: 
-  m_skillDelay: 0
+  m_skillDelay: 0.5
   m_skillDuration: 0.25
   m_skillCooldown: 0.25
   m_isRepeating: 0
+  m_clipSkillUse: {fileID: 0}
   m_childFX: {fileID: 0}
   m_targetDetector: {fileID: 6123591464246597936}
   m_inflictType: 0
