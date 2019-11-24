@@ -105,7 +105,8 @@ namespace GamePlay.Camera {
                 }
             }
 
-            LogUtil.PrintError(gameObject, GetType(), "GetActiveCamera(): Could not get an active vCam. Returning null...");
+            LogUtil.PrintInfo(gameObject, GetType(), "GetActiveCamera(): Could not get an active vCam. Returning 0");
+            m_cameras[0].enabled = true;
             return 0;
         }
 
