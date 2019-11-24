@@ -87,7 +87,7 @@ namespace Character.Stats
 
         private string GetCriticalAppend(bool isCritical)
         {
-            return (isCritical) ? "\n CRIT!" : "";
+            return (isCritical) ? "\n Crit!" : "";
         }
 
         private Color GetFeedbackTextColor(int finalInflictionValue, Color customColor)
@@ -99,7 +99,7 @@ namespace Character.Stats
         {
             string sign = (isDamage) ? "-" : "+";
 
-            return (changeValue == 0) ? "NO DAMAGE" :
+            return (changeValue == 0) ? "No Damage" :
                 sign + changeValue.ToString() + GetCriticalAppend(isCritical) +  //sample: -99\nCRIT!
                     ((StatsUtil.IsInflictionReduceableByBane(m_info.m_statDefense.m_isMagusBane, type)) ? //sample: (if bane) \nREDUCED! (else) *blank*
                     ("\n" + StatsUtil.GetMagickDamageFeedbackOnMagusBane(m_info.m_rank, changeValue)) : "");
@@ -139,7 +139,7 @@ namespace Character.Stats
             }
 
             int recoveryValue = StatsUtil.GetRecoveryValue(value, type, m_info.m_statDefense.m_isMagusBane, m_info.m_rank);
-            string statChangeText = (recoveryValue == 0) ? "NO EFFECT" :
+            string statChangeText = (recoveryValue == 0) ? "No Effect" :
                 ("+" + recoveryValue.ToString() + GetCriticalAppend(isCritical) + //sample: +99\nCRIT!
                 (StatsUtil.IsInflictionReduceableByBane(m_info.m_statDefense.m_isMagusBane, type) ? //sample: (if bane) \nREDUCED! (else) *blank*
                     ("\n" + StatsUtil.GetMagickDamageFeedbackOnMagusBane(m_info.m_rank, recoveryValue)) : ""));

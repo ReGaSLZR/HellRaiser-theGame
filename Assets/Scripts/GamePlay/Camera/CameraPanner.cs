@@ -36,7 +36,7 @@ namespace GamePlay.Camera {
 
         private void Awake()
         {
-            m_cameras = FindObjectsOfType<CinemachineVirtualCamera>();
+            m_cameras = GameObject.FindObjectsOfType<CinemachineVirtualCamera>();
 
             if (m_cameras.Length == 0) {
                 LogUtil.PrintError(gameObject, GetType(), "No Virtual Cameras found. Scene must at least have one. Destroying...");

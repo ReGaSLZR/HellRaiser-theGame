@@ -101,6 +101,16 @@ PrefabInstance:
       propertyPath: m_movement
       value: 
       objectReference: {fileID: 5662628869877685183}
+    - target: {fileID: 1838902135177059301, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_targetTags.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838902135177059301, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_targetTags.Array.data[2]
+      value: Ally
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3524564194890182399, guid: 42fcfab5ab0954c328627699c8d471a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 42fcfab5ab0954c328627699c8d471a7, type: 3}
