@@ -47,7 +47,6 @@ namespace Character.Movement {
                     if (distance > m_actualFollowIgnoreDistance)
                     {
                         m_followTarget = null;
-                        m_compAnimator.SetBool(m_animMove, false);
                     }
                     else if ((distance <= m_actualFollowIgnoreDistance) && (distance > m_followDistance))
                     {
@@ -64,10 +63,15 @@ namespace Character.Movement {
                 })
                 .AddTo(m_disposables);
 
+            this.FixedUpdateAsObservable()
+                .Where(_ => m_followTarget == null && m_compAnimator.GetBool(m_animMove))
+                .Subscribe(_ => m_compAnimator.SetBool(m_animMove, false))
+                .AddTo(m_disposables);
+
         }
 
         public void SetFollowTarget(Transform newTarget) {
-            if ((m_shouldFollowUntilDeath && (m_followTarget == null) || !m_shouldFollowUntilDeath)) {
+            if ((m_shouldFollowUntilDeath && (m_followTarget == null)) || !m_shouldFollowUntilDeath) {
                 m_followTarget = newTarget;
                 return;
             }

@@ -396,6 +396,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7957745061911476136, guid: 3b91c2f6bb3c844369244f8e04db3926,
+        type: 3}
+      propertyPath: m_shouldFlipSprite
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957745061911476136, guid: 3b91c2f6bb3c844369244f8e04db3926,
+        type: 3}
+      propertyPath: m_compAnimator
+      value: 
+      objectReference: {fileID: 1273059561}
+    - target: {fileID: 7957745061911476136, guid: 3b91c2f6bb3c844369244f8e04db3926,
+        type: 3}
+      propertyPath: m_compSpriteRenderer
+      value: 
+      objectReference: {fileID: 1273059560}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b91c2f6bb3c844369244f8e04db3926, type: 3}
 --- !u!114 &90893455 stripped
@@ -1040,80 +1055,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6123591464595896214}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &340966241
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1743823109240568191, guid: 87cabb8f360ee40f38a7610783dac7f1,
-        type: 3}
-      propertyPath: m_Name
-      value: Soldier-Melee-Big-Patrolling
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743823109240568191, guid: 87cabb8f360ee40f38a7610783dac7f1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.0225878
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.8402438
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 87cabb8f360ee40f38a7610783dac7f1, type: 3}
 --- !u!114 &377168331 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 231749645241081077, guid: 70e34cd90b93b4a10861a32105768025,
@@ -4292,6 +4233,18 @@ MonoBehaviour:
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &1273059560 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2294573863612865804, guid: 3b91c2f6bb3c844369244f8e04db3926,
+    type: 3}
+  m_PrefabInstance: {fileID: 76186977}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1273059561 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7547374185029393367, guid: 3b91c2f6bb3c844369244f8e04db3926,
+    type: 3}
+  m_PrefabInstance: {fileID: 76186977}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1273800280 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5699316324740432109, guid: 8ad227d5ff5dc61428eaa6b26178243b,
@@ -4346,6 +4299,80 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1313705785
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2973662895143473439, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_Name
+      value: Villager-Melee-Small-Patrolling (Villager Parent)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973662895143473439, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973662895143473434, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.6558049
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973662895143473434, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.5279528
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973662895143473434, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973662895143473434, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973662895143473434, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973662895143473434, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973662895143473434, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973662895143473434, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973662895143473434, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973662895143473434, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973662895143473434, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 42fcfab5ab0954c328627699c8d471a7, type: 3}
 --- !u!114 &1325095614 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6292619611037745398, guid: 166ff0d1f3a614dbcbf88add58c07efa,
