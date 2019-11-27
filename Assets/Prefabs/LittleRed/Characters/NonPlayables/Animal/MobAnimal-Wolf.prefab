@@ -278,7 +278,7 @@ MonoBehaviour:
   m_animMove: isPatrolling
   m_animStunned: isHurt
   m_animDead: isHurt
-  m_followDistance: 2
+  m_followDistance: 3
   m_followIgnoreDistance: 4
   m_shouldFollowUntilDeath: 0
   m_followTarget: {fileID: 0}

@@ -20,6 +20,7 @@ namespace Audio {
 
         public interface SFXSetter {
             void PlaySFX(AudioClip clip);
+            void PlaySFXRandom(AudioClip[] clips);
         }
 
         public interface VolumeSetter
@@ -160,6 +161,16 @@ namespace Audio {
             if(clip != null) {
                 m_audioSourceSFX.PlayOneShot(clip);
             }
+        }
+
+        public void PlaySFXRandom(AudioClip[] clips)
+        {
+            if (clips.Length == 0)
+            {
+                return;
+            }
+
+            m_audioSourceSFX.PlayOneShot(clips[Random.Range(0, clips.Length)]);
         }
 
     }

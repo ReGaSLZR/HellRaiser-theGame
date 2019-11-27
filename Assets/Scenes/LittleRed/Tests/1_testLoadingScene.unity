@@ -870,6 +870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_textLoading: {fileID: 786951453}
   m_textContentToLoop:
+  - Loading...
   - L
   - Lo
   - Loa
@@ -880,7 +881,6 @@ MonoBehaviour:
   - Loading.
   - Loading..
   - Loading...
-  - 
   m_loopDelay: 0.15
 --- !u!114 &1050679363
 MonoBehaviour:
