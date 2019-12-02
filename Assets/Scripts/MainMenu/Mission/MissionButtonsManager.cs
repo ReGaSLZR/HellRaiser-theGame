@@ -4,11 +4,19 @@ using Utils;
 using UnityEngine.UI;
 using UniRx;
 using NaughtyAttributes;
+using Zenject;
+using Audio;
+using static Scriptables.PlaySettings;
 
 namespace MainMenu.Mission {
 
     public class MissionButtonsManager : MonoBehaviour
     {
+
+        [Inject]
+        private AudioModel.SFXSetter m_sfx;
+        [Inject]
+        private readonly AudioTheme m_audioTheme;
 
         [SerializeField]
         private MissionInfo[] m_missions;
@@ -40,19 +48,25 @@ namespace MainMenu.Mission {
             m_buttonNext.OnClickAsObservable()
                 .Subscribe(_ => {
                     m_page++;
-                    ConfigButtons();
+                    OnPaginationButtonClick();
                 })
                 .AddTo(this);
 
             m_buttonPrevious.OnClickAsObservable()
                 .Subscribe(_ => {
                     m_page--;
-                    ConfigButtons();
+                    OnPaginationButtonClick();
                 })
                 .AddTo(this);
 
             m_page = 0;
             ConfigButtons();
+        }
+
+        private void OnPaginationButtonClick()
+        {
+            ConfigButtons();
+            m_sfx.PlaySFX(m_audioTheme.m_sfxButtonClick);
         }
 
         private void ConfigButtons() {
