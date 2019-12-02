@@ -341,6 +341,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MobAnimal-Wolf
       objectReference: {fileID: 0}
+    - target: {fileID: 3620233934043959192, guid: 3b91c2f6bb3c844369244f8e04db3926,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3620233934043959197, guid: 3b91c2f6bb3c844369244f8e04db3926,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2115,7 +2120,7 @@ PrefabInstance:
     - target: {fileID: 3901355239552240230, guid: 5a154efec6c794aabbe9cd5202aaafe9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3901355239552240230, guid: 5a154efec6c794aabbe9cd5202aaafe9,
         type: 3}
@@ -2237,6 +2242,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cage
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874605399656057350, guid: aa435d4ae952e494ab16a4b0ffd94429,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 628435664253053345, guid: aa435d4ae952e494ab16a4b0ffd94429,
         type: 3}
@@ -2653,7 +2663,7 @@ Transform:
   - {fileID: 411412235}
   - {fileID: 1273800280}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &629207393
 GameObject:
@@ -3004,6 +3014,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hunter-Archer-Boy-IDLE
+      objectReference: {fileID: 0}
+    - target: {fileID: 1189186479501055281, guid: c6e86a09b942f4411b79f3399195b443,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1189186479501055284, guid: c6e86a09b942f4411b79f3399195b443,
         type: 3}
@@ -6107,7 +6122,7 @@ PrefabInstance:
     - target: {fileID: 2973662895143473439, guid: 42fcfab5ab0954c328627699c8d471a7,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2973662895143473434, guid: 42fcfab5ab0954c328627699c8d471a7,
         type: 3}
@@ -7747,6 +7762,80 @@ MonoBehaviour:
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &2052235627
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5699112960684502302, guid: 96dd30c3465a54b7db298d4817ff4616,
+        type: 3}
+      propertyPath: m_Name
+      value: Villager-Ranged-Girl-IDLE
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699112960684502299, guid: 96dd30c3465a54b7db298d4817ff4616,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.9511197
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699112960684502299, guid: 96dd30c3465a54b7db298d4817ff4616,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.0974739
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699112960684502299, guid: 96dd30c3465a54b7db298d4817ff4616,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699112960684502299, guid: 96dd30c3465a54b7db298d4817ff4616,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699112960684502299, guid: 96dd30c3465a54b7db298d4817ff4616,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699112960684502299, guid: 96dd30c3465a54b7db298d4817ff4616,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699112960684502299, guid: 96dd30c3465a54b7db298d4817ff4616,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699112960684502299, guid: 96dd30c3465a54b7db298d4817ff4616,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699112960684502299, guid: 96dd30c3465a54b7db298d4817ff4616,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699112960684502299, guid: 96dd30c3465a54b7db298d4817ff4616,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699112960684502299, guid: 96dd30c3465a54b7db298d4817ff4616,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699112960684502300, guid: 96dd30c3465a54b7db298d4817ff4616,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 96dd30c3465a54b7db298d4817ff4616, type: 3}
 --- !u!114 &2069354617 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6292619611785609777, guid: 166ff0d1f3a614dbcbf88add58c07efa,
