@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_elementToMove: {fileID: 0}
-  m_speedCoefficient: 3.9
+  m_speedCoefficient: 3.7
   m_isForward: 1
 --- !u!1 &824350411
 GameObject:

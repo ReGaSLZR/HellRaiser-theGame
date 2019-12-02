@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using Utils;
 
 namespace Data.Storage {
 
@@ -11,8 +12,8 @@ namespace Data.Storage {
 
         private const string KEY_LEVEL_TO_LOAD = "KEY_LEVEL_TO_LOAD";
 
-        public const int SCENE_SPLASH = 0;
-        public const int SCENE_LOADING = 1;
+        public const int SCENE_LOADING = 0;
+        public const int SCENE_SPLASH = 1;
         public const int SCENE_MAIN_MENU = 2;
         public const int SCENE_MISSION_FIRST = 3;
 
@@ -25,11 +26,17 @@ namespace Data.Storage {
         }
 
         public static void StoreLevelThenLoad(int levelIndex) {
-            if (levelIndex > SCENE_LOADING) {
+            if (levelIndex > SCENE_LOADING)
+            {
                 PlayerPrefs.SetInt(KEY_LEVEL_TO_LOAD, levelIndex);
                 PlayerPrefs.Save();
 
                 SceneManager.LoadSceneAsync(SCENE_LOADING);
+            }
+            else
+            {
+                LogUtil.PrintInfo($"{typeof(SceneData).Name}: " +
+                    $"StoreLevelThenLoad(): Invalid value for {levelIndex}");
             }
         }
 

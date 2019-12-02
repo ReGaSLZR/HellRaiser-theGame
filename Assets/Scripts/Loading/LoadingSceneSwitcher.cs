@@ -26,7 +26,6 @@ namespace Loading {
             {
                 SceneData.LoadLevel(SceneData.SCENE_MAIN_MENU);
             }
-
             else if (STORED_LEVEL.Equals(m_loadOptions))
             {
                 SceneData.LoadStoredLevel();
