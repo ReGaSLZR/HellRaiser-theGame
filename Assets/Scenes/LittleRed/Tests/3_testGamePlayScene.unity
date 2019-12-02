@@ -2875,6 +2875,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RawImageLoadingLogo
       objectReference: {fileID: 0}
+    - target: {fileID: 3863805084361551622, guid: c62da25674bfd3e4f82ded29da972d8e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3863805084361551625, guid: c62da25674bfd3e4f82ded29da972d8e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3358,7 +3363,7 @@ GameObject:
   - component: {fileID: 921075670}
   - component: {fileID: 921075668}
   m_Layer: 0
-  m_Name: Background
+  m_Name: Background ENV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3572,7 +3577,7 @@ GameObject:
   - component: {fileID: 1016461156}
   - component: {fileID: 1016461155}
   m_Layer: 0
-  m_Name: BG_Decor
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6722,7 +6727,7 @@ GameObject:
   - component: {fileID: 1622852004}
   - component: {fileID: 1622852003}
   m_Layer: 0
-  m_Name: Middle_Decor
+  m_Name: Midground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8901,6 +8906,18 @@ PrefabInstance:
       propertyPath: m_textButtonNext
       value: 
       objectReference: {fileID: 738891194}
+    - target: {fileID: 824350413, guid: fdee448b0cbb2421491f7e2b081ecbba, type: 3}
+      propertyPath: m_elementToMove
+      value: 
+      objectReference: {fileID: 1016461156}
+    - target: {fileID: 1375705412, guid: fdee448b0cbb2421491f7e2b081ecbba, type: 3}
+      propertyPath: m_elementToMove
+      value: 
+      objectReference: {fileID: 1622852004}
+    - target: {fileID: 137505870, guid: fdee448b0cbb2421491f7e2b081ecbba, type: 3}
+      propertyPath: m_elementToMove
+      value: 
+      objectReference: {fileID: 872792943}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdee448b0cbb2421491f7e2b081ecbba, type: 3}
 --- !u!1001 &5579533859848149601
