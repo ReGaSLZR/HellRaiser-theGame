@@ -9665,11 +9665,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel-OnScreenInputControls
       objectReference: {fileID: 0}
-    - target: {fileID: 7903751079059054171, guid: 9284482208b9849998ff9105d588f81e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7903751079059054164, guid: 9284482208b9849998ff9105d588f81e,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -17,8 +17,8 @@ MonoBehaviour:
   m_map: {fileID: 0}
   m_title: Test Mission title
   m_objective: This is a test objective.
-  m_description: This is a test description for GamePlayScene.
-  m_missionType: MAIN mission
+  m_description: This is a test
+  m_missionType: MAIN
   m_reqMainLevelsCleared: 0
   m_reqSideLevelsCleared: 0
   m_isWithKey: 1

@@ -58,18 +58,21 @@ namespace MainMenu.Mission {
         private void ConfigButtons() {
             int startingIndex = m_page * m_buttons.Length;
             int maxIndex = startingIndex + m_buttons.Length;
+            int buttonIndex = 0;
 
             for (int x=startingIndex; x<maxIndex; x++) {
                 if (x < m_missions.Length)
                 {
-                    m_buttons[x].SetMission(m_missions[x]);
+                    m_buttons[buttonIndex].SetMission(m_missions[x]);
                 }
                 else {
-                    m_buttons[x].Hide();
+                    m_buttons[buttonIndex].Hide();
                 }
+
+                buttonIndex++;
             }
 
-            m_buttonPrevious.gameObject.SetActive(startingIndex > 0);
+            m_buttonPrevious.gameObject.SetActive(m_page > 0);
             m_buttonNext.gameObject.SetActive(maxIndex < m_missions.Length);
         }
 
