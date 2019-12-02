@@ -100,8 +100,8 @@ MonoBehaviour:
   m_compAnimator: {fileID: 4819952851368301408}
   m_animSkill: isUsingSkill2
   m_animTriggerStopper: 
-  m_skillDelay: 0.3
-  m_skillDuration: 1
+  m_skillDelay: 0.8
+  m_skillDuration: 0.25
   m_skillCooldown: 0.25
   m_isRepeating: 0
   m_clipSkillUse: {fileID: 0}
