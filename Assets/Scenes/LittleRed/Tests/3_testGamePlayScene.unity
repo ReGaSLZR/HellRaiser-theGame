@@ -384,7 +384,7 @@ PrefabInstance:
     - target: {fileID: 3620233934043959197, guid: 3b91c2f6bb3c844369244f8e04db3926,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3620233934043959197, guid: 3b91c2f6bb3c844369244f8e04db3926,
         type: 3}
@@ -470,7 +470,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -207624231
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ce4fd101a9420ea428ec54c092f8b8e1, type: 3}
   m_Color: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
@@ -2080,7 +2080,7 @@ PrefabInstance:
     - target: {fileID: 3901355239552240227, guid: 5a154efec6c794aabbe9cd5202aaafe9,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3901355239552240230, guid: 5a154efec6c794aabbe9cd5202aaafe9,
         type: 3}
@@ -2120,7 +2120,7 @@ PrefabInstance:
     - target: {fileID: 3901355239552240230, guid: 5a154efec6c794aabbe9cd5202aaafe9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3901355239552240230, guid: 5a154efec6c794aabbe9cd5202aaafe9,
         type: 3}
@@ -2142,6 +2142,24 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3901355239552240234, guid: 5a154efec6c794aabbe9cd5202aaafe9,
+        type: 3}
+      propertyPath: m_goodies.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1c96d11b03fd345878081a3d2aa8aa6e,
+        type: 2}
+    - target: {fileID: 3901355239552240234, guid: 5a154efec6c794aabbe9cd5202aaafe9,
+        type: 3}
+      propertyPath: m_goodies.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e08450a86c414377a0f7cd416082686,
+        type: 2}
+    - target: {fileID: 3901355239552240234, guid: 5a154efec6c794aabbe9cd5202aaafe9,
+        type: 3}
+      propertyPath: m_goodies.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: af3d7a88b51ee4d92b58460da93b1b29,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a154efec6c794aabbe9cd5202aaafe9, type: 3}
 --- !u!114 &172057059 stripped
@@ -2663,7 +2681,7 @@ Transform:
   - {fileID: 411412235}
   - {fileID: 1273800280}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &629207393
 GameObject:
@@ -3530,7 +3548,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -207624231
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 46c0e0b6f22cb6d429387a07dc3ae76f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3947,7 +3965,7 @@ Transform:
   - {fileID: 1567085007}
   - {fileID: 2000158126}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1121703344
 PrefabInstance:
@@ -7457,7 +7475,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -207624231
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3b48dc2fbf9e3df469115af7fbf6a1af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7773,6 +7791,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Villager-Ranged-Girl-IDLE
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699112960684502302, guid: 96dd30c3465a54b7db298d4817ff4616,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5699112960684502299, guid: 96dd30c3465a54b7db298d4817ff4616,
         type: 3}
@@ -9383,6 +9406,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 6292619611796040539, guid: 166ff0d1f3a614dbcbf88add58c07efa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6292619611796040540, guid: 166ff0d1f3a614dbcbf88add58c07efa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9491,21 +9519,26 @@ PrefabInstance:
     - target: {fileID: 6292619611336977449, guid: 166ff0d1f3a614dbcbf88add58c07efa,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 6292619611336977449, guid: 166ff0d1f3a614dbcbf88add58c07efa,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6292619610776503315, guid: 166ff0d1f3a614dbcbf88add58c07efa,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.47
       objectReference: {fileID: 0}
     - target: {fileID: 6292619610776503315, guid: 166ff0d1f3a614dbcbf88add58c07efa,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6292619610401952040, guid: 166ff0d1f3a614dbcbf88add58c07efa,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -9750,6 +9783,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Panel-OnScreenInputControls
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903751079059054171, guid: 9284482208b9849998ff9105d588f81e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7903751079059054164, guid: 9284482208b9849998ff9105d588f81e,
         type: 3}

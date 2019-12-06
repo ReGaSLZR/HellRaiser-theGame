@@ -70,6 +70,9 @@ TagManager:
   - name: Character-Playable
     uniqueID: 30635297
     locked: 0
+  - name: Item
+    uniqueID: 659369261
+    locked: 0
   - name: Projectile
     uniqueID: 914237527
     locked: 0

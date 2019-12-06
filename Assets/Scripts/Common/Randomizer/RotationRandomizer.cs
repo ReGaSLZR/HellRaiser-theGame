@@ -12,7 +12,9 @@ namespace Common.Randomizer {
 
         private void Start()
         {
-            gameObject.transform.localRotation = new Quaternion(0, 0, Mathf.RoundToInt(Random.Range(m_rotation.x, m_rotation.y)), 0);
+            gameObject.transform.localRotation =
+                new Quaternion(0, 0, Mathf.RoundToInt(
+                    Random.Range(m_rotation.x, m_rotation.y)), 0);
             Destroy(this);      
         }
 

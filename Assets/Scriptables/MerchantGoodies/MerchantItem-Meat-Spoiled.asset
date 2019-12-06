@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f1932595f9856b478bfb2c11f1fbd6d, type: 3}
-  m_Name: MerchantItem-Health-Full
+  m_Name: MerchantItem-Meat-Spoiled
   m_EditorClassIdentifier: 
-  m_spielButtonNormal: Buy then use
-  m_spielButtonBuyAgain: Buy Again
-  m_spielButtonDisabled: Not enough funds.
+  m_spielButtonNormal: I'm desperate!
+  m_spielButtonBuyAgain: Blech!
+  m_spielButtonDisabled: Can't afford
   m_spielButtonOutOfStock: Out of Stock
-  m_itemIcon: {fileID: 2800000, guid: 179a21ba02cca7b469b8d50f3ada1516, type: 3}
-  m_spielTitle: Large Health Potion
-  m_spielDescription: A highly refreshing drink made from rare herbs. The dose heals
-    the drinker fully.
+  m_itemIcon: {fileID: 2800000, guid: 6434cb31581aa06429ff6c16bee38994, type: 3}
+  m_spielTitle: Not-so-rotting Meat
+  m_spielDescription: By the gods, SO THIS IS WHY MY BAG STINKS!.. Oh, a customer.
+    Here's a specially discounted item for you.
   m_stat: STAT_HEALTH
-  m_value: 100
-  m_price: 2795
-  m_stocks: 1
+  m_value: 1
+  m_price: 10
+  m_stocks: 2
