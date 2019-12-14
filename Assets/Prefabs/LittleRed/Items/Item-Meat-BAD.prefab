@@ -119,11 +119,6 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7192097843696869852, guid: 190255de9f09e441cb4b348bcc4e2b49,
-        type: 3}
-      propertyPath: m_compCollider2D
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3228744560080671474, guid: 190255de9f09e441cb4b348bcc4e2b49,
         type: 3}
       propertyPath: m_skillValueRange.x
@@ -134,6 +129,11 @@ PrefabInstance:
       propertyPath: m_skillValueRange.y
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 7192097843696869852, guid: 190255de9f09e441cb4b348bcc4e2b49,
+        type: 3}
+      propertyPath: m_compCollider2D
+      value: 
+      objectReference: {fileID: 1932640418214679162}
     m_RemovedComponents:
     - {fileID: 3918879369057695530, guid: 190255de9f09e441cb4b348bcc4e2b49, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 190255de9f09e441cb4b348bcc4e2b49, type: 3}
