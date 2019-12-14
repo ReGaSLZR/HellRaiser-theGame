@@ -26,8 +26,9 @@
 
         private void Update()
         {
-            gameObject.transform.position += (((GetLastCameraPosition() - GetCurrentCameraPosition()) * m_speedCoefficient)
-              * (m_isForward ? 1 : -1)) * Time.deltaTime;
+            gameObject.transform.position += ((
+                (GetLastCameraPosition() - GetCurrentCameraPosition())
+                * m_speedCoefficient) * (m_isForward ? 1 : -1)) * Time.deltaTime;
 
             SaveCameraPosition();
         }
