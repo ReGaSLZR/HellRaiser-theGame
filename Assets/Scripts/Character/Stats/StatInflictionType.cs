@@ -3,7 +3,8 @@
     public enum StatInflictionType
     {
         PHYSICAL,
-        MAGICK
+        MAGICK,
+        TIME
     }
 
 }

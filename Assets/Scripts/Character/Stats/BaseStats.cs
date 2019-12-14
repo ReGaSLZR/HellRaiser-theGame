@@ -138,17 +138,30 @@ namespace Character.Stats
                 return;
             }
 
-            int recoveryValue = StatsUtil.GetRecoveryValue(value, type, m_info.m_statDefense.m_isMagusBane, m_info.m_rank);
-            string statChangeText = (recoveryValue == 0) ? "No Effect" :
-                ("+" + recoveryValue.ToString() + GetCriticalAppend(isCritical) + //sample: +99\nCRIT!
-                (StatsUtil.IsInflictionReduceableByBane(m_info.m_statDefense.m_isMagusBane, type) ? //sample: (if bane) \nREDUCED! (else) *blank*
-                    ("\n" + StatsUtil.GetMagickDamageFeedbackOnMagusBane(m_info.m_rank, recoveryValue)) : ""));
+            int recoveryValue;
+            string statChangeText;
+
+            if (StatInflictionType.TIME == type)
+            {
+                recoveryValue = value;
+                statChangeText = string.Concat("+", recoveryValue.ToString());
+            }
+            else
+            {
+                recoveryValue = StatsUtil.GetRecoveryValue(value, type, m_info.m_statDefense.m_isMagusBane, m_info.m_rank);
+                statChangeText = (recoveryValue == 0) ? "No Effect" :
+                    ("+" + recoveryValue.ToString() + GetCriticalAppend(isCritical) + //sample: +99\nCRIT!
+                    (StatsUtil.IsInflictionReduceableByBane(m_info.m_statDefense.m_isMagusBane, type) ? //sample: (if bane) \nREDUCED! (else) *blank*
+                        ("\n" + StatsUtil.GetMagickDamageFeedbackOnMagusBane(m_info.m_rank, recoveryValue)) : ""));
+            }
 
             UpdateStatChangeText(statChangeText,
-                GetFeedbackTextColor(recoveryValue, color));
+                    GetFeedbackTextColor(recoveryValue, color));
             ForceShowStatChangeText();
 
-            valueHolder.Value = Mathf.Clamp(valueHolder.Value + recoveryValue, 0, maxValue);
+            if (valueHolder != null) {
+                valueHolder.Value = Mathf.Clamp(valueHolder.Value + recoveryValue, 0, maxValue);
+            }
         }
 
         public virtual void RecoverHealth(int health, bool isCritical, StatInflictionType type)
@@ -169,6 +182,11 @@ namespace Character.Stats
         public virtual void DealStaminaDamage(int damage, bool isCritical, StatInflictionType type)
         {
             DealDamage(damage, isCritical, type, m_reactiveStamina, m_colorScheme.m_staminaLoss);
+        }
+
+        public virtual void RecoverTime(int additionalTime)
+        {
+            Recover(additionalTime, additionalTime, false, StatInflictionType.TIME, null, m_colorScheme.m_time);
         }
 
         protected void UpdateStatChangeText(string text, Color color)
