@@ -20,7 +20,7 @@ MonoBehaviour:
     m_staminaGain: {r: 0, g: 0.5249777, b: 1, a: 1}
     m_staminaLoss: {r: 0.9987321, g: 0, b: 1, a: 1}
     m_moneyGain: {r: 1, g: 0.8535939, b: 0, a: 1}
-    m_moneyLoss: {r: 0.6415094, g: 0.24905662, b: 0, a: 1}
+    m_moneyLoss: {r: 0.764151, g: 0.719001, b: 0.35684407, a: 1}
     m_time: {r: 1, g: 1, b: 1, a: 1}
     m_missionMainPanel: {r: 1, g: 0.9218329, b: 0.8632076, a: 1}
     m_missionSidePanel: {r: 0.7764706, g: 0.93745905, b: 1, a: 1}
