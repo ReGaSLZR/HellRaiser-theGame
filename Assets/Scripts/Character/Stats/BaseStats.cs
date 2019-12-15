@@ -105,7 +105,8 @@ namespace Character.Stats
                     ("\n" + StatsUtil.GetMagickDamageFeedbackOnMagusBane(m_info.m_rank, changeValue)) : "");
         }
 
-        private void DealDamage(int damage, bool isCritical, StatInflictionType type, ReactiveProperty<int> valueHolder, Color color)
+        private void DealDamage(int damage, bool isCritical,
+            StatInflictionType type, ReactiveProperty<int> valueHolder, Color color)
         {
             if (damage <= 0)
             {
@@ -130,7 +131,8 @@ namespace Character.Stats
 
         }
 
-        private void Recover(int value, int maxValue, bool isCritical, StatInflictionType type, ReactiveProperty<int> valueHolder, Color color)
+        private void Recover(int value, int maxValue, bool isCritical,
+            StatInflictionType type, ReactiveProperty<int> valueHolder, Color color)
         {
             if (value <= 0)
             {
