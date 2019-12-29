@@ -1,8 +1,9 @@
 ﻿using GamePlay.Base;
 using UnityEngine;
 using Utils;
+using GamePlay.Playable;
 
-namespace GamePlay.Playable
+namespace GamePlay.Teleport
 {
 
     public class PlayablesTeleportTrigger : BaseTrigger

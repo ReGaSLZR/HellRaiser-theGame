@@ -29,7 +29,7 @@ namespace GamePlay.Base {
             }
             else {
                 this.OnTriggerEnter2DAsObservable()
-                    .Where(otherCollider2D => (otherCollider2D.tag.Contains("Player")) && !m_isTriggered)
+                    .Where(otherCollider2D => IsTriggerable(otherCollider2D.gameObject))
                     .Subscribe(otherCollider2D =>
                     {
                         m_triggerer = otherCollider2D;
@@ -38,7 +38,7 @@ namespace GamePlay.Base {
                     .AddTo(this);
 
                 this.OnCollisionEnter2DAsObservable()
-                    .Where(otherCollision => (otherCollision.gameObject.tag.Contains("Player")) && !m_isTriggered)
+                    .Where(otherCollision => IsTriggerable(otherCollision.gameObject))
                     .Subscribe(otherCollision =>
                     {
                         m_triggerer = otherCollision.collider;
@@ -47,6 +47,11 @@ namespace GamePlay.Base {
                     .AddTo(this);
             }
 
+        }
+
+        protected virtual bool IsTriggerable(GameObject collidedObject)
+        {
+            return (collidedObject.tag.Contains("Player")) && !m_isTriggered;
         }
 
     }
