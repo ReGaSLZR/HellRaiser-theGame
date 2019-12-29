@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84670b029cb824dcbb6b25c0dff9099b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_elementToMove: {fileID: 0}
   m_speedCoefficient: 3.7
   m_isForward: 1
 --- !u!1 &824350411
@@ -89,7 +88,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84670b029cb824dcbb6b25c0dff9099b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_elementToMove: {fileID: 0}
   m_speedCoefficient: 3.3
   m_isForward: 0
 --- !u!1 &1375705410
@@ -135,7 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84670b029cb824dcbb6b25c0dff9099b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_elementToMove: {fileID: 0}
   m_speedCoefficient: 3.5
   m_isForward: 1
 --- !u!1 &1731411275
@@ -280,6 +277,7 @@ MonoBehaviour:
   m_gamePlayStats: {fileID: 4523491364123685842}
   m_dialogue: {fileID: 4523491364123685843}
   m_mission: {fileID: 4523491364123685837}
+  m_checkpoint: {fileID: 7755237033717025503}
   m_merchant: {fileID: 4523491364123685840}
 --- !u!1 &4523491363170797381
 GameObject:
@@ -909,6 +907,7 @@ GameObject:
   - component: {fileID: 4523491364123685837}
   - component: {fileID: 4523491364123685843}
   - component: {fileID: 4523491364123685840}
+  - component: {fileID: 7755237033717025503}
   m_Layer: 0
   m_Name: GamePlay
   m_TagString: Untagged
@@ -986,6 +985,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db7f0a420ffad024fb373b182bfd9c3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7755237033717025503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4523491364123685839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b49ad5495d5704a788e1811ba9fe25f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4523491364138751416

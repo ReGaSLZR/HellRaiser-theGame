@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 6258712706737879514}
   - component: {fileID: 6258712706737879513}
   - component: {fileID: 6258712706737879515}
+  - component: {fileID: 6309854417456265319}
   m_Layer: 8
   m_Name: LittleRed
   m_TagString: Player
@@ -435,6 +436,7 @@ MonoBehaviour:
   m_skillSecondary: {fileID: 5044118436245570390}
   m_skillTertiary: {fileID: 1031654962482008338}
   m_uniqueCamera: {fileID: 0}
+  m_audioListener: {fileID: 6309854417456265319}
   m_isNotOnCycle: 0
 --- !u!114 &6258712706737879513
 MonoBehaviour:
@@ -481,6 +483,14 @@ MonoBehaviour:
   m_hasSingleSpawnPoint: 0
   m_spawnPointMinus: {fileID: 1314518317061645825}
   m_spawnPointPlus: {fileID: 8018136366144047206}
+--- !u!81 &6309854417456265319
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8442513984881137927}
+  m_Enabled: 1
 --- !u!1 &8442513984926914299
 GameObject:
   m_ObjectHideFlags: 0

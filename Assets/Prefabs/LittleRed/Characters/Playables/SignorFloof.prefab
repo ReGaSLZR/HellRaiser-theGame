@@ -1171,6 +1171,7 @@ GameObject:
   - component: {fileID: 6994466400844542855}
   - component: {fileID: 6994466400844542852}
   - component: {fileID: 5414153003604140405}
+  - component: {fileID: 8015914489531527232}
   m_Layer: 8
   m_Name: SignorFloof
   m_TagString: Player
@@ -1356,6 +1357,7 @@ MonoBehaviour:
   m_skillSecondary: {fileID: 14893073097886154}
   m_skillTertiary: {fileID: 548670917319910063}
   m_uniqueCamera: {fileID: 0}
+  m_audioListener: {fileID: 8015914489531527232}
   m_isNotOnCycle: 0
 --- !u!114 &6994466400844542852
 MonoBehaviour:
@@ -1400,6 +1402,14 @@ MonoBehaviour:
   m_skillValueRange: {x: 20, y: 30}
   m_isDestroyedOnUse: 0
   m_delayBeforeDestruction: 0
+--- !u!81 &8015914489531527232
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4819952851368301402}
+  m_Enabled: 1
 --- !u!1 &6136721800080381504
 GameObject:
   m_ObjectHideFlags: 0
