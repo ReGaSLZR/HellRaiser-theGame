@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de427f90aeb4ae479329da9f30afacf, type: 3}
   m_Name: test3
   m_EditorClassIdentifier: 
-  m_speaker: {fileID: 11400000, guid: b2e17f15d7b94d1409243dbcf60f851d, type: 2}
-  m_expression: 0
-  m_line: nyahaha this is the last test dialogue line
-  m_lineSFX: {fileID: 8300000, guid: 292b68e76d29f1740bc3e85b8557cc84, type: 3}
+  m_speaker: {fileID: 11400000, guid: df0ea96b9b985424a9025eebd1423c79, type: 2}
+  m_expression: 3
+  m_line: Test Angry line (floof)
+  m_lineSFX: {fileID: 8300000, guid: 46e5d0e83149fed4a8061fd74edaac1f, type: 3}
   m_backgroundOption: 0
   m_background: {fileID: 0}

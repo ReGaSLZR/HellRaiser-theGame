@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de427f90aeb4ae479329da9f30afacf, type: 3}
   m_Name: test2
   m_EditorClassIdentifier: 
-  m_speaker: {fileID: 11400000, guid: f728e7420a6e0864191bec220c012974, type: 2}
+  m_speaker: {fileID: 11400000, guid: bb000028caa3b479583543aa264d3389, type: 2}
   m_expression: 0
-  m_line: this is another test.this is another test.this is another test.this is another
-    test.this is another test.
+  m_line: Test Normal line
   m_lineSFX: {fileID: 8300000, guid: a3c5691dda433154bab089a055c08484, type: 3}
-  m_backgroundOption: 1
+  m_backgroundOption: 0
   m_background: {fileID: 2800000, guid: 4984d908360e2644da7aba5a816d0181, type: 3}

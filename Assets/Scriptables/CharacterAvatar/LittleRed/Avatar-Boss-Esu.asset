@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Avatar-Boss-Esu
   m_EditorClassIdentifier: 
   m_name: Esu
-  m_avatarMain: {fileID: 0}
-  m_avatarHappy: {fileID: 0}
-  m_avatarSad: {fileID: 0}
-  m_avatarAngry: {fileID: 0}
-  m_avatarSurprised: {fileID: 0}
+  m_avatarMain: {fileID: 2800000, guid: e2af4c73dad094556b99af1f80691597, type: 3}
+  m_avatarHappy: {fileID: 2800000, guid: 20611a31afe4641acb0d85fafffa6fa4, type: 3}
+  m_avatarSad: {fileID: 2800000, guid: 0860aa1c046b84773a0094c4b39c142c, type: 3}
+  m_avatarAngry: {fileID: 2800000, guid: 1d00ce683c4024a24b8943aef0a0e136, type: 3}
+  m_avatarSurprised: {fileID: 2800000, guid: 7d29a3257352e4951a1f823c9ed906f1, type: 3}

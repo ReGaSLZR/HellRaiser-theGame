@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de427f90aeb4ae479329da9f30afacf, type: 3}
   m_Name: test1
   m_EditorClassIdentifier: 
-  m_speaker: {fileID: 11400000, guid: b2e17f15d7b94d1409243dbcf60f851d, type: 2}
-  m_expression: 0
-  m_line: This is a test line 1. This is a test line 1. This is a test line 1. This
-    is a test line 1. This is a test line 1.
+  m_speaker: {fileID: 11400000, guid: 57dd6b1d5c45a4df4b25249b6952ca20, type: 2}
+  m_expression: 1
+  m_line: Test Happy line
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 1
+  m_backgroundOption: 0
   m_background: {fileID: 2800000, guid: 13b59cef62a9d724d9480389a7dbb176, type: 3}
