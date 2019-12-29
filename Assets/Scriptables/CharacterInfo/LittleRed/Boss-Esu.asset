@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  m_rank: 3
+  m_rank: 4
   m_health: 100
   m_stamina: 100
   m_statMovement:
@@ -28,11 +28,11 @@ MonoBehaviour:
     m_stunLength: 1
     m_deathLength: 1
   m_statOffense:
-    m_physicalAttack: 1
+    m_physicalAttack: 35
     m_magickAttack: 35
     m_critChance: 10
     m_critDamage: 110
   m_statDefense:
-    m_physicalDefense: 1
+    m_physicalDefense: 10
     m_isMagusBane: 0
     m_magickDefense: 5
