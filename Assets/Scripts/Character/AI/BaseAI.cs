@@ -36,6 +36,7 @@ namespace Character.AI {
         private BaseTrigger m_triggerOnDeath;
 
         protected CompositeDisposable m_disposables = new CompositeDisposable();
+        protected CompositeDisposable m_disposablesUncontrolled = new CompositeDisposable();
 
         protected virtual void Awake()
         {
@@ -67,6 +68,8 @@ namespace Character.AI {
         }
 
         protected void InitUncontrolledObservers() {
+            m_disposablesUncontrolled.Clear();
+
             //upon getting hurt
             m_stats.IsHurt()
                 .Subscribe(isHurt =>
@@ -91,7 +94,7 @@ namespace Character.AI {
 
                     }
                 })
-                .AddTo(this);
+                .AddTo(m_disposablesUncontrolled);
         }
 
         protected void InitControlledObservers() {

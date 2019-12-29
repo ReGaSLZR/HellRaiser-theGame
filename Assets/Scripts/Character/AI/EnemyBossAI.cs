@@ -1,6 +1,7 @@
 ﻿using Character.Movement;
 using Character.Skill;
 using Character.Stats;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Utils;
@@ -13,17 +14,24 @@ namespace Character.AI {
         [System.Serializable]
         public class BossPhase {
 
+            public TargetDetector m_targetDetector;
             public BaseMovement m_movement;
             public BaseSkill m_skill;
             public BaseStats m_stats;
 
-            public BossPhase(BaseMovement movement, BaseSkill skill, BaseStats baseStats) {
+            public BossPhase(
+                TargetDetector targetDetector,
+                BaseMovement movement,
+                BaseSkill skill,
+                BaseStats baseStats) {
+                m_targetDetector = targetDetector;
                 m_movement = movement;
                 m_skill = skill;
                 m_stats = baseStats;
             }
 
             public void SetPhaseEnabled(bool isEnabled) {
+                m_targetDetector.enabled = isEnabled;
                 m_movement.enabled = isEnabled;
                 m_skill.enabled = isEnabled;
                 m_stats.enabled = isEnabled;
@@ -47,7 +55,11 @@ namespace Character.AI {
             }
             else {
                 //inserting the main Movement and Skill defined on BaseAI as BossPhase index 0
-                m_phases.Insert(0, new BossPhase(m_movement, m_skillMain, m_stats));
+                m_phases.Insert(0, new BossPhase(
+                    m_targetDetector,
+                    m_movement,
+                    m_skillMain,
+                    m_stats));
             }
 
 
@@ -58,8 +70,7 @@ namespace Character.AI {
         protected override void OnDeath()
         {
             if (m_phases.Count > 1) {
-                DeleteOldPhase();
-                MoveToNewPhase();
+                StartCoroutine(CorSwitchToNewPhase());
             }
             else
             {
@@ -71,6 +82,14 @@ namespace Character.AI {
             for (int x=0; x<m_phases.Count; x++) {
                 m_phases[x].SetPhaseEnabled(false);
             }
+        }
+
+        private IEnumerator CorSwitchToNewPhase()
+        {
+            yield return new WaitForSeconds(m_stats.GetStatMovement().m_deathLength);
+            DeleteOldPhase();
+            MoveToNewPhase();
+            ResetBase();
         }
 
         private void DeleteOldPhase() {
@@ -85,12 +104,18 @@ namespace Character.AI {
 
             newPhase.SetPhaseEnabled(true);
 
+            m_targetDetector = newPhase.m_targetDetector;
             m_movement = newPhase.m_movement;
             m_skillMain = newPhase.m_skill;
             m_stats = newPhase.m_stats;
+        }
+
+        private void ResetBase()
+        {
+            m_disposables.Clear();
+            m_disposablesUncontrolled.Clear();
 
             DistributeStats();
-
             InitControlledObservers();
             InitUncontrolledObservers();
         }

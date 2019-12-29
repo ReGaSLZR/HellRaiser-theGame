@@ -81,11 +81,10 @@ namespace Character.Skill {
 
         private void ExecuteSkill() {
             List<BaseStats> receivers = GetReceivers();
+            int rawValue = StatsUtil.GetRawDamage(ValuesUtil.GetValueFromVector2Range(m_skillValueRange), m_statOffense, m_inflictType);
+            int critValue = StatsUtil.GetCritDamage(rawValue, m_statOffense);
 
             for (int x=0; x<receivers.Count; x++) {
-                int rawValue = StatsUtil.GetRawDamage(ValuesUtil.GetValueFromVector2Range(m_skillValueRange), m_statOffense, m_inflictType);
-                int critValue = StatsUtil.GetCritDamage(rawValue, m_statOffense);
-
                 DealDamageOrHeal(receivers[x], (rawValue + critValue), (critValue > 0));
             }
         }
