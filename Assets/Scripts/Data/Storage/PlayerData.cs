@@ -81,11 +81,9 @@ namespace Data.Storage {
                 LogUtil.PrintWarning("PlayerData.LoadInventory(): returning blank data instead.");
                 return new Inventory(0);
             }
-            else
-            {
-                return loadedData as Inventory;
-            }
             
+            return loadedData as Inventory;
+                
         }
 
         public static MissionProgression LoadMissionProgression() {
@@ -96,10 +94,8 @@ namespace Data.Storage {
                 LogUtil.PrintWarning("PlayerData.LoadMissionProgression(): returning blank data instead.");
                 return new MissionProgression(0, 0);
             }
-            else
-            {
-                return loadedData as MissionProgression;
-            }
+            
+            return loadedData as MissionProgression;
         }
 
     }

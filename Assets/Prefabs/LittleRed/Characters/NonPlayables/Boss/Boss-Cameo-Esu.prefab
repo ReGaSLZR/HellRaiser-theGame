@@ -51,8 +51,8 @@ MonoBehaviour:
   m_compAnimator: {fileID: 6617458591953083647}
   m_animSkill: isAttackingRanged
   m_animTriggerStopper: 
-  m_skillDelay: 0.25
-  m_skillDuration: 0.5
+  m_skillDelay: 0.45
+  m_skillDuration: 0.3
   m_skillCooldown: 0.25
   m_isRepeating: 1
   m_clipSkillUse: {fileID: 0}
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_compSpriteRenderer: {fileID: 6617458591953083646}
   m_prefabProjectile: {fileID: 262407741312208270, guid: cdeb2a7367c9b4cd58f7471271cdf1b3,
     type: 3}
-  m_throwForce: 350
+  m_throwForce: 150
   m_throwTorque: 0
   m_shouldInfluenceProjectileFlipX: 1
   m_hasSingleSpawnPoint: 0
@@ -122,7 +122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4426107350525825753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 0}
+  m_LocalPosition: {x: -1, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4145165099689566502}
@@ -259,7 +259,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5788933938062398962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4145165099689566502}
@@ -431,7 +431,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -626985081
   m_SortingLayer: 1
-  m_SortingOrder: 150
+  m_SortingOrder: 90
   m_Sprite: {fileID: 21300000, guid: 9404dd8cc54b845c59ca5865908f60bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
