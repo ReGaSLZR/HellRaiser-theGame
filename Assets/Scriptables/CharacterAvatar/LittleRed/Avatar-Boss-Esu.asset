@@ -10,7 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9ba8b7fb19a6f9449676c498e8a6d80, type: 3}
-  m_Name: InfoUI-Chibi-BabyMork
+  m_Name: Avatar-Boss-Esu
   m_EditorClassIdentifier: 
-  m_name: Baby Mork
-  m_avatarMain: {fileID: 2800000, guid: 4dcd0fa1c3355465cb6f2be42f54eaa3, type: 3}
+  m_name: Esu
+  m_avatarMain: {fileID: 0}
+  m_avatarHappy: {fileID: 0}
+  m_avatarSad: {fileID: 0}
+  m_avatarAngry: {fileID: 0}
+  m_avatarSurprised: {fileID: 0}
