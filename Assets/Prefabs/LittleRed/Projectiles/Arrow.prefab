@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 2903364267855038830}
   - component: {fileID: 2903364267855038805}
   - component: {fileID: 7185209094725618939}
+  - component: {fileID: 8594755415750852936}
   m_Layer: 13
   m_Name: Arrow
   m_TagString: Projectile
@@ -104,8 +105,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2903364267855038826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.7924902, y: -2.2371092, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.7, z: 0.3}
   m_Children:
   - {fileID: 2903364266832382125}
   m_Father: {fileID: 0}
@@ -146,7 +147,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 914237527
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 2f68df9a5d7a3a145ae618eebca56efb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -268,6 +269,9 @@ MonoBehaviour:
   m_skillValueRange: {x: 15, y: 30}
   m_isDestroyedOnUse: 1
   m_delayBeforeDestruction: 0.05
+  m_triggerOnDeath: {fileID: 0}
+  m_isPooled: 1
+  m_poolItemReference: {fileID: 8594755415750852936}
 --- !u!114 &2903364267855038830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +300,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_lifetime: 2
+  m_isPooled: 1
+  m_poolItemReference: {fileID: 8594755415750852936}
 --- !u!70 &7185209094725618939
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -312,3 +318,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 4.8, y: 0.3}
   m_Direction: 1
+--- !u!114 &8594755415750852936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2903364267855038826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2973923f491ad4d4ca8d65cb7e13b93c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

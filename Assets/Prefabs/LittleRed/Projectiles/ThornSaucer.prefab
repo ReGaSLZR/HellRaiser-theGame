@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 436167483400927819}
   - component: {fileID: 436167483400927856}
   - component: {fileID: 5045390647543745439}
+  - component: {fileID: 8469620467835193294}
   m_Layer: 13
   m_Name: ThornSaucer
   m_TagString: Projectile
@@ -104,8 +105,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 436167483400927823}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.5815134, y: -2.2110257, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 436167483215625096}
   m_Father: {fileID: 0}
@@ -146,7 +147,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 914237527
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: f2911c2f239297f4abfa2169fe21abc1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -268,6 +269,9 @@ MonoBehaviour:
   m_skillValueRange: {x: 15, y: 30}
   m_isDestroyedOnUse: 1
   m_delayBeforeDestruction: 0.05
+  m_triggerOnDeath: {fileID: 0}
+  m_isPooled: 1
+  m_poolItemReference: {fileID: 8469620467835193294}
 --- !u!114 &436167483400927819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +300,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_lifetime: 2
+  m_isPooled: 1
+  m_poolItemReference: {fileID: 8469620467835193294}
 --- !u!58 &5045390647543745439
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -312,3 +318,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.15
+--- !u!114 &8469620467835193294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436167483400927823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2973923f491ad4d4ca8d65cb7e13b93c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

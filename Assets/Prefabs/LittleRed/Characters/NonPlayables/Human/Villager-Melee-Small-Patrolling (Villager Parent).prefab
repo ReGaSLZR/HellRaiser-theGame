@@ -462,7 +462,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2973662895143473439}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.565, y: -2.937, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1838902134861076637}
@@ -658,6 +658,9 @@ MonoBehaviour:
   m_skillValueRange: {x: 5, y: 15}
   m_isDestroyedOnUse: 0
   m_delayBeforeDestruction: 0
+  m_triggerOnDeath: {fileID: 0}
+  m_isPooled: 0
+  m_poolItemReference: {fileID: 0}
 --- !u!1001 &2589303098805822919
 PrefabInstance:
   m_ObjectHideFlags: 0
