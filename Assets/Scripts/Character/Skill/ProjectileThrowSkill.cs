@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using NaughtyAttributes;
+using Pooling;
 using Injection;
 using Zenject;
 using Common;
@@ -22,8 +23,18 @@ namespace Character.Skill {
         private Instantiator m_instantiator;
 
         [SerializeField]
-        [Required]
+        private bool m_isPooled;
+
+        [SerializeField]
+        [DisableIf("m_isPooled")]
         private GameObject m_prefabProjectile;
+
+        [SerializeField]
+        [EnableIf("m_isPooled")]
+        private ObjectPooler m_projectilePooler;
+
+        [Space]
+
         [SerializeField]
         private float m_throwForce = 1f;
         [SerializeField]
@@ -44,13 +55,47 @@ namespace Character.Skill {
         [Required]
         private SpawnPoint m_spawnPointPlus;
 
+        protected override void Awake()
+        {
+            base.Awake();
+
+            if (m_isPooled)
+            {
+                if (m_projectilePooler == null)
+                {
+                    LogUtil.PrintWarning(this, GetType(), "Awake(): Configged to use " +
+                        "ObjectPooler but the pooler reference is missing. " +
+                        "Setting back to default instantiation of projectiles.");
+                    m_isPooled = false;
+                }
+            }
+
+            if (!m_isPooled && m_prefabProjectile == null)
+            {
+                LogUtil.PrintError(this, GetType(), "Awake(): No ObjectPooler " +
+                    "nor Prefab Projectile set. Destroying...");
+                Destroy(this);
+            }
+        }
+
         protected override void OnSkillStart()
         {
             base.OnSkillStart();
 
             SpawnPoint spawner = GetProjectileSpawner();
-            GameObject projectile = m_instantiator.InstantiateInjectPrefab(m_prefabProjectile, 
-                spawner.gameObject.transform);
+            Transform spawnTransform = spawner.gameObject.transform;
+            GameObject projectile;
+
+            if (m_isPooled)
+            {
+                projectile = m_projectilePooler.GetObjectFromPool(
+                    spawnTransform.position, spawnTransform.rotation);
+            }
+            else
+            {
+                projectile = m_instantiator.InstantiateInjectPrefab(
+                    m_prefabProjectile, spawnTransform);
+            }
 
             PassStatOffenseTo(projectile);
             InfluenceProjectileFlipX(projectile);

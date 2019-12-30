@@ -2,6 +2,7 @@
 using GamePlay.Base;
 using Injection;
 using NaughtyAttributes;
+using Pooling;
 using System.Collections.Generic;
 using UnityEngine;
 using Utils;
@@ -73,6 +74,28 @@ namespace Character.Skill {
         [EnableIf("m_isDestroyedOnUse")]
         private BaseTrigger m_triggerOnDeath;
 
+        [Space]
+
+        [SerializeField]
+        [EnableIf("m_isDestroyedOnUse")]
+        private bool m_isPooled;
+
+        [SerializeField]
+        [EnableIf("m_isPooled")]
+        private ObjectInPool m_poolItemReference;
+
+        protected override void Awake()
+        {
+            base.Awake();
+
+            if (m_isPooled && (m_poolItemReference == null))
+            {
+                LogUtil.PrintError(this, GetType(), "Awake(): " +
+                    "No ObjectInPool reference. Switching to default destroy.");
+                m_isPooled = false;
+            }
+        }
+
         protected override void OnSkillStart()
         {
             base.OnSkillStart();
@@ -85,7 +108,17 @@ namespace Character.Skill {
                     m_triggerOnDeath.Execute();
                 }
 
-                Destroy(this.gameObject, m_delayBeforeDestruction);
+                if (m_isPooled)
+                {
+                    m_poolItemReference.PutBackToPool(m_delayBeforeDestruction);
+                    m_tempStopRepeatingSkill = false;
+                    m_isExecutionFinished.Value = true;
+                }
+                else
+                {
+                    Destroy(this.gameObject, m_delayBeforeDestruction);
+                }
+                
             }
         }
 

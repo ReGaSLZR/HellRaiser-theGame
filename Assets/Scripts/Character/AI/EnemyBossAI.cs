@@ -70,10 +70,12 @@ namespace Character.AI {
         protected override void OnDeath()
         {
             if (m_phases.Count > 1) {
+                m_skillMain.StopSkill(true);
                 StartCoroutine(CorSwitchToNewPhase());
             }
             else
             {
+                m_skillMain.StopSkill(false);
                 base.OnDeath();
             }
         }

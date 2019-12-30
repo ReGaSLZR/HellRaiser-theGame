@@ -1,4 +1,7 @@
 ﻿using UnityEngine;
+using Utils;
+using NaughtyAttributes;
+using Pooling;
 
 namespace Common
 {
@@ -10,9 +13,34 @@ namespace Common
         [Range(0.25f, 30f)]
         private float m_lifetime = 1f;
 
-        private void Start()
+        [SerializeField]
+        private bool m_isPooled;
+
+        [SerializeField]
+        [EnableIf("m_isPooled")]
+        private ObjectInPool m_poolItemReference;
+
+        private void Awake()
         {
-            Destroy(gameObject, m_lifetime);
+            if (m_isPooled && (m_poolItemReference == null))
+            {
+                LogUtil.PrintError(this, GetType(), "Awake(): " +
+                    "No ObjectInPool reference. Switching to default destroy.");
+                m_isPooled = false;
+            }
+        }
+
+        private void OnEnable()
+        {
+            if (m_isPooled)
+            {
+                m_poolItemReference.PutBackToPool(m_lifetime);
+            }
+
+            else {
+                Destroy(gameObject, m_lifetime);
+            }
+            
         }
 
     }

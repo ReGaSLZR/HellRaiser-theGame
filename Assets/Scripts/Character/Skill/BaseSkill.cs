@@ -57,7 +57,7 @@ namespace Character.Skill {
         protected StatOffense m_statOffense;
         protected ReactiveProperty<bool> m_isExecutionFinished = new ReactiveProperty<bool>(true);
 
-        private bool m_tempStopRepeatingSkill;
+        protected bool m_tempStopRepeatingSkill;
 
         protected virtual void Awake() {
             SetChildFXActive(false);
