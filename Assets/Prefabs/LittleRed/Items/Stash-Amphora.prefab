@@ -171,7 +171,7 @@ PrefabInstance:
     - target: {fileID: 8358887160965625977, guid: 39050acfd001d423091f2c438aa775e3,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 8358887160965625977, guid: 39050acfd001d423091f2c438aa775e3,
         type: 3}
@@ -208,22 +208,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Amphora-Broken
       objectReference: {fileID: 0}
-    - target: {fileID: 8358887159843638761, guid: 39050acfd001d423091f2c438aa775e3,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 4781971cb2ee54e08810c7a6b2caa802, type: 2}
-    - target: {fileID: 8358887159843638758, guid: 39050acfd001d423091f2c438aa775e3,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 7a23d72f8f3c741bda5b064248320e65,
-        type: 3}
-    - target: {fileID: 8358887159843638758, guid: 39050acfd001d423091f2c438aa775e3,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: -6
-      objectReference: {fileID: 0}
     - target: {fileID: 8358887159482166511, guid: 39050acfd001d423091f2c438aa775e3,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -243,6 +227,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358887159843638761, guid: 39050acfd001d423091f2c438aa775e3,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4781971cb2ee54e08810c7a6b2caa802, type: 2}
+    - target: {fileID: 8358887159843638758, guid: 39050acfd001d423091f2c438aa775e3,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a23d72f8f3c741bda5b064248320e65,
+        type: 3}
+    - target: {fileID: 8358887159843638758, guid: 39050acfd001d423091f2c438aa775e3,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39050acfd001d423091f2c438aa775e3, type: 3}

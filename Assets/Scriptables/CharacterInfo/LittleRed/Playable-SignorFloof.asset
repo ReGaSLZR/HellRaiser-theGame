@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d95e3a5942ce041498e5ee7e2cf08ab8, type: 2}
   - {fileID: 11400000, guid: 26be57c0750634de783e7811dcba98b9, type: 2}
   - {fileID: 11400000, guid: 572ca3c28bb33435aae939a81640c041, type: 2}
-  m_rank: 6
+  m_rank: 0
   m_health: 100
   m_stamina: 100
   m_statMovement:

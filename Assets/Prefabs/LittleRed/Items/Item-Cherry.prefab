@@ -70,17 +70,37 @@ PrefabInstance:
     - target: {fileID: 5297634440597705554, guid: 93994dc1e70aa47ea9be845a3f832c5e,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5297634440597705554, guid: 93994dc1e70aa47ea9be845a3f832c5e,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5297634440597705554, guid: 93994dc1e70aa47ea9be845a3f832c5e,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297634440597705558, guid: 93994dc1e70aa47ea9be845a3f832c5e,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297634440597705556, guid: 93994dc1e70aa47ea9be845a3f832c5e,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 25854d9f53d734705a140a275896ed07, type: 2}
+    - target: {fileID: 5297634440597705557, guid: 93994dc1e70aa47ea9be845a3f832c5e,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297634440597705557, guid: 93994dc1e70aa47ea9be845a3f832c5e,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5297634440597705555, guid: 93994dc1e70aa47ea9be845a3f832c5e,
         type: 3}
@@ -91,17 +111,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: bfd3f71f27f5f4a7997b2d99a1f408da,
+      objectReference: {fileID: 21300000, guid: 8e0df9588908347fe9bcbd8698542b93,
         type: 3}
-    - target: {fileID: 5297634440597705556, guid: 93994dc1e70aa47ea9be845a3f832c5e,
+    - target: {fileID: 5297634440597705555, guid: 93994dc1e70aa47ea9be845a3f832c5e,
         type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 25854d9f53d734705a140a275896ed07, type: 2}
-    - target: {fileID: 5297634440597705558, guid: 93994dc1e70aa47ea9be845a3f832c5e,
+      propertyPath: m_Size.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297634440597705555, guid: 93994dc1e70aa47ea9be845a3f832c5e,
         type: 3}
-      propertyPath: m_BodyType
-      value: 2
+      propertyPath: m_Size.y
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5297634440597705553, guid: 93994dc1e70aa47ea9be845a3f832c5e,
         type: 3}

@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 8358887159843638756}
   - component: {fileID: 8358887159843638761}
   - component: {fileID: 8358887159843638758}
+  - component: {fileID: 6109363803696633181}
   m_Layer: 0
   m_Name: Crate-2-Broken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8358887159843638756
 Transform:
   m_ObjectHideFlags: 0
@@ -100,6 +101,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6109363803696633181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8358887159843638757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c3c5ba8e22987545a5a630d29cf7199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_lifetime: 7
 --- !u!1 &8358887160965625974
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,6 +649,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 909416248445284044, guid: e25b71e39a4784c01b686a523076b480,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e25b71e39a4784c01b686a523076b480, type: 3}
 --- !u!1 &8691488611341056854 stripped
@@ -720,6 +739,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BodyType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568806512277027189, guid: 701fed0c2a49b4cd09581e0ac741ae28,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 701fed0c2a49b4cd09581e0ac741ae28, type: 3}

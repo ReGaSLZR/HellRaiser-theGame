@@ -1,4 +1,5 @@
 ﻿using Character.Stats;
+using GamePlay.Base;
 using Injection;
 using NaughtyAttributes;
 using System.Collections.Generic;
@@ -68,6 +69,10 @@ namespace Character.Skill {
         [EnableIf("m_isDestroyedOnUse")]
         private float m_delayBeforeDestruction = 0f;
 
+        [SerializeField]
+        [EnableIf("m_isDestroyedOnUse")]
+        private BaseTrigger m_triggerOnDeath;
+
         protected override void OnSkillStart()
         {
             base.OnSkillStart();
@@ -75,6 +80,11 @@ namespace Character.Skill {
 
             if (m_isDestroyedOnUse)
             {
+                if (m_triggerOnDeath != null)
+                {
+                    m_triggerOnDeath.Execute();
+                }
+
                 Destroy(this.gameObject, m_delayBeforeDestruction);
             }
         }

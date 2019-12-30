@@ -9,9 +9,13 @@ namespace Scriptables {
         public string m_name;
 
         [ShowAssetPreview]
+        [Tooltip("The difference between Main and Normal is that the former is for HUD.")]
         public Texture2D m_avatarMain;
 
         [Header("For Dialogue Cutscenes:")]
+
+        [ShowAssetPreview]
+        public Texture2D m_avatarNormal;
 
         [ShowAssetPreview]
         public Texture2D m_avatarHappy;
