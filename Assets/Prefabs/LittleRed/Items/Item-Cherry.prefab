@@ -91,7 +91,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 25854d9f53d734705a140a275896ed07, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 5297634440597705557, guid: 93994dc1e70aa47ea9be845a3f832c5e,
         type: 3}
       propertyPath: m_Radius
@@ -100,7 +100,7 @@ PrefabInstance:
     - target: {fileID: 5297634440597705557, guid: 93994dc1e70aa47ea9be845a3f832c5e,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5297634440597705555, guid: 93994dc1e70aa47ea9be845a3f832c5e,
         type: 3}
