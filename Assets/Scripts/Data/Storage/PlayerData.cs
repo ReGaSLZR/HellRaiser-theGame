@@ -12,7 +12,8 @@ namespace Data.Storage {
 
         [System.Serializable]
         public class Inventory {
-            public static readonly string SAVE_PATH = Application.persistentDataPath + "/hellraiser-inventory.hellishfun";
+            public static readonly string SAVE_PATH
+                = Application.persistentDataPath + "/hellraiser-inventory.hellishfun";
 
             public int m_money;
 
@@ -23,7 +24,8 @@ namespace Data.Storage {
 
         [System.Serializable]
         public class MissionProgression {
-            public static readonly string SAVE_PATH = Application.persistentDataPath + "/hellraiser-missions.hellishfun";
+            public static readonly string SAVE_PATH
+                = Application.persistentDataPath + "/hellraiser-missions.hellishfun";
 
             public int m_mainCleared;
             public int m_sideCleared;
@@ -31,6 +33,37 @@ namespace Data.Storage {
             public MissionProgression(int mainCleared, int sideCleared) {
                 m_mainCleared = mainCleared;
                 m_sideCleared = sideCleared;
+            }
+
+        }
+
+        [System.Serializable]
+        public class Checkpoint
+        {
+            public static readonly string SAVE_PATH
+                = Application.persistentDataPath + "/hellraiser-checkpoint.hellishfun";
+
+            public int m_missionIndex;
+            public int m_checkpointID;
+
+            public float m_spawnPointX;
+            public float m_spawnPointY;
+            public float m_spawnPointZ;
+
+            public Checkpoint(int missionIndex, int checkpointID,
+                Vector3 spawnPoint)
+            {
+                m_missionIndex = missionIndex;
+                m_checkpointID = checkpointID;
+
+                m_spawnPointX = spawnPoint.x;
+                m_spawnPointY = spawnPoint.y;
+                m_spawnPointZ = spawnPoint.z;
+            }
+
+            public Vector3 GetSpawnPoint()
+            {
+                return new Vector3(m_spawnPointX, m_spawnPointY, m_spawnPointZ);
             }
 
         }
@@ -73,6 +106,11 @@ namespace Data.Storage {
             ExecuteSave(MissionProgression.SAVE_PATH, data);
         }
 
+        public static void Save(Checkpoint data)
+        {
+            ExecuteSave(Checkpoint.SAVE_PATH, data);
+        }
+
         public static Inventory LoadInventory() {
             object loadedData = ExecuteLoad(Inventory.SAVE_PATH);
 
@@ -96,6 +134,19 @@ namespace Data.Storage {
             }
             
             return loadedData as MissionProgression;
+        }
+
+        public static Checkpoint LoadCheckpoint()
+        {
+            object loadedData = ExecuteLoad(Checkpoint.SAVE_PATH);
+
+            if (loadedData == null)
+            {
+                LogUtil.PrintWarning("PlayerData.LoadCheckpoint(): returning blank data instead.");
+                return new Checkpoint(0, 0, Vector3.zero);
+            }
+
+            return loadedData as Checkpoint;
         }
 
     }

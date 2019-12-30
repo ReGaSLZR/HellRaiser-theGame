@@ -2,6 +2,8 @@
 using UniRx.Triggers;
 using UnityEngine;
 using Utils;
+using GamePlay.Checkpoint;
+using Zenject;
 
 namespace GamePlay.Base {
 
@@ -14,6 +16,9 @@ namespace GamePlay.Base {
 
         public abstract void Execute();
 
+        [Inject]
+        protected readonly CheckpointModel.Getter m_checkpointGetter;
+
         [SerializeField]
         protected bool m_isTriggeredOnGamePlayStart;
 
@@ -23,9 +28,10 @@ namespace GamePlay.Base {
         protected virtual void Start()
         {
 
-            if (m_isTriggeredOnGamePlayStart) {
-                LogUtil.PrintInfo(gameObject, GetType(), "Triggered on gamePlay start.");
-                Execute();
+            if (m_isTriggeredOnGamePlayStart &&
+                !m_checkpointGetter.IsLevelCheckpointTriggered()) {
+                    LogUtil.PrintInfo(gameObject, GetType(), "Triggered on gamePlay start.");
+                    Execute();
             }
             else {
                 this.OnTriggerEnter2DAsObservable()

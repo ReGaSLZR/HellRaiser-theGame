@@ -1,4 +1,5 @@
 ﻿using Audio;
+using GamePlay.Checkpoint;
 using GamePlay.Dialogue;
 using GamePlay.Input;
 using GamePlay.Stats;
@@ -36,6 +37,10 @@ namespace Injection {
         [SerializeField]
         [Required]
         private MissionModel m_mission;
+
+        [SerializeField]
+        [Required]
+        private CheckpointModel m_checkpoint;
 
         [SerializeField]
         [Required]
@@ -85,6 +90,9 @@ namespace Injection {
 
             Container.Bind<GamePlayStatsModel.Getter>().FromInstance(m_gamePlayStats);
             Container.Bind<GamePlayStatsModel.Setter>().FromInstance(m_gamePlayStats);
+
+            Container.Bind<CheckpointModel.Getter>().FromInstance(m_checkpoint);
+            Container.Bind<CheckpointModel.Setter>().FromInstance(m_checkpoint);
 
             Container.Bind<MissionModel.TimerGetter>().FromInstance(m_mission);
             Container.Bind<MissionModel.TimerSetter>().FromInstance(m_mission);

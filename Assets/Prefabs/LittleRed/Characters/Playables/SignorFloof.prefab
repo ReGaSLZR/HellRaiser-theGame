@@ -1172,6 +1172,7 @@ GameObject:
   - component: {fileID: 6994466400844542852}
   - component: {fileID: 5414153003604140405}
   - component: {fileID: 8015914489531527232}
+  - component: {fileID: 727966856456718137}
   m_Layer: 8
   m_Name: SignorFloof
   m_TagString: Player
@@ -1410,6 +1411,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4819952851368301402}
   m_Enabled: 1
+--- !u!114 &727966856456718137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4819952851368301402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216833ab81c834463a05d3b05bd82019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6136721800080381504
 GameObject:
   m_ObjectHideFlags: 0

@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 6258712706737879513}
   - component: {fileID: 6258712706737879515}
   - component: {fileID: 6309854417456265319}
+  - component: {fileID: 5023361452750085309}
   m_Layer: 8
   m_Name: LittleRed
   m_TagString: Player
@@ -491,6 +492,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8442513984881137927}
   m_Enabled: 1
+--- !u!114 &5023361452750085309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8442513984881137927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216833ab81c834463a05d3b05bd82019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8442513984926914299
 GameObject:
   m_ObjectHideFlags: 0

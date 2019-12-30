@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: marker1-on-trigger
+  m_Name: marker3-on-trigger
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -48,9 +48,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 0f957969a297e4e4cab2d22cb1a3a624, type: 3}
+      value: {fileID: 21300000, guid: c7fb8c251e2d2e84a9f0db2d681034a1, type: 3}
     - time: 0.25
-      value: {fileID: 21300000, guid: 0f957969a297e4e4cab2d22cb1a3a624, type: 3}
+      value: {fileID: 21300000, guid: c7fb8c251e2d2e84a9f0db2d681034a1, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -77,8 +77,8 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 0f957969a297e4e4cab2d22cb1a3a624, type: 3}
-    - {fileID: 21300000, guid: 0f957969a297e4e4cab2d22cb1a3a624, type: 3}
+    - {fileID: 21300000, guid: c7fb8c251e2d2e84a9f0db2d681034a1, type: 3}
+    - {fileID: 21300000, guid: c7fb8c251e2d2e84a9f0db2d681034a1, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

@@ -22,9 +22,11 @@
                     "Awake(): No controllers defined. Destroying...");
                 Destroy(this);
             }
+
+            Randomize();
         }
 
-        private void Start()
+        private void Randomize()
         {
             m_compAnimator.runtimeAnimatorController =
                 m_controllers[Random.Range(0, m_controllers.Length)];
