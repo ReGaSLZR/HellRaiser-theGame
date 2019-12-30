@@ -2593,6 +2593,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 2244545601624546766, guid: 80ea477f345d6430cb4ef63bd5f437fc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80ea477f345d6430cb4ef63bd5f437fc, type: 3}
 --- !u!114 &377168331 stripped
@@ -4270,6 +4275,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Item-HealthPotion (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839856588118641176, guid: e19da43c55fb14c41ab4afdc2b5ea293,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1839856588118641155, guid: e19da43c55fb14c41ab4afdc2b5ea293,
         type: 3}
@@ -8780,6 +8790,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item-Coin (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8470227752894238243, guid: 80b8e47f4f8ce1547a2d2bbbdc9030e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8470227752894238246, guid: 80b8e47f4f8ce1547a2d2bbbdc9030e4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9116,6 +9131,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Item-HealthPotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839856588118641176, guid: e19da43c55fb14c41ab4afdc2b5ea293,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1839856588118641155, guid: e19da43c55fb14c41ab4afdc2b5ea293,
         type: 3}
@@ -10652,7 +10672,7 @@ PrefabInstance:
     - target: {fileID: 4819952851368301412, guid: c4ba0d864dbed3a4e9980053bb72acd4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.5
+      value: 8.25
       objectReference: {fileID: 0}
     - target: {fileID: 4819952851368301412, guid: c4ba0d864dbed3a4e9980053bb72acd4,
         type: 3}
@@ -11143,6 +11163,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Item-Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 8470227752894238243, guid: 80b8e47f4f8ce1547a2d2bbbdc9030e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8470227752894238246, guid: 80b8e47f4f8ce1547a2d2bbbdc9030e4,
         type: 3}

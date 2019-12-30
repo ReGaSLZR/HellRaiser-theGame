@@ -53,7 +53,7 @@
         public void RecycleInPool(int index)
         {
             GameObject poolItem = m_listObjectsInPool[index].gameObject;
-            poolItem.transform.position = Vector3.zero;
+            poolItem.transform.localPosition = Vector3.zero;
             poolItem.SetActive(false);
         }
 
@@ -79,6 +79,8 @@
             itemFromPool.transform.position = objectPosition;
             itemFromPool.transform.rotation = objectRotation;
             itemFromPool.SetActive(true);
+
+            MoveToNextIndex();
 
             return itemFromPool;
         }

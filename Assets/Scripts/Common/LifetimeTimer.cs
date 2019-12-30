@@ -37,7 +37,8 @@ namespace Common
                 m_poolItemReference.PutBackToPool(m_lifetime);
             }
 
-            else {
+            else
+            {
                 Destroy(gameObject, m_lifetime);
             }
             

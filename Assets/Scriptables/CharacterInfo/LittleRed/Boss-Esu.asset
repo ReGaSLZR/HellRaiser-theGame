@@ -28,10 +28,10 @@ MonoBehaviour:
     m_stunLength: 1
     m_deathLength: 1
   m_statOffense:
-    m_physicalAttack: 35
+    m_physicalAttack: 25
     m_magickAttack: 35
-    m_critChance: 10
-    m_critDamage: 110
+    m_critChance: 30
+    m_critDamage: 75
   m_statDefense:
     m_physicalDefense: 10
     m_isMagusBane: 0

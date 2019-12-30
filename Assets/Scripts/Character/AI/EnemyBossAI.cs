@@ -75,7 +75,6 @@ namespace Character.AI {
             }
             else
             {
-                m_skillMain.StopSkill(false);
                 base.OnDeath();
             }
         }

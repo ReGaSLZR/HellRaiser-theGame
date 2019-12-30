@@ -54,6 +54,7 @@ namespace Character
         private void OnDisable()
         {
             m_disposables.Clear();
+            ClearTargets();
         }
 
         private void OnEnable()
