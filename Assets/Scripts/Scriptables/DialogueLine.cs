@@ -78,7 +78,7 @@ namespace Scriptables {
                 case EXPRESSION_NORMAL:
                 default:
                     {
-                        return m_speaker.m_avatarMain;
+                        return m_speaker.m_avatarNormal;
                     }
             }
         }
