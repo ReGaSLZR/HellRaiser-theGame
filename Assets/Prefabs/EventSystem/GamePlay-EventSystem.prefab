@@ -272,6 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_playSettings: {fileID: 11400000, guid: 2ca4b7ddb1b84aa4ca1d81619cc44be7, type: 2}
+  m_cameraFX: {fileID: 8263085934968033660}
   m_audio: {fileID: 4523491364138751417}
   m_inputManager: {fileID: 4523491363765480888}
   m_gamePlayStats: {fileID: 4523491364123685842}
@@ -908,6 +909,7 @@ GameObject:
   - component: {fileID: 4523491364123685843}
   - component: {fileID: 4523491364123685840}
   - component: {fileID: 7755237033717025503}
+  - component: {fileID: 8263085934968033660}
   m_Layer: 0
   m_Name: GamePlay
   m_TagString: Untagged
@@ -999,6 +1001,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49ad5495d5704a788e1811ba9fe25f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8263085934968033660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4523491364123685839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d364bf3cd03f462e8947f233d93c245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_shakeDelay: 0.8
+  m_shakeDuration: 0.75
+  m_shakeAmplitude: 3
+  m_shakeFrequency: 5
 --- !u!1 &4523491364138751416
 GameObject:
   m_ObjectHideFlags: 0

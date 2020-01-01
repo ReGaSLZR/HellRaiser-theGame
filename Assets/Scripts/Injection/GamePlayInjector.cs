@@ -1,4 +1,5 @@
 ﻿using Audio;
+using GamePlay.Camera;
 using GamePlay.Checkpoint;
 using GamePlay.Dialogue;
 using GamePlay.Input;
@@ -18,9 +19,17 @@ namespace Injection {
         [Required]
         private PlaySettings m_playSettings;
 
+        [Space]
+
+        [SerializeField]
+        [Required]
+        private CameraFXModel m_cameraFX;
+
         [SerializeField]
         [Required]
         private AudioModel m_audio;
+
+        [Space]
 
         [SerializeField]
         [Required]
@@ -29,6 +38,8 @@ namespace Injection {
         [SerializeField]
         [Required]
         private GamePlayStatsModel m_gamePlayStats;
+
+        [Space]
 
         [SerializeField]
         [Required]
@@ -41,6 +52,8 @@ namespace Injection {
         [SerializeField]
         [Required]
         private CheckpointModel m_checkpoint;
+
+        [Space]
 
         [SerializeField]
         [Required]
@@ -81,24 +94,31 @@ namespace Injection {
 
         private void BindModelGamePlay()
         {
+            Container.Bind<CameraFXModel.Setter>().FromInstance(m_cameraFX);
+
             //Player Input
             BaseInputModel baseInputModel = m_inputManager.GetBaseInput(m_playSettings.m_gamePlayInput);
             Container.Bind<BaseInputModel>().FromInstance(baseInputModel);
 
+            //Dialogue
             Container.Bind<DialogueModel.Getter>().FromInstance(m_dialogue);
             Container.Bind<DialogueModel.Setter>().FromInstance(m_dialogue);
 
+            //GamePlay Stats
             Container.Bind<GamePlayStatsModel.Getter>().FromInstance(m_gamePlayStats);
             Container.Bind<GamePlayStatsModel.Setter>().FromInstance(m_gamePlayStats);
 
+            //Checkpoint
             Container.Bind<CheckpointModel.Getter>().FromInstance(m_checkpoint);
             Container.Bind<CheckpointModel.Setter>().FromInstance(m_checkpoint);
 
+            //Timer and Mission
             Container.Bind<MissionModel.TimerGetter>().FromInstance(m_mission);
             Container.Bind<MissionModel.TimerSetter>().FromInstance(m_mission);
             Container.Bind<MissionModel.MissionGetter>().FromInstance(m_mission);
             Container.Bind<MissionModel.MissionSetter>().FromInstance(m_mission);
 
+            //Merchant
             Container.Bind<MerchantModel.Getter>().FromInstance(m_merchant);
             Container.Bind<MerchantModel.Setter>().FromInstance(m_merchant);
 

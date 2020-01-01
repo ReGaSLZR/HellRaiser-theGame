@@ -1,4 +1,5 @@
 ﻿using NaughtyAttributes;
+using GamePlay.Camera;
 using UnityEngine;
 
 namespace Scriptables
@@ -22,6 +23,9 @@ namespace Scriptables
         [Range(0, CharacterInfo.STAMINA_MAX)]
         public int m_cost;
 
+        public CameraFXType m_cameraFXType = CameraFXType.None;
+
+        [ShowAssetPreview]
         public Texture2D m_icon;
         
     }

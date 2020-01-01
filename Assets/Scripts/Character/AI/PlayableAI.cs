@@ -2,6 +2,7 @@
 using Cinemachine;
 using GamePlay.Input;
 using GamePlay.Stats;
+using GamePlay.Camera;
 using NaughtyAttributes;
 using UniRx;
 using UniRx.Triggers;
@@ -20,6 +21,8 @@ namespace Character.AI {
         private readonly GamePlayStatsModel.Setter m_modelStatsSetter;
         [Inject]
         private readonly GamePlayStatsModel.Getter m_modelStatsGetter;
+        [Inject]
+        private readonly CameraFXModel.Setter m_cameraFX;
 
         [Header("----- Child variables -----")]
 
@@ -95,6 +98,7 @@ namespace Character.AI {
                 .Subscribe(_ =>
                 {
                     m_skillMain.UseSkill();
+                    m_cameraFX.ShowFX(m_stats.GetCharacterSkills()[0].m_cameraFXType, m_uniqueCamera);
                     UpdateStamina(m_stats.GetCharacterSkills()[0].m_cost);
                 })
                 .AddTo(m_disposables);
@@ -108,6 +112,7 @@ namespace Character.AI {
                .Subscribe(_ =>
                {
                    m_skillSecondary.UseSkill();
+                   m_cameraFX.ShowFX(m_stats.GetCharacterSkills()[1].m_cameraFXType, m_uniqueCamera);
                    UpdateStamina(m_stats.GetCharacterSkills()[1].m_cost);
                })
                .AddTo(m_disposables);
@@ -121,6 +126,7 @@ namespace Character.AI {
                .Subscribe(isUsingSkill =>
                 {
                     m_skillTertiary.UseSkill();
+                    m_cameraFX.ShowFX(m_stats.GetCharacterSkills()[2].m_cameraFXType, m_uniqueCamera);
                     UpdateStamina(m_stats.GetCharacterSkills()[2].m_cost);
                 })
                 .AddTo(m_disposables);
