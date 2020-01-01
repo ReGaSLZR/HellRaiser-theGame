@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6796606306817168644}
   - component: {fileID: 6796606306817168643}
   - component: {fileID: 6796606306817168641}
+  - component: {fileID: 3073612990166319554}
   m_Layer: 0
   m_Name: GamePlay-MainCamera
   m_TagString: MainCamera
@@ -112,3 +113,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!81 &3073612990166319554
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6796606306817168640}
+  m_Enabled: 1

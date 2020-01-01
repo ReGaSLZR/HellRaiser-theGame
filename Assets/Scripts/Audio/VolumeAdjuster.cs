@@ -13,10 +13,11 @@ namespace Audio {
         private AudioModel.VolumeGetter m_modelAudio;
 
         private AudioSource m_compAudioSource;
-        private readonly DropdownList<bool> m_dropdownListAudioType = new DropdownList<bool>(){
-        {"SFX", false},
-        {"BGM", true}
-    };
+        private readonly DropdownList<bool> m_dropdownListAudioType =
+            new DropdownList<bool>(){
+                {"SFX", false},
+                {"BGM", true}
+        };
 
         [Dropdown("m_dropdownListAudioType")]
         public bool m_audioType;
@@ -24,7 +25,7 @@ namespace Audio {
         private void Awake()
         {
             m_compAudioSource = GetComponent<AudioSource>();
-            m_compAudioSource.loop = m_audioType;
+            //m_compAudioSource.loop = m_audioType;
         }
 
         private void Start()

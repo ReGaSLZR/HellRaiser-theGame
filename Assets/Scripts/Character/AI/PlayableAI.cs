@@ -41,11 +41,6 @@ namespace Character.AI {
         [Required]
         private CinemachineVirtualCamera m_uniqueCamera;
 
-        [Space]
-
-        [Required]
-        [SerializeField] AudioListener m_audioListener;
-
         public bool m_isNotOnCycle = false; //determines if the PlayableAI is to be ignored in Character switching
 
         protected override void Awake()
@@ -73,13 +68,11 @@ namespace Character.AI {
 
             InitInputObservers();
             m_uniqueCamera.gameObject.SetActive(true);
-            m_audioListener.enabled = true;
         }
 
         protected override void OnDisable()
         {
             base.OnDisable();
-            m_audioListener.enabled = false;
 
             //safe check; for some reason, Unity loses the reference to the camera and prooduces a null exception
             //TODO investigate this bug/error log deeper
