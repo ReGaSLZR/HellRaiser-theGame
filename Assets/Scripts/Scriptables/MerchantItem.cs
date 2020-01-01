@@ -30,6 +30,9 @@ namespace Scriptables {
         [TextArea]
         public string m_spielDescription;
 
+        [Required]
+        public AudioClip m_clipOnPurchase;
+
         [Space]
 
         [Dropdown("m_dropdownStatOptions")]

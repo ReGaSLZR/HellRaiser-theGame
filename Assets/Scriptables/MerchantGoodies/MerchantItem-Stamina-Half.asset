@@ -13,14 +13,15 @@ MonoBehaviour:
   m_Name: MerchantItem-Stamina-Half
   m_EditorClassIdentifier: 
   m_spielButtonNormal: Buy then use
-  m_spielButtonBuyAgain: Buy Again
-  m_spielButtonDisabled: Not enough funds.
+  m_spielButtonBuyAgain: Buy again
+  m_spielButtonDisabled: Can't afford
   m_spielButtonOutOfStock: Out of Stock
   m_itemIcon: {fileID: 2800000, guid: 7892f617a56eb1d4bb9e9ef21dc677ce, type: 3}
   m_spielTitle: Small Stamina Potion
   m_spielDescription: Tastes horrible but works wonders. The dose brings back 50%
     of max stamina.
+  m_clipOnPurchase: {fileID: 8300000, guid: 7c77fa4651f87424db6cf2fadda18fff, type: 3}
   m_stat: STAT_STAMINA
   m_value: 50
-  m_price: 149
+  m_price: 1249
   m_stocks: 3

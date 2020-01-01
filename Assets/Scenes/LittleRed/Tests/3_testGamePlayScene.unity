@@ -2003,7 +2003,7 @@ PrefabInstance:
     - target: {fileID: 1189186479501055281, guid: c6e86a09b942f4411b79f3399195b443,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1189186479501055284, guid: c6e86a09b942f4411b79f3399195b443,
         type: 3}
@@ -4224,7 +4224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1020747830
 Transform:
   m_ObjectHideFlags: 0
@@ -4342,12 +4342,12 @@ PrefabInstance:
     - target: {fileID: 3901355239552240227, guid: 5a154efec6c794aabbe9cd5202aaafe9,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3901355239552240230, guid: 5a154efec6c794aabbe9cd5202aaafe9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.1026425
+      value: -12.6
       objectReference: {fileID: 0}
     - target: {fileID: 3901355239552240230, guid: 5a154efec6c794aabbe9cd5202aaafe9,
         type: 3}
@@ -4399,6 +4399,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3901355239552240234, guid: 5a154efec6c794aabbe9cd5202aaafe9,
+        type: 3}
+      propertyPath: m_goodies.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: cabf8f45d81134349bc36f8a30caa4f3,
+        type: 2}
+    - target: {fileID: 3901355239552240234, guid: 5a154efec6c794aabbe9cd5202aaafe9,
+        type: 3}
+      propertyPath: m_goodies.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1c96d11b03fd345878081a3d2aa8aa6e,
+        type: 2}
+    - target: {fileID: 3901355239552240234, guid: 5a154efec6c794aabbe9cd5202aaafe9,
+        type: 3}
+      propertyPath: m_goodies.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 15b6418f9be484b449ffcb197bbb16a6,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a154efec6c794aabbe9cd5202aaafe9, type: 3}
 --- !u!1001 &1058577883
@@ -4416,7 +4434,7 @@ PrefabInstance:
     - target: {fileID: 5499678268255039607, guid: c78370dd0ca6f418faba4993163a9b30,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5499678268255039602, guid: c78370dd0ca6f418faba4993163a9b30,
         type: 3}
@@ -9303,6 +9321,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Villager-Ranged-Girl-IDLE
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699112960684502302, guid: 96dd30c3465a54b7db298d4817ff4616,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5699112960684502299, guid: 96dd30c3465a54b7db298d4817ff4616,
         type: 3}

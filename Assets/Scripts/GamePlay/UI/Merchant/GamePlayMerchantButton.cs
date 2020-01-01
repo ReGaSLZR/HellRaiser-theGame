@@ -90,7 +90,7 @@ namespace GamePlay.UI.Merchant {
                 .Subscribe(_ => {
                     LogUtil.PrintInfo(gameObject, GetType(), "Bought merchant item: " + m_merchantItem.m_spielTitle);
 
-                    m_modelSFX.PlaySFX(m_audioTheme.m_sfxMerchantItemBought);
+                    m_modelSFX.PlaySFX(m_merchantItem.m_clipOnPurchase);
 
                     m_hasBoughtItem = true;
                     m_textButton.text = m_merchantItem.m_spielButtonBuyAgain;

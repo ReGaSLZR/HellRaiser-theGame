@@ -32,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3901355239552240227}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.512, y: -2.947, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 3901355241045720608}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_compCollider2D: {fileID: 3901355239552240232}
-  m_info: {fileID: 11400000, guid: 48e06e2ceca4b984b8a8c49da7860475, type: 2}
+  m_info: {fileID: 11400000, guid: c78d97838f34546a1a93f7f9695463dd, type: 2}
   m_textStatChange: {fileID: 5096534324315135011}
 --- !u!1 &3901355241045720637
 GameObject:

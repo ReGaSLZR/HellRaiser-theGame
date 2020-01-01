@@ -46,10 +46,6 @@ namespace Scriptables {
 
             public AudioClip m_sfxMissionUpdate;
 
-            [Space]
-
-            public AudioClip m_sfxMerchantItemBought;
-
             [Header("Background Music")]
 
             public AudioClip m_bgmMissionAccomplished;

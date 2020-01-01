@@ -20,7 +20,8 @@ MonoBehaviour:
   m_spielTitle: Not-so-rotting Meat
   m_spielDescription: By the gods, SO THIS IS WHY MY BAG STINKS!.. Oh, a customer.
     Here's a specially discounted item for you.
+  m_clipOnPurchase: {fileID: 8300000, guid: 3de6122f5ac574ea59c93ed1d8b150ac, type: 3}
   m_stat: STAT_HEALTH
   m_value: 1
-  m_price: 10
-  m_stocks: 4
+  m_price: 7
+  m_stocks: 5
