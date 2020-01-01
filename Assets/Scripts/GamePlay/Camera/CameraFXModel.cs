@@ -4,6 +4,7 @@
     using UnityEngine;
     using System.Collections;
     using Cinemachine;
+    using NaughtyAttributes;
 
     public class CameraFXModel : MonoBehaviour, CameraFXModel.Setter
     {
@@ -26,11 +27,21 @@
         [SerializeField]
         private float m_shakeAmplitude = 1.2f;
         [SerializeField]
-        private float m_shakeFrequency = 2.0f;        
+        private float m_shakeFrequency = 2.0f;
 
         [Header("Focus Speedlines params")]
 
+        [SerializeField]
         private float m_focusDuration;
+
+        [SerializeField]
+        [Required]
+        private GameObject m_focusFX;
+
+        private void Awake()
+        {
+            m_focusFX.SetActive(false);
+        }
 
         public void ShowFX(CameraFXType cameraFXType, CinemachineVirtualCamera vCam)
         {
@@ -85,9 +96,9 @@
 
         private IEnumerator CorShowFocusSpeedlines()
         {
-            //TODO
+            m_focusFX.SetActive(true);
             yield return new WaitForSeconds(m_focusDuration);
-            //TODO
+            m_focusFX.SetActive(false);
         }
 
     }

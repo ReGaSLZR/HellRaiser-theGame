@@ -240,7 +240,7 @@ MonoBehaviour:
   m_childFX: {fileID: 0}
   m_compRigidbody2D: {fileID: 8442513984881137978}
   m_compSpriteRenderer: {fileID: 8442513984881137926}
-  m_dashForce: 1200
+  m_dashForce: 3000
 --- !u!1 &7555109851128817139
 GameObject:
   m_ObjectHideFlags: 0

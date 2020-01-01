@@ -1017,6 +1017,8 @@ MonoBehaviour:
   m_shakeDuration: 0.75
   m_shakeAmplitude: 3
   m_shakeFrequency: 5
+  m_focusDuration: 0.6
+  m_focusFX: {fileID: 0}
 --- !u!1 &4523491364138751416
 GameObject:
   m_ObjectHideFlags: 0
