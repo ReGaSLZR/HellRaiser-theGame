@@ -14,8 +14,7 @@
 
         private void Awake()
         {
-            m_compAnimator = GetComponent<Animator>();
-
+            
             if (m_controllers.Length == 0)
             {
                 LogUtil.PrintInfo(this, GetType(),
@@ -23,6 +22,7 @@
                 Destroy(this);
             }
 
+            m_compAnimator = GetComponent<Animator>();
             Randomize();
         }
 

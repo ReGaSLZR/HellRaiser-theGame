@@ -14,12 +14,12 @@ namespace Common.Randomizer {
 
         private void Awake()
         {
-            m_compSpriteRenderer = GetComponent<SpriteRenderer>();
-
             if (m_randomTextures.Length == 0) {
                 LogUtil.PrintWarning(this, GetType(), "Random textures variable is empty!");
                 Destroy(this);
             }
+
+            m_compSpriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         private void Start()

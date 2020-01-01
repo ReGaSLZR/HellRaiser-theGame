@@ -244,6 +244,16 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: -6
       objectReference: {fileID: 0}
+    - target: {fileID: 4109449775448717074, guid: 39050acfd001d423091f2c438aa775e3,
+        type: 3}
+      propertyPath: m_audioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4d02cb36f21ec4e7b9520aa9a28f0a54, type: 3}
+    - target: {fileID: 4109449775448717074, guid: 39050acfd001d423091f2c438aa775e3,
+        type: 3}
+      propertyPath: m_audioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 18dac45eb55c44d3fa7b8b9138c289a3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39050acfd001d423091f2c438aa775e3, type: 3}
 --- !u!4 &6932479634884359968 stripped
