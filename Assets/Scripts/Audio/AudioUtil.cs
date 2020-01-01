@@ -9,6 +9,36 @@ namespace Audio
 
         private const float AUDIO_TRANSITION_TICK = 0.03f;
 
+        public static void SafelyPlayRandom(AudioSource audioSource, AudioClip[] clips)
+        {
+            if (clips.Length == 0)
+            {
+                return;
+            }
+
+            SafelyPlay(audioSource, clips[Random.Range(0, clips.Length)]);
+        }
+
+
+        public static void SafelyPlayOneshotRandom(AudioSource audioSource, AudioClip[] clips)
+        {
+            if (clips.Length == 0)
+            {
+                return;
+            }
+
+            SafelyPlayOneshot(audioSource, clips[Random.Range(0, clips.Length)]);
+        }
+
+        public static void SafelyPlay(AudioSource audioSource, AudioClip clip)
+        {
+            if ((audioSource != null) && (clip != null))
+            {
+                audioSource.clip = clip;
+                audioSource.Play();
+            }
+        }
+
         public static void SafelyPlayOneshot(AudioSource audioSource, AudioClip clip)
         {
             if ((audioSource!= null) && (clip != null))

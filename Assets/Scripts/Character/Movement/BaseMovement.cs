@@ -33,10 +33,12 @@ namespace Character.Movement {
         [SerializeField]
         protected bool m_shouldFlipSprite;
 
-        [Space]
+        [Header("Audio Settings")]
 
         [SerializeField]
-        protected AudioClip m_clipStunned;
+        protected AudioSource m_audioSource;
+        [SerializeField]
+        protected AudioClip[] m_clipsStunned;
         [SerializeField]
         protected AudioClip m_clipDeath;
 
@@ -152,7 +154,7 @@ namespace Character.Movement {
             AnimateMovement(m_animMove, false);
             AnimateMovement(m_animStunned, true);
 
-            m_modelSFX.PlaySFX(m_clipStunned);
+            AudioUtil.SafelyPlayRandom(m_audioSource, m_clipsStunned);
         }
 
         public void UnStunMovement() {

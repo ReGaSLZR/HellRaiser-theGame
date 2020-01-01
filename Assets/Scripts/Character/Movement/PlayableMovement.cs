@@ -1,4 +1,5 @@
-﻿using Character.Ground;
+﻿using Audio;
+using Character.Ground;
 using GamePlay.Input;
 using System;
 using UniRx;
@@ -181,7 +182,7 @@ namespace Character.Movement
         private void Jump()
         {
             AnimateChange(m_animIsJumpingUp, true);
-            m_modelSFX.PlaySFX(m_clipJump);
+            AudioUtil.SafelyPlay(m_audioSource, m_clipJump);
 
             //m_compRigidBody2D.AddForce(Vector2.up * (m_jumpHeight * m_jumpVelocity) 
             //    * Time.fixedDeltaTime, ForceMode2D.Impulse);

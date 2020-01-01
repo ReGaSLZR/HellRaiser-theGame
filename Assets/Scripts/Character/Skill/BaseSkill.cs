@@ -4,15 +4,11 @@ using Scriptables;
 using System.Collections;
 using UniRx;
 using UnityEngine;
-using Zenject;
 
 namespace Character.Skill {
 
     public class BaseSkill : MonoBehaviour
     {
-
-        [Inject]
-        private readonly AudioModel.SFXSetter m_modelSFX;
 
         [Header("----- Base variables -----")]
 
@@ -33,7 +29,7 @@ namespace Character.Skill {
         [Range(0f, 5f)]
         protected float m_skillDelay = 0f;
         [SerializeField]
-        [Range(0.25f, 5f)]
+        [Range(0.25f, 8f)]
         protected float m_skillDuration = 0.25f;
         [SerializeField]
         [Range(0.25f, 10f)]
@@ -44,10 +40,14 @@ namespace Character.Skill {
         [SerializeField]
         protected bool m_isRepeating;
 
-        [Space]
+        [Header("Audio Settings")]
 
         [SerializeField]
-        protected AudioClip m_clipSkillUse;
+        //[Required]
+        private AudioSource m_audioSource;
+
+        [SerializeField]
+        protected AudioClip[] m_clipSkillUse;
 
         [Space]
 
@@ -107,8 +107,11 @@ namespace Character.Skill {
         private IEnumerator CorChargeSkill() {
             m_isExecutionFinished.Value = false;
 
-            AnimateSkill(true); //this is to alllow scratch animations to play first uninterrupted (esp. with the use of triggers)
-            m_modelSFX.PlaySFX(m_clipSkillUse);
+            //this is to alllow scratch animations
+            //to play first uninterrupted (esp. with the use of triggers)
+            AnimateSkill(true);
+
+            AudioUtil.SafelyPlayRandom(m_audioSource, m_clipSkillUse);
 
             yield return new WaitForSeconds(m_skillDelay);
 
