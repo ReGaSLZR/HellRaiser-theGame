@@ -12,6 +12,7 @@ TagManager:
   - Merchant
   - FxTemporaire
   - Ally
+  - TrapGround
   layers:
   - Default
   - TransparentFX

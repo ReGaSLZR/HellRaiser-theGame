@@ -195,7 +195,7 @@ namespace Character.Stats
         {
             if (m_textStatChange == null)
             {
-                LogUtil.PrintWarning(gameObject, GetType(), "UpdateStatChangeText(): NULL stat change text.");
+                //LogUtil.PrintWarning(gameObject, GetType(), "UpdateStatChangeText(): NULL stat change text.");
                 return;
             }
 
@@ -211,7 +211,7 @@ namespace Character.Stats
         {
             if (m_textStatChange == null)
             {
-                LogUtil.PrintInfo(gameObject, GetType(), "ForceShowStatChangeText(): NULL stat change text.");
+                //LogUtil.PrintInfo(gameObject, GetType(), "ForceShowStatChangeText(): NULL stat change text.");
                 return;
             }
 

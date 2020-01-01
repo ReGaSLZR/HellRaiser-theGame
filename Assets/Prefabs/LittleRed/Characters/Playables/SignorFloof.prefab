@@ -1079,7 +1079,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -4}
+  m_Offset: {x: 0, y: -3.4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1110,6 +1110,7 @@ MonoBehaviour:
   m_groundTags:
   - Terrain
   - Crate
+  - Enemy
 --- !u!1 &4819952851026048633
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,6 +1404,9 @@ MonoBehaviour:
   m_skillValueRange: {x: 20, y: 30}
   m_isDestroyedOnUse: 0
   m_delayBeforeDestruction: 0
+  m_triggerOnDeath: {fileID: 0}
+  m_isPooled: 0
+  m_poolItemReference: {fileID: 0}
 --- !u!81 &8015914489531527232
 AudioListener:
   m_ObjectHideFlags: 0

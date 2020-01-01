@@ -10,11 +10,11 @@ namespace Common.Randomizer {
         [MinMaxSlider(-180f, 180f)]
         private Vector2 m_rotation;
 
-        private void Start()
+        private void Awake()
         {
             gameObject.transform.localRotation =
-                new Quaternion(0, 0, Mathf.RoundToInt(
-                    Random.Range(m_rotation.x, m_rotation.y)), 0);
+                new Quaternion(0, 0, 
+                    Random.Range(m_rotation.x, m_rotation.y), 1);
             Destroy(this);      
         }
 

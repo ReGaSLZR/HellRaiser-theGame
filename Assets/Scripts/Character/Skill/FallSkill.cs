@@ -17,13 +17,19 @@ namespace Character.Skill {
 
         [SerializeField]
         [Range(1.1f, 15f)]
-        private float m_gravityScale;
+        private float m_gravityScale = 1.1f;
+
+        [SerializeField]
+        private bool m_isStaticBeforeFall = true;
 
         protected override void Awake()
         {
             base.Awake();
 
-            m_compRigidbody2D.bodyType = RigidbodyType2D.Static;
+            if (m_isStaticBeforeFall)
+            {
+                m_compRigidbody2D.bodyType = RigidbodyType2D.Static;
+            }
         }
 
         protected override void OnSkillStart()

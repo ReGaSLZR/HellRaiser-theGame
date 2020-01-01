@@ -843,6 +843,7 @@ MonoBehaviour:
   m_groundTags:
   - Terrain
   - Crate
+  - Enemy
 --- !u!1001 &161327917702227263
 PrefabInstance:
   m_ObjectHideFlags: 0
