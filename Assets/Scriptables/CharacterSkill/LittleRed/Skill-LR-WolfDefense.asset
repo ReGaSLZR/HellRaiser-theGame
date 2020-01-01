@@ -16,4 +16,5 @@ MonoBehaviour:
   m_description: 
   m_duration: 5
   m_cost: 25
+  m_cameraFXType: 3
   m_icon: {fileID: 2800000, guid: 9610d1470cf5ed641af799f3afb89d9a, type: 3}

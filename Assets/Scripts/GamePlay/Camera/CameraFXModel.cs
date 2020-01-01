@@ -38,9 +38,19 @@
         [Required]
         private GameObject m_focusFX;
 
+        [Header("Grunge params")]
+
+        [SerializeField]
+        private float m_grungeDuration;
+
+        [SerializeField]
+        [Required]
+        private GameObject m_grungeFX;
+
         private void Awake()
         {
             m_focusFX.SetActive(false);
+            m_grungeFX.SetActive(false);
         }
 
         public void ShowFX(CameraFXType cameraFXType, CinemachineVirtualCamera vCam)
@@ -56,12 +66,12 @@
                     }
                 case CameraFXType.Focus_Speedlines:
                     {
-                        StartCoroutine(CorShowFocusSpeedlines());
+                        StartCoroutine(CorShowSpeedlines(m_focusDuration, m_focusFX));
                         break;
                     }
                 case CameraFXType.Focus_Gradient_Bottom:
                     {
-
+                        StartCoroutine(CorShowSpeedlines(m_grungeDuration, m_grungeFX));
                         break;
                     }
             }
@@ -94,11 +104,11 @@
             }
         }
 
-        private IEnumerator CorShowFocusSpeedlines()
+        private IEnumerator CorShowSpeedlines(float duration, GameObject speedFX)
         {
-            m_focusFX.SetActive(true);
-            yield return new WaitForSeconds(m_focusDuration);
-            m_focusFX.SetActive(false);
+            speedFX.SetActive(true);
+            yield return new WaitForSeconds(duration);
+            speedFX.SetActive(false);
         }
 
     }
