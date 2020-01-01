@@ -139,7 +139,7 @@ namespace Character.AI {
         protected virtual void OnTargetDetection(bool isDetected) {
             m_movement.SetMovementEnabled(!isDetected);
 
-            if (isDetected)
+            if (isDetected && (m_targetDetector.GetTargets().Count > 0))
             {
                 Collider2D firstTarget = m_targetDetector.GetTargets()[0];
                 if (firstTarget != null) {
