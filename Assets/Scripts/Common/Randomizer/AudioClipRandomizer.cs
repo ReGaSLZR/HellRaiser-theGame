@@ -3,10 +3,15 @@
 
     using Utils;
     using UnityEngine;
+    using NaughtyAttributes;
 
-    [RequireComponent(typeof(AudioSource))]
     public class AudioClipRandomizer : MonoBehaviour
     {
+
+        [SerializeField]
+        [Required]
+        private AudioSource m_audioSource;
+
         [SerializeField]
         private AudioClip[] m_audioClips;
 
@@ -25,12 +30,11 @@
                 Destroy(this);
             }
 
-            AudioSource source = GetComponent<AudioSource>();
-            source.clip = m_audioClips[Random.Range(0, m_audioClips.Length)];
+            m_audioSource.clip = m_audioClips[Random.Range(0, m_audioClips.Length)];
 
             if (m_shouldForcePlay)
             {
-                source.Play();
+                m_audioSource.Play();
             }
 
             Destroy(this);

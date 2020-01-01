@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e2a2333818341bbae02a5bf818ad9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_audioSource: {fileID: 505125066856029360}
   m_audioClips:
   - {fileID: 8300000, guid: ceede3d48dc5d4a8db1533a95df7c1c4, type: 3}
   - {fileID: 8300000, guid: 72ed9ddb580a24a73aff8b5456211e69, type: 3}

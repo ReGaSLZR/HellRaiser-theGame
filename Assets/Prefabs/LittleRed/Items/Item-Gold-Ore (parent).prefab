@@ -155,7 +155,10 @@ MonoBehaviour:
   m_isTriggeredOnGamePlayStart: 0
   m_itemType: INVENTORY_MONEY
   m_valueRange: {x: 25, y: 100}
-  m_clipPickedUp: {fileID: 8300000, guid: 086f5d2f8bb1f8a4fb05306f6a4f7703, type: 3}
+  m_clipOnPickUp:
+  - {fileID: 8300000, guid: 44fbc803bc03d40979e2cfe2ea86b759, type: 3}
+  - {fileID: 8300000, guid: e590bbb44297f448da3329e05c60587a, type: 3}
+  - {fileID: 8300000, guid: 28822494c03ef4d428d0258186bcace3, type: 3}
 --- !u!114 &3751115129095732971
 MonoBehaviour:
   m_ObjectHideFlags: 0

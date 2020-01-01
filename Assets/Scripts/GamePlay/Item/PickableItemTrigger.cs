@@ -44,12 +44,12 @@ namespace GamePlay.Item {
         [Space]
 
         [SerializeField]
-        private AudioClip m_clipPickedUp;
+        private AudioClip[] m_clipOnPickUp;
 
         public override void Execute()
         {
             int valueFromRange = ValuesUtil.GetValueFromVector2Range(m_valueRange);
-            m_modelSFX.PlaySFX(m_clipPickedUp);
+            m_modelSFX.PlaySFXRandom(m_clipOnPickUp);
 
             switch (m_itemType) {
                 case STAT_HEALTH:
