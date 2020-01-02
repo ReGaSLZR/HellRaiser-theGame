@@ -15,12 +15,12 @@ PrefabInstance:
     - target: {fileID: 833268769828433078, guid: b5271b97a61af48c98b4e3b3330d5c11,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.3167274
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 833268769828433078, guid: b5271b97a61af48c98b4e3b3330d5c11,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.4751487
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 833268769828433078, guid: b5271b97a61af48c98b4e3b3330d5c11,
         type: 3}
@@ -114,6 +114,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: e4352a081556be446af7a44f34db05f0,
         type: 3}
+    - target: {fileID: 1314219156005507923, guid: b5271b97a61af48c98b4e3b3330d5c11,
+        type: 3}
+      propertyPath: m_clipsStunned.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314219156005507923, guid: b5271b97a61af48c98b4e3b3330d5c11,
+        type: 3}
+      propertyPath: m_clipsStunned.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1fc68d7312a45496b8d207594d1e0e0b, type: 3}
+    - target: {fileID: 1314219156005507923, guid: b5271b97a61af48c98b4e3b3330d5c11,
+        type: 3}
+      propertyPath: m_clipsStunned.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 26c93f895b5ff49e198cebfc3ee98aa0, type: 3}
+    - target: {fileID: 1314219156005507923, guid: b5271b97a61af48c98b4e3b3330d5c11,
+        type: 3}
+      propertyPath: m_clipDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: 26c93f895b5ff49e198cebfc3ee98aa0, type: 3}
     - target: {fileID: 4274435644424070728, guid: b5271b97a61af48c98b4e3b3330d5c11,
         type: 3}
       propertyPath: m_Offset.x

@@ -166,11 +166,12 @@ namespace Character.Movement {
             SetMovementEnabled(false);
             m_compRigidBody2D.bodyType = RigidbodyType2D.Static;
 
+            m_audioSource.Stop();
+            m_modelSFX.PlaySFX(m_clipDeath);
+
             AnimateMovement(m_animMove, false);
             AnimateMovement(m_animStunned, false);
             AnimateMovement(m_animDead, true);
-
-            m_modelSFX.PlaySFX(m_clipDeath);
         }
 
     }

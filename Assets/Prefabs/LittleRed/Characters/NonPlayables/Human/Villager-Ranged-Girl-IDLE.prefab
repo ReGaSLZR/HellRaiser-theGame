@@ -17,8 +17,10 @@ MonoBehaviour:
   m_compSpriteRenderer: {fileID: 5699112960684502300}
   m_movementDirection: 0
   m_shouldFlipSprite: 1
-  m_clipStunned: {fileID: 0}
-  m_clipDeath: {fileID: 0}
+  m_audioSource: {fileID: 1809884005216897619}
+  m_clipsStunned:
+  - {fileID: 8300000, guid: 1fc68d7312a45496b8d207594d1e0e0b, type: 3}
+  m_clipDeath: {fileID: 8300000, guid: 26c93f895b5ff49e198cebfc3ee98aa0, type: 3}
   m_animMove: 
   m_animStunned: isHurt
   m_animDead: isHurt
@@ -125,6 +127,12 @@ Animator:
 --- !u!50 &9211783257156541890 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 4137321830746147339, guid: 6e596348544014aa382f89e15a30a4ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 5097068004255143881}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1809884005216897619 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6890951297336237466, guid: 6e596348544014aa382f89e15a30a4ae,
     type: 3}
   m_PrefabInstance: {fileID: 5097068004255143881}
   m_PrefabAsset: {fileID: 0}

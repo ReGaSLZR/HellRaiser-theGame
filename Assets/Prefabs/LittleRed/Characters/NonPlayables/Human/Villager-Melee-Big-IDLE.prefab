@@ -17,8 +17,10 @@ MonoBehaviour:
   m_compSpriteRenderer: {fileID: 2090771720381383795}
   m_movementDirection: 0
   m_shouldFlipSprite: 1
-  m_clipStunned: {fileID: 0}
-  m_clipDeath: {fileID: 0}
+  m_audioSource: {fileID: 5406931092008739644}
+  m_clipsStunned:
+  - {fileID: 8300000, guid: d903cd0ba54b54c74a6e7aebdf8cad0d, type: 3}
+  m_clipDeath: {fileID: 8300000, guid: 1b26c85043db04b3bad1f7c56eee116a, type: 3}
   m_animMove: 
   m_animStunned: isHurt
   m_animDead: isHurt
@@ -36,11 +38,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villager-Melee-Big-IDLE
       objectReference: {fileID: 0}
-    - target: {fileID: 3592173961371773142, guid: a105ccca677954f4f9640d0e4746c86c,
-        type: 3}
-      propertyPath: m_movement
-      value: 
-      objectReference: {fileID: 736179268418250561}
     - target: {fileID: 3814188439073082711, guid: a105ccca677954f4f9640d0e4746c86c,
         type: 3}
       propertyPath: m_SortingOrder
@@ -49,12 +46,12 @@ PrefabInstance:
     - target: {fileID: 3814188439073082704, guid: a105ccca677954f4f9640d0e4746c86c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.06075883
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3814188439073082704, guid: a105ccca677954f4f9640d0e4746c86c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8041618
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3814188439073082704, guid: a105ccca677954f4f9640d0e4746c86c,
         type: 3}
@@ -101,6 +98,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3592173961371773142, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_movement
+      value: 
+      objectReference: {fileID: 736179268418250561}
     m_RemovedComponents:
     - {fileID: 3261713332854223541, guid: a105ccca677954f4f9640d0e4746c86c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a105ccca677954f4f9640d0e4746c86c, type: 3}
@@ -125,6 +127,12 @@ Animator:
 --- !u!50 &3297317549760033965 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 301527008024870281, guid: a105ccca677954f4f9640d0e4746c86c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3021160948264700196}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &5406931092008739644 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7125845586349894168, guid: a105ccca677954f4f9640d0e4746c86c,
     type: 3}
   m_PrefabInstance: {fileID: 3021160948264700196}
   m_PrefabAsset: {fileID: 0}

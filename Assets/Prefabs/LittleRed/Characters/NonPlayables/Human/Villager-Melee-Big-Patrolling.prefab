@@ -15,12 +15,12 @@ PrefabInstance:
     - target: {fileID: 2973662895143473434, guid: 42fcfab5ab0954c328627699c8d471a7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2973662895143473434, guid: 42fcfab5ab0954c328627699c8d471a7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.48
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2973662895143473434, guid: 42fcfab5ab0954c328627699c8d471a7,
         type: 3}
@@ -106,9 +106,29 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 3524564194890182399, guid: 42fcfab5ab0954c328627699c8d471a7,
         type: 3}
+      propertyPath: m_clipsStunned.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524564194890182399, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
       propertyPath: m_animDead
       value: isHurt
       objectReference: {fileID: 0}
+    - target: {fileID: 3524564194890182399, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_clipDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b26c85043db04b3bad1f7c56eee116a, type: 3}
+    - target: {fileID: 3524564194890182399, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_clipsStunned.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d903cd0ba54b54c74a6e7aebdf8cad0d, type: 3}
+    - target: {fileID: 3524564194890182399, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_clipsStunned.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: d903cd0ba54b54c74a6e7aebdf8cad0d, type: 3}
     - target: {fileID: 1838902135984562626, guid: 42fcfab5ab0954c328627699c8d471a7,
         type: 3}
       propertyPath: m_Offset.y
@@ -139,5 +159,15 @@ PrefabInstance:
       propertyPath: m_skillValueRange.y
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 8451705480808193472, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_clipSkillUse.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: d479d8dd5395d44ebbb6baf5ec36c590, type: 3}
+    - target: {fileID: 8451705480808193472, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_clipSkillUse.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: e0169fa1dc5064206930d08994122cbd, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42fcfab5ab0954c328627699c8d471a7, type: 3}

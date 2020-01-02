@@ -17,8 +17,10 @@ MonoBehaviour:
   m_compSpriteRenderer: {fileID: 19997787732097242}
   m_movementDirection: 0
   m_shouldFlipSprite: 1
-  m_clipStunned: {fileID: 0}
-  m_clipDeath: {fileID: 0}
+  m_audioSource: {fileID: 6218808092535119765}
+  m_clipsStunned:
+  - {fileID: 8300000, guid: 62b692f27aba84e55b8723842f6e8296, type: 3}
+  m_clipDeath: {fileID: 8300000, guid: 62b692f27aba84e55b8723842f6e8296, type: 3}
   m_animMove: 
   m_animStunned: isHurt
   m_animDead: isHurt
@@ -111,6 +113,11 @@ PrefabInstance:
       propertyPath: m_targetTags.Array.data[2]
       value: Ally
       objectReference: {fileID: 0}
+    - target: {fileID: 8451705480808193472, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_clipSkillUse.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 204c94f2e105641958efbb22111eef41, type: 3}
     m_RemovedComponents:
     - {fileID: 3524564194890182399, guid: 42fcfab5ab0954c328627699c8d471a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 42fcfab5ab0954c328627699c8d471a7, type: 3}
@@ -135,6 +142,12 @@ Animator:
 --- !u!50 &3496639373024741380 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 1838902135984562627, guid: 42fcfab5ab0954c328627699c8d471a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2955374298507372999}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &6218808092535119765 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9173335765990028882, guid: 42fcfab5ab0954c328627699c8d471a7,
     type: 3}
   m_PrefabInstance: {fileID: 2955374298507372999}
   m_PrefabAsset: {fileID: 0}
