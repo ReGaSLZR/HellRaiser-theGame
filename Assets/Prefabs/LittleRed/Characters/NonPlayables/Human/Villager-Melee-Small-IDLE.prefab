@@ -20,7 +20,7 @@ MonoBehaviour:
   m_audioSource: {fileID: 6218808092535119765}
   m_clipsStunned:
   - {fileID: 8300000, guid: 62b692f27aba84e55b8723842f6e8296, type: 3}
-  m_clipDeath: {fileID: 8300000, guid: 62b692f27aba84e55b8723842f6e8296, type: 3}
+  m_clipDeath: {fileID: 8300000, guid: 8cc222d010e9b4cdc8ee541c020e5b81, type: 3}
   m_animMove: 
   m_animStunned: isHurt
   m_animDead: isHurt

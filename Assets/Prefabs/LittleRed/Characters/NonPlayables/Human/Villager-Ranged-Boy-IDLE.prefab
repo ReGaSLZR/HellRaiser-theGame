@@ -19,7 +19,7 @@ MonoBehaviour:
   m_shouldFlipSprite: 1
   m_audioSource: {fileID: 796655586474771041}
   m_clipsStunned:
-  - {fileID: 8300000, guid: 8cc222d010e9b4cdc8ee541c020e5b81, type: 3}
+  - {fileID: 8300000, guid: 8b89fbcc71c254893be6797d594f249b, type: 3}
   m_clipDeath: {fileID: 8300000, guid: d903cd0ba54b54c74a6e7aebdf8cad0d, type: 3}
   m_animMove: 
   m_animStunned: isHurt

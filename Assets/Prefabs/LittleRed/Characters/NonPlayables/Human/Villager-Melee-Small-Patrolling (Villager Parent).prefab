@@ -656,7 +656,6 @@ MonoBehaviour:
   m_audioSource: {fileID: 9173335765990028882}
   m_clipSkillUse:
   - {fileID: 8300000, guid: dfecd22d1146b4eb489a53f3326b5403, type: 3}
-  - {fileID: 8300000, guid: 570310fba0024465fb0c4b5996560df3, type: 3}
   m_childFX: {fileID: 0}
   m_targetDetector: {fileID: 1838902135177059301}
   m_inflictType: 0

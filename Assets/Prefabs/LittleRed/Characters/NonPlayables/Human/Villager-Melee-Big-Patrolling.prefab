@@ -123,7 +123,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_clipsStunned.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: d903cd0ba54b54c74a6e7aebdf8cad0d, type: 3}
+      objectReference: {fileID: 8300000, guid: 608cc43e33d714c4babdcf2c1b3d34b4, type: 3}
     - target: {fileID: 3524564194890182399, guid: 42fcfab5ab0954c328627699c8d471a7,
         type: 3}
       propertyPath: m_clipsStunned.Array.data[1]
