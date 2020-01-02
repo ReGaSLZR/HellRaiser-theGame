@@ -15,12 +15,12 @@ PrefabInstance:
     - target: {fileID: 4796676949060195726, guid: 218fd2db041304db9a6f220af3ae0947,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.4335992
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4796676949060195726, guid: 218fd2db041304db9a6f220af3ae0947,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9290677
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4796676949060195726, guid: 218fd2db041304db9a6f220af3ae0947,
         type: 3}
@@ -83,5 +83,15 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 4dfc8eedd82454d3b9486c5dd9d33ad9, type: 2}
+    - target: {fileID: 8996706772213015240, guid: 218fd2db041304db9a6f220af3ae0947,
+        type: 3}
+      propertyPath: m_clipsStunned.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4b02077ace5ee4f14b07b6590e9695d9, type: 3}
+    - target: {fileID: 8996706772213015240, guid: 218fd2db041304db9a6f220af3ae0947,
+        type: 3}
+      propertyPath: m_clipDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: 4b02077ace5ee4f14b07b6590e9695d9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 218fd2db041304db9a6f220af3ae0947, type: 3}

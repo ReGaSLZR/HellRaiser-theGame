@@ -36,6 +36,7 @@ namespace Character.Movement {
         [Header("Audio Settings")]
 
         [SerializeField]
+        [Required]
         protected AudioSource m_audioSource;
         [SerializeField]
         protected AudioClip[] m_clipsStunned;

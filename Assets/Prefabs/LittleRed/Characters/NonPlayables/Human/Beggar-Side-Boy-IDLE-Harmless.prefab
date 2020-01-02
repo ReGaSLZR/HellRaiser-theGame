@@ -83,5 +83,15 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 3ae07ae4d176f4e39918b10695dfc7ba, type: 2}
+    - target: {fileID: 8954846891030830799, guid: efbb86b40deda45ffa430ced0ddb824e,
+        type: 3}
+      propertyPath: m_clipsStunned.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: dcc407a04dacb4b8d92dca3d2c149375, type: 3}
+    - target: {fileID: 8954846891030830799, guid: efbb86b40deda45ffa430ced0ddb824e,
+        type: 3}
+      propertyPath: m_clipDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: dcc407a04dacb4b8d92dca3d2c149375, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efbb86b40deda45ffa430ced0ddb824e, type: 3}

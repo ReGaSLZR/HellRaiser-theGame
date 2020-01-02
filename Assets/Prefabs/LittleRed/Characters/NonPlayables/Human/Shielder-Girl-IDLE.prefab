@@ -15,12 +15,12 @@ PrefabInstance:
     - target: {fileID: 903940994246568058, guid: b85726947e5c84817a1bd5c663644caf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.08065796
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 903940994246568058, guid: b85726947e5c84817a1bd5c663644caf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9985585
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 903940994246568058, guid: b85726947e5c84817a1bd5c663644caf,
         type: 3}
@@ -119,5 +119,15 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 1.25
       objectReference: {fileID: 0}
+    - target: {fileID: 3657187787299938108, guid: b85726947e5c84817a1bd5c663644caf,
+        type: 3}
+      propertyPath: m_clipsStunned.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c85bfae2ce9d4fbca1717d4172f03e0, type: 3}
+    - target: {fileID: 3657187787299938108, guid: b85726947e5c84817a1bd5c663644caf,
+        type: 3}
+      propertyPath: m_clipDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c85bfae2ce9d4fbca1717d4172f03e0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b85726947e5c84817a1bd5c663644caf, type: 3}

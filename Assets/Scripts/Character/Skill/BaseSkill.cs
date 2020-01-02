@@ -43,8 +43,8 @@ namespace Character.Skill {
         [Header("Audio Settings")]
 
         [SerializeField]
-        //[Required]
-        private AudioSource m_audioSource;
+        [Required]
+        protected AudioSource m_audioSource;
 
         [SerializeField]
         protected AudioClip[] m_clipSkillUse;
@@ -80,7 +80,7 @@ namespace Character.Skill {
             m_skillDuration = duration;
         }
 
-        public void UseSkill() {
+        public virtual void UseSkill() {
             m_tempStopRepeatingSkill = false;
 
             if (m_isExecutionFinished.Value)
