@@ -12,37 +12,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soldier-Melee-Big-Patrolling
       objectReference: {fileID: 0}
-    - target: {fileID: 4470835339435559802, guid: a105ccca677954f4f9640d0e4746c86c,
-        type: 3}
-      propertyPath: m_info
-      value: 
-      objectReference: {fileID: 11400000, guid: 8fba10042822a4977b21d5da23bf9a64,
-        type: 2}
-    - target: {fileID: 3814188439073082710, guid: a105ccca677954f4f9640d0e4746c86c,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 8f4f5ede7219442b3a259eb20f9ad16a, type: 2}
-    - target: {fileID: 3814188439073082711, guid: a105ccca677954f4f9640d0e4746c86c,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 3814188439073082711, guid: a105ccca677954f4f9640d0e4746c86c,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: f5642d9be7251c64d87b83379a16b571,
-        type: 3}
     - target: {fileID: 3814188439073082704, guid: a105ccca677954f4f9640d0e4746c86c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.0114901
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3814188439073082704, guid: a105ccca677954f4f9640d0e4746c86c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5055196
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3814188439073082704, guid: a105ccca677954f4f9640d0e4746c86c,
         type: 3}
@@ -89,6 +67,43 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3814188439073082711, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814188439073082711, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f5642d9be7251c64d87b83379a16b571,
+        type: 3}
+    - target: {fileID: 3814188439073082710, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8f4f5ede7219442b3a259eb20f9ad16a, type: 2}
+    - target: {fileID: 3261713332854223541, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_clipDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b4d927cc26fb49c3a793c3fb8176641, type: 3}
+    - target: {fileID: 3261713332854223541, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_clipsStunned.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 76962522d1caf4e2f87029000ed24a50, type: 3}
+    - target: {fileID: 4470835339435559802, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_info
+      value: 
+      objectReference: {fileID: 11400000, guid: 8fba10042822a4977b21d5da23bf9a64,
+        type: 2}
+    - target: {fileID: 7557136741603754378, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_clipSkillUse.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7557136741603754378, guid: a105ccca677954f4f9640d0e4746c86c,
         type: 3}
       propertyPath: m_skillDelay
@@ -104,16 +119,16 @@ PrefabInstance:
       propertyPath: m_skillValueRange.y
       value: 40
       objectReference: {fileID: 0}
-    - target: {fileID: 301527006833313711, guid: a105ccca677954f4f9640d0e4746c86c,
+    - target: {fileID: 7557136741603754378, guid: a105ccca677954f4f9640d0e4746c86c,
         type: 3}
-      propertyPath: m_offsetHorizontal
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 301527006833313711, guid: a105ccca677954f4f9640d0e4746c86c,
+      propertyPath: m_clipSkillUse.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 05357090dfeba42a1a70c7328c87ed7d, type: 3}
+    - target: {fileID: 7557136741603754378, guid: a105ccca677954f4f9640d0e4746c86c,
         type: 3}
-      propertyPath: m_isAdjustingHorizontally
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: m_clipSkillUse.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: a8f4dfd93cc07414c830a9fa0ce786de, type: 3}
     - target: {fileID: 301527006833313710, guid: a105ccca677954f4f9640d0e4746c86c,
         type: 3}
       propertyPath: m_Offset.x
@@ -123,6 +138,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 301527006833313711, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_offsetHorizontal
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 301527006833313711, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_isAdjustingHorizontally
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a105ccca677954f4f9640d0e4746c86c, type: 3}

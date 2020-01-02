@@ -17,8 +17,10 @@ MonoBehaviour:
   m_compSpriteRenderer: {fileID: 1749937571792574985}
   m_movementDirection: 0
   m_shouldFlipSprite: 1
-  m_clipStunned: {fileID: 0}
-  m_clipDeath: {fileID: 0}
+  m_audioSource: {fileID: 5639535945242885446}
+  m_clipsStunned:
+  - {fileID: 8300000, guid: d7a8f36220e124663ace664062ed237f, type: 3}
+  m_clipDeath: {fileID: 8300000, guid: d03c1ac7ddf3e47ba88ef351dda4490a, type: 3}
   m_animMove: 
   m_animStunned: isHurt
   m_animDead: isHurt
@@ -36,15 +38,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soldier-Melee-Small-IDLE
       objectReference: {fileID: 0}
+    - target: {fileID: 5685731678313739559, guid: 9ebc5eb5af72a4df19da6b28fe115777,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 5685731678313739552, guid: 9ebc5eb5af72a4df19da6b28fe115777,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.646564
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5685731678313739552, guid: 9ebc5eb5af72a4df19da6b28fe115777,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8228114
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5685731678313739552, guid: 9ebc5eb5af72a4df19da6b28fe115777,
         type: 3}
@@ -91,11 +98,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5685731678313739559, guid: 9ebc5eb5af72a4df19da6b28fe115777,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 17
-      objectReference: {fileID: 0}
     - target: {fileID: 5463017894003724454, guid: 9ebc5eb5af72a4df19da6b28fe115777,
         type: 3}
       propertyPath: m_movement
@@ -135,6 +137,12 @@ Animator:
 --- !u!50 &2920729395689040599 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 9090027442903123449, guid: 9ebc5eb5af72a4df19da6b28fe115777,
+    type: 3}
+  m_PrefabInstance: {fileID: 6246141000500981550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &5639535945242885446 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1796206405211034216, guid: 9ebc5eb5af72a4df19da6b28fe115777,
     type: 3}
   m_PrefabInstance: {fileID: 6246141000500981550}
   m_PrefabAsset: {fileID: 0}

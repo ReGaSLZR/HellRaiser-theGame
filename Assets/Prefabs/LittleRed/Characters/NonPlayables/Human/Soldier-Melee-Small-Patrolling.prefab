@@ -15,12 +15,12 @@ PrefabInstance:
     - target: {fileID: 2973662895143473434, guid: 42fcfab5ab0954c328627699c8d471a7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.1587563
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2973662895143473434, guid: 42fcfab5ab0954c328627699c8d471a7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.7374458
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2973662895143473434, guid: 42fcfab5ab0954c328627699c8d471a7,
         type: 3}
@@ -67,17 +67,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2567530648197846832, guid: 42fcfab5ab0954c328627699c8d471a7,
-        type: 3}
-      propertyPath: m_info
-      value: 
-      objectReference: {fileID: 11400000, guid: dece83d2bdcda43469613251cd17fa1a,
-        type: 2}
-    - target: {fileID: 2973662895143473436, guid: 42fcfab5ab0954c328627699c8d471a7,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: b0402b803fc384dfca7fe0d907c14a71, type: 2}
     - target: {fileID: 2973662895143473437, guid: 42fcfab5ab0954c328627699c8d471a7,
         type: 3}
       propertyPath: m_SortingOrder
@@ -89,6 +78,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: be51470580f293e4ca6a0f6b6208fce4,
         type: 3}
+    - target: {fileID: 2973662895143473436, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b0402b803fc384dfca7fe0d907c14a71, type: 2}
     - target: {fileID: 1838902135984562626, guid: 42fcfab5ab0954c328627699c8d471a7,
         type: 3}
       propertyPath: m_Size.y
@@ -99,6 +93,47 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 1.7059016
       objectReference: {fileID: 0}
+    - target: {fileID: 3524564194890182399, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_clipDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: d03c1ac7ddf3e47ba88ef351dda4490a, type: 3}
+    - target: {fileID: 3524564194890182399, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_clipsStunned.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d7a8f36220e124663ace664062ed237f, type: 3}
+    - target: {fileID: 2567530648197846832, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_info
+      value: 
+      objectReference: {fileID: 11400000, guid: dece83d2bdcda43469613251cd17fa1a,
+        type: 2}
+    - target: {fileID: 8451705480808193472, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_clipSkillUse.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8451705480808193472, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_skillValueRange.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8451705480808193472, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_skillValueRange.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8451705480808193472, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_clipSkillUse.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 674a6c7ca48474ee29fa712867794182, type: 3}
+    - target: {fileID: 8451705480808193472, guid: 42fcfab5ab0954c328627699c8d471a7,
+        type: 3}
+      propertyPath: m_clipSkillUse.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 532f48925b2a849008f53c8b457e5077, type: 3}
     - target: {fileID: 1838902135177059300, guid: 42fcfab5ab0954c328627699c8d471a7,
         type: 3}
       propertyPath: m_Offset.x
@@ -148,16 +183,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8451705480808193472, guid: 42fcfab5ab0954c328627699c8d471a7,
-        type: 3}
-      propertyPath: m_skillValueRange.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8451705480808193472, guid: 42fcfab5ab0954c328627699c8d471a7,
-        type: 3}
-      propertyPath: m_skillValueRange.y
-      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42fcfab5ab0954c328627699c8d471a7, type: 3}
