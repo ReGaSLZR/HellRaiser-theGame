@@ -7,12 +7,11 @@ using GamePlay.Stats;
 using GamePlay.Mission;
 using NaughtyAttributes;
 using UnityEngine;
-using Zenject;
 using Scriptables;
 
 namespace Injection {
 
-    public class GamePlayInjector : MonoInstaller<GamePlayInjector>, Instantiator
+    public class GamePlayInjector : BaseInjector<GamePlayInjector>, Instantiator
     {
 
         [SerializeField]

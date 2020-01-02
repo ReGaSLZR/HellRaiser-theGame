@@ -6,7 +6,7 @@ using Zenject;
 
 namespace Injection {
 
-    public class LoadingInjector : MonoInstaller<LoadingInjector>
+    public class LoadingInjector : BaseInjector<LoadingInjector>
     {
 
         [SerializeField]

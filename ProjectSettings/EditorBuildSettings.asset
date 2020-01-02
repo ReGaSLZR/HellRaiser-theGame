@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/LittleRed/Tests/0_testLoadingScene.unity
+    path: Assets/Scenes/LittleRed/_tests/0_testLoadingScene.unity
     guid: b8fc7f5b33a38ea4998f205081ab4c10
   - enabled: 1
-    path: Assets/Scenes/LittleRed/Tests/1_testSplashScene.unity
+    path: Assets/Scenes/LittleRed/_tests/1_testSplashScene.unity
     guid: 39ca89fb650e91741acf9aa33aaf87ca
   - enabled: 1
-    path: Assets/Scenes/LittleRed/Tests/2_testMainMenuScene.unity
+    path: Assets/Scenes/LittleRed/_tests/2_testMainMenuScene.unity
     guid: 840ab5ec2e468294bb1b50dc4ab883a8
   - enabled: 1
-    path: Assets/Scenes/LittleRed/Tests/3_testGamePlayScene.unity
+    path: Assets/Scenes/LittleRed/_tests/3_testGamePlayScene.unity
     guid: 8d8932da3e5a6d54797097a8665b9d03
   m_configObjects: {}

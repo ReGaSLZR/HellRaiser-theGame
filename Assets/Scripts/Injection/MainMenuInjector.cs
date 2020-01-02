@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using Zenject;
 using MainMenu.Mission;
 using NaughtyAttributes;
 using Scriptables;
@@ -8,7 +7,7 @@ using Audio;
 namespace Injection {
 
 
-    public class MainMenuInjector : MonoInstaller<MainMenuInjector>
+    public class MainMenuInjector : BaseInjector<MainMenuInjector>
     {
 
         [SerializeField]

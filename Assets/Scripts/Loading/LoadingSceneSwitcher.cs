@@ -8,12 +8,14 @@ namespace Loading {
     public class LoadingSceneSwitcher : MonoBehaviour
     {
 
+        private const string SPLASH = "SPLASH";
         private const string MAIN_MENU = "MAIN_MENU";
         private const string STORED_LEVEL = "STORED_LEVEL";
         private readonly string[] m_dropdownOptionns = new string[] {
             "<Unset>",
+            SPLASH,
             MAIN_MENU,
-            STORED_LEVEL
+            STORED_LEVEL,
         };
 
         [SerializeField]
@@ -29,6 +31,10 @@ namespace Loading {
             else if (STORED_LEVEL.Equals(m_loadOptions))
             {
                 SceneData.LoadStoredLevel();
+            }
+            else if (SPLASH.Equals(m_loadOptions))
+            {
+                SceneData.LoadLevel(SceneData.SCENE_SPLASH);
             }
             else {
                 LogUtil.PrintWarning(gameObject, GetType(), "Could not find level of your choice to load.");

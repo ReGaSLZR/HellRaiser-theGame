@@ -22,7 +22,9 @@ namespace Data.Storage {
         }
 
         public static void LoadStoredLevel() {
-            SceneManager.LoadSceneAsync(PlayerPrefs.GetInt(KEY_LEVEL_TO_LOAD));
+            SceneManager.LoadSceneAsync(
+                PlayerPrefs.GetInt(KEY_LEVEL_TO_LOAD,
+                SCENE_SPLASH));
         }
 
         public static void StoreLevelThenLoad(int levelIndex) {
@@ -43,6 +45,11 @@ namespace Data.Storage {
         public static int GetCurrentSceneIndex()
         {
             return SceneManager.GetActiveScene().buildIndex;
+        }
+
+        public static void ClearStoredLevel()
+        {
+            PlayerPrefs.DeleteKey(KEY_LEVEL_TO_LOAD);
         }
 
     }
