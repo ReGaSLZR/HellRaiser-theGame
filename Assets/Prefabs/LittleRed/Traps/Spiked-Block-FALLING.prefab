@@ -149,7 +149,9 @@ MonoBehaviour:
   m_skillDuration: 0.25
   m_skillCooldown: 0.25
   m_isRepeating: 0
-  m_clipSkillUse: {fileID: 0}
+  m_audioSource: {fileID: 5833167336888004412}
+  m_clipSkillUse:
+  - {fileID: 8300000, guid: 103a1fdecfb0f4ad6b2446c93cb7048b, type: 3}
   m_childFX: {fileID: 0}
   m_compRigidbody2D: {fileID: 1498282479811160018}
   m_gravityScale: 5
@@ -171,8 +173,10 @@ MonoBehaviour:
   m_compSpriteRenderer: {fileID: 1644562407960250880}
   m_movementDirection: 1
   m_shouldFlipSprite: 0
-  m_clipStunned: {fileID: 0}
-  m_clipDeath: {fileID: 0}
+  m_audioSource: {fileID: 5833167336888004412}
+  m_clipsStunned:
+  - {fileID: 8300000, guid: a021b795eef0242e7bfc61c452ee1b94, type: 3}
+  m_clipDeath: {fileID: 8300000, guid: 3d113e6d0ccf44da39e3135a52379433, type: 3}
   m_animMove: 
   m_animStunned: 
   m_animDead: 
@@ -193,12 +197,12 @@ PrefabInstance:
     - target: {fileID: 1743116935883595623, guid: 2cb4d0142b6d0430ba40dfabfa754857,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.7862387
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1743116935883595623, guid: 2cb4d0142b6d0430ba40dfabfa754857,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.16599491
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1743116935883595623, guid: 2cb4d0142b6d0430ba40dfabfa754857,
         type: 3}
@@ -382,6 +386,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad075f55284a49428f9d6daa4630fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &5833167336888004412 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9122489050501862494, guid: 2cb4d0142b6d0430ba40dfabfa754857,
+    type: 3}
+  m_PrefabInstance: {fileID: 3344491981711817570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!212 &1644562407960250880 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 4087207389348868450, guid: 2cb4d0142b6d0430ba40dfabfa754857,

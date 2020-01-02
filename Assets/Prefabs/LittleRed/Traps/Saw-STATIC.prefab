@@ -112,6 +112,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5889105295297931715, guid: 2cb4d0142b6d0430ba40dfabfa754857,
+        type: 3}
+      propertyPath: m_clipSkillUse.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2872856557863586308, guid: 2cb4d0142b6d0430ba40dfabfa754857,
         type: 3}
       propertyPath: m_compCollider2D

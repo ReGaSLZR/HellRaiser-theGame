@@ -1214,8 +1214,9 @@ MonoBehaviour:
   m_targetTags:
   - Enemy
   - Crate
+  - Trap
   m_isLockedToFirstSingleTarget: 1
-  m_detectionRange: 5
+  m_detectionRange: 2
   m_isAdjustingHorizontally: 1
   m_compSpriteRenderer: {fileID: 4819952851368301403}
   m_offsetHorizontal: 3.5
@@ -1854,6 +1855,7 @@ MonoBehaviour:
   - Terrain
   - Crate
   - Enemy
+  - Trap
 --- !u!1 &4819952851026048633
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,7 +2080,7 @@ MonoBehaviour:
   m_animOnWall: isOnWall
   m_wallSlideNormalFrictionDrag: 1
   m_wallSlideFriction: 10
-  m_clipJump: {fileID: 8300000, guid: b4b9eca4b7ecd4f2a895e467a32b4ab7, type: 3}
+  m_clipJump: {fileID: 8300000, guid: 07adea211b986b04b80fa624ef29d2ff, type: 3}
   m_ground: {fileID: 6994466401011639232}
   m_jumpVelocity: 9
   m_jumpFallMultiplier: 5

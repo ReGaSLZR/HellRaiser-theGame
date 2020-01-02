@@ -10,17 +10,22 @@ PrefabInstance:
     - target: {fileID: 5760082233952648384, guid: 2cb4d0142b6d0430ba40dfabfa754857,
         type: 3}
       propertyPath: m_Name
-      value: Spiked-Plank-1sided-STATIC
+      value: Spiked-Plank-top-STATIC
+      objectReference: {fileID: 0}
+    - target: {fileID: 5760082233952648384, guid: 2cb4d0142b6d0430ba40dfabfa754857,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     - target: {fileID: 1743116935883595623, guid: 2cb4d0142b6d0430ba40dfabfa754857,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.31
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1743116935883595623, guid: 2cb4d0142b6d0430ba40dfabfa754857,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.88
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1743116935883595623, guid: 2cb4d0142b6d0430ba40dfabfa754857,
         type: 3}
@@ -67,6 +72,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2675267074784329287, guid: 2cb4d0142b6d0430ba40dfabfa754857,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.137
+      objectReference: {fileID: 0}
     - target: {fileID: 7098050923922745141, guid: 2cb4d0142b6d0430ba40dfabfa754857,
         type: 3}
       propertyPath: m_Size.x
@@ -86,11 +96,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Offset.x
       value: -0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 2675267074784329287, guid: 2cb4d0142b6d0430ba40dfabfa754857,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.137
       objectReference: {fileID: 0}
     - target: {fileID: 6843806680804246943, guid: 2cb4d0142b6d0430ba40dfabfa754857,
         type: 3}

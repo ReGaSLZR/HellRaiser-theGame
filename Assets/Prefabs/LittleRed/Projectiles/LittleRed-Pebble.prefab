@@ -197,7 +197,8 @@ MonoBehaviour:
   m_compSpriteRenderer: {fileID: 7783906816781713066}
   m_movementDirection: 0
   m_shouldFlipSprite: 0
-  m_clipStunned: {fileID: 0}
+  m_audioSource: {fileID: 0}
+  m_clipsStunned: []
   m_clipDeath: {fileID: 0}
   m_animMove: 
   m_animStunned: 
@@ -223,7 +224,9 @@ MonoBehaviour:
   m_skillDuration: 0.25
   m_skillCooldown: 0.25
   m_isRepeating: 0
-  m_clipSkillUse: {fileID: 0}
+  m_audioSource: {fileID: 0}
+  m_clipSkillUse:
+  - {fileID: 0}
   m_childFX: {fileID: 0}
   m_targetDetector: {fileID: 7783906817504411501}
   m_inflictType: 0
@@ -340,6 +343,7 @@ MonoBehaviour:
   m_targetTags:
   - Crate
   - Enemy
+  - Trap
   m_isLockedToFirstSingleTarget: 1
   m_detectionRange: 5
   m_isAdjustingHorizontally: 0

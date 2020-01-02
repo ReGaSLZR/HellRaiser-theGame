@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8264964368125454474}
   - component: {fileID: 4719136809546243783}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Sprite (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1075919326532935075}
   - component: {fileID: 7833154108913133072}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Sprite (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1070842800835645417}
   - component: {fileID: 8572049412609494286}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Sprite (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5688796874546042962}
   - component: {fileID: 5073419372411010818}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Sprite (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1394780451020823686}
   - component: {fileID: 6786648088613209291}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Sprite (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,12 +409,17 @@ PrefabInstance:
     - target: {fileID: 5760082233952648384, guid: 2cb4d0142b6d0430ba40dfabfa754857,
         type: 3}
       propertyPath: m_Name
-      value: Spikes-STATIC-Indestructible
+      value: Spikes-STATIC-tall-Indestructible
       objectReference: {fileID: 0}
     - target: {fileID: 5760082233952648384, guid: 2cb4d0142b6d0430ba40dfabfa754857,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Terrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 5760082233952648384, guid: 2cb4d0142b6d0430ba40dfabfa754857,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1743116935883595623, guid: 2cb4d0142b6d0430ba40dfabfa754857,
         type: 3}
@@ -516,6 +521,16 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7098050923922745141, guid: 2cb4d0142b6d0430ba40dfabfa754857,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194838085633234085, guid: 2cb4d0142b6d0430ba40dfabfa754857,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 2872856557863586308, guid: 2cb4d0142b6d0430ba40dfabfa754857,
         type: 3}
       propertyPath: m_info
@@ -526,6 +541,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sprites
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019071449079052665, guid: 2cb4d0142b6d0430ba40dfabfa754857,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3552042192680854075, guid: 2cb4d0142b6d0430ba40dfabfa754857,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740336616740262758, guid: 2cb4d0142b6d0430ba40dfabfa754857,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4087207389348868450, guid: 2cb4d0142b6d0430ba40dfabfa754857,
         type: 3}
@@ -547,6 +577,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 3.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742157907389639326, guid: 2cb4d0142b6d0430ba40dfabfa754857,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742198762421547250, guid: 2cb4d0142b6d0430ba40dfabfa754857,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742428986476904096, guid: 2cb4d0142b6d0430ba40dfabfa754857,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742265141489683362, guid: 2cb4d0142b6d0430ba40dfabfa754857,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3542564211861578216, guid: 2cb4d0142b6d0430ba40dfabfa754857,
         type: 3}
