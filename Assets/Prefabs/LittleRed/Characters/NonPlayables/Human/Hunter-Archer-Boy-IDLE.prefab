@@ -818,6 +818,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2833145491720716525, guid: 488ea13c9a7064ba58f91aa6a0329e92,
         type: 3}
+      propertyPath: m_clipSkillUse.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833145491720716525, guid: 488ea13c9a7064ba58f91aa6a0329e92,
+        type: 3}
       propertyPath: m_prefabProjectile
       value: 
       objectReference: {fileID: 2903364267855038826, guid: ee93d800780b24dd88c4ddc9a25ea8a8,
