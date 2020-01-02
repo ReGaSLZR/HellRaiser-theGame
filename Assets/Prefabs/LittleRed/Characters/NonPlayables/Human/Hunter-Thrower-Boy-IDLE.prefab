@@ -17,8 +17,10 @@ MonoBehaviour:
   m_compSpriteRenderer: {fileID: 2076234426708290298}
   m_movementDirection: 0
   m_shouldFlipSprite: 1
-  m_clipStunned: {fileID: 0}
-  m_clipDeath: {fileID: 0}
+  m_audioSource: {fileID: 5393881711955381685}
+  m_clipsStunned:
+  - {fileID: 8300000, guid: 8b89fbcc71c254893be6797d594f249b, type: 3}
+  m_clipDeath: {fileID: 8300000, guid: 62b692f27aba84e55b8723842f6e8296, type: 3}
   m_animMove: 
   m_animStunned: isHurt
   m_animDead: isHurt
@@ -36,30 +38,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hunter-Thrower-Boy-IDLE
       objectReference: {fileID: 0}
-    - target: {fileID: 7546726372107591708, guid: d72b2a73aee0748b783f37b608e33e7b,
-        type: 3}
-      propertyPath: m_movement
-      value: 
-      objectReference: {fileID: 2493803783439539643}
-    - target: {fileID: 7893706943379342749, guid: d72b2a73aee0748b783f37b608e33e7b,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7893706943379342748, guid: d72b2a73aee0748b783f37b608e33e7b,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: a46e049a8bb334c6da1d6c6e346c9fa5, type: 2}
     - target: {fileID: 7893706943379342746, guid: d72b2a73aee0748b783f37b608e33e7b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.2868042
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7893706943379342746, guid: d72b2a73aee0748b783f37b608e33e7b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.1297306
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7893706943379342746, guid: d72b2a73aee0748b783f37b608e33e7b,
         type: 3}
@@ -106,6 +93,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7546726372107591708, guid: d72b2a73aee0748b783f37b608e33e7b,
+        type: 3}
+      propertyPath: m_movement
+      value: 
+      objectReference: {fileID: 2493803783439539643}
+    - target: {fileID: 7893706943379342749, guid: d72b2a73aee0748b783f37b608e33e7b,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893706943379342748, guid: d72b2a73aee0748b783f37b608e33e7b,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a46e049a8bb334c6da1d6c6e346c9fa5, type: 2}
     m_RemovedComponents:
     - {fileID: 8368042663841970815, guid: d72b2a73aee0748b783f37b608e33e7b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d72b2a73aee0748b783f37b608e33e7b, type: 3}
@@ -130,6 +132,12 @@ Animator:
 --- !u!50 &3175531623650826788 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 6723190065640600899, guid: d72b2a73aee0748b783f37b608e33e7b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8168492410046476135}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &5393881711955381685 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4289320510478148306, guid: d72b2a73aee0748b783f37b608e33e7b,
     type: 3}
   m_PrefabInstance: {fileID: 8168492410046476135}
   m_PrefabAsset: {fileID: 0}
