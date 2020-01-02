@@ -286,6 +286,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villager-Melee-Big-Patrolling
       objectReference: {fileID: 0}
+    - target: {fileID: 3814188439073082709, guid: a105ccca677954f4f9640d0e4746c86c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3814188439073082704, guid: a105ccca677954f4f9640d0e4746c86c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -503,7 +508,7 @@ PrefabInstance:
     - target: {fileID: 6617458591953083641, guid: 80ea477f345d6430cb4ef63bd5f437fc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6617458591953083641, guid: 80ea477f345d6430cb4ef63bd5f437fc,
         type: 3}
@@ -3386,6 +3391,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villager-Ranged-Boy-IDLE
       objectReference: {fileID: 0}
+    - target: {fileID: 6702733846688376108, guid: c2756d40f215443b89ad119db1ed7f57,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6702733846688376105, guid: c2756d40f215443b89ad119db1ed7f57,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3535,6 +3545,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villager-Melee-Big-IDLE
       objectReference: {fileID: 0}
+    - target: {fileID: 2090771720381383793, guid: d09841dab15ee49418d12c3a69ec27db,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2090771720381383796, guid: d09841dab15ee49418d12c3a69ec27db,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3622,7 +3637,7 @@ Transform:
   - {fileID: 2590343528004982940}
   - {fileID: 2590343526430423263}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &634283317
 GameObject:
@@ -4186,6 +4201,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Villager-Melee-Small-IDLE
+      objectReference: {fileID: 0}
+    - target: {fileID: 19997787732097240, guid: f0d783f3d82854b1db133dfb4b849fbb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19997787732097245, guid: f0d783f3d82854b1db133dfb4b849fbb,
         type: 3}
@@ -4828,6 +4848,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villager-Ranged-Boy-Patrolling
       objectReference: {fileID: 0}
+    - target: {fileID: 833268769828433075, guid: b5271b97a61af48c98b4e3b3330d5c11,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 833268769828433078, guid: b5271b97a61af48c98b4e3b3330d5c11,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5024,7 +5049,7 @@ Transform:
   - {fileID: 398367733}
   - {fileID: 1933467148}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1040230707
 PrefabInstance:
@@ -5654,7 +5679,7 @@ Transform:
   - {fileID: 1567085007}
   - {fileID: 2000158126}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1124980364
 PrefabInstance:
@@ -7860,6 +7885,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Villager-Ranged-Girl-Patrolling
       objectReference: {fileID: 0}
+    - target: {fileID: 696717993141320407, guid: 6e596348544014aa382f89e15a30a4ae,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 696717993141320402, guid: 6e596348544014aa382f89e15a30a4ae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9343,6 +9373,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Villager-Ranged-Girl-IDLE
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699112960684502302, guid: 96dd30c3465a54b7db298d4817ff4616,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5699112960684502299, guid: 96dd30c3465a54b7db298d4817ff4616,
         type: 3}
