@@ -30,5 +30,5 @@ MonoBehaviour:
       type: 3}
     m_bgmMissionAccomplished: {fileID: 8300000, guid: a8fe17886242bb048a68cb9c8f68891e,
       type: 3}
-    m_bgmMissionFailure: {fileID: 8300000, guid: 20cf29817a56f344fbbd9434fb5986a3,
+    m_bgmMissionFailure: {fileID: 8300000, guid: f3ff4acec8e77d342b5eead516a78083,
       type: 3}
