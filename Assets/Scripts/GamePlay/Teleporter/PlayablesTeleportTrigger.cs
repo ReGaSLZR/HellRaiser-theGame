@@ -1,7 +1,9 @@
 ﻿using GamePlay.Base;
+using System.Collections;
 using UnityEngine;
 using Utils;
 using GamePlay.Playable;
+using NaughtyAttributes;
 
 namespace GamePlay.Teleport
 {
@@ -11,7 +13,18 @@ namespace GamePlay.Teleport
         private PlayablesManager m_playablesManager;
 
         [SerializeField]
-        private Transform m_teleportLocation;
+        [Required]
+        private Transform m_teleportFX;
+
+        [SerializeField]
+        [Required]
+        private TeleportTail m_destination;
+
+        [Range(0f, 5f)]
+        [SerializeField] private float m_executionDelay = 0f;
+
+        [SerializeField]
+        private bool m_isOneTime = true;
 
         private void Awake()
         {
@@ -25,10 +38,28 @@ namespace GamePlay.Teleport
 
         public override void Execute()
         {
-            m_playablesManager.MassTeleportPlayables(m_teleportLocation);
-            Destroy(gameObject);
+            StopAllCoroutines();
+            StartCoroutine(CorExecuteTeleport());
         }
-        
+
+        private IEnumerator CorExecuteTeleport()
+        {   
+            m_teleportFX.gameObject.SetActive(true);
+            m_destination.ShowTeleportFX();
+
+            yield return new WaitForSeconds(m_executionDelay);
+
+            m_playablesManager.MassTeleportPlayables(
+                m_destination.gameObject.transform);
+
+            m_teleportFX.gameObject.SetActive(false);
+
+            if (m_isOneTime)
+            {
+                Destroy(gameObject);
+            }
+        }
+
     }
 
 
