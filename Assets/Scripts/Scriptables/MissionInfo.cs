@@ -17,7 +17,7 @@ namespace Scriptables {
         };
 
         [Range(SceneData.SCENE_MISSION_FIRST, 50)]
-        public int m_buildIndex;
+        public int m_buildIndex = SceneData.SCENE_MISSION_FIRST;
 
         public Texture2D m_preview;
 
@@ -30,7 +30,7 @@ namespace Scriptables {
         [TextArea]
         public string m_objective;
 
-        [Multiline]
+        [TextArea]
         public string m_description;
 
         [Space]
