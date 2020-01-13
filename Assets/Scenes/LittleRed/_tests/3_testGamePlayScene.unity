@@ -11067,7 +11067,19 @@ PrefabInstance:
         type: 3}
       propertyPath: m_focusedObject
       value: 
-      objectReference: {fileID: 94689270}
+      objectReference: {fileID: 958591584}
+    - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
+        type: 3}
+      propertyPath: m_lines.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: bd3adfe0e05a47c4aa47b76c4bc4d07a,
+        type: 2}
+    - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
+        type: 3}
+      propertyPath: m_lines.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: cb8c200e7baee9c4b94bfe4f19f96875,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a23d4065577444a2fba6165cad927885, type: 3}
 --- !u!1001 &4367786809658049433

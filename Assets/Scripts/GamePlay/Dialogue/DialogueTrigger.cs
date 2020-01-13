@@ -45,6 +45,7 @@ namespace GamePlay.Dialogue {
         [Space]
 
         [SerializeField]
+        [ReorderableList]
         private DialogueLine[] m_lines;
 
         [SerializeField]
