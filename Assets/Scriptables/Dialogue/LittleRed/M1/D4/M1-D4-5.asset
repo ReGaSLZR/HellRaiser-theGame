@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 0}
   m_expression: 3
-  m_line: "Ugh, quit your whining! The gods would never bless such a wretch. Bring
-    her to me \u2014 dead or alive!"
+  m_line: Ugh, quit your whining! The gods would never bless such a kid. Capture her
+    at all costs!
   m_lineSFX: {fileID: 8300000, guid: 157fa1e8fe9d44f89be59ce925327a10, type: 3}
   m_backgroundOption: 0
   m_background: {fileID: 0}
