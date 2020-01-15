@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de427f90aeb4ae479329da9f30afacf, type: 3}
   m_Name: M1-D4-3
   m_EditorClassIdentifier: 
-  m_speaker: {fileID: 0}
+  m_speaker: {fileID: 11400000, guid: f9542e417c3b44bb697e54625ef29806, type: 2}
   m_expression: 0
   m_line: Tribe leader, Hermes must have blessed her with fleet-footedness.
   m_lineSFX: {fileID: 0}

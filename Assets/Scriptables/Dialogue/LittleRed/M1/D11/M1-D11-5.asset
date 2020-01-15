@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de427f90aeb4ae479329da9f30afacf, type: 3}
   m_Name: M1-D11-5
   m_EditorClassIdentifier: 
-  m_speaker: {fileID: 0}
+  m_speaker: {fileID: 11400000, guid: 79bc430e576984f85935e7ad110097ef, type: 2}
   m_expression: 3
   m_line: For the Chief Huntress of Olympus!
   m_lineSFX: {fileID: 0}

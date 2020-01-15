@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ba8b7fb19a6f9449676c498e8a6d80, type: 3}
   m_Name: Avatar-NPC-Archer-Girl
   m_EditorClassIdentifier: 
-  m_name: 
-  m_avatarMain: {fileID: 0}
-  m_avatarNormal: {fileID: 0}
-  m_avatarHappy: {fileID: 0}
-  m_avatarSad: {fileID: 0}
-  m_avatarAngry: {fileID: 0}
-  m_avatarSurprised: {fileID: 0}
+  m_name: Archer
+  m_avatarMain: {fileID: 2800000, guid: 5f90d046c72c34ac58ffff7e4213aa66, type: 3}
+  m_avatarNormal: {fileID: 2800000, guid: 345425cdf14a9430b844b0c54db5002d, type: 3}
+  m_avatarHappy: {fileID: 2800000, guid: 5638633e6ee68431ebd88d6beeb6bffd, type: 3}
+  m_avatarSad: {fileID: 2800000, guid: 3b88094242859472e967ad516e039daa, type: 3}
+  m_avatarAngry: {fileID: 2800000, guid: e7337b1042a5b46e192ca444ba64cd32, type: 3}
+  m_avatarSurprised: {fileID: 2800000, guid: 45c7f2502a45645ee81101e13a2497ef, type: 3}

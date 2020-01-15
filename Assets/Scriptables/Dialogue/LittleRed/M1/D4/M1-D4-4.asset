@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de427f90aeb4ae479329da9f30afacf, type: 3}
   m_Name: M1-D4-4
   m_EditorClassIdentifier: 
-  m_speaker: {fileID: 0}
+  m_speaker: {fileID: 11400000, guid: fd5c367f0ccba4e409fe2993c20d38c7, type: 2}
   m_expression: 3
   m_line: "Or maybe Zeus himself lent her some of his lightning bolts. She\u2019s
     quick as hell!"

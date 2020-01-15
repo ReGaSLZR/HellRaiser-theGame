@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9ba8b7fb19a6f9449676c498e8a6d80, type: 3}
-  m_Name: Avatar-NPC-Hunter-Boy
+  m_Name: Avatar-NPC-Hunter
   m_EditorClassIdentifier: 
-  m_name: 
-  m_avatarMain: {fileID: 0}
-  m_avatarNormal: {fileID: 0}
-  m_avatarHappy: {fileID: 0}
-  m_avatarSad: {fileID: 0}
-  m_avatarAngry: {fileID: 0}
-  m_avatarSurprised: {fileID: 0}
+  m_name: Hunter
+  m_avatarMain: {fileID: 2800000, guid: c7d018fd789d949baadf54abcf3893ed, type: 3}
+  m_avatarNormal: {fileID: 2800000, guid: b224a1420c13c40398dfb35d6484fafd, type: 3}
+  m_avatarHappy: {fileID: 2800000, guid: f5d761aad30614f5fa144d14423ee82b, type: 3}
+  m_avatarSad: {fileID: 2800000, guid: 543e8af5ebe7b487ba58887a682a00eb, type: 3}
+  m_avatarAngry: {fileID: 2800000, guid: 1e144578a28ad417d9ad2ff1d4a2b08b, type: 3}
+  m_avatarSurprised: {fileID: 2800000, guid: e13e3b44fc5b04f718251f1dcacfcb06, type: 3}
