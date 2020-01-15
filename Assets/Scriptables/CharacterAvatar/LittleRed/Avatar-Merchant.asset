@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ba8b7fb19a6f9449676c498e8a6d80, type: 3}
+  m_Name: Avatar-Merchant
+  m_EditorClassIdentifier: 
+  m_name: Merchant
+  m_avatarMain: {fileID: 2800000, guid: 86911a99189884f2eb913c6ceb24257a, type: 3}
+  m_avatarNormal: {fileID: 2800000, guid: 2f67aadd0b6594fbf9d9c706753bfe2e, type: 3}
+  m_avatarHappy: {fileID: 2800000, guid: 85fb4020f1133408f9c7df2ce8e6f043, type: 3}
+  m_avatarSad: {fileID: 2800000, guid: b6c476d52fea540a9bebd13d48b2072e, type: 3}
+  m_avatarAngry: {fileID: 2800000, guid: b2bb4f7d81eb24ec58c8db6285104396, type: 3}
+  m_avatarSurprised: {fileID: 2800000, guid: 5a89e27556de84780a01c58b8e403074, type: 3}

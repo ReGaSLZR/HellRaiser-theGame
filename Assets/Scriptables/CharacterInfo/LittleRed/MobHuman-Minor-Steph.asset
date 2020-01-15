@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MobHuman-Minor-Steph
   m_EditorClassIdentifier: 
   m_isMob: 1
-  m_avatar: {fileID: 0}
+  m_avatar: {fileID: 11400000, guid: c469914c85a074e41a58b63c13145a3c, type: 2}
   m_bio: 
   m_isPlayable: 0
   m_skillsInOrder:

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ba8b7fb19a6f9449676c498e8a6d80, type: 3}
+  m_Name: Avatar-NPC-Soldier-Small
+  m_EditorClassIdentifier: 
+  m_name: Soldier
+  m_avatarMain: {fileID: 2800000, guid: 9a2faacb3c1b04ced933bb4e1e82c5c2, type: 3}
+  m_avatarNormal: {fileID: 2800000, guid: c7c743bb1d5f845ad8e4efe7dafec015, type: 3}
+  m_avatarHappy: {fileID: 2800000, guid: 1801e9aa65bfe46638ed2ce4d2271f0b, type: 3}
+  m_avatarSad: {fileID: 2800000, guid: 6d76cd76b147a41efbaad16dd4acecf0, type: 3}
+  m_avatarAngry: {fileID: 2800000, guid: 02bb8f16978544c78a5620c70e7a0cdb, type: 3}
+  m_avatarSurprised: {fileID: 2800000, guid: 8db6c892a2a6a4f87a63b8efb0489b16, type: 3}
