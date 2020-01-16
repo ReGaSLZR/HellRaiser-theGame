@@ -95,19 +95,19 @@ namespace GamePlay.Input {
         private void SetUpSkillControls()
         {
             this.UpdateAsObservable()
-                .Where(_ => m_isEnabled)
+                .Where(_ => m_isEnabled && m_reactiveSkillMain_enabled.Value)
                 .Select(_ => UnityEngine.Input.GetKeyDown(m_keySkillMain))
                 .Subscribe(isPressed => m_skillMain = isPressed)
                 .AddTo(this);
 
             this.UpdateAsObservable()
-                .Where(_ => m_isEnabled)
+                .Where(_ => m_isEnabled && m_reactiveSkill2_enabled.Value)
                 .Select(_ => UnityEngine.Input.GetKeyDown(m_keySkill2))
                 .Subscribe(isPressed => m_skill2 = isPressed)
                 .AddTo(this);
 
             this.UpdateAsObservable()
-                .Where(_ => m_isEnabled)
+                .Where(_ => m_isEnabled && m_reactiveSkill3_enabled.Value)
                 .Select(_ => UnityEngine.Input.GetKeyDown(m_keySkill3))
                 .Subscribe(isPressed => m_skill3 = isPressed)
                 .AddTo(this);

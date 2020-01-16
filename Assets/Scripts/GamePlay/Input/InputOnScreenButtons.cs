@@ -125,14 +125,14 @@ namespace GamePlay.Input {
         private void SetUpSkillMain()
         {
             m_buttonSkillMain.OnPointerDownAsObservable()
-                .Where(_ => m_isEnabled)
+                .Where(_ => m_isEnabled && m_reactiveSkillMain_enabled.Value)
                 .Subscribe(_ => {
                     m_skillMain = true;
                 })
                 .AddTo(this);
 
             m_buttonSkillMain.OnPointerUpAsObservable()
-                .Where(_ => m_isEnabled)
+                .Where(_ => m_isEnabled && m_reactiveSkillMain_enabled.Value)
                 .Subscribe(_ => {
                     m_skillMain = false;
                 })
@@ -142,14 +142,14 @@ namespace GamePlay.Input {
         private void SetUpSkill2()
         {
             m_buttonSkillSecondary.OnPointerDownAsObservable()
-                .Where(_ => m_isEnabled)
+                .Where(_ => m_isEnabled && m_reactiveSkill2_enabled.Value)
                 .Subscribe(_ => {
                     m_skill2 = true;
                 })
                 .AddTo(this);
 
             m_buttonSkillSecondary.OnPointerUpAsObservable()
-                .Where(_ => m_isEnabled)
+                .Where(_ => m_isEnabled && m_reactiveSkill2_enabled.Value)
                 .Subscribe(_ => {
                     m_skill2 = false;
                 })
@@ -159,14 +159,14 @@ namespace GamePlay.Input {
         private void SetUpSkill3()
         {
             m_buttonSkillTertiary.OnPointerDownAsObservable()
-              .Where(_ => m_isEnabled)
+              .Where(_ => m_isEnabled && m_reactiveSkill3_enabled.Value)
               .Subscribe(_ => {
                   m_skill3 = true;
               })
               .AddTo(this);
 
             m_buttonSkillTertiary.OnPointerUpAsObservable()
-                .Where(_ => m_isEnabled)
+                .Where(_ => m_isEnabled && m_reactiveSkill3_enabled.Value)
                 .Subscribe(_ => {
                     m_skill3 = false;
                 })

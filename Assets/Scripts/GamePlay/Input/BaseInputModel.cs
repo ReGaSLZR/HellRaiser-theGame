@@ -19,6 +19,10 @@ namespace GamePlay.Input {
         public bool m_skill2 { protected set; get; } 
         public bool m_skill3 { protected set; get; } 
 
+        public ReactiveProperty<bool> m_reactiveSkillMain_enabled { protected set; get; }
+        public ReactiveProperty<bool> m_reactiveSkill2_enabled { protected set; get; }
+        public ReactiveProperty<bool> m_reactiveSkill3_enabled { protected set; get; }
+
         /// <summary>
         /// Variable for handling Playable Character switching.
         /// </summary>
@@ -31,6 +35,10 @@ namespace GamePlay.Input {
         protected abstract void SetInputType();
 
         public BaseInputModel() {
+            m_reactiveSkillMain_enabled = new ReactiveProperty<bool>(true);
+            m_reactiveSkill2_enabled = new ReactiveProperty<bool>(true);
+            m_reactiveSkill3_enabled = new ReactiveProperty<bool>(true);
+
             SetInputType();
         }
 
@@ -51,6 +59,16 @@ namespace GamePlay.Input {
         {
             LogUtil.PrintInfo(gameObject, GetType(), "Enabling Controls...");
             m_isEnabled = true;
+        }
+
+        public void SetSkillEnabled(int skillIndex, bool isEnabled)
+        {
+            ReactiveProperty<bool> property = (skillIndex == 0)
+                ? m_reactiveSkillMain_enabled :
+                    ((skillIndex == 1) ? m_reactiveSkill2_enabled :
+                        m_reactiveSkill3_enabled);
+
+            property.Value = isEnabled;
         }
 
     }

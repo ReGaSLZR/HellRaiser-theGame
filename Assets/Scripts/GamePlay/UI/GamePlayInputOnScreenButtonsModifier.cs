@@ -9,8 +9,12 @@ using GamePlay.Stats;
 namespace GamePlay.UI {
 
     /// <summary>
-    /// Acts as [1] the enabler/disabler of OnScreen buttons when active Playable Character stamina is not sufficient for skill execution,
-    /// and [2] the updater of skill buttons' icons.
+    /// Acts as
+    /// [1] the enabler/disabler of OnScreen buttons
+    /// when active Playable Character stamina is
+    ///     [A] not sufficient for skill execution,
+    ///     [B] not allowed (m_reactiveSkill_X_enabled) (possibly for tutorial)
+    /// [2] the updater of skill buttons' icons.
     /// </summary>
     public class GamePlayInputOnScreenButtonsModifier : MonoBehaviour
     {
@@ -68,6 +72,26 @@ namespace GamePlay.UI {
                 })
                 .AddTo(this);
 
+            SetSkillButtonsEnabled();
+
+        }
+
+        private void SetSkillButtonsEnabled()
+        {
+            m_modelInput.m_reactiveSkillMain_enabled
+                .Subscribe(isSkillEnabled =>
+                    m_buttonsSkillInOrder[0].gameObject.SetActive(isSkillEnabled))
+                .AddTo(this);
+
+            m_modelInput.m_reactiveSkill2_enabled
+                .Subscribe(isSkillEnabled =>
+                    m_buttonsSkillInOrder[1].gameObject.SetActive(isSkillEnabled))
+                .AddTo(this);
+
+            m_modelInput.m_reactiveSkill3_enabled
+                .Subscribe(isSkillEnabled =>
+                    m_buttonsSkillInOrder[2].gameObject.SetActive(isSkillEnabled))
+                .AddTo(this);
         }
 
         private void SetButtonsEnabled(Button[] buttons, bool isEnabled) {
