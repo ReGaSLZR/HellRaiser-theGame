@@ -121,6 +121,7 @@ namespace GamePlay.UI {
             m_modelDialogue.IsInPlay()
                 .Subscribe(isInPlay => {
                     OnlyActivatePanel(isInPlay ? m_panelDialogue : m_panelHUD);
+                    SetOnScreenInputActive(!isInPlay);
                 })
                 .AddTo(this);
 
@@ -136,12 +137,20 @@ namespace GamePlay.UI {
             ShowDefaultPanels();
         }
 
+        private void SetOnScreenInputActive(bool isActive)
+        {
+            if ((InputType.OnScreenButtons == m_modelInput.m_inputType))
+            {
+                m_panelOnScreenInput.gameObject.SetActive(isActive);
+            }
+        }
+
         private void ShowDefaultPanels() {
             OnlyActivatePanel(m_panelHUD);
             m_panelMissionObjective.gameObject.SetActive(false);
             m_panelMerchantGoods.gameObject.SetActive(false);
 
-            m_panelOnScreenInput.gameObject.SetActive((InputType.OnScreenButtons == m_modelInput.m_inputType));
+            SetOnScreenInputActive(InputType.OnScreenButtons == m_modelInput.m_inputType);
         }
 
         private void InitMerchantObserver() {
@@ -156,10 +165,7 @@ namespace GamePlay.UI {
                         m_buttonPause[x].gameObject.SetActive(!isViewing);
                     }
 
-                    if ((InputType.OnScreenButtons == m_modelInput.m_inputType))
-                    {
-                        m_panelOnScreenInput.gameObject.SetActive(!isViewing);
-                    }
+                    SetOnScreenInputActive(!isViewing);
 
                     if (isViewing)
                     {
@@ -235,9 +241,7 @@ namespace GamePlay.UI {
                             panelContent.gameObject.SetActive(true);
                         }
 
-                        if (InputType.OnScreenButtons == m_modelInput.m_inputType) {
-                            m_panelOnScreenInput.gameObject.SetActive(shouldShowOnScreenInput);
-                        }
+                        SetOnScreenInputActive(shouldShowOnScreenInput);
 
                         Time.timeScale = timeScale;
                         SceneData.StoreLevelThenLoad(sceneToLoad);
@@ -276,9 +280,7 @@ namespace GamePlay.UI {
             m_panelHUD.gameObject.SetActive(false);
             m_panelDialogue.gameObject.SetActive(false);
 
-            if (InputType.OnScreenButtons == m_modelInput.m_inputType) {
-                m_panelOnScreenInput.gameObject.SetActive(false);
-            }
+            SetOnScreenInputActive(false);
 
             m_panelPause.gameObject.SetActive(false);
             m_panelPauseContentMain.gameObject.SetActive(false);
