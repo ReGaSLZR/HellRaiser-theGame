@@ -16,6 +16,11 @@
         private void Awake()
         {
             m_objectToActivate.gameObject.SetActive(false);
+
+            if (m_objectToDeactivate != null)
+            {
+                m_objectToDeactivate.gameObject.SetActive(true);
+            }
         }
 
         protected override void Start()

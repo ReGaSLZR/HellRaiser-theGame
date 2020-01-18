@@ -13,6 +13,7 @@
 
         public interface Setter
         {
+            void ClearCheckpoint();
             void SaveCheckpoint(int markerInstanceID, Vector3 spawnPoint);
             void TransferToMarker(CheckpointTransferer transferer);
         }
@@ -30,6 +31,11 @@
         private void Awake()
         {
             m_cachedCheckpoint = PlayerData.LoadCheckpoint();
+        }
+
+        public void ClearCheckpoint()
+        {
+            PlayerData.Clear(PlayerData.Checkpoint.SAVE_PATH);
         }
 
         public void SaveCheckpoint(int markerInstanceID, Vector3 spawnPoint)

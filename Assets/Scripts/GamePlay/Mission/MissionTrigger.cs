@@ -11,9 +11,11 @@ namespace GamePlay.Mission {
     {
 
         [Inject]
-        private MissionModel.MissionSetter m_modelMission;
+        private readonly MissionModel.MissionSetter m_modelMission;
         [Inject]
         private readonly AudioModel.SFXSetter m_modelSFX;
+        [Inject]
+        private readonly Checkpoint.CheckpointModel.Setter m_modelCheckpoint;
         [Inject]
         private readonly AudioTheme m_audioTheme;
 
@@ -53,6 +55,7 @@ namespace GamePlay.Mission {
                         break;
                     }
                 case TRIGGER_CLEAR: {
+                        m_modelCheckpoint.ClearCheckpoint();
                         m_modelMission.EndMission(true);
                         break;
                     }

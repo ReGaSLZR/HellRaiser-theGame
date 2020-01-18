@@ -111,6 +111,11 @@ namespace Data.Storage {
             ExecuteSave(Checkpoint.SAVE_PATH, data);
         }
 
+        public static void Clear(string savePath)
+        {
+            File.Delete(savePath);
+        }
+
         public static Inventory LoadInventory() {
             object loadedData = ExecuteLoad(Inventory.SAVE_PATH);
 
