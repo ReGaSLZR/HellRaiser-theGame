@@ -2,6 +2,7 @@
 using GamePlay.Base;
 using GamePlay.Input;
 using GamePlay.Mission;
+using Utils;
 using NaughtyAttributes;
 using Scriptables;
 using UniRx;
@@ -94,7 +95,10 @@ namespace GamePlay.Dialogue {
 
         private void PlayBGM() {
             switch (m_bgmType) {
-                default:
+                default: {
+                        LogUtil.PrintInfo(gameObject, GetType(), "PlayBGM(): <Unset>");
+                        break;
+                    }
                 case BGM_TEMP_STOP: {
                         m_modelBGM.StopBGM();
                         break;
