@@ -114,9 +114,10 @@ namespace GamePlay.UI {
         private void Awake()
         {
             DeactivateAllPanels();
+            Config();
         }
 
-        private void Start()
+        private void Config()
         {
             m_modelDialogue.IsInPlay()
                 .Subscribe(isInPlay => {
