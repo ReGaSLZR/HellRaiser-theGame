@@ -16,5 +16,5 @@ MonoBehaviour:
   m_expression: 0
   m_line: I cannot afford to be hindered by justice. Not right now.
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
-  m_background: {fileID: 0}
+  m_backgroundOption: 1
+  m_background: {fileID: 2800000, guid: f7cadb3d7ad1c4dddb44548bef2faf9e, type: 3}

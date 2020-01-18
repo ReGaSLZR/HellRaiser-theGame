@@ -17,5 +17,5 @@ MonoBehaviour:
   m_line: "I can\u2019t let that happen. Thankfully, I can use a disguise to get past
     him."
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
-  m_background: {fileID: 0}
+  m_backgroundOption: 1
+  m_background: {fileID: 2800000, guid: 3f950fd93e0c14faeac8c00bea4e1051, type: 3}

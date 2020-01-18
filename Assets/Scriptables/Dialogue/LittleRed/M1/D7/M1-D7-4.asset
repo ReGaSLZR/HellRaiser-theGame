@@ -16,5 +16,5 @@ MonoBehaviour:
   m_expression: 2
   m_line: "A double jump won\u2019t cut it. But, I bet, a different geo-skill will."
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
-  m_background: {fileID: 0}
+  m_backgroundOption: 1
+  m_background: {fileID: 2800000, guid: 74128bc9cb8004672acb884ce0a60d22, type: 3}
