@@ -188,11 +188,21 @@ PrefabInstance:
       propertyPath: m_compAnimator
       value: 
       objectReference: {fileID: 532166567546905087}
+    - target: {fileID: 3228744560080671474, guid: 190255de9f09e441cb4b348bcc4e2b49,
+        type: 3}
+      propertyPath: m_clipSkillUse.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: a3c5691dda433154bab089a055c08484, type: 3}
     - target: {fileID: 7188779148484452557, guid: 190255de9f09e441cb4b348bcc4e2b49,
         type: 3}
       propertyPath: m_compAnimator
       value: 
       objectReference: {fileID: 532166567546905087}
+    - target: {fileID: 7188779148484452557, guid: 190255de9f09e441cb4b348bcc4e2b49,
+        type: 3}
+      propertyPath: m_audioSource
+      value: 
+      objectReference: {fileID: 2460308310335291197}
     - target: {fileID: 7192097843696869852, guid: 190255de9f09e441cb4b348bcc4e2b49,
         type: 3}
       propertyPath: m_compCollider2D
@@ -339,6 +349,12 @@ PrefabInstance:
 --- !u!1 &268639317141136238 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3918879369057695528, guid: 190255de9f09e441cb4b348bcc4e2b49,
+    type: 3}
+  m_PrefabInstance: {fileID: 3880077634086687814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &2460308310335291197 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1728268810325404539, guid: 190255de9f09e441cb4b348bcc4e2b49,
     type: 3}
   m_PrefabInstance: {fileID: 3880077634086687814}
   m_PrefabAsset: {fileID: 0}
