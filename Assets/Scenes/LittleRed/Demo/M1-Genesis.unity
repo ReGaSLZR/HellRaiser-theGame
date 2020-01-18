@@ -11330,19 +11330,25 @@ PrefabInstance:
         type: 3}
       propertyPath: m_lines.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: bd3adfe0e05a47c4aa47b76c4bc4d07a,
+      objectReference: {fileID: 11400000, guid: cb8c200e7baee9c4b94bfe4f19f96875,
         type: 2}
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
       propertyPath: m_lines.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: cb8c200e7baee9c4b94bfe4f19f96875,
+      objectReference: {fileID: 11400000, guid: 56d9d246ed3fbb54a8c6b52ceec7e509,
         type: 2}
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
       propertyPath: m_chainedTriggerAfterDialogue
       value: 
-      objectReference: {fileID: 1753335931}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
+        type: 3}
+      propertyPath: m_lines.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: bd3adfe0e05a47c4aa47b76c4bc4d07a,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a23d4065577444a2fba6165cad927885, type: 3}
 --- !u!1001 &4356831992201093404
@@ -11615,12 +11621,6 @@ PrefabInstance:
       propertyPath: m_textObjective.Array.data[1]
       value: 
       objectReference: {fileID: 997058599}
-    - target: {fileID: 4523491364123685837, guid: fdee448b0cbb2421491f7e2b081ecbba,
-        type: 3}
-      propertyPath: m_missionInfo
-      value: 
-      objectReference: {fileID: 11400000, guid: fcae0fddb157741ee9f58104c955c570,
-        type: 2}
     - target: {fileID: 4523491364123685843, guid: fdee448b0cbb2421491f7e2b081ecbba,
         type: 3}
       propertyPath: m_focusCamera
@@ -11938,36 +11938,19 @@ PrefabInstance:
       objectReference: {fileID: 1357445737}
     - target: {fileID: 4523491364097362720, guid: fdee448b0cbb2421491f7e2b081ecbba,
         type: 3}
-      propertyPath: m_dialogueBackground
+      propertyPath: m_backgroundBorder
       value: 
       objectReference: {fileID: 1289139866}
+    - target: {fileID: 4523491364097362720, guid: fdee448b0cbb2421491f7e2b081ecbba,
+        type: 3}
+      propertyPath: m_background
+      value: 
+      objectReference: {fileID: 5579533859848149602}
     - target: {fileID: 4523491364097362720, guid: fdee448b0cbb2421491f7e2b081ecbba,
         type: 3}
       propertyPath: m_textButtonNext
       value: 
       objectReference: {fileID: 738891194}
-    - target: {fileID: 824350413, guid: fdee448b0cbb2421491f7e2b081ecbba, type: 3}
-      propertyPath: m_elementToMove
-      value: 
-      objectReference: {fileID: 1016461156}
-    - target: {fileID: 1375705412, guid: fdee448b0cbb2421491f7e2b081ecbba, type: 3}
-      propertyPath: m_elementToMove
-      value: 
-      objectReference: {fileID: 1622852004}
-    - target: {fileID: 137505870, guid: fdee448b0cbb2421491f7e2b081ecbba, type: 3}
-      propertyPath: m_elementToMove
-      value: 
-      objectReference: {fileID: 872792943}
-    - target: {fileID: 4523491363201814052, guid: fdee448b0cbb2421491f7e2b081ecbba,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4523491363201814052, guid: fdee448b0cbb2421491f7e2b081ecbba,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8263085934968033660, guid: fdee448b0cbb2421491f7e2b081ecbba,
         type: 3}
       propertyPath: m_focusFX
@@ -11978,16 +11961,6 @@ PrefabInstance:
       propertyPath: m_grungeFX
       value: 
       objectReference: {fileID: 134782737}
-    - target: {fileID: 8263085934968033660, guid: fdee448b0cbb2421491f7e2b081ecbba,
-        type: 3}
-      propertyPath: m_grungeDuration
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4523491363201814058, guid: fdee448b0cbb2421491f7e2b081ecbba,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 2785b30787aae499098fe208e2a28653, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdee448b0cbb2421491f7e2b081ecbba, type: 3}
 --- !u!1001 &5579533859848149601
@@ -12157,8 +12130,25 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5579533858972757241, guid: 2e90347ba569b418dae09ee111660c6d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e90347ba569b418dae09ee111660c6d, type: 3}
+--- !u!114 &5579533859848149602 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 391267593171951073, guid: 2e90347ba569b418dae09ee111660c6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5579533859848149601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6123591464595896214
 PrefabInstance:
   m_ObjectHideFlags: 0

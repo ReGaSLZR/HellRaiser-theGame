@@ -1,5 +1,6 @@
 ﻿using Audio;
 using Scriptables;
+using Utils;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -25,8 +26,13 @@ namespace GamePlay.Dialogue {
         [SerializeField]
         private TextMeshProUGUI m_textLine;
 
+        [Space]
+
         [SerializeField]
-        private RawImage m_dialogueBackground;
+        private RawImage m_backgroundBorder;
+
+        [SerializeField]
+        private RawImage m_background;
 
         [Space]
 
@@ -51,7 +57,7 @@ namespace GamePlay.Dialogue {
 
         public void ConfigDisplay()
         {
-            m_dialogueBackground.gameObject.SetActive(false);
+            m_backgroundBorder.gameObject.SetActive(false);
         }
 
         public void DisplayLine(DialogueLine line, bool isLastLine)
@@ -93,16 +99,25 @@ namespace GamePlay.Dialogue {
             {
                 case DialogueLine.BG_OFF:
                     {
-                        m_dialogueBackground.gameObject.SetActive(false);
+                        m_backgroundBorder.gameObject.SetActive(false);
                         break;
                     }
                 case DialogueLine.BG_SHOW_NEW:
                     {
-                        //turn it off first to activate any animations attached to the gameObject
-                        m_dialogueBackground.gameObject.SetActive(false); 
+                        if (background == null)
+                        {
+                            LogUtil.PrintWarning(this, GetType(),
+                                "UpdateDialogueBackground(): BG_SHOW_NEW " +
+                                "but missing actual BG content. Using BG_OFF mode instead.");
+                            m_backgroundBorder.gameObject.SetActive(false);
+                            return;
+                        }
 
-                        m_dialogueBackground.texture = background;
-                        m_dialogueBackground.gameObject.SetActive(true);
+                        //turn it off first to activate any animations attached to the gameObject
+                        m_backgroundBorder.gameObject.SetActive(false); 
+
+                        m_background.texture = background;
+                        m_backgroundBorder.gameObject.SetActive(true);
                         
                         break;
                     }

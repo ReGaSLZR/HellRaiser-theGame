@@ -16,5 +16,5 @@ MonoBehaviour:
   m_expression: 0
   m_line: Test Normal line
   m_lineSFX: {fileID: 8300000, guid: a3c5691dda433154bab089a055c08484, type: 3}
-  m_backgroundOption: 0
-  m_background: {fileID: 2800000, guid: 4984d908360e2644da7aba5a816d0181, type: 3}
+  m_backgroundOption: 1
+  m_background: {fileID: 2800000, guid: d75000ca1d21e4ddb93e0c4be0ac2a78, type: 3}

@@ -463,7 +463,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7ed7f78972a511041ba4ad1bd9750490, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2785b30787aae499098fe208e2a28653, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -890,7 +890,8 @@ MonoBehaviour:
   m_textName: {fileID: 0}
   m_rawImageAvatar: {fileID: 0}
   m_textLine: {fileID: 0}
-  m_dialogueBackground: {fileID: 0}
+  m_backgroundBorder: {fileID: 0}
+  m_background: {fileID: 0}
   m_textButtonNext: {fileID: 0}
   m_buttonTextNextLine: Next
   m_buttonTextLastLine: End
@@ -956,7 +957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70823fea2a0cf664385673133df31ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_missionInfo: {fileID: 11400000, guid: 4c3b6c2223d6ff94a86ae8866ac0f5d9, type: 2}
+  m_missionInfo: {fileID: 11400000, guid: fcae0fddb157741ee9f58104c955c570, type: 2}
   m_objectiveShowLength: 3
   m_textObjective:
   - {fileID: 0}
@@ -1019,6 +1020,8 @@ MonoBehaviour:
   m_shakeFrequency: 5
   m_focusDuration: 0.6
   m_focusFX: {fileID: 0}
+  m_grungeDuration: 1.5
+  m_grungeFX: {fileID: 0}
 --- !u!1 &4523491364138751416
 GameObject:
   m_ObjectHideFlags: 0
