@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 11400000, guid: bb000028caa3b479583543aa264d3389, type: 2}
   m_expression: 3
-  m_line: "I just started my quest and already, I\u2019m being trapped."
+  m_line: This is one steep height to climb.
   m_lineSFX: {fileID: 0}
   m_backgroundOption: 0
   m_background: {fileID: 0}
