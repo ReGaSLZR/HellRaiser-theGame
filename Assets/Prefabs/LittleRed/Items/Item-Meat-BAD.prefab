@@ -148,6 +148,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 444945917688638409, guid: 190255de9f09e441cb4b348bcc4e2b49,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683683550370303020, guid: 190255de9f09e441cb4b348bcc4e2b49,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3918879369057695531, guid: 190255de9f09e441cb4b348bcc4e2b49,
         type: 3}
       propertyPath: m_Controller
@@ -161,12 +171,12 @@ PrefabInstance:
     - target: {fileID: 3228744560080671474, guid: 190255de9f09e441cb4b348bcc4e2b49,
         type: 3}
       propertyPath: m_skillValueRange.x
-      value: 60
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 3228744560080671474, guid: 190255de9f09e441cb4b348bcc4e2b49,
         type: 3}
       propertyPath: m_skillValueRange.y
-      value: 80
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3228744560080671474, guid: 190255de9f09e441cb4b348bcc4e2b49,
         type: 3}
@@ -219,22 +229,6 @@ PrefabInstance:
       propertyPath: m_triggerOnDeath
       value: 
       objectReference: {fileID: 1430458943568897716}
-    - target: {fileID: 444945917688638409, guid: 190255de9f09e441cb4b348bcc4e2b49,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4683683550370303020, guid: 190255de9f09e441cb4b348bcc4e2b49,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8828262276020747490, guid: 190255de9f09e441cb4b348bcc4e2b49,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 0374cb8d083d94e33b0c5878c7e035ce,
-        type: 3}
     - target: {fileID: 3087067450504401825, guid: 190255de9f09e441cb4b348bcc4e2b49,
         type: 3}
       propertyPath: m_IsActive
@@ -245,6 +239,12 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8828262276020747490, guid: 190255de9f09e441cb4b348bcc4e2b49,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0374cb8d083d94e33b0c5878c7e035ce,
+        type: 3}
     - target: {fileID: 3087067450518522561, guid: 190255de9f09e441cb4b348bcc4e2b49,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r

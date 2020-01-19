@@ -309,7 +309,7 @@ MonoBehaviour:
   m_inflictType: 0
   m_variation: 0
   m_statAffected: 0
-  m_skillValueRange: {x: 10, y: 25}
+  m_skillValueRange: {x: 1, y: 5}
   m_isDestroyedOnUse: 1
   m_delayBeforeDestruction: 0.5
   m_triggerOnDeath: {fileID: 2738976753452626674}
@@ -777,16 +777,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8568806512277027188, guid: 701fed0c2a49b4cd09581e0ac741ae28,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8568806512277027189, guid: 701fed0c2a49b4cd09581e0ac741ae28,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8568806512277027186, guid: 701fed0c2a49b4cd09581e0ac741ae28,
         type: 3}
       propertyPath: m_SortingOrder
@@ -798,6 +788,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 702bf345dc2e444afba9e2d75868ad78,
         type: 3}
+    - target: {fileID: 8568806512277027189, guid: 701fed0c2a49b4cd09581e0ac741ae28,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568806512277027188, guid: 701fed0c2a49b4cd09581e0ac741ae28,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8568806512277027184, guid: 701fed0c2a49b4cd09581e0ac741ae28, type: 3}
     - {fileID: 8568806512277027186, guid: 701fed0c2a49b4cd09581e0ac741ae28, type: 3}
