@@ -765,6 +765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f97f3dfe5e3d14f458eb1d7ca28b4d1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_canvas: {fileID: 0}
   m_buttonResume:
   - {fileID: 0}
   m_buttonPause:

@@ -35,6 +35,9 @@ namespace GamePlay.UI {
         [Inject]
         private readonly AudioTheme m_audioTheme;
 
+        [SerializeField]
+        private Canvas m_canvas;
+
         [Header("--- Buttons ---")]
 
         [SerializeField]
@@ -135,6 +138,7 @@ namespace GamePlay.UI {
             InitGameOverObservers();
             InitMerchantObserver();
 
+            m_canvas.gameObject.SetActive(true);
             ShowDefaultPanels();
         }
 
