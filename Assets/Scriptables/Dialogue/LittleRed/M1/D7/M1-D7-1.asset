@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 11400000, guid: bb000028caa3b479583543aa264d3389, type: 2}
   m_expression: 4
-  m_line: "Gosh, there\u2019s so many of them here. I can\u2019t possibly knock them
-    all out without getting hit."
+  m_line: "There\u2019s so many of them patroling here! I can\u2019t possibly knock
+    them all out without getting hit myself."
   m_lineSFX: {fileID: 0}
   m_backgroundOption: 0
   m_background: {fileID: 0}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 11400000, guid: bb000028caa3b479583543aa264d3389, type: 2}
   m_expression: 2
-  m_line: "Besides, one hit with that spiked knuckles and it\u2019s over for me."
+  m_line: "Besides, one hit with his knuckles and it\u2019s over for me."
   m_lineSFX: {fileID: 0}
   m_backgroundOption: 0
   m_background: {fileID: 0}
