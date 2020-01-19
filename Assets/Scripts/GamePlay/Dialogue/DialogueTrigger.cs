@@ -84,6 +84,7 @@ namespace GamePlay.Dialogue {
         public override void Execute()
         {
             m_isTriggered = true;
+            this.gameObject.SetActive(false);
 
             m_modelTimer.PauseTimer();
             m_modelInput.DisableControls();
