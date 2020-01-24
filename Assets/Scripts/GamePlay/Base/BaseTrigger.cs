@@ -57,7 +57,7 @@ namespace GamePlay.Base {
 
         protected virtual bool IsTriggerable(GameObject collidedObject)
         {
-            return (collidedObject.tag.Contains("Player")) && !m_isTriggered;
+            return collidedObject.tag.Contains("Player") && !m_isTriggered;
         }
 
     }

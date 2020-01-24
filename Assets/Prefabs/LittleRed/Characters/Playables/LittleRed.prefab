@@ -299,6 +299,7 @@ MonoBehaviour:
   m_childFX: {fileID: 0}
   m_camouflageParent: {fileID: 8442513984881137977}
   m_layerOnCamouflage: Camouflage
+  m_tagOnCamouflage: Player-Camouflage
   m_compRigidbody2D: {fileID: 8442513984881137978}
   m_gravityScaleOnCamouflage: 1.1
 --- !u!1 &8442513984881137927

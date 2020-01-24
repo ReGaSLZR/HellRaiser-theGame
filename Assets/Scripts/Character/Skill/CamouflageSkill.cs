@@ -14,8 +14,15 @@ namespace Character.Skill
         [Required]
         private Transform m_camouflageParent;
 
+        [Space]
+
         [SerializeField]
         private string m_layerOnCamouflage = "Default";
+        [SerializeField]
+        [TagSelector]
+        private string m_tagOnCamouflage = "";
+
+        [Space]
 
         [SerializeField]
         [Required]
@@ -27,6 +34,7 @@ namespace Character.Skill
 
         private float m_gravityScaleOriginal;
         private int m_layerOriginal;
+        private string m_tagOriginal;
 
         protected override void Awake()
         {
@@ -34,6 +42,7 @@ namespace Character.Skill
 
             m_gravityScaleOriginal = m_compRigidbody2D.gravityScale;
             m_layerOriginal = m_camouflageParent.gameObject.layer;
+            m_tagOriginal = m_camouflageParent.gameObject.tag;
         }
 
         protected override void OnSkillStart()
@@ -41,6 +50,7 @@ namespace Character.Skill
             base.OnSkillStart();
 
             m_camouflageParent.gameObject.layer = LayerMask.NameToLayer(m_layerOnCamouflage);
+            m_camouflageParent.gameObject.tag = m_tagOnCamouflage;
             m_compRigidbody2D.gravityScale = m_gravityScaleOnCamouflage;
         }
 
@@ -49,6 +59,7 @@ namespace Character.Skill
             base.OnSkillFinish();
 
             m_camouflageParent.gameObject.layer = m_layerOriginal;
+            m_camouflageParent.gameObject.tag = m_tagOriginal;
             m_compRigidbody2D.gravityScale = m_gravityScaleOriginal;
         }
 
