@@ -34,6 +34,9 @@ namespace GamePlay.Mission {
         [Dropdown("m_dropdownTriggerTypes")]
         private int m_triggerType;
 
+        [SerializeField]
+        private BaseTrigger m_chainedTriggerAfterDialogue;
+
         public override void Execute()
         {
             m_isTriggered = true;
@@ -60,7 +63,12 @@ namespace GamePlay.Mission {
                         break;
                     }
             }
-            
+
+            if (m_chainedTriggerAfterDialogue != null)
+            {
+                m_chainedTriggerAfterDialogue.Execute();
+            }
+
             Destroy(gameObject, 0.1f);
         }
 
