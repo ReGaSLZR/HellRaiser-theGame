@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: M1-D12-2
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 11400000, guid: bb000028caa3b479583543aa264d3389, type: 2}
-  m_expression: 0
-  m_line: "Oh, no. Poor little puppy, he\u2019s injured."
+  m_expression: 4
+  m_line: "Oh, no. Poor little puppy! He\u2019s injured."
   m_lineSFX: {fileID: 0}
   m_backgroundOption: 0
   m_background: {fileID: 0}

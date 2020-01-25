@@ -22,9 +22,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 076836073f2534c99b6f578589f41fd7, type: 2}
   m_rank: 0
   m_health: 100
-  m_stamina: 100
+  m_stamina: 70
   m_statMovement:
-    m_movSpeed: 6.5
+    m_movSpeed: 8
     m_stunLength: 0.25
     m_deathLength: 0.25
   m_statOffense:

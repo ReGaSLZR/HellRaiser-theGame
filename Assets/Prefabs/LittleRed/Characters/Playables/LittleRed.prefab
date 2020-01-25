@@ -486,8 +486,8 @@ MonoBehaviour:
   m_clipJump: {fileID: 8300000, guid: 07adea211b986b04b80fa624ef29d2ff, type: 3}
   m_ground: {fileID: 6258712705899686301}
   m_jumpVelocity: 9
-  m_jumpFallMultiplier: 1.1
-  m_jumpHeight: 7
+  m_jumpFallMultiplier: 1.3
+  m_jumpHeight: 10
   m_jumpTimesMax: 2
   m_jumpsInterval: 0.25
   m_canJumpInMidair: 1

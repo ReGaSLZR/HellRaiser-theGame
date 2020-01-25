@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 11400000, guid: bb000028caa3b479583543aa264d3389, type: 2}
   m_expression: 2
-  m_line: "W\u2026wait, taking them is stealing. I was raised to be a moral kid. I
+  m_line: "W\u2026wait, taking them is stealing. I was raised to be a good kid. I
     can resist this."
   m_lineSFX: {fileID: 0}
   m_backgroundOption: 0

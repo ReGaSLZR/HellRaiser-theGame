@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 11400000, guid: bb000028caa3b479583543aa264d3389, type: 2}
   m_expression: 2
-  m_line: "If he sees me, he\u2019s going to whoop me. H-he has the right to. I've
-    been a bad kid... but\u2026"
+  m_line: "If he sees me, he\u2019s going to whoop me. H-he has the right to. I did
+    something bad... but\u2026"
   m_lineSFX: {fileID: 0}
   m_backgroundOption: 0
   m_background: {fileID: 0}

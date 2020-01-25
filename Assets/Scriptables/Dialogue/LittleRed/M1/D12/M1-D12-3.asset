@@ -15,7 +15,7 @@ MonoBehaviour:
   m_speaker: {fileID: 11400000, guid: bb000028caa3b479583543aa264d3389, type: 2}
   m_expression: 2
   m_line: "The hunters must have mistakenly hurt him, thinking he\u2019s the wolf
-    they want."
+    they're looking for."
   m_lineSFX: {fileID: 0}
   m_backgroundOption: 0
   m_background: {fileID: 0}
