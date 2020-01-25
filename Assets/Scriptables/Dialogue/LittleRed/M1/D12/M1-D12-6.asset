@@ -17,5 +17,5 @@ MonoBehaviour:
   m_line: "I am on a quest to rescue my father, I shouldn\u2019t take him with me\u2026
     I don\u2019t have the time to\u2026"
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
-  m_background: {fileID: 0}
+  m_backgroundOption: 1
+  m_background: {fileID: 2800000, guid: a6f63821f67304c9b9b86ed2237d75bb, type: 3}

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_speaker: {fileID: 11400000, guid: bb000028caa3b479583543aa264d3389, type: 2}
   m_expression: 0
   m_line: "If I can\u2019t even rescue this creature, how am I supposed to rescue
-    my father?"
+    someone?"
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
-  m_background: {fileID: 0}
+  m_backgroundOption: 1
+  m_background: {fileID: 2800000, guid: 12245bb0ae16c4718bbf994b73b6a93a, type: 3}

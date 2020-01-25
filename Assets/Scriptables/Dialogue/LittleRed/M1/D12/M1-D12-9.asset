@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 11400000, guid: bb000028caa3b479583543aa264d3389, type: 2}
   m_expression: 0
-  m_line: "Let\u2019s get you to safety, little pup."
-  m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
-  m_background: {fileID: 0}
+  m_line: "Let\u2019s get you to safety."
+  m_lineSFX: {fileID: 8300000, guid: a52ab59c254f24522bb42930dc8426ad, type: 3}
+  m_backgroundOption: 1
+  m_background: {fileID: 2800000, guid: 58f36cf22f726465d8f2a6e2297e301d, type: 3}
