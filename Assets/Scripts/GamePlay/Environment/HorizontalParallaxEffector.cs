@@ -9,26 +9,44 @@
     public class HorizontalParallaxEffector : MonoBehaviour
     {
 
+        [SerializeField]
         [Range(0.1f, 10f)]
-        [SerializeField] private float m_speedCoefficient = 0.1f;
+        private float m_speedCoefficient = 4f;
 
-        [SerializeField] private bool m_isForward = true;
+        [SerializeField]
+        private bool m_isForward = true;
+
+        [Space]
+
+        [SerializeField]
+        [Range(10f, 40f)]
+        private float m_cameraDistance = 20f;
+
 
         private Transform m_mainCamera;
         private float m_mainCameraLastPositionX;
 
+        private float m_originalPosX;
+
         private void Start()
         {
             m_mainCamera = Camera.main.transform;
+            m_originalPosX = transform.position.x;
 
             SaveCameraPosition();
         }
 
         private void Update()
         {
-            gameObject.transform.position += ((
-                (GetLastCameraPosition() - GetCurrentCameraPosition())
-                * m_speedCoefficient) * (m_isForward ? 1 : -1)) * Time.deltaTime;
+            //only move parallax when the camera is nearby
+            if(Mathf.Abs(m_originalPosX - m_mainCamera.position.x) <= m_cameraDistance)
+            {
+                gameObject.transform.position += ((
+                    (GetLastCameraPosition() - GetCurrentCameraPosition())
+                    * m_speedCoefficient)
+                    * (m_isForward ? 1 : -1))
+                    * Time.deltaTime;
+            }
 
             SaveCameraPosition();
         }
