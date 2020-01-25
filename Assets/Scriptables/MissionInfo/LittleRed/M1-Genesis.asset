@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: M1-Genesis
   m_EditorClassIdentifier: 
   m_buildIndex: 3
-  m_preview: {fileID: 0}
+  m_preview: {fileID: 2800000, guid: 58f36cf22f726465d8f2a6e2297e301d, type: 3}
   m_map: {fileID: 0}
   m_title: Genesis
   m_objective: Escape from the villagers. Reach the exit.
   m_description: Little Red, a kid from a down-and-out village, is on a quest to rescue
-    her father from a mysterious abductor. On her way, she battles or stealthily makes
-    her way past the villagers who seem to want her dead or alive.
+    her father from a mysterious abductor. Making her way past the hostile villagers,
+    she happens upon a helpless creature.
   m_missionType: MAIN
   m_reqMainLevelsCleared: 0
   m_reqSideLevelsCleared: 0
