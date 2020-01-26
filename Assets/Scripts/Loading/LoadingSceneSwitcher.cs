@@ -22,6 +22,17 @@ namespace Loading {
         [Dropdown("m_dropdownOptionns")]
         private string m_loadOptions;
 
+        [SerializeField]
+        private bool m_shouldClearStoredLevel;
+
+        private void Awake()
+        {
+            if (m_shouldClearStoredLevel)
+            {
+                SceneData.ClearStoredLevel();
+            }
+        }
+
         private void Start()
         {
             if (MAIN_MENU.Equals(m_loadOptions))

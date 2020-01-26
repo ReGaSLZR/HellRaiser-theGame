@@ -13836,6 +13836,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.62355
       objectReference: {fileID: 0}
+    - target: {fileID: 8358887160965625979, guid: 39050acfd001d423091f2c438aa775e3,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39050acfd001d423091f2c438aa775e3, type: 3}
 --- !u!4 &565116835 stripped
@@ -91373,18 +91378,6 @@ PrefabInstance:
       propertyPath: m_grungeFX
       value: 
       objectReference: {fileID: 134782737}
-    - target: {fileID: 137505870, guid: fdee448b0cbb2421491f7e2b081ecbba, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 824350413, guid: fdee448b0cbb2421491f7e2b081ecbba, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1375705412, guid: fdee448b0cbb2421491f7e2b081ecbba, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdee448b0cbb2421491f7e2b081ecbba, type: 3}
 --- !u!1001 &4620482237259427834

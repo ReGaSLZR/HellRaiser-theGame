@@ -727,7 +727,7 @@ MonoBehaviour:
   m_textButtonNext: {fileID: 0}
   m_buttonTextNextLine: Next
   m_buttonTextLastLine: End
-  m_lineLetterRevealDuration: 0.0001
+  m_lineLetterRevealDuration: 0.00001
 --- !u!1 &4523491364123685839
 GameObject:
   m_ObjectHideFlags: 0

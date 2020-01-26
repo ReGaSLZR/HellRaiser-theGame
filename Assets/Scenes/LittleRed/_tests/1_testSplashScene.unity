@@ -358,6 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_loadOptions: MAIN_MENU
+  m_shouldClearStoredLevel: 1
 --- !u!1 &616741625
 GameObject:
   m_ObjectHideFlags: 0

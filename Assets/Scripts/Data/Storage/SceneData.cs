@@ -12,8 +12,8 @@ namespace Data.Storage {
 
         private const string KEY_LEVEL_TO_LOAD = "KEY_LEVEL_TO_LOAD";
 
-        public const int SCENE_LOADING = 0;
-        public const int SCENE_SPLASH = 1;
+        public const int SCENE_LOADING = 1;
+        public const int SCENE_SPLASH = 0;
         public const int SCENE_MAIN_MENU = 2;
         public const int SCENE_MISSION_FIRST = 3;
 

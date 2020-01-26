@@ -2519,6 +2519,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 369635721}
+  - component: {fileID: 369635722}
   m_Layer: 0
   m_Name: TREES-HOUSES
   m_TagString: Untagged
@@ -2546,6 +2547,23 @@ Transform:
   m_Father: {fileID: 359060569}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &369635722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369635720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49ef7f36b7e494d2ab4ce2e7408368ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_tiltDamping: 0.2
+  m_isHorizontal: 1
+  m_minHorizontalForce: 0.3
+  m_isVertical: 0
+  m_minVerticalForce: 0.3
 --- !u!1 &372478827
 GameObject:
   m_ObjectHideFlags: 0
@@ -12863,6 +12881,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2041294133}
+  - component: {fileID: 2041294134}
   m_Layer: 0
   m_Name: NIGHT
   m_TagString: Untagged
@@ -12889,6 +12908,23 @@ Transform:
   m_Father: {fileID: 359060569}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2041294134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041294132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49ef7f36b7e494d2ab4ce2e7408368ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_tiltDamping: 0.2
+  m_isHorizontal: 1
+  m_minHorizontalForce: 0.3
+  m_isVertical: 1
+  m_minVerticalForce: 0.3
 --- !u!1 &2061538915
 GameObject:
   m_ObjectHideFlags: 0
@@ -12996,6 +13032,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2063943385}
+  - component: {fileID: 2063943386}
   m_Layer: 0
   m_Name: CLOUDS
   m_TagString: Untagged
@@ -13021,6 +13058,23 @@ Transform:
   m_Father: {fileID: 359060569}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2063943386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063943384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49ef7f36b7e494d2ab4ce2e7408368ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_tiltDamping: 0.2
+  m_isHorizontal: 1
+  m_minHorizontalForce: 0.3
+  m_isVertical: 1
+  m_minVerticalForce: 0.3
 --- !u!1 &2079163501
 GameObject:
   m_ObjectHideFlags: 0

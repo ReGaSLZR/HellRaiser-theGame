@@ -1,12 +1,14 @@
-﻿namespace GamePlay.Environment
+﻿namespace Parallax
 {
 
     using UnityEngine;
 
     /// <summary>
+    /// Implements Parallax behaviour (horizontal only, at the time of writing)
+    /// based on Camera distance/movement.
     /// Reference link: https://techdibble.com/post/how-to-add-a-2d-parallax-effect-in-unity-3d/
     /// </summary>
-    public class HorizontalParallaxEffector : MonoBehaviour
+    public class CameraDistanceParallax : MonoBehaviour
     {
 
         [SerializeField]
