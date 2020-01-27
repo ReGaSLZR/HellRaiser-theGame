@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 11400000, guid: bb000028caa3b479583543aa264d3389, type: 2}
   m_expression: 4
-  m_line: Oh, no. Poor little injured puppy!
+  m_line: Oh, no. An little injured puppy!
   m_lineSFX: {fileID: 8300000, guid: 2deccaab7e3e445c8ad1d1814d3ead63, type: 3}
   m_backgroundOption: 1
   m_background: {fileID: 2800000, guid: a6f63821f67304c9b9b86ed2237d75bb, type: 3}
