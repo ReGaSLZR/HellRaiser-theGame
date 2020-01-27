@@ -442,10 +442,12 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'You will be taken back to the Main Menu screen.
+  m_text: 'You will be taken back to the
+
+    Main Menu screen.
 
 
-    Are you sure? Your progress in this mission will not be saved.'
+    Are you sure you want to end your current gameplay?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54627481e5df942b5bb5ea5da8c301b6, type: 2}
   m_sharedMaterial: {fileID: 4607445514659795167, guid: 54627481e5df942b5bb5ea5da8c301b6,
@@ -515,10 +517,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 231749645140612843}
-    characterCount: 111
+    characterCount: 100
     spriteCount: 0
-    spaceCount: 22
-    wordCount: 22
+    spaceCount: 20
+    wordCount: 20
     linkCount: 0
     lineCount: 5
     pageCount: 1
@@ -693,7 +695,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -82, y: 35}
+  m_AnchoredPosition: {x: -82, y: 50}
   m_SizeDelta: {x: 400, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &231749645213690156
@@ -1131,7 +1133,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 40, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &231749645356741562
 CanvasRenderer:
@@ -2330,7 +2332,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 40, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &231749646056129000
 CanvasRenderer:
@@ -2763,7 +2765,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -82, y: 35}
+  m_AnchoredPosition: {x: -82, y: 50}
   m_SizeDelta: {x: 400, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &231749646346871136
@@ -2924,8 +2926,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40, y: 70}
-  m_SizeDelta: {x: 200, y: 20}
+  m_AnchoredPosition: {x: 20, y: 100}
+  m_SizeDelta: {x: 300, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &231749646428117169
 MonoBehaviour:
@@ -3317,8 +3319,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40, y: -70}
-  m_SizeDelta: {x: 200, y: 20}
+  m_AnchoredPosition: {x: 20, y: -70}
+  m_SizeDelta: {x: 300, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &231749646610014163
 MonoBehaviour:
