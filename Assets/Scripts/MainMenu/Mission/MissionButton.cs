@@ -53,8 +53,8 @@ namespace MainMenu.Mission {
             m_mission = mission;
 
             SetUpButtonColor();
-            SetUpTitle();
 
+            m_textButton.text = m_mission.m_title;
             m_button.gameObject.SetActive(true);
         }
 
@@ -67,14 +67,6 @@ namespace MainMenu.Mission {
             
             m_button.image.color = buttonColor;
             m_button.interactable = isMissionUnlocked;
-        }
-
-        private void SetUpTitle() {
-            string prefix = m_mission.IsMainMission() ? "M" : "S";
-
-            m_textButton.text =
-                prefix + (m_mission.m_buildIndex - SceneData.SCENE_MAIN_MENU) + " - "
-                + m_mission.m_title; //sample: "S1 - Tutorial"
         }
 
     }
