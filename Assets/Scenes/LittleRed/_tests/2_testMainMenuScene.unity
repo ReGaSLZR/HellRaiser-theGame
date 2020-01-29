@@ -409,7 +409,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117261572}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -2678,7 +2678,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2776,7 +2776,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: MINIMAL
+  m_text: -NONE-
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f3c382fdb68104a4e88d9c05fd152071, type: 2}
   m_sharedMaterial: {fileID: -4774243857190275550, guid: f3c382fdb68104a4e88d9c05fd152071,
@@ -2846,7 +2846,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 394992168}
-    characterCount: 7
+    characterCount: 6
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -3566,7 +3566,7 @@ Transform:
   m_GameObject: {fileID: 469099390}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.72, y: 4.25, z: 0}
-  m_LocalScale: {x: 0.43075198, y: 0.43075198, z: 0.43075198}
+  m_LocalScale: {x: 0.44, y: 0.44, z: 0.44}
   m_Children: []
   m_Father: {fileID: 1827282358}
   m_RootOrder: 0
@@ -5819,7 +5819,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &832179180
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6131,10 +6131,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "Story, programming, art & noob animations were done by me.\nThe SFXs &
     BGMs are free stuff from sites like\nfreesound.org & MusicNote-world.\n\nBackground
-    Music (all scenes sans Main Menu) are from\n<u>Kevin MacLeod</u> (https://incompetech.com)\nLicense:
+    Music in gameplay levels are from:\n<u>Kevin MacLeod</u> (https://incompetech.com)\nLicense:
     CC BY (http://creativecommons.org/licenses/by/4.0/)\n\nEnjoy the game~! If you
-    got any suggestions,\ncomments, or just wanna give me coffee,\nclick the coffee
-    cup. Thank you. :)\n                                                             -
+    got any suggestions, comments, \nor just wanna give me coffee, click the coffee
+    cup.\nThank you. :)\n                                                                           -
     ReGaSLZR"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54627481e5df942b5bb5ea5da8c301b6, type: 2}
@@ -6205,10 +6205,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 885316740}
-    characterCount: 488
+    characterCount: 495
     spriteCount: 0
-    spaceCount: 125
-    wordCount: 68
+    spaceCount: 138
+    wordCount: 66
     linkCount: 0
     lineCount: 12
     pageCount: 1
@@ -6498,7 +6498,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7363,7 +7363,7 @@ Transform:
   m_GameObject: {fileID: 1063371438}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.09, y: 3.47, z: 0}
-  m_LocalScale: {x: 0.16454273, y: 0.16454273, z: 0.16454273}
+  m_LocalScale: {x: 0.17, y: 0.17, z: 0.17}
   m_Children: []
   m_Father: {fileID: 1827282358}
   m_RootOrder: 1
@@ -7908,7 +7908,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10841,7 +10841,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d855a82314ec5954fb806afcd5ce47e5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c26431447aa2643e980889359e3663a5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -11280,9 +11280,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Camera
+  m_text: 'Pan
 
-    Panning:'
+    Camera:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f3c382fdb68104a4e88d9c05fd152071, type: 2}
   m_sharedMaterial: {fileID: -4774243857190275550, guid: f3c382fdb68104a4e88d9c05fd152071,
@@ -11352,7 +11352,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1786668475}
-    characterCount: 15
+    characterCount: 11
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -13252,7 +13252,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

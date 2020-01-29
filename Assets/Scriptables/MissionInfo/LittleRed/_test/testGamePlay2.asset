@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a15c6ac52ccc1499f4841ee7bfbdcf, type: 3}
   m_Name: testGamePlay2
   m_EditorClassIdentifier: 
-  m_buildIndex: 4
-  m_preview: {fileID: 0}
+  m_buildIndex: 5
+  m_preview: {fileID: 2800000, guid: a6f63821f67304c9b9b86ed2237d75bb, type: 3}
   m_map: {fileID: 0}
-  m_title: 
+  m_title: Sample Mission
   m_objective: 
   m_description: 
   m_missionType: SIDE
