@@ -15,6 +15,6 @@ MonoBehaviour:
   m_speaker: {fileID: 11400000, guid: 79bc430e576984f85935e7ad110097ef, type: 2}
   m_expression: 3
   m_line: For the Chief Huntress of Olympus!
-  m_lineSFX: {fileID: 0}
+  m_lineSFX: {fileID: 8300000, guid: 10da826912ec9446188af38c0efe3568, type: 3}
   m_backgroundOption: 0
   m_background: {fileID: 0}

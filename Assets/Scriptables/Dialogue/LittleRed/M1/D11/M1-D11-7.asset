@@ -15,6 +15,6 @@ MonoBehaviour:
   m_speaker: {fileID: 11400000, guid: b828698204b1b40fdb3780e75dd31634, type: 2}
   m_expression: 1
   m_line: For the huge bounty on the Big Bad Wolf!
-  m_lineSFX: {fileID: 0}
+  m_lineSFX: {fileID: 8300000, guid: 204c94f2e105641958efbb22111eef41, type: 3}
   m_backgroundOption: 0
   m_background: {fileID: 0}

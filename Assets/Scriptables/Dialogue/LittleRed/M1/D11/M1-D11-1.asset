@@ -15,6 +15,6 @@ MonoBehaviour:
   m_speaker: {fileID: 11400000, guid: 96d7eb0e7ac954e3d987857c7e840df4, type: 2}
   m_expression: 0
   m_line: Keep your eyes sharp! Blades sharper!
-  m_lineSFX: {fileID: 0}
+  m_lineSFX: {fileID: 8300000, guid: f5f14a98403ff40a5b7aa6566b0f377e, type: 3}
   m_backgroundOption: 0
   m_background: {fileID: 0}

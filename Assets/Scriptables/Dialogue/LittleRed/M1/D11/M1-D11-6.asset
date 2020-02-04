@@ -15,6 +15,6 @@ MonoBehaviour:
   m_speaker: {fileID: 11400000, guid: 703a1e865b1b64b17840a9becdf43262, type: 2}
   m_expression: 3
   m_line: For the God of Fire!
-  m_lineSFX: {fileID: 0}
+  m_lineSFX: {fileID: 8300000, guid: 03279e9eb49614c5591152968a0bd448, type: 3}
   m_backgroundOption: 0
   m_background: {fileID: 0}
