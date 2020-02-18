@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: M1-D7-6
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 11400000, guid: bb000028caa3b479583543aa264d3389, type: 2}
-  m_expression: 1
-  m_line: That should do the trick.
+  m_expression: 0
+  m_isNameAnonymized: 0
+  m_isAvatarAnonymized: 0
+  m_line: I should always be wary of what's ahead of me though. I won't be able to
+    stop mid-dash.
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
-  m_background: {fileID: 0}
+  m_backgroundOption: 1
+  m_background: {fileID: 2800000, guid: bde80ea65859640b385bc2c5b080639f, type: 3}
