@@ -91941,6 +91941,11 @@ PrefabInstance:
       objectReference: {fileID: 95747713}
     - target: {fileID: 4523491364097362720, guid: fdee448b0cbb2421491f7e2b081ecbba,
         type: 3}
+      propertyPath: m_rawImageAvatarAnonymized
+      value: 
+      objectReference: {fileID: 5579533859848149603}
+    - target: {fileID: 4523491364097362720, guid: fdee448b0cbb2421491f7e2b081ecbba,
+        type: 3}
       propertyPath: m_textLine
       value: 
       objectReference: {fileID: 1357445737}
@@ -92217,6 +92222,18 @@ PrefabInstance:
 --- !u!114 &5579533859848149602 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 391267593171951073, guid: 2e90347ba569b418dae09ee111660c6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5579533859848149601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5579533859848149603 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3902082048864007478, guid: 2e90347ba569b418dae09ee111660c6d,
     type: 3}
   m_PrefabInstance: {fileID: 5579533859848149601}
   m_PrefabAsset: {fileID: 0}

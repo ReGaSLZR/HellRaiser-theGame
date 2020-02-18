@@ -39,6 +39,15 @@ namespace Scriptables {
         [Dropdown("m_dropdownOptionsExpressions")]
         public int m_expression;
 
+        [Space]
+
+        [Tooltip("Print '???' as the temporary Character's name?")]
+        public bool m_isNameAnonymized;
+        [Tooltip("Have a shadow and '?' overlay to the Character Avatar?")]
+        public bool m_isAvatarAnonymized;
+
+        [Space]
+
         [TextArea]
         public string m_line;
 

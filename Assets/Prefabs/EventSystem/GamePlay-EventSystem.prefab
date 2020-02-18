@@ -721,6 +721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_textName: {fileID: 0}
   m_rawImageAvatar: {fileID: 0}
+  m_rawImageAvatarAnonymized: {fileID: 0}
   m_textLine: {fileID: 0}
   m_backgroundBorder: {fileID: 0}
   m_background: {fileID: 0}

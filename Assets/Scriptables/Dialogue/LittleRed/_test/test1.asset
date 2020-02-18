@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 11400000, guid: 57dd6b1d5c45a4df4b25249b6952ca20, type: 2}
   m_expression: 1
+  m_isNameAnonymized: 1
+  m_isAvatarAnonymized: 0
   m_line: Test Happy line
   m_lineSFX: {fileID: 0}
   m_backgroundOption: 0

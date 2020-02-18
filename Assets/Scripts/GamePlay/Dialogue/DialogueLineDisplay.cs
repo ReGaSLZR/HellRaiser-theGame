@@ -24,6 +24,9 @@ namespace GamePlay.Dialogue {
         private RawImage m_rawImageAvatar;
 
         [SerializeField]
+        private RawImage m_rawImageAvatarAnonymized;
+
+        [SerializeField]
         private TextMeshProUGUI m_textLine;
 
         [Space]
@@ -49,6 +52,8 @@ namespace GamePlay.Dialogue {
 
         [SerializeField]
         private float m_lineLetterRevealDuration;
+
+        private const string ANONYMIZED_NAME = "???";
 
         private void ChangeButtonNextText(bool isLastLine)
         {
@@ -76,8 +81,12 @@ namespace GamePlay.Dialogue {
 
         private IEnumerator CorDisplayLine(DialogueLine line)
         {
-            m_textName.text = line.m_speaker.m_name;
+            m_textName.text = !line.m_isNameAnonymized
+                ? line.m_speaker.m_name
+                : ANONYMIZED_NAME;
             m_rawImageAvatar.texture = line.GetSpeakerAvatar();
+            m_rawImageAvatarAnonymized
+                .gameObject.SetActive(line.m_isAvatarAnonymized);
 
             UpdateDialogueBackground(line.m_backgroundOption, line.m_background);
 
