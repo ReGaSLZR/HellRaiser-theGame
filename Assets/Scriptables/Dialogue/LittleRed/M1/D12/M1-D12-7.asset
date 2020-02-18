@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 11400000, guid: bb000028caa3b479583543aa264d3389, type: 2}
   m_expression: 2
-  m_line: '....................................................................'
+  m_line: '...................................'
   m_lineSFX: {fileID: 8300000, guid: 2deccaab7e3e445c8ad1d1814d3ead63, type: 3}
   m_backgroundOption: 1
   m_background: {fileID: 2800000, guid: 12245bb0ae16c4718bbf994b73b6a93a, type: 3}
