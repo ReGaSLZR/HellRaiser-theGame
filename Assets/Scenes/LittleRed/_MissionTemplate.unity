@@ -48030,6 +48030,12 @@ PrefabInstance:
       propertyPath: m_textObjective.Array.data[1]
       value: 
       objectReference: {fileID: 997058599}
+    - target: {fileID: 4523491364123685837, guid: fdee448b0cbb2421491f7e2b081ecbba,
+        type: 3}
+      propertyPath: m_missionInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c3b6c2223d6ff94a86ae8866ac0f5d9,
+        type: 2}
     - target: {fileID: 4523491364123685843, guid: fdee448b0cbb2421491f7e2b081ecbba,
         type: 3}
       propertyPath: m_focusCamera

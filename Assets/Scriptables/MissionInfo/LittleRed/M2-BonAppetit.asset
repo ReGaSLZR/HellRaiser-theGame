@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a15c6ac52ccc1499f4841ee7bfbdcf, type: 3}
   m_Name: M2-BonAppetit
   m_EditorClassIdentifier: 
-  m_buildIndex: 3
+  m_buildIndex: 4
   m_preview: {fileID: 0}
   m_map: {fileID: 0}
-  m_title: 
-  m_objective: 
+  m_title: "Bon App\xE9tit"
+  m_objective: Collect the two keys for the gate WITHOUT knocking out enemies.
   m_description: 
-  m_missionType: 
-  m_reqMainLevelsCleared: 0
+  m_missionType: MAIN
+  m_reqMainLevelsCleared: 1
   m_reqSideLevelsCleared: 0
-  m_isWithKey: 0
-  m_keyCount: 1
-  m_isTimed: 0
-  m_timeLimit: 180
-  m_allCharactersMustSurvive: 0
+  m_isWithKey: 1
+  m_keyCount: 2
+  m_isTimed: 1
+  m_timeLimit: 250
+  m_allCharactersMustSurvive: 1
