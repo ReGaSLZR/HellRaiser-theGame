@@ -28,7 +28,7 @@ MonoBehaviour:
     m_sfxButtonClick: {fileID: 8300000, guid: 26619cbefb97d4747b7220925b182b96, type: 3}
     m_sfxMissionUpdate: {fileID: 8300000, guid: 292b68e76d29f1740bc3e85b8557cc84,
       type: 3}
-    m_bgmMissionAccomplished: {fileID: 8300000, guid: a8fe17886242bb048a68cb9c8f68891e,
+    m_bgmMissionAccomplished: {fileID: 8300000, guid: 9c0c619932cc749d59bf404de6f44cc1,
       type: 3}
-    m_bgmMissionFailure: {fileID: 8300000, guid: f3ff4acec8e77d342b5eead516a78083,
+    m_bgmMissionFailure: {fileID: 8300000, guid: 3c1b8f6e61dfe4e5c9a8e21729d44831,
       type: 3}
