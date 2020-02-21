@@ -83,6 +83,8 @@ GameObject:
   - component: {fileID: 6292619609775621886}
   - component: {fileID: 6292619609775621872}
   - component: {fileID: 6292619609775621887}
+  - component: {fileID: 4814790888329532586}
+  - component: {fileID: 9117643482182414030}
   m_Layer: 5
   m_Name: Panel-Objective
   m_TagString: Untagged
@@ -147,6 +149,46 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!320 &4814790888329532586
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6292619609775621885}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 6e9bcc3355d8f49fe865c9ec2d2c344f, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 0
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 2406529523966207935, guid: 6e9bcc3355d8f49fe865c9ec2d2c344f, type: 2}
+    value: {fileID: 9117643482182414030}
+  - key: {fileID: -6366864418570056773, guid: 6e9bcc3355d8f49fe865c9ec2d2c344f, type: 2}
+    value: {fileID: 8274743093258445262}
+  m_ExposedReferences:
+    m_References: []
+--- !u!95 &9117643482182414030
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6292619609775621885}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6292619609795924250
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,6 +723,7 @@ GameObject:
   - component: {fileID: 6292619610179783708}
   - component: {fileID: 6292619610179783710}
   - component: {fileID: 6292619610179783709}
+  - component: {fileID: 8274743093258445262}
   m_Layer: 5
   m_Name: Text-MissionObjective
   m_TagString: Untagged
@@ -830,6 +873,25 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!95 &8274743093258445262
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6292619610179783707}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6292619610346638233
 GameObject:
   m_ObjectHideFlags: 0

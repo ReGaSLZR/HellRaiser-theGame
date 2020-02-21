@@ -16,8 +16,11 @@ MonoBehaviour:
   m_preview: {fileID: 0}
   m_map: {fileID: 0}
   m_title: "Bon App\xE9tit"
-  m_objective: Collect the two keys for the gate WITHOUT knocking out enemies.
-  m_description: 
+  m_objective: Collect keys to open the gate... WITHOUT ever knocking out a single
+    enemy.
+  m_description: Warned that she'll be his snack, Little Red still looks after the
+    rude pup she rescued. While doing so, she ventures to get the keys she needs to
+    get out of the forest village. Will she be able to do it the pacifist way?
   m_missionType: MAIN
   m_reqMainLevelsCleared: 1
   m_reqSideLevelsCleared: 0
