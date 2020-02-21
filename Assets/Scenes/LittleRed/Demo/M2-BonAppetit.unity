@@ -769,7 +769,7 @@ GameObject:
   m_Component:
   - component: {fileID: 557342053}
   m_Layer: 0
-  m_Name: Env, Bounds, Triggers, GP Elements
+  m_Name: ' Bounds, Triggers, GP Elementsents'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48217,6 +48217,11 @@ PrefabInstance:
       propertyPath: m_grungeFX
       value: 
       objectReference: {fileID: 134782737}
+    - target: {fileID: 4523491363201814058, guid: fdee448b0cbb2421491f7e2b081ecbba,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: af8218afdd1634ea9b150027caa2b3d6, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdee448b0cbb2421491f7e2b081ecbba, type: 3}
 --- !u!1001 &4620482237259427834
