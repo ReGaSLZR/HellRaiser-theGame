@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 11400000, guid: bb000028caa3b479583543aa264d3389, type: 2}
   m_expression: 4
+  m_isNameAnonymized: 0
+  m_isAvatarAnonymized: 0
   m_line: "There\u2019s so many of them patroling here! I can\u2019t possibly knock
     them all out without getting hit myself."
-  m_lineSFX: {fileID: 0}
+  m_lineSFX: {fileID: 8300000, guid: 2343571f2409b4f28b8e6ba5d4a2b93a, type: 3}
   m_backgroundOption: 0
   m_background: {fileID: 0}

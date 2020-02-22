@@ -17,6 +17,6 @@ MonoBehaviour:
   m_isNameAnonymized: 1
   m_isAvatarAnonymized: 1
   m_line: Crazier for me! Put me down!
-  m_lineSFX: {fileID: 0}
+  m_lineSFX: {fileID: 8300000, guid: 1f2702e045b634e5385b3f06036c1720, type: 3}
   m_backgroundOption: 0
   m_background: {fileID: 0}

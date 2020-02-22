@@ -17,6 +17,6 @@ MonoBehaviour:
   m_isNameAnonymized: 0
   m_isAvatarAnonymized: 0
   m_line: Whoaaaaaaaa!
-  m_lineSFX: {fileID: 0}
+  m_lineSFX: {fileID: 8300000, guid: ede840e2eeb0444c285d82d82105f302, type: 3}
   m_backgroundOption: 0
   m_background: {fileID: 0}

@@ -359,11 +359,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_clipDialogueBGM
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 4e0249e8efebf4de19c28d465cbb936e, type: 3}
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
       propertyPath: m_bgmType
-      value: <Unset>
+      value: BGM_REPLACE_WITH_NEW
       objectReference: {fileID: 0}
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
@@ -1208,11 +1208,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_clipDialogueBGM
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: af8218afdd1634ea9b150027caa2b3d6, type: 3}
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
       propertyPath: m_bgmType
-      value: <Unset>
+      value: BGM_TEMP_PLAY_NEW
       objectReference: {fileID: 0}
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
@@ -3600,7 +3600,7 @@ PrefabInstance:
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
       propertyPath: m_bgmType
-      value: <Unset>
+      value: BGM_TEMP_STOP
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a23d4065577444a2fba6165cad927885, type: 3}
@@ -4055,6 +4055,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: D13-EPILOGUE
       objectReference: {fileID: 0}
+    - target: {fileID: 4320795109978799271, guid: a23d4065577444a2fba6165cad927885,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4320795109978799290, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4136,11 +4141,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_clipDialogueBGM
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 80ec0f2cbcdf8447195ac23b0d71f096, type: 3}
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
       propertyPath: m_bgmType
-      value: <Unset>
+      value: BGM_TEMP_PLAY_NEW
       objectReference: {fileID: 0}
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
@@ -4198,6 +4203,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1713285770}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1713285772 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
+    type: 3}
+  m_PrefabInstance: {fileID: 1713285770}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89755fef0df7c2f4e864803b6e228117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1746045262 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7903751079035416402, guid: 9284482208b9849998ff9105d588f81e,
@@ -5031,7 +5048,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_chainedTriggerAfterDialogue
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1713285772}
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
       propertyPath: m_lines.Array.data[0]
@@ -5052,7 +5069,7 @@ PrefabInstance:
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
       propertyPath: m_bgmType
-      value: <Unset>
+      value: BGM_TEMP_STOP
       objectReference: {fileID: 0}
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}

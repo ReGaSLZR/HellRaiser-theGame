@@ -18,6 +18,6 @@ MonoBehaviour:
   m_isAvatarAnonymized: 0
   m_line: "\u2026managing when exactly do I use my skills. I don\u2019t have infinite
     stamina so I have to conserve as much as I can."
-  m_lineSFX: {fileID: 0}
+  m_lineSFX: {fileID: 8300000, guid: b4ed6ee7f5d5f428eb9b98527c5b0475, type: 3}
   m_backgroundOption: 0
   m_background: {fileID: 0}

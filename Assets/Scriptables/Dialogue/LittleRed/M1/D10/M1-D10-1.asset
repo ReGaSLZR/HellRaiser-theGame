@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 11400000, guid: bb000028caa3b479583543aa264d3389, type: 2}
   m_expression: 0
+  m_isNameAnonymized: 0
+  m_isAvatarAnonymized: 0
   m_line: A gang of spike traps. Plus, the tribe leader is here. Wow.
-  m_lineSFX: {fileID: 0}
+  m_lineSFX: {fileID: 8300000, guid: ef3212987ef73457ba0b2b8486d7cedf, type: 3}
   m_backgroundOption: 0
   m_background: {fileID: 0}

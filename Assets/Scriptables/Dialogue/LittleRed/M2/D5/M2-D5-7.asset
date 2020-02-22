@@ -18,6 +18,6 @@ MonoBehaviour:
   m_isAvatarAnonymized: 0
   m_line: I need to find out where they lead to. But surely, these can warp <u>something
     else</u> other than living bodies.
-  m_lineSFX: {fileID: 0}
+  m_lineSFX: {fileID: 8300000, guid: ef3212987ef73457ba0b2b8486d7cedf, type: 3}
   m_backgroundOption: 0
   m_background: {fileID: 0}

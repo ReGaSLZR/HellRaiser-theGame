@@ -17,6 +17,6 @@ MonoBehaviour:
   m_isNameAnonymized: 1
   m_isAvatarAnonymized: 1
   m_line: Human, who are you calling pup?
-  m_lineSFX: {fileID: 0}
+  m_lineSFX: {fileID: 8300000, guid: e42d23c1cde5f47c6835431c2a0ca6ef, type: 3}
   m_backgroundOption: 0
   m_background: {fileID: 0}

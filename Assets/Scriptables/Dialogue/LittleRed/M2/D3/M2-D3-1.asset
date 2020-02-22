@@ -18,6 +18,6 @@ MonoBehaviour:
   m_isAvatarAnonymized: 0
   m_line: "There\u2019s one of the keys that I need! B-but\u2026 It\u2019s super duper
     heavily guarded."
-  m_lineSFX: {fileID: 0}
+  m_lineSFX: {fileID: 8300000, guid: 6ef636c0a2d144d7586e5e9e7aa572bc, type: 3}
   m_backgroundOption: 0
   m_background: {fileID: 0}

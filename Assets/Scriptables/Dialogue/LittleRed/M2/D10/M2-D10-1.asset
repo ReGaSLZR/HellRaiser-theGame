@@ -17,6 +17,6 @@ MonoBehaviour:
   m_isNameAnonymized: 0
   m_isAvatarAnonymized: 0
   m_line: "Don\u2019t tell me\u2026 A boss fight?!"
-  m_lineSFX: {fileID: 0}
+  m_lineSFX: {fileID: 8300000, guid: 2343571f2409b4f28b8e6ba5d4a2b93a, type: 3}
   m_backgroundOption: 0
   m_background: {fileID: 0}

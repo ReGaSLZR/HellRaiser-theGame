@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 11400000, guid: bb000028caa3b479583543aa264d3389, type: 2}
   m_expression: 4
+  m_isNameAnonymized: 0
+  m_isAvatarAnonymized: 0
   m_line: Is he a supernatural law enforcer or something? If so, he got the wrong
     person!
-  m_lineSFX: {fileID: 0}
+  m_lineSFX: {fileID: 8300000, guid: 15295aab13f194f59b8f8eb6110bbf94, type: 3}
   m_backgroundOption: 0
   m_background: {fileID: 0}

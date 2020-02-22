@@ -18,6 +18,6 @@ MonoBehaviour:
   m_isAvatarAnonymized: 0
   m_line: I should always be wary of what's ahead of me though. I won't be able to
     stop mid-dash.
-  m_lineSFX: {fileID: 0}
+  m_lineSFX: {fileID: 8300000, guid: 14e046110848d4cac819f96cb9c4b2d7, type: 3}
   m_backgroundOption: 1
   m_background: {fileID: 2800000, guid: bde80ea65859640b385bc2c5b080639f, type: 3}

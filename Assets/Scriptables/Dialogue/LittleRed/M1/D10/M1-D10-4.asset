@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 11400000, guid: bb000028caa3b479583543aa264d3389, type: 2}
   m_expression: 1
+  m_isNameAnonymized: 0
+  m_isAvatarAnonymized: 0
   m_line: "I can\u2019t let that happen. Thankfully, I can use a disguise to get past
     him."
-  m_lineSFX: {fileID: 0}
+  m_lineSFX: {fileID: 8300000, guid: b6afe3e907c0349319be6d3eb2ab24a3, type: 3}
   m_backgroundOption: 1
   m_background: {fileID: 2800000, guid: 3f950fd93e0c14faeac8c00bea4e1051, type: 3}
