@@ -1024,6 +1024,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
+        type: 3}
+      propertyPath: m_lines.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
+        type: 3}
+      propertyPath: m_clipDialogueBGM
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
+        type: 3}
+      propertyPath: m_bgmType
+      value: <Unset>
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
+        type: 3}
+      propertyPath: m_lines.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
+        type: 3}
+      propertyPath: m_lines.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
+        type: 3}
+      propertyPath: m_lines.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a23d4065577444a2fba6165cad927885, type: 3}
 --- !u!4 &560923874 stripped
