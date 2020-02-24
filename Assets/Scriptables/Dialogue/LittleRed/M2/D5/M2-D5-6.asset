@@ -16,8 +16,8 @@ MonoBehaviour:
   m_expression: 3
   m_isNameAnonymized: 0
   m_isAvatarAnonymized: 0
-  m_line: Hmmm. From one of these, I can smell something fishy. Filled with traps.
-    Jumping into the wrong teleporter could mean my end.
+  m_line: Hmmm. I can tell one of these is a "troll". Jumping into the wrong teleporter
+    could mean my end.
   m_lineSFX: {fileID: 0}
   m_backgroundOption: 0
   m_background: {fileID: 0}
