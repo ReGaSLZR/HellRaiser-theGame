@@ -93,6 +93,7 @@ MonoBehaviour:
   - Projectile
   - Crate
   - Ally
+  - Player-Camouflage
   m_destination: {fileID: 0}
   m_executionDelay: 0.2
 --- !u!82 &330450990754831420
