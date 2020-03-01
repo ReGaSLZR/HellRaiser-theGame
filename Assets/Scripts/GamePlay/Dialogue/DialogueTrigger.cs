@@ -106,7 +106,7 @@ namespace GamePlay.Dialogue {
                     }
                 case BGM_TEMP_PLAY_NEW:
                     {
-                       m_modelBGM.PlayTemporaryBGM(m_clipDialogueBGM);
+                       m_modelBGM.PlayTemporaryBGM(m_clipDialogueBGM, true);
                         break;
                     }
                 case BGM_REPLACE_WITH_NEW_AND_PLAY: {

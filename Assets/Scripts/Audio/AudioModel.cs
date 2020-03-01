@@ -6,13 +6,17 @@ using Utils;
 
 namespace Audio {
 
-    public class AudioModel : MonoBehaviour, AudioModel.VolumeSetter, AudioModel.VolumeGetter, AudioModel.BGMSetter, AudioModel.SFXSetter
+    public class AudioModel : MonoBehaviour,
+        AudioModel.VolumeSetter,
+        AudioModel.VolumeGetter,
+        AudioModel.BGMSetter,
+        AudioModel.SFXSetter
     {
 
         #region Interfaces
 
         public interface BGMSetter {
-            void PlayTemporaryBGM(AudioClip clip);
+            void PlayTemporaryBGM(AudioClip clip, bool shouldUseTransition);
             void PlayOriginalBGM(bool shouldUseTransition);
             void ReplaceOriginalBGM(AudioClip clip);
             void StopBGM();
@@ -122,20 +126,27 @@ namespace Audio {
             return m_reactiveVolumeSFX;
         }
 
-        public void PlayTemporaryBGM(AudioClip clip)
+        public void PlayTemporaryBGM(AudioClip clip, bool shouldUseTransition)
         {
-            //if(clip != null) {
-            //m_audioSourceBGM.clip = clip;
-            //m_audioSourceBGM.Play();
-
-                AudioUtil.SafelyTransitionToClip(this, m_audioSourceBGM, clip);
-            //}
+            if (clip != null)
+            {
+                if (shouldUseTransition)
+                {
+                    AudioUtil.SafelyTransitionToClip(this, m_audioSourceBGM, clip);
+                }
+                else
+                {
+                    m_audioSourceBGM.clip = clip;
+                    m_audioSourceBGM.Play();
+                }
+            }
         }
 
         public void PlayOriginalBGM(bool shouldUseTransition) {
-            //if ((m_audioSourceBGM.clip == m_tempAudioClipBGM) && m_audioSourceBGM.isPlaying) {
-            //    return; //no need to play the BGM as it is already playing
-            //}
+            if ((m_audioSourceBGM.clip == m_tempAudioClipBGM) && m_audioSourceBGM.isPlaying)
+            {
+                return; //no need to play the BGM as it is already playing
+            }
 
             if (shouldUseTransition)
             {
