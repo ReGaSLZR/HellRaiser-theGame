@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: M2-D11-4
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 11400000, guid: bb000028caa3b479583543aa264d3389, type: 2}
-  m_expression: 4
+  m_expression: 0
   m_isNameAnonymized: 0
   m_isAvatarAnonymized: 0
-  m_line: "\u2026?!"
-  m_lineSFX: {fileID: 0}
+  m_line: "\u2026?!!"
+  m_lineSFX: {fileID: 8300000, guid: a52ab59c254f24522bb42930dc8426ad, type: 3}
   m_backgroundOption: 0
   m_background: {fileID: 0}

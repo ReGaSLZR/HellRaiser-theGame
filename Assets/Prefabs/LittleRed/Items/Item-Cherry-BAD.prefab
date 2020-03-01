@@ -64,6 +64,7 @@ MonoBehaviour:
   m_isTriggeredOnGamePlayStart: 0
   m_objectToActivate: {fileID: 3087067450504368001}
   m_objectToDeactivate: {fileID: 4683683550370303020}
+  m_chainedTrigger: {fileID: 0}
 --- !u!82 &5112368157973610934
 AudioSource:
   m_ObjectHideFlags: 0
@@ -383,7 +384,7 @@ GameObject:
   - component: {fileID: 1179358209727283980}
   - component: {fileID: 8621754445294828200}
   - component: {fileID: 8317475495568304069}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: TargetDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,6 +435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_targetTags:
   - Player
+  - Player-Camouflage
   - Ally
   m_isLockedToFirstSingleTarget: 1
   m_detectionRange: 5

@@ -27,6 +27,9 @@
         [Required]
         [SerializeField] private Transform m_triggerFX;
 
+        [Space]
+        [SerializeField] private BaseTrigger m_chainedTrigger;
+
         private void Awake()
         {
             m_triggerFX.gameObject.SetActive(false);
@@ -40,6 +43,8 @@
             {
                 m_isTriggered = true;
                 m_compAnimator.SetBool(m_animOnTrigger, true);
+
+                ExecuteChainedTrigger();
             }
         }
 
@@ -53,6 +58,16 @@
             m_checkpointSetter.SaveCheckpoint(
                 gameObject.GetInstanceID(),
                 m_spawnPoint.position);
+
+            ExecuteChainedTrigger();
+        }
+
+        private void ExecuteChainedTrigger()
+        {
+            if(m_chainedTrigger != null)
+            {
+                m_chainedTrigger.Execute();
+            }
         }
 
     }

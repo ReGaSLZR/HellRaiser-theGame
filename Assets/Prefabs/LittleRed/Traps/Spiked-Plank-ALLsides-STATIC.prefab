@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spiked-Plank-ALLsides-STATIC
       objectReference: {fileID: 0}
+    - target: {fileID: 722658177340240579, guid: ae55c82711fff4b37907668a558c88c8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6762227479951397220, guid: ae55c82711fff4b37907668a558c88c8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,6 +72,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6974101874659897412, guid: ae55c82711fff4b37907668a558c88c8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2840045388702951734, guid: ae55c82711fff4b37907668a558c88c8,
         type: 3}
       propertyPath: m_Offset.y
@@ -77,10 +87,10 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6974101874659897412, guid: ae55c82711fff4b37907668a558c88c8,
+    - target: {fileID: 3769900313682549414, guid: ae55c82711fff4b37907668a558c88c8,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9029757907441418081, guid: ae55c82711fff4b37907668a558c88c8,
         type: 3}
@@ -92,6 +102,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3610528326574145228, guid: ae55c82711fff4b37907668a558c88c8,
+        type: 3}
+      propertyPath: m_targetTags.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1950793542408604572, guid: ae55c82711fff4b37907668a558c88c8,
         type: 3}

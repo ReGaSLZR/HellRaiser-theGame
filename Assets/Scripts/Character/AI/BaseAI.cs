@@ -5,6 +5,7 @@ using GamePlay.Base;
 using NaughtyAttributes;
 using UniRx;
 using UnityEngine;
+using Utils;
 
 namespace Character.AI {
 
@@ -128,6 +129,7 @@ namespace Character.AI {
         protected virtual void OnDeath() {
             if(m_triggerOnDeath != null)
             {
+                LogUtil.PrintInfo(this, GetType(), "OnDeath(): Executing trigger.");
                 m_triggerOnDeath.Execute();
             }
 

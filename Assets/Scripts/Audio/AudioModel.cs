@@ -125,23 +125,24 @@ namespace Audio {
         public void PlayTemporaryBGM(AudioClip clip)
         {
             //if(clip != null) {
-                //m_audioSourceBGM.clip = clip;
-                //m_audioSourceBGM.Play();
+            //m_audioSourceBGM.clip = clip;
+            //m_audioSourceBGM.Play();
 
                 AudioUtil.SafelyTransitionToClip(this, m_audioSourceBGM, clip);
             //}
         }
 
         public void PlayOriginalBGM(bool shouldUseTransition) {
-            if ((m_audioSourceBGM.clip == m_tempAudioClipBGM) && m_audioSourceBGM.isPlaying) {
-                return; //no need to play the BGM as it is already playing
-            }
+            //if ((m_audioSourceBGM.clip == m_tempAudioClipBGM) && m_audioSourceBGM.isPlaying) {
+            //    return; //no need to play the BGM as it is already playing
+            //}
 
             if (shouldUseTransition)
             {
                 AudioUtil.SafelyTransitionToClip(this, m_audioSourceBGM, m_tempAudioClipBGM);
             }
-            else {
+            else
+            {
                 m_audioSourceBGM.clip = m_tempAudioClipBGM;
                 m_audioSourceBGM.Play();
             }

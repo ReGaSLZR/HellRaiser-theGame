@@ -16,7 +16,7 @@ MonoBehaviour:
   m_preview: {fileID: 0}
   m_map: {fileID: 0}
   m_title: "Bon App\xE9tit"
-  m_objective: Collect keys to open the gate... WITHOUT ever knocking out a single
+  m_objective: Collect 2 keys then pass the gate... WITHOUT ever knocking out a single
     enemy.
   m_description: Warned that she'll be his snack, Little Red still looks after the
     rude pup she rescued. While doing so, she ventures to get the keys she needs to
@@ -25,7 +25,7 @@ MonoBehaviour:
   m_reqMainLevelsCleared: 1
   m_reqSideLevelsCleared: 0
   m_isWithKey: 1
-  m_keyCount: 2
+  m_keyCount: 3
   m_isTimed: 1
   m_timeLimit: 250
   m_allCharactersMustSurvive: 1

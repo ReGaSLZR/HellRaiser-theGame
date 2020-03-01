@@ -49,6 +49,7 @@ namespace Audio
 
         public static void SafelyTransitionToClip(MonoBehaviour caller, AudioSource audioSource, AudioClip newClip) {
             if ((caller != null) && (audioSource != null) && (newClip != null)) {
+                caller.StopAllCoroutines();
                 caller.StartCoroutine(CorTransitionAudio(audioSource, newClip));
             }
         }

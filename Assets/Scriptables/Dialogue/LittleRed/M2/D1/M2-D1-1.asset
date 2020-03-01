@@ -16,8 +16,7 @@ MonoBehaviour:
   m_expression: 0
   m_isNameAnonymized: 0
   m_isAvatarAnonymized: 0
-  m_line: "This forest village sure is vast. And the gate\u2019s closed. It\u2019s
-    the only way out of here."
+  m_line: This forest village sure is vast. And the only way out of here is closed.
   m_lineSFX: {fileID: 0}
   m_backgroundOption: 0
   m_background: {fileID: 0}

@@ -13,6 +13,8 @@
         [Tooltip("Optional field")]
         [SerializeField] private Transform m_objectToDeactivate;
 
+        [SerializeField] private BaseTrigger m_chainedTrigger;
+
         private void Awake()
         {
             m_objectToActivate.gameObject.SetActive(false);
@@ -42,6 +44,11 @@
             }
 
             m_objectToActivate.gameObject.SetActive(true);
+
+            if (m_chainedTrigger != null)
+            {
+                m_chainedTrigger.Execute();
+            }
         }
 
     }

@@ -37,11 +37,9 @@ namespace Character.Stats
             base.OnEnable();
 
             m_modelStatsSetter.RegisterCharacterForStats(m_info);
-            InitObservers();
-
-            //only setting the initial money value AFTER the observer initialization to not trigger an immediate
-            //textStatChange (displaying of the value of Inventory Money outright)
             m_reactiveMoney.Value = m_modelStatsGetter.GetInventoryMoney().Value;
+
+            InitObservers();
         }
 
         protected override void OnDisable()
@@ -55,8 +53,7 @@ namespace Character.Stats
         private void InitObservers()
         {
             m_modelStatsGetter.GetActiveCharacterHealth()
-                .Where(health => m_info.m_avatar.m_name.Equals(
-                    m_modelStatsGetter.GetActiveCharacter().Value.m_avatar.m_name) &&
+                .Where(health => IsActiveCharacter() &&
                     (health != m_reactiveHealth.Value)) //last condition is to check if the change was already applied on BaseStat.Recover()/DealDamage()
                 .Subscribe(newHealth =>
                 {
@@ -65,8 +62,7 @@ namespace Character.Stats
                 .AddTo(m_disposables);
 
             m_modelStatsGetter.GetActiveCharacterStamina()
-                .Where(stamina => m_info.m_avatar.m_name.Equals(
-                    m_modelStatsGetter.GetActiveCharacter().Value.m_avatar.m_name) &&
+                .Where(stamina => IsActiveCharacter() &&
                     (stamina != m_reactiveStamina.Value)) //last condition is to check if the change was already applied on BaseStat.Recover()/DealDamage()
                 .Subscribe(newStamina =>
                 {
@@ -75,12 +71,19 @@ namespace Character.Stats
                 .AddTo(m_disposables);
 
             m_modelStatsGetter.GetInventoryMoney()
-                .Where(money => (m_reactiveMoney.Value != 0))
+                .Where(money => (m_reactiveMoney.Value != money))
+                //.Where(money => IsActiveCharacter())
                 .Subscribe(newMoneyValue =>
                 {
                     ApplyStatChangeFXFromNonBaseStatCall(m_reactiveMoney, newMoneyValue, m_colorScheme.m_moneyGain, m_colorScheme.m_moneyLoss);
                 })
                 .AddTo(m_disposables);
+        }
+
+        private bool IsActiveCharacter()
+        {
+            return m_info.m_avatar.m_name.Equals(
+                    m_modelStatsGetter.GetActiveCharacter().Value.m_avatar.m_name);
         }
 
         private void ApplyStatChangeFXFromNonBaseStatCall(ReactiveProperty<int> valueHolder, int newValue,

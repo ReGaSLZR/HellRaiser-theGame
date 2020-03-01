@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: M2-D4-4
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 11400000, guid: bb000028caa3b479583543aa264d3389, type: 2}
-  m_expression: 0
+  m_expression: 1
   m_isNameAnonymized: 0
   m_isAvatarAnonymized: 0
-  m_line: "Hrrrrmmmph\u2026 but my thirst for knowledge is unbearable! Must\u2026
-    test\u2026 No\u2026! JUMP into the wormhole!"
+  m_line: Hrrrrmmmph& but my thirst for knowledge is unbearable! Must& test& No&!
+    JUMP into the wormhole!
   m_lineSFX: {fileID: 0}
   m_backgroundOption: 0
   m_background: {fileID: 0}

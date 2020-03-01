@@ -16,8 +16,8 @@ MonoBehaviour:
   m_expression: 2
   m_isNameAnonymized: 0
   m_isAvatarAnonymized: 0
-  m_line: Far as I know, there are two keys needed to open that gate. My mission is
-    clear. I have to get those keys no matter what.
+  m_line: Far as I know, two keys are needed to open that gate. My mission is clear.
+    I have to get those keys no matter what.
   m_lineSFX: {fileID: 0}
   m_backgroundOption: 0
   m_background: {fileID: 0}

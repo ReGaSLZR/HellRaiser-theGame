@@ -95,9 +95,9 @@ namespace GamePlay.Dialogue {
         }
 
         private void PlayBGM() {
+            LogUtil.PrintInfo(gameObject, GetType(), $"PlayBGM(): {m_bgmType}");
             switch (m_bgmType) {
                 default: {
-                        LogUtil.PrintInfo(gameObject, GetType(), "PlayBGM(): <Unset>");
                         break;
                     }
                 case BGM_TEMP_STOP: {
