@@ -3319,7 +3319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &449156645
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6133,9 +6133,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "Programming, art & noob animations were done by yours truly. The story
     is canon to my \"HellRaiser\" manga on WebToons.\n\nBackground Music pieces are
-    from:\n<u>Kevin MacLeod</u> (https://incompetech.com)\nLicense: CC BY (http://creativecommons.org/licenses/by/4.0/)\n\nI
-    hope you will enjoy the game~! If you got any suggestions, comments, or have a
-    coffee for me, click the coffee cup.\n\nThank you for reading.\n                                                                           -
+    from:\n<u>Kevin MacLeod</u> (https://incompetech.com)\nLicense: CC BY (http://creativecommons.org/licenses/by/4.0/)\n\nEnjoy
+    the game! If you got any comments, bugs to report or have a coffee for me, click
+    the coffee cup.\n\nThank you for reading. :)\n                                                                           -
     ReGaSLZR"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54627481e5df942b5bb5ea5da8c301b6, type: 2}
@@ -6206,10 +6206,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 885316740}
-    characterCount: 482
+    characterCount: 470
     spriteCount: 0
-    spaceCount: 138
-    wordCount: 68
+    spaceCount: 137
+    wordCount: 66
     linkCount: 0
     lineCount: 12
     pageCount: 1
