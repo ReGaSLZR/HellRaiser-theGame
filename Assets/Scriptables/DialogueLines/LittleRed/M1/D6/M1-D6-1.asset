@@ -17,6 +17,6 @@ MonoBehaviour:
   m_isNameAnonymized: 0
   m_isAvatarAnonymized: 0
   m_line: Crates bearing items I may need for the journey~!
-  m_lineSFX: {fileID: 8300000, guid: 86e97b4c25b5e444ea2e2d08ef987d21, type: 3}
+  m_lineSFX: {fileID: 8300000, guid: db6615666efb74df48e51fb88d37d6b9, type: 3}
   m_backgroundOption: 0
   m_background: {fileID: 0}

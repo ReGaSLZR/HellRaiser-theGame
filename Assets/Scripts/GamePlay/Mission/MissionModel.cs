@@ -82,20 +82,26 @@ namespace GamePlay.Mission {
         {
             if (MissionStatus.CLEARED == m_missionStatus.Value)
             {
-                if ((m_missionInfo.m_buildIndex > m_missionProgression.m_mainCleared)
-                    && m_missionInfo.IsMainMission())
+                if (m_missionInfo.IsMainMission() &&
+                    (m_missionInfo.m_buildIndex > m_missionProgression.m_mainCleared))
                 {
                     LogUtil.PrintInfo(gameObject, GetType(), "Saving MAIN mission progression...");
-                    PlayerData.Save(new MissionProgression(m_missionInfo.m_buildIndex, m_missionProgression.m_sideCleared));
+                    PlayerData.Save(new MissionProgression(
+                        m_missionInfo.m_buildIndex,
+                        m_missionProgression.m_sideCleared));
                 }
-                else if ((m_missionInfo.m_buildIndex > m_missionProgression.m_sideCleared)
-                    && !m_missionInfo.IsMainMission())
+                else if (!m_missionInfo.IsMainMission() &&
+                    (m_missionInfo.m_buildIndex > m_missionProgression.m_sideCleared))
                 {
                     LogUtil.PrintInfo(gameObject, GetType(), "Saving SIDE mission progression...");
-                    PlayerData.Save(new MissionProgression(m_missionProgression.m_mainCleared, m_missionInfo.m_buildIndex));
+                    PlayerData.Save(new MissionProgression(
+                        m_missionProgression.m_mainCleared,
+                        m_missionInfo.m_buildIndex));
                 }
                 else {
-                    LogUtil.PrintInfo(gameObject, GetType(), "Not saving mission progression. This mission was cleared by the player before.");
+                    LogUtil.PrintInfo(gameObject, GetType(),
+                        "Not saving mission progression. " +
+                        "This mission was cleared by the player before.");
                 }
             }
         }

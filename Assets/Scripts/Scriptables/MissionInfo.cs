@@ -35,8 +35,10 @@ namespace Scriptables {
 
         public MissionType m_missionType;
 
+        [Tooltip("Refers to the previous levels' latest build index.")]
         public int m_reqMainLevelsCleared = 0;
 
+        [Tooltip("Refers to the previous levels' latest build index.")]
         public int m_reqSideLevelsCleared = 0;
 
         [Space]
