@@ -14,16 +14,13 @@ namespace GamePlay.Dialogue {
     public class DialogueTrigger : BaseTrigger
     {
 
-        private const string BGM_TEMP_STOP = "BGM_TEMP_STOP";
-        private const string BGM_TEMP_PLAY_NEW = "BGM_TEMP_PLAY_NEW";
-        private const string BGM_REPLACE_WITH_NEW_AND_PLAY = "BGM_REPLACE_WITH_NEW";
-
-        private readonly string[] m_dropdownOptionsBGM = new string[] {
-            "<Unset>",
+        public enum TriggerBGM
+        {
+            NONE,
             BGM_TEMP_STOP,
             BGM_TEMP_PLAY_NEW,
             BGM_REPLACE_WITH_NEW_AND_PLAY
-        };
+        }
 
         //INJECTABLES
         [Inject]
@@ -50,15 +47,15 @@ namespace GamePlay.Dialogue {
         private DialogueLine[] m_lines;
 
         [SerializeField]
-        [Dropdown("m_dropdownOptionsBGM")]
-        private string m_bgmType;
+        private TriggerBGM m_bgmType;
 
         [SerializeField]
         [EnableIf("IsBGMRequired")]
         private AudioClip m_clipDialogueBGM;
 
         private bool IsBGMRequired() {
-            return (m_bgmType.Equals(BGM_TEMP_PLAY_NEW) || m_bgmType.Equals(BGM_REPLACE_WITH_NEW_AND_PLAY));
+            return (m_bgmType == TriggerBGM.BGM_TEMP_PLAY_NEW) ||
+                (m_bgmType == TriggerBGM.BGM_REPLACE_WITH_NEW_AND_PLAY);
         }
 
         protected override void Start()
@@ -96,20 +93,21 @@ namespace GamePlay.Dialogue {
 
         private void PlayBGM() {
             LogUtil.PrintInfo(gameObject, GetType(), $"PlayBGM(): {m_bgmType}");
+
             switch (m_bgmType) {
                 default: {
                         break;
                     }
-                case BGM_TEMP_STOP: {
+                case TriggerBGM.BGM_TEMP_STOP: {
                         m_modelBGM.StopBGM();
                         break;
                     }
-                case BGM_TEMP_PLAY_NEW:
+                case TriggerBGM.BGM_TEMP_PLAY_NEW:
                     {
                        m_modelBGM.PlayTemporaryBGM(m_clipDialogueBGM, true);
                         break;
                     }
-                case BGM_REPLACE_WITH_NEW_AND_PLAY: {
+                case TriggerBGM.BGM_REPLACE_WITH_NEW_AND_PLAY: {
                         m_modelBGM.ReplaceOriginalBGM(m_clipDialogueBGM);
                         m_modelBGM.PlayOriginalBGM(true);
                         break;

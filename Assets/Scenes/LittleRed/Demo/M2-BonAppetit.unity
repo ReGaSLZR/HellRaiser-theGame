@@ -2024,7 +2024,7 @@ PrefabInstance:
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
       propertyPath: m_bgmType
-      value: BGM_REPLACE_WITH_NEW
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
@@ -5247,7 +5247,7 @@ PrefabInstance:
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
       propertyPath: m_bgmType
-      value: BGM_TEMP_PLAY_NEW
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
@@ -9635,7 +9635,7 @@ PrefabInstance:
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
       propertyPath: m_bgmType
-      value: BGM_REPLACE_WITH_NEW
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
@@ -20337,7 +20337,7 @@ PrefabInstance:
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
       propertyPath: m_bgmType
-      value: <Unset>
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
@@ -31081,7 +31081,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_chainedTriggerAfterDialogue
       value: 
-      objectReference: {fileID: 708902664}
+      objectReference: {fileID: 0}
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
       propertyPath: m_lines.Array.data[0]
@@ -31102,7 +31102,7 @@ PrefabInstance:
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
       propertyPath: m_bgmType
-      value: <Unset>
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
@@ -35315,7 +35315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_isTriggeredOnGamePlayStart: 0
   m_triggerType: 1
-  m_chainedTriggerAfterDialogue: {fileID: 1437396859}
+  m_chainedTriggerAfterDialogue: {fileID: 1107760727}
 --- !u!61 &1423904512
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38226,7 +38226,7 @@ PrefabInstance:
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
       propertyPath: m_bgmType
-      value: <Unset>
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
@@ -40197,7 +40197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_isTriggeredOnGamePlayStart: 0
   m_triggerType: 1
-  m_chainedTriggerAfterDialogue: {fileID: 641521185}
+  m_chainedTriggerAfterDialogue: {fileID: 708902664}
 --- !u!61 &1679191542
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41115,7 +41115,7 @@ PrefabInstance:
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
       propertyPath: m_bgmType
-      value: BGM_TEMP_PLAY_NEW
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
@@ -42646,7 +42646,7 @@ PrefabInstance:
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
       propertyPath: m_bgmType
-      value: <Unset>
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
@@ -46612,7 +46612,7 @@ PrefabInstance:
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
       propertyPath: m_bgmType
-      value: <Unset>
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
@@ -48542,7 +48542,7 @@ PrefabInstance:
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}
       propertyPath: m_bgmType
-      value: BGM_TEMP_STOP
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4320795109978799268, guid: a23d4065577444a2fba6165cad927885,
         type: 3}

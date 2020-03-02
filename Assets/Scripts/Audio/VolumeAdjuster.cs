@@ -1,5 +1,4 @@
-﻿using NaughtyAttributes;
-using UnityEngine;
+﻿using UnityEngine;
 using UniRx;
 using Zenject;
 
@@ -9,18 +8,19 @@ namespace Audio {
     public class VolumeAdjuster : MonoBehaviour
     {
 
+        public enum AudioType
+        {
+            SFX,
+            BGM
+        }
+
         [Inject]
         private AudioModel.VolumeGetter m_modelAudio;
 
         private AudioSource m_compAudioSource;
-        private readonly DropdownList<bool> m_dropdownListAudioType =
-            new DropdownList<bool>(){
-                {"SFX", false},
-                {"BGM", true}
-        };
 
-        [Dropdown("m_dropdownListAudioType")]
-        public bool m_audioType;
+        [SerializeField]
+        private AudioType m_audioType;
 
         private void Awake()
         {
@@ -36,22 +36,33 @@ namespace Audio {
 
         private void SetVolumeListener()
         {
-            if (m_audioType) //if BGM
+            switch (m_audioType)
             {
-                m_modelAudio.GetVolumeBGM()
-               .Subscribe(volumeBGM => {
-                   m_compAudioSource.volume = volumeBGM;
-               })
-               .AddTo(this);
-            }
+                case AudioType.BGM:
+                {
+                    m_modelAudio.GetVolumeBGM()
+                   .Subscribe(volumeBGM => {
+                       m_compAudioSource.volume = volumeBGM;
+                   })
+                   .AddTo(this);
 
-            else //if SFX
-            {
-                m_modelAudio.GetVolumeSFX()
-                .Subscribe(volumeSFX => {
-                    m_compAudioSource.volume = volumeSFX;
-                })
-                .AddTo(this);
+                    break;
+                }
+
+                case AudioType.SFX:
+                {
+                    m_modelAudio.GetVolumeSFX()
+                    .Subscribe(volumeSFX => {
+                        m_compAudioSource.volume = volumeSFX;
+                    })
+                    .AddTo(this);
+
+                    break;
+                }
+                default:
+                    {
+                        break;
+                    }
             }
         }
 

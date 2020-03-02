@@ -4,7 +4,7 @@
     using NaughtyAttributes;
     using UnityEngine;
 
-    public class NonPlayableTrigger : BaseTrigger
+    public class CustomTrigger : BaseTrigger
     {
 
         [Required]
@@ -17,6 +17,9 @@
 
         private void Awake()
         {
+            Collider2D collider = GetComponent<Collider2D>();
+            collider.enabled = false;
+
             m_objectToActivate.gameObject.SetActive(false);
 
             if (m_objectToDeactivate != null)
