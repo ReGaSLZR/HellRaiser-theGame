@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 8568806512277027190, guid: 701fed0c2a49b4cd09581e0ac741ae28,
         type: 3}
       propertyPath: m_Name
-      value: Item-Cherry-BLUE-forStamina
+      value: Item-Cherry-Stamina
       objectReference: {fileID: 0}
     - target: {fileID: 8568806512277027187, guid: 701fed0c2a49b4cd09581e0ac741ae28,
         type: 3}
@@ -96,7 +96,7 @@ PrefabInstance:
     - target: {fileID: 8568806512277027184, guid: 701fed0c2a49b4cd09581e0ac741ae28,
         type: 3}
       propertyPath: m_itemType
-      value: STAT_STAMINA
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8568806512277027184, guid: 701fed0c2a49b4cd09581e0ac741ae28,
         type: 3}

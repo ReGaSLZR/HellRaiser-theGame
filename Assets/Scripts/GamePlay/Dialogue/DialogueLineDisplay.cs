@@ -102,16 +102,16 @@ namespace GamePlay.Dialogue {
             }
         }
 
-        private void UpdateDialogueBackground(int backgroundOption, Texture2D background)
+        private void UpdateDialogueBackground(DialogueLine.BGOption backgroundOption, Texture2D background)
         {
             switch (backgroundOption)
             {
-                case DialogueLine.BG_OFF:
+                case DialogueLine.BGOption.NO_BG:
                     {
                         m_backgroundBorder.gameObject.SetActive(false);
                         break;
                     }
-                case DialogueLine.BG_SHOW_NEW:
+                case DialogueLine.BGOption.SHOW_NEW_BG:
                     {
                         if (background == null)
                         {
@@ -130,10 +130,11 @@ namespace GamePlay.Dialogue {
                         
                         break;
                     }
-                    //case DialogueLine.BG_RETAIN: {
-                    ////purposely do nothing
-                    //break;
-                    //}
+                //case DialogueLine.BGOption.RETAIN_PREVIOUS:
+                //    {
+                //        //purposely do nothing
+                //        break;
+                //    }
             }
         }
 

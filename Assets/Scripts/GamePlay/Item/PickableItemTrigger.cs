@@ -21,21 +21,16 @@ namespace GamePlay.Item {
         [Inject]
         private readonly AudioModel.SFXSetter m_modelSFX;
 
-        private const string STAT_HEALTH = "STAT_HEALTH";
-        private const string STAT_STAMINA = "STAT_STAMINA";
-        private const string TIMER = "TIMER";
-        private const string INVENTORY_MONEY = "INVENTORY_MONEY";
-        private readonly string[] m_dropdownItemOptions = new string[] {
-            "<Unset>",
+        public enum ItemType
+        {
             STAT_HEALTH,
             STAT_STAMINA,
             TIMER,
             INVENTORY_MONEY
-        };
+        }
 
         [SerializeField]
-        [Dropdown("m_dropdownItemOptions")]
-        private string m_itemType;
+        private ItemType m_itemType;
 
         [SerializeField]
         [MinMaxSlider(1, 100)]
@@ -52,20 +47,20 @@ namespace GamePlay.Item {
             m_modelSFX.PlaySFXRandom(m_clipOnPickUp);
 
             switch (m_itemType) {
-                case STAT_HEALTH:
-                case STAT_STAMINA:
-                case TIMER:
+                case ItemType.STAT_HEALTH:
+                case ItemType.STAT_STAMINA:
+                case ItemType.TIMER:
                     {
                         BaseStats triggererStats = GetBaseStatFromTriggerer();
 
                         if (triggererStats != null)
                         {
-                            if (TIMER.Equals(m_itemType))
+                            if (ItemType.TIMER == m_itemType)
                             {
                                 m_modelTimer.AddToTimer(valueFromRange);
                                 triggererStats.RecoverTime(valueFromRange);
                             }
-                            else if (STAT_HEALTH.Equals(m_itemType))
+                            else if (ItemType.STAT_HEALTH == m_itemType)
                             {
                                 /*
                                  * the commented statement below is not any good if the Playable Character that picks up the item
@@ -88,7 +83,7 @@ namespace GamePlay.Item {
                         break;
                     }
                 default:
-                case INVENTORY_MONEY: {
+                case ItemType.INVENTORY_MONEY: {
                         m_modelStats.AddInventoryMoney(valueFromRange);
                         break;
                     }

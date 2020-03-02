@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isTriggeredOnGamePlayStart: 0
-  m_itemType: INVENTORY_MONEY
+  m_itemType: 3
   m_valueRange: {x: 25, y: 100}
   m_clipOnPickUp:
   - {fileID: 8300000, guid: 44fbc803bc03d40979e2cfe2ea86b759, type: 3}

@@ -91,7 +91,7 @@ namespace MainMenu.Mission {
 
             //set texts
             m_textTitle.text = mission.m_title;
-            m_textMissionType.text = mission.m_missionType;
+            m_textMissionType.text = mission.m_missionType.ToString();
 
             m_textObjective.text = isUnlocked ? mission.m_objective : " - ";
             m_textDescription.text = isUnlocked ? mission.m_description : " - ";

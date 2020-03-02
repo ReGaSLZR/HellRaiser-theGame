@@ -489,7 +489,7 @@ MonoBehaviour:
   m_jumpFallMultiplier: 1.3
   m_jumpHeight: 10
   m_jumpTimesMax: 2
-  m_jumpsInterval: 0.1
+  m_jumpsInterval: 0.25
   m_canJumpInMidair: 1
 --- !u!114 &6258712706737879514
 MonoBehaviour:

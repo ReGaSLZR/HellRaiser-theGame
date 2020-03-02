@@ -7,13 +7,11 @@ namespace Scriptables {
     public class MerchantItem : ScriptableObject
     {
 
-        public const string STAT_HEALTH = "STAT_HEALTH";
-        public const string STAT_STAMINA = "STAT_STAMINA";
-        private readonly string[] m_dropdownStatOptions = new string[] {
-            "<Unset>",
+        public enum ItemType
+        {
             STAT_HEALTH,
             STAT_STAMINA
-        };
+        }
 
         public string m_spielButtonNormal = "Buy then use";
         public string m_spielButtonBuyAgain = "Buy Again";
@@ -35,8 +33,7 @@ namespace Scriptables {
 
         [Space]
 
-        [Dropdown("m_dropdownStatOptions")]
-        public string m_stat;
+        public ItemType m_stat;
 
         [Range(1, 100)]
         public int m_value;

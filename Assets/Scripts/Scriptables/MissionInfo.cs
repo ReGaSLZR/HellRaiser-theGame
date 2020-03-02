@@ -8,13 +8,11 @@ namespace Scriptables {
     public class MissionInfo : ScriptableObject
     {
 
-        private const string MISSION_TYPE_MAIN = "MAIN";
-        private const string MISSION_TYPE_SIDE = "SIDE";
-        private readonly string[] m_dropdownOptionsMissionType = new string[] {
-            "<Unset>",
-            MISSION_TYPE_MAIN,
-            MISSION_TYPE_SIDE
-        };
+        public enum MissionType
+        {
+            MAIN,
+            SIDE
+        }
 
         [Range(SceneData.SCENE_MISSION_FIRST, 50)]
         public int m_buildIndex = SceneData.SCENE_MISSION_FIRST;
@@ -35,8 +33,7 @@ namespace Scriptables {
 
         [Space]
 
-        [Dropdown("m_dropdownOptionsMissionType")]
-        public string m_missionType;
+        public MissionType m_missionType;
 
         public int m_reqMainLevelsCleared = 0;
 
@@ -62,7 +59,7 @@ namespace Scriptables {
         public bool m_allCharactersMustSurvive;
 
         public bool IsMainMission() {
-            return MISSION_TYPE_MAIN.Equals(m_missionType);
+            return MissionType.MAIN == m_missionType;
         }
        
     }

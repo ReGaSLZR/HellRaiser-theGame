@@ -103,12 +103,12 @@ namespace GamePlay.UI.Merchant {
                     switch (m_merchantItem.m_stat)
                     {
                         default:
-                        case MerchantItem.STAT_HEALTH:
+                        case MerchantItem.ItemType.STAT_HEALTH:
                             {
                                 m_modelStatsSetter.AddActiveCharacterHealth(m_merchantItem.m_value);
                                 break;
                             }
-                        case MerchantItem.STAT_STAMINA:
+                        case MerchantItem.ItemType.STAT_STAMINA:
                             {
                                 m_modelStatsSetter.AddActiveCharacterStamina(m_merchantItem.m_value);
                                 break;
