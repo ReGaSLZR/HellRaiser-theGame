@@ -16,7 +16,7 @@ MonoBehaviour:
   m_expression: 4
   m_isNameAnonymized: 1
   m_isAvatarAnonymized: 1
-  m_line: Footsteps..!
-  m_lineSFX: {fileID: 8300000, guid: b4ed6ee7f5d5f428eb9b98527c5b0475, type: 3}
+  m_line: '....!'
+  m_lineSFX: {fileID: 8300000, guid: a52ab59c254f24522bb42930dc8426ad, type: 3}
   m_backgroundOption: 0
   m_background: {fileID: 0}

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: M2-D1-2
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 11400000, guid: bb000028caa3b479583543aa264d3389, type: 2}
-  m_expression: 3
+  m_expression: 1
   m_isNameAnonymized: 0
   m_isAvatarAnonymized: 0
   m_line: Far as I know, two keys are needed to open that gate. My mission is clear.
-    I have to get those keys no matter what.
+    Mister and Miss Key, here I come.
   m_lineSFX: {fileID: 0}
   m_backgroundOption: 0
   m_background: {fileID: 0}

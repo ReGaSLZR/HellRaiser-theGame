@@ -17,6 +17,6 @@ MonoBehaviour:
   m_isNameAnonymized: 0
   m_isAvatarAnonymized: 0
   m_line: "\u2026?!!"
-  m_lineSFX: {fileID: 8300000, guid: a52ab59c254f24522bb42930dc8426ad, type: 3}
+  m_lineSFX: {fileID: 8300000, guid: ab027bec661204ae5ad4ba24df1dd067, type: 3}
   m_backgroundOption: 0
   m_background: {fileID: 0}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d939e4f291741244adf66510ead8fed, type: 3}
   m_Name: HellRaiser-PlaySettings
   m_EditorClassIdentifier: 
-  m_gamePlayInput: 1
+  m_gamePlayInput: 0
   m_colorScheme:
     m_healthGain: {r: 0, g: 1, b: 0.021962404, a: 1}
     m_healthLoss: {r: 1, g: 0.3066038, b: 0.3066038, a: 1}
