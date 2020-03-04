@@ -29,11 +29,9 @@
         [SerializeField]
         private BaseTrigger m_chainedTrigger;
 
-        [Space]
-
         [SerializeField]
         [Range(0.1f, 10f)]
-        private float m_delayBeforeDestroy = 0.1f;
+        private float m_delayBeforeChainedTrigger = 0.1f;
 
         public override void Execute()
         {
@@ -56,13 +54,12 @@
             {
                 m_modelInput.EnableControls();
             }
-
+            
             if ((m_chainedTrigger != null))
             {
+                yield return new WaitForSeconds(m_delayBeforeChainedTrigger);
                 m_chainedTrigger.Execute();
             }
-
-            yield return new WaitForSeconds(m_delayBeforeDestroy);
 
             Destroy(this.gameObject);
             

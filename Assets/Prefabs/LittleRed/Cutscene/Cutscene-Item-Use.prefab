@@ -48,7 +48,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.014722109, y: 0.14657468}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -59,7 +59,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.667704, y: 3.5797405}
+  m_Size: {x: 4, y: 4}
   m_EdgeRadius: 0
 --- !u!320 &5406406228650240488
 PlayableDirector:
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_playableCutscene: {fileID: 5406406228650240488}
   m_isFrozenInput: 1
   m_chainedTrigger: {fileID: 0}
-  m_delayBeforeDestroy: 0.1
+  m_delayBeforeChainedTrigger: 0.1
 --- !u!1 &5406406229136245087
 GameObject:
   m_ObjectHideFlags: 0

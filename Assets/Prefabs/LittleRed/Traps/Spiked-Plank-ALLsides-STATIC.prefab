@@ -106,7 +106,12 @@ PrefabInstance:
     - target: {fileID: 3610528326574145228, guid: ae55c82711fff4b37907668a558c88c8,
         type: 3}
       propertyPath: m_targetTags.Array.size
-      value: 3
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3610528326574145228, guid: ae55c82711fff4b37907668a558c88c8,
+        type: 3}
+      propertyPath: m_targetTags.Array.data[3]
+      value: Player-Camouflage
       objectReference: {fileID: 0}
     - target: {fileID: 1950793542408604572, guid: ae55c82711fff4b37907668a558c88c8,
         type: 3}
