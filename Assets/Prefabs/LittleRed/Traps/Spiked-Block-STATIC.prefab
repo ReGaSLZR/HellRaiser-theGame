@@ -536,6 +536,7 @@ MonoBehaviour:
   - Player
   - Ally
   - Merchant
+  - Player-Camouflage
   m_isLockedToFirstSingleTarget: 1
   m_detectionRange: 5
   m_isAdjustingHorizontally: 0
