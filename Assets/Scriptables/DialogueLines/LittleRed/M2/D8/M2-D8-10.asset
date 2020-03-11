@@ -18,5 +18,5 @@ MonoBehaviour:
   m_isAvatarAnonymized: 0
   m_line: "~Rock-a-bye, baby, in the treetop\u2026~"
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
-  m_background: {fileID: 0}
+  m_backgroundOption: 1
+  m_background: {fileID: 2800000, guid: 8c0ebcf0a0a2e45db836631992f1ca86, type: 3}

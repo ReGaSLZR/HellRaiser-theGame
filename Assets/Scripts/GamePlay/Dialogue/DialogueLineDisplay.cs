@@ -123,7 +123,7 @@ namespace GamePlay.Dialogue {
                         }
 
                         //turn it off first to activate any animations attached to the gameObject
-                        m_backgroundBorder.gameObject.SetActive(false); 
+                        m_backgroundBorder.gameObject.SetActive(false);
 
                         m_background.texture = background;
                         m_backgroundBorder.gameObject.SetActive(true);

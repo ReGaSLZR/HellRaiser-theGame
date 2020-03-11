@@ -19,5 +19,5 @@ MonoBehaviour:
   m_line: "Muhahahaha! This is what you get for not heeding my warning, puny human.
     Bon app\xE9tit to me!"
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
+  m_backgroundOption: 2
   m_background: {fileID: 0}

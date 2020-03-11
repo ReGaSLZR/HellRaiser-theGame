@@ -19,5 +19,5 @@ MonoBehaviour:
   m_line: So inquisitive. Human boys can have the same high-pitched tone, you know.
     Sometimes.
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
+  m_backgroundOption: 2
   m_background: {fileID: 0}

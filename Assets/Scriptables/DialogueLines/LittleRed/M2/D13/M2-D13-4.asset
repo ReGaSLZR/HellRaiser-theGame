@@ -18,5 +18,5 @@ MonoBehaviour:
   m_isAvatarAnonymized: 0
   m_line: Hmmm? *sniff* *sniff* What is this scent?
   m_lineSFX: {fileID: 8300000, guid: a790d7a53e92249018436a3a600341eb, type: 3}
-  m_backgroundOption: 0
-  m_background: {fileID: 0}
+  m_backgroundOption: 1
+  m_background: {fileID: 2800000, guid: a10c87b0b6c4142e197781f3d3dd7a63, type: 3}

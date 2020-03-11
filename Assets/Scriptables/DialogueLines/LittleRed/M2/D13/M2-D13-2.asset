@@ -16,7 +16,7 @@ MonoBehaviour:
   m_expression: 1
   m_isNameAnonymized: 1
   m_isAvatarAnonymized: 0
-  m_line: "The timing is impeccable. I\u2019m SO hungry, I can eat you whole."
+  m_line: "The timing is impeccable. I\u2019m SO hungry, I'm going to eat you whole."
   m_lineSFX: {fileID: 8300000, guid: 15295aab13f194f59b8f8eb6110bbf94, type: 3}
-  m_backgroundOption: 0
-  m_background: {fileID: 0}
+  m_backgroundOption: 1
+  m_background: {fileID: 2800000, guid: d2c96df939b734e86804d9db8376ba8e, type: 3}

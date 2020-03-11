@@ -19,5 +19,5 @@ MonoBehaviour:
   m_line: "Wait, what was I talking about again? Ah! My form! Well, this \u201Cpup\u201D
     is just one of my forms. But my true one is a\u2026"
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
+  m_backgroundOption: 2
   m_background: {fileID: 0}

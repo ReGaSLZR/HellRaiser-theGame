@@ -19,5 +19,5 @@ MonoBehaviour:
   m_line: "Alas, my vision is blurry thanks to those hunters' bomb. I can\u2019t identify
     who exactly this puny human is!"
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
+  m_backgroundOption: 2
   m_background: {fileID: 0}

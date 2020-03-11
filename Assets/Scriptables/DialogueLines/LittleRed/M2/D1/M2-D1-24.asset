@@ -18,5 +18,5 @@ MonoBehaviour:
   m_isAvatarAnonymized: 1
   m_line: F*ck, I feel damn weak.
   m_lineSFX: {fileID: 8300000, guid: 77fcd78bf2c1848098f78a1b9164a849, type: 3}
-  m_backgroundOption: 0
-  m_background: {fileID: 0}
+  m_backgroundOption: 1
+  m_background: {fileID: 2800000, guid: 0c051ae91eb994f01bf73ca446e401c0, type: 3}

@@ -19,5 +19,5 @@ MonoBehaviour:
   m_line: "What the f*ck do you mean, \x1C\"I see\"\x1D? When I morph to my true form,
     you shall\u2014 *stomach growl*"
   m_lineSFX: {fileID: 8300000, guid: 0851ea260866d41beb3b40f85f62a7b6, type: 3}
-  m_backgroundOption: 0
-  m_background: {fileID: 0}
+  m_backgroundOption: 2
+  m_background: {fileID: 2800000, guid: 0c051ae91eb994f01bf73ca446e401c0, type: 3}

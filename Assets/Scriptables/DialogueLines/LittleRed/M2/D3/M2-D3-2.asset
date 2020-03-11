@@ -16,8 +16,8 @@ MonoBehaviour:
   m_expression: 2
   m_isNameAnonymized: 0
   m_isAvatarAnonymized: 0
-  m_line: "So, <i>this</i> is where everyone\u2019s at. Gosh, I won\u2019t make it
-    past all of them. They\u2019ll ambush me."
+  m_line: "So, <i>this</i> is where everyone\u2019s at. Gosh, there's no way I'll
+    make it past all of them."
   m_lineSFX: {fileID: 0}
   m_backgroundOption: 0
   m_background: {fileID: 0}

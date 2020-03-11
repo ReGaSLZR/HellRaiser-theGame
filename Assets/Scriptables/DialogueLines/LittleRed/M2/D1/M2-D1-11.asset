@@ -18,5 +18,5 @@ MonoBehaviour:
   m_isAvatarAnonymized: 1
   m_line: "Hmph, it might be better if I just show you. Behold, my glorious self\u2014"
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
+  m_backgroundOption: 2
   m_background: {fileID: 0}

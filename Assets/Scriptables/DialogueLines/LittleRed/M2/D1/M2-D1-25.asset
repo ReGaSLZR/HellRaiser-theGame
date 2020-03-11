@@ -19,5 +19,5 @@ MonoBehaviour:
   m_line: For a puny floof, you have a very crude language. Stay put for a moment
     while I sort some things out.
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
+  m_backgroundOption: 2
   m_background: {fileID: 0}

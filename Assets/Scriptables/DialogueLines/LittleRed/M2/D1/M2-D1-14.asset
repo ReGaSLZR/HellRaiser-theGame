@@ -19,5 +19,5 @@ MonoBehaviour:
   m_line: Damn it. Must be that wolfsbane smoke bomb they threw my way. Damn Artemis
     and her minion hunters!
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
+  m_backgroundOption: 2
   m_background: {fileID: 0}

@@ -16,7 +16,7 @@ MonoBehaviour:
   m_expression: 4
   m_isNameAnonymized: 1
   m_isAvatarAnonymized: 1
-  m_line: Ugh, stop singing!! YUCK!
+  m_line: Ugh, stop singing!! YUCK! (If my enemies saw me like this...)
   m_lineSFX: {fileID: 8300000, guid: 1f2702e045b634e5385b3f06036c1720, type: 3}
-  m_backgroundOption: 0
+  m_backgroundOption: 2
   m_background: {fileID: 0}

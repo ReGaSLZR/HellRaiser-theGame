@@ -19,5 +19,5 @@ MonoBehaviour:
   m_line: "Oi! I\u2019m a supremely big baddie! I will NOT be carried like a F*CKING
     BABY! Put me down this instant!"
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
+  m_backgroundOption: 2
   m_background: {fileID: 0}

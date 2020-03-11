@@ -19,5 +19,5 @@ MonoBehaviour:
   m_line: "\u201CTell that much\u201D? Is your vision bad? M-My scent??? Couldn\u2019t
     you tell I\u2019m a girl by my voice?"
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
+  m_backgroundOption: 2
   m_background: {fileID: 0}

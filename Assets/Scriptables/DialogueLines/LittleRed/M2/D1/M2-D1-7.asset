@@ -19,5 +19,5 @@ MonoBehaviour:
   m_line: "At least, I can tell that much. And your scent\u2026 gives off some sense
     of femininity. You\u2019re a little girl, aren\u2019t you?"
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
+  m_backgroundOption: 2
   m_background: {fileID: 0}

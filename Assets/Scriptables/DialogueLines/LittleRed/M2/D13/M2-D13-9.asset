@@ -16,7 +16,7 @@ MonoBehaviour:
   m_expression: 0
   m_isNameAnonymized: 1
   m_isAvatarAnonymized: 0
-  m_line: "But... I realize this little kid as a meal won\u2019t satisfy my appetite."
+  m_line: "That little kid as a meal won\u2019t satisfy my appetite."
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
-  m_background: {fileID: 0}
+  m_backgroundOption: 1
+  m_background: {fileID: 2800000, guid: 0e1fd304b2e4847cdaaacd865be761fe, type: 3}

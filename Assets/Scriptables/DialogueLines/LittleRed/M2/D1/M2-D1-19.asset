@@ -19,5 +19,5 @@ MonoBehaviour:
   m_line: "You better run, little girl. Allow me some time to recover and I\u2019ll
     snack on you."
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
+  m_backgroundOption: 2
   m_background: {fileID: 0}

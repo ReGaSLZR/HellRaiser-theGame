@@ -18,5 +18,5 @@ MonoBehaviour:
   m_isAvatarAnonymized: 0
   m_line: "Why wouldn\u2019t I be? Who would listen to your monologue?"
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
+  m_backgroundOption: 2
   m_background: {fileID: 0}

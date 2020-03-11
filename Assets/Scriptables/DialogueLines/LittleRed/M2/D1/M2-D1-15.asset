@@ -19,5 +19,5 @@ MonoBehaviour:
   m_line: "But how did they know where I was? I swear to the Titans, I will get back
     at \u2018em and wreck all temples in Olympus!"
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 0
+  m_backgroundOption: 2
   m_background: {fileID: 0}
