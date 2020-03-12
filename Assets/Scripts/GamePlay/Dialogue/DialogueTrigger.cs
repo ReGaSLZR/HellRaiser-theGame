@@ -63,13 +63,14 @@ namespace GamePlay.Dialogue {
             base.Start();
 
             m_modelDialogueGetter.IsInPlay()
-                .Where(isInPlay => !isInPlay && m_isTriggered)
+                .Where(isInPlay =>  m_isTriggered && !isInPlay)
                 .Subscribe(_ => {
                     m_modelTimer.StartTimer();
                     m_modelInput.EnableControls();
 
-                    if (m_chainedTriggerAfterDialogue != null) {
-                        m_chainedTriggerAfterDialogue.Execute();
+                    if (m_chainedTriggerAfterDialogue != null)
+                    {
+                        m_chainedTriggerAfterDialogue.ExecuteWithDelay();
                     }
 
                     m_modelBGM.PlayOriginalBGM(true);
@@ -80,14 +81,14 @@ namespace GamePlay.Dialogue {
 
         public override void Execute()
         {
-            m_isTriggered = true;
-            this.gameObject.SetActive(false);
-
             m_modelTimer.PauseTimer();
             m_modelInput.DisableControls();
 
+            this.gameObject.SetActive(false);
+
             PlayBGM();
 
+            m_isTriggered = true;
             m_modelDialogueSetter.StartDialogue(m_lines, m_focusedObject);
         }
 

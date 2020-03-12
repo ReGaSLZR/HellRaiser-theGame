@@ -2,6 +2,7 @@
 using UniRx.Triggers;
 using UnityEngine;
 using Utils;
+using System.Collections;
 using GamePlay.Checkpoint;
 using Zenject;
 
@@ -13,8 +14,6 @@ namespace GamePlay.Base {
     [RequireComponent(typeof(Collider2D))]
     public abstract class BaseTrigger : MonoBehaviour
     {
-
-        public abstract void Execute();
 
         [Inject]
         protected readonly CheckpointModel.Getter m_checkpointGetter;
@@ -58,6 +57,18 @@ namespace GamePlay.Base {
         protected virtual bool IsTriggerable(GameObject collidedObject)
         {
             return collidedObject.tag.Contains("Player") && !m_isTriggered;
+        }
+
+        private IEnumerator CorExecuteWithDelay()
+        {
+            yield return null;
+            Execute();
+        }
+
+        public abstract void Execute();
+        public virtual void ExecuteWithDelay()
+        {
+            StartCoroutine(CorExecuteWithDelay());
         }
 
     }
