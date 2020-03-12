@@ -20,9 +20,9 @@ MonoBehaviour:
   m_description: Little Red, a kid from a down-and-out village, is on a quest to rescue
     her father from a mysterious abductor. Making her way past the hostile villagers,
     she happens upon a helpless creature.
-  m_missionType: MAIN
-  m_reqMainLevelsCleared: 0
-  m_reqSideLevelsCleared: 0
+  m_missionType: 0
+  m_lastMainCleared: 0
+  m_lastSideCleared: 0
   m_isWithKey: 0
   m_keyCount: 1
   m_isTimed: 1

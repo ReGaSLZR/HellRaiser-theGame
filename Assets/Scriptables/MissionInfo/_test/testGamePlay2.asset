@@ -18,9 +18,9 @@ MonoBehaviour:
   m_title: Sample Mission
   m_objective: 
   m_description: 
-  m_missionType: SIDE
-  m_reqMainLevelsCleared: 1
-  m_reqSideLevelsCleared: 0
+  m_missionType: 0
+  m_lastMainCleared: 16
+  m_lastSideCleared: 2
   m_isWithKey: 0
   m_keyCount: 1
   m_isTimed: 0

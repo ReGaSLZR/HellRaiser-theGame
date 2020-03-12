@@ -96,8 +96,8 @@ namespace MainMenu.Mission {
             m_textObjective.text = isUnlocked ? mission.m_objective : " - ";
             m_textDescription.text = isUnlocked ? mission.m_description : " - ";
             
-            m_textMainLevelsRequired.text = mission.m_reqMainLevelsCleared.ToString();
-            m_textSideLevelsRequired.text = mission.m_reqSideLevelsCleared.ToString();
+            m_textMainLevelsRequired.text = mission.m_lastMainCleared.ToString();
+            m_textSideLevelsRequired.text = mission.m_lastSideCleared.ToString();
 
             //set images
             m_rawImagePreview.texture = mission.m_preview;

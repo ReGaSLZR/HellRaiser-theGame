@@ -15,12 +15,12 @@ MonoBehaviour:
   m_buildIndex: 7
   m_preview: {fileID: 0}
   m_map: {fileID: 0}
-  m_title: Aunt Tagonist
+  m_title: Call me "Aunt Tagonist"
   m_objective: 
   m_description: 
   m_missionType: 0
-  m_reqMainLevelsCleared: 6
-  m_reqSideLevelsCleared: 0
+  m_lastMainCleared: 6
+  m_lastSideCleared: 0
   m_isWithKey: 0
   m_keyCount: 1
   m_isTimed: 0

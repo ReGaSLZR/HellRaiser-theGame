@@ -37,8 +37,8 @@ namespace MainMenu.Mission {
 
         public bool IsMissionUnlocked(MissionInfo mission)
         {
-            return (mission.m_reqMainLevelsCleared <= m_missionProgression.m_mainCleared) &&
-                (mission.m_reqSideLevelsCleared <= m_missionProgression.m_sideCleared);
+            return (mission.m_lastMainCleared <= m_missionProgression.m_mainCleared) &&
+                (mission.m_lastSideCleared <= m_missionProgression.m_sideCleared);
         }
 
         public void DisplayMission(MissionInfo mission)

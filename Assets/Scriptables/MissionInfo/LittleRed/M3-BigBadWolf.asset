@@ -15,12 +15,12 @@ MonoBehaviour:
   m_buildIndex: 5
   m_preview: {fileID: 0}
   m_map: {fileID: 0}
-  m_title: The Big Bad Wolf
+  m_title: I, the Big Bad Wolf
   m_objective: 
   m_description: 
   m_missionType: 0
-  m_reqMainLevelsCleared: 4
-  m_reqSideLevelsCleared: 0
+  m_lastMainCleared: 5
+  m_lastSideCleared: 0
   m_isWithKey: 0
   m_keyCount: 1
   m_isTimed: 1
