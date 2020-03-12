@@ -35,10 +35,6 @@ namespace MainMenu.UI {
         [Required]
         private Image m_panelAbout;
 
-        [SerializeField]
-        [Required]
-        private Image m_panelLoading;
-
         [Header("Buttons")]
 
         [SerializeField]
@@ -101,7 +97,6 @@ namespace MainMenu.UI {
             m_panelHome.gameObject.SetActive(false);
             m_panelMissions.gameObject.SetActive(false);
             m_panelSettings.gameObject.SetActive(false);
-            m_panelLoading.gameObject.SetActive(false);
         }
 
         private void DisableAllButtons() {

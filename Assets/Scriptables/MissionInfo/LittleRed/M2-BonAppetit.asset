@@ -22,7 +22,7 @@ MonoBehaviour:
     rude pup she rescued. While doing so, she ventures to get the keys she needs to
     get out of the forest village. Will she be able to do it the pacifist way?
   m_missionType: 0
-  m_reqMainLevelsCleared: 0
+  m_reqMainLevelsCleared: 3
   m_reqSideLevelsCleared: 0
   m_isWithKey: 1
   m_keyCount: 3
