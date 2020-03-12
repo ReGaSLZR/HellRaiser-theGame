@@ -30,7 +30,7 @@ RectTransform:
   m_GameObject: {fileID: 6262457054717903753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.05, y: 1.05, z: 1}
   m_Children:
   - {fileID: 7166996955139837212}
   m_Father: {fileID: 0}
@@ -90,7 +90,7 @@ PlayableDirector:
   m_PlayableAsset: {fileID: 11400000, guid: 3efc24bc3fb5b4499b1f826692b0d210, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
-  m_DirectorUpdateMode: 1
+  m_DirectorUpdateMode: 2
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: -747521179618904665, guid: 3efc24bc3fb5b4499b1f826692b0d210, type: 2}

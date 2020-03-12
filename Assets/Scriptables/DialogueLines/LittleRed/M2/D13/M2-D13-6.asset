@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: M2-D13-6
   m_EditorClassIdentifier: 
   m_speaker: {fileID: 11400000, guid: df0ea96b9b985424a9025eebd1423c79, type: 2}
-  m_expression: 3
+  m_expression: 0
   m_isNameAnonymized: 1
   m_isAvatarAnonymized: 0
   m_line: "Alas, my vision is blurry thanks to those hunters' bomb. I can\u2019t identify
-    who exactly this puny human is!"
+    who exactly this puny human is."
   m_lineSFX: {fileID: 0}
-  m_backgroundOption: 2
-  m_background: {fileID: 0}
+  m_backgroundOption: 1
+  m_background: {fileID: 2800000, guid: 79f0164e77ce8485984fc9461fecdc48, type: 3}
