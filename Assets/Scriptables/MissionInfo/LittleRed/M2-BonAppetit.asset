@@ -16,16 +16,15 @@ MonoBehaviour:
   m_preview: {fileID: 2800000, guid: 01f8586971ba5438bba4eee88b1a42c0, type: 3}
   m_map: {fileID: 0}
   m_title: "Bon App\xE9tit"
-  m_objective: Collect 2 keys then pass the gate... WITHOUT ever knocking out a single
-    enemy.
+  m_objective: Collect 2 keys then pass the gate... WITHOUT knocking out an enemy.
   m_description: Warned that she'll be his snack, Little Red still looks after the
-    rude pup she rescued. While doing so, she ventures to get the keys she needs to
-    get out of the forest village. Will she be able to do it the pacifist way?
+    rude pup she rescued. While doing so, she ventures to get the keys she needs
+    to get out of the forest village. Will she be able to do it the pacifist way?
   m_missionType: 0
   m_lastMainCleared: 3
   m_lastSideCleared: 0
   m_isWithKey: 1
-  m_keyCount: 3
+  m_keyCount: 2
   m_isTimed: 1
   m_timeLimit: 280
   m_allCharactersMustSurvive: 1

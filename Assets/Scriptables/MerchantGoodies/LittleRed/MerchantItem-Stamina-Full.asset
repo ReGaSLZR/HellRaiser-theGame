@@ -17,9 +17,9 @@ MonoBehaviour:
   m_spielButtonDisabled: I'm poor.
   m_spielButtonOutOfStock: Out of Stock
   m_itemIcon: {fileID: 2800000, guid: 350c294d6691c46469ab21d851a05dd4, type: 3}
-  m_spielTitle: Large Health Potion
-  m_spielDescription: Horrid, smelly and verrrry bitter. But I guarantee that it will
-    re-energize you fully.
+  m_spielTitle: Large Stamina Potion
+  m_spielDescription: Horrid, smelly and verrrry bitter. But I guarantee that it
+    will re-energize you fully.
   m_clipOnPurchase: {fileID: 8300000, guid: 6c064f77be4614bd793f6568e45216b9, type: 3}
   m_stat: 1
   m_value: 100
