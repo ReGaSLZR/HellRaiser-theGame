@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8115173290345660744
 RectTransform:
   m_ObjectHideFlags: 0
@@ -55,10 +55,11 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4774243857190275550, guid: f3c382fdb68104a4e88d9c05fd152071, type: 2}
+  - {fileID: -4774243857190275550, guid: b1851edc6b4bb484a93c83b74c79506c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -66,6 +67,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -76,7 +78,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1642603387
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: -1
 --- !u!33 &8115173290345660747
 MeshFilter:
@@ -109,15 +111,14 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: -100
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f3c382fdb68104a4e88d9c05fd152071, type: 2}
-  m_sharedMaterial: {fileID: -4774243857190275550, guid: f3c382fdb68104a4e88d9c05fd152071,
+  m_fontAsset: {fileID: 11400000, guid: b1851edc6b4bb484a93c83b74c79506c, type: 2}
+  m_sharedMaterial: {fileID: -4774243857190275550, guid: b1851edc6b4bb484a93c83b74c79506c,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
