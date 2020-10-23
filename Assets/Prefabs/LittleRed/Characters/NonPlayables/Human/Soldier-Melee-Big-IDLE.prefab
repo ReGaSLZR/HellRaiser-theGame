@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &5760357821248540080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142106639692970018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13bca28e6e642894981a2798dfc8904d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_compAnimator: {fileID: 2142106639692970017}
+  m_compRigidBody2D: {fileID: 3277441550056933630}
+  m_compSpriteRenderer: {fileID: 2142106639692970016}
+  m_movementDirection: 0
+  m_shouldFlipSprite: 1
+  m_audioSource: {fileID: 5454110114591432559}
+  m_clipsStunned:
+  - {fileID: 8300000, guid: 76962522d1caf4e2f87029000ed24a50, type: 3}
+  m_clipDeath: {fileID: 8300000, guid: 1b4d927cc26fb49c3a793c3fb8176641, type: 3}
+  m_animMove: 
+  m_animStunned: isHurt
+  m_animDead: isDead
+  m_customStunLength: 0.4
+  m_customDeathLength: 0.4
+--- !u!1001 &398858027425399133
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1743823109240568191, guid: 87cabb8f360ee40f38a7610783dac7f1,
+        type: 3}
+      propertyPath: m_Name
+      value: Soldier-Melee-Big-IDLE
+      objectReference: {fileID: 0}
+    - target: {fileID: 2090799297544330492, guid: 87cabb8f360ee40f38a7610783dac7f1,
+        type: 3}
+      propertyPath: m_movement
+      value: 
+      objectReference: {fileID: 5760357821248540080}
+    - target: {fileID: 1743823109240568189, guid: 87cabb8f360ee40f38a7610783dac7f1,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743823109240568186, guid: 87cabb8f360ee40f38a7610783dac7f1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917264617931322784, guid: 87cabb8f360ee40f38a7610783dac7f1,
+        type: 3}
+      propertyPath: m_clipSkillUse.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917264617931322784, guid: 87cabb8f360ee40f38a7610783dac7f1,
+        type: 3}
+      propertyPath: m_clipSkillUse.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: a8f4dfd93cc07414c830a9fa0ce786de, type: 3}
+    - target: {fileID: 4917264617931322784, guid: 87cabb8f360ee40f38a7610783dac7f1,
+        type: 3}
+      propertyPath: m_clipSkillUse.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 05357090dfeba42a1a70c7328c87ed7d, type: 3}
+    m_RemovedComponents:
+    - {fileID: 116560546413840031, guid: 87cabb8f360ee40f38a7610783dac7f1, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 87cabb8f360ee40f38a7610783dac7f1, type: 3}
+--- !u!1 &2142106639692970018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1743823109240568191, guid: 87cabb8f360ee40f38a7610783dac7f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 398858027425399133}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &2142106639692970016 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1743823109240568189, guid: 87cabb8f360ee40f38a7610783dac7f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 398858027425399133}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2142106639692970017 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1743823109240568188, guid: 87cabb8f360ee40f38a7610783dac7f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 398858027425399133}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &3277441550056933630 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 2950641685769406883, guid: 87cabb8f360ee40f38a7610783dac7f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 398858027425399133}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &5454110114591432559 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5636786014054211122, guid: 87cabb8f360ee40f38a7610783dac7f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 398858027425399133}
+  m_PrefabAsset: {fileID: 0}

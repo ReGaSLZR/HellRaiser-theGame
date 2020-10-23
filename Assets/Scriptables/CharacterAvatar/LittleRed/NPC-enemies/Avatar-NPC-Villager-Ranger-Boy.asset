@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ba8b7fb19a6f9449676c498e8a6d80, type: 3}
+  m_Name: Avatar-NPC-Villager-Ranger-Boy
+  m_EditorClassIdentifier: 
+  m_name: Villager
+  m_avatarMain: {fileID: 2800000, guid: 826f2ea141fa344cfa9662bfbbe98201, type: 3}
+  m_avatarNormal: {fileID: 2800000, guid: ae1f8286ea6594ea98a1847d312ff479, type: 3}
+  m_avatarHappy: {fileID: 2800000, guid: 289e85eee0b274f37b7cc566aa4cbe8b, type: 3}
+  m_avatarSad: {fileID: 2800000, guid: fc66af2db40624580b70e129622d8c19, type: 3}
+  m_avatarAngry: {fileID: 2800000, guid: c2188079af8ae4860b2da1e8d1612411, type: 3}
+  m_avatarSurprised: {fileID: 2800000, guid: 51a37f3c7ac064f5ba10b45bb6292f5a, type: 3}

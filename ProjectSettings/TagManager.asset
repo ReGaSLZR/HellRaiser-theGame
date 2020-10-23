@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Terrain
+  - Crate
+  - Projectile
+  - Item
+  - Merchant
+  - FxTemporaire
+  - Ally
+  - TrapGround
+  - Trap
+  - Player-Camouflage
   layers:
   - Default
   - TransparentFX
@@ -13,15 +24,15 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ally
+  - Enemy
+  - Barrier-Ally
+  - Terrain
+  - Camouflage
+  - Projectile-Neutral
+  - Projectile-Ally
+  - Projectile-Enemy
+  - Item
   - 
   - 
   - 
@@ -38,6 +49,39 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2252004713
+    locked: 0
+  - name: MidBackground
+    uniqueID: 3154104425
+    locked: 0
+  - name: BackTerrain
+    uniqueID: 173705797
+    locked: 0
+  - name: Terrain
+    uniqueID: 4111131271
+    locked: 0
+  - name: MidTerrain
+    uniqueID: 294019509
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Character
+    uniqueID: 3667982215
+    locked: 0
+  - name: Character-Playable
+    uniqueID: 30635297
+    locked: 0
+  - name: Item
+    uniqueID: 659369261
+    locked: 0
+  - name: Projectile
+    uniqueID: 914237527
+    locked: 0
+  - name: Foreground
+    uniqueID: 4087343065
+    locked: 0
+  - name: UI
+    uniqueID: 2652363909
     locked: 0

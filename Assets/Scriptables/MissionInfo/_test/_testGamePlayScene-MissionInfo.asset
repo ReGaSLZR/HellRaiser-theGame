@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a15c6ac52ccc1499f4841ee7bfbdcf, type: 3}
+  m_Name: _testGamePlayScene-MissionInfo
+  m_EditorClassIdentifier: 
+  m_buildIndex: 4
+  m_preview: {fileID: 2800000, guid: 12245bb0ae16c4718bbf994b73b6a93a, type: 3}
+  m_map: {fileID: 0}
+  m_title: Test Title
+  m_objective: This is a test objective.
+  m_description: This is a test
+  m_missionType: 0
+  m_lastMainCleared: 10
+  m_lastSideCleared: 2
+  m_isWithKey: 1
+  m_keyCount: 2
+  m_isTimed: 1
+  m_timeLimit: 360
+  m_allCharactersMustSurvive: 0

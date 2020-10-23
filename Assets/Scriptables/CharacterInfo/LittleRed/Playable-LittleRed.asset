@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08700947ff67b04db2edf774974c690, type: 3}
+  m_Name: Playable-LittleRed
+  m_EditorClassIdentifier: 
+  m_isMob: 0
+  m_avatar: {fileID: 11400000, guid: bb000028caa3b479583543aa264d3389, type: 2}
+  m_bio: 
+  m_isPlayable: 1
+  m_skillsInOrder:
+  - {fileID: 11400000, guid: 2b0cf58c10ea94fd7b4997c05704c48e, type: 2}
+  - {fileID: 11400000, guid: 8a53ac789619b4a5fa732e3fd2001ddd, type: 2}
+  - {fileID: 11400000, guid: 076836073f2534c99b6f578589f41fd7, type: 2}
+  m_rank: 0
+  m_health: 100
+  m_stamina: 70
+  m_statMovement:
+    m_movSpeed: 8
+    m_stunLength: 0.25
+    m_deathLength: 0.25
+  m_statOffense:
+    m_physicalAttack: 20
+    m_magickAttack: 20
+    m_critChance: 15
+    m_critDamage: 140
+  m_statDefense:
+    m_physicalDefense: 10
+    m_isMagusBane: 1
+    m_magickDefense: 0

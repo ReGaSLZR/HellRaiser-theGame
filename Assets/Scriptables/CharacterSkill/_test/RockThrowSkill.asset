@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b6e8b60f4c99d4fb6921e60f8430e7, type: 3}
+  m_Name: RockThrowSkill
+  m_EditorClassIdentifier: 
+  m_name: Rock Throw
+  m_description: A basic ranged, physical skill involving the efficient throwning
+    of... pebbles. Commonly used by those wanting petty revenge or those only wishing
+    to K.O. enemies -- not kill them.
+  m_duration: 0.25
+  m_cost: 0
+  m_icon: {fileID: 2800000, guid: 827b38fd54b8bab4abd3b02a593d728a, type: 3}

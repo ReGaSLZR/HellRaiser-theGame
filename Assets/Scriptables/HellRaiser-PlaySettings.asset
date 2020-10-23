@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d939e4f291741244adf66510ead8fed, type: 3}
+  m_Name: HellRaiser-PlaySettings
+  m_EditorClassIdentifier: 
+  m_gamePlayInput: 0
+  m_colorScheme:
+    m_healthGain: {r: 0, g: 1, b: 0.021962404, a: 1}
+    m_healthLoss: {r: 1, g: 0.3066038, b: 0.3066038, a: 1}
+    m_damageNull: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}
+    m_staminaGain: {r: 0, g: 0.5249777, b: 1, a: 1}
+    m_staminaLoss: {r: 0.9987321, g: 0, b: 1, a: 1}
+    m_moneyGain: {r: 1, g: 0.8535939, b: 0, a: 1}
+    m_moneyLoss: {r: 0.4339623, g: 0.38388973, b: 0, a: 1}
+    m_time: {r: 1, g: 1, b: 1, a: 1}
+    m_missionMainPanel: {r: 1, g: 0.9218329, b: 0.8632076, a: 1}
+    m_missionSidePanel: {r: 0.7764706, g: 0.93745905, b: 1, a: 1}
+  m_audioTheme:
+    m_sfxButtonClick: {fileID: 8300000, guid: 26619cbefb97d4747b7220925b182b96, type: 3}
+    m_sfxMissionUpdate: {fileID: 8300000, guid: 292b68e76d29f1740bc3e85b8557cc84,
+      type: 3}
+    m_bgmMissionAccomplished: {fileID: 8300000, guid: 9c0c619932cc749d59bf404de6f44cc1,
+      type: 3}
+    m_bgmMissionFailure: {fileID: 8300000, guid: 3c1b8f6e61dfe4e5c9a8e21729d44831,
+      type: 3}

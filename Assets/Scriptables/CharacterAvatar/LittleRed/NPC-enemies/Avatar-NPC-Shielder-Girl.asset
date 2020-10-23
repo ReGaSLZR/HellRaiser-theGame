@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ba8b7fb19a6f9449676c498e8a6d80, type: 3}
+  m_Name: Avatar-NPC-Shielder-Girl
+  m_EditorClassIdentifier: 
+  m_name: Shieldmaiden
+  m_avatarMain: {fileID: 2800000, guid: 1f436d7640a5b414586e10a6288c3002, type: 3}
+  m_avatarNormal: {fileID: 2800000, guid: 67d8275ac83b542dcae51cc67bf306bb, type: 3}
+  m_avatarHappy: {fileID: 2800000, guid: 1088b8ecf61b24903b84835e9995c57c, type: 3}
+  m_avatarSad: {fileID: 2800000, guid: 115364fe4f036475892c0ccd98df2bc1, type: 3}
+  m_avatarAngry: {fileID: 2800000, guid: 2b6004367ba654c1f8c91d5cade75867, type: 3}
+  m_avatarSurprised: {fileID: 2800000, guid: d085e3f89443f4204b4ef12f0bff64ed, type: 3}

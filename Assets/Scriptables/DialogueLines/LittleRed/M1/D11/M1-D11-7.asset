@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de427f90aeb4ae479329da9f30afacf, type: 3}
+  m_Name: M1-D11-7
+  m_EditorClassIdentifier: 
+  m_speaker: {fileID: 11400000, guid: b828698204b1b40fdb3780e75dd31634, type: 2}
+  m_expression: 1
+  m_line: For the huge bounty on the Big Bad Wolf!
+  m_lineSFX: {fileID: 8300000, guid: 204c94f2e105641958efbb22111eef41, type: 3}
+  m_backgroundOption: 0
+  m_background: {fileID: 0}

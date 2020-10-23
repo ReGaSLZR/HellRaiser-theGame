@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b6e8b60f4c99d4fb6921e60f8430e7, type: 3}
+  m_Name: SnapDashSkill
+  m_EditorClassIdentifier: 
+  m_name: Snap Dash
+  m_description: With geomancy to cheat gravity, the user jets horizontally with an
+    impulse of force behind them. Efficient for escaping traps, hordes of enemies,
+    and even for losing creepy stalkers.
+  m_duration: 0.5
+  m_cost: 25
+  m_icon: {fileID: 2800000, guid: ff51550a6eab1274b8adc16c60eba488, type: 3}

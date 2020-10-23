@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08700947ff67b04db2edf774974c690, type: 3}
+  m_Name: MobHuman-Shielder-Boy
+  m_EditorClassIdentifier: 
+  m_isMob: 1
+  m_avatar: {fileID: 0}
+  m_bio: 
+  m_isPlayable: 0
+  m_skillsInOrder:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_rank: 0
+  m_health: 20
+  m_stamina: 100
+  m_statMovement:
+    m_movSpeed: 1.1
+    m_stunLength: 0.4
+    m_deathLength: 0.4
+  m_statOffense:
+    m_physicalAttack: 20
+    m_magickAttack: 0
+    m_critChance: 0
+    m_critDamage: 0
+  m_statDefense:
+    m_physicalDefense: 5
+    m_magickDefense: 0
+    m_isMagusBane: 0
