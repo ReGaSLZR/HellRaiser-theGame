@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de427f90aeb4ae479329da9f30afacf, type: 3}
+  m_Name: M3-D1-8
+  m_EditorClassIdentifier: 
+  m_speaker: {fileID: 11400000, guid: f9542e417c3b44bb697e54625ef29806, type: 2}
+  m_expression: 1
+  m_expressionPreview: {fileID: 2800000, guid: 289e85eee0b274f37b7cc566aa4cbe8b, type: 3}
+  m_isNameAnonymized: 1
+  m_isAvatarAnonymized: 1
+  m_line: "No, but you will get all the f*cks you want when we\u2019re safe! LET\u2019S
+    GO!"
+  m_lineSFX: {fileID: 0}
+  m_backgroundOption: 0
+  m_background: {fileID: 0}
