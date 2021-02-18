@@ -27,9 +27,16 @@ namespace Scriptables {
 
         #endregion
 
+        [OnValueChanged("ChangeExpressionPreview")]
         public CharacterAvatar  m_speaker;
 
+        [OnValueChanged("ChangeExpressionPreview")]
         public AvatarExpression m_expression;
+
+        [SerializeField]
+        [ShowAssetPreview]
+        [Tooltip("Only for Inspector Preview. Changing its value manually won't affect the expression shown on GamePlay.")]
+        private Texture2D m_expressionPreview; //ONLY FOR INSPECTOR PREVIEW
 
         [Space]
 
@@ -50,6 +57,16 @@ namespace Scriptables {
         [EnableIf("HasBackground")]
         [ShowAssetPreview]
         public Texture2D m_background;
+
+        private void OnEnable()
+        {
+            ChangeExpressionPreview();
+        }
+
+        private void ChangeExpressionPreview()
+        {
+            m_expressionPreview = (m_speaker != null) ? GetSpeakerAvatar() : null;
+        }
 
         private bool HasBackground() {
             return (m_backgroundOption == BGOption.SHOW_NEW_BG);
