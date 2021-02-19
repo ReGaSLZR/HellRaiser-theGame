@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de427f90aeb4ae479329da9f30afacf, type: 3}
+  m_Name: M3-D7-3
+  m_EditorClassIdentifier: 
+  m_speaker: {fileID: 11400000, guid: df0ea96b9b985424a9025eebd1423c79, type: 2}
+  m_expression: 4
+  m_expressionPreview: {fileID: 2800000, guid: 575292031e2d1479ca3fd4a024a94e0e, type: 3}
+  m_isNameAnonymized: 1
+  m_isAvatarAnonymized: 0
+  m_line: It looks too conveniently placed. For me. As if <b>someone</b> wants to
+    take me to places.
+  m_lineSFX: {fileID: 0}
+  m_backgroundOption: 0
+  m_background: {fileID: 0}
