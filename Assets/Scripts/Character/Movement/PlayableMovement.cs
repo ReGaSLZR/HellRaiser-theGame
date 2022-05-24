@@ -190,7 +190,22 @@ namespace Character.Movement
 
             //m_compRigidBody2D.AddForce(Vector2.up * (m_jumpHeight * m_jumpVelocity) 
             //    * Time.fixedDeltaTime, ForceMode2D.Impulse);
-            m_compRigidBody2D.velocity = (Vector2.up * m_jumpVelocity);
+
+
+            // original code before DGS01:
+            //m_compRigidBody2D.velocity = (Vector2.up * m_jumpVelocity);
+
+            // DGS01 START - Wall jumping
+            GroundType groundType = m_ground.GetWallSide();
+            Vector2 direction = (!m_ground.IsOnGround().Value) ?
+                (m_ground.IsWallHit().Value && groundType == GroundType.Wall_Plus) ? Vector2.left :
+                (m_ground.IsWallHit().Value && groundType == GroundType.Wall_Minus) ? Vector2.right :
+            Vector2.zero :
+            Vector2.zero;
+
+            m_compRigidBody2D.velocity = ((Vector2.up + direction) * m_jumpHeight * m_jumpVelocity);
+            // DGS01 END
+
             m_jumpsLeft--;
         }
 
