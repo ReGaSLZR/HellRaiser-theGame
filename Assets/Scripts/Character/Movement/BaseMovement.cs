@@ -93,11 +93,11 @@ namespace Character.Movement {
             if (RigidbodyType2D.Dynamic == m_compRigidBody2D.bodyType)
             {
                 m_compRigidBody2D.position = (m_compRigidBody2D.position +
-                    (movementDirection * m_statMovement.m_movSpeed * Time.fixedDeltaTime));
+                    (movementDirection * m_statMovement.m_movSpeed * Time.deltaTime));
             }
             else {
                 m_compRigidBody2D.MovePosition(m_compRigidBody2D.position +
-                    (movementDirection * m_statMovement.m_movSpeed * Time.fixedDeltaTime));
+                    (movementDirection * m_statMovement.m_movSpeed * Time.deltaTime));
             }
         }
 

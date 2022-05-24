@@ -39,7 +39,7 @@ namespace Character.Movement {
         {
             base.OnEnable();
 
-            this.FixedUpdateAsObservable()
+            this.UpdateAsObservable()
                 .Where(_ => m_reactiveIsMovEnabled.Value && (m_followTarget != null))
                 .Select(_ => Vector2.Distance(m_followTarget.position, gameObject.transform.position))
                 .Subscribe(distance =>
@@ -63,7 +63,7 @@ namespace Character.Movement {
                 })
                 .AddTo(m_disposables);
 
-            this.FixedUpdateAsObservable()
+            this.UpdateAsObservable()
                 .Where(_ => m_followTarget == null && m_compAnimator.GetBool(m_animMove))
                 .Subscribe(_ => m_compAnimator.SetBool(m_animMove, false))
                 .AddTo(m_disposables);

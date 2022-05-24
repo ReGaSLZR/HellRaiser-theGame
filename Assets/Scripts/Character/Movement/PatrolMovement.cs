@@ -40,7 +40,7 @@ namespace Character.Movement {
                 })
                 .AddTo(m_disposables);
 
-            this.FixedUpdateAsObservable()
+            this.UpdateAsObservable()
                 .Select(_ => m_reactiveIsMovEnabled.Value)
                 .Where(isMovEnabled => isMovEnabled)
                 .Subscribe(_ =>
