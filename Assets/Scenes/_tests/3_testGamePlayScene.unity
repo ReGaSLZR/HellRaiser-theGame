@@ -4565,7 +4565,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!60 &921075668
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7795,7 +7795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1263025762
 Transform:
   m_ObjectHideFlags: 0
@@ -12464,6 +12464,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 6796606306817168643, guid: 12c4a28d6394c458eb18ef2bb4ed151b,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6796606306817168644, guid: 12c4a28d6394c458eb18ef2bb4ed151b,
         type: 3}
       propertyPath: m_RootOrder
@@ -12472,12 +12477,12 @@ PrefabInstance:
     - target: {fileID: 6796606306817168644, guid: 12c4a28d6394c458eb18ef2bb4ed151b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.09218025
       objectReference: {fileID: 0}
     - target: {fileID: 6796606306817168644, guid: 12c4a28d6394c458eb18ef2bb4ed151b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.1584167
       objectReference: {fileID: 0}
     - target: {fileID: 6796606306817168644, guid: 12c4a28d6394c458eb18ef2bb4ed151b,
         type: 3}
