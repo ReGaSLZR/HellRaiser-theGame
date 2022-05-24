@@ -96,7 +96,7 @@ namespace Injection {
             Container.Bind<CameraFXModel.Setter>().FromInstance(m_cameraFX);
 
             //Player Input
-            BaseInputModel baseInputModel = m_inputManager.GetBaseInput(m_playSettings.m_gamePlayInput);
+            BaseInputModel baseInputModel = m_inputManager.GetBaseInput(m_playSettings.GamePlayInput);
             Container.Bind<BaseInputModel>().FromInstance(baseInputModel);
 
             //Dialogue

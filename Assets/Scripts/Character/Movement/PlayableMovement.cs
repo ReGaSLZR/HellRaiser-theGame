@@ -14,6 +14,8 @@ namespace Character.Movement
     public class PlayableMovement : BaseMovement
     {
 
+        #region Serialized Fields
+
         //INJECTIBLES
         [Inject]
         private BaseInputModel m_modelInput;
@@ -58,8 +60,10 @@ namespace Character.Movement
         private float m_jumpsInterval = 0.5f;
         [SerializeField]
         private bool m_canJumpInMidair;
-        private int m_jumpsLeft = 1;
 
+        #endregion
+
+        private int m_jumpsLeft = 1;
         private DateTimeOffset m_jumpLastTimeStamp;
 
         private void Start()

@@ -1,4 +1,5 @@
 ﻿using GamePlay.Input;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace Scriptables {
@@ -53,7 +54,25 @@ namespace Scriptables {
 
         }//end of AudioTheme class
 
-        public InputType m_gamePlayInput;
+        [SerializeField]
+        private bool isInputPlatformSpecific;
+
+        [SerializeField]
+        [DisableIf("isInputPlatformSpecific")]
+        private InputType m_gamePlayInput;
+        public InputType GamePlayInput {
+            get {
+                if (isInputPlatformSpecific)
+                {
+                    #if UNITY_EDITOR || PLATFORM_STANDALONE_WIN
+                        return InputType.Keyboard;
+                    #else
+                        return InputType.OnScreenButtons;
+                    #endif
+                }
+                return m_gamePlayInput;    
+            }
+        }
 
         public ColorScheme m_colorScheme;
 
