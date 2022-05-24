@@ -45,7 +45,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4523491362939486980}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4523491362939486980}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
@@ -1001,14 +1001,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f098b0cf8a43cd4fb680e6d32766898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_keyJump: 105
-  m_keyMoveRight: 100
-  m_keyMoveLeft: 97
-  m_keySkillMain: 106
-  m_keySkill2: 107
-  m_keySkill3: 108
-  m_keyChangeChar: 117
-  m_keyCameraUp: 273
-  m_keyCameraDown: 274
-  m_keyCameraLeft: 276
-  m_keyCameraRight: 275
+  input: {fileID: 11400000, guid: a83fa36181ac540cb82231a37be622d1, type: 2}

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 269fe6ae3fc63446292de88f2ad07733, type: 3}
+  m_Name: InputSettings
+  m_EditorClassIdentifier: 
+  m_keyJump: 105
+  m_keyMoveRight: 100
+  m_keyMoveLeft: 97
+  m_keySkillMain: 106
+  m_keySkill2: 107
+  m_keySkill3: 108
+  m_keyChangeChar: 117
+  m_keyCameraUp: 273
+  m_keyCameraDown: 274
+  m_keyCameraLeft: 276
+  m_keyCameraRight: 275

@@ -3,48 +3,14 @@ using UniRx;
 using UniRx.Triggers;
 using GamePlay.Camera;
 using Utils;
+using Scriptables;
 
 namespace GamePlay.Input {
 
     public class InputKeyboard : BaseInputModel
     {
-
-        [Header("Movement Keys")]
-
         [SerializeField]
-        private KeyCode m_keyJump = KeyCode.I;
-        [SerializeField]
-        private KeyCode m_keyMoveRight = KeyCode.D;
-        [SerializeField]
-        private KeyCode m_keyMoveLeft = KeyCode.A;
-
-        [Header("Skill Keys")]
-
-        [SerializeField]
-        private KeyCode m_keySkillMain = KeyCode.J;
-        [SerializeField]
-        private KeyCode m_keySkill2 = KeyCode.K;
-        [SerializeField]
-        private KeyCode m_keySkill3 = KeyCode.L;
-
-        [Header("Change Playable Character Key")]
-
-        [SerializeField]
-        private KeyCode m_keyChangeChar = KeyCode.O;
-
-        [Header("Camera Pan Keys")]
-
-        [SerializeField]
-        private KeyCode m_keyCameraUp = KeyCode.UpArrow;
-
-        [SerializeField]
-        private KeyCode m_keyCameraDown = KeyCode.DownArrow;
-
-        [SerializeField]
-        private KeyCode m_keyCameraLeft = KeyCode.LeftArrow;
-
-        [SerializeField]
-        private KeyCode m_keyCameraRight = KeyCode.RightArrow;
+        private InputSettings input;
 
         private void Start()
         {
@@ -55,23 +21,23 @@ namespace GamePlay.Input {
             //jump control
             this.UpdateAsObservable()
                 .Where(_ => m_isEnabled)
-                .Select(_ => UnityEngine.Input.GetKeyDown(m_keyJump))
+                .Select(_ => UnityEngine.Input.GetKeyDown(input.m_keyJump))
                 .Subscribe(isPressed => m_jump = isPressed)
                 .AddTo(this);
 
             //change playable character control
             this.UpdateAsObservable()
                 .Where(_ => m_isEnabled)
-                .Select(_ => UnityEngine.Input.GetKeyDown(m_keyChangeChar))
+                .Select(_ => UnityEngine.Input.GetKeyDown(input.m_keyChangeChar))
                 .Subscribe(isPressed => m_charChange = isPressed)
                 .AddTo(this);
         }
 
         private void SetUpCameraPanControls() {
-            SetUpCameraPanControl(m_keyCameraUp, CameraPanDirection.PAN_UP);
-            SetUpCameraPanControl(m_keyCameraDown, CameraPanDirection.PAN_DOWN);
-            SetUpCameraPanControl(m_keyCameraLeft, CameraPanDirection.PAN_LEFT);
-            SetUpCameraPanControl(m_keyCameraRight, CameraPanDirection.PAN_RIGHT);
+            SetUpCameraPanControl(input.m_keyCameraUp, CameraPanDirection.PAN_UP);
+            SetUpCameraPanControl(input.m_keyCameraDown, CameraPanDirection.PAN_DOWN);
+            SetUpCameraPanControl(input.m_keyCameraLeft, CameraPanDirection.PAN_LEFT);
+            SetUpCameraPanControl(input.m_keyCameraRight, CameraPanDirection.PAN_RIGHT);
         }
 
         private void SetUpCameraPanControl(KeyCode key, CameraPanDirection value) {
@@ -96,19 +62,19 @@ namespace GamePlay.Input {
         {
             this.UpdateAsObservable()
                 .Where(_ => m_isEnabled && m_reactiveSkillMain_enabled.Value)
-                .Select(_ => UnityEngine.Input.GetKeyDown(m_keySkillMain))
+                .Select(_ => UnityEngine.Input.GetKeyDown(input.m_keySkillMain))
                 .Subscribe(isPressed => m_skillMain = isPressed)
                 .AddTo(this);
 
             this.UpdateAsObservable()
                 .Where(_ => m_isEnabled && m_reactiveSkill2_enabled.Value)
-                .Select(_ => UnityEngine.Input.GetKeyDown(m_keySkill2))
+                .Select(_ => UnityEngine.Input.GetKeyDown(input.m_keySkill2))
                 .Subscribe(isPressed => m_skill2 = isPressed)
                 .AddTo(this);
 
             this.UpdateAsObservable()
                 .Where(_ => m_isEnabled && m_reactiveSkill3_enabled.Value)
-                .Select(_ => UnityEngine.Input.GetKeyDown(m_keySkill3))
+                .Select(_ => UnityEngine.Input.GetKeyDown(input.m_keySkill3))
                 .Subscribe(isPressed => m_skill3 = isPressed)
                 .AddTo(this);
         }
@@ -117,21 +83,21 @@ namespace GamePlay.Input {
         {
             this.UpdateAsObservable()
                 .Where(_ => m_isEnabled)
-                .Select(_ => UnityEngine.Input.GetKey(m_keyMoveRight))
+                .Select(_ => UnityEngine.Input.GetKey(input.m_keyMoveRight))
                 .Where(isPressed => isPressed)
                 .Subscribe(isPressed => m_run = m_movementBaseSpeed)
                 .AddTo(this);
 
             this.UpdateAsObservable()
                 .Where(_ => m_isEnabled)
-                .Select(_ => UnityEngine.Input.GetKey(m_keyMoveLeft))
+                .Select(_ => UnityEngine.Input.GetKey(input.m_keyMoveLeft))
                 .Where(isPressed => isPressed)
                 .Subscribe(isPressed => m_run = (m_movementBaseSpeed * -1))
                 .AddTo(this);
 
             this.UpdateAsObservable()
                 .Where(_ => m_isEnabled)
-                .Select(_ => (!UnityEngine.Input.GetKey(m_keyMoveRight) && !UnityEngine.Input.GetKey(m_keyMoveLeft)))
+                .Select(_ => (!UnityEngine.Input.GetKey(input.m_keyMoveRight) && !UnityEngine.Input.GetKey(input.m_keyMoveLeft)))
                 .Where(isLetGo => isLetGo)
                 .Subscribe(_ => m_run = 0f)
                 .AddTo(this);
