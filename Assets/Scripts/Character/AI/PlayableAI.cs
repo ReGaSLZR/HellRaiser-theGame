@@ -83,7 +83,7 @@ namespace Character.AI {
 
         private void InitInputObservers() {
             //skill MAIN
-            this.FixedUpdateAsObservable()
+            this.UpdateAsObservable()
                 .Select(_ => m_modelInput.m_skillMain)
                 .Where(isUsingSkill => isUsingSkill && 
                     IsStaminaValueEnough(m_stats.GetCharacterSkills()[0].m_cost) &&
@@ -97,7 +97,7 @@ namespace Character.AI {
                 .AddTo(m_disposables);
 
             //skill 2
-            this.FixedUpdateAsObservable()
+            this.UpdateAsObservable()
                .Select(_ => m_modelInput.m_skill2)
                .Where(isUsingSkill => isUsingSkill && 
                     IsStaminaValueEnough(m_stats.GetCharacterSkills()[1].m_cost) &&
@@ -111,7 +111,7 @@ namespace Character.AI {
                .AddTo(m_disposables);
 
             //skill 3
-            this.FixedUpdateAsObservable()
+            this.UpdateAsObservable()
                .Select(_ => m_modelInput.m_skill3)
                .Where(isUsingSkill => isUsingSkill && 
                     IsStaminaValueEnough(m_stats.GetCharacterSkills()[2].m_cost) &&
