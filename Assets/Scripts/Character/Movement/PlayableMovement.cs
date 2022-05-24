@@ -85,13 +85,13 @@ namespace Character.Movement
 
         private void InitControlledObservers() {
             //idle
-            this.FixedUpdateAsObservable()
+            this.UpdateAsObservable()
                 .Where(_ => (m_modelInput.m_run == 0f))
                 .Subscribe(_ => m_compAnimator.SetBool(m_animMove, false))
                 .AddTo(m_disposables);
 
             //run
-            this.FixedUpdateAsObservable()
+            this.UpdateAsObservable()
                 .Select(_ => m_modelInput.m_run)
                 .Where(horizontalMovement => (horizontalMovement != 0) && m_reactiveIsMovEnabled.Value)
                 .Subscribe(horizontalMovement =>
@@ -105,7 +105,7 @@ namespace Character.Movement
                 .AddTo(m_disposables);
 
             //jump
-            this.FixedUpdateAsObservable()
+            this.UpdateAsObservable()
                 .Select(_ => m_modelInput.m_jump)
                 .Where(hasJumped => (hasJumped && (m_jumpsLeft > 0)))
                 .Timestamp()
