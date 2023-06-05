@@ -1,4 +1,5 @@
-﻿using UniRx;
+﻿using Character.Ground;
+using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
 using Utils;
@@ -26,6 +27,24 @@ namespace Character.Movement {
         [SerializeField]
         private Transform m_followTarget;
 
+        [Header("Jump")]
+        [SerializeField]
+        private bool m_canJump;
+
+        [SerializeField]
+        private float m_jumpHeight = 5f;
+
+        [SerializeField]
+        private float m_jumpVelocity = 1.2f;
+
+        [SerializeField]
+        private int m_jumpTimes = 1;
+
+        private int m_jumpsLeft = 1;
+
+        [SerializeField]
+        private GroundManager m_ground;
+
         private float m_actualFollowIgnoreDistance;
 
         protected override void Awake()
@@ -33,6 +52,17 @@ namespace Character.Movement {
             base.Awake();
 
             m_actualFollowIgnoreDistance= (m_followDistance + m_followIgnoreDistance);
+        }
+
+        private void Start()
+        {
+            m_ground.IsOnGround().Subscribe(isOnGround =>
+            {
+                if (isOnGround)
+                {
+                    m_jumpsLeft = m_jumpTimes;
+                }
+            }).AddTo(this);
         }
 
         protected override void OnEnable()
@@ -54,6 +84,8 @@ namespace Character.Movement {
                         //https://docs.unity3d.com/Manual/DirectionDistanceFromOneObjectToAnother.html
                         StartMovement((m_followTarget.position - gameObject.transform.position).normalized);
                         m_compSpriteRenderer.flipX = ShouldFlip(m_followTarget.transform);
+
+                        CheckJump();
                     }
                     else
                     {
@@ -68,6 +100,39 @@ namespace Character.Movement {
                 .Subscribe(_ => m_compAnimator.SetBool(m_animMove, false))
                 .AddTo(m_disposables);
 
+        }
+
+        private void CheckJump()
+        {
+            if (!m_canJump)
+            {
+                return;
+            }
+
+            var yDistance = m_followTarget.position.y - gameObject.transform.position.y;
+
+            if (m_jumpHeight < yDistance || yDistance < 0)
+            {
+                return;
+            }
+
+            if (m_ground == null)
+            {
+                return;
+            }
+
+            if (m_ground.IsOnGround().Value && m_jumpsLeft > 0)
+            {
+                Jump();
+            }
+        }
+
+        [ContextMenu("Jump")]
+        private void Jump()
+        {
+            m_compRigidBody2D.velocity = m_jumpHeight * m_jumpVelocity * Vector2.up;
+
+            m_jumpsLeft--;
         }
 
         public void SetFollowTarget(Transform newTarget) {
