@@ -63,7 +63,7 @@ MonoBehaviour:
   m_targetTags:
   - Player
   - Enemy
-  m_isLockedToFirstSingleTarget: 1
+  m_isLockedToFirstSingleTarget: 0
   m_detectionRange: 5
   m_isAdjustingHorizontally: 0
   m_compSpriteRenderer: {fileID: 0}
@@ -433,7 +433,7 @@ PrefabInstance:
     - target: {fileID: 1838902135177059300, guid: 42fcfab5ab0954c328627699c8d471a7,
         type: 3}
       propertyPath: m_Size.x
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1838902135177059300, guid: 42fcfab5ab0954c328627699c8d471a7,
         type: 3}
